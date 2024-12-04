@@ -31,6 +31,11 @@ RUN mkdir /gcutils\
  && chmod a+rwx /gcutils\
  && chown openaf:0 /gcutils
 
+# Copy scripts
+# ------------
+COPY scripts /usr/bin
+RUN chmod a+x /usr/bin/start_prom_graf.sh
+
 # Setup welcome message and vars
 # ------------------------------
 COPY welcome.txt /etc/gcutils
