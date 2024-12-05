@@ -5,8 +5,7 @@
 Execute:
 
 ```bash
-oafp in=javagc gcout.txt out=openmetrics metricsprefix=java8 metricstimestamp=$(date +%s) path="[].delete(nvl(@,from_json('{}')),'timestamp')" | sed '/^$/d' > data.openmetrics
-echo "# EOF" >> data.openmetrics
-sudo -u prometheus promtool tsdb create-blocks-from openmetrics data.openmetrics /usr/share/prometheus/data
+oafp in=javagc gcout.txt out=openmetrics metricsprefix=java8 metricstimestamp=timestamp path="[]" | sed '/^$/d' > data.openmetrics
+openmetrics2prom.sh data.openmetrics
 rm data.openmetrics
 ```

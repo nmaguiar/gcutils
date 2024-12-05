@@ -1,10 +1,11 @@
-FROM openaf/oaf:nightly as main
+FROM openaf/oaf:t8 as main
 
 USER root
 RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
  && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip openjdk21 prometheus grafana\
+ && /openaf/openaf --update --force\
  && /openaf/opack install py-textual\
  && /openaf/opack install plugin-xls\
  && /openaf/opack install oafproc\
@@ -34,7 +35,8 @@ RUN mkdir /gcutils\
 # Copy scripts
 # ------------
 COPY scripts /usr/bin
-RUN chmod a+x /usr/bin/start_prom_graf.sh
+RUN chmod a+x /usr/bin/start_prom_graf.sh\
+ && chmod a+x /usr/bin/openmetrics2prom.sh
 
 # Setup welcome message and vars
 # ------------------------------
