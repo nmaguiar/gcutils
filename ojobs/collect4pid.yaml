@@ -1,10 +1,14 @@
 # Author: Nuno Aguiar
 help:
-  text   : Does stuff. 
+  text   : Retrieves Java hsperf data directly from a local pid to the local Prometheus database
   expects: 
-  - name     : something
-    desc     : To do something
-    example  : aValueExample
+  - name     : pid
+    desc     : The PID of the Java process to retrieve the data from
+    example  : 1234
+    mandatory: true
+  - name     : prefix
+    desc     : The prefix to use for the Prometheus metrics
+    example  : myapp
     mandatory: false
 
 todo:
@@ -13,9 +17,9 @@ todo:
 
 ojob:
   opacks      :
-  - openaf: 20231222
+  - openaf: 20241117
   catch       : printErrnl("[" + job.name + "] "); if (isDef(exception.javaException)) exception.javaException.printStackTrace(); else printErr(exception)
-  logToConsole: true   # to change when finished
+  logToConsole: false   # to change when finished
   daemon      : true        
   owraps      :
   - Metrics
@@ -72,15 +76,21 @@ jobs:
     timeInterval: 1000
   check:
     in:
-      pid: toNumber.isNumber
+      pid   : toNumber.isNumber
+      prefix: isString.default("java")
   exec : |
     var _pdata = global.fn(ow.java.parseHSPerf($from(ow.java.getLocalJavaPIDs()).equals("pid", args.pid).at(0).path))
     var _ts = Math.round(new Date(_pdata.__ts).getTime() / 1000)
     delete _pdata.__ts
-    var _data = ow.metrics.fromObj2OpenMetrics(_pdata, "test", _ts)
+    var _data = ow.metrics.fromObj2OpenMetrics(_pdata, args.prefix, _ts)
 
     var _f = io.createTempFile("data", ".openmetrics")
     io.writeFileString(_f, _data)
 
-    var _r = $sh("openmetrics2prom.sh " + _f).get(0)
-    if (_r.exitcode != 0) cprintErr(_r)
+    var _r = $sh("/usr/bin/openmetrics2prom.sh " + _f).get(0)
+    if (_r.exitcode != 0) {
+      cprintErr(_r)
+    } else {
+      printnl(".")
+    }
+    io.rm(_f)

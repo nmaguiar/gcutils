@@ -1,6 +1,7 @@
 FROM openaf/oaf:t8 as main
 
 USER root
+COPY ojobs/collect4pid.yaml /openaf/ojobs/collect4pid.yaml
 RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
@@ -9,9 +10,11 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && /openaf/opack install py-textual\
  && /openaf/opack install plugin-xls\
  && /openaf/opack install oafproc\
- && mkdir /openaf/ojobs\
  && /openaf/ojob ojob.io/get job=ojob.io/oaf/colorFormats.yaml > /openaf/ojobs/colorFormats.yaml\
+ && /openaf/ojob ojob.io/get job=ojob.io/java/grafana/gc.yaml > /openaf/ojobs/grafana_gc.yaml\
  && /openaf/oaf --sb /openaf/ojobs/colorFormats.yaml\
+ && /openaf/oaf --sb /openaf/ojobs/grafana_gc.yaml\
+ && /openaf/oaf --sb /openaf/ojobs/collect4pid.yaml\
  && chown -R openaf:0 /openaf\
  && chown openaf:0 /openaf/.opack.db\
  && chmod -R u+rwx,g+rwx,o+rx,o-w /openaf/*\
