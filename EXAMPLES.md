@@ -4,10 +4,44 @@ List of examples:
 
 | Category | Example title |
 |----------|---------------|
+| Format | Output a Java GC JSON output from a Java GC log |
+| Grafana | Visualize a Java GC log file in Grafana |
 | Grafana | Get a Java GC log input into Grafana for visualization |
 | Grafana | Get a live Java GC input into Grafana for visualization |
 
 > To search for a specific example type '/Checking images content<ENTER>' and use the arrow keys to navigate
+
+---
+
+## 📝 Output a Java GC JSON output from a Java GC log
+
+### For Java (>8)
+
+Start Java (>8) with the unified GC log:
+
+```bash
+java -Xlog:gc*:file=gc.log -jar myapp.jar 
+```
+
+Convert the unified GC log with oafp:
+
+```bash
+oafp in=javagc gc.log out=ctable javagcjoin=true
+```
+
+### For Java 8
+
+Start Java with GC log:
+
+```bash
+java -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime -Xloggc:gc.log -jar myapp.jar
+```
+
+Convert the GC log with oafp:
+
+```bash
+oafp in=javagc gc.log out=ctable javagcjoin=true
+```
 
 ---
 
@@ -55,4 +89,14 @@ collect4pid.yaml pid=1105 prefix=myjava
 
 > Don't forget to start nmaguiar/gcutils exposing the Grafana port 3000: ```docker run --rm -ti -p 3000:3000 nmaguiar/gcutils /bin/bash```
 
----j
+---
+
+## 🗄️ Visualize a Java GC log file in Grafana
+
+```bash
+oafp in=javagc gc.log out=json javagcjoin=true | oafp path="[].{ts:to_date(now(mul(sinceStart,\`-1000\`))),gcType:gcType,durationSecs:durationSecs,bGC:beforeGC,aGC:afterGC}" out=openmetrics metricstimestamp=ts metricsprefix=myjava > data.openmetrics
+```
+
+
+
+---
