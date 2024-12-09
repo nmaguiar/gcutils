@@ -42,7 +42,9 @@ RUN mkdir /gcutils\
 # ------------
 COPY scripts /usr/bin
 RUN chmod a+x /usr/bin/start_prom_graf.sh\
- && chmod a+x /usr/bin/openmetrics2prom.sh
+ && chmod a+x /usr/bin/openmetrics2prom.sh\
+ && /openaf/oaf --sb /usr/bin/chooseJava.js\
+ && chmod a+x /usr/bin/chooseJava.js
 
 # Setup welcome message and vars
 # ------------------------------

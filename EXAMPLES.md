@@ -97,6 +97,4 @@ collect4pid.yaml pid=1105 prefix=myjava
 oafp in=javagc gc.log out=json javagcjoin=true | oafp path="[].{ts:to_date(now(mul(sinceStart,\`-1000\`))),gcType:gcType,durationSecs:durationSecs,bGC:beforeGC,aGC:afterGC}" out=openmetrics metricstimestamp=ts metricsprefix=myjava > data.openmetrics
 ```
 
-
-
 ---
