@@ -6,13 +6,14 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
  && apk del openjdk21-jre openjdk21-jre-headless\
- && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip openjdk21 prometheus grafana\
+ && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip strace openjdk21 prometheus grafana\
  && cd /openaf\
  && java -jar openaf.jar --install\
  && /openaf/openaf --update --force\
  && /openaf/opack install py-textual\
  && /openaf/opack install plugin-xls\
  && /openaf/opack install oafproc\
+ && /openaf/opack install nattrmon\
  && /openaf/ojob ojob.io/get job=ojob.io/oaf/colorFormats.yaml > /openaf/ojobs/colorFormats.yaml\
  && /openaf/ojob ojob.io/get job=ojob.io/java/grafana/gc.yaml > /openaf/ojobs/grafana_gc.yaml\
  && /openaf/oaf --sb /openaf/ojobs/colorFormats.yaml\
