@@ -1,0 +1,86 @@
+[2024-08-16T09:22:46.764+0000] CardTable entry size: 512
+[2024-08-16T09:22:46.764+0000] Using G1
+[2024-08-16T09:22:46.766+0000] Version: 21.0.4+7-LTS (release)
+[2024-08-16T09:22:46.766+0000] CPUs: 2 total, 2 available
+[2024-08-16T09:22:46.766+0000] Memory: 7928M
+[2024-08-16T09:22:46.766+0000] Large Page Support: Disabled
+[2024-08-16T09:22:46.766+0000] NUMA Support: Disabled
+[2024-08-16T09:22:46.766+0000] Compressed Oops: Enabled (32-bit)
+[2024-08-16T09:22:46.766+0000] Heap Region Size: 1M
+[2024-08-16T09:22:46.766+0000] Heap Min Capacity: 8M
+[2024-08-16T09:22:46.766+0000] Heap Initial Capacity: 124M
+[2024-08-16T09:22:46.766+0000] Heap Max Capacity: 1984M
+[2024-08-16T09:22:46.766+0000] Pre-touch: Disabled
+[2024-08-16T09:22:46.766+0000] Parallel Workers: 2
+[2024-08-16T09:22:46.766+0000] Concurrent Workers: 1
+[2024-08-16T09:22:46.766+0000] Concurrent Refinement Workers: 2
+[2024-08-16T09:22:46.766+0000] Periodic GC: Disabled
+[2024-08-16T09:22:46.772+0000] CDS archive(s) mapped at: [0x000072c4df000000-0x000072c4dfcae000-0x000072c4dfcae000), size 13295616, SharedBaseAddress: 0x000072c4df000000, ArchiveRelocationMode: 1.
+[2024-08-16T09:22:46.772+0000] Compressed class space mapped at: 0x000072c4e0000000-0x000072c520000000, reserved size: 1073741824
+[2024-08-16T09:22:46.772+0000] Narrow klass base: 0x000072c4df000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+[2024-08-16T09:22:47.012+0000] GC(0) Pause Young (Normal) (G1 Evacuation Pause)
+[2024-08-16T09:22:47.012+0000] GC(0) Using 2 workers of 2 for evacuation
+[2024-08-16T09:22:47.016+0000] GC(0)   Pre Evacuate Collection Set: 0.1ms
+[2024-08-16T09:22:47.016+0000] GC(0)   Merge Heap Roots: 0.1ms
+[2024-08-16T09:22:47.016+0000] GC(0)   Evacuate Collection Set: 3.8ms
+[2024-08-16T09:22:47.016+0000] GC(0)   Post Evacuate Collection Set: 0.2ms
+[2024-08-16T09:22:47.016+0000] GC(0)   Other: 0.2ms
+[2024-08-16T09:22:47.016+0000] GC(0) Eden regions: 6->0(6)
+[2024-08-16T09:22:47.016+0000] GC(0) Survivor regions: 0->1(1)
+[2024-08-16T09:22:47.016+0000] GC(0) Old regions: 2->3
+[2024-08-16T09:22:47.016+0000] GC(0) Humongous regions: 6->3
+[2024-08-16T09:22:47.016+0000] GC(0) Metaspace: 2120K(2304K)->2120K(2304K) NonClass: 1931K(2048K)->1931K(2048K) Class: 188K(256K)->188K(256K)
+[2024-08-16T09:22:47.016+0000] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 13M->5M(126M) 4.501ms
+[2024-08-16T09:22:47.016+0000] GC(0) User=0.00s Sys=0.00s Real=0.01s
+[2024-08-16T09:22:47.178+0000] GC(1) Pause Young (Normal) (G1 Evacuation Pause)
+[2024-08-16T09:22:47.179+0000] GC(1) Using 2 workers of 2 for evacuation
+[2024-08-16T09:22:47.184+0000] GC(1)   Pre Evacuate Collection Set: 0.1ms
+[2024-08-16T09:22:47.184+0000] GC(1)   Merge Heap Roots: 0.0ms
+[2024-08-16T09:22:47.184+0000] GC(1)   Evacuate Collection Set: 5.3ms
+[2024-08-16T09:22:47.184+0000] GC(1)   Post Evacuate Collection Set: 0.2ms
+[2024-08-16T09:22:47.184+0000] GC(1)   Other: 0.1ms
+[2024-08-16T09:22:47.184+0000] GC(1) Eden regions: 6->0(14)
+[2024-08-16T09:22:47.185+0000] GC(1) Survivor regions: 1->1(1)
+[2024-08-16T09:22:47.185+0000] GC(1) Old regions: 3->4
+[2024-08-16T09:22:47.185+0000] GC(1) Humongous regions: 6->3
+[2024-08-16T09:22:47.185+0000] GC(1) Metaspace: 5703K(5952K)->5703K(5952K) NonClass: 5257K(5376K)->5257K(5376K) Class: 446K(576K)->446K(576K)
+[2024-08-16T09:22:47.185+0000] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 14M->6M(126M) 6.132ms
+[2024-08-16T09:22:47.185+0000] GC(1) User=0.01s Sys=0.00s Real=0.01s
+[2024-08-16T09:22:47.607+0000] GC(2) Pause Young (Normal) (G1 Evacuation Pause)
+[2024-08-16T09:22:47.608+0000] GC(2) Using 2 workers of 2 for evacuation
+[2024-08-16T09:22:47.612+0000] GC(2)   Pre Evacuate Collection Set: 0.2ms
+[2024-08-16T09:22:47.612+0000] GC(2)   Merge Heap Roots: 0.0ms
+[2024-08-16T09:22:47.612+0000] GC(2)   Evacuate Collection Set: 4.3ms
+[2024-08-16T09:22:47.612+0000] GC(2)   Post Evacuate Collection Set: 0.4ms
+[2024-08-16T09:22:47.613+0000] GC(2)   Other: 0.0ms
+[2024-08-16T09:22:47.613+0000] GC(2) Eden regions: 14->0(49)
+[2024-08-16T09:22:47.613+0000] GC(2) Survivor regions: 1->2(2)
+[2024-08-16T09:22:47.613+0000] GC(2) Old regions: 4->4
+[2024-08-16T09:22:47.613+0000] GC(2) Humongous regions: 3->3
+[2024-08-16T09:22:47.613+0000] GC(2) Metaspace: 10734K(11008K)->10734K(11008K) NonClass: 9855K(9984K)->9855K(9984K) Class: 879K(1024K)->879K(1024K)
+[2024-08-16T09:22:47.613+0000] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 20M->7M(126M) 5.178ms
+[2024-08-16T09:22:47.613+0000] GC(2) User=0.01s Sys=0.00s Real=0.01s
+[2024-08-16T09:23:08.894+0000] GC(3) Pause Full (System.gc())
+[2024-08-16T09:23:08.894+0000] GC(3) Using 2 workers of 2 for full compaction
+[2024-08-16T09:23:08.894+0000] GC(3) Phase 1: Mark live objects
+[2024-08-16T09:23:08.908+0000] GC(3) Phase 1: Mark live objects 13.990ms
+[2024-08-16T09:23:08.908+0000] GC(3) Phase 2: Prepare compaction
+[2024-08-16T09:23:08.909+0000] GC(3) Phase 2: Prepare compaction 1.288ms
+[2024-08-16T09:23:08.910+0000] GC(3) Phase 3: Adjust pointers
+[2024-08-16T09:23:08.914+0000] GC(3) Phase 3: Adjust pointers 4.874ms
+[2024-08-16T09:23:08.915+0000] GC(3) Phase 4: Compact heap
+[2024-08-16T09:23:08.917+0000] GC(3) Phase 4: Compact heap 1.964ms
+[2024-08-16T09:23:08.917+0000] GC(3) Phase 5: Reset Metadata
+[2024-08-16T09:23:08.918+0000] GC(3) Phase 5: Reset Metadata 1.127ms
+[2024-08-16T09:23:08.920+0000] GC(3) Eden regions: 41->0(18)
+[2024-08-16T09:23:08.920+0000] GC(3) Survivor regions: 2->0(2)
+[2024-08-16T09:23:08.920+0000] GC(3) Old regions: 4->9
+[2024-08-16T09:23:08.920+0000] GC(3) Humongous regions: 3->3
+[2024-08-16T09:23:08.921+0000] GC(3) Metaspace: 20797K(21248K)->20677K(21248K) NonClass: 19109K(19392K)->19022K(19392K) Class: 1687K(1856K)->1654K(1856K)
+[2024-08-16T09:23:08.921+0000] GC(3) Pause Full (System.gc()) 48M->10M(40M) 26.698ms
+[2024-08-16T09:23:08.921+0000] GC(3) User=0.04s Sys=0.00s Real=0.02s
+[2024-08-16T09:23:11.494+0000] Heap
+[2024-08-16T09:23:11.494+0000]  garbage-first heap   total 40960K, used 23047K [0x0000000084000000, 0x0000000100000000)
+[2024-08-16T09:23:11.494+0000]   region size 1024K, 12 young (12288K), 0 survivors (0K)
+[2024-08-16T09:23:11.494+0000]  Metaspace       used 20739K, committed 21248K, reserved 1114112K
+[2024-08-16T09:23:11.494+0000]   class space    used 1659K, committed 1856K, reserved 1048576K

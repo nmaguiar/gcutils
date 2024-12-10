@@ -23,6 +23,8 @@ Start Java (>8) with the unified GC log:
 java -Xlog:gc*:file=gc.log -jar myapp.jar 
 ```
 
+> You can add timestamps by using ```-Xlog:gc*:file=gc.log:time```
+
 Convert the unified GC log with oafp:
 
 ```bash
@@ -34,7 +36,7 @@ oafp in=javagc gc.log out=ctable javagcjoin=true
 Start Java with GC log:
 
 ```bash
-java -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCApplicationConcurrentTime -Xloggc:gc.log -jar myapp.jar
+java -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution -XX:+PrintHeapAtGC -Xloggc:gc.log -jar myapp.jar
 ```
 
 Convert the GC log with oafp:
@@ -93,8 +95,20 @@ collect4pid.yaml pid=1105 prefix=myjava
 
 ## 🗄️ Visualize a Java GC log file in Grafana
 
+If no timestamp is provided:
+
 ```bash
-oafp in=javagc gc.log out=json javagcjoin=true | oafp path="[].{ts:to_date(now(mul(sinceStart,\`-1000\`))),gcType:gcType,durationSecs:durationSecs,bGC:beforeGC,aGC:afterGC}" out=openmetrics metricstimestamp=ts metricsprefix=myjava > data.openmetrics
+oafp in=javagc gc.log out=json | oafp in=ndjson path="[].insert(@, 'timestamp', to_date(now(mul(sinceStart,\`-1000\`))))" out=openmetrics metricstimestamp=timestamp metricsprefix=java > data.openmetrics
+openmetrics2prom.sh data.openmetrics
+rm data.openmetrics
+```
+
+If a timestamp is provided:
+
+```bash
+oafp in=javagc gc.log out=outmetrics metricsprefix=java8 metricstimestamp=timestamp > data.openmetrics
+openmetrics2prom.sh data.openmetrics
+rm data.openmetrics
 ```
 
 ---
