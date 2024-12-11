@@ -4,20 +4,63 @@ help:
   expects: 
   - name     : pid
     desc     : The PID of the Java process to retrieve the data from
-    example  : 1234
+    example  : "1234"
     mandatory: true
   - name     : prefix
     desc     : The prefix to use for the Prometheus metrics
     example  : myapp
     mandatory: false
 
-todo:
-- Init
-- Get data
+init:
+  # These parameters are similar to nattrmon.yaml
+  nattrmonInit: &INIT
+    __NAM_DEBUG              : false  # change to true for debugging
+    __NAM_NEED_CH_PERSISTENCE: false
+    __NAM_LOGCONSOLE         : true
+    __NAM_NOPLUGFILES        : true
+    #__NAM_BUFFERCHANNELS     : true
+    #__NAM_BUFFERBYNUMBER     : 100
+    #__NAM_BUFFERBYTIME       : 1000
+
+nattrmon: &NATTRMON
+- input:
+    # name: Input from PID
+    # cron: "*/1 * * * * *"
+    # exec: |
+    #   var _pdata = global.fn(ow.java.parseHSPerf($from(ow.java.getLocalJavaPIDs()).equals("pid", global.pid).at(0).path))
+    #   var _ts = Math.round(new Date(_pdata.__ts).getTime() / 1000)
+    #   delete _pdata.__ts
+    #   var _data = ow.metrics.fromObj2OpenMetrics(_pdata, global.prefix, _ts)
+
+    #   return { gc4pid: _data }
+    name    : Input from pid
+    cron    : "*/1 * * * * *"
+    execFrom: nInput_CollectAllGC
+
+- output: 
+    # name       : Output to Prometheus
+    # chSubscribe: nattrmon::cvals
+    # exec       : |
+    #   if (isDef(args.k) && args.k.name == "gc4pid") {
+    #     var _f = io.createTempFile("data", ".openmetrics")
+    #     io.writeFileString(_f, args.v.val)
+
+    #     var _r = $sh("/usr/bin/openmetrics2prom.sh " + _f).get(0)
+    #     if (_r.exitcode != 0) {
+    #       cprintErr(_r)
+    #     } else {
+    #       printnl(".")
+    #     }
+    #     io.rm(_f)
+    #   }
+    name       : Output to Prometheus
+    chSubscribe: nattrmon::cvals
+    execFrom   : nOutput_PrometheusFiles
 
 ojob:
   opacks      :
   - openaf: 20241117
+  - nAttrMon
   catch       : printErrnl("[" + job.name + "] "); if (isDef(exception.javaException)) exception.javaException.printStackTrace(); else printErr(exception)
   logToConsole: false   # to change when finished
   daemon      : true        
@@ -25,10 +68,25 @@ ojob:
   - Metrics
   - Java
 
+todo:
+- name: nAttrMon Prepare shutdown
+- name: Init functions
+- name: nAttrMon Init
+  args: *INIT
+- name: nAttrMon Add Plugs
+  args: *NATTRMON
+- name: nAttrMon Start
+
+include:
+- oJob_nAttrMon.yaml
+
 jobs:
-# -----------
-- name : Init
+# ---------------------
+- name : Init functions
   exec : |
+    global.pid = args.pid
+    global.prefix = _$(args.prefix).isString().default("java")
+
     global.fn = function(data) {
       data.__ts = new Date()
 
@@ -67,30 +125,3 @@ jobs:
 
       return data
     }    
-
-# ---------------
-- name : Get data
-  deps : Init
-  type : periodic
-  typeArgs:
-    timeInterval: 1000
-  check:
-    in:
-      pid   : toNumber.isNumber
-      prefix: isString.default("java")
-  exec : |
-    var _pdata = global.fn(ow.java.parseHSPerf($from(ow.java.getLocalJavaPIDs()).equals("pid", args.pid).at(0).path))
-    var _ts = Math.round(new Date(_pdata.__ts).getTime() / 1000)
-    delete _pdata.__ts
-    var _data = ow.metrics.fromObj2OpenMetrics(_pdata, args.prefix, _ts)
-
-    var _f = io.createTempFile("data", ".openmetrics")
-    io.writeFileString(_f, _data)
-
-    var _r = $sh("/usr/bin/openmetrics2prom.sh " + _f).get(0)
-    if (_r.exitcode != 0) {
-      cprintErr(_r)
-    } else {
-      printnl(".")
-    }
-    io.rm(_f)

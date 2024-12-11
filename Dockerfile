@@ -1,7 +1,7 @@
 FROM openaf/oaf:t8 as main
 
 USER root
-COPY ojobs/collect4pid.yaml /openaf/ojobs/collect4pid.yaml
+COPY ojobs/collect4pid_live.yaml /openaf/ojobs/collect4pid_live.yaml
 RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
@@ -18,7 +18,7 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && /openaf/ojob ojob.io/get job=ojob.io/java/grafana/gc.yaml > /openaf/ojobs/grafana_gc.yaml\
  && /openaf/oaf --sb /openaf/ojobs/colorFormats.yaml\
  && /openaf/oaf --sb /openaf/ojobs/grafana_gc.yaml\
- && /openaf/oaf --sb /openaf/ojobs/collect4pid.yaml\
+ && /openaf/oaf --sb /openaf/ojobs/collect4pid_live.yaml\
  && chown -R openaf:0 /openaf\
  && chown openaf:0 /openaf/.opack.db\
  && chmod -R u+rwx,g+rwx,o+rx,o-w /openaf/*\
@@ -32,6 +32,13 @@ RUN /openaf/oaf --bashcompletion all > /openaf/.openaf_completion.sh\
  && chmod a+x /openaf/.openaf_*.sh\
  && chown openaf:openaf /openaf/.openaf_*.sh\
  && echo ". /openaf/.openaf_completion.sh" >> /etc/bash/start.sh
+
+# Copy nattrmon config objects
+# ----------------------------
+COPY nattrmon/objects/nInput_CollectAllGC.js /openaf/nAttrMon/config/objects/nInput_CollectAllGC.js
+COPY nattrmon/objects/nOutput_PrometheusFiles.js /openaf/nAttrMon/config/objects/nOutput_PrometheusFiles.js
+RUN chmod u+rwx,g+rwx /openaf/nAttrMon/config/objects/*\
+ && chown openaf:0 /openaf/nAttrMon/config/objects/*
 
 # Setup gcutils folder
 # ---------------------
