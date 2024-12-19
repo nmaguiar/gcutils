@@ -145,9 +145,9 @@
 │                             ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/
 │                             │                  │        │           A:N 
 │                             │                  │        ╰ V3Score : 9.1 
-│                             │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/
+│                             │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/
 │                             │                           │           A:N 
-│                             │                           ╰ V3Score : 7.7 
+│                             │                           ╰ V3Score : 8.2 
 │                             ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2024/12/11/2 
 │                             │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2024-45337 
 │                             │                  ├ [2]: https://github.com/golang/crypto 
@@ -313,10 +313,11 @@
 │                       │     │                  ├ [12]: https://github.com/moby/moby/security/advisories/GHSA-
 │                       │     │                  │       v23v-6jw2-98fq 
 │                       │     │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2024-41110 
-│                       │     │                  ├ [14]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
-│                       │     │                  ├ [15]: https://www.docker.com/blog/docker-security-advisory-d
+│                       │     │                  ├ [14]: https://ubuntu.com/security/notices/USN-7161-1 
+│                       │     │                  ├ [15]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
+│                       │     │                  ├ [16]: https://www.docker.com/blog/docker-security-advisory-d
 │                       │     │                  │       ocker-engine-authz-plugin 
-│                       │     │                  ╰ [16]: https://www.docker.com/blog/docker-security-advisory-d
+│                       │     │                  ╰ [17]: https://www.docker.com/blog/docker-security-advisory-d
 │                       │     │                          ocker-engine-authz-plugin/ 
 │                       │     ├ PublishedDate   : 2024-07-24T17:15:11.053Z 
 │                       │     ╰ LastModifiedDate: 2024-07-30T20:15:04.567Z 
@@ -453,9 +454,9 @@
 │                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/
 │                       │     │                  │        │           A:N 
 │                       │     │                  │        ╰ V3Score : 9.1 
-│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/
+│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/
 │                       │     │                           │           A:N 
-│                       │     │                           ╰ V3Score : 7.7 
+│                       │     │                           ╰ V3Score : 8.2 
 │                       │     ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2024/12/11/2 
 │                       │     │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2024-45337 
 │                       │     │                  ├ [2]: https://github.com/golang/crypto 
@@ -886,10 +887,11 @@
                         │     │                  ├ [12]: https://github.com/moby/moby/security/advisories/GHSA-
                         │     │                  │       v23v-6jw2-98fq 
                         │     │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2024-41110 
-                        │     │                  ├ [14]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
-                        │     │                  ├ [15]: https://www.docker.com/blog/docker-security-advisory-d
+                        │     │                  ├ [14]: https://ubuntu.com/security/notices/USN-7161-1 
+                        │     │                  ├ [15]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
+                        │     │                  ├ [16]: https://www.docker.com/blog/docker-security-advisory-d
                         │     │                  │       ocker-engine-authz-plugin 
-                        │     │                  ╰ [16]: https://www.docker.com/blog/docker-security-advisory-d
+                        │     │                  ╰ [17]: https://www.docker.com/blog/docker-security-advisory-d
                         │     │                          ocker-engine-authz-plugin/ 
                         │     ├ PublishedDate   : 2024-07-24T17:15:11.053Z 
                         │     ╰ LastModifiedDate: 2024-07-30T20:15:04.567Z 
@@ -1026,9 +1028,9 @@
                         │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/
                         │     │                  │        │           A:N 
                         │     │                  │        ╰ V3Score : 9.1 
-                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/
+                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/
                         │     │                           │           A:N 
-                        │     │                           ╰ V3Score : 7.7 
+                        │     │                           ╰ V3Score : 8.2 
                         │     ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2024/12/11/2 
                         │     │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2024-45337 
                         │     │                  ├ [2]: https://github.com/golang/crypto 
