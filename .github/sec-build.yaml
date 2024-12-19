@@ -85,8 +85,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 9.1
       redhat:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
-        V3Score: 7.7
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N
+        V3Score: 8.2
     References:
     - http://www.openwall.com/lists/oss-security/2024/12/11/2
     - https://access.redhat.com/security/cve/CVE-2024-45337
@@ -217,6 +217,7 @@
     - https://github.com/moby/moby/commit/fc274cd2ff4cf3b48c91697fb327dd1fb95588fb
     - https://github.com/moby/moby/security/advisories/GHSA-v23v-6jw2-98fq
     - https://nvd.nist.gov/vuln/detail/CVE-2024-41110
+    - https://ubuntu.com/security/notices/USN-7161-1
     - https://www.cve.org/CVERecord?id=CVE-2024-41110
     - https://www.docker.com/blog/docker-security-advisory-docker-engine-authz-plugin
     - https://www.docker.com/blog/docker-security-advisory-docker-engine-authz-plugin/
@@ -313,8 +314,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 9.1
       redhat:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
-        V3Score: 7.7
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N
+        V3Score: 8.2
     References:
     - http://www.openwall.com/lists/oss-security/2024/12/11/2
     - https://access.redhat.com/security/cve/CVE-2024-45337
@@ -688,6 +689,7 @@
     - https://github.com/moby/moby/commit/fc274cd2ff4cf3b48c91697fb327dd1fb95588fb
     - https://github.com/moby/moby/security/advisories/GHSA-v23v-6jw2-98fq
     - https://nvd.nist.gov/vuln/detail/CVE-2024-41110
+    - https://ubuntu.com/security/notices/USN-7161-1
     - https://www.cve.org/CVERecord?id=CVE-2024-41110
     - https://www.docker.com/blog/docker-security-advisory-docker-engine-authz-plugin
     - https://www.docker.com/blog/docker-security-advisory-docker-engine-authz-plugin/
@@ -784,8 +786,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 9.1
       redhat:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N
-        V3Score: 7.7
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N
+        V3Score: 8.2
     References:
     - http://www.openwall.com/lists/oss-security/2024/12/11/2
     - https://access.redhat.com/security/cve/CVE-2024-45337
