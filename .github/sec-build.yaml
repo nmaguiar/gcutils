@@ -14,6 +14,44 @@
   Class: lang-pkgs
   Type: gobinary
   Vulnerabilities:
+  - VulnerabilityID: GHSA-32gq-x56h-299c
+    PkgID: filippo.io/age@v1.1.1
+    PkgName: filippo.io/age
+    PkgIdentifier:
+      PURL: pkg:golang/filippo.io/age@v1.1.1
+      UID: ffe56ba9c6428ea4
+    InstalledVersion: v1.1.1
+    FixedVersion: 1.2.1
+    Status: fixed
+    Layer:
+      Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d6219d2c2d5315548a30
+      DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37ca2821c3f1148f992db
+    SeveritySource: ghsa
+    PrimaryURL: https://github.com/advisories/GHSA-32gq-x56h-299c
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Title: age vulnerable to malicious plugin names, recipients, or identities causing arbitrary binary execution
+    Description: |-
+      A plugin name containing a path separator may allow an attacker to execute an arbitrary binary.
+
+      Such a plugin name can be provided to the age CLI through an attacker-controlled recipient or identity string, or to the [`plugin.NewIdentity`](https://pkg.go.dev/filippo.io/age/plugin#NewIdentity), [`plugin.NewIdentityWithoutData`](https://pkg.go.dev/filippo.io/age/plugin#NewIdentityWithoutData), or [`plugin.NewRecipient`](https://pkg.go.dev/filippo.io/age/plugin#NewRecipient) APIs.
+
+      On UNIX systems, a directory matching `${TMPDIR:-/tmp}/age-plugin-*` needs to exist for the attack to succeed.
+
+      The binary is executed with a single flag, either `--age-plugin=recipient-v1` or `--age-plugin=identity-v1`. The standard input includes the recipient or identity string, and the random file key (if encrypting) or the header of the file (if decrypting). The format is constrained by the [age-plugin](https://c2sp.org/age-plugin) protocol.
+
+      An equivalent issue was fixed by the [rage](https://github.com/str4d/rage) project, see advisory [GHSA-4fg7-vxc8-qx5w](https://github.com/str4d/rage/security/advisories/GHSA-4fg7-vxc8-qx5w).
+
+      Thanks to ⬡-49016 for reporting this.
+    Severity: MEDIUM
+    VendorSeverity:
+      ghsa: 2
+    References:
+    - https://github.com/FiloSottile/age
+    - https://github.com/FiloSottile/age/commit/482cf6fc9babd3ab06f6606762aac10447222201
+    - https://github.com/FiloSottile/age/security/advisories/GHSA-32gq-x56h-299c
   - VulnerabilityID: CVE-2024-51744
     PkgID: github.com/golang-jwt/jwt/v4@v4.5.0
     PkgName: github.com/golang-jwt/jwt/v4
@@ -100,6 +138,39 @@
     - https://www.cve.org/CVERecord?id=CVE-2024-45337
     PublishedDate: '2024-12-12T02:02:07.97Z'
     LastModifiedDate: '2024-12-12T21:15:08.5Z'
+  - VulnerabilityID: CVE-2024-45338
+    PkgID: golang.org/x/net@v0.29.0
+    PkgName: golang.org/x/net
+    PkgIdentifier:
+      PURL: pkg:golang/golang.org/x/net@v0.29.0
+      UID: 9f98ff642205d4b
+    InstalledVersion: v0.29.0
+    FixedVersion: 0.33.0
+    Status: fixed
+    Layer:
+      Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d6219d2c2d5315548a30
+      DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37ca2821c3f1148f992db
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Title: Non-linear parsing of case-insensitive content in golang.org/x/net/html
+    Description: An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.
+    Severity: HIGH
+    VendorSeverity:
+      ghsa: 3
+    References:
+    - https://cs.opensource.google/go/x/net
+    - https://github.com/golang/go/issues/70906
+    - https://go.dev/cl/637536
+    - https://go.dev/issue/70906
+    - https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-45338
+    - https://pkg.go.dev/vuln/GO-2024-3333
+    PublishedDate: '2024-12-18T21:15:08.173Z'
+    LastModifiedDate: '2024-12-18T21:15:08.173Z'
 - Target: usr/bin/prometheus
   Class: lang-pkgs
   Type: gobinary
@@ -329,6 +400,39 @@
     - https://www.cve.org/CVERecord?id=CVE-2024-45337
     PublishedDate: '2024-12-12T02:02:07.97Z'
     LastModifiedDate: '2024-12-12T21:15:08.5Z'
+  - VulnerabilityID: CVE-2024-45338
+    PkgID: golang.org/x/net@v0.26.0
+    PkgName: golang.org/x/net
+    PkgIdentifier:
+      PURL: pkg:golang/golang.org/x/net@v0.26.0
+      UID: 8c04148890da6da2
+    InstalledVersion: v0.26.0
+    FixedVersion: 0.33.0
+    Status: fixed
+    Layer:
+      Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d6219d2c2d5315548a30
+      DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37ca2821c3f1148f992db
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Title: Non-linear parsing of case-insensitive content in golang.org/x/net/html
+    Description: An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.
+    Severity: HIGH
+    VendorSeverity:
+      ghsa: 3
+    References:
+    - https://cs.opensource.google/go/x/net
+    - https://github.com/golang/go/issues/70906
+    - https://go.dev/cl/637536
+    - https://go.dev/issue/70906
+    - https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-45338
+    - https://pkg.go.dev/vuln/GO-2024-3333
+    PublishedDate: '2024-12-18T21:15:08.173Z'
+    LastModifiedDate: '2024-12-18T21:15:08.173Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
     PkgID: google.golang.org/grpc@v1.64.0
     PkgName: google.golang.org/grpc
@@ -405,12 +509,10 @@
     - https://access.redhat.com/security/cve/CVE-2024-34156
     - https://bugzilla.redhat.com/2310528
     - https://bugzilla.redhat.com/2318052
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2262921
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310528
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-1394
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34156
     - https://errata.almalinux.org/9/ALSA-2024-9473.html
-    - https://errata.rockylinux.org/RLSA-2024:7262
+    - https://errata.rockylinux.org/RLSA-2024:7204
     - https://github.com/golang/go/commit/2092294f2b097c5828f4eace6c98a322c1510b01 (go1.22.7)
     - https://github.com/golang/go/commit/fa8ff1a46deb6c816304441ec6740ec112e19012 (go1.23.1)
     - https://go.dev/cl/611239
@@ -801,6 +903,39 @@
     - https://www.cve.org/CVERecord?id=CVE-2024-45337
     PublishedDate: '2024-12-12T02:02:07.97Z'
     LastModifiedDate: '2024-12-12T21:15:08.5Z'
+  - VulnerabilityID: CVE-2024-45338
+    PkgID: golang.org/x/net@v0.26.0
+    PkgName: golang.org/x/net
+    PkgIdentifier:
+      PURL: pkg:golang/golang.org/x/net@v0.26.0
+      UID: 4075f6667d6d269e
+    InstalledVersion: v0.26.0
+    FixedVersion: 0.33.0
+    Status: fixed
+    Layer:
+      Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d6219d2c2d5315548a30
+      DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37ca2821c3f1148f992db
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Title: Non-linear parsing of case-insensitive content in golang.org/x/net/html
+    Description: An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.
+    Severity: HIGH
+    VendorSeverity:
+      ghsa: 3
+    References:
+    - https://cs.opensource.google/go/x/net
+    - https://github.com/golang/go/issues/70906
+    - https://go.dev/cl/637536
+    - https://go.dev/issue/70906
+    - https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-45338
+    - https://pkg.go.dev/vuln/GO-2024-3333
+    PublishedDate: '2024-12-18T21:15:08.173Z'
+    LastModifiedDate: '2024-12-18T21:15:08.173Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
     PkgID: google.golang.org/grpc@v1.64.0
     PkgName: google.golang.org/grpc
@@ -877,12 +1012,10 @@
     - https://access.redhat.com/security/cve/CVE-2024-34156
     - https://bugzilla.redhat.com/2310528
     - https://bugzilla.redhat.com/2318052
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2262921
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310528
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-1394
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34156
     - https://errata.almalinux.org/9/ALSA-2024-9473.html
-    - https://errata.rockylinux.org/RLSA-2024:7262
+    - https://errata.rockylinux.org/RLSA-2024:7204
     - https://github.com/golang/go/commit/2092294f2b097c5828f4eace6c98a322c1510b01 (go1.22.7)
     - https://github.com/golang/go/commit/fa8ff1a46deb6c816304441ec6740ec112e19012 (go1.23.1)
     - https://go.dev/cl/611239
