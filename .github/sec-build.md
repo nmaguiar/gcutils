@@ -14,7 +14,59 @@
 ├ [4] ╭ Target         : usr/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2024-51744 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : GHSA-32gq-x56h-299c 
+│                       │     ├ PkgID           : filippo.io/age@v1.1.1 
+│                       │     ├ PkgName         : filippo.io/age 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/filippo.io/age@v1.1.1 
+│                       │     │                  ╰ UID : ffe56ba9c6428ea4 
+│                       │     ├ InstalledVersion: v1.1.1 
+│                       │     ├ FixedVersion    : 1.2.1 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d
+│                       │     │                  │         6219d2c2d5315548a30 
+│                       │     │                  ╰ DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37
+│                       │     │                            ca2821c3f1148f992db 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-32gq-x56h-299c 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : age vulnerable to malicious plugin names, recipients, or
+│                       │     │                   identities causing arbitrary binary execution 
+│                       │     ├ Description     : A plugin name containing a path separator may allow an
+│                       │     │                   attacker to execute an arbitrary binary.
+│                       │     │                   
+│                       │     │                   Such a plugin name can be provided to the age CLI through an
+│                       │     │                   attacker-controlled recipient or identity string, or to the
+│                       │     │                   [`plugin.NewIdentity`](https://pkg.go.dev/filippo.io/age/plug
+│                       │     │                   in#NewIdentity),
+│                       │     │                   [`plugin.NewIdentityWithoutData`](https://pkg.go.dev/filippo.
+│                       │     │                   io/age/plugin#NewIdentityWithoutData), or
+│                       │     │                   [`plugin.NewRecipient`](https://pkg.go.dev/filippo.io/age/plu
+│                       │     │                   gin#NewRecipient) APIs.
+│                       │     │                   On UNIX systems, a directory matching
+│                       │     │                   `${TMPDIR:-/tmp}/age-plugin-*` needs to exist for the attack
+│                       │     │                   to succeed.
+│                       │     │                   The binary is executed with a single flag, either
+│                       │     │                   `--age-plugin=recipient-v1` or `--age-plugin=identity-v1`.
+│                       │     │                   The standard input includes the recipient or identity string,
+│                       │     │                    and the random file key (if encrypting) or the header of the
+│                       │     │                    file (if decrypting). The format is constrained by the
+│                       │     │                   [age-plugin](https://c2sp.org/age-plugin) protocol.
+│                       │     │                   An equivalent issue was fixed by the
+│                       │     │                   [rage](https://github.com/str4d/rage) project, see advisory
+│                       │     │                   [GHSA-4fg7-vxc8-qx5w](https://github.com/str4d/rage/security/
+│                       │     │                   advisories/GHSA-4fg7-vxc8-qx5w).
+│                       │     │                   Thanks to ⬡-49016 for reporting this. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ╰ References       ╭ [0]: https://github.com/FiloSottile/age 
+│                       │                        ├ [1]: https://github.com/FiloSottile/age/commit/482cf6fc9babd
+│                       │                        │      3ab06f6606762aac10447222201 
+│                       │                        ╰ [2]: https://github.com/FiloSottile/age/security/advisories/
+│                       │                               GHSA-32gq-x56h-299c 
+│                       ├ [1] ╭ VulnerabilityID : CVE-2024-51744 
 │                       │     ├ PkgID           : github.com/golang-jwt/jwt/v4@v4.5.0 
 │                       │     ├ PkgName         : github.com/golang-jwt/jwt/v4 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v4@v4.5.0 
@@ -78,90 +130,126 @@
 │                       │     │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-51744 
 │                       │     ├ PublishedDate   : 2024-11-04T22:15:03.997Z 
 │                       │     ╰ LastModifiedDate: 2024-11-05T16:04:26.053Z 
-│                       ╰ [1] ╭ VulnerabilityID : CVE-2024-45337 
-│                             ├ PkgID           : golang.org/x/crypto@v0.27.0 
-│                             ├ PkgName         : golang.org/x/crypto 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.27.0 
-│                             │                  ╰ UID : 44502bfc732bdb51 
-│                             ├ InstalledVersion: v0.27.0 
-│                             ├ FixedVersion    : 0.31.0 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2024-45337 
+│                       │     ├ PkgID           : golang.org/x/crypto@v0.27.0 
+│                       │     ├ PkgName         : golang.org/x/crypto 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.27.0 
+│                       │     │                  ╰ UID : 44502bfc732bdb51 
+│                       │     ├ InstalledVersion: v0.27.0 
+│                       │     ├ FixedVersion    : 0.31.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d
+│                       │     │                  │         6219d2c2d5315548a30 
+│                       │     │                  ╰ DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37
+│                       │     │                            ca2821c3f1148f992db 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : golang.org/x/crypto/ssh: Misuse of
+│                       │     │                   ServerConfig.PublicKeyCallback may cause authorization bypass
+│                       │     │                    in golang.org/x/crypto 
+│                       │     ├ Description     : Applications and libraries which misuse the
+│                       │     │                   ServerConfig.PublicKeyCallback callback may be susceptible to
+│                       │     │                    an authorization bypass. The documentation for
+│                       │     │                   ServerConfig.PublicKeyCallback says that "A call to this
+│                       │     │                   function does not guarantee that the key offered is in fact
+│                       │     │                   used to authenticate." Specifically, the SSH protocol allows
+│                       │     │                   clients to inquire about whether a public key is acceptable
+│                       │     │                   before proving control of the corresponding private key.
+│                       │     │                   PublicKeyCallback may be called with multiple keys, and the
+│                       │     │                   order in which the keys were provided cannot be used to infer
+│                       │     │                    which key the client successfully authenticated with, if
+│                       │     │                   any. Some applications, which store the key(s) passed to
+│                       │     │                   PublicKeyCallback (or derived information) and make security
+│                       │     │                   relevant determinations based on it once the connection is
+│                       │     │                   established, may make incorrect assumptions. For example, an
+│                       │     │                   attacker may send public keys A and B, and then authenticate
+│                       │     │                   with A. PublicKeyCallback would be called only twice, first
+│                       │     │                   with A and then with B. A vulnerable application may then
+│                       │     │                   make authorization decisions based on key B for which the
+│                       │     │                   attacker does not actually control the private key. Since
+│                       │     │                   this API is widely misused, as a partial mitigation
+│                       │     │                   golang.org/x/cry...@v0.31.0 enforces the property that, when
+│                       │     │                   successfully authenticating via public key, the last key
+│                       │     │                   passed to ServerConfig.PublicKeyCallback will be the key used
+│                       │     │                    to authenticate the connection. PublicKeyCallback will now
+│                       │     │                   be called multiple times with the same key, if necessary.
+│                       │     │                   Note that the client may still not control the last key
+│                       │     │                   passed to PublicKeyCallback if the connection is then
+│                       │     │                   authenticated with a different method, such as
+│                       │     │                   PasswordCallback, KeyboardInteractiveCallback, or
+│                       │     │                   NoClientAuth. Users should be using the Extensions field of
+│                       │     │                   the Permissions return value from the various authentication
+│                       │     │                   callbacks to record data associated with the authentication
+│                       │     │                   attempt instead of referencing external state. Once the
+│                       │     │                   connection is established the state corresponding to the
+│                       │     │                   successful authentication attempt can be retrieved via the
+│                       │     │                   ServerConn.Permissions field. Note that some third-party
+│                       │     │                   libraries misuse the Permissions type by sharing it across
+│                       │     │                   authentication attempts; users of third-party libraries
+│                       │     │                   should refer to the relevant projects for guidance. 
+│                       │     ├ Severity        : CRITICAL 
+│                       │     ├ VendorSeverity   ╭ ghsa  : 4 
+│                       │     │                  ╰ redhat: 3 
+│                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/
+│                       │     │                  │        │           A:N 
+│                       │     │                  │        ╰ V3Score : 9.1 
+│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/
+│                       │     │                           │           A:N 
+│                       │     │                           ╰ V3Score : 8.2 
+│                       │     ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2024/12/11/2 
+│                       │     │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2024-45337 
+│                       │     │                  ├ [2]: https://github.com/golang/crypto 
+│                       │     │                  ├ [3]: https://github.com/golang/crypto/commit/b4f1988a35dee11
+│                       │     │                  │      ec3e05d6bf3e90b695fbd8909 
+│                       │     │                  ├ [4]: https://go.dev/cl/635315 
+│                       │     │                  ├ [5]: https://go.dev/issue/70779 
+│                       │     │                  ├ [6]: https://groups.google.com/g/golang-announce/c/-nPEi39gI
+│                       │     │                  │      4Q/m/cGVPJCqdAQAJ 
+│                       │     │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2024-45337 
+│                       │     │                  ├ [8]: https://pkg.go.dev/vuln/GO-2024-3321 
+│                       │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
+│                       │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
+│                       │     ╰ LastModifiedDate: 2024-12-12T21:15:08.5Z 
+│                       ╰ [3] ╭ VulnerabilityID : CVE-2024-45338 
+│                             ├ PkgID           : golang.org/x/net@v0.29.0 
+│                             ├ PkgName         : golang.org/x/net 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.29.0 
+│                             │                  ╰ UID : 9f98ff642205d4b 
+│                             ├ InstalledVersion: v0.29.0 
+│                             ├ FixedVersion    : 0.33.0 
 │                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d
 │                             │                  │         6219d2c2d5315548a30 
 │                             │                  ╰ DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37
 │                             │                            ca2821c3f1148f992db 
 │                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45338 
 │                             ├ DataSource       ╭ ID  : ghsa 
 │                             │                  ├ Name: GitHub Security Advisory Go 
 │                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                             │                          osystem%3Ago 
-│                             ├ Title           : golang.org/x/crypto/ssh: Misuse of
-│                             │                   ServerConfig.PublicKeyCallback may cause authorization bypass
-│                             │                    in golang.org/x/crypto 
-│                             ├ Description     : Applications and libraries which misuse the
-│                             │                   ServerConfig.PublicKeyCallback callback may be susceptible to
-│                             │                    an authorization bypass. The documentation for
-│                             │                   ServerConfig.PublicKeyCallback says that "A call to this
-│                             │                   function does not guarantee that the key offered is in fact
-│                             │                   used to authenticate." Specifically, the SSH protocol allows
-│                             │                   clients to inquire about whether a public key is acceptable
-│                             │                   before proving control of the corresponding private key.
-│                             │                   PublicKeyCallback may be called with multiple keys, and the
-│                             │                   order in which the keys were provided cannot be used to infer
-│                             │                    which key the client successfully authenticated with, if
-│                             │                   any. Some applications, which store the key(s) passed to
-│                             │                   PublicKeyCallback (or derived information) and make security
-│                             │                   relevant determinations based on it once the connection is
-│                             │                   established, may make incorrect assumptions. For example, an
-│                             │                   attacker may send public keys A and B, and then authenticate
-│                             │                   with A. PublicKeyCallback would be called only twice, first
-│                             │                   with A and then with B. A vulnerable application may then
-│                             │                   make authorization decisions based on key B for which the
-│                             │                   attacker does not actually control the private key. Since
-│                             │                   this API is widely misused, as a partial mitigation
-│                             │                   golang.org/x/cry...@v0.31.0 enforces the property that, when
-│                             │                   successfully authenticating via public key, the last key
-│                             │                   passed to ServerConfig.PublicKeyCallback will be the key used
-│                             │                    to authenticate the connection. PublicKeyCallback will now
-│                             │                   be called multiple times with the same key, if necessary.
-│                             │                   Note that the client may still not control the last key
-│                             │                   passed to PublicKeyCallback if the connection is then
-│                             │                   authenticated with a different method, such as
-│                             │                   PasswordCallback, KeyboardInteractiveCallback, or
-│                             │                   NoClientAuth. Users should be using the Extensions field of
-│                             │                   the Permissions return value from the various authentication
-│                             │                   callbacks to record data associated with the authentication
-│                             │                   attempt instead of referencing external state. Once the
-│                             │                   connection is established the state corresponding to the
-│                             │                   successful authentication attempt can be retrieved via the
-│                             │                   ServerConn.Permissions field. Note that some third-party
-│                             │                   libraries misuse the Permissions type by sharing it across
-│                             │                   authentication attempts; users of third-party libraries
-│                             │                   should refer to the relevant projects for guidance. 
-│                             ├ Severity        : CRITICAL 
-│                             ├ VendorSeverity   ╭ ghsa  : 4 
-│                             │                  ╰ redhat: 3 
-│                             ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/
-│                             │                  │        │           A:N 
-│                             │                  │        ╰ V3Score : 9.1 
-│                             │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/
-│                             │                           │           A:N 
-│                             │                           ╰ V3Score : 8.2 
-│                             ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2024/12/11/2 
-│                             │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2024-45337 
-│                             │                  ├ [2]: https://github.com/golang/crypto 
-│                             │                  ├ [3]: https://github.com/golang/crypto/commit/b4f1988a35dee11
-│                             │                  │      ec3e05d6bf3e90b695fbd8909 
-│                             │                  ├ [4]: https://go.dev/cl/635315 
-│                             │                  ├ [5]: https://go.dev/issue/70779 
-│                             │                  ├ [6]: https://groups.google.com/g/golang-announce/c/-nPEi39gI
-│                             │                  │      4Q/m/cGVPJCqdAQAJ 
-│                             │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2024-45337 
-│                             │                  ├ [8]: https://pkg.go.dev/vuln/GO-2024-3321 
-│                             │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
-│                             ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
-│                             ╰ LastModifiedDate: 2024-12-12T21:15:08.5Z 
+│                             ├ Title           : Non-linear parsing of case-insensitive content in
+│                             │                   golang.org/x/net/html 
+│                             ├ Description     : An attacker can craft an input to the Parse functions that
+│                             │                   would be processed non-linearly with respect to its length,
+│                             │                   resulting in extremely slow parsing. This could cause a
+│                             │                   denial of service. 
+│                             ├ Severity        : HIGH 
+│                             ├ VendorSeverity   ─ ghsa: 3 
+│                             ├ References       ╭ [0]: https://cs.opensource.google/go/x/net 
+│                             │                  ├ [1]: https://github.com/golang/go/issues/70906 
+│                             │                  ├ [2]: https://go.dev/cl/637536 
+│                             │                  ├ [3]: https://go.dev/issue/70906 
+│                             │                  ├ [4]: https://groups.google.com/g/golang-announce/c/wSCRmFnNm
+│                             │                  │      PA/m/Lvcd0mRMAwAJ 
+│                             │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2024-45338 
+│                             │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2024-3333 
+│                             ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
+│                             ╰ LastModifiedDate: 2024-12-18T21:15:08.173Z 
 ├ [5] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -471,7 +559,43 @@
 │                       │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
 │                       │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
 │                       │     ╰ LastModifiedDate: 2024-12-12T21:15:08.5Z 
-│                       ├ [4] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+│                       ├ [4] ╭ VulnerabilityID : CVE-2024-45338 
+│                       │     ├ PkgID           : golang.org/x/net@v0.26.0 
+│                       │     ├ PkgName         : golang.org/x/net 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.26.0 
+│                       │     │                  ╰ UID : 8c04148890da6da2 
+│                       │     ├ InstalledVersion: v0.26.0 
+│                       │     ├ FixedVersion    : 0.33.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d
+│                       │     │                  │         6219d2c2d5315548a30 
+│                       │     │                  ╰ DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37
+│                       │     │                            ca2821c3f1148f992db 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45338 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : Non-linear parsing of case-insensitive content in
+│                       │     │                   golang.org/x/net/html 
+│                       │     ├ Description     : An attacker can craft an input to the Parse functions that
+│                       │     │                   would be processed non-linearly with respect to its length,
+│                       │     │                   resulting in extremely slow parsing. This could cause a
+│                       │     │                   denial of service. 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ VendorSeverity   ─ ghsa: 3 
+│                       │     ├ References       ╭ [0]: https://cs.opensource.google/go/x/net 
+│                       │     │                  ├ [1]: https://github.com/golang/go/issues/70906 
+│                       │     │                  ├ [2]: https://go.dev/cl/637536 
+│                       │     │                  ├ [3]: https://go.dev/issue/70906 
+│                       │     │                  ├ [4]: https://groups.google.com/g/golang-announce/c/wSCRmFnNm
+│                       │     │                  │      PA/m/Lvcd0mRMAwAJ 
+│                       │     │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2024-45338 
+│                       │     │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2024-3333 
+│                       │     ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
+│                       │     ╰ LastModifiedDate: 2024-12-18T21:15:08.173Z 
+│                       ├ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
 │                       │     ├ PkgID           : google.golang.org/grpc@v1.64.0 
 │                       │     ├ PkgName         : google.golang.org/grpc 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
@@ -511,7 +635,7 @@
 │                       │                        │      a7786754d1fe05264c3021eb 
 │                       │                        ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
 │                       │                               A-xr7q-jx4m-x55m 
-│                       ├ [5] ╭ VulnerabilityID : CVE-2024-34156 
+│                       ├ [6] ╭ VulnerabilityID : CVE-2024-34156 
 │                       │     ├ PkgID           : stdlib@v1.22.6 
 │                       │     ├ PkgName         : stdlib 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.22.6 
@@ -552,34 +676,31 @@
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-34156 
 │                       │     │                  ├ [2] : https://bugzilla.redhat.com/2310528 
 │                       │     │                  ├ [3] : https://bugzilla.redhat.com/2318052 
-│                       │     │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2262921 
-│                       │     │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=2310528 
-│                       │     │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-202
-│                       │     │                  │       4-1394 
-│                       │     │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-202
+│                       │     │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2310528 
+│                       │     │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-202
 │                       │     │                  │       4-34156 
-│                       │     │                  ├ [8] : https://errata.almalinux.org/9/ALSA-2024-9473.html 
-│                       │     │                  ├ [9] : https://errata.rockylinux.org/RLSA-2024:7262 
-│                       │     │                  ├ [10]: https://github.com/golang/go/commit/2092294f2b097c5828
+│                       │     │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2024-9473.html 
+│                       │     │                  ├ [7] : https://errata.rockylinux.org/RLSA-2024:7204 
+│                       │     │                  ├ [8] : https://github.com/golang/go/commit/2092294f2b097c5828
 │                       │     │                  │       f4eace6c98a322c1510b01 (go1.22.7) 
-│                       │     │                  ├ [11]: https://github.com/golang/go/commit/fa8ff1a46deb6c8163
+│                       │     │                  ├ [9] : https://github.com/golang/go/commit/fa8ff1a46deb6c8163
 │                       │     │                  │       04441ec6740ec112e19012 (go1.23.1) 
-│                       │     │                  ├ [12]: https://go.dev/cl/611239 
-│                       │     │                  ├ [13]: https://go.dev/issue/69139 
-│                       │     │                  ├ [14]: https://groups.google.com/g/golang-announce/c/K-cEzDeC
+│                       │     │                  ├ [10]: https://go.dev/cl/611239 
+│                       │     │                  ├ [11]: https://go.dev/issue/69139 
+│                       │     │                  ├ [12]: https://groups.google.com/g/golang-announce/c/K-cEzDeC
 │                       │     │                  │       tpc 
-│                       │     │                  ├ [15]: https://groups.google.com/g/golang-dev/c/S9POB9NCTdk 
-│                       │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-34156.html 
-│                       │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9473.html 
-│                       │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-34156 
-│                       │     │                  ├ [19]: https://pkg.go.dev/vuln/GO-2024-3106 
-│                       │     │                  ├ [20]: https://ubuntu.com/security/notices/USN-7081-1 
-│                       │     │                  ├ [21]: https://ubuntu.com/security/notices/USN-7109-1 
-│                       │     │                  ├ [22]: https://ubuntu.com/security/notices/USN-7111-1 
-│                       │     │                  ╰ [23]: https://www.cve.org/CVERecord?id=CVE-2024-34156 
+│                       │     │                  ├ [13]: https://groups.google.com/g/golang-dev/c/S9POB9NCTdk 
+│                       │     │                  ├ [14]: https://linux.oracle.com/cve/CVE-2024-34156.html 
+│                       │     │                  ├ [15]: https://linux.oracle.com/errata/ELSA-2024-9473.html 
+│                       │     │                  ├ [16]: https://nvd.nist.gov/vuln/detail/CVE-2024-34156 
+│                       │     │                  ├ [17]: https://pkg.go.dev/vuln/GO-2024-3106 
+│                       │     │                  ├ [18]: https://ubuntu.com/security/notices/USN-7081-1 
+│                       │     │                  ├ [19]: https://ubuntu.com/security/notices/USN-7109-1 
+│                       │     │                  ├ [20]: https://ubuntu.com/security/notices/USN-7111-1 
+│                       │     │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2024-34156 
 │                       │     ├ PublishedDate   : 2024-09-06T21:15:12.02Z 
 │                       │     ╰ LastModifiedDate: 2024-09-09T15:35:07.573Z 
-│                       ├ [6] ╭ VulnerabilityID : CVE-2024-34155 
+│                       ├ [7] ╭ VulnerabilityID : CVE-2024-34155 
 │                       │     ├ PkgID           : stdlib@v1.22.6 
 │                       │     ├ PkgName         : stdlib 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.22.6 
@@ -657,7 +778,7 @@
 │                       │     │                  ╰ [32]: https://www.cve.org/CVERecord?id=CVE-2024-34155 
 │                       │     ├ PublishedDate   : 2024-09-06T21:15:11.947Z 
 │                       │     ╰ LastModifiedDate: 2024-11-04T17:35:17.887Z 
-│                       ╰ [7] ╭ VulnerabilityID : CVE-2024-34158 
+│                       ╰ [8] ╭ VulnerabilityID : CVE-2024-34158 
 │                             ├ PkgID           : stdlib@v1.22.6 
 │                             ├ PkgName         : stdlib 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.22.6 
@@ -1045,7 +1166,43 @@
                         │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
                         │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
                         │     ╰ LastModifiedDate: 2024-12-12T21:15:08.5Z 
-                        ├ [4] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+                        ├ [4] ╭ VulnerabilityID : CVE-2024-45338 
+                        │     ├ PkgID           : golang.org/x/net@v0.26.0 
+                        │     ├ PkgName         : golang.org/x/net 
+                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.26.0 
+                        │     │                  ╰ UID : 4075f6667d6d269e 
+                        │     ├ InstalledVersion: v0.26.0 
+                        │     ├ FixedVersion    : 0.33.0 
+                        │     ├ Status          : fixed 
+                        │     ├ Layer            ╭ Digest: sha256:75de327f4795215e78c22b9a1e9e42d681bafde21f76d
+                        │     │                  │         6219d2c2d5315548a30 
+                        │     │                  ╰ DiffID: sha256:9ec26a980960c2cadf66dff3e523b115d5009241c2c37
+                        │     │                            ca2821c3f1148f992db 
+                        │     ├ SeveritySource  : ghsa 
+                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45338 
+                        │     ├ DataSource       ╭ ID  : ghsa 
+                        │     │                  ├ Name: GitHub Security Advisory Go 
+                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+                        │     │                          osystem%3Ago 
+                        │     ├ Title           : Non-linear parsing of case-insensitive content in
+                        │     │                   golang.org/x/net/html 
+                        │     ├ Description     : An attacker can craft an input to the Parse functions that
+                        │     │                   would be processed non-linearly with respect to its length,
+                        │     │                   resulting in extremely slow parsing. This could cause a
+                        │     │                   denial of service. 
+                        │     ├ Severity        : HIGH 
+                        │     ├ VendorSeverity   ─ ghsa: 3 
+                        │     ├ References       ╭ [0]: https://cs.opensource.google/go/x/net 
+                        │     │                  ├ [1]: https://github.com/golang/go/issues/70906 
+                        │     │                  ├ [2]: https://go.dev/cl/637536 
+                        │     │                  ├ [3]: https://go.dev/issue/70906 
+                        │     │                  ├ [4]: https://groups.google.com/g/golang-announce/c/wSCRmFnNm
+                        │     │                  │      PA/m/Lvcd0mRMAwAJ 
+                        │     │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2024-45338 
+                        │     │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2024-3333 
+                        │     ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
+                        │     ╰ LastModifiedDate: 2024-12-18T21:15:08.173Z 
+                        ├ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
                         │     ├ PkgID           : google.golang.org/grpc@v1.64.0 
                         │     ├ PkgName         : google.golang.org/grpc 
                         │     ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
@@ -1085,7 +1242,7 @@
                         │                        │      a7786754d1fe05264c3021eb 
                         │                        ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
                         │                               A-xr7q-jx4m-x55m 
-                        ├ [5] ╭ VulnerabilityID : CVE-2024-34156 
+                        ├ [6] ╭ VulnerabilityID : CVE-2024-34156 
                         │     ├ PkgID           : stdlib@v1.22.6 
                         │     ├ PkgName         : stdlib 
                         │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.22.6 
@@ -1126,34 +1283,31 @@
                         │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-34156 
                         │     │                  ├ [2] : https://bugzilla.redhat.com/2310528 
                         │     │                  ├ [3] : https://bugzilla.redhat.com/2318052 
-                        │     │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2262921 
-                        │     │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=2310528 
-                        │     │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-202
-                        │     │                  │       4-1394 
-                        │     │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-202
+                        │     │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2310528 
+                        │     │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-202
                         │     │                  │       4-34156 
-                        │     │                  ├ [8] : https://errata.almalinux.org/9/ALSA-2024-9473.html 
-                        │     │                  ├ [9] : https://errata.rockylinux.org/RLSA-2024:7262 
-                        │     │                  ├ [10]: https://github.com/golang/go/commit/2092294f2b097c5828
+                        │     │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2024-9473.html 
+                        │     │                  ├ [7] : https://errata.rockylinux.org/RLSA-2024:7204 
+                        │     │                  ├ [8] : https://github.com/golang/go/commit/2092294f2b097c5828
                         │     │                  │       f4eace6c98a322c1510b01 (go1.22.7) 
-                        │     │                  ├ [11]: https://github.com/golang/go/commit/fa8ff1a46deb6c8163
+                        │     │                  ├ [9] : https://github.com/golang/go/commit/fa8ff1a46deb6c8163
                         │     │                  │       04441ec6740ec112e19012 (go1.23.1) 
-                        │     │                  ├ [12]: https://go.dev/cl/611239 
-                        │     │                  ├ [13]: https://go.dev/issue/69139 
-                        │     │                  ├ [14]: https://groups.google.com/g/golang-announce/c/K-cEzDeC
+                        │     │                  ├ [10]: https://go.dev/cl/611239 
+                        │     │                  ├ [11]: https://go.dev/issue/69139 
+                        │     │                  ├ [12]: https://groups.google.com/g/golang-announce/c/K-cEzDeC
                         │     │                  │       tpc 
-                        │     │                  ├ [15]: https://groups.google.com/g/golang-dev/c/S9POB9NCTdk 
-                        │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-34156.html 
-                        │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9473.html 
-                        │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-34156 
-                        │     │                  ├ [19]: https://pkg.go.dev/vuln/GO-2024-3106 
-                        │     │                  ├ [20]: https://ubuntu.com/security/notices/USN-7081-1 
-                        │     │                  ├ [21]: https://ubuntu.com/security/notices/USN-7109-1 
-                        │     │                  ├ [22]: https://ubuntu.com/security/notices/USN-7111-1 
-                        │     │                  ╰ [23]: https://www.cve.org/CVERecord?id=CVE-2024-34156 
+                        │     │                  ├ [13]: https://groups.google.com/g/golang-dev/c/S9POB9NCTdk 
+                        │     │                  ├ [14]: https://linux.oracle.com/cve/CVE-2024-34156.html 
+                        │     │                  ├ [15]: https://linux.oracle.com/errata/ELSA-2024-9473.html 
+                        │     │                  ├ [16]: https://nvd.nist.gov/vuln/detail/CVE-2024-34156 
+                        │     │                  ├ [17]: https://pkg.go.dev/vuln/GO-2024-3106 
+                        │     │                  ├ [18]: https://ubuntu.com/security/notices/USN-7081-1 
+                        │     │                  ├ [19]: https://ubuntu.com/security/notices/USN-7109-1 
+                        │     │                  ├ [20]: https://ubuntu.com/security/notices/USN-7111-1 
+                        │     │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2024-34156 
                         │     ├ PublishedDate   : 2024-09-06T21:15:12.02Z 
                         │     ╰ LastModifiedDate: 2024-09-09T15:35:07.573Z 
-                        ├ [6] ╭ VulnerabilityID : CVE-2024-34155 
+                        ├ [7] ╭ VulnerabilityID : CVE-2024-34155 
                         │     ├ PkgID           : stdlib@v1.22.6 
                         │     ├ PkgName         : stdlib 
                         │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.22.6 
@@ -1231,7 +1385,7 @@
                         │     │                  ╰ [32]: https://www.cve.org/CVERecord?id=CVE-2024-34155 
                         │     ├ PublishedDate   : 2024-09-06T21:15:11.947Z 
                         │     ╰ LastModifiedDate: 2024-11-04T17:35:17.887Z 
-                        ╰ [7] ╭ VulnerabilityID : CVE-2024-34158 
+                        ╰ [8] ╭ VulnerabilityID : CVE-2024-34158 
                               ├ PkgID           : stdlib@v1.22.6 
                               ├ PkgName         : stdlib 
                               ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.22.6 
