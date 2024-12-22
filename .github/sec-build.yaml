@@ -52,6 +52,7 @@
     - https://github.com/FiloSottile/age
     - https://github.com/FiloSottile/age/commit/482cf6fc9babd3ab06f6606762aac10447222201
     - https://github.com/FiloSottile/age/security/advisories/GHSA-32gq-x56h-299c
+    - https://github.com/str4d/rage/security/advisories/GHSA-4fg7-vxc8-qx5w
   - VulnerabilityID: CVE-2024-51744
     PkgID: github.com/golang-jwt/jwt/v4@v4.5.0
     PkgName: github.com/golang-jwt/jwt/v4
@@ -116,6 +117,7 @@
     Description: Applications and libraries which misuse the ServerConfig.PublicKeyCallback callback may be susceptible to an authorization bypass. The documentation for ServerConfig.PublicKeyCallback says that "A call to this function does not guarantee that the key offered is in fact used to authenticate." Specifically, the SSH protocol allows clients to inquire about whether a public key is acceptable before proving control of the corresponding private key. PublicKeyCallback may be called with multiple keys, and the order in which the keys were provided cannot be used to infer which key the client successfully authenticated with, if any. Some applications, which store the key(s) passed to PublicKeyCallback (or derived information) and make security relevant determinations based on it once the connection is established, may make incorrect assumptions. For example, an attacker may send public keys A and B, and then authenticate with A. PublicKeyCallback would be called only twice, first with A and then with B. A vulnerable application may then make authorization decisions based on key B for which the attacker does not actually control the private key. Since this API is widely misused, as a partial mitigation golang.org/x/cry...@v0.31.0 enforces the property that, when successfully authenticating via public key, the last key passed to ServerConfig.PublicKeyCallback will be the key used to authenticate the connection. PublicKeyCallback will now be called multiple times with the same key, if necessary. Note that the client may still not control the last key passed to PublicKeyCallback if the connection is then authenticated with a different method, such as PasswordCallback, KeyboardInteractiveCallback, or NoClientAuth. Users should be using the Extensions field of the Permissions return value from the various authentication callbacks to record data associated with the authentication attempt instead of referencing external state. Once the connection is established the state corresponding to the successful authentication attempt can be retrieved via the ServerConn.Permissions field. Note that some third-party libraries misuse the Permissions type by sharing it across authentication attempts; users of third-party libraries should refer to the relevant projects for guidance.
     Severity: CRITICAL
     VendorSeverity:
+      azure: 4
       cbl-mariner: 4
       ghsa: 4
       redhat: 3
@@ -157,12 +159,18 @@
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: Non-linear parsing of case-insensitive content in golang.org/x/net/html
+    Title: 'golang.org/x/net/html: Non-linear parsing of case-insensitive content in golang.org/x/net/html'
     Description: An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.
     Severity: HIGH
     VendorSeverity:
       ghsa: 3
+      redhat: 3
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2024-45338
     - https://cs.opensource.google/go/x/net
     - https://github.com/golang/go/issues/70906
     - https://go.dev/cl/637536
@@ -170,6 +178,7 @@
     - https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ
     - https://nvd.nist.gov/vuln/detail/CVE-2024-45338
     - https://pkg.go.dev/vuln/GO-2024-3333
+    - https://www.cve.org/CVERecord?id=CVE-2024-45338
     PublishedDate: '2024-12-18T21:15:08.173Z'
     LastModifiedDate: '2024-12-18T21:15:08.173Z'
 - Target: usr/bin/prometheus
@@ -319,7 +328,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -338,16 +347,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -379,6 +391,7 @@
     Description: Applications and libraries which misuse the ServerConfig.PublicKeyCallback callback may be susceptible to an authorization bypass. The documentation for ServerConfig.PublicKeyCallback says that "A call to this function does not guarantee that the key offered is in fact used to authenticate." Specifically, the SSH protocol allows clients to inquire about whether a public key is acceptable before proving control of the corresponding private key. PublicKeyCallback may be called with multiple keys, and the order in which the keys were provided cannot be used to infer which key the client successfully authenticated with, if any. Some applications, which store the key(s) passed to PublicKeyCallback (or derived information) and make security relevant determinations based on it once the connection is established, may make incorrect assumptions. For example, an attacker may send public keys A and B, and then authenticate with A. PublicKeyCallback would be called only twice, first with A and then with B. A vulnerable application may then make authorization decisions based on key B for which the attacker does not actually control the private key. Since this API is widely misused, as a partial mitigation golang.org/x/cry...@v0.31.0 enforces the property that, when successfully authenticating via public key, the last key passed to ServerConfig.PublicKeyCallback will be the key used to authenticate the connection. PublicKeyCallback will now be called multiple times with the same key, if necessary. Note that the client may still not control the last key passed to PublicKeyCallback if the connection is then authenticated with a different method, such as PasswordCallback, KeyboardInteractiveCallback, or NoClientAuth. Users should be using the Extensions field of the Permissions return value from the various authentication callbacks to record data associated with the authentication attempt instead of referencing external state. Once the connection is established the state corresponding to the successful authentication attempt can be retrieved via the ServerConn.Permissions field. Note that some third-party libraries misuse the Permissions type by sharing it across authentication attempts; users of third-party libraries should refer to the relevant projects for guidance.
     Severity: CRITICAL
     VendorSeverity:
+      azure: 4
       cbl-mariner: 4
       ghsa: 4
       redhat: 3
@@ -420,12 +433,18 @@
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: Non-linear parsing of case-insensitive content in golang.org/x/net/html
+    Title: 'golang.org/x/net/html: Non-linear parsing of case-insensitive content in golang.org/x/net/html'
     Description: An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.
     Severity: HIGH
     VendorSeverity:
       ghsa: 3
+      redhat: 3
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2024-45338
     - https://cs.opensource.google/go/x/net
     - https://github.com/golang/go/issues/70906
     - https://go.dev/cl/637536
@@ -433,6 +452,7 @@
     - https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ
     - https://nvd.nist.gov/vuln/detail/CVE-2024-45338
     - https://pkg.go.dev/vuln/GO-2024-3333
+    - https://www.cve.org/CVERecord?id=CVE-2024-45338
     PublishedDate: '2024-12-18T21:15:08.173Z'
     LastModifiedDate: '2024-12-18T21:15:08.173Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
@@ -507,13 +527,15 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9473
+    - https://access.redhat.com/errata/RHSA-2024:8038
     - https://access.redhat.com/security/cve/CVE-2024-34156
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2310527
     - https://bugzilla.redhat.com/2310528
-    - https://bugzilla.redhat.com/2318052
+    - https://bugzilla.redhat.com/2310529
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310528
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34156
-    - https://errata.almalinux.org/9/ALSA-2024-9473.html
+    - https://errata.almalinux.org/8/ALSA-2024-8038.html
     - https://errata.rockylinux.org/RLSA-2024:7204
     - https://github.com/golang/go/commit/2092294f2b097c5828f4eace6c98a322c1510b01 (go1.22.7)
     - https://github.com/golang/go/commit/fa8ff1a46deb6c816304441ec6740ec112e19012 (go1.23.1)
@@ -567,15 +589,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9459
+    - https://access.redhat.com/errata/RHSA-2024:8038
     - https://access.redhat.com/security/cve/CVE-2024-34155
+    - https://bugzilla.redhat.com/2268017
     - https://bugzilla.redhat.com/2310527
     - https://bugzilla.redhat.com/2310528
     - https://bugzilla.redhat.com/2310529
-    - https://bugzilla.redhat.com/2315691
-    - https://bugzilla.redhat.com/2315887
-    - https://bugzilla.redhat.com/2317458
-    - https://bugzilla.redhat.com/2317467
     - https://bugzilla.redhat.com/show_bug.cgi?id=2295310
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310527
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310528
@@ -584,7 +603,7 @@
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34155
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34156
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34158
-    - https://errata.almalinux.org/9/ALSA-2024-9459.html
+    - https://errata.almalinux.org/8/ALSA-2024-8038.html
     - https://errata.rockylinux.org/RLSA-2024:6913
     - https://github.com/golang/go/commit/53487e5477151ed75da50e50a0ba8f1ca64c00a3 (go1.23.1)
     - https://github.com/golang/go/commit/b232596139dbe96a62edbe3a2a203e856bf556eb (go1.22.7)
@@ -641,15 +660,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9459
+    - https://access.redhat.com/errata/RHSA-2024:8038
     - https://access.redhat.com/security/cve/CVE-2024-34158
+    - https://bugzilla.redhat.com/2268017
     - https://bugzilla.redhat.com/2310527
     - https://bugzilla.redhat.com/2310528
     - https://bugzilla.redhat.com/2310529
-    - https://bugzilla.redhat.com/2315691
-    - https://bugzilla.redhat.com/2315887
-    - https://bugzilla.redhat.com/2317458
-    - https://bugzilla.redhat.com/2317467
     - https://bugzilla.redhat.com/show_bug.cgi?id=2295310
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310527
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310528
@@ -658,7 +674,7 @@
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34155
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34156
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34158
-    - https://errata.almalinux.org/9/ALSA-2024-9459.html
+    - https://errata.almalinux.org/8/ALSA-2024-8038.html
     - https://errata.rockylinux.org/RLSA-2024:6913
     - https://github.com/golang/go/commit/032ac075c20c01c6c35a672d1542d3e98eab84ea (go1.23.1)
     - https://github.com/golang/go/commit/d4c53812e6ce2ac368173d7fcd31d0ecfcffb002 (go1.22.7)
@@ -823,7 +839,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -842,16 +858,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -883,6 +902,7 @@
     Description: Applications and libraries which misuse the ServerConfig.PublicKeyCallback callback may be susceptible to an authorization bypass. The documentation for ServerConfig.PublicKeyCallback says that "A call to this function does not guarantee that the key offered is in fact used to authenticate." Specifically, the SSH protocol allows clients to inquire about whether a public key is acceptable before proving control of the corresponding private key. PublicKeyCallback may be called with multiple keys, and the order in which the keys were provided cannot be used to infer which key the client successfully authenticated with, if any. Some applications, which store the key(s) passed to PublicKeyCallback (or derived information) and make security relevant determinations based on it once the connection is established, may make incorrect assumptions. For example, an attacker may send public keys A and B, and then authenticate with A. PublicKeyCallback would be called only twice, first with A and then with B. A vulnerable application may then make authorization decisions based on key B for which the attacker does not actually control the private key. Since this API is widely misused, as a partial mitigation golang.org/x/cry...@v0.31.0 enforces the property that, when successfully authenticating via public key, the last key passed to ServerConfig.PublicKeyCallback will be the key used to authenticate the connection. PublicKeyCallback will now be called multiple times with the same key, if necessary. Note that the client may still not control the last key passed to PublicKeyCallback if the connection is then authenticated with a different method, such as PasswordCallback, KeyboardInteractiveCallback, or NoClientAuth. Users should be using the Extensions field of the Permissions return value from the various authentication callbacks to record data associated with the authentication attempt instead of referencing external state. Once the connection is established the state corresponding to the successful authentication attempt can be retrieved via the ServerConn.Permissions field. Note that some third-party libraries misuse the Permissions type by sharing it across authentication attempts; users of third-party libraries should refer to the relevant projects for guidance.
     Severity: CRITICAL
     VendorSeverity:
+      azure: 4
       cbl-mariner: 4
       ghsa: 4
       redhat: 3
@@ -924,12 +944,18 @@
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: Non-linear parsing of case-insensitive content in golang.org/x/net/html
+    Title: 'golang.org/x/net/html: Non-linear parsing of case-insensitive content in golang.org/x/net/html'
     Description: An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.
     Severity: HIGH
     VendorSeverity:
       ghsa: 3
+      redhat: 3
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2024-45338
     - https://cs.opensource.google/go/x/net
     - https://github.com/golang/go/issues/70906
     - https://go.dev/cl/637536
@@ -937,6 +963,7 @@
     - https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ
     - https://nvd.nist.gov/vuln/detail/CVE-2024-45338
     - https://pkg.go.dev/vuln/GO-2024-3333
+    - https://www.cve.org/CVERecord?id=CVE-2024-45338
     PublishedDate: '2024-12-18T21:15:08.173Z'
     LastModifiedDate: '2024-12-18T21:15:08.173Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
@@ -1011,13 +1038,15 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9473
+    - https://access.redhat.com/errata/RHSA-2024:8038
     - https://access.redhat.com/security/cve/CVE-2024-34156
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2310527
     - https://bugzilla.redhat.com/2310528
-    - https://bugzilla.redhat.com/2318052
+    - https://bugzilla.redhat.com/2310529
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310528
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34156
-    - https://errata.almalinux.org/9/ALSA-2024-9473.html
+    - https://errata.almalinux.org/8/ALSA-2024-8038.html
     - https://errata.rockylinux.org/RLSA-2024:7204
     - https://github.com/golang/go/commit/2092294f2b097c5828f4eace6c98a322c1510b01 (go1.22.7)
     - https://github.com/golang/go/commit/fa8ff1a46deb6c816304441ec6740ec112e19012 (go1.23.1)
@@ -1071,15 +1100,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9459
+    - https://access.redhat.com/errata/RHSA-2024:8038
     - https://access.redhat.com/security/cve/CVE-2024-34155
+    - https://bugzilla.redhat.com/2268017
     - https://bugzilla.redhat.com/2310527
     - https://bugzilla.redhat.com/2310528
     - https://bugzilla.redhat.com/2310529
-    - https://bugzilla.redhat.com/2315691
-    - https://bugzilla.redhat.com/2315887
-    - https://bugzilla.redhat.com/2317458
-    - https://bugzilla.redhat.com/2317467
     - https://bugzilla.redhat.com/show_bug.cgi?id=2295310
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310527
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310528
@@ -1088,7 +1114,7 @@
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34155
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34156
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34158
-    - https://errata.almalinux.org/9/ALSA-2024-9459.html
+    - https://errata.almalinux.org/8/ALSA-2024-8038.html
     - https://errata.rockylinux.org/RLSA-2024:6913
     - https://github.com/golang/go/commit/53487e5477151ed75da50e50a0ba8f1ca64c00a3 (go1.23.1)
     - https://github.com/golang/go/commit/b232596139dbe96a62edbe3a2a203e856bf556eb (go1.22.7)
@@ -1145,15 +1171,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9459
+    - https://access.redhat.com/errata/RHSA-2024:8038
     - https://access.redhat.com/security/cve/CVE-2024-34158
+    - https://bugzilla.redhat.com/2268017
     - https://bugzilla.redhat.com/2310527
     - https://bugzilla.redhat.com/2310528
     - https://bugzilla.redhat.com/2310529
-    - https://bugzilla.redhat.com/2315691
-    - https://bugzilla.redhat.com/2315887
-    - https://bugzilla.redhat.com/2317458
-    - https://bugzilla.redhat.com/2317467
     - https://bugzilla.redhat.com/show_bug.cgi?id=2295310
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310527
     - https://bugzilla.redhat.com/show_bug.cgi?id=2310528
@@ -1162,7 +1185,7 @@
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34155
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34156
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34158
-    - https://errata.almalinux.org/9/ALSA-2024-9459.html
+    - https://errata.almalinux.org/8/ALSA-2024-8038.html
     - https://errata.rockylinux.org/RLSA-2024:6913
     - https://github.com/golang/go/commit/032ac075c20c01c6c35a672d1542d3e98eab84ea (go1.23.1)
     - https://github.com/golang/go/commit/d4c53812e6ce2ac368173d7fcd31d0ecfcffb002 (go1.22.7)
