@@ -132,7 +132,47 @@
 │                       │     │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-51744 
 │                       │     ├ PublishedDate   : 2024-11-04T22:15:03.997Z 
 │                       │     ╰ LastModifiedDate: 2024-11-05T16:04:26.053Z 
-│                       ├ [2] ╭ VulnerabilityID : CVE-2024-45337 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2024-56323 
+│                       │     ├ PkgID           : github.com/openfga/openfga@v1.5.4 
+│                       │     ├ PkgName         : github.com/openfga/openfga 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.5.4 
+│                       │     │                  ╰ UID : af39e58417181ae5 
+│                       │     ├ InstalledVersion: v1.5.4 
+│                       │     ├ FixedVersion    : 1.8.3 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:d5e96ab39242ccd58fb7f6546c41b83edd2eb21e47a1b
+│                       │     │                  │         cafe1fddc9e0faf97e9 
+│                       │     │                  ╰ DiffID: sha256:4820ad7683621b01bd2378f2a12f987580a6b0c66725f
+│                       │     │                            9a281478af04eef8dfa 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-56323 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : OpenFGA Authorization Bypass 
+│                       │     ├ Description     : OpenFGA is an authorization/permission engine. IN OpenFGA
+│                       │     │                   v1.3.8 to v1.8.2 (Helm chart openfga-0.1.38 to
+│                       │     │                   openfga-0.2.19, docker v1.3.8 to v.1.8.2)  are vulnerable to
+│                       │     │                   authorization bypass under the following conditions: 1.
+│                       │     │                   calling Check API or ListObjects with a model that uses
+│                       │     │                   [conditions](https://openfga.dev/docs/modeling/conditions),
+│                       │     │                   and 2. calling Check API or ListObjects API with [contextual
+│                       │     │                   tuples](https://openfga.dev/docs/concepts#what-are-contextual
+│                       │     │                   -tuples) that include conditions and 3. OpenFGA is configured
+│                       │     │                    with caching enabled (`OPENFGA_CHECK_QUERY_CACHE_ENABLED`).
+│                       │     │                   Users are advised to upgrade to v1.8.3. There are no known
+│                       │     │                   workarounds for this vulnerability. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ CweIDs           ─ [0]: CWE-285 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ References       ╭ [0]: https://github.com/openfga/openfga 
+│                       │     │                  ├ [1]: https://github.com/openfga/openfga/security/advisories/
+│                       │     │                  │      GHSA-32q6-rr98-cjqv 
+│                       │     │                  ╰ [2]: https://nvd.nist.gov/vuln/detail/CVE-2024-56323 
+│                       │     ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
+│                       │     ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2024-45337 
 │                       │     ├ PkgID           : golang.org/x/crypto@v0.27.0 
 │                       │     ├ PkgName         : golang.org/x/crypto 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.27.0 
@@ -218,7 +258,7 @@
 │                       │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
 │                       │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
 │                       │     ╰ LastModifiedDate: 2024-12-12T21:15:08.5Z 
-│                       ╰ [3] ╭ VulnerabilityID : CVE-2024-45338 
+│                       ╰ [4] ╭ VulnerabilityID : CVE-2024-45338 
 │                             ├ PkgID           : golang.org/x/net@v0.29.0 
 │                             ├ PkgName         : golang.org/x/net 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.29.0 
