@@ -114,7 +114,8 @@
 │                       │     │                   running in the case detailed above. 
 │                       │     ├ Severity        : LOW 
 │                       │     ├ CweIDs           ─ [0]: CWE-755 
-│                       │     ├ VendorSeverity   ╭ ghsa  : 1 
+│                       │     ├ VendorSeverity   ╭ amazon: 2 
+│                       │     │                  ├ ghsa  : 1 
 │                       │     │                  ╰ redhat: 1 
 │                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/
 │                       │     │                  │        │           A:N 
@@ -285,7 +286,8 @@
 │                             │                   denial of service. 
 │                             ├ Severity        : HIGH 
 │                             ├ CweIDs           ─ [0]: CWE-1333 
-│                             ├ VendorSeverity   ╭ azure      : 3 
+│                             ├ VendorSeverity   ╭ amazon     : 2 
+│                             │                  ├ azure      : 3 
 │                             │                  ├ cbl-mariner: 3 
 │                             │                  ├ ghsa       : 3 
 │                             │                  ├ redhat     : 3 
@@ -644,7 +646,8 @@
 │                       │     │                   denial of service. 
 │                       │     ├ Severity        : HIGH 
 │                       │     ├ CweIDs           ─ [0]: CWE-1333 
-│                       │     ├ VendorSeverity   ╭ azure      : 3 
+│                       │     ├ VendorSeverity   ╭ amazon     : 2 
+│                       │     │                  ├ azure      : 3 
 │                       │     │                  ├ cbl-mariner: 3 
 │                       │     │                  ├ ghsa       : 3 
 │                       │     │                  ├ redhat     : 3 
@@ -1043,7 +1046,8 @@
                         │     │                   denial of service. 
                         │     ├ Severity        : HIGH 
                         │     ├ CweIDs           ─ [0]: CWE-1333 
-                        │     ├ VendorSeverity   ╭ azure      : 3 
+                        │     ├ VendorSeverity   ╭ amazon     : 2 
+                        │     │                  ├ azure      : 3 
                         │     │                  ├ cbl-mariner: 3 
                         │     │                  ├ ghsa       : 3 
                         │     │                  ├ redhat     : 3 
