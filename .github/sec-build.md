@@ -133,7 +133,63 @@
 │                       │     │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-51744 
 │                       │     ├ PublishedDate   : 2024-11-04T22:15:03.997Z 
 │                       │     ╰ LastModifiedDate: 2024-11-05T16:04:26.053Z 
-│                       ├ [2] ╭ VulnerabilityID : CVE-2024-56323 
+│                       ├ [2] ╭ VulnerabilityID : GHSA-29qp-crvh-w22m 
+│                       │     ├ PkgID           : github.com/hashicorp/yamux@v0.1.1 
+│                       │     ├ PkgName         : github.com/hashicorp/yamux 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/hashicorp/yamux@v0.1.1 
+│                       │     │                  ╰ UID : d5bd4f108875599e 
+│                       │     ├ InstalledVersion: v0.1.1 
+│                       │     ├ Status          : affected 
+│                       │     ├ Layer            ╭ Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10
+│                       │     │                  │         dc57cf878376921d0b5 
+│                       │     │                  ╰ DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07e
+│                       │     │                            f5fb7af7f6c1bcef555 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-29qp-crvh-w22m 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : github.com/hashicorp/yamux's DefaultConfig has dangerous
+│                       │     │                   defaults causing hung Read 
+│                       │     ├ Description     : The default values for Session.config.KeepAliveInterval and
+│                       │     │                   Session.config.ConnectionWriteTimeout of 30s and 10s create
+│                       │     │                   the possibility for timed out writes that most aren't
+│                       │     │                   handling in their readers.
+│                       │     │                   
+│                       │     │                   Calls to Stream.Read on one side of a connection will hang
+│                       │     │                   until the underlying Session is closed if the corresponding
+│                       │     │                   Stream.Write call on the other side it's waiting for returns
+│                       │     │                   with ErrConnectionWriteTimeout. This happens in the case of
+│                       │     │                   network congestion between the two sides.
+│                       │     │                   If you keep Session.sendCh full (fixed capacity of 64) for
+│                       │     │                   ConnectionWriteTimeout, but for less than the
+│                       │     │                   KeepAliveInterval + ConnectionWriteTimeout (which would kill
+│                       │     │                   the Session), Stream.Write will return
+│                       │     │                   ErrConnectionWriteTimeout. The state of the underlying
+│                       │     │                   Session or Stream is not modified. When this happens, the
+│                       │     │                   other side's Stream.Read call that's waiting for that write
+│                       │     │                   will never return because there's no timeout for this
+│                       │     │                   edge-case.
+│                       │     │                   Since no keep alive timed out, you can continue to use the
+│                       │     │                   Session once the network congestion is resolved, but that
+│                       │     │                   Stream.Read call will only return when the Session closes or
+│                       │     │                   the response shows up. Since the write call on the other side
+│                       │     │                    timed out the call to Stream.Read will never return.
+│                       │     │                   Any conditions that cause network writes to stall for 10-30
+│                       │     │                   seconds can trigger this Denial of Service- extremely high
+│                       │     │                   CPU contention on either side of the connection, BGP
+│                       │     │                   reconvergence, etc. To resolve the Denial of Service issue,
+│                       │     │                   you have to re-establish the connections, which will usually
+│                       │     │                   require a hard restart of the service on either end of the
+│                       │     │                   connection. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ╰ References       ╭ [0]: https://github.com/golang/vulndb/issues/3408 
+│                       │                        ├ [1]: https://github.com/hashicorp/yamux 
+│                       │                        ├ [2]: https://github.com/hashicorp/yamux/issues/142 
+│                       │                        ╰ [3]: https://github.com/hashicorp/yamux/pull/143 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2024-56323 
 │                       │     ├ PkgID           : github.com/openfga/openfga@v1.5.4 
 │                       │     ├ PkgName         : github.com/openfga/openfga 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.5.4 
@@ -174,7 +230,7 @@
 │                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3384 
 │                       │     ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
 │                       │     ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
-│                       ├ [3] ╭ VulnerabilityID : CVE-2024-45337 
+│                       ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
 │                       │     ├ PkgID           : golang.org/x/crypto@v0.27.0 
 │                       │     ├ PkgName         : golang.org/x/crypto 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.27.0 
@@ -260,7 +316,7 @@
 │                       │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
 │                       │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
 │                       │     ╰ LastModifiedDate: 2024-12-12T21:15:08.5Z 
-│                       ╰ [4] ╭ VulnerabilityID : CVE-2024-45338 
+│                       ╰ [5] ╭ VulnerabilityID : CVE-2024-45338 
 │                             ├ PkgID           : golang.org/x/net@v0.29.0 
 │                             ├ PkgName         : golang.org/x/net 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.29.0 
