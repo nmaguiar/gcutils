@@ -115,6 +115,7 @@
 │                       │     ├ Severity        : LOW 
 │                       │     ├ CweIDs           ─ [0]: CWE-755 
 │                       │     ├ VendorSeverity   ╭ amazon: 2 
+│                       │     │                  ├ azure : 1 
 │                       │     │                  ├ ghsa  : 1 
 │                       │     │                  ╰ redhat: 1 
 │                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/
@@ -424,7 +425,7 @@
 │                       │     │                  ├ [9] : https://nvd.nist.gov/vuln/detail/CVE-2024-35255 
 │                       │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2024-35255 
 │                       │     ├ PublishedDate   : 2024-06-11T17:16:03.55Z 
-│                       │     ╰ LastModifiedDate: 2024-06-20T16:31:46.127Z 
+│                       │     ╰ LastModifiedDate: 2024-11-21T09:20:01.923Z 
 │                       ├ [1] ╭ VulnerabilityID : CVE-2024-41110 
 │                       │     ├ PkgID           : github.com/docker/docker@v26.1.3+incompatible 
 │                       │     ├ PkgName         : github.com/docker/docker 
@@ -515,15 +516,18 @@
 │                       │     │                  │       91697fb327dd1fb95588fb 
 │                       │     │                  ├ [12]: https://github.com/moby/moby/security/advisories/GHSA-
 │                       │     │                  │       v23v-6jw2-98fq 
-│                       │     │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2024-41110 
-│                       │     │                  ├ [14]: https://ubuntu.com/security/notices/USN-7161-1 
-│                       │     │                  ├ [15]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
-│                       │     │                  ├ [16]: https://www.docker.com/blog/docker-security-advisory-d
+│                       │     │                  ├ [13]: https://lists.debian.org/debian-lts-announce/2024/10/m
+│                       │     │                  │       sg00009.html 
+│                       │     │                  ├ [14]: https://nvd.nist.gov/vuln/detail/CVE-2024-41110 
+│                       │     │                  ├ [15]: https://security.netapp.com/advisory/ntap-20240802-0001/ 
+│                       │     │                  ├ [16]: https://ubuntu.com/security/notices/USN-7161-1 
+│                       │     │                  ├ [17]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
+│                       │     │                  ├ [18]: https://www.docker.com/blog/docker-security-advisory-d
 │                       │     │                  │       ocker-engine-authz-plugin 
-│                       │     │                  ╰ [17]: https://www.docker.com/blog/docker-security-advisory-d
+│                       │     │                  ╰ [19]: https://www.docker.com/blog/docker-security-advisory-d
 │                       │     │                          ocker-engine-authz-plugin/ 
 │                       │     ├ PublishedDate   : 2024-07-24T17:15:11.053Z 
-│                       │     ╰ LastModifiedDate: 2024-07-30T20:15:04.567Z 
+│                       │     ╰ LastModifiedDate: 2024-11-21T09:32:15.16Z 
 │                       ├ [2] ╭ VulnerabilityID : CVE-2024-6104 
 │                       │     ├ PkgID           : github.com/hashicorp/go-retryablehttp@v0.7.4 
 │                       │     ├ PkgName         : github.com/hashicorp/go-retryablehttp 
@@ -589,7 +593,7 @@
 │                       │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
 │                       │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
 │                       │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
-│                       │     ╰ LastModifiedDate: 2024-06-26T17:19:40.85Z 
+│                       │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
 │                       ├ [3] ╭ VulnerabilityID : CVE-2024-45337 
 │                       │     ├ PkgID           : golang.org/x/crypto@v0.24.0 
 │                       │     ├ PkgName         : golang.org/x/crypto 
@@ -824,7 +828,7 @@
                         │     │                  ├ [9] : https://nvd.nist.gov/vuln/detail/CVE-2024-35255 
                         │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2024-35255 
                         │     ├ PublishedDate   : 2024-06-11T17:16:03.55Z 
-                        │     ╰ LastModifiedDate: 2024-06-20T16:31:46.127Z 
+                        │     ╰ LastModifiedDate: 2024-11-21T09:20:01.923Z 
                         ├ [1] ╭ VulnerabilityID : CVE-2024-41110 
                         │     ├ PkgID           : github.com/docker/docker@v26.1.3+incompatible 
                         │     ├ PkgName         : github.com/docker/docker 
@@ -915,15 +919,18 @@
                         │     │                  │       91697fb327dd1fb95588fb 
                         │     │                  ├ [12]: https://github.com/moby/moby/security/advisories/GHSA-
                         │     │                  │       v23v-6jw2-98fq 
-                        │     │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2024-41110 
-                        │     │                  ├ [14]: https://ubuntu.com/security/notices/USN-7161-1 
-                        │     │                  ├ [15]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
-                        │     │                  ├ [16]: https://www.docker.com/blog/docker-security-advisory-d
+                        │     │                  ├ [13]: https://lists.debian.org/debian-lts-announce/2024/10/m
+                        │     │                  │       sg00009.html 
+                        │     │                  ├ [14]: https://nvd.nist.gov/vuln/detail/CVE-2024-41110 
+                        │     │                  ├ [15]: https://security.netapp.com/advisory/ntap-20240802-0001/ 
+                        │     │                  ├ [16]: https://ubuntu.com/security/notices/USN-7161-1 
+                        │     │                  ├ [17]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
+                        │     │                  ├ [18]: https://www.docker.com/blog/docker-security-advisory-d
                         │     │                  │       ocker-engine-authz-plugin 
-                        │     │                  ╰ [17]: https://www.docker.com/blog/docker-security-advisory-d
+                        │     │                  ╰ [19]: https://www.docker.com/blog/docker-security-advisory-d
                         │     │                          ocker-engine-authz-plugin/ 
                         │     ├ PublishedDate   : 2024-07-24T17:15:11.053Z 
-                        │     ╰ LastModifiedDate: 2024-07-30T20:15:04.567Z 
+                        │     ╰ LastModifiedDate: 2024-11-21T09:32:15.16Z 
                         ├ [2] ╭ VulnerabilityID : CVE-2024-6104 
                         │     ├ PkgID           : github.com/hashicorp/go-retryablehttp@v0.7.4 
                         │     ├ PkgName         : github.com/hashicorp/go-retryablehttp 
@@ -989,7 +996,7 @@
                         │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
                         │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
                         │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
-                        │     ╰ LastModifiedDate: 2024-06-26T17:19:40.85Z 
+                        │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
                         ├ [3] ╭ VulnerabilityID : CVE-2024-45337 
                         │     ├ PkgID           : golang.org/x/crypto@v0.24.0 
                         │     ├ PkgName         : golang.org/x/crypto 
