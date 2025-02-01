@@ -24,8 +24,8 @@
     FixedVersion: 1.2.1
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-32gq-x56h-299c
     DataSource:
@@ -63,8 +63,8 @@
     FixedVersion: 4.5.1
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-51744
     DataSource:
@@ -106,8 +106,8 @@
     InstalledVersion: v0.1.1
     Status: affected
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-29qp-crvh-w22m
     DataSource:
@@ -143,8 +143,8 @@
     FixedVersion: 1.8.3
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-56323
     DataSource:
@@ -175,8 +175,8 @@
     FixedVersion: 0.31.0
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45337
     DataSource:
@@ -208,9 +208,11 @@
     - https://groups.google.com/g/golang-announce/c/-nPEi39gI4Q/m/cGVPJCqdAQAJ
     - https://nvd.nist.gov/vuln/detail/CVE-2024-45337
     - https://pkg.go.dev/vuln/GO-2024-3321
+    - https://security.netapp.com/advisory/ntap-20250131-0007
+    - https://security.netapp.com/advisory/ntap-20250131-0007/
     - https://www.cve.org/CVERecord?id=CVE-2024-45337
     PublishedDate: '2024-12-12T02:02:07.97Z'
-    LastModifiedDate: '2024-12-12T21:15:08.5Z'
+    LastModifiedDate: '2025-01-31T15:15:13.19Z'
   - VulnerabilityID: CVE-2024-45338
     PkgID: golang.org/x/net@v0.29.0
     PkgName: golang.org/x/net
@@ -221,8 +223,8 @@
     FixedVersion: 0.33.0
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
     DataSource:
@@ -273,8 +275,8 @@
     FixedVersion: 1.6.0
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-35255
     DataSource:
@@ -323,8 +325,8 @@
     FixedVersion: 23.0.15, 26.1.5, 27.1.1, 25.0.6
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-41110
     DataSource:
@@ -394,8 +396,8 @@
     FixedVersion: 0.7.7
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-6104
     DataSource:
@@ -408,7 +410,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -427,16 +429,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -456,8 +461,8 @@
     FixedVersion: 0.31.0
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45337
     DataSource:
@@ -489,9 +494,11 @@
     - https://groups.google.com/g/golang-announce/c/-nPEi39gI4Q/m/cGVPJCqdAQAJ
     - https://nvd.nist.gov/vuln/detail/CVE-2024-45337
     - https://pkg.go.dev/vuln/GO-2024-3321
+    - https://security.netapp.com/advisory/ntap-20250131-0007
+    - https://security.netapp.com/advisory/ntap-20250131-0007/
     - https://www.cve.org/CVERecord?id=CVE-2024-45337
     PublishedDate: '2024-12-12T02:02:07.97Z'
-    LastModifiedDate: '2024-12-12T21:15:08.5Z'
+    LastModifiedDate: '2025-01-31T15:15:13.19Z'
   - VulnerabilityID: CVE-2024-45338
     PkgID: golang.org/x/net@v0.26.0
     PkgName: golang.org/x/net
@@ -502,8 +509,8 @@
     FixedVersion: 0.33.0
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
     DataSource:
@@ -550,8 +557,8 @@
     FixedVersion: 1.64.1
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-xr7q-jx4m-x55m
     DataSource:
@@ -589,8 +596,8 @@
     FixedVersion: 1.6.0
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-35255
     DataSource:
@@ -639,8 +646,8 @@
     FixedVersion: 23.0.15, 26.1.5, 27.1.1, 25.0.6
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-41110
     DataSource:
@@ -710,8 +717,8 @@
     FixedVersion: 0.7.7
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-6104
     DataSource:
@@ -724,7 +731,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -743,16 +750,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -772,8 +782,8 @@
     FixedVersion: 0.31.0
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45337
     DataSource:
@@ -805,9 +815,11 @@
     - https://groups.google.com/g/golang-announce/c/-nPEi39gI4Q/m/cGVPJCqdAQAJ
     - https://nvd.nist.gov/vuln/detail/CVE-2024-45337
     - https://pkg.go.dev/vuln/GO-2024-3321
+    - https://security.netapp.com/advisory/ntap-20250131-0007
+    - https://security.netapp.com/advisory/ntap-20250131-0007/
     - https://www.cve.org/CVERecord?id=CVE-2024-45337
     PublishedDate: '2024-12-12T02:02:07.97Z'
-    LastModifiedDate: '2024-12-12T21:15:08.5Z'
+    LastModifiedDate: '2025-01-31T15:15:13.19Z'
   - VulnerabilityID: CVE-2024-45338
     PkgID: golang.org/x/net@v0.26.0
     PkgName: golang.org/x/net
@@ -818,8 +830,8 @@
     FixedVersion: 0.33.0
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
     DataSource:
@@ -866,8 +878,8 @@
     FixedVersion: 1.64.1
     Status: fixed
     Layer:
-      Digest: sha256:5238a4ff08fa3656445da8b28e367e2593379d6667f10dc57cf878376921d0b5
-      DiffID: sha256:0ecd2683fc98b6e8c1895ce69532d48b17ac7a296a07ef5fb7af7f6c1bcef555
+      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
+      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-xr7q-jx4m-x55m
     DataSource:
