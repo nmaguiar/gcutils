@@ -557,7 +557,7 @@
 │                       │     │                   CVE-2024-6104, was fixed in go-retryablehttp 0.7.7. 
 │                       │     ├ Severity        : MEDIUM 
 │                       │     ├ CweIDs           ─ [0]: CWE-532 
-│                       │     ├ VendorSeverity   ╭ alma       : 3 
+│                       │     ├ VendorSeverity   ╭ alma       : 2 
 │                       │     │                  ├ amazon     : 3 
 │                       │     │                  ├ azure      : 2 
 │                       │     │                  ├ cbl-mariner: 2 
@@ -574,29 +574,26 @@
 │                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/
 │                       │     │                           │           A:N 
 │                       │     │                           ╰ V3Score : 6 
-│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:5258 
+│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:9115 
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-6104 
-│                       │     │                  ├ [2] : https://bugzilla.redhat.com/2262921 
-│                       │     │                  ├ [3] : https://bugzilla.redhat.com/2268017 
-│                       │     │                  ├ [4] : https://bugzilla.redhat.com/2268019 
-│                       │     │                  ├ [5] : https://bugzilla.redhat.com/2268021 
-│                       │     │                  ├ [6] : https://bugzilla.redhat.com/2274767 
-│                       │     │                  ├ [7] : https://bugzilla.redhat.com/2292668 
-│                       │     │                  ├ [8] : https://bugzilla.redhat.com/2294000 
-│                       │     │                  ├ [9] : https://bugzilla.redhat.com/2295010 
-│                       │     │                  ├ [10]: https://discuss.hashicorp.com/c/security 
-│                       │     │                  ├ [11]: https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
+│                       │     │                  ├ [2] : https://bugzilla.redhat.com/2279814 
+│                       │     │                  ├ [3] : https://bugzilla.redhat.com/2292668 
+│                       │     │                  ├ [4] : https://bugzilla.redhat.com/2292787 
+│                       │     │                  ├ [5] : https://bugzilla.redhat.com/2294000 
+│                       │     │                  ├ [6] : https://bugzilla.redhat.com/2295310 
+│                       │     │                  ├ [7] : https://discuss.hashicorp.com/c/security 
+│                       │     │                  ├ [8] : https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
 │                       │     │                  │       ablehttp-can-leak-basic-auth-credentials-to-log-files/
 │                       │     │                  │       68027 
-│                       │     │                  ├ [12]: https://errata.almalinux.org/8/ALSA-2024-5258.html 
-│                       │     │                  ├ [13]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
-│                       │     │                  ├ [14]: https://github.com/hashicorp/go-retryablehttp 
-│                       │     │                  ├ [15]: https://github.com/hashicorp/go-retryablehttp/commit/a
+│                       │     │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2024-9115.html 
+│                       │     │                  ├ [10]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
+│                       │     │                  ├ [11]: https://github.com/hashicorp/go-retryablehttp 
+│                       │     │                  ├ [12]: https://github.com/hashicorp/go-retryablehttp/commit/a
 │                       │     │                  │       99f07beb3c5faaa0a283617e6eb6bcf25f5049a 
-│                       │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-6104.html 
-│                       │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
-│                       │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
-│                       │     │                  ╰ [19]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
+│                       │     │                  ├ [13]: https://linux.oracle.com/cve/CVE-2024-6104.html 
+│                       │     │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
+│                       │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
+│                       │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
 │                       │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
 │                       │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
 │                       ├ [3] ╭ VulnerabilityID : CVE-2024-45337 
@@ -965,7 +962,7 @@
                         │     │                   CVE-2024-6104, was fixed in go-retryablehttp 0.7.7. 
                         │     ├ Severity        : MEDIUM 
                         │     ├ CweIDs           ─ [0]: CWE-532 
-                        │     ├ VendorSeverity   ╭ alma       : 3 
+                        │     ├ VendorSeverity   ╭ alma       : 2 
                         │     │                  ├ amazon     : 3 
                         │     │                  ├ azure      : 2 
                         │     │                  ├ cbl-mariner: 2 
@@ -982,29 +979,26 @@
                         │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/
                         │     │                           │           A:N 
                         │     │                           ╰ V3Score : 6 
-                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:5258 
+                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:9115 
                         │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-6104 
-                        │     │                  ├ [2] : https://bugzilla.redhat.com/2262921 
-                        │     │                  ├ [3] : https://bugzilla.redhat.com/2268017 
-                        │     │                  ├ [4] : https://bugzilla.redhat.com/2268019 
-                        │     │                  ├ [5] : https://bugzilla.redhat.com/2268021 
-                        │     │                  ├ [6] : https://bugzilla.redhat.com/2274767 
-                        │     │                  ├ [7] : https://bugzilla.redhat.com/2292668 
-                        │     │                  ├ [8] : https://bugzilla.redhat.com/2294000 
-                        │     │                  ├ [9] : https://bugzilla.redhat.com/2295010 
-                        │     │                  ├ [10]: https://discuss.hashicorp.com/c/security 
-                        │     │                  ├ [11]: https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
+                        │     │                  ├ [2] : https://bugzilla.redhat.com/2279814 
+                        │     │                  ├ [3] : https://bugzilla.redhat.com/2292668 
+                        │     │                  ├ [4] : https://bugzilla.redhat.com/2292787 
+                        │     │                  ├ [5] : https://bugzilla.redhat.com/2294000 
+                        │     │                  ├ [6] : https://bugzilla.redhat.com/2295310 
+                        │     │                  ├ [7] : https://discuss.hashicorp.com/c/security 
+                        │     │                  ├ [8] : https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
                         │     │                  │       ablehttp-can-leak-basic-auth-credentials-to-log-files/
                         │     │                  │       68027 
-                        │     │                  ├ [12]: https://errata.almalinux.org/8/ALSA-2024-5258.html 
-                        │     │                  ├ [13]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
-                        │     │                  ├ [14]: https://github.com/hashicorp/go-retryablehttp 
-                        │     │                  ├ [15]: https://github.com/hashicorp/go-retryablehttp/commit/a
+                        │     │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2024-9115.html 
+                        │     │                  ├ [10]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
+                        │     │                  ├ [11]: https://github.com/hashicorp/go-retryablehttp 
+                        │     │                  ├ [12]: https://github.com/hashicorp/go-retryablehttp/commit/a
                         │     │                  │       99f07beb3c5faaa0a283617e6eb6bcf25f5049a 
-                        │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-6104.html 
-                        │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
-                        │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
-                        │     │                  ╰ [19]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
+                        │     │                  ├ [13]: https://linux.oracle.com/cve/CVE-2024-6104.html 
+                        │     │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
+                        │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
+                        │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
                         │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
                         │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
                         ├ [3] ╭ VulnerabilityID : CVE-2024-45337 
