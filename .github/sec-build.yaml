@@ -14,137 +14,18 @@
   Class: lang-pkgs
   Type: gobinary
   Vulnerabilities:
-  - VulnerabilityID: GHSA-32gq-x56h-299c
-    PkgID: filippo.io/age@v1.1.1
-    PkgName: filippo.io/age
-    PkgIdentifier:
-      PURL: pkg:golang/filippo.io/age@v1.1.1
-      UID: ffe56ba9c6428ea4
-    InstalledVersion: v1.1.1
-    FixedVersion: 1.2.1
-    Status: fixed
-    Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
-    SeveritySource: ghsa
-    PrimaryURL: https://github.com/advisories/GHSA-32gq-x56h-299c
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Go
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: age vulnerable to malicious plugin names, recipients, or identities causing arbitrary binary execution
-    Description: |-
-      A plugin name containing a path separator may allow an attacker to execute an arbitrary binary.
-
-      Such a plugin name can be provided to the age CLI through an attacker-controlled recipient or identity string, or to the [`plugin.NewIdentity`](https://pkg.go.dev/filippo.io/age/plugin#NewIdentity), [`plugin.NewIdentityWithoutData`](https://pkg.go.dev/filippo.io/age/plugin#NewIdentityWithoutData), or [`plugin.NewRecipient`](https://pkg.go.dev/filippo.io/age/plugin#NewRecipient) APIs.
-
-      On UNIX systems, a directory matching `${TMPDIR:-/tmp}/age-plugin-*` needs to exist for the attack to succeed.
-
-      The binary is executed with a single flag, either `--age-plugin=recipient-v1` or `--age-plugin=identity-v1`. The standard input includes the recipient or identity string, and the random file key (if encrypting) or the header of the file (if decrypting). The format is constrained by the [age-plugin](https://c2sp.org/age-plugin) protocol.
-
-      An equivalent issue was fixed by the [rage](https://github.com/str4d/rage) project, see advisory [GHSA-4fg7-vxc8-qx5w](https://github.com/str4d/rage/security/advisories/GHSA-4fg7-vxc8-qx5w).
-
-      Thanks to ⬡-49016 for reporting this.
-    Severity: MEDIUM
-    VendorSeverity:
-      ghsa: 2
-    References:
-    - https://github.com/FiloSottile/age
-    - https://github.com/FiloSottile/age/commit/482cf6fc9babd3ab06f6606762aac10447222201
-    - https://github.com/FiloSottile/age/security/advisories/GHSA-32gq-x56h-299c
-    - https://github.com/str4d/rage/security/advisories/GHSA-4fg7-vxc8-qx5w
-  - VulnerabilityID: CVE-2024-51744
-    PkgID: github.com/golang-jwt/jwt/v4@v4.5.0
-    PkgName: github.com/golang-jwt/jwt/v4
-    PkgIdentifier:
-      PURL: pkg:golang/github.com/golang-jwt/jwt/v4@v4.5.0
-      UID: 9d5a6c7eb640910c
-    InstalledVersion: v4.5.0
-    FixedVersion: 4.5.1
-    Status: fixed
-    Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
-    SeveritySource: ghsa
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-51744
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Go
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: 'golang-jwt: Bad documentation of error handling in ParseWithClaims can lead to potentially dangerous situations in golang-jwt'
-    Description: golang-jwt is a Go implementation of JSON Web Tokens. Unclear documentation of the error behavior in `ParseWithClaims` can lead to situation where users are potentially not checking errors in the way they should be. Especially, if a token is both expired and invalid, the errors returned by `ParseWithClaims` return both error codes. If users only check for the `jwt.ErrTokenExpired ` using `error.Is`, they will ignore the embedded `jwt.ErrTokenSignatureInvalid` and thus potentially accept invalid tokens. A fix has been back-ported with the error handling logic from the `v5` branch to the `v4` branch. In this logic, the `ParseWithClaims` function will immediately return in "dangerous" situations (e.g., an invalid signature), limiting the combined errors only to situations where the signature is valid, but further validation failed (e.g., if the signature is valid, but is expired AND has the wrong audience). This fix is part of the 4.5.1 release. We are aware that this changes the behaviour of an established function and is not 100 % backwards compatible, so updating to 4.5.1 might break your code. In case you cannot update to 4.5.0, please make sure that you are properly checking for all errors ("dangerous" ones first), so that you are not running in the case detailed above.
-    Severity: LOW
-    CweIDs:
-    - CWE-755
-    VendorSeverity:
-      amazon: 2
-      azure: 1
-      ghsa: 1
-      redhat: 1
-    CVSS:
-      ghsa:
-        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N
-        V3Score: 3.1
-      redhat:
-        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N
-        V3Score: 3.1
-    References:
-    - https://access.redhat.com/security/cve/CVE-2024-51744
-    - https://github.com/golang-jwt/jwt
-    - https://github.com/golang-jwt/jwt/commit/7b1c1c00a171c6c79bbdb40e4ce7d197060c1c2c
-    - https://github.com/golang-jwt/jwt/security/advisories/GHSA-29wx-vh33-7x7r
-    - https://nvd.nist.gov/vuln/detail/CVE-2024-51744
-    - https://www.cve.org/CVERecord?id=CVE-2024-51744
-    PublishedDate: '2024-11-04T22:15:03.997Z'
-    LastModifiedDate: '2024-11-05T16:04:26.053Z'
-  - VulnerabilityID: GHSA-29qp-crvh-w22m
-    PkgID: github.com/hashicorp/yamux@v0.1.1
-    PkgName: github.com/hashicorp/yamux
-    PkgIdentifier:
-      PURL: pkg:golang/github.com/hashicorp/yamux@v0.1.1
-      UID: d5bd4f108875599e
-    InstalledVersion: v0.1.1
-    Status: affected
-    Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
-    SeveritySource: ghsa
-    PrimaryURL: https://github.com/advisories/GHSA-29qp-crvh-w22m
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Go
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: github.com/hashicorp/yamux's DefaultConfig has dangerous defaults causing hung Read
-    Description: |-
-      The default values for Session.config.KeepAliveInterval and Session.config.ConnectionWriteTimeout of 30s and 10s create the possibility for timed out writes that most aren't handling in their readers.
-
-      Calls to Stream.Read on one side of a connection will hang until the underlying Session is closed if the corresponding Stream.Write call on the other side it's waiting for returns with ErrConnectionWriteTimeout. This happens in the case of network congestion between the two sides.
-
-      If you keep Session.sendCh full (fixed capacity of 64) for ConnectionWriteTimeout, but for less than the KeepAliveInterval + ConnectionWriteTimeout (which would kill the Session), Stream.Write will return ErrConnectionWriteTimeout. The state of the underlying Session or Stream is not modified. When this happens, the other side's Stream.Read call that's waiting for that write will never return because there's no timeout for this edge-case.
-
-      Since no keep alive timed out, you can continue to use the Session once the network congestion is resolved, but that Stream.Read call will only return when the Session closes or the response shows up. Since the write call on the other side timed out the call to Stream.Read will never return.
-
-      Any conditions that cause network writes to stall for 10-30 seconds can trigger this Denial of Service- extremely high CPU contention on either side of the connection, BGP reconvergence, etc. To resolve the Denial of Service issue, you have to re-establish the connections, which will usually require a hard restart of the service on either end of the connection.
-    Severity: MEDIUM
-    VendorSeverity:
-      ghsa: 2
-    References:
-    - https://github.com/golang/vulndb/issues/3408
-    - https://github.com/hashicorp/yamux
-    - https://github.com/hashicorp/yamux/issues/142
-    - https://github.com/hashicorp/yamux/pull/143
   - VulnerabilityID: CVE-2024-56323
-    PkgID: github.com/openfga/openfga@v1.5.4
+    PkgID: github.com/openfga/openfga@v1.6.2
     PkgName: github.com/openfga/openfga
     PkgIdentifier:
-      PURL: pkg:golang/github.com/openfga/openfga@v1.5.4
-      UID: af39e58417181ae5
-    InstalledVersion: v1.5.4
+      PURL: pkg:golang/github.com/openfga/openfga@v1.6.2
+      UID: 9b19146cf4b99910
+    InstalledVersion: v1.6.2
     FixedVersion: 1.8.3
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-56323
     DataSource:
@@ -165,103 +46,33 @@
     - https://pkg.go.dev/vuln/GO-2025-3384
     PublishedDate: '2025-01-13T22:15:14.447Z'
     LastModifiedDate: '2025-01-13T22:15:14.447Z'
-  - VulnerabilityID: CVE-2024-45337
-    PkgID: golang.org/x/crypto@v0.27.0
-    PkgName: golang.org/x/crypto
+  - VulnerabilityID: CVE-2025-22866
+    PkgID: stdlib@v1.23.5
+    PkgName: stdlib
     PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/crypto@v0.27.0
-      UID: 44502bfc732bdb51
-    InstalledVersion: v0.27.0
-    FixedVersion: 0.31.0
+      PURL: pkg:golang/stdlib@v1.23.5
+      UID: 9b742b4a01bd9403
+    InstalledVersion: v1.23.5
+    FixedVersion: 1.22.12, 1.23.6, 1.24.0-rc.3
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
-    SeveritySource: ghsa
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45337
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22866
     DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Go
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: 'golang.org/x/crypto/ssh: Misuse of ServerConfig.PublicKeyCallback may cause authorization bypass in golang.org/x/crypto'
-    Description: Applications and libraries which misuse the ServerConfig.PublicKeyCallback callback may be susceptible to an authorization bypass. The documentation for ServerConfig.PublicKeyCallback says that "A call to this function does not guarantee that the key offered is in fact used to authenticate." Specifically, the SSH protocol allows clients to inquire about whether a public key is acceptable before proving control of the corresponding private key. PublicKeyCallback may be called with multiple keys, and the order in which the keys were provided cannot be used to infer which key the client successfully authenticated with, if any. Some applications, which store the key(s) passed to PublicKeyCallback (or derived information) and make security relevant determinations based on it once the connection is established, may make incorrect assumptions. For example, an attacker may send public keys A and B, and then authenticate with A. PublicKeyCallback would be called only twice, first with A and then with B. A vulnerable application may then make authorization decisions based on key B for which the attacker does not actually control the private key. Since this API is widely misused, as a partial mitigation golang.org/x/cry...@v0.31.0 enforces the property that, when successfully authenticating via public key, the last key passed to ServerConfig.PublicKeyCallback will be the key used to authenticate the connection. PublicKeyCallback will now be called multiple times with the same key, if necessary. Note that the client may still not control the last key passed to PublicKeyCallback if the connection is then authenticated with a different method, such as PasswordCallback, KeyboardInteractiveCallback, or NoClientAuth. Users should be using the Extensions field of the Permissions return value from the various authentication callbacks to record data associated with the authentication attempt instead of referencing external state. Once the connection is established the state corresponding to the successful authentication attempt can be retrieved via the ServerConn.Permissions field. Note that some third-party libraries misuse the Permissions type by sharing it across authentication attempts; users of third-party libraries should refer to the relevant projects for guidance.
-    Severity: CRITICAL
-    VendorSeverity:
-      amazon: 3
-      azure: 4
-      cbl-mariner: 4
-      ghsa: 4
-      redhat: 3
-    CVSS:
-      ghsa:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
-        V3Score: 9.1
-      redhat:
-        V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N
-        V3Score: 8.2
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Title: Timing sidechannel for P-256 on ppc64le in crypto/internal/nistec
+    Description: Due to the usage of a variable time instruction in the assembly implementation of an internal function, a small number of bits of secret scalars are leaked on the ppc64le architecture. Due to the way this function is used, we do not believe this leakage is enough to allow recovery of the private key when P-256 is used in any well known protocols.
+    Severity: UNKNOWN
     References:
-    - http://www.openwall.com/lists/oss-security/2024/12/11/2
-    - https://access.redhat.com/security/cve/CVE-2024-45337
-    - https://github.com/golang/crypto
-    - https://github.com/golang/crypto/commit/b4f1988a35dee11ec3e05d6bf3e90b695fbd8909
-    - https://go.dev/cl/635315
-    - https://go.dev/issue/70779
-    - https://groups.google.com/g/golang-announce/c/-nPEi39gI4Q/m/cGVPJCqdAQAJ
-    - https://nvd.nist.gov/vuln/detail/CVE-2024-45337
-    - https://pkg.go.dev/vuln/GO-2024-3321
-    - https://security.netapp.com/advisory/ntap-20250131-0007
-    - https://security.netapp.com/advisory/ntap-20250131-0007/
-    - https://www.cve.org/CVERecord?id=CVE-2024-45337
-    PublishedDate: '2024-12-12T02:02:07.97Z'
-    LastModifiedDate: '2025-01-31T15:15:13.19Z'
-  - VulnerabilityID: CVE-2024-45338
-    PkgID: golang.org/x/net@v0.29.0
-    PkgName: golang.org/x/net
-    PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/net@v0.29.0
-      UID: 9f98ff642205d4b
-    InstalledVersion: v0.29.0
-    FixedVersion: 0.33.0
-    Status: fixed
-    Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
-    SeveritySource: ghsa
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Go
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: 'golang.org/x/net/html: Non-linear parsing of case-insensitive content in golang.org/x/net/html'
-    Description: An attacker can craft an input to the Parse functions that would be processed non-linearly with respect to its length, resulting in extremely slow parsing. This could cause a denial of service.
-    Severity: HIGH
-    CweIDs:
-    - CWE-1333
-    VendorSeverity:
-      amazon: 2
-      azure: 3
-      cbl-mariner: 3
-      ghsa: 3
-      redhat: 3
-      ubuntu: 2
-    CVSS:
-      redhat:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
-        V3Score: 7.5
-    References:
-    - https://access.redhat.com/security/cve/CVE-2024-45338
-    - https://cs.opensource.google/go/x/net
-    - https://github.com/golang/go/issues/70906
-    - https://go-review.googlesource.com/c/net/+/637536
-    - https://go.dev/cl/637536
-    - https://go.dev/issue/70906
-    - https://groups.google.com/g/golang-announce/c/wSCRmFnNmPA/m/Lvcd0mRMAwAJ
-    - https://nvd.nist.gov/vuln/detail/CVE-2024-45338
-    - https://pkg.go.dev/vuln/GO-2024-3333
-    - https://ubuntu.com/security/notices/USN-7197-1
-    - https://www.cve.org/CVERecord?id=CVE-2024-45338
-    PublishedDate: '2024-12-18T21:15:08.173Z'
-    LastModifiedDate: '2024-12-31T20:16:06.603Z'
+    - https://go.dev/cl/643735
+    - https://go.dev/issue/71383
+    - https://groups.google.com/g/golang-announce/c/xU1ZCHUZw3k
+    - https://pkg.go.dev/vuln/GO-2025-3447
+    PublishedDate: '2025-02-06T17:15:21.41Z'
+    LastModifiedDate: '2025-02-06T17:15:21.41Z'
 - Target: usr/bin/prometheus
   Class: lang-pkgs
   Type: gobinary
@@ -276,8 +87,8 @@
     FixedVersion: 1.6.0
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-35255
     DataSource:
@@ -326,8 +137,8 @@
     FixedVersion: 23.0.15, 26.1.5, 27.1.1, 25.0.6
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-41110
     DataSource:
@@ -397,8 +208,8 @@
     FixedVersion: 0.7.7
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-6104
     DataSource:
@@ -459,8 +270,8 @@
     FixedVersion: 0.31.0
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45337
     DataSource:
@@ -508,8 +319,8 @@
     FixedVersion: 0.33.0
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
     DataSource:
@@ -522,7 +333,7 @@
     CweIDs:
     - CWE-1333
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       azure: 3
       cbl-mariner: 3
       ghsa: 3
@@ -556,8 +367,8 @@
     FixedVersion: 1.64.1
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-xr7q-jx4m-x55m
     DataSource:
@@ -581,6 +392,33 @@
     - https://github.com/grpc/grpc-go
     - https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7a7786754d1fe05264c3021eb
     - https://github.com/grpc/grpc-go/security/advisories/GHSA-xr7q-jx4m-x55m
+  - VulnerabilityID: CVE-2025-22866
+    PkgID: stdlib@v1.23.5
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.23.5
+      UID: be6ed498bb81661f
+    InstalledVersion: v1.23.5
+    FixedVersion: 1.22.12, 1.23.6, 1.24.0-rc.3
+    Status: fixed
+    Layer:
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22866
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Title: Timing sidechannel for P-256 on ppc64le in crypto/internal/nistec
+    Description: Due to the usage of a variable time instruction in the assembly implementation of an internal function, a small number of bits of secret scalars are leaked on the ppc64le architecture. Due to the way this function is used, we do not believe this leakage is enough to allow recovery of the private key when P-256 is used in any well known protocols.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/643735
+    - https://go.dev/issue/71383
+    - https://groups.google.com/g/golang-announce/c/xU1ZCHUZw3k
+    - https://pkg.go.dev/vuln/GO-2025-3447
+    PublishedDate: '2025-02-06T17:15:21.41Z'
+    LastModifiedDate: '2025-02-06T17:15:21.41Z'
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -595,8 +433,8 @@
     FixedVersion: 1.6.0
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-35255
     DataSource:
@@ -645,8 +483,8 @@
     FixedVersion: 23.0.15, 26.1.5, 27.1.1, 25.0.6
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-41110
     DataSource:
@@ -716,8 +554,8 @@
     FixedVersion: 0.7.7
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-6104
     DataSource:
@@ -778,8 +616,8 @@
     FixedVersion: 0.31.0
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45337
     DataSource:
@@ -827,8 +665,8 @@
     FixedVersion: 0.33.0
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
     DataSource:
@@ -841,7 +679,7 @@
     CweIDs:
     - CWE-1333
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       azure: 3
       cbl-mariner: 3
       ghsa: 3
@@ -875,8 +713,8 @@
     FixedVersion: 1.64.1
     Status: fixed
     Layer:
-      Digest: sha256:0ba77e351b2b40dedac258af5234b4c52cf4edcac70d62041ebcfd30fa5defbe
-      DiffID: sha256:68c96497bddbc580bde9342b28d1de686419febc85a04bb5ae2a9b87e8ff2c27
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-xr7q-jx4m-x55m
     DataSource:
@@ -900,3 +738,30 @@
     - https://github.com/grpc/grpc-go
     - https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7a7786754d1fe05264c3021eb
     - https://github.com/grpc/grpc-go/security/advisories/GHSA-xr7q-jx4m-x55m
+  - VulnerabilityID: CVE-2025-22866
+    PkgID: stdlib@v1.23.5
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.23.5
+      UID: 4aca339cfba03697
+    InstalledVersion: v1.23.5
+    FixedVersion: 1.22.12, 1.23.6, 1.24.0-rc.3
+    Status: fixed
+    Layer:
+      Digest: sha256:fdadc25877349ca051ad37eca9b1ed64973e385fdf9f3160c59ab3b17a94dacc
+      DiffID: sha256:e4eecaa2ee7294172330aaedc33d27e78d488d4ead83af6d16a457cf72e0e8ea
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22866
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Title: Timing sidechannel for P-256 on ppc64le in crypto/internal/nistec
+    Description: Due to the usage of a variable time instruction in the assembly implementation of an internal function, a small number of bits of secret scalars are leaked on the ppc64le architecture. Due to the way this function is used, we do not believe this leakage is enough to allow recovery of the private key when P-256 is used in any well known protocols.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/643735
+    - https://go.dev/issue/71383
+    - https://groups.google.com/g/golang-announce/c/xU1ZCHUZw3k
+    - https://pkg.go.dev/vuln/GO-2025-3447
+    PublishedDate: '2025-02-06T17:15:21.41Z'
+    LastModifiedDate: '2025-02-06T17:15:21.41Z'
