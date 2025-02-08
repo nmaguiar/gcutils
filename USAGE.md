@@ -12,6 +12,25 @@ docker run --rm -ti --pid=container:abc123ef456 --ipc=container:abc123ef456 nmag
 
 ---
 
+## ⚙️  Deploy using kubectl 
+
+{{{$acolor 'FAINT,ITALIC' 'kubectl run gcutils --rm -it --image nmaguiar/gcutils -- /bin/bash'}}}
+
+**Attach to a container to debug:**
+
+{{{$acolor 'FAINT,ITALIC' 'kubectl debug pod-to-debug -it --image nmaguiar/gcutils --target=container-to-debug --profile=netadmin -- /bin/bash'}}}
+
+Profiles:
+
+| Profile | Description |
+|---------|-------------|
+| netadmin | Network Administrator privileges (NET_ADMIN and NET_RAW). |
+| sysadmin | System Administrator (root) privileges. |
+| general | A reasonable set of defaults tailored for each debuging journey (SYS_PTRACE). |
+| auto | Automatically choose between general, baseline, and restricted. |
+
+---
+
 ## Utils available in this image
 
 | Utility | Use for | Usage help |
