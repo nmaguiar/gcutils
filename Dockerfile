@@ -6,7 +6,7 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
  && apk del openjdk21-jre openjdk21-jre-headless\
- && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip strace openjdk21 prometheus grafana\
+ && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip strace openjdk21 prometheus grafana htop htop-doc iotop iotop-doc\
  && cd /openaf\
  && java -jar openaf.jar --install\
  && /openaf/openaf --update --force\
@@ -16,6 +16,10 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && /openaf/opack install nattrmon\
  && /openaf/ojob ojob.io/get job=ojob.io/oaf/colorFormats.yaml > /openaf/ojobs/colorFormats.yaml\
  && /openaf/ojob ojob.io/get job=ojob.io/java/grafana/gc.yaml > /openaf/ojobs/grafana_gc.yaml\
+ && cd /openaf/ojobs\
+ && /openaf/ojob ojob.io/get airgap=true job=ojob.io/grid/data/gc2\
+ && sed javaGC.yaml -i -e "s/ojob.io_grid_show.yaml/\/openaf\/ojobs\/ojob.io_grid_show.yaml/"\
+ && mv ojob.io_grid_data_gc2.yaml javaGC.yaml\
  && /openaf/oaf --sb /openaf/ojobs/colorFormats.yaml\
  && /openaf/oaf --sb /openaf/ojobs/grafana_gc.yaml\
  && /openaf/oaf --sb /openaf/ojobs/collect4pid_live.yaml\
@@ -52,7 +56,9 @@ COPY scripts /usr/bin
 RUN chmod a+x /usr/bin/start_prom_graf.sh\
  && chmod a+x /usr/bin/openmetrics2prom.sh\
  && /openaf/oaf --sb /usr/bin/chooseJava.js\
- && chmod a+x /usr/bin/chooseJava.js
+ && chmod a+x /usr/bin/chooseJava.js\
+ && chmod a+x /usr/bin/switch-user-by-pid.sh\
+ && chmod a+x /usr/bin/switch-fs-by-pid.sh
 
 # Setup welcome message and vars
 # ------------------------------
