@@ -92,7 +92,7 @@
 │                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3447 
 │                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-22866 
 │                             ├ PublishedDate   : 2025-02-06T17:15:21.41Z 
-│                             ╰ LastModifiedDate: 2025-02-06T17:15:21.41Z 
+│                             ╰ LastModifiedDate: 2025-02-10T21:15:22.477Z 
 ├ [5] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -536,7 +536,7 @@
 │                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3447 
 │                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-22866 
 │                             ├ PublishedDate   : 2025-02-06T17:15:21.41Z 
-│                             ╰ LastModifiedDate: 2025-02-06T17:15:21.41Z 
+│                             ╰ LastModifiedDate: 2025-02-10T21:15:22.477Z 
 ╰ [6] ╭ Target         : usr/bin/promtool 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -980,5 +980,5 @@
                               │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3447 
                               │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-22866 
                               ├ PublishedDate   : 2025-02-06T17:15:21.41Z 
-                              ╰ LastModifiedDate: 2025-02-06T17:15:21.41Z 
+                              ╰ LastModifiedDate: 2025-02-10T21:15:22.477Z 
 ````
