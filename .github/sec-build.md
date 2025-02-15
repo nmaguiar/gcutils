@@ -14,89 +14,47 @@
 ├ [4] ╭ Target         : usr/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2024-56323 
-│                       │     ├ PkgID           : github.com/openfga/openfga@v1.6.2 
-│                       │     ├ PkgName         : github.com/openfga/openfga 
-│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
-│                       │     │                  ╰ UID : 9b19146cf4b99910 
-│                       │     ├ InstalledVersion: v1.6.2 
-│                       │     ├ FixedVersion    : 1.8.3 
-│                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                       │     │                  │         a6a26e70cd50fd067da 
-│                       │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                       │     │                            3294cec2e40cb46b0e4 
-│                       │     ├ SeveritySource  : ghsa 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-56323 
-│                       │     ├ DataSource       ╭ ID  : ghsa 
-│                       │     │                  ├ Name: GitHub Security Advisory Go 
-│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                       │     │                          osystem%3Ago 
-│                       │     ├ Title           : OpenFGA Authorization Bypass 
-│                       │     ├ Description     : OpenFGA is an authorization/permission engine. IN OpenFGA
-│                       │     │                   v1.3.8 to v1.8.2 (Helm chart openfga-0.1.38 to
-│                       │     │                   openfga-0.2.19, docker v1.3.8 to v.1.8.2)  are vulnerable to
-│                       │     │                   authorization bypass under the following conditions: 1.
-│                       │     │                   calling Check API or ListObjects with a model that uses
-│                       │     │                   [conditions](https://openfga.dev/docs/modeling/conditions),
-│                       │     │                   and 2. calling Check API or ListObjects API with [contextual
-│                       │     │                   tuples](https://openfga.dev/docs/concepts#what-are-contextual
-│                       │     │                   -tuples) that include conditions and 3. OpenFGA is configured
-│                       │     │                    with caching enabled (`OPENFGA_CHECK_QUERY_CACHE_ENABLED`).
-│                       │     │                   Users are advised to upgrade to v1.8.3. There are no known
-│                       │     │                   workarounds for this vulnerability. 
-│                       │     ├ Severity        : MEDIUM 
-│                       │     ├ CweIDs           ─ [0]: CWE-285 
-│                       │     ├ VendorSeverity   ─ ghsa: 2 
-│                       │     ├ References       ╭ [0]: https://github.com/openfga/openfga 
-│                       │     │                  ├ [1]: https://github.com/openfga/openfga/security/advisories/
-│                       │     │                  │      GHSA-32q6-rr98-cjqv 
-│                       │     │                  ├ [2]: https://nvd.nist.gov/vuln/detail/CVE-2024-56323 
-│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3384 
-│                       │     ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
-│                       │     ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
-│                       ╰ [1] ╭ VulnerabilityID : CVE-2025-22866 
-│                             ├ PkgID           : stdlib@v1.23.5 
-│                             ├ PkgName         : stdlib 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.23.5 
-│                             │                  ╰ UID : 9b742b4a01bd9403 
-│                             ├ InstalledVersion: v1.23.5 
-│                             ├ FixedVersion    : 1.22.12, 1.23.6, 1.24.0-rc.3 
+│     ╰ Vulnerabilities ─ [0] ╭ VulnerabilityID : CVE-2024-56323 
+│                             ├ PkgID           : github.com/openfga/openfga@v1.6.2 
+│                             ├ PkgName         : github.com/openfga/openfga 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
+│                             │                  ╰ UID : 9b19146cf4b99910 
+│                             ├ InstalledVersion: v1.6.2 
+│                             ├ FixedVersion    : 1.8.3 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                             │                  │         a6a26e70cd50fd067da 
-│                             │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                             │                            3294cec2e40cb46b0e4 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22866 
-│                             ├ DataSource       ╭ ID  : govulndb 
-│                             │                  ├ Name: The Go Vulnerability Database 
-│                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Title           : crypto/internal/nistec: golang: Timing sidechannel for P-256
-│                             │                   on ppc64le in crypto/internal/nistec 
-│                             ├ Description     : Due to the usage of a variable time instruction in the
-│                             │                   assembly implementation of an internal function, a small
-│                             │                   number of bits of secret scalars are leaked on the ppc64le
-│                             │                   architecture. Due to the way this function is used, we do not
-│                             │                    believe this leakage is enough to allow recovery of the
-│                             │                   private key when P-256 is used in any well known protocols. 
+│                             ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+│                             │                  │         fb7cf0589c9f231f7ef 
+│                             │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+│                             │                            61b1fa664ebf64f25ed 
+│                             ├ SeveritySource  : ghsa 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-56323 
+│                             ├ DataSource       ╭ ID  : ghsa 
+│                             │                  ├ Name: GitHub Security Advisory Go 
+│                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                             │                          osystem%3Ago 
+│                             ├ Title           : OpenFGA Authorization Bypass 
+│                             ├ Description     : OpenFGA is an authorization/permission engine. IN OpenFGA
+│                             │                   v1.3.8 to v1.8.2 (Helm chart openfga-0.1.38 to
+│                             │                   openfga-0.2.19, docker v1.3.8 to v.1.8.2)  are vulnerable to
+│                             │                   authorization bypass under the following conditions: 1.
+│                             │                   calling Check API or ListObjects with a model that uses
+│                             │                   [conditions](https://openfga.dev/docs/modeling/conditions),
+│                             │                   and 2. calling Check API or ListObjects API with [contextual
+│                             │                   tuples](https://openfga.dev/docs/concepts#what-are-contextual
+│                             │                   -tuples) that include conditions and 3. OpenFGA is configured
+│                             │                    with caching enabled (`OPENFGA_CHECK_QUERY_CACHE_ENABLED`).
+│                             │                   Users are advised to upgrade to v1.8.3. There are no known
+│                             │                   workarounds for this vulnerability. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ╭ bitnami: 2 
-│                             │                  ╰ redhat : 2 
-│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N
-│                             │                  │         │           /A:N 
-│                             │                  │         ╰ V3Score : 4 
-│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
-│                             │                            │           /A:N 
-│                             │                            ╰ V3Score : 5.3 
-│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-22866 
-│                             │                  ├ [1]: https://go.dev/cl/643735 
-│                             │                  ├ [2]: https://go.dev/issue/71383 
-│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/xU1ZCHUZw3k 
-│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22866 
-│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3447 
-│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-22866 
-│                             ├ PublishedDate   : 2025-02-06T17:15:21.41Z 
-│                             ╰ LastModifiedDate: 2025-02-11T15:15:20.87Z 
+│                             ├ CweIDs           ─ [0]: CWE-285 
+│                             ├ VendorSeverity   ─ ghsa: 2 
+│                             ├ References       ╭ [0]: https://github.com/openfga/openfga 
+│                             │                  ├ [1]: https://github.com/openfga/openfga/security/advisories/
+│                             │                  │      GHSA-32q6-rr98-cjqv 
+│                             │                  ├ [2]: https://nvd.nist.gov/vuln/detail/CVE-2024-56323 
+│                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3384 
+│                             ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
+│                             ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
 ├ [5] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -109,10 +67,10 @@
 │                       │     ├ InstalledVersion: v1.5.2 
 │                       │     ├ FixedVersion    : 1.6.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                       │     │                  │         a6a26e70cd50fd067da 
-│                       │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                       │     │                            3294cec2e40cb46b0e4 
+│                       │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+│                       │     │                  │         fb7cf0589c9f231f7ef 
+│                       │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+│                       │     │                            61b1fa664ebf64f25ed 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-35255 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -166,10 +124,10 @@
 │                       │     ├ InstalledVersion: v26.1.3+incompatible 
 │                       │     ├ FixedVersion    : 23.0.15, 26.1.5, 27.1.1, 25.0.6 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                       │     │                  │         a6a26e70cd50fd067da 
-│                       │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                       │     │                            3294cec2e40cb46b0e4 
+│                       │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+│                       │     │                  │         fb7cf0589c9f231f7ef 
+│                       │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+│                       │     │                            61b1fa664ebf64f25ed 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-41110 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -267,10 +225,10 @@
 │                       │     ├ InstalledVersion: v0.7.4 
 │                       │     ├ FixedVersion    : 0.7.7 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                       │     │                  │         a6a26e70cd50fd067da 
-│                       │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                       │     │                            3294cec2e40cb46b0e4 
+│                       │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+│                       │     │                  │         fb7cf0589c9f231f7ef 
+│                       │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+│                       │     │                            61b1fa664ebf64f25ed 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-6104 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -333,10 +291,10 @@
 │                       │     ├ InstalledVersion: v0.24.0 
 │                       │     ├ FixedVersion    : 0.31.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                       │     │                  │         a6a26e70cd50fd067da 
-│                       │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                       │     │                            3294cec2e40cb46b0e4 
+│                       │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+│                       │     │                  │         fb7cf0589c9f231f7ef 
+│                       │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+│                       │     │                            61b1fa664ebf64f25ed 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -422,10 +380,10 @@
 │                       │     ├ InstalledVersion: v0.26.0 
 │                       │     ├ FixedVersion    : 0.33.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                       │     │                  │         a6a26e70cd50fd067da 
-│                       │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                       │     │                            3294cec2e40cb46b0e4 
+│                       │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+│                       │     │                  │         fb7cf0589c9f231f7ef 
+│                       │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+│                       │     │                            61b1fa664ebf64f25ed 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45338 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -463,88 +421,46 @@
 │                       │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2024-45338 
 │                       │     ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
 │                       │     ╰ LastModifiedDate: 2024-12-31T20:16:06.603Z 
-│                       ├ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
-│                       │     ├ PkgID           : google.golang.org/grpc@v1.64.0 
-│                       │     ├ PkgName         : google.golang.org/grpc 
-│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
-│                       │     │                  ╰ UID : b5e6dd3f671415d3 
-│                       │     ├ InstalledVersion: v1.64.0 
-│                       │     ├ FixedVersion    : 1.64.1 
-│                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                       │     │                  │         a6a26e70cd50fd067da 
-│                       │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                       │     │                            3294cec2e40cb46b0e4 
-│                       │     ├ SeveritySource  : ghsa 
-│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
-│                       │     ├ DataSource       ╭ ID  : ghsa 
-│                       │     │                  ├ Name: GitHub Security Advisory Go 
-│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                       │     │                          osystem%3Ago 
-│                       │     ├ Title           : Private tokens could appear in logs if context containing
-│                       │     │                   gRPC metadata is logged in github.com/grpc/grpc-go 
-│                       │     ├ Description     : ### Impact
-│                       │     │                   This issue represents a potential PII concern.  If
-│                       │     │                   applications were printing or logging a context containing
-│                       │     │                   gRPC metadata, the affected versions will contain all the
-│                       │     │                   metadata, which may include private information.
-│                       │     │                   
-│                       │     │                   ### Patches
-│                       │     │                   The issue first appeared in 1.64.0 and is patched in 1.64.1
-│                       │     │                   and 1.65.0
-│                       │     │                   ### Workarounds
-│                       │     │                   If using an affected version and upgrading is not possible,
-│                       │     │                   ensuring you do not log or print contexts will avoid the
-│                       │     │                   problem. 
-│                       │     ├ Severity        : LOW 
-│                       │     ├ VendorSeverity   ─ ghsa: 1 
-│                       │     ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
-│                       │                        ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
-│                       │                        │      a7786754d1fe05264c3021eb 
-│                       │                        ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
-│                       │                               A-xr7q-jx4m-x55m 
-│                       ╰ [6] ╭ VulnerabilityID : CVE-2025-22866 
-│                             ├ PkgID           : stdlib@v1.23.5 
-│                             ├ PkgName         : stdlib 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.23.5 
-│                             │                  ╰ UID : be6ed498bb81661f 
-│                             ├ InstalledVersion: v1.23.5 
-│                             ├ FixedVersion    : 1.22.12, 1.23.6, 1.24.0-rc.3 
+│                       ╰ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+│                             ├ PkgID           : google.golang.org/grpc@v1.64.0 
+│                             ├ PkgName         : google.golang.org/grpc 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
+│                             │                  ╰ UID : b5e6dd3f671415d3 
+│                             ├ InstalledVersion: v1.64.0 
+│                             ├ FixedVersion    : 1.64.1 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-│                             │                  │         a6a26e70cd50fd067da 
-│                             │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-│                             │                            3294cec2e40cb46b0e4 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22866 
-│                             ├ DataSource       ╭ ID  : govulndb 
-│                             │                  ├ Name: The Go Vulnerability Database 
-│                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Title           : crypto/internal/nistec: golang: Timing sidechannel for P-256
-│                             │                   on ppc64le in crypto/internal/nistec 
-│                             ├ Description     : Due to the usage of a variable time instruction in the
-│                             │                   assembly implementation of an internal function, a small
-│                             │                   number of bits of secret scalars are leaked on the ppc64le
-│                             │                   architecture. Due to the way this function is used, we do not
-│                             │                    believe this leakage is enough to allow recovery of the
-│                             │                   private key when P-256 is used in any well known protocols. 
-│                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ╭ bitnami: 2 
-│                             │                  ╰ redhat : 2 
-│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N
-│                             │                  │         │           /A:N 
-│                             │                  │         ╰ V3Score : 4 
-│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
-│                             │                            │           /A:N 
-│                             │                            ╰ V3Score : 5.3 
-│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-22866 
-│                             │                  ├ [1]: https://go.dev/cl/643735 
-│                             │                  ├ [2]: https://go.dev/issue/71383 
-│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/xU1ZCHUZw3k 
-│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22866 
-│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3447 
-│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-22866 
-│                             ├ PublishedDate   : 2025-02-06T17:15:21.41Z 
-│                             ╰ LastModifiedDate: 2025-02-11T15:15:20.87Z 
+│                             ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+│                             │                  │         fb7cf0589c9f231f7ef 
+│                             │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+│                             │                            61b1fa664ebf64f25ed 
+│                             ├ SeveritySource  : ghsa 
+│                             ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
+│                             ├ DataSource       ╭ ID  : ghsa 
+│                             │                  ├ Name: GitHub Security Advisory Go 
+│                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                             │                          osystem%3Ago 
+│                             ├ Title           : Private tokens could appear in logs if context containing
+│                             │                   gRPC metadata is logged in github.com/grpc/grpc-go 
+│                             ├ Description     : ### Impact
+│                             │                   This issue represents a potential PII concern.  If
+│                             │                   applications were printing or logging a context containing
+│                             │                   gRPC metadata, the affected versions will contain all the
+│                             │                   metadata, which may include private information.
+│                             │                   
+│                             │                   ### Patches
+│                             │                   The issue first appeared in 1.64.0 and is patched in 1.64.1
+│                             │                   and 1.65.0
+│                             │                   ### Workarounds
+│                             │                   If using an affected version and upgrading is not possible,
+│                             │                   ensuring you do not log or print contexts will avoid the
+│                             │                   problem. 
+│                             ├ Severity        : LOW 
+│                             ├ VendorSeverity   ─ ghsa: 1 
+│                             ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
+│                                                ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
+│                                                │      a7786754d1fe05264c3021eb 
+│                                                ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
+│                                                       A-xr7q-jx4m-x55m 
 ╰ [6] ╭ Target         : usr/bin/promtool 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -557,10 +473,10 @@
                         │     ├ InstalledVersion: v1.5.2 
                         │     ├ FixedVersion    : 1.6.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-                        │     │                  │         a6a26e70cd50fd067da 
-                        │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-                        │     │                            3294cec2e40cb46b0e4 
+                        │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+                        │     │                  │         fb7cf0589c9f231f7ef 
+                        │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+                        │     │                            61b1fa664ebf64f25ed 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-35255 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -614,10 +530,10 @@
                         │     ├ InstalledVersion: v26.1.3+incompatible 
                         │     ├ FixedVersion    : 23.0.15, 26.1.5, 27.1.1, 25.0.6 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-                        │     │                  │         a6a26e70cd50fd067da 
-                        │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-                        │     │                            3294cec2e40cb46b0e4 
+                        │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+                        │     │                  │         fb7cf0589c9f231f7ef 
+                        │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+                        │     │                            61b1fa664ebf64f25ed 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-41110 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -715,10 +631,10 @@
                         │     ├ InstalledVersion: v0.7.4 
                         │     ├ FixedVersion    : 0.7.7 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-                        │     │                  │         a6a26e70cd50fd067da 
-                        │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-                        │     │                            3294cec2e40cb46b0e4 
+                        │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+                        │     │                  │         fb7cf0589c9f231f7ef 
+                        │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+                        │     │                            61b1fa664ebf64f25ed 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-6104 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -781,10 +697,10 @@
                         │     ├ InstalledVersion: v0.24.0 
                         │     ├ FixedVersion    : 0.31.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-                        │     │                  │         a6a26e70cd50fd067da 
-                        │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-                        │     │                            3294cec2e40cb46b0e4 
+                        │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+                        │     │                  │         fb7cf0589c9f231f7ef 
+                        │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+                        │     │                            61b1fa664ebf64f25ed 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -870,10 +786,10 @@
                         │     ├ InstalledVersion: v0.26.0 
                         │     ├ FixedVersion    : 0.33.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-                        │     │                  │         a6a26e70cd50fd067da 
-                        │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-                        │     │                            3294cec2e40cb46b0e4 
+                        │     ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+                        │     │                  │         fb7cf0589c9f231f7ef 
+                        │     │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+                        │     │                            61b1fa664ebf64f25ed 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45338 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -911,86 +827,44 @@
                         │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2024-45338 
                         │     ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
                         │     ╰ LastModifiedDate: 2024-12-31T20:16:06.603Z 
-                        ├ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
-                        │     ├ PkgID           : google.golang.org/grpc@v1.64.0 
-                        │     ├ PkgName         : google.golang.org/grpc 
-                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
-                        │     │                  ╰ UID : 6c7f57c93d4ea9eb 
-                        │     ├ InstalledVersion: v1.64.0 
-                        │     ├ FixedVersion    : 1.64.1 
-                        │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-                        │     │                  │         a6a26e70cd50fd067da 
-                        │     │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-                        │     │                            3294cec2e40cb46b0e4 
-                        │     ├ SeveritySource  : ghsa 
-                        │     ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
-                        │     ├ DataSource       ╭ ID  : ghsa 
-                        │     │                  ├ Name: GitHub Security Advisory Go 
-                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-                        │     │                          osystem%3Ago 
-                        │     ├ Title           : Private tokens could appear in logs if context containing
-                        │     │                   gRPC metadata is logged in github.com/grpc/grpc-go 
-                        │     ├ Description     : ### Impact
-                        │     │                   This issue represents a potential PII concern.  If
-                        │     │                   applications were printing or logging a context containing
-                        │     │                   gRPC metadata, the affected versions will contain all the
-                        │     │                   metadata, which may include private information.
-                        │     │                   
-                        │     │                   ### Patches
-                        │     │                   The issue first appeared in 1.64.0 and is patched in 1.64.1
-                        │     │                   and 1.65.0
-                        │     │                   ### Workarounds
-                        │     │                   If using an affected version and upgrading is not possible,
-                        │     │                   ensuring you do not log or print contexts will avoid the
-                        │     │                   problem. 
-                        │     ├ Severity        : LOW 
-                        │     ├ VendorSeverity   ─ ghsa: 1 
-                        │     ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
-                        │                        ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
-                        │                        │      a7786754d1fe05264c3021eb 
-                        │                        ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
-                        │                               A-xr7q-jx4m-x55m 
-                        ╰ [6] ╭ VulnerabilityID : CVE-2025-22866 
-                              ├ PkgID           : stdlib@v1.23.5 
-                              ├ PkgName         : stdlib 
-                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.23.5 
-                              │                  ╰ UID : 4aca339cfba03697 
-                              ├ InstalledVersion: v1.23.5 
-                              ├ FixedVersion    : 1.22.12, 1.23.6, 1.24.0-rc.3 
+                        ╰ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+                              ├ PkgID           : google.golang.org/grpc@v1.64.0 
+                              ├ PkgName         : google.golang.org/grpc 
+                              ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
+                              │                  ╰ UID : 6c7f57c93d4ea9eb 
+                              ├ InstalledVersion: v1.64.0 
+                              ├ FixedVersion    : 1.64.1 
                               ├ Status          : fixed 
-                              ├ Layer            ╭ Digest: sha256:af7b052ac1e73e5e5c744ea16a95e7c4afa1783877516
-                              │                  │         a6a26e70cd50fd067da 
-                              │                  ╰ DiffID: sha256:b7fcb4472ec608ccda00b7effac218e0abc23f99b49d4
-                              │                            3294cec2e40cb46b0e4 
-                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22866 
-                              ├ DataSource       ╭ ID  : govulndb 
-                              │                  ├ Name: The Go Vulnerability Database 
-                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                              ├ Title           : crypto/internal/nistec: golang: Timing sidechannel for P-256
-                              │                   on ppc64le in crypto/internal/nistec 
-                              ├ Description     : Due to the usage of a variable time instruction in the
-                              │                   assembly implementation of an internal function, a small
-                              │                   number of bits of secret scalars are leaked on the ppc64le
-                              │                   architecture. Due to the way this function is used, we do not
-                              │                    believe this leakage is enough to allow recovery of the
-                              │                   private key when P-256 is used in any well known protocols. 
-                              ├ Severity        : MEDIUM 
-                              ├ VendorSeverity   ╭ bitnami: 2 
-                              │                  ╰ redhat : 2 
-                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N
-                              │                  │         │           /A:N 
-                              │                  │         ╰ V3Score : 4 
-                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
-                              │                            │           /A:N 
-                              │                            ╰ V3Score : 5.3 
-                              ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-22866 
-                              │                  ├ [1]: https://go.dev/cl/643735 
-                              │                  ├ [2]: https://go.dev/issue/71383 
-                              │                  ├ [3]: https://groups.google.com/g/golang-announce/c/xU1ZCHUZw3k 
-                              │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22866 
-                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3447 
-                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-22866 
-                              ├ PublishedDate   : 2025-02-06T17:15:21.41Z 
-                              ╰ LastModifiedDate: 2025-02-11T15:15:20.87Z 
+                              ├ Layer            ╭ Digest: sha256:5c33b19e55578aa76cc7fb59cd3f4bc73714174c08c91
+                              │                  │         fb7cf0589c9f231f7ef 
+                              │                  ╰ DiffID: sha256:c49a896e1f8778cd398899d745e41cab8a973611ccd14
+                              │                            61b1fa664ebf64f25ed 
+                              ├ SeveritySource  : ghsa 
+                              ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
+                              ├ DataSource       ╭ ID  : ghsa 
+                              │                  ├ Name: GitHub Security Advisory Go 
+                              │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+                              │                          osystem%3Ago 
+                              ├ Title           : Private tokens could appear in logs if context containing
+                              │                   gRPC metadata is logged in github.com/grpc/grpc-go 
+                              ├ Description     : ### Impact
+                              │                   This issue represents a potential PII concern.  If
+                              │                   applications were printing or logging a context containing
+                              │                   gRPC metadata, the affected versions will contain all the
+                              │                   metadata, which may include private information.
+                              │                   
+                              │                   ### Patches
+                              │                   The issue first appeared in 1.64.0 and is patched in 1.64.1
+                              │                   and 1.65.0
+                              │                   ### Workarounds
+                              │                   If using an affected version and upgrading is not possible,
+                              │                   ensuring you do not log or print contexts will avoid the
+                              │                   problem. 
+                              ├ Severity        : LOW 
+                              ├ VendorSeverity   ─ ghsa: 1 
+                              ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
+                                                 ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
+                                                 │      a7786754d1fe05264c3021eb 
+                                                 ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
+                                                        A-xr7q-jx4m-x55m 
 ````
