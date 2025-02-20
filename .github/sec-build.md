@@ -14,47 +14,99 @@
 ├ [4] ╭ Target         : usr/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ─ [0] ╭ VulnerabilityID : CVE-2024-56323 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2024-56323 
+│                       │     ├ PkgID           : github.com/openfga/openfga@v1.6.2 
+│                       │     ├ PkgName         : github.com/openfga/openfga 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
+│                       │     │                  ╰ UID : 9b19146cf4b99910 
+│                       │     ├ InstalledVersion: v1.6.2 
+│                       │     ├ FixedVersion    : 1.8.3 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:de10ca0126b9a39a0a6290ef2e342aaf2135e18edb506
+│                       │     │                  │         01f3570c6de57cafac6 
+│                       │     │                  ╰ DiffID: sha256:fe230d027dd0364759462cb5f832431f060fdd22a6f75
+│                       │     │                            dea44bb1266d186a309 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-56323 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : OpenFGA Authorization Bypass 
+│                       │     ├ Description     : OpenFGA is an authorization/permission engine. IN OpenFGA
+│                       │     │                   v1.3.8 to v1.8.2 (Helm chart openfga-0.1.38 to
+│                       │     │                   openfga-0.2.19, docker v1.3.8 to v.1.8.2)  are vulnerable to
+│                       │     │                   authorization bypass under the following conditions: 1.
+│                       │     │                   calling Check API or ListObjects with a model that uses
+│                       │     │                   [conditions](https://openfga.dev/docs/modeling/conditions),
+│                       │     │                   and 2. calling Check API or ListObjects API with [contextual
+│                       │     │                   tuples](https://openfga.dev/docs/concepts#what-are-contextual
+│                       │     │                   -tuples) that include conditions and 3. OpenFGA is configured
+│                       │     │                    with caching enabled (`OPENFGA_CHECK_QUERY_CACHE_ENABLED`).
+│                       │     │                   Users are advised to upgrade to v1.8.3. There are no known
+│                       │     │                   workarounds for this vulnerability. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ CweIDs           ─ [0]: CWE-285 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ References       ╭ [0]: https://github.com/openfga/openfga 
+│                       │     │                  ├ [1]: https://github.com/openfga/openfga/security/advisories/
+│                       │     │                  │      GHSA-32q6-rr98-cjqv 
+│                       │     │                  ├ [2]: https://nvd.nist.gov/vuln/detail/CVE-2024-56323 
+│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3384 
+│                       │     ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
+│                       │     ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
+│                       ╰ [1] ╭ VulnerabilityID : CVE-2025-25196 
 │                             ├ PkgID           : github.com/openfga/openfga@v1.6.2 
 │                             ├ PkgName         : github.com/openfga/openfga 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
 │                             │                  ╰ UID : 9b19146cf4b99910 
 │                             ├ InstalledVersion: v1.6.2 
-│                             ├ FixedVersion    : 1.8.3 
+│                             ├ FixedVersion    : 1.8.5 
 │                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:de10ca0126b9a39a0a6290ef2e342aaf2135e18edb506
 │                             │                  │         01f3570c6de57cafac6 
 │                             │                  ╰ DiffID: sha256:fe230d027dd0364759462cb5f832431f060fdd22a6f75
 │                             │                            dea44bb1266d186a309 
 │                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-56323 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-25196 
 │                             ├ DataSource       ╭ ID  : ghsa 
 │                             │                  ├ Name: GitHub Security Advisory Go 
 │                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                             │                          osystem%3Ago 
 │                             ├ Title           : OpenFGA Authorization Bypass 
-│                             ├ Description     : OpenFGA is an authorization/permission engine. IN OpenFGA
-│                             │                   v1.3.8 to v1.8.2 (Helm chart openfga-0.1.38 to
-│                             │                   openfga-0.2.19, docker v1.3.8 to v.1.8.2)  are vulnerable to
-│                             │                   authorization bypass under the following conditions: 1.
-│                             │                   calling Check API or ListObjects with a model that uses
-│                             │                   [conditions](https://openfga.dev/docs/modeling/conditions),
-│                             │                   and 2. calling Check API or ListObjects API with [contextual
-│                             │                   tuples](https://openfga.dev/docs/concepts#what-are-contextual
-│                             │                   -tuples) that include conditions and 3. OpenFGA is configured
-│                             │                    with caching enabled (`OPENFGA_CHECK_QUERY_CACHE_ENABLED`).
-│                             │                   Users are advised to upgrade to v1.8.3. There are no known
-│                             │                   workarounds for this vulnerability. 
+│                             ├ Description     : Overview
+│                             │                   OpenFGA v1.8.4 or previous (Helm chart < openfga-0.2.22,
+│                             │                   docker < v.1.8.5) are vulnerable to authorization bypass when
+│                             │                    certain Check and ListObject calls are executed.
+│                             │                   
+│                             │                   Am I Affected?
+│                             │                   If you are using OpenFGA v1.8.4 or previous, specifically
+│                             │                   under the following conditions, you are affected by this
+│                             │                   authorization bypass vulnerability:
+│                             │                   - Calling Check API or ListObjects with a model that has a
+│                             │                   relation [directly
+│                             │                   assignable](https://openfga.dev/docs/concepts#what-is-a-direc
+│                             │                   tly-related-user-type) to both [public
+│                             │                   access](https://openfga.dev/docs/concepts#what-is-type-bound-
+│                             │                   public-access) AND
+│                             │                   [userset](https://openfga.dev/docs/concepts#what-is-a-user)
+│                             │                   with the [same
+│                             │                   type](https://openfga.dev/docs/concepts#what-is-a-type), and
+│                             │                   - A type bound public access tuple is assigned to an object,
+│                             │                   and
+│                             │                   - userset tuple is not assigned to the same object, and
+│                             │                   - Check request's user field is a userset that has the same
+│                             │                   type as the type bound public access tuple's user type
+│                             │                   Fix
+│                             │                   Upgrade to v1.8.5. This upgrade is backwards compatible. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ CweIDs           ─ [0]: CWE-285 
 │                             ├ VendorSeverity   ─ ghsa: 2 
-│                             ├ References       ╭ [0]: https://github.com/openfga/openfga 
-│                             │                  ├ [1]: https://github.com/openfga/openfga/security/advisories/
-│                             │                  │      GHSA-32q6-rr98-cjqv 
-│                             │                  ├ [2]: https://nvd.nist.gov/vuln/detail/CVE-2024-56323 
-│                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3384 
-│                             ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
-│                             ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
+│                             ╰ References       ╭ [0]: https://github.com/openfga/openfga 
+│                                                ├ [1]: https://github.com/openfga/openfga/commit/0aee4f47e0c64
+│                                                │      2de78831ceb27bb62b116f49588 
+│                                                ├ [2]: https://github.com/openfga/openfga/security/advisories/
+│                                                │      GHSA-g4v5-6f5p-m38j 
+│                                                ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-25196 
 ├ [5] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -210,10 +262,11 @@
 │                       │     │                  ├ [14]: https://nvd.nist.gov/vuln/detail/CVE-2024-41110 
 │                       │     │                  ├ [15]: https://security.netapp.com/advisory/ntap-20240802-0001/ 
 │                       │     │                  ├ [16]: https://ubuntu.com/security/notices/USN-7161-1 
-│                       │     │                  ├ [17]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
-│                       │     │                  ├ [18]: https://www.docker.com/blog/docker-security-advisory-d
+│                       │     │                  ├ [17]: https://ubuntu.com/security/notices/USN-7161-2 
+│                       │     │                  ├ [18]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
+│                       │     │                  ├ [19]: https://www.docker.com/blog/docker-security-advisory-d
 │                       │     │                  │       ocker-engine-authz-plugin 
-│                       │     │                  ╰ [19]: https://www.docker.com/blog/docker-security-advisory-d
+│                       │     │                  ╰ [20]: https://www.docker.com/blog/docker-security-advisory-d
 │                       │     │                          ocker-engine-authz-plugin/ 
 │                       │     ├ PublishedDate   : 2024-07-24T17:15:11.053Z 
 │                       │     ╰ LastModifiedDate: 2024-11-21T09:32:15.16Z 
@@ -304,9 +357,10 @@
 │                       │     ├ Title           : golang.org/x/crypto/ssh: Misuse of
 │                       │     │                   ServerConfig.PublicKeyCallback may cause authorization bypass
 │                       │     │                    in golang.org/x/crypto 
-│                       │     ├ Description     : Applications and libraries which misuse the
-│                       │     │                   ServerConfig.PublicKeyCallback callback may be susceptible to
-│                       │     │                    an authorization bypass. The documentation for
+│                       │     ├ Description     : Applications and libraries which misuse
+│                       │     │                   connection.serverAuthenticate (via callback field
+│                       │     │                   ServerConfig.PublicKeyCallback) may be susceptible to an
+│                       │     │                   authorization bypass. The documentation for
 │                       │     │                   ServerConfig.PublicKeyCallback says that "A call to this
 │                       │     │                   function does not guarantee that the key offered is in fact
 │                       │     │                   used to authenticate." Specifically, the SSH protocol allows
@@ -371,7 +425,7 @@
 │                       │     │                  ├ [10]: https://security.netapp.com/advisory/ntap-20250131-0007/ 
 │                       │     │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
 │                       │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
-│                       │     ╰ LastModifiedDate: 2025-01-31T15:15:13.19Z 
+│                       │     ╰ LastModifiedDate: 2025-02-18T21:15:22.187Z 
 │                       ├ [4] ╭ VulnerabilityID : CVE-2024-45338 
 │                       │     ├ PkgID           : golang.org/x/net@v0.26.0 
 │                       │     ├ PkgName         : golang.org/x/net 
@@ -616,10 +670,11 @@
                         │     │                  ├ [14]: https://nvd.nist.gov/vuln/detail/CVE-2024-41110 
                         │     │                  ├ [15]: https://security.netapp.com/advisory/ntap-20240802-0001/ 
                         │     │                  ├ [16]: https://ubuntu.com/security/notices/USN-7161-1 
-                        │     │                  ├ [17]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
-                        │     │                  ├ [18]: https://www.docker.com/blog/docker-security-advisory-d
+                        │     │                  ├ [17]: https://ubuntu.com/security/notices/USN-7161-2 
+                        │     │                  ├ [18]: https://www.cve.org/CVERecord?id=CVE-2024-41110 
+                        │     │                  ├ [19]: https://www.docker.com/blog/docker-security-advisory-d
                         │     │                  │       ocker-engine-authz-plugin 
-                        │     │                  ╰ [19]: https://www.docker.com/blog/docker-security-advisory-d
+                        │     │                  ╰ [20]: https://www.docker.com/blog/docker-security-advisory-d
                         │     │                          ocker-engine-authz-plugin/ 
                         │     ├ PublishedDate   : 2024-07-24T17:15:11.053Z 
                         │     ╰ LastModifiedDate: 2024-11-21T09:32:15.16Z 
@@ -710,9 +765,10 @@
                         │     ├ Title           : golang.org/x/crypto/ssh: Misuse of
                         │     │                   ServerConfig.PublicKeyCallback may cause authorization bypass
                         │     │                    in golang.org/x/crypto 
-                        │     ├ Description     : Applications and libraries which misuse the
-                        │     │                   ServerConfig.PublicKeyCallback callback may be susceptible to
-                        │     │                    an authorization bypass. The documentation for
+                        │     ├ Description     : Applications and libraries which misuse
+                        │     │                   connection.serverAuthenticate (via callback field
+                        │     │                   ServerConfig.PublicKeyCallback) may be susceptible to an
+                        │     │                   authorization bypass. The documentation for
                         │     │                   ServerConfig.PublicKeyCallback says that "A call to this
                         │     │                   function does not guarantee that the key offered is in fact
                         │     │                   used to authenticate." Specifically, the SSH protocol allows
@@ -777,7 +833,7 @@
                         │     │                  ├ [10]: https://security.netapp.com/advisory/ntap-20250131-0007/ 
                         │     │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
                         │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
-                        │     ╰ LastModifiedDate: 2025-01-31T15:15:13.19Z 
+                        │     ╰ LastModifiedDate: 2025-02-18T21:15:22.187Z 
                         ├ [4] ╭ VulnerabilityID : CVE-2024-45338 
                         │     ├ PkgID           : golang.org/x/net@v0.26.0 
                         │     ├ PkgName         : golang.org/x/net 
