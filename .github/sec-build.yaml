@@ -65,22 +65,10 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Title: OpenFGA Authorization Bypass
-    Description: |-
-      Overview
-      OpenFGA v1.8.4 or previous (Helm chart < openfga-0.2.22, docker < v.1.8.5) are vulnerable to authorization bypass when certain Check and ListObject calls are executed.
-
-      Am I Affected?
-      If you are using OpenFGA v1.8.4 or previous, specifically under the following conditions, you are affected by this authorization bypass vulnerability:
-
-      - Calling Check API or ListObjects with a model that has a relation [directly assignable](https://openfga.dev/docs/concepts#what-is-a-directly-related-user-type) to both [public access](https://openfga.dev/docs/concepts#what-is-type-bound-public-access) AND [userset](https://openfga.dev/docs/concepts#what-is-a-user) with the [same type](https://openfga.dev/docs/concepts#what-is-a-type), and
-      - A type bound public access tuple is assigned to an object, and
-      - userset tuple is not assigned to the same object, and
-      - Check request's user field is a userset that has the same type as the type bound public access tuple's user type
-
-
-      Fix
-      Upgrade to v1.8.5. This upgrade is backwards compatible.
+    Description: 'OpenFGA is a high-performance and flexible authorization/permission engine built for developers and inspired by Google Zanzibar. OpenFGA < v1.8.4 (Helm chart < openfga-0.2.22, docker < v.1.8.4) are vulnerable to authorization bypass when certain Check and ListObject calls are executed. Users on OpenFGA v1.8.4 or previous, specifically under the following conditions are affected by this authorization bypass vulnerability: 1. Calling Check API or ListObjects with a model that has a relation directly assignable to both public access AND userset with the same type. 2. A type bound public access tuple is assigned to an object. 3. userset tuple is not assigned to the same object. and 4. Check request''s user field is a userset that has the same type as the type bound public access tuple''s user type. Users are advised to upgrade to v1.8.5 which is backwards compatible. There are no known workarounds for this vulnerability.'
     Severity: MEDIUM
+    CweIDs:
+    - CWE-285
     VendorSeverity:
       ghsa: 2
     References:
@@ -88,6 +76,8 @@
     - https://github.com/openfga/openfga/commit/0aee4f47e0c642de78831ceb27bb62b116f49588
     - https://github.com/openfga/openfga/security/advisories/GHSA-g4v5-6f5p-m38j
     - https://nvd.nist.gov/vuln/detail/CVE-2025-25196
+    PublishedDate: '2025-02-19T21:15:15.577Z'
+    LastModifiedDate: '2025-02-19T21:15:15.577Z'
 - Target: usr/bin/prometheus
   Class: lang-pkgs
   Type: gobinary
