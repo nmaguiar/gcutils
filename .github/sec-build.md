@@ -447,7 +447,7 @@
 │                       │     │                   denial of service. 
 │                       │     ├ Severity        : HIGH 
 │                       │     ├ CweIDs           ─ [0]: CWE-1333 
-│                       │     ├ VendorSeverity   ╭ amazon     : 3 
+│                       │     ├ VendorSeverity   ╭ amazon     : 2 
 │                       │     │                  ├ azure      : 3 
 │                       │     │                  ├ cbl-mariner: 3 
 │                       │     │                  ├ ghsa       : 3 
@@ -466,10 +466,11 @@
 │                       │     │                  │       mPA/m/Lvcd0mRMAwAJ 
 │                       │     │                  ├ [7] : https://nvd.nist.gov/vuln/detail/CVE-2024-45338 
 │                       │     │                  ├ [8] : https://pkg.go.dev/vuln/GO-2024-3333 
-│                       │     │                  ├ [9] : https://ubuntu.com/security/notices/USN-7197-1 
-│                       │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2024-45338 
+│                       │     │                  ├ [9] : https://security.netapp.com/advisory/ntap-20250221-0001/ 
+│                       │     │                  ├ [10]: https://ubuntu.com/security/notices/USN-7197-1 
+│                       │     │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2024-45338 
 │                       │     ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
-│                       │     ╰ LastModifiedDate: 2024-12-31T20:16:06.603Z 
+│                       │     ╰ LastModifiedDate: 2025-02-21T18:15:17.717Z 
 │                       ╰ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
 │                             ├ PkgID           : google.golang.org/grpc@v1.64.0 
 │                             ├ PkgName         : google.golang.org/grpc 
@@ -855,7 +856,7 @@
                         │     │                   denial of service. 
                         │     ├ Severity        : HIGH 
                         │     ├ CweIDs           ─ [0]: CWE-1333 
-                        │     ├ VendorSeverity   ╭ amazon     : 3 
+                        │     ├ VendorSeverity   ╭ amazon     : 2 
                         │     │                  ├ azure      : 3 
                         │     │                  ├ cbl-mariner: 3 
                         │     │                  ├ ghsa       : 3 
@@ -874,10 +875,11 @@
                         │     │                  │       mPA/m/Lvcd0mRMAwAJ 
                         │     │                  ├ [7] : https://nvd.nist.gov/vuln/detail/CVE-2024-45338 
                         │     │                  ├ [8] : https://pkg.go.dev/vuln/GO-2024-3333 
-                        │     │                  ├ [9] : https://ubuntu.com/security/notices/USN-7197-1 
-                        │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2024-45338 
+                        │     │                  ├ [9] : https://security.netapp.com/advisory/ntap-20250221-0001/ 
+                        │     │                  ├ [10]: https://ubuntu.com/security/notices/USN-7197-1 
+                        │     │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2024-45338 
                         │     ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
-                        │     ╰ LastModifiedDate: 2024-12-31T20:16:06.603Z 
+                        │     ╰ LastModifiedDate: 2025-02-21T18:15:17.717Z 
                         ╰ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
                               ├ PkgID           : google.golang.org/grpc@v1.64.0 
                               ├ PkgName         : google.golang.org/grpc 
