@@ -110,53 +110,88 @@
 │                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3384 
 │                       │     ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
 │                       │     ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
-│                       ╰ [2] ╭ VulnerabilityID : CVE-2025-25196 
-│                             ├ PkgID           : github.com/openfga/openfga@v1.6.2 
-│                             ├ PkgName         : github.com/openfga/openfga 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
-│                             │                  ╰ UID : 9b19146cf4b99910 
-│                             ├ InstalledVersion: v1.6.2 
-│                             ├ FixedVersion    : 1.8.5 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2025-25196 
+│                       │     ├ PkgID           : github.com/openfga/openfga@v1.6.2 
+│                       │     ├ PkgName         : github.com/openfga/openfga 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
+│                       │     │                  ╰ UID : 9b19146cf4b99910 
+│                       │     ├ InstalledVersion: v1.6.2 
+│                       │     ├ FixedVersion    : 1.8.5 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
+│                       │     │                  │         550ac04288e78084c12 
+│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
+│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-25196 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : OpenFGA Authorization Bypass 
+│                       │     ├ Description     : OpenFGA is a high-performance and flexible
+│                       │     │                   authorization/permission engine built for developers and
+│                       │     │                   inspired by Google Zanzibar. OpenFGA < v1.8.4 (Helm chart <
+│                       │     │                   openfga-0.2.22, docker < v.1.8.4) are vulnerable to
+│                       │     │                   authorization bypass when certain Check and ListObject calls
+│                       │     │                   are executed. Users on OpenFGA v1.8.4 or previous,
+│                       │     │                   specifically under the following conditions are affected by
+│                       │     │                   this authorization bypass vulnerability: 1. Calling Check API
+│                       │     │                    or ListObjects with a model that has a relation directly
+│                       │     │                   assignable to both public access AND userset with the same
+│                       │     │                   type. 2. A type bound public access tuple is assigned to an
+│                       │     │                   object. 3. userset tuple is not assigned to the same object.
+│                       │     │                   and 4. Check request's user field is a userset that has the
+│                       │     │                   same type as the type bound public access tuple's user type.
+│                       │     │                   Users are advised to upgrade to v1.8.5 which is backwards
+│                       │     │                   compatible. There are no known workarounds for this
+│                       │     │                   vulnerability. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ CweIDs           ─ [0]: CWE-285 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ References       ╭ [0]: https://github.com/openfga/openfga 
+│                       │     │                  ├ [1]: https://github.com/openfga/openfga/commit/0aee4f47e0c64
+│                       │     │                  │      2de78831ceb27bb62b116f49588 
+│                       │     │                  ├ [2]: https://github.com/openfga/openfga/security/advisories/
+│                       │     │                  │      GHSA-g4v5-6f5p-m38j 
+│                       │     │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-25196 
+│                       │     ├ PublishedDate   : 2025-02-19T21:15:15.577Z 
+│                       │     ╰ LastModifiedDate: 2025-02-19T21:15:15.577Z 
+│                       ╰ [3] ╭ VulnerabilityID : CVE-2025-22870 
+│                             ├ PkgID           : golang.org/x/net@v0.34.0 
+│                             ├ PkgName         : golang.org/x/net 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.34.0 
+│                             │                  ╰ UID : 68b0878189f36bdd 
+│                             ├ InstalledVersion: v0.34.0 
+│                             ├ FixedVersion    : 0.36.0 
 │                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
 │                             │                  │         550ac04288e78084c12 
 │                             │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
 │                             │                            91918711a4e44b5bdae 
 │                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-25196 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
 │                             ├ DataSource       ╭ ID  : ghsa 
 │                             │                  ├ Name: GitHub Security Advisory Go 
 │                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                             │                          osystem%3Ago 
-│                             ├ Title           : OpenFGA Authorization Bypass 
-│                             ├ Description     : OpenFGA is a high-performance and flexible
-│                             │                   authorization/permission engine built for developers and
-│                             │                   inspired by Google Zanzibar. OpenFGA < v1.8.4 (Helm chart <
-│                             │                   openfga-0.2.22, docker < v.1.8.4) are vulnerable to
-│                             │                   authorization bypass when certain Check and ListObject calls
-│                             │                   are executed. Users on OpenFGA v1.8.4 or previous,
-│                             │                   specifically under the following conditions are affected by
-│                             │                   this authorization bypass vulnerability: 1. Calling Check API
-│                             │                    or ListObjects with a model that has a relation directly
-│                             │                   assignable to both public access AND userset with the same
-│                             │                   type. 2. A type bound public access tuple is assigned to an
-│                             │                   object. 3. userset tuple is not assigned to the same object.
-│                             │                   and 4. Check request's user field is a userset that has the
-│                             │                   same type as the type bound public access tuple's user type.
-│                             │                   Users are advised to upgrade to v1.8.5 which is backwards
-│                             │                   compatible. There are no known workarounds for this
-│                             │                   vulnerability. 
+│                             ├ Title           : Matching of hosts against proxy patterns can improperly treat
+│                             │                    an IPv6  ... 
+│                             ├ Description     : Matching of hosts against proxy patterns can improperly treat
+│                             │                    an IPv6 zone ID as a hostname component. For example, when
+│                             │                   the NO_PROXY environment variable is set to "*.example.com",
+│                             │                   a request to "[::1%25.example.com]:80` will incorrectly match
+│                             │                    and not be proxied. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ CweIDs           ─ [0]: CWE-285 
 │                             ├ VendorSeverity   ─ ghsa: 2 
-│                             ├ References       ╭ [0]: https://github.com/openfga/openfga 
-│                             │                  ├ [1]: https://github.com/openfga/openfga/commit/0aee4f47e0c64
-│                             │                  │      2de78831ceb27bb62b116f49588 
-│                             │                  ├ [2]: https://github.com/openfga/openfga/security/advisories/
-│                             │                  │      GHSA-g4v5-6f5p-m38j 
-│                             │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-25196 
-│                             ├ PublishedDate   : 2025-02-19T21:15:15.577Z 
-│                             ╰ LastModifiedDate: 2025-02-19T21:15:15.577Z 
+│                             ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/03/07/2 
+│                             │                  ├ [1]: https://go-review.googlesource.com/q/project:net 
+│                             │                  ├ [2]: https://go.dev/cl/654697 
+│                             │                  ├ [3]: https://go.dev/issue/71984 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
+│                             │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2025-3503 
+│                             ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
+│                             ╰ LastModifiedDate: 2025-03-12T19:15:38.31Z 
 ├ [5] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -526,7 +561,42 @@
 │                       │     │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2024-45338 
 │                       │     ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
 │                       │     ╰ LastModifiedDate: 2025-02-21T18:15:17.717Z 
-│                       ╰ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+│                       ├ [5] ╭ VulnerabilityID : CVE-2025-22870 
+│                       │     ├ PkgID           : golang.org/x/net@v0.26.0 
+│                       │     ├ PkgName         : golang.org/x/net 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.26.0 
+│                       │     │                  ╰ UID : 8c04148890da6da2 
+│                       │     ├ InstalledVersion: v0.26.0 
+│                       │     ├ FixedVersion    : 0.36.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
+│                       │     │                  │         550ac04288e78084c12 
+│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
+│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : Matching of hosts against proxy patterns can improperly treat
+│                       │     │                    an IPv6  ... 
+│                       │     ├ Description     : Matching of hosts against proxy patterns can improperly treat
+│                       │     │                    an IPv6 zone ID as a hostname component. For example, when
+│                       │     │                   the NO_PROXY environment variable is set to "*.example.com",
+│                       │     │                   a request to "[::1%25.example.com]:80` will incorrectly match
+│                       │     │                    and not be proxied. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/03/07/2 
+│                       │     │                  ├ [1]: https://go-review.googlesource.com/q/project:net 
+│                       │     │                  ├ [2]: https://go.dev/cl/654697 
+│                       │     │                  ├ [3]: https://go.dev/issue/71984 
+│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
+│                       │     │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2025-3503 
+│                       │     ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
+│                       │     ╰ LastModifiedDate: 2025-03-12T19:15:38.31Z 
+│                       ╰ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
 │                             ├ PkgID           : google.golang.org/grpc@v1.64.0 
 │                             ├ PkgName         : google.golang.org/grpc 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
@@ -935,7 +1005,42 @@
                         │     │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2024-45338 
                         │     ├ PublishedDate   : 2024-12-18T21:15:08.173Z 
                         │     ╰ LastModifiedDate: 2025-02-21T18:15:17.717Z 
-                        ╰ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+                        ├ [5] ╭ VulnerabilityID : CVE-2025-22870 
+                        │     ├ PkgID           : golang.org/x/net@v0.26.0 
+                        │     ├ PkgName         : golang.org/x/net 
+                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.26.0 
+                        │     │                  ╰ UID : 4075f6667d6d269e 
+                        │     ├ InstalledVersion: v0.26.0 
+                        │     ├ FixedVersion    : 0.36.0 
+                        │     ├ Status          : fixed 
+                        │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
+                        │     │                  │         550ac04288e78084c12 
+                        │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
+                        │     │                            91918711a4e44b5bdae 
+                        │     ├ SeveritySource  : ghsa 
+                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
+                        │     ├ DataSource       ╭ ID  : ghsa 
+                        │     │                  ├ Name: GitHub Security Advisory Go 
+                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+                        │     │                          osystem%3Ago 
+                        │     ├ Title           : Matching of hosts against proxy patterns can improperly treat
+                        │     │                    an IPv6  ... 
+                        │     ├ Description     : Matching of hosts against proxy patterns can improperly treat
+                        │     │                    an IPv6 zone ID as a hostname component. For example, when
+                        │     │                   the NO_PROXY environment variable is set to "*.example.com",
+                        │     │                   a request to "[::1%25.example.com]:80` will incorrectly match
+                        │     │                    and not be proxied. 
+                        │     ├ Severity        : MEDIUM 
+                        │     ├ VendorSeverity   ─ ghsa: 2 
+                        │     ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/03/07/2 
+                        │     │                  ├ [1]: https://go-review.googlesource.com/q/project:net 
+                        │     │                  ├ [2]: https://go.dev/cl/654697 
+                        │     │                  ├ [3]: https://go.dev/issue/71984 
+                        │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
+                        │     │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2025-3503 
+                        │     ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
+                        │     ╰ LastModifiedDate: 2025-03-12T19:15:38.31Z 
+                        ╰ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
                               ├ PkgID           : google.golang.org/grpc@v1.64.0 
                               ├ PkgName         : google.golang.org/grpc 
                               ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
