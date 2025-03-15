@@ -22,10 +22,10 @@
 │                       │     ├ InstalledVersion: v3.0.3 
 │                       │     ├ FixedVersion    : 3.0.4 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-27144 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -50,7 +50,8 @@
 │                       │     │                   characters. 
 │                       │     ├ Severity        : MEDIUM 
 │                       │     ├ CweIDs           ─ [0]: CWE-770 
-│                       │     ├ VendorSeverity   ╭ cbl-mariner: 2 
+│                       │     ├ VendorSeverity   ╭ azure      : 2 
+│                       │     │                  ├ cbl-mariner: 2 
 │                       │     │                  ├ ghsa       : 2 
 │                       │     │                  ╰ redhat     : 2 
 │                       │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
@@ -77,10 +78,10 @@
 │                       │     ├ InstalledVersion: v1.6.2 
 │                       │     ├ FixedVersion    : 1.8.3 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-56323 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -118,10 +119,10 @@
 │                       │     ├ InstalledVersion: v1.6.2 
 │                       │     ├ FixedVersion    : 1.8.5 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-25196 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -165,31 +166,37 @@
 │                             ├ InstalledVersion: v0.34.0 
 │                             ├ FixedVersion    : 0.36.0 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                             │                  │         550ac04288e78084c12 
-│                             │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                             │                            91918711a4e44b5bdae 
+│                             ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                             │                  │         bd8cd23b37fd2554d3e 
+│                             │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                             │                            980f52ffbcac00bc560 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
 │                             ├ DataSource       ╭ ID  : ghsa 
 │                             │                  ├ Name: GitHub Security Advisory Go 
 │                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                             │                          osystem%3Ago 
-│                             ├ Title           : Matching of hosts against proxy patterns can improperly treat
-│                             │                    an IPv6  ... 
+│                             ├ Title           : golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP
+│                             │                    Proxy bypass using IPv6 Zone IDs in golang.org/x/net 
 │                             ├ Description     : Matching of hosts against proxy patterns can improperly treat
 │                             │                    an IPv6 zone ID as a hostname component. For example, when
 │                             │                   the NO_PROXY environment variable is set to "*.example.com",
 │                             │                   a request to "[::1%25.example.com]:80` will incorrectly match
 │                             │                    and not be proxied. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ─ ghsa: 2 
+│                             ├ VendorSeverity   ╭ ghsa  : 2 
+│                             │                  ╰ redhat: 2 
+│                             ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/
+│                             │                           │           A:L 
+│                             │                           ╰ V3Score : 4.4 
 │                             ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/03/07/2 
-│                             │                  ├ [1]: https://go-review.googlesource.com/q/project:net 
-│                             │                  ├ [2]: https://go.dev/cl/654697 
-│                             │                  ├ [3]: https://go.dev/issue/71984 
-│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
-│                             │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2025-3503 
+│                             │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-22870 
+│                             │                  ├ [2]: https://go-review.googlesource.com/q/project:net 
+│                             │                  ├ [3]: https://go.dev/cl/654697 
+│                             │                  ├ [4]: https://go.dev/issue/71984 
+│                             │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
+│                             │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3503 
+│                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-22870 
 │                             ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
 │                             ╰ LastModifiedDate: 2025-03-12T19:15:38.31Z 
 ├ [5] ╭ Target         : usr/bin/prometheus 
@@ -204,10 +211,10 @@
 │                       │     ├ InstalledVersion: v1.5.2 
 │                       │     ├ FixedVersion    : 1.6.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-35255 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -261,10 +268,10 @@
 │                       │     ├ InstalledVersion: v26.1.3+incompatible 
 │                       │     ├ FixedVersion    : 23.0.15, 26.1.5, 27.1.1, 25.0.6 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-41110 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -363,10 +370,10 @@
 │                       │     ├ InstalledVersion: v0.7.4 
 │                       │     ├ FixedVersion    : 0.7.7 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-6104 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -429,10 +436,10 @@
 │                       │     ├ InstalledVersion: v0.24.0 
 │                       │     ├ FixedVersion    : 0.31.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -519,10 +526,10 @@
 │                       │     ├ InstalledVersion: v0.26.0 
 │                       │     ├ FixedVersion    : 0.33.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45338 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -569,31 +576,37 @@
 │                       │     ├ InstalledVersion: v0.26.0 
 │                       │     ├ FixedVersion    : 0.36.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                       │     │                  │         550ac04288e78084c12 
-│                       │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                       │     │                            91918711a4e44b5bdae 
+│                       │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                       │     │                  │         bd8cd23b37fd2554d3e 
+│                       │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                       │     │                            980f52ffbcac00bc560 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
 │                       │     │                  ├ Name: GitHub Security Advisory Go 
 │                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                       │     │                          osystem%3Ago 
-│                       │     ├ Title           : Matching of hosts against proxy patterns can improperly treat
-│                       │     │                    an IPv6  ... 
+│                       │     ├ Title           : golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP
+│                       │     │                    Proxy bypass using IPv6 Zone IDs in golang.org/x/net 
 │                       │     ├ Description     : Matching of hosts against proxy patterns can improperly treat
 │                       │     │                    an IPv6 zone ID as a hostname component. For example, when
 │                       │     │                   the NO_PROXY environment variable is set to "*.example.com",
 │                       │     │                   a request to "[::1%25.example.com]:80` will incorrectly match
 │                       │     │                    and not be proxied. 
 │                       │     ├ Severity        : MEDIUM 
-│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                       │     │                  ╰ redhat: 2 
+│                       │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/
+│                       │     │                           │           A:L 
+│                       │     │                           ╰ V3Score : 4.4 
 │                       │     ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/03/07/2 
-│                       │     │                  ├ [1]: https://go-review.googlesource.com/q/project:net 
-│                       │     │                  ├ [2]: https://go.dev/cl/654697 
-│                       │     │                  ├ [3]: https://go.dev/issue/71984 
-│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
-│                       │     │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2025-3503 
+│                       │     │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-22870 
+│                       │     │                  ├ [2]: https://go-review.googlesource.com/q/project:net 
+│                       │     │                  ├ [3]: https://go.dev/cl/654697 
+│                       │     │                  ├ [4]: https://go.dev/issue/71984 
+│                       │     │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
+│                       │     │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3503 
+│                       │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-22870 
 │                       │     ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
 │                       │     ╰ LastModifiedDate: 2025-03-12T19:15:38.31Z 
 │                       ╰ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
@@ -604,10 +617,10 @@
 │                             ├ InstalledVersion: v1.64.0 
 │                             ├ FixedVersion    : 1.64.1 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-│                             │                  │         550ac04288e78084c12 
-│                             │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-│                             │                            91918711a4e44b5bdae 
+│                             ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+│                             │                  │         bd8cd23b37fd2554d3e 
+│                             │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+│                             │                            980f52ffbcac00bc560 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
 │                             ├ DataSource       ╭ ID  : ghsa 
@@ -648,10 +661,10 @@
                         │     ├ InstalledVersion: v1.5.2 
                         │     ├ FixedVersion    : 1.6.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-                        │     │                  │         550ac04288e78084c12 
-                        │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-                        │     │                            91918711a4e44b5bdae 
+                        │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+                        │     │                  │         bd8cd23b37fd2554d3e 
+                        │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+                        │     │                            980f52ffbcac00bc560 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-35255 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -705,10 +718,10 @@
                         │     ├ InstalledVersion: v26.1.3+incompatible 
                         │     ├ FixedVersion    : 23.0.15, 26.1.5, 27.1.1, 25.0.6 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-                        │     │                  │         550ac04288e78084c12 
-                        │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-                        │     │                            91918711a4e44b5bdae 
+                        │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+                        │     │                  │         bd8cd23b37fd2554d3e 
+                        │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+                        │     │                            980f52ffbcac00bc560 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-41110 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -807,10 +820,10 @@
                         │     ├ InstalledVersion: v0.7.4 
                         │     ├ FixedVersion    : 0.7.7 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-                        │     │                  │         550ac04288e78084c12 
-                        │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-                        │     │                            91918711a4e44b5bdae 
+                        │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+                        │     │                  │         bd8cd23b37fd2554d3e 
+                        │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+                        │     │                            980f52ffbcac00bc560 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-6104 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -873,10 +886,10 @@
                         │     ├ InstalledVersion: v0.24.0 
                         │     ├ FixedVersion    : 0.31.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-                        │     │                  │         550ac04288e78084c12 
-                        │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-                        │     │                            91918711a4e44b5bdae 
+                        │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+                        │     │                  │         bd8cd23b37fd2554d3e 
+                        │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+                        │     │                            980f52ffbcac00bc560 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -963,10 +976,10 @@
                         │     ├ InstalledVersion: v0.26.0 
                         │     ├ FixedVersion    : 0.33.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-                        │     │                  │         550ac04288e78084c12 
-                        │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-                        │     │                            91918711a4e44b5bdae 
+                        │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+                        │     │                  │         bd8cd23b37fd2554d3e 
+                        │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+                        │     │                            980f52ffbcac00bc560 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45338 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -1013,31 +1026,37 @@
                         │     ├ InstalledVersion: v0.26.0 
                         │     ├ FixedVersion    : 0.36.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-                        │     │                  │         550ac04288e78084c12 
-                        │     │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-                        │     │                            91918711a4e44b5bdae 
+                        │     ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+                        │     │                  │         bd8cd23b37fd2554d3e 
+                        │     │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+                        │     │                            980f52ffbcac00bc560 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
                         │     ├ DataSource       ╭ ID  : ghsa 
                         │     │                  ├ Name: GitHub Security Advisory Go 
                         │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
                         │     │                          osystem%3Ago 
-                        │     ├ Title           : Matching of hosts against proxy patterns can improperly treat
-                        │     │                    an IPv6  ... 
+                        │     ├ Title           : golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP
+                        │     │                    Proxy bypass using IPv6 Zone IDs in golang.org/x/net 
                         │     ├ Description     : Matching of hosts against proxy patterns can improperly treat
                         │     │                    an IPv6 zone ID as a hostname component. For example, when
                         │     │                   the NO_PROXY environment variable is set to "*.example.com",
                         │     │                   a request to "[::1%25.example.com]:80` will incorrectly match
                         │     │                    and not be proxied. 
                         │     ├ Severity        : MEDIUM 
-                        │     ├ VendorSeverity   ─ ghsa: 2 
+                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+                        │     │                  ╰ redhat: 2 
+                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/
+                        │     │                           │           A:L 
+                        │     │                           ╰ V3Score : 4.4 
                         │     ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/03/07/2 
-                        │     │                  ├ [1]: https://go-review.googlesource.com/q/project:net 
-                        │     │                  ├ [2]: https://go.dev/cl/654697 
-                        │     │                  ├ [3]: https://go.dev/issue/71984 
-                        │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
-                        │     │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2025-3503 
+                        │     │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-22870 
+                        │     │                  ├ [2]: https://go-review.googlesource.com/q/project:net 
+                        │     │                  ├ [3]: https://go.dev/cl/654697 
+                        │     │                  ├ [4]: https://go.dev/issue/71984 
+                        │     │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
+                        │     │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3503 
+                        │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-22870 
                         │     ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
                         │     ╰ LastModifiedDate: 2025-03-12T19:15:38.31Z 
                         ╰ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
@@ -1048,10 +1067,10 @@
                               ├ InstalledVersion: v1.64.0 
                               ├ FixedVersion    : 1.64.1 
                               ├ Status          : fixed 
-                              ├ Layer            ╭ Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36
-                              │                  │         550ac04288e78084c12 
-                              │                  ╰ DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae7215
-                              │                            91918711a4e44b5bdae 
+                              ├ Layer            ╭ Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32
+                              │                  │         bd8cd23b37fd2554d3e 
+                              │                  ╰ DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50
+                              │                            980f52ffbcac00bc560 
                               ├ SeveritySource  : ghsa 
                               ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
                               ├ DataSource       ╭ ID  : ghsa 
