@@ -24,8 +24,8 @@
     FixedVersion: 3.0.4
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-27144
     DataSource:
@@ -38,6 +38,7 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      azure: 2
       cbl-mariner: 2
       ghsa: 2
       redhat: 2
@@ -67,8 +68,8 @@
     FixedVersion: 1.8.3
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-56323
     DataSource:
@@ -99,8 +100,8 @@
     FixedVersion: 1.8.5
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-25196
     DataSource:
@@ -131,26 +132,33 @@
     FixedVersion: 0.36.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22870
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: Matching of hosts against proxy patterns can improperly treat an IPv6  ...
+    Title: 'golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net'
     Description: Matching of hosts against proxy patterns can improperly treat an IPv6 zone ID as a hostname component. For example, when the NO_PROXY environment variable is set to "*.example.com", a request to "[::1%25.example.com]:80` will incorrectly match and not be proxied.
     Severity: MEDIUM
     VendorSeverity:
       ghsa: 2
+      redhat: 2
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L
+        V3Score: 4.4
     References:
     - http://www.openwall.com/lists/oss-security/2025/03/07/2
+    - https://access.redhat.com/security/cve/CVE-2025-22870
     - https://go-review.googlesource.com/q/project:net
     - https://go.dev/cl/654697
     - https://go.dev/issue/71984
     - https://nvd.nist.gov/vuln/detail/CVE-2025-22870
     - https://pkg.go.dev/vuln/GO-2025-3503
+    - https://www.cve.org/CVERecord?id=CVE-2025-22870
     PublishedDate: '2025-03-12T19:15:38.31Z'
     LastModifiedDate: '2025-03-12T19:15:38.31Z'
 - Target: usr/bin/prometheus
@@ -167,8 +175,8 @@
     FixedVersion: 1.6.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-35255
     DataSource:
@@ -217,8 +225,8 @@
     FixedVersion: 23.0.15, 26.1.5, 27.1.1, 25.0.6
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-41110
     DataSource:
@@ -289,8 +297,8 @@
     FixedVersion: 0.7.7
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-6104
     DataSource:
@@ -351,8 +359,8 @@
     FixedVersion: 0.31.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45337
     DataSource:
@@ -400,8 +408,8 @@
     FixedVersion: 0.33.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
     DataSource:
@@ -449,26 +457,33 @@
     FixedVersion: 0.36.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22870
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: Matching of hosts against proxy patterns can improperly treat an IPv6  ...
+    Title: 'golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net'
     Description: Matching of hosts against proxy patterns can improperly treat an IPv6 zone ID as a hostname component. For example, when the NO_PROXY environment variable is set to "*.example.com", a request to "[::1%25.example.com]:80` will incorrectly match and not be proxied.
     Severity: MEDIUM
     VendorSeverity:
       ghsa: 2
+      redhat: 2
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L
+        V3Score: 4.4
     References:
     - http://www.openwall.com/lists/oss-security/2025/03/07/2
+    - https://access.redhat.com/security/cve/CVE-2025-22870
     - https://go-review.googlesource.com/q/project:net
     - https://go.dev/cl/654697
     - https://go.dev/issue/71984
     - https://nvd.nist.gov/vuln/detail/CVE-2025-22870
     - https://pkg.go.dev/vuln/GO-2025-3503
+    - https://www.cve.org/CVERecord?id=CVE-2025-22870
     PublishedDate: '2025-03-12T19:15:38.31Z'
     LastModifiedDate: '2025-03-12T19:15:38.31Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
@@ -481,8 +496,8 @@
     FixedVersion: 1.64.1
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-xr7q-jx4m-x55m
     DataSource:
@@ -520,8 +535,8 @@
     FixedVersion: 1.6.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-35255
     DataSource:
@@ -570,8 +585,8 @@
     FixedVersion: 23.0.15, 26.1.5, 27.1.1, 25.0.6
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-41110
     DataSource:
@@ -642,8 +657,8 @@
     FixedVersion: 0.7.7
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-6104
     DataSource:
@@ -704,8 +719,8 @@
     FixedVersion: 0.31.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45337
     DataSource:
@@ -753,8 +768,8 @@
     FixedVersion: 0.33.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2024-45338
     DataSource:
@@ -802,26 +817,33 @@
     FixedVersion: 0.36.0
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22870
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: Matching of hosts against proxy patterns can improperly treat an IPv6  ...
+    Title: 'golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net'
     Description: Matching of hosts against proxy patterns can improperly treat an IPv6 zone ID as a hostname component. For example, when the NO_PROXY environment variable is set to "*.example.com", a request to "[::1%25.example.com]:80` will incorrectly match and not be proxied.
     Severity: MEDIUM
     VendorSeverity:
       ghsa: 2
+      redhat: 2
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L
+        V3Score: 4.4
     References:
     - http://www.openwall.com/lists/oss-security/2025/03/07/2
+    - https://access.redhat.com/security/cve/CVE-2025-22870
     - https://go-review.googlesource.com/q/project:net
     - https://go.dev/cl/654697
     - https://go.dev/issue/71984
     - https://nvd.nist.gov/vuln/detail/CVE-2025-22870
     - https://pkg.go.dev/vuln/GO-2025-3503
+    - https://www.cve.org/CVERecord?id=CVE-2025-22870
     PublishedDate: '2025-03-12T19:15:38.31Z'
     LastModifiedDate: '2025-03-12T19:15:38.31Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
@@ -834,8 +856,8 @@
     FixedVersion: 1.64.1
     Status: fixed
     Layer:
-      Digest: sha256:4be45c9534916ecdd29c3bfb8cf3c4a149a4cc8ebde36550ac04288e78084c12
-      DiffID: sha256:c9307c9bb54fda2c71ee08ee6139b226549baa7ae721591918711a4e44b5bdae
+      Digest: sha256:5da83a40302b487c53b5af8a664663f6d0d4222bb4f32bd8cd23b37fd2554d3e
+      DiffID: sha256:23142c91806b28132c5f9321c213d021f5033e8cf7e50980f52ffbcac00bc560
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-xr7q-jx4m-x55m
     DataSource:
