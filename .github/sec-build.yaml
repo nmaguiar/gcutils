@@ -143,6 +143,8 @@
     Title: 'golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net'
     Description: Matching of hosts against proxy patterns can improperly treat an IPv6 zone ID as a hostname component. For example, when the NO_PROXY environment variable is set to "*.example.com", a request to "[::1%25.example.com]:80` will incorrectly match and not be proxied.
     Severity: MEDIUM
+    CweIDs:
+    - CWE-115
     VendorSeverity:
       ghsa: 2
       redhat: 2
@@ -160,7 +162,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3503
     - https://www.cve.org/CVERecord?id=CVE-2025-22870
     PublishedDate: '2025-03-12T19:15:38.31Z'
-    LastModifiedDate: '2025-03-12T19:15:38.31Z'
+    LastModifiedDate: '2025-03-18T17:15:45.467Z'
 - Target: usr/bin/prometheus
   Class: lang-pkgs
   Type: gobinary
@@ -419,6 +421,8 @@
     Title: 'golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net'
     Description: Matching of hosts against proxy patterns can improperly treat an IPv6 zone ID as a hostname component. For example, when the NO_PROXY environment variable is set to "*.example.com", a request to "[::1%25.example.com]:80` will incorrectly match and not be proxied.
     Severity: MEDIUM
+    CweIDs:
+    - CWE-115
     VendorSeverity:
       ghsa: 2
       redhat: 2
@@ -436,7 +440,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3503
     - https://www.cve.org/CVERecord?id=CVE-2025-22870
     PublishedDate: '2025-03-12T19:15:38.31Z'
-    LastModifiedDate: '2025-03-12T19:15:38.31Z'
+    LastModifiedDate: '2025-03-18T17:15:45.467Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
     PkgID: google.golang.org/grpc@v1.64.0
     PkgName: google.golang.org/grpc
@@ -730,6 +734,8 @@
     Title: 'golang.org/x/net/http/httpproxy: golang.org/x/net/proxy: HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net'
     Description: Matching of hosts against proxy patterns can improperly treat an IPv6 zone ID as a hostname component. For example, when the NO_PROXY environment variable is set to "*.example.com", a request to "[::1%25.example.com]:80` will incorrectly match and not be proxied.
     Severity: MEDIUM
+    CweIDs:
+    - CWE-115
     VendorSeverity:
       ghsa: 2
       redhat: 2
@@ -747,7 +753,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3503
     - https://www.cve.org/CVERecord?id=CVE-2025-22870
     PublishedDate: '2025-03-12T19:15:38.31Z'
-    LastModifiedDate: '2025-03-12T19:15:38.31Z'
+    LastModifiedDate: '2025-03-18T17:15:45.467Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
     PkgID: google.golang.org/grpc@v1.64.0
     PkgName: google.golang.org/grpc
