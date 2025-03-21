@@ -8,6 +8,9 @@ List of examples:
 | Grafana | Visualize a Java GC log file in Grafana |
 | Grafana | Get a Java GC log input into Grafana for visualization |
 | Grafana | Get a live Java GC input into Grafana for visualization |
+| Chart | Text chart with #threads, class loaders, heap and metaspace memory |
+| Chart | Text table chart with the top 25 threads of a pid |
+| Dashboard | Text-based dashboard regarding Java memory and GC |
 
 > To search for a specific example type '/Checking images content<ENTER>' and use the arrow keys to navigate
 
@@ -28,7 +31,8 @@ java -Xlog:gc*:file=gc.log -jar myapp.jar
 Convert the unified GC log with oafp:
 
 ```bash
-oafp in=javagc gc.log out=ctable javagcjoin=true
+# oafp in=javagc gc.log out=ctable javagcjoin=true
+oafp in=javagc gc.log out=btree javagcjoin=true out=ndjson | oafp in=ndjson ndjsonjoin=true out=ctable sql="select * where gcType <> 'none'"
 ```
 
 ### For Java 8
@@ -109,6 +113,36 @@ If a timestamp is provided:
 oafp in=javagc gc.log out=outmetrics metricsprefix=java8 metricstimestamp=timestamp > data.openmetrics
 openmetrics2prom.sh data.openmetrics
 rm data.openmetrics
+```
+
+---
+
+## 📝 Text chart with #threads, class loaders, heap and metaspace memory
+
+Provides a text-based chart with the number of threads, class loaders, heap memory and metaspace memory:
+
+```bash
+USER=openaf && PID=1234 && HSPERF=/tmp/hsperfdata_$USER/$PID && oafp $HSPERF in=hsperf path=java out=grid grid="[[(title:Threads,type:chart,obj:'int threads.live:green:live threads.livePeak:red:peak threads.daemon:blue:daemon -min:0')|(title:Class Loaders,type:chart,obj:'int cls.loadedClasses:blue:loaded cls.unloadedClasses:red:unloaded')]|[(title:Heap,type:chart,obj:'bytes __mem.total:red:total __mem.used:blue:used -min:0')|(title:Metaspace,type:chart,obj:'bytes __mem.metaTotal:blue:total __mem.metaUsed:green:used -min:0')]]" loop=1
+```
+
+---
+
+## 📊 Text table chart with the top 25 threads of a pid
+
+Loops betweeh table updates of the 25 top most cpu active threads of the provided pid:
+
+```bash
+JPID=12345 && oafp cmd="ps -L -p $JPID -o tid,pcpu,comm|tail +2" in=lines linesjoin=true path="[].split_re(@,'\s+').{tid:[0],thread:join(' ',[2:]),cpu:to_number(nvl([1],\`-1\`)),cpuPerc:progress(nvl(to_number([1]),\`0\`), \`100\`, \`0\`, \`50\`, __, __)}" sql='select * where cpu>0 order by cpu desc limit 25' out=ctable loop=1 loopcls=true
+```
+
+---
+
+## 🎛️ Text-based dashboard regarding Java memory and GC
+
+Provides a text-based dashboard regarding a target pid Java memory and GC:
+
+```bash
+javaGC.yaml pid=1234
 ```
 
 ---
