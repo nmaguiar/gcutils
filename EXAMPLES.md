@@ -132,7 +132,7 @@ USER=openaf && PID=1234 && HSPERF=/tmp/hsperfdata_$USER/$PID && oafp $HSPERF in=
 Loops betweeh table updates of the 25 top most cpu active threads of the provided pid:
 
 ```bash
-JPID=12345 && oafp cmd="ps -L -p $JPID -o tid,pcpu,comm|tail +2" in=lines linesjoin=true path="[].split_re(@,'\s+').{tid:[0],thread:join(' ',[2:]),cpu:to_number(nvl([1],\`-1\`)),cpuPerc:progress(nvl(to_number([1]),\`0\`), \`100\`, \`0\`, \`50\`, __, __)}" sql='select * where cpu>0 order by cpu desc limit 25' out=ctable loop=1 loopcls=true
+JPID=12345 && oafp cmd="ps -L -p $JPID -o tid,pcpu,comm|tail +2" in=lines linesjoin=true path="[].split_re(@,'\s+').{tid:[0],thread:join(' ',[2:]),cpu:to_number(nvl([1],\`-1\`)),cpuPerc:progress(nvl(to_number([1]),\`0\`), \`100\`, \`0\`, \`50\`, __, __)}" sql='select * order by cpu desc limit 25' out=ctable loop=1 loopcls=true
 ```
 
 ---
