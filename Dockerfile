@@ -6,7 +6,7 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
  && apk del openjdk21-jre openjdk21-jre-headless\
- && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip strace openjdk21 prometheus grafana htop htop-doc iotop iotop-doc\
+ && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip strace openjdk21 prometheus grafana htop htop-doc iotop iotop-doc procps\
  && cd /openaf\
  && java -jar openaf.jar --install\
  && /openaf/openaf --update --force\
