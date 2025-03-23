@@ -22,10 +22,10 @@
 │                       │     ├ InstalledVersion: v3.0.3 
 │                       │     ├ FixedVersion    : 3.0.4 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                       │     │                  │         d888395dfa39388d91c 
-│                       │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                       │     │                            de259f0e9aa144d5bc0 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-27144 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -70,7 +70,93 @@
 │                       │     │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-27144 
 │                       │     ├ PublishedDate   : 2025-02-24T23:15:11.427Z 
 │                       │     ╰ LastModifiedDate: 2025-02-24T23:15:11.427Z 
-│                       ├ [1] ╭ VulnerabilityID : CVE-2024-56323 
+│                       ├ [1] ╭ VulnerabilityID : CVE-2025-30204 
+│                       │     ├ PkgID           : github.com/golang-jwt/jwt/v4@v4.5.1 
+│                       │     ├ PkgName         : github.com/golang-jwt/jwt/v4 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v4@v4.5.1 
+│                       │     │                  ╰ UID : 3e1afd7fac8548a1 
+│                       │     ├ InstalledVersion: v4.5.1 
+│                       │     ├ FixedVersion    : 4.5.2 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30204 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : golang-jwt is a Go implementation of JSON Web Tokens. Prior
+│                       │     │                   to  5.2.2  ... 
+│                       │     ├ Description     : golang-jwt is a Go implementation of JSON Web Tokens. Prior
+│                       │     │                   to 
+│                       │     │                   5.2.2 and 4.5.2, the function parse.ParseUnverified splits
+│                       │     │                   (via a call to strings.Split) its argument (which is
+│                       │     │                   untrusted data) on periods. As a result, in the face of a
+│                       │     │                   malicious request whose Authorization header consists of
+│                       │     │                   Bearer  followed by many period characters, a call to that
+│                       │     │                   function incurs allocations to the tune of O(n) bytes (where
+│                       │     │                   n stands for the length of the function's argument), with a
+│                       │     │                   constant factor of about 16. This issue is fixed in 5.2.2 and
+│                       │     │                    4.5.2. 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ CweIDs           ─ [0]: CWE-405 
+│                       │     ├ VendorSeverity   ─ ghsa: 3 
+│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+│                       │     │                         ╰ V3Score : 7.5 
+│                       │     ├ References       ╭ [0]: https://github.com/golang-jwt/jwt 
+│                       │     │                  ├ [1]: https://github.com/golang-jwt/jwt/commit/0951d184286dec
+│                       │     │                  │      e21f73c85673fd308786ffe9c3 
+│                       │     │                  ╰ [2]: https://github.com/golang-jwt/jwt/security/advisories/G
+│                       │     │                         HSA-mh63-6h87-95cp 
+│                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
+│                       │     ╰ LastModifiedDate: 2025-03-21T22:15:26.42Z 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2025-30204 
+│                       │     ├ PkgID           : github.com/golang-jwt/jwt/v5@v5.2.1 
+│                       │     ├ PkgName         : github.com/golang-jwt/jwt/v5 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v5@v5.2.1 
+│                       │     │                  ╰ UID : 6f9732955f323dfe 
+│                       │     ├ InstalledVersion: v5.2.1 
+│                       │     ├ FixedVersion    : 5.2.2 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30204 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : golang-jwt is a Go implementation of JSON Web Tokens. Prior
+│                       │     │                   to  5.2.2  ... 
+│                       │     ├ Description     : golang-jwt is a Go implementation of JSON Web Tokens. Prior
+│                       │     │                   to 
+│                       │     │                   5.2.2 and 4.5.2, the function parse.ParseUnverified splits
+│                       │     │                   (via a call to strings.Split) its argument (which is
+│                       │     │                   untrusted data) on periods. As a result, in the face of a
+│                       │     │                   malicious request whose Authorization header consists of
+│                       │     │                   Bearer  followed by many period characters, a call to that
+│                       │     │                   function incurs allocations to the tune of O(n) bytes (where
+│                       │     │                   n stands for the length of the function's argument), with a
+│                       │     │                   constant factor of about 16. This issue is fixed in 5.2.2 and
+│                       │     │                    4.5.2. 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ CweIDs           ─ [0]: CWE-405 
+│                       │     ├ VendorSeverity   ─ ghsa: 3 
+│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+│                       │     │                         ╰ V3Score : 7.5 
+│                       │     ├ References       ╭ [0]: https://github.com/golang-jwt/jwt 
+│                       │     │                  ├ [1]: https://github.com/golang-jwt/jwt/commit/0951d184286dec
+│                       │     │                  │      e21f73c85673fd308786ffe9c3 
+│                       │     │                  ╰ [2]: https://github.com/golang-jwt/jwt/security/advisories/G
+│                       │     │                         HSA-mh63-6h87-95cp 
+│                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
+│                       │     ╰ LastModifiedDate: 2025-03-21T22:15:26.42Z 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2024-56323 
 │                       │     ├ PkgID           : github.com/openfga/openfga@v1.6.2 
 │                       │     ├ PkgName         : github.com/openfga/openfga 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
@@ -78,10 +164,10 @@
 │                       │     ├ InstalledVersion: v1.6.2 
 │                       │     ├ FixedVersion    : 1.8.3 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                       │     │                  │         d888395dfa39388d91c 
-│                       │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                       │     │                            de259f0e9aa144d5bc0 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-56323 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -111,7 +197,7 @@
 │                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3384 
 │                       │     ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
 │                       │     ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
-│                       ├ [2] ╭ VulnerabilityID : CVE-2025-25196 
+│                       ├ [4] ╭ VulnerabilityID : CVE-2025-25196 
 │                       │     ├ PkgID           : github.com/openfga/openfga@v1.6.2 
 │                       │     ├ PkgName         : github.com/openfga/openfga 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
@@ -119,10 +205,10 @@
 │                       │     ├ InstalledVersion: v1.6.2 
 │                       │     ├ FixedVersion    : 1.8.5 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                       │     │                  │         d888395dfa39388d91c 
-│                       │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                       │     │                            de259f0e9aa144d5bc0 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-25196 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -158,7 +244,68 @@
 │                       │     │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-25196 
 │                       │     ├ PublishedDate   : 2025-02-19T21:15:15.577Z 
 │                       │     ╰ LastModifiedDate: 2025-02-19T21:15:15.577Z 
-│                       ╰ [3] ╭ VulnerabilityID : CVE-2025-22870 
+│                       ├ [5] ╭ VulnerabilityID : CVE-2025-29923 
+│                       │     ├ PkgID           : github.com/redis/go-redis/v9@v9.6.1 
+│                       │     ├ PkgName         : github.com/redis/go-redis/v9 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/redis/go-redis/v9@v9.6.1 
+│                       │     │                  ╰ UID : eac1ffb03e2184cd 
+│                       │     ├ InstalledVersion: v9.6.1 
+│                       │     ├ FixedVersion    : 9.7.3, 9.6.3, 9.5.5 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-29923 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : github.com/redis/go-redis: go-redis allows potential out of
+│                       │     │                   order responses when `CLIENT SETINFO` times out during
+│                       │     │                   connection establishment 
+│                       │     ├ Description     : go-redis is the official Redis client library for the Go
+│                       │     │                   programming language. Prior to 9.5.5, 9.6.3, and 9.7.3,
+│                       │     │                   go-redis potentially responds out of order when `CLIENT
+│                       │     │                   SETINFO` times out during connection establishment. This can
+│                       │     │                   happen when the client is configured to transmit its
+│                       │     │                   identity, there are network connectivity issues, or the
+│                       │     │                   client was configured with aggressive timeouts. The problem
+│                       │     │                   occurs for multiple use cases. For sticky connections, you
+│                       │     │                   receive persistent out-of-order responses for the lifetime of
+│                       │     │                    the connection. All commands in the pipeline receive
+│                       │     │                   incorrect responses. When used with the default ConnPool once
+│                       │     │                    a connection is returned after use with ConnPool#Put the
+│                       │     │                   read buffer will be checked and the connection will be marked
+│                       │     │                    as bad due to the unread data. This means that at most one
+│                       │     │                   out-of-order response before the connection is discarded.
+│                       │     │                   This issue is fixed in 9.5.5, 9.6.3, and 9.7.3. You can
+│                       │     │                   prevent the vulnerability by setting the flag
+│                       │     │                   DisableIndentity to true when constructing the client
+│                       │     │                   instance. 
+│                       │     ├ Severity        : LOW 
+│                       │     ├ CweIDs           ─ [0]: CWE-20 
+│                       │     ├ VendorSeverity   ╭ ghsa  : 1 
+│                       │     │                  ╰ redhat: 1 
+│                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
+│                       │     │                  │        │           A:N 
+│                       │     │                  │        ╰ V3Score : 3.7 
+│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
+│                       │     │                           │           A:N 
+│                       │     │                           ╰ V3Score : 3.7 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-29923 
+│                       │     │                  ├ [1]: https://github.com/redis/go-redis 
+│                       │     │                  ├ [2]: https://github.com/redis/go-redis/commit/d236865b0cfa1b
+│                       │     │                  │      752ea4b7da666b1fdcd0acebb6 
+│                       │     │                  ├ [3]: https://github.com/redis/go-redis/pull/3295 
+│                       │     │                  ├ [4]: https://github.com/redis/go-redis/security/advisories/G
+│                       │     │                  │      HSA-92cp-5422-2mw7 
+│                       │     │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-29923 
+│                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-29923 
+│                       │     ├ PublishedDate   : 2025-03-20T18:15:19.23Z 
+│                       │     ╰ LastModifiedDate: 2025-03-20T18:15:19.23Z 
+│                       ╰ [6] ╭ VulnerabilityID : CVE-2025-22870 
 │                             ├ PkgID           : golang.org/x/net@v0.34.0 
 │                             ├ PkgName         : golang.org/x/net 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.34.0 
@@ -166,10 +313,10 @@
 │                             ├ InstalledVersion: v0.34.0 
 │                             ├ FixedVersion    : 0.36.0 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                             │                  │         d888395dfa39388d91c 
-│                             │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                             │                            de259f0e9aa144d5bc0 
+│                             ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                             │                  │         c1237eff7abdf48c156 
+│                             │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                             │                            b633c330c8c9eb98490 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
 │                             ├ DataSource       ╭ ID  : ghsa 
@@ -215,10 +362,10 @@
 │                       │     ├ InstalledVersion: v1.5.2 
 │                       │     ├ FixedVersion    : 1.6.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                       │     │                  │         d888395dfa39388d91c 
-│                       │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                       │     │                            de259f0e9aa144d5bc0 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-35255 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -272,10 +419,10 @@
 │                       │     ├ InstalledVersion: v26.1.3+incompatible 
 │                       │     ├ FixedVersion    : 23.0.15, 26.1.5, 27.1.1, 25.0.6 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                       │     │                  │         d888395dfa39388d91c 
-│                       │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                       │     │                            de259f0e9aa144d5bc0 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-41110 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -366,7 +513,50 @@
 │                       │     │                          ocker-engine-authz-plugin/ 
 │                       │     ├ PublishedDate   : 2024-07-24T17:15:11.053Z 
 │                       │     ╰ LastModifiedDate: 2024-11-21T09:32:15.16Z 
-│                       ├ [2] ╭ VulnerabilityID : CVE-2024-6104 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2025-30204 
+│                       │     ├ PkgID           : github.com/golang-jwt/jwt/v5@v5.2.1 
+│                       │     ├ PkgName         : github.com/golang-jwt/jwt/v5 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v5@v5.2.1 
+│                       │     │                  ╰ UID : 43201a615e164c9a 
+│                       │     ├ InstalledVersion: v5.2.1 
+│                       │     ├ FixedVersion    : 5.2.2 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30204 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : golang-jwt is a Go implementation of JSON Web Tokens. Prior
+│                       │     │                   to  5.2.2  ... 
+│                       │     ├ Description     : golang-jwt is a Go implementation of JSON Web Tokens. Prior
+│                       │     │                   to 
+│                       │     │                   5.2.2 and 4.5.2, the function parse.ParseUnverified splits
+│                       │     │                   (via a call to strings.Split) its argument (which is
+│                       │     │                   untrusted data) on periods. As a result, in the face of a
+│                       │     │                   malicious request whose Authorization header consists of
+│                       │     │                   Bearer  followed by many period characters, a call to that
+│                       │     │                   function incurs allocations to the tune of O(n) bytes (where
+│                       │     │                   n stands for the length of the function's argument), with a
+│                       │     │                   constant factor of about 16. This issue is fixed in 5.2.2 and
+│                       │     │                    4.5.2. 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ CweIDs           ─ [0]: CWE-405 
+│                       │     ├ VendorSeverity   ─ ghsa: 3 
+│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+│                       │     │                         ╰ V3Score : 7.5 
+│                       │     ├ References       ╭ [0]: https://github.com/golang-jwt/jwt 
+│                       │     │                  ├ [1]: https://github.com/golang-jwt/jwt/commit/0951d184286dec
+│                       │     │                  │      e21f73c85673fd308786ffe9c3 
+│                       │     │                  ╰ [2]: https://github.com/golang-jwt/jwt/security/advisories/G
+│                       │     │                         HSA-mh63-6h87-95cp 
+│                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
+│                       │     ╰ LastModifiedDate: 2025-03-21T22:15:26.42Z 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2024-6104 
 │                       │     ├ PkgID           : github.com/hashicorp/go-retryablehttp@v0.7.4 
 │                       │     ├ PkgName         : github.com/hashicorp/go-retryablehttp 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/hashicorp/go-retryablehttp@v0.7.4 
@@ -374,10 +564,10 @@
 │                       │     ├ InstalledVersion: v0.7.4 
 │                       │     ├ FixedVersion    : 0.7.7 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                       │     │                  │         d888395dfa39388d91c 
-│                       │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                       │     │                            de259f0e9aa144d5bc0 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-6104 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -432,7 +622,7 @@
 │                       │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
 │                       │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
 │                       │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
-│                       ├ [3] ╭ VulnerabilityID : CVE-2024-45337 
+│                       ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
 │                       │     ├ PkgID           : golang.org/x/crypto@v0.24.0 
 │                       │     ├ PkgName         : golang.org/x/crypto 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.24.0 
@@ -440,10 +630,10 @@
 │                       │     ├ InstalledVersion: v0.24.0 
 │                       │     ├ FixedVersion    : 0.31.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                       │     │                  │         d888395dfa39388d91c 
-│                       │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                       │     │                            de259f0e9aa144d5bc0 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -522,7 +712,7 @@
 │                       │     │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
 │                       │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
 │                       │     ╰ LastModifiedDate: 2025-02-18T21:15:22.187Z 
-│                       ├ [4] ╭ VulnerabilityID : CVE-2025-22870 
+│                       ├ [5] ╭ VulnerabilityID : CVE-2025-22870 
 │                       │     ├ PkgID           : golang.org/x/net@v0.26.0 
 │                       │     ├ PkgName         : golang.org/x/net 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.26.0 
@@ -530,10 +720,10 @@
 │                       │     ├ InstalledVersion: v0.26.0 
 │                       │     ├ FixedVersion    : 0.36.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                       │     │                  │         d888395dfa39388d91c 
-│                       │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                       │     │                            de259f0e9aa144d5bc0 
+│                       │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                       │     │                  │         c1237eff7abdf48c156 
+│                       │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                       │     │                            b633c330c8c9eb98490 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -567,7 +757,7 @@
 │                       │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-22870 
 │                       │     ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
 │                       │     ╰ LastModifiedDate: 2025-03-18T17:15:45.467Z 
-│                       ╰ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+│                       ╰ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
 │                             ├ PkgID           : google.golang.org/grpc@v1.64.0 
 │                             ├ PkgName         : google.golang.org/grpc 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
@@ -575,10 +765,10 @@
 │                             ├ InstalledVersion: v1.64.0 
 │                             ├ FixedVersion    : 1.64.1 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-│                             │                  │         d888395dfa39388d91c 
-│                             │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-│                             │                            de259f0e9aa144d5bc0 
+│                             ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+│                             │                  │         c1237eff7abdf48c156 
+│                             │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+│                             │                            b633c330c8c9eb98490 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
 │                             ├ DataSource       ╭ ID  : ghsa 
@@ -619,10 +809,10 @@
                         │     ├ InstalledVersion: v1.5.2 
                         │     ├ FixedVersion    : 1.6.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-                        │     │                  │         d888395dfa39388d91c 
-                        │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-                        │     │                            de259f0e9aa144d5bc0 
+                        │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+                        │     │                  │         c1237eff7abdf48c156 
+                        │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+                        │     │                            b633c330c8c9eb98490 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-35255 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -676,10 +866,10 @@
                         │     ├ InstalledVersion: v26.1.3+incompatible 
                         │     ├ FixedVersion    : 23.0.15, 26.1.5, 27.1.1, 25.0.6 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-                        │     │                  │         d888395dfa39388d91c 
-                        │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-                        │     │                            de259f0e9aa144d5bc0 
+                        │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+                        │     │                  │         c1237eff7abdf48c156 
+                        │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+                        │     │                            b633c330c8c9eb98490 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-41110 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -770,7 +960,50 @@
                         │     │                          ocker-engine-authz-plugin/ 
                         │     ├ PublishedDate   : 2024-07-24T17:15:11.053Z 
                         │     ╰ LastModifiedDate: 2024-11-21T09:32:15.16Z 
-                        ├ [2] ╭ VulnerabilityID : CVE-2024-6104 
+                        ├ [2] ╭ VulnerabilityID : CVE-2025-30204 
+                        │     ├ PkgID           : github.com/golang-jwt/jwt/v5@v5.2.1 
+                        │     ├ PkgName         : github.com/golang-jwt/jwt/v5 
+                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v5@v5.2.1 
+                        │     │                  ╰ UID : a1e77af76632a7e 
+                        │     ├ InstalledVersion: v5.2.1 
+                        │     ├ FixedVersion    : 5.2.2 
+                        │     ├ Status          : fixed 
+                        │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+                        │     │                  │         c1237eff7abdf48c156 
+                        │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+                        │     │                            b633c330c8c9eb98490 
+                        │     ├ SeveritySource  : ghsa 
+                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30204 
+                        │     ├ DataSource       ╭ ID  : ghsa 
+                        │     │                  ├ Name: GitHub Security Advisory Go 
+                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+                        │     │                          osystem%3Ago 
+                        │     ├ Title           : golang-jwt is a Go implementation of JSON Web Tokens. Prior
+                        │     │                   to  5.2.2  ... 
+                        │     ├ Description     : golang-jwt is a Go implementation of JSON Web Tokens. Prior
+                        │     │                   to 
+                        │     │                   5.2.2 and 4.5.2, the function parse.ParseUnverified splits
+                        │     │                   (via a call to strings.Split) its argument (which is
+                        │     │                   untrusted data) on periods. As a result, in the face of a
+                        │     │                   malicious request whose Authorization header consists of
+                        │     │                   Bearer  followed by many period characters, a call to that
+                        │     │                   function incurs allocations to the tune of O(n) bytes (where
+                        │     │                   n stands for the length of the function's argument), with a
+                        │     │                   constant factor of about 16. This issue is fixed in 5.2.2 and
+                        │     │                    4.5.2. 
+                        │     ├ Severity        : HIGH 
+                        │     ├ CweIDs           ─ [0]: CWE-405 
+                        │     ├ VendorSeverity   ─ ghsa: 3 
+                        │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+                        │     │                         ╰ V3Score : 7.5 
+                        │     ├ References       ╭ [0]: https://github.com/golang-jwt/jwt 
+                        │     │                  ├ [1]: https://github.com/golang-jwt/jwt/commit/0951d184286dec
+                        │     │                  │      e21f73c85673fd308786ffe9c3 
+                        │     │                  ╰ [2]: https://github.com/golang-jwt/jwt/security/advisories/G
+                        │     │                         HSA-mh63-6h87-95cp 
+                        │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
+                        │     ╰ LastModifiedDate: 2025-03-21T22:15:26.42Z 
+                        ├ [3] ╭ VulnerabilityID : CVE-2024-6104 
                         │     ├ PkgID           : github.com/hashicorp/go-retryablehttp@v0.7.4 
                         │     ├ PkgName         : github.com/hashicorp/go-retryablehttp 
                         │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/hashicorp/go-retryablehttp@v0.7.4 
@@ -778,10 +1011,10 @@
                         │     ├ InstalledVersion: v0.7.4 
                         │     ├ FixedVersion    : 0.7.7 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-                        │     │                  │         d888395dfa39388d91c 
-                        │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-                        │     │                            de259f0e9aa144d5bc0 
+                        │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+                        │     │                  │         c1237eff7abdf48c156 
+                        │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+                        │     │                            b633c330c8c9eb98490 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-6104 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -836,7 +1069,7 @@
                         │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
                         │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
                         │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
-                        ├ [3] ╭ VulnerabilityID : CVE-2024-45337 
+                        ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
                         │     ├ PkgID           : golang.org/x/crypto@v0.24.0 
                         │     ├ PkgName         : golang.org/x/crypto 
                         │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.24.0 
@@ -844,10 +1077,10 @@
                         │     ├ InstalledVersion: v0.24.0 
                         │     ├ FixedVersion    : 0.31.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-                        │     │                  │         d888395dfa39388d91c 
-                        │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-                        │     │                            de259f0e9aa144d5bc0 
+                        │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+                        │     │                  │         c1237eff7abdf48c156 
+                        │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+                        │     │                            b633c330c8c9eb98490 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -926,7 +1159,7 @@
                         │     │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2024-45337 
                         │     ├ PublishedDate   : 2024-12-12T02:02:07.97Z 
                         │     ╰ LastModifiedDate: 2025-02-18T21:15:22.187Z 
-                        ├ [4] ╭ VulnerabilityID : CVE-2025-22870 
+                        ├ [5] ╭ VulnerabilityID : CVE-2025-22870 
                         │     ├ PkgID           : golang.org/x/net@v0.26.0 
                         │     ├ PkgName         : golang.org/x/net 
                         │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.26.0 
@@ -934,10 +1167,10 @@
                         │     ├ InstalledVersion: v0.26.0 
                         │     ├ FixedVersion    : 0.36.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-                        │     │                  │         d888395dfa39388d91c 
-                        │     │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-                        │     │                            de259f0e9aa144d5bc0 
+                        │     ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+                        │     │                  │         c1237eff7abdf48c156 
+                        │     │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+                        │     │                            b633c330c8c9eb98490 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -971,7 +1204,7 @@
                         │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-22870 
                         │     ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
                         │     ╰ LastModifiedDate: 2025-03-18T17:15:45.467Z 
-                        ╰ [5] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+                        ╰ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
                               ├ PkgID           : google.golang.org/grpc@v1.64.0 
                               ├ PkgName         : google.golang.org/grpc 
                               ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
@@ -979,10 +1212,10 @@
                               ├ InstalledVersion: v1.64.0 
                               ├ FixedVersion    : 1.64.1 
                               ├ Status          : fixed 
-                              ├ Layer            ╭ Digest: sha256:51bce902e8f6f4692a0e05aacf77c89582cc391747296
-                              │                  │         d888395dfa39388d91c 
-                              │                  ╰ DiffID: sha256:5637ef6dfc492ce40ff05b2b455ce05ab6f69a27cdbb1
-                              │                            de259f0e9aa144d5bc0 
+                              ├ Layer            ╭ Digest: sha256:81349e83dccc9de83e7fbd57738452c9c7748507060ec
+                              │                  │         c1237eff7abdf48c156 
+                              │                  ╰ DiffID: sha256:7e43d2d0927b5effa6cbd0d84fa6f6b1878a45b621fa1
+                              │                            b633c330c8c9eb98490 
                               ├ SeveritySource  : ghsa 
                               ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
                               ├ DataSource       ╭ ID  : ghsa 
