@@ -83,7 +83,7 @@ include:
 jobs:
 # ---------------------
 - name : Init functions
-  exec : |
+  exec : | #js
     global.pid = args.pid
     global.prefix = _$(args.prefix).isString().default("java")
 

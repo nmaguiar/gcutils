@@ -20,7 +20,7 @@ var nOutput_PrometheusFiles = function (aMap) {
 		this.params = {}
 	}
 
-	this.params.prefix = _$(this.params.prefix).isString().default("java")
+	this.params.prefix = _$(global.prefix).isString().default("java")
 
 	this.include = aMap.include
 	this.exclude = aMap.exclude

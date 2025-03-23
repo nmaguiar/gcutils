@@ -1,4 +1,4 @@
-FROM openaf/oaf:t8 as main
+FROM openaf/oaf:nightly as main
 
 USER root
 COPY ojobs/collect4pid_live.yaml /openaf/ojobs/collect4pid_live.yaml
@@ -10,10 +10,7 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && cd /openaf\
  && java -jar openaf.jar --install\
  && /openaf/openaf --update --force\
- && /openaf/opack install py-textual\
- && /openaf/opack install plugin-xls\
- && /openaf/opack install oafproc\
- && /openaf/opack install nattrmon\
+ && /openaf/opack install py-textual plugin-xls oafproc nattrmon\
  && /openaf/ojob ojob.io/get job=ojob.io/oaf/colorFormats.yaml > /openaf/ojobs/colorFormats.yaml\
  && /openaf/ojob ojob.io/get job=ojob.io/java/grafana/gc.yaml > /openaf/ojobs/grafana_gc.yaml\
  && cd /openaf/ojobs\
