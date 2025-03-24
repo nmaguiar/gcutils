@@ -1,0 +1,116 @@
+# Author: Nuno Aguiar
+help:
+  text   : Tries to remotely start/stop/dump/check/copy a JFR recording (Java Flight Recorder) on a JVM (version >= 14) on the sharing IPC.
+  expects: 
+  - name     : op
+    desc     : The operation to perform (start, stop, dump, check, copy)
+    example  : "check"
+    mandatory: true
+    options  :
+    - check
+    - start
+    - stop
+    - dump
+    - copy
+  - name     : pid
+    desc     : The PID of the JVM to start the JFR recording
+    example  : "1234"
+    mandatory: true
+  - name     : duration
+    desc     : The duration of the recording in seconds (e.g. 60)
+    example  : "60"
+    mandatory: false
+  - name     : filename
+    desc     : The filename of the recording (e.g. "recording.jfr")
+    example  : "recording.jfr"
+    mandatory: false
+  - name     : maxsize
+    desc     : The maximum size of the recording file (e.g. "256MB")
+    example  : "256MB"
+    mandatory: false
+  - name     : dumpFile
+    desc     : The filename to dump the recording to (e.g. "recording.jfr") if op=dump
+    example  : "recording.jfr"
+    mandatory: false
+
+todo:
+- (optionOn   ): op
+  ((lowerCase)): true
+  ((todos    )):
+    check:
+    - Check JFR
+    start:
+    - Start JFR
+    stop :
+    - Stop JFR
+    dump :
+    - Dump JFR
+    copy :
+    - Dump JFR
+    - Copy JFR
+  ((default  )):
+  - Check JFR
+
+ojob:
+  opacks      :
+  - openaf: 20250315
+  catch       : printErrnl("[" + job.name + "] "); if (isDef(exception.javaException)) exception.javaException.printStackTrace(); else printErr(exception)
+  logToConsole: true   # to change when finished
+  owraps      :
+  - Java
+
+jobs:
+# -----------------
+- name : Start JFR
+  check:
+    in:
+      pid     : isNumber
+      duration: isNumber.default(__)
+      filename: isString.default(__)
+      maxsize : isString.default(__)
+  exec : | #js
+    print( ow.java.pidStartJFR(args.pid, args.duration, args.filename, args.maxsize) )
+
+# ---------------
+- name : Stop JFR
+  check:
+    in:
+      pid     : isNumber
+      filename: isString.default(__)
+  exec : | #js
+    print( ow.java.pidStopJFR(args.pid, args.filename) )
+
+# ---------------
+- name : Check JFR
+  check:
+    in:
+      pid     : isNumber
+  exec : | #js
+    print( ow.java.pidCheckJFR(args.pid) )
+
+# ---------------
+- name : Dump JFR
+  check:
+    in:
+      pid      : isNumber
+      filename : isString.default(__)
+      dumpFile : isString.default(__)
+  exec : | #js
+    print( ow.java.pidDumpJFR(args.pid, args.filename, args.dumpFile) )
+
+# ---------------
+- name : Copy JFR
+  check:
+    in:
+      pid      : isNumber
+      filename : isString.default(__)
+      dumpFile : isString.default(__)
+  exec : | #js
+    if (ow.format.isWindows()) throw "Not implemented on Windows"
+
+    var tempFile = genUUID() + ".jfr"
+    log("Dumping JFR on the original filesystem /tmp/" + tempFile + "...")
+    ow.java.pidDumpJFR(args.pid, args.filename, "/tmp/" + tempFile)
+    log("Copying JFR to the current filesystem as " + args.dumpFile + "...")
+    io.cp("/proc/" + args.pid + "/root/tmp/" + tempFile, args.dumpFile)
+    log("Done.")

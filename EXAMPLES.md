@@ -4,15 +4,15 @@ List of examples:
 
 | Category | Example title |
 |----------|---------------|
+| Chart | Text chart with #threads, class loaders, heap and metaspace memory |
+| Chart | Text table chart with the top 25 threads of a pid |
+| Dashboard | Text-based dashboard regarding Java memory and GC |
 | Format | Output a Java GC JSON output from a Java GC log |
 | Grafana | Visualize a Java GC log file in Grafana |
 | Grafana | Get a Java GC log input into Grafana for visualization |
 | Grafana | Get a live Java GC input into Grafana for visualization |
-| Chart | Text chart with #threads, class loaders, heap and metaspace memory |
-| Chart | Text table chart with the top 25 threads of a pid |
-| Dashboard | Text-based dashboard regarding Java memory and GC |
 
-> To search for a specific example type '/Checking images content<ENTER>' and use the arrow keys to navigate
+> To search for a specific example type '/Output a Java<ENTER>' and use the arrow keys to navigate
 
 ---
 
@@ -143,6 +143,14 @@ Provides a text-based dashboard regarding a target pid Java memory and GC:
 
 ```bash
 javaGC.yaml pid=1234
+```
+
+If the process is running on another container sharing processes you can provide the corresponding file:
+
+```bash
+# For a Java process on pid 1234
+switch-user-by-pid.sh 1234
+javaGC.yaml file=/proc/1234/root/tmp/hsperfdata_user/1234
 ```
 
 ---

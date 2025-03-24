@@ -1,7 +1,9 @@
-FROM openaf/oaf:nightly as main
+FROM openaf/oaf:t8 as main
 
 USER root
 COPY ojobs/collect4pid_live.yaml /openaf/ojobs/collect4pid_live.yaml
+COPY ojobs/jfrOps.yaml /openaf/ojobs/jfrOps.yaml
+
 RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
@@ -20,6 +22,7 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && /openaf/oaf --sb /openaf/ojobs/colorFormats.yaml\
  && /openaf/oaf --sb /openaf/ojobs/grafana_gc.yaml\
  && /openaf/oaf --sb /openaf/ojobs/collect4pid_live.yaml\
+ && /openaf/oaf --sb /openaf/ojobs/jfrOps.yaml\
  && /openaf/oaf --sb /openaf/ojobs/javaGC.yaml\
  && chown -R openaf:0 /openaf\
  && chown openaf:0 /openaf/.opack.db\
@@ -76,15 +79,20 @@ RUN gzip /etc/gcutils\
 # ------------------------
 COPY USAGE.md /USAGE.md
 COPY EXAMPLES.md /EXAMPLES.md
+COPY JFR.md /JFR.md
 COPY entrypoint.sh /.entrypoint.sh
 RUN gzip /USAGE.md\
  && gzip /EXAMPLES.md\
+ && gzip /JFR.md\
  && echo "#!/bin/sh" > /usr/bin/usage-help\
  && echo "zcat /USAGE.md.gz | oafp in=md mdtemplate=true | less -r" >> /usr/bin/usage-help\
  && echo "#!/bin/sh" > /usr/bin/examples-help\
  && echo "zcat /EXAMPLES.md.gz | oafp in=md mdtemplate=true | less -r" > /usr/bin/examples-help\
+ && echo "#!/bin/sh" > /usr/bin/jfr-help\
+ && echo "zcat /JFR.md.gz | oafp in=md mdtemplate=true | less -r" > /usr/bin/jfr-help\
  && chmod a+x /usr/bin/usage-help\
  && chmod a+x /usr/bin/examples-help\
+ && chmod a+x /usr/bin/jfr-help\
  && chmod a+x /.entrypoint.sh
 
 # -------------------
