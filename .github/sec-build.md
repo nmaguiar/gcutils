@@ -14,64 +14,7 @@
 ├ [4] ╭ Target         : usr/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2025-27144 
-│                       │     ├ PkgID           : github.com/go-jose/go-jose/v3@v3.0.3 
-│                       │     ├ PkgName         : github.com/go-jose/go-jose/v3 
-│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-jose/go-jose/v3@v3.0.3 
-│                       │     │                  ╰ UID : bed6d9eee9ef0072 
-│                       │     ├ InstalledVersion: v3.0.3 
-│                       │     ├ FixedVersion    : 3.0.4 
-│                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
-│                       │     ├ SeveritySource  : ghsa 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-27144 
-│                       │     ├ DataSource       ╭ ID  : ghsa 
-│                       │     │                  ├ Name: GitHub Security Advisory Go 
-│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                       │     │                          osystem%3Ago 
-│                       │     ├ Title           : go-jose: Go JOSE's Parsing Vulnerable to Denial of Service 
-│                       │     ├ Description     : Go JOSE provides an implementation of the Javascript Object
-│                       │     │                   Signing and Encryption set of standards in Go, including
-│                       │     │                   support for JSON Web Encryption (JWE), JSON Web Signature
-│                       │     │                   (JWS), and JSON Web Token (JWT) standards. In versions on the
-│                       │     │                    4.x branch prior to version 4.0.5, when parsing compact JWS
-│                       │     │                   or JWE input, Go JOSE could use excessive memory. The code
-│                       │     │                   used strings.Split(token, ".") to split JWT tokens, which is
-│                       │     │                   vulnerable to excessive memory consumption when processing
-│                       │     │                   maliciously crafted tokens with a large number of `.`
-│                       │     │                   characters.  An attacker could exploit this by sending
-│                       │     │                   numerous malformed tokens, leading to memory exhaustion and a
-│                       │     │                    Denial of Service. Version 4.0.5 fixes this issue. As a
-│                       │     │                   workaround, applications could pre-validate that payloads
-│                       │     │                   passed to Go JOSE do not contain an excessive number of `.`
-│                       │     │                   characters. 
-│                       │     ├ Severity        : MEDIUM 
-│                       │     ├ CweIDs           ─ [0]: CWE-770 
-│                       │     ├ VendorSeverity   ╭ amazon     : 3 
-│                       │     │                  ├ azure      : 2 
-│                       │     │                  ├ cbl-mariner: 2 
-│                       │     │                  ├ ghsa       : 2 
-│                       │     │                  ╰ redhat     : 2 
-│                       │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
-│                       │     │                           │           A:H 
-│                       │     │                           ╰ V3Score : 7.5 
-│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-27144 
-│                       │     │                  ├ [1]: https://github.com/go-jose/go-jose 
-│                       │     │                  ├ [2]: https://github.com/go-jose/go-jose/commit/99b346cec4e86
-│                       │     │                  │      d102284642c5dcbe9bb0cacfc22 
-│                       │     │                  ├ [3]: https://github.com/go-jose/go-jose/releases/tag/v4.0.5 
-│                       │     │                  ├ [4]: https://github.com/go-jose/go-jose/security/advisories/
-│                       │     │                  │      GHSA-c6gw-w398-hv78 
-│                       │     │                  ├ [5]: https://github.com/golang/go/issues/71490 
-│                       │     │                  ├ [6]: https://go.dev/issue/71490 
-│                       │     │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-27144 
-│                       │     │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-27144 
-│                       │     ├ PublishedDate   : 2025-02-24T23:15:11.427Z 
-│                       │     ╰ LastModifiedDate: 2025-02-24T23:15:11.427Z 
-│                       ├ [1] ╭ VulnerabilityID : CVE-2025-30204 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2025-30204 
 │                       │     ├ PkgID           : github.com/golang-jwt/jwt/v4@v4.5.1 
 │                       │     ├ PkgName         : github.com/golang-jwt/jwt/v4 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v4@v4.5.1 
@@ -79,10 +22,10 @@
 │                       │     ├ InstalledVersion: v4.5.1 
 │                       │     ├ FixedVersion    : 4.5.2 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30204 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -129,7 +72,7 @@
 │                       │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-30204 
 │                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
 │                       │     ╰ LastModifiedDate: 2025-03-21T22:15:26.42Z 
-│                       ├ [2] ╭ VulnerabilityID : CVE-2025-30204 
+│                       ├ [1] ╭ VulnerabilityID : CVE-2025-30204 
 │                       │     ├ PkgID           : github.com/golang-jwt/jwt/v5@v5.2.1 
 │                       │     ├ PkgName         : github.com/golang-jwt/jwt/v5 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v5@v5.2.1 
@@ -137,10 +80,10 @@
 │                       │     ├ InstalledVersion: v5.2.1 
 │                       │     ├ FixedVersion    : 5.2.2 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30204 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -187,203 +130,67 @@
 │                       │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-30204 
 │                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
 │                       │     ╰ LastModifiedDate: 2025-03-21T22:15:26.42Z 
-│                       ├ [3] ╭ VulnerabilityID : CVE-2024-56323 
-│                       │     ├ PkgID           : github.com/openfga/openfga@v1.6.2 
-│                       │     ├ PkgName         : github.com/openfga/openfga 
-│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
-│                       │     │                  ╰ UID : 9b19146cf4b99910 
-│                       │     ├ InstalledVersion: v1.6.2 
-│                       │     ├ FixedVersion    : 1.8.3 
-│                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
-│                       │     ├ SeveritySource  : ghsa 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-56323 
-│                       │     ├ DataSource       ╭ ID  : ghsa 
-│                       │     │                  ├ Name: GitHub Security Advisory Go 
-│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                       │     │                          osystem%3Ago 
-│                       │     ├ Title           : OpenFGA Authorization Bypass 
-│                       │     ├ Description     : OpenFGA is an authorization/permission engine. IN OpenFGA
-│                       │     │                   v1.3.8 to v1.8.2 (Helm chart openfga-0.1.38 to
-│                       │     │                   openfga-0.2.19, docker v1.3.8 to v.1.8.2)  are vulnerable to
-│                       │     │                   authorization bypass under the following conditions: 1.
-│                       │     │                   calling Check API or ListObjects with a model that uses
-│                       │     │                   [conditions](https://openfga.dev/docs/modeling/conditions),
-│                       │     │                   and 2. calling Check API or ListObjects API with [contextual
-│                       │     │                   tuples](https://openfga.dev/docs/concepts#what-are-contextual
-│                       │     │                   -tuples) that include conditions and 3. OpenFGA is configured
-│                       │     │                    with caching enabled (`OPENFGA_CHECK_QUERY_CACHE_ENABLED`).
-│                       │     │                   Users are advised to upgrade to v1.8.3. There are no known
-│                       │     │                   workarounds for this vulnerability. 
-│                       │     ├ Severity        : MEDIUM 
-│                       │     ├ CweIDs           ─ [0]: CWE-285 
-│                       │     ├ VendorSeverity   ─ ghsa: 2 
-│                       │     ├ References       ╭ [0]: https://github.com/openfga/openfga 
-│                       │     │                  ├ [1]: https://github.com/openfga/openfga/security/advisories/
-│                       │     │                  │      GHSA-32q6-rr98-cjqv 
-│                       │     │                  ├ [2]: https://nvd.nist.gov/vuln/detail/CVE-2024-56323 
-│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3384 
-│                       │     ├ PublishedDate   : 2025-01-13T22:15:14.447Z 
-│                       │     ╰ LastModifiedDate: 2025-01-13T22:15:14.447Z 
-│                       ├ [4] ╭ VulnerabilityID : CVE-2025-25196 
-│                       │     ├ PkgID           : github.com/openfga/openfga@v1.6.2 
-│                       │     ├ PkgName         : github.com/openfga/openfga 
-│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.6.2 
-│                       │     │                  ╰ UID : 9b19146cf4b99910 
-│                       │     ├ InstalledVersion: v1.6.2 
-│                       │     ├ FixedVersion    : 1.8.5 
-│                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
-│                       │     ├ SeveritySource  : ghsa 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-25196 
-│                       │     ├ DataSource       ╭ ID  : ghsa 
-│                       │     │                  ├ Name: GitHub Security Advisory Go 
-│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                       │     │                          osystem%3Ago 
-│                       │     ├ Title           : OpenFGA Authorization Bypass 
-│                       │     ├ Description     : OpenFGA is a high-performance and flexible
-│                       │     │                   authorization/permission engine built for developers and
-│                       │     │                   inspired by Google Zanzibar. OpenFGA < v1.8.4 (Helm chart <
-│                       │     │                   openfga-0.2.22, docker < v.1.8.4) are vulnerable to
-│                       │     │                   authorization bypass when certain Check and ListObject calls
-│                       │     │                   are executed. Users on OpenFGA v1.8.4 or previous,
-│                       │     │                   specifically under the following conditions are affected by
-│                       │     │                   this authorization bypass vulnerability: 1. Calling Check API
-│                       │     │                    or ListObjects with a model that has a relation directly
-│                       │     │                   assignable to both public access AND userset with the same
-│                       │     │                   type. 2. A type bound public access tuple is assigned to an
-│                       │     │                   object. 3. userset tuple is not assigned to the same object.
-│                       │     │                   and 4. Check request's user field is a userset that has the
-│                       │     │                   same type as the type bound public access tuple's user type.
-│                       │     │                   Users are advised to upgrade to v1.8.5 which is backwards
-│                       │     │                   compatible. There are no known workarounds for this
-│                       │     │                   vulnerability. 
-│                       │     ├ Severity        : MEDIUM 
-│                       │     ├ CweIDs           ─ [0]: CWE-285 
-│                       │     ├ VendorSeverity   ─ ghsa: 2 
-│                       │     ├ References       ╭ [0]: https://github.com/openfga/openfga 
-│                       │     │                  ├ [1]: https://github.com/openfga/openfga/commit/0aee4f47e0c64
-│                       │     │                  │      2de78831ceb27bb62b116f49588 
-│                       │     │                  ├ [2]: https://github.com/openfga/openfga/security/advisories/
-│                       │     │                  │      GHSA-g4v5-6f5p-m38j 
-│                       │     │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-25196 
-│                       │     ├ PublishedDate   : 2025-02-19T21:15:15.577Z 
-│                       │     ╰ LastModifiedDate: 2025-02-19T21:15:15.577Z 
-│                       ├ [5] ╭ VulnerabilityID : CVE-2025-29923 
-│                       │     ├ PkgID           : github.com/redis/go-redis/v9@v9.6.1 
-│                       │     ├ PkgName         : github.com/redis/go-redis/v9 
-│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/redis/go-redis/v9@v9.6.1 
-│                       │     │                  ╰ UID : eac1ffb03e2184cd 
-│                       │     ├ InstalledVersion: v9.6.1 
-│                       │     ├ FixedVersion    : 9.7.3, 9.6.3, 9.5.5 
-│                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
-│                       │     ├ SeveritySource  : ghsa 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-29923 
-│                       │     ├ DataSource       ╭ ID  : ghsa 
-│                       │     │                  ├ Name: GitHub Security Advisory Go 
-│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                       │     │                          osystem%3Ago 
-│                       │     ├ Title           : github.com/redis/go-redis: go-redis allows potential out of
-│                       │     │                   order responses when `CLIENT SETINFO` times out during
-│                       │     │                   connection establishment 
-│                       │     ├ Description     : go-redis is the official Redis client library for the Go
-│                       │     │                   programming language. Prior to 9.5.5, 9.6.3, and 9.7.3,
-│                       │     │                   go-redis potentially responds out of order when `CLIENT
-│                       │     │                   SETINFO` times out during connection establishment. This can
-│                       │     │                   happen when the client is configured to transmit its
-│                       │     │                   identity, there are network connectivity issues, or the
-│                       │     │                   client was configured with aggressive timeouts. The problem
-│                       │     │                   occurs for multiple use cases. For sticky connections, you
-│                       │     │                   receive persistent out-of-order responses for the lifetime of
-│                       │     │                    the connection. All commands in the pipeline receive
-│                       │     │                   incorrect responses. When used with the default ConnPool once
-│                       │     │                    a connection is returned after use with ConnPool#Put the
-│                       │     │                   read buffer will be checked and the connection will be marked
-│                       │     │                    as bad due to the unread data. This means that at most one
-│                       │     │                   out-of-order response before the connection is discarded.
-│                       │     │                   This issue is fixed in 9.5.5, 9.6.3, and 9.7.3. You can
-│                       │     │                   prevent the vulnerability by setting the flag
-│                       │     │                   DisableIndentity to true when constructing the client
-│                       │     │                   instance. 
-│                       │     ├ Severity        : LOW 
-│                       │     ├ CweIDs           ─ [0]: CWE-20 
-│                       │     ├ VendorSeverity   ╭ ghsa  : 1 
-│                       │     │                  ╰ redhat: 1 
-│                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
-│                       │     │                  │        │           A:N 
-│                       │     │                  │        ╰ V3Score : 3.7 
-│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
-│                       │     │                           │           A:N 
-│                       │     │                           ╰ V3Score : 3.7 
-│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-29923 
-│                       │     │                  ├ [1]: https://github.com/redis/go-redis 
-│                       │     │                  ├ [2]: https://github.com/redis/go-redis/commit/d236865b0cfa1b
-│                       │     │                  │      752ea4b7da666b1fdcd0acebb6 
-│                       │     │                  ├ [3]: https://github.com/redis/go-redis/pull/3295 
-│                       │     │                  ├ [4]: https://github.com/redis/go-redis/security/advisories/G
-│                       │     │                  │      HSA-92cp-5422-2mw7 
-│                       │     │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-29923 
-│                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-29923 
-│                       │     ├ PublishedDate   : 2025-03-20T18:15:19.23Z 
-│                       │     ╰ LastModifiedDate: 2025-03-20T18:15:19.23Z 
-│                       ╰ [6] ╭ VulnerabilityID : CVE-2025-22870 
-│                             ├ PkgID           : golang.org/x/net@v0.34.0 
-│                             ├ PkgName         : golang.org/x/net 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.34.0 
-│                             │                  ╰ UID : 68b0878189f36bdd 
-│                             ├ InstalledVersion: v0.34.0 
-│                             ├ FixedVersion    : 0.36.0 
+│                       ╰ [2] ╭ VulnerabilityID : CVE-2025-29923 
+│                             ├ PkgID           : github.com/redis/go-redis/v9@v9.7.0 
+│                             ├ PkgName         : github.com/redis/go-redis/v9 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/redis/go-redis/v9@v9.7.0 
+│                             │                  ╰ UID : 53d77e7b42f47e40 
+│                             ├ InstalledVersion: v9.7.0 
+│                             ├ FixedVersion    : 9.7.3, 9.6.3, 9.5.5 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                             │                  │         8d6d6f44c218ea1bf03 
-│                             │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                             │                            c98af34c2c678f5a974 
+│                             ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                             │                  │         4af43faf4c28b307cc6 
+│                             │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                             │                            0ab909cd3098459ca2b 
 │                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-29923 
 │                             ├ DataSource       ╭ ID  : ghsa 
 │                             │                  ├ Name: GitHub Security Advisory Go 
 │                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                             │                          osystem%3Ago 
-│                             ├ Title           : golang.org/x/net/proxy: golang.org/x/net/http/httpproxy: HTTP
-│                             │                    Proxy bypass using IPv6 Zone IDs in golang.org/x/net 
-│                             ├ Description     : Matching of hosts against proxy patterns can improperly treat
-│                             │                    an IPv6 zone ID as a hostname component. For example, when
-│                             │                   the NO_PROXY environment variable is set to "*.example.com",
-│                             │                   a request to "[::1%25.example.com]:80` will incorrectly match
-│                             │                    and not be proxied. 
-│                             ├ Severity        : MEDIUM 
-│                             ├ CweIDs           ─ [0]: CWE-115 
-│                             ├ VendorSeverity   ╭ amazon     : 2 
-│                             │                  ├ azure      : 1 
-│                             │                  ├ cbl-mariner: 2 
-│                             │                  ├ ghsa       : 2 
-│                             │                  ╰ redhat     : 2 
-│                             ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/
-│                             │                  │        │           A:L 
-│                             │                  │        ╰ V3Score : 4.4 
-│                             │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/
-│                             │                           │           A:L 
-│                             │                           ╰ V3Score : 4.4 
-│                             ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/03/07/2 
-│                             │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-22870 
-│                             │                  ├ [2]: https://go-review.googlesource.com/q/project:net 
-│                             │                  ├ [3]: https://go.dev/cl/654697 
-│                             │                  ├ [4]: https://go.dev/issue/71984 
-│                             │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-22870 
-│                             │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3503 
-│                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-22870 
-│                             ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
-│                             ╰ LastModifiedDate: 2025-03-18T17:15:45.467Z 
+│                             ├ Title           : github.com/redis/go-redis: go-redis allows potential out of
+│                             │                   order responses when `CLIENT SETINFO` times out during
+│                             │                   connection establishment 
+│                             ├ Description     : go-redis is the official Redis client library for the Go
+│                             │                   programming language. Prior to 9.5.5, 9.6.3, and 9.7.3,
+│                             │                   go-redis potentially responds out of order when `CLIENT
+│                             │                   SETINFO` times out during connection establishment. This can
+│                             │                   happen when the client is configured to transmit its
+│                             │                   identity, there are network connectivity issues, or the
+│                             │                   client was configured with aggressive timeouts. The problem
+│                             │                   occurs for multiple use cases. For sticky connections, you
+│                             │                   receive persistent out-of-order responses for the lifetime of
+│                             │                    the connection. All commands in the pipeline receive
+│                             │                   incorrect responses. When used with the default ConnPool once
+│                             │                    a connection is returned after use with ConnPool#Put the
+│                             │                   read buffer will be checked and the connection will be marked
+│                             │                    as bad due to the unread data. This means that at most one
+│                             │                   out-of-order response before the connection is discarded.
+│                             │                   This issue is fixed in 9.5.5, 9.6.3, and 9.7.3. You can
+│                             │                   prevent the vulnerability by setting the flag
+│                             │                   DisableIndentity to true when constructing the client
+│                             │                   instance. 
+│                             ├ Severity        : LOW 
+│                             ├ CweIDs           ─ [0]: CWE-20 
+│                             ├ VendorSeverity   ╭ ghsa  : 1 
+│                             │                  ╰ redhat: 1 
+│                             ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
+│                             │                  │        │           A:N 
+│                             │                  │        ╰ V3Score : 3.7 
+│                             │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
+│                             │                           │           A:N 
+│                             │                           ╰ V3Score : 3.7 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-29923 
+│                             │                  ├ [1]: https://github.com/redis/go-redis 
+│                             │                  ├ [2]: https://github.com/redis/go-redis/commit/d236865b0cfa1b
+│                             │                  │      752ea4b7da666b1fdcd0acebb6 
+│                             │                  ├ [3]: https://github.com/redis/go-redis/pull/3295 
+│                             │                  ├ [4]: https://github.com/redis/go-redis/security/advisories/G
+│                             │                  │      HSA-92cp-5422-2mw7 
+│                             │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-29923 
+│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-29923 
+│                             ├ PublishedDate   : 2025-03-20T18:15:19.23Z 
+│                             ╰ LastModifiedDate: 2025-03-20T18:15:19.23Z 
 ├ [5] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -396,10 +203,10 @@
 │                       │     ├ InstalledVersion: v1.5.2 
 │                       │     ├ FixedVersion    : 1.6.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-35255 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -453,10 +260,10 @@
 │                       │     ├ InstalledVersion: v26.1.3+incompatible 
 │                       │     ├ FixedVersion    : 23.0.15, 26.1.5, 27.1.1, 25.0.6 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-41110 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -555,10 +362,10 @@
 │                       │     ├ InstalledVersion: v5.2.1 
 │                       │     ├ FixedVersion    : 5.2.2 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30204 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -613,10 +420,10 @@
 │                       │     ├ InstalledVersion: v0.7.4 
 │                       │     ├ FixedVersion    : 0.7.7 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-6104 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -632,7 +439,7 @@
 │                       │     │                   CVE-2024-6104, was fixed in go-retryablehttp 0.7.7. 
 │                       │     ├ Severity        : MEDIUM 
 │                       │     ├ CweIDs           ─ [0]: CWE-532 
-│                       │     ├ VendorSeverity   ╭ alma       : 3 
+│                       │     ├ VendorSeverity   ╭ alma       : 2 
 │                       │     │                  ├ amazon     : 3 
 │                       │     │                  ├ azure      : 2 
 │                       │     │                  ├ cbl-mariner: 2 
@@ -649,29 +456,26 @@
 │                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/
 │                       │     │                           │           A:N 
 │                       │     │                           ╰ V3Score : 6 
-│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:5258 
+│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:9115 
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-6104 
-│                       │     │                  ├ [2] : https://bugzilla.redhat.com/2262921 
-│                       │     │                  ├ [3] : https://bugzilla.redhat.com/2268017 
-│                       │     │                  ├ [4] : https://bugzilla.redhat.com/2268019 
-│                       │     │                  ├ [5] : https://bugzilla.redhat.com/2268021 
-│                       │     │                  ├ [6] : https://bugzilla.redhat.com/2274767 
-│                       │     │                  ├ [7] : https://bugzilla.redhat.com/2292668 
-│                       │     │                  ├ [8] : https://bugzilla.redhat.com/2294000 
-│                       │     │                  ├ [9] : https://bugzilla.redhat.com/2295010 
-│                       │     │                  ├ [10]: https://discuss.hashicorp.com/c/security 
-│                       │     │                  ├ [11]: https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
+│                       │     │                  ├ [2] : https://bugzilla.redhat.com/2279814 
+│                       │     │                  ├ [3] : https://bugzilla.redhat.com/2292668 
+│                       │     │                  ├ [4] : https://bugzilla.redhat.com/2292787 
+│                       │     │                  ├ [5] : https://bugzilla.redhat.com/2294000 
+│                       │     │                  ├ [6] : https://bugzilla.redhat.com/2295310 
+│                       │     │                  ├ [7] : https://discuss.hashicorp.com/c/security 
+│                       │     │                  ├ [8] : https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
 │                       │     │                  │       ablehttp-can-leak-basic-auth-credentials-to-log-files/
 │                       │     │                  │       68027 
-│                       │     │                  ├ [12]: https://errata.almalinux.org/8/ALSA-2024-5258.html 
-│                       │     │                  ├ [13]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
-│                       │     │                  ├ [14]: https://github.com/hashicorp/go-retryablehttp 
-│                       │     │                  ├ [15]: https://github.com/hashicorp/go-retryablehttp/commit/a
+│                       │     │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2024-9115.html 
+│                       │     │                  ├ [10]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
+│                       │     │                  ├ [11]: https://github.com/hashicorp/go-retryablehttp 
+│                       │     │                  ├ [12]: https://github.com/hashicorp/go-retryablehttp/commit/a
 │                       │     │                  │       99f07beb3c5faaa0a283617e6eb6bcf25f5049a 
-│                       │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-6104.html 
-│                       │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
-│                       │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
-│                       │     │                  ╰ [19]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
+│                       │     │                  ├ [13]: https://linux.oracle.com/cve/CVE-2024-6104.html 
+│                       │     │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
+│                       │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
+│                       │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
 │                       │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
 │                       │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
 │                       ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
@@ -682,10 +486,10 @@
 │                       │     ├ InstalledVersion: v0.24.0 
 │                       │     ├ FixedVersion    : 0.31.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -772,10 +576,10 @@
 │                       │     ├ InstalledVersion: v0.26.0 
 │                       │     ├ FixedVersion    : 0.36.0 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                       │     │                  │         8d6d6f44c218ea1bf03 
-│                       │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                       │     │                            c98af34c2c678f5a974 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -820,10 +624,10 @@
 │                             ├ InstalledVersion: v1.64.0 
 │                             ├ FixedVersion    : 1.64.1 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-│                             │                  │         8d6d6f44c218ea1bf03 
-│                             │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-│                             │                            c98af34c2c678f5a974 
+│                             ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                             │                  │         4af43faf4c28b307cc6 
+│                             │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                             │                            0ab909cd3098459ca2b 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
 │                             ├ DataSource       ╭ ID  : ghsa 
@@ -864,10 +668,10 @@
                         │     ├ InstalledVersion: v1.5.2 
                         │     ├ FixedVersion    : 1.6.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-                        │     │                  │         8d6d6f44c218ea1bf03 
-                        │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-                        │     │                            c98af34c2c678f5a974 
+                        │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+                        │     │                  │         4af43faf4c28b307cc6 
+                        │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+                        │     │                            0ab909cd3098459ca2b 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-35255 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -921,10 +725,10 @@
                         │     ├ InstalledVersion: v26.1.3+incompatible 
                         │     ├ FixedVersion    : 23.0.15, 26.1.5, 27.1.1, 25.0.6 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-                        │     │                  │         8d6d6f44c218ea1bf03 
-                        │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-                        │     │                            c98af34c2c678f5a974 
+                        │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+                        │     │                  │         4af43faf4c28b307cc6 
+                        │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+                        │     │                            0ab909cd3098459ca2b 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-41110 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -1023,10 +827,10 @@
                         │     ├ InstalledVersion: v5.2.1 
                         │     ├ FixedVersion    : 5.2.2 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-                        │     │                  │         8d6d6f44c218ea1bf03 
-                        │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-                        │     │                            c98af34c2c678f5a974 
+                        │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+                        │     │                  │         4af43faf4c28b307cc6 
+                        │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+                        │     │                            0ab909cd3098459ca2b 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30204 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -1081,10 +885,10 @@
                         │     ├ InstalledVersion: v0.7.4 
                         │     ├ FixedVersion    : 0.7.7 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-                        │     │                  │         8d6d6f44c218ea1bf03 
-                        │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-                        │     │                            c98af34c2c678f5a974 
+                        │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+                        │     │                  │         4af43faf4c28b307cc6 
+                        │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+                        │     │                            0ab909cd3098459ca2b 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-6104 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -1100,7 +904,7 @@
                         │     │                   CVE-2024-6104, was fixed in go-retryablehttp 0.7.7. 
                         │     ├ Severity        : MEDIUM 
                         │     ├ CweIDs           ─ [0]: CWE-532 
-                        │     ├ VendorSeverity   ╭ alma       : 3 
+                        │     ├ VendorSeverity   ╭ alma       : 2 
                         │     │                  ├ amazon     : 3 
                         │     │                  ├ azure      : 2 
                         │     │                  ├ cbl-mariner: 2 
@@ -1117,29 +921,26 @@
                         │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/
                         │     │                           │           A:N 
                         │     │                           ╰ V3Score : 6 
-                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:5258 
+                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:9115 
                         │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-6104 
-                        │     │                  ├ [2] : https://bugzilla.redhat.com/2262921 
-                        │     │                  ├ [3] : https://bugzilla.redhat.com/2268017 
-                        │     │                  ├ [4] : https://bugzilla.redhat.com/2268019 
-                        │     │                  ├ [5] : https://bugzilla.redhat.com/2268021 
-                        │     │                  ├ [6] : https://bugzilla.redhat.com/2274767 
-                        │     │                  ├ [7] : https://bugzilla.redhat.com/2292668 
-                        │     │                  ├ [8] : https://bugzilla.redhat.com/2294000 
-                        │     │                  ├ [9] : https://bugzilla.redhat.com/2295010 
-                        │     │                  ├ [10]: https://discuss.hashicorp.com/c/security 
-                        │     │                  ├ [11]: https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
+                        │     │                  ├ [2] : https://bugzilla.redhat.com/2279814 
+                        │     │                  ├ [3] : https://bugzilla.redhat.com/2292668 
+                        │     │                  ├ [4] : https://bugzilla.redhat.com/2292787 
+                        │     │                  ├ [5] : https://bugzilla.redhat.com/2294000 
+                        │     │                  ├ [6] : https://bugzilla.redhat.com/2295310 
+                        │     │                  ├ [7] : https://discuss.hashicorp.com/c/security 
+                        │     │                  ├ [8] : https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
                         │     │                  │       ablehttp-can-leak-basic-auth-credentials-to-log-files/
                         │     │                  │       68027 
-                        │     │                  ├ [12]: https://errata.almalinux.org/8/ALSA-2024-5258.html 
-                        │     │                  ├ [13]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
-                        │     │                  ├ [14]: https://github.com/hashicorp/go-retryablehttp 
-                        │     │                  ├ [15]: https://github.com/hashicorp/go-retryablehttp/commit/a
+                        │     │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2024-9115.html 
+                        │     │                  ├ [10]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
+                        │     │                  ├ [11]: https://github.com/hashicorp/go-retryablehttp 
+                        │     │                  ├ [12]: https://github.com/hashicorp/go-retryablehttp/commit/a
                         │     │                  │       99f07beb3c5faaa0a283617e6eb6bcf25f5049a 
-                        │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-6104.html 
-                        │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
-                        │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
-                        │     │                  ╰ [19]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
+                        │     │                  ├ [13]: https://linux.oracle.com/cve/CVE-2024-6104.html 
+                        │     │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
+                        │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
+                        │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
                         │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
                         │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
                         ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
@@ -1150,10 +951,10 @@
                         │     ├ InstalledVersion: v0.24.0 
                         │     ├ FixedVersion    : 0.31.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-                        │     │                  │         8d6d6f44c218ea1bf03 
-                        │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-                        │     │                            c98af34c2c678f5a974 
+                        │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+                        │     │                  │         4af43faf4c28b307cc6 
+                        │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+                        │     │                            0ab909cd3098459ca2b 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-45337 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -1240,10 +1041,10 @@
                         │     ├ InstalledVersion: v0.26.0 
                         │     ├ FixedVersion    : 0.36.0 
                         │     ├ Status          : fixed 
-                        │     ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-                        │     │                  │         8d6d6f44c218ea1bf03 
-                        │     │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-                        │     │                            c98af34c2c678f5a974 
+                        │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+                        │     │                  │         4af43faf4c28b307cc6 
+                        │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+                        │     │                            0ab909cd3098459ca2b 
                         │     ├ SeveritySource  : ghsa 
                         │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22870 
                         │     ├ DataSource       ╭ ID  : ghsa 
@@ -1288,10 +1089,10 @@
                               ├ InstalledVersion: v1.64.0 
                               ├ FixedVersion    : 1.64.1 
                               ├ Status          : fixed 
-                              ├ Layer            ╭ Digest: sha256:4a7db7f8d1d9fbcacc37b81afdfafeec667237c74d8f2
-                              │                  │         8d6d6f44c218ea1bf03 
-                              │                  ╰ DiffID: sha256:5635cd6cecd2ef7d59ed109cc120574b2835da1445fed
-                              │                            c98af34c2c678f5a974 
+                              ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+                              │                  │         4af43faf4c28b307cc6 
+                              │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+                              │                            0ab909cd3098459ca2b 
                               ├ SeveritySource  : ghsa 
                               ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
                               ├ DataSource       ╭ ID  : ghsa 
