@@ -130,67 +130,98 @@
 │                       │     │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-30204 
 │                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
 │                       │     ╰ LastModifiedDate: 2025-03-21T22:15:26.42Z 
-│                       ╰ [2] ╭ VulnerabilityID : CVE-2025-29923 
-│                             ├ PkgID           : github.com/redis/go-redis/v9@v9.7.0 
-│                             ├ PkgName         : github.com/redis/go-redis/v9 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/redis/go-redis/v9@v9.7.0 
-│                             │                  ╰ UID : 53d77e7b42f47e40 
-│                             ├ InstalledVersion: v9.7.0 
-│                             ├ FixedVersion    : 9.7.3, 9.6.3, 9.5.5 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2025-29923 
+│                       │     ├ PkgID           : github.com/redis/go-redis/v9@v9.7.0 
+│                       │     ├ PkgName         : github.com/redis/go-redis/v9 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/redis/go-redis/v9@v9.7.0 
+│                       │     │                  ╰ UID : 53d77e7b42f47e40 
+│                       │     ├ InstalledVersion: v9.7.0 
+│                       │     ├ FixedVersion    : 9.7.3, 9.6.3, 9.5.5 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-29923 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : github.com/redis/go-redis: go-redis allows potential out of
+│                       │     │                   order responses when `CLIENT SETINFO` times out during
+│                       │     │                   connection establishment 
+│                       │     ├ Description     : go-redis is the official Redis client library for the Go
+│                       │     │                   programming language. Prior to 9.5.5, 9.6.3, and 9.7.3,
+│                       │     │                   go-redis potentially responds out of order when `CLIENT
+│                       │     │                   SETINFO` times out during connection establishment. This can
+│                       │     │                   happen when the client is configured to transmit its
+│                       │     │                   identity, there are network connectivity issues, or the
+│                       │     │                   client was configured with aggressive timeouts. The problem
+│                       │     │                   occurs for multiple use cases. For sticky connections, you
+│                       │     │                   receive persistent out-of-order responses for the lifetime of
+│                       │     │                    the connection. All commands in the pipeline receive
+│                       │     │                   incorrect responses. When used with the default ConnPool once
+│                       │     │                    a connection is returned after use with ConnPool#Put the
+│                       │     │                   read buffer will be checked and the connection will be marked
+│                       │     │                    as bad due to the unread data. This means that at most one
+│                       │     │                   out-of-order response before the connection is discarded.
+│                       │     │                   This issue is fixed in 9.5.5, 9.6.3, and 9.7.3. You can
+│                       │     │                   prevent the vulnerability by setting the flag
+│                       │     │                   DisableIndentity to true when constructing the client
+│                       │     │                   instance. 
+│                       │     ├ Severity        : LOW 
+│                       │     ├ CweIDs           ─ [0]: CWE-20 
+│                       │     ├ VendorSeverity   ╭ ghsa  : 1 
+│                       │     │                  ╰ redhat: 1 
+│                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
+│                       │     │                  │        │           A:N 
+│                       │     │                  │        ╰ V3Score : 3.7 
+│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
+│                       │     │                           │           A:N 
+│                       │     │                           ╰ V3Score : 3.7 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-29923 
+│                       │     │                  ├ [1]: https://github.com/redis/go-redis 
+│                       │     │                  ├ [2]: https://github.com/redis/go-redis/commit/d236865b0cfa1b
+│                       │     │                  │      752ea4b7da666b1fdcd0acebb6 
+│                       │     │                  ├ [3]: https://github.com/redis/go-redis/pull/3295 
+│                       │     │                  ├ [4]: https://github.com/redis/go-redis/security/advisories/G
+│                       │     │                  │      HSA-92cp-5422-2mw7 
+│                       │     │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-29923 
+│                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-29923 
+│                       │     ├ PublishedDate   : 2025-03-20T18:15:19.23Z 
+│                       │     ╰ LastModifiedDate: 2025-03-20T18:15:19.23Z 
+│                       ╰ [3] ╭ VulnerabilityID : CVE-2025-22871 
+│                             ├ PkgID           : stdlib@v1.24.1 
+│                             ├ PkgName         : stdlib 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.1 
+│                             │                  ╰ UID : 50ed6516c22510a2 
+│                             ├ InstalledVersion: v1.24.1 
+│                             ├ FixedVersion    : 1.23.8, 1.24.2 
 │                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
 │                             │                  │         4af43faf4c28b307cc6 
 │                             │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
 │                             │                            0ab909cd3098459ca2b 
-│                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-29923 
-│                             ├ DataSource       ╭ ID  : ghsa 
-│                             │                  ├ Name: GitHub Security Advisory Go 
-│                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                             │                          osystem%3Ago 
-│                             ├ Title           : github.com/redis/go-redis: go-redis allows potential out of
-│                             │                   order responses when `CLIENT SETINFO` times out during
-│                             │                   connection establishment 
-│                             ├ Description     : go-redis is the official Redis client library for the Go
-│                             │                   programming language. Prior to 9.5.5, 9.6.3, and 9.7.3,
-│                             │                   go-redis potentially responds out of order when `CLIENT
-│                             │                   SETINFO` times out during connection establishment. This can
-│                             │                   happen when the client is configured to transmit its
-│                             │                   identity, there are network connectivity issues, or the
-│                             │                   client was configured with aggressive timeouts. The problem
-│                             │                   occurs for multiple use cases. For sticky connections, you
-│                             │                   receive persistent out-of-order responses for the lifetime of
-│                             │                    the connection. All commands in the pipeline receive
-│                             │                   incorrect responses. When used with the default ConnPool once
-│                             │                    a connection is returned after use with ConnPool#Put the
-│                             │                   read buffer will be checked and the connection will be marked
-│                             │                    as bad due to the unread data. This means that at most one
-│                             │                   out-of-order response before the connection is discarded.
-│                             │                   This issue is fixed in 9.5.5, 9.6.3, and 9.7.3. You can
-│                             │                   prevent the vulnerability by setting the flag
-│                             │                   DisableIndentity to true when constructing the client
-│                             │                   instance. 
-│                             ├ Severity        : LOW 
-│                             ├ CweIDs           ─ [0]: CWE-20 
-│                             ├ VendorSeverity   ╭ ghsa  : 1 
-│                             │                  ╰ redhat: 1 
-│                             ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
-│                             │                  │        │           A:N 
-│                             │                  │        ╰ V3Score : 3.7 
-│                             │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/
-│                             │                           │           A:N 
-│                             │                           ╰ V3Score : 3.7 
-│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-29923 
-│                             │                  ├ [1]: https://github.com/redis/go-redis 
-│                             │                  ├ [2]: https://github.com/redis/go-redis/commit/d236865b0cfa1b
-│                             │                  │      752ea4b7da666b1fdcd0acebb6 
-│                             │                  ├ [3]: https://github.com/redis/go-redis/pull/3295 
-│                             │                  ├ [4]: https://github.com/redis/go-redis/security/advisories/G
-│                             │                  │      HSA-92cp-5422-2mw7 
-│                             │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-29923 
-│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-29923 
-│                             ├ PublishedDate   : 2025-03-20T18:15:19.23Z 
-│                             ╰ LastModifiedDate: 2025-03-20T18:15:19.23Z 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22871 
+│                             ├ DataSource       ╭ ID  : govulndb 
+│                             │                  ├ Name: The Go Vulnerability Database 
+│                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                             ├ Title           : The net/http package improperly accepts a bare LF as a line
+│                             │                   terminator ... 
+│                             ├ Description     : The net/http package improperly accepts a bare LF as a line
+│                             │                   terminator in chunked data chunk-size lines. This can permit
+│                             │                   request smuggling if a net/http server is used in conjunction
+│                             │                    with a server that incorrectly accepts a bare LF as part of
+│                             │                   a chunk-ext. 
+│                             ├ Severity        : UNKNOWN 
+│                             ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/04/04/4 
+│                             │                  ├ [1]: https://go.dev/cl/652998 
+│                             │                  ├ [2]: https://go.dev/issue/71988 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/Y2uBTVKjBQk 
+│                             │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3563 
+│                             ├ PublishedDate   : 2025-04-08T20:15:20.183Z 
+│                             ╰ LastModifiedDate: 2025-04-08T21:15:48.173Z 
 ├ [5] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -439,7 +470,7 @@
 │                       │     │                   CVE-2024-6104, was fixed in go-retryablehttp 0.7.7. 
 │                       │     ├ Severity        : MEDIUM 
 │                       │     ├ CweIDs           ─ [0]: CWE-532 
-│                       │     ├ VendorSeverity   ╭ alma       : 3 
+│                       │     ├ VendorSeverity   ╭ alma       : 2 
 │                       │     │                  ├ amazon     : 3 
 │                       │     │                  ├ azure      : 2 
 │                       │     │                  ├ cbl-mariner: 2 
@@ -456,29 +487,26 @@
 │                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/
 │                       │     │                           │           A:N 
 │                       │     │                           ╰ V3Score : 6 
-│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:5258 
+│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:9115 
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-6104 
-│                       │     │                  ├ [2] : https://bugzilla.redhat.com/2262921 
-│                       │     │                  ├ [3] : https://bugzilla.redhat.com/2268017 
-│                       │     │                  ├ [4] : https://bugzilla.redhat.com/2268019 
-│                       │     │                  ├ [5] : https://bugzilla.redhat.com/2268021 
-│                       │     │                  ├ [6] : https://bugzilla.redhat.com/2274767 
-│                       │     │                  ├ [7] : https://bugzilla.redhat.com/2292668 
-│                       │     │                  ├ [8] : https://bugzilla.redhat.com/2294000 
-│                       │     │                  ├ [9] : https://bugzilla.redhat.com/2295010 
-│                       │     │                  ├ [10]: https://discuss.hashicorp.com/c/security 
-│                       │     │                  ├ [11]: https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
+│                       │     │                  ├ [2] : https://bugzilla.redhat.com/2279814 
+│                       │     │                  ├ [3] : https://bugzilla.redhat.com/2292668 
+│                       │     │                  ├ [4] : https://bugzilla.redhat.com/2292787 
+│                       │     │                  ├ [5] : https://bugzilla.redhat.com/2294000 
+│                       │     │                  ├ [6] : https://bugzilla.redhat.com/2295310 
+│                       │     │                  ├ [7] : https://discuss.hashicorp.com/c/security 
+│                       │     │                  ├ [8] : https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
 │                       │     │                  │       ablehttp-can-leak-basic-auth-credentials-to-log-files/
 │                       │     │                  │       68027 
-│                       │     │                  ├ [12]: https://errata.almalinux.org/8/ALSA-2024-5258.html 
-│                       │     │                  ├ [13]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
-│                       │     │                  ├ [14]: https://github.com/hashicorp/go-retryablehttp 
-│                       │     │                  ├ [15]: https://github.com/hashicorp/go-retryablehttp/commit/a
+│                       │     │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2024-9115.html 
+│                       │     │                  ├ [10]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
+│                       │     │                  ├ [11]: https://github.com/hashicorp/go-retryablehttp 
+│                       │     │                  ├ [12]: https://github.com/hashicorp/go-retryablehttp/commit/a
 │                       │     │                  │       99f07beb3c5faaa0a283617e6eb6bcf25f5049a 
-│                       │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-6104.html 
-│                       │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
-│                       │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
-│                       │     │                  ╰ [19]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
+│                       │     │                  ├ [13]: https://linux.oracle.com/cve/CVE-2024-6104.html 
+│                       │     │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
+│                       │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
+│                       │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
 │                       │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
 │                       │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
 │                       ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
@@ -619,46 +647,77 @@
 │                       │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-22870 
 │                       │     ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
 │                       │     ╰ LastModifiedDate: 2025-03-18T17:15:45.467Z 
-│                       ╰ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
-│                             ├ PkgID           : google.golang.org/grpc@v1.64.0 
-│                             ├ PkgName         : google.golang.org/grpc 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
-│                             │                  ╰ UID : b5e6dd3f671415d3 
-│                             ├ InstalledVersion: v1.64.0 
-│                             ├ FixedVersion    : 1.64.1 
+│                       ├ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+│                       │     ├ PkgID           : google.golang.org/grpc@v1.64.0 
+│                       │     ├ PkgName         : google.golang.org/grpc 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
+│                       │     │                  ╰ UID : b5e6dd3f671415d3 
+│                       │     ├ InstalledVersion: v1.64.0 
+│                       │     ├ FixedVersion    : 1.64.1 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+│                       │     │                  │         4af43faf4c28b307cc6 
+│                       │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+│                       │     │                            0ab909cd3098459ca2b 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : Private tokens could appear in logs if context containing
+│                       │     │                   gRPC metadata is logged in github.com/grpc/grpc-go 
+│                       │     ├ Description     : ### Impact
+│                       │     │                   This issue represents a potential PII concern.  If
+│                       │     │                   applications were printing or logging a context containing
+│                       │     │                   gRPC metadata, the affected versions will contain all the
+│                       │     │                   metadata, which may include private information.
+│                       │     │                   
+│                       │     │                   ### Patches
+│                       │     │                   The issue first appeared in 1.64.0 and is patched in 1.64.1
+│                       │     │                   and 1.65.0
+│                       │     │                   ### Workarounds
+│                       │     │                   If using an affected version and upgrading is not possible,
+│                       │     │                   ensuring you do not log or print contexts will avoid the
+│                       │     │                   problem. 
+│                       │     ├ Severity        : LOW 
+│                       │     ├ VendorSeverity   ─ ghsa: 1 
+│                       │     ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
+│                       │                        ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
+│                       │                        │      a7786754d1fe05264c3021eb 
+│                       │                        ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
+│                       │                               A-xr7q-jx4m-x55m 
+│                       ╰ [7] ╭ VulnerabilityID : CVE-2025-22871 
+│                             ├ PkgID           : stdlib@v1.24.1 
+│                             ├ PkgName         : stdlib 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.1 
+│                             │                  ╰ UID : 91238c20ef5583e2 
+│                             ├ InstalledVersion: v1.24.1 
+│                             ├ FixedVersion    : 1.23.8, 1.24.2 
 │                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
 │                             │                  │         4af43faf4c28b307cc6 
 │                             │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
 │                             │                            0ab909cd3098459ca2b 
-│                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
-│                             ├ DataSource       ╭ ID  : ghsa 
-│                             │                  ├ Name: GitHub Security Advisory Go 
-│                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                             │                          osystem%3Ago 
-│                             ├ Title           : Private tokens could appear in logs if context containing
-│                             │                   gRPC metadata is logged in github.com/grpc/grpc-go 
-│                             ├ Description     : ### Impact
-│                             │                   This issue represents a potential PII concern.  If
-│                             │                   applications were printing or logging a context containing
-│                             │                   gRPC metadata, the affected versions will contain all the
-│                             │                   metadata, which may include private information.
-│                             │                   
-│                             │                   ### Patches
-│                             │                   The issue first appeared in 1.64.0 and is patched in 1.64.1
-│                             │                   and 1.65.0
-│                             │                   ### Workarounds
-│                             │                   If using an affected version and upgrading is not possible,
-│                             │                   ensuring you do not log or print contexts will avoid the
-│                             │                   problem. 
-│                             ├ Severity        : LOW 
-│                             ├ VendorSeverity   ─ ghsa: 1 
-│                             ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
-│                                                ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
-│                                                │      a7786754d1fe05264c3021eb 
-│                                                ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
-│                                                       A-xr7q-jx4m-x55m 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22871 
+│                             ├ DataSource       ╭ ID  : govulndb 
+│                             │                  ├ Name: The Go Vulnerability Database 
+│                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                             ├ Title           : The net/http package improperly accepts a bare LF as a line
+│                             │                   terminator ... 
+│                             ├ Description     : The net/http package improperly accepts a bare LF as a line
+│                             │                   terminator in chunked data chunk-size lines. This can permit
+│                             │                   request smuggling if a net/http server is used in conjunction
+│                             │                    with a server that incorrectly accepts a bare LF as part of
+│                             │                   a chunk-ext. 
+│                             ├ Severity        : UNKNOWN 
+│                             ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/04/04/4 
+│                             │                  ├ [1]: https://go.dev/cl/652998 
+│                             │                  ├ [2]: https://go.dev/issue/71988 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/Y2uBTVKjBQk 
+│                             │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3563 
+│                             ├ PublishedDate   : 2025-04-08T20:15:20.183Z 
+│                             ╰ LastModifiedDate: 2025-04-08T21:15:48.173Z 
 ╰ [6] ╭ Target         : usr/bin/promtool 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -907,7 +966,7 @@
                         │     │                   CVE-2024-6104, was fixed in go-retryablehttp 0.7.7. 
                         │     ├ Severity        : MEDIUM 
                         │     ├ CweIDs           ─ [0]: CWE-532 
-                        │     ├ VendorSeverity   ╭ alma       : 3 
+                        │     ├ VendorSeverity   ╭ alma       : 2 
                         │     │                  ├ amazon     : 3 
                         │     │                  ├ azure      : 2 
                         │     │                  ├ cbl-mariner: 2 
@@ -924,29 +983,26 @@
                         │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/
                         │     │                           │           A:N 
                         │     │                           ╰ V3Score : 6 
-                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:5258 
+                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:9115 
                         │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-6104 
-                        │     │                  ├ [2] : https://bugzilla.redhat.com/2262921 
-                        │     │                  ├ [3] : https://bugzilla.redhat.com/2268017 
-                        │     │                  ├ [4] : https://bugzilla.redhat.com/2268019 
-                        │     │                  ├ [5] : https://bugzilla.redhat.com/2268021 
-                        │     │                  ├ [6] : https://bugzilla.redhat.com/2274767 
-                        │     │                  ├ [7] : https://bugzilla.redhat.com/2292668 
-                        │     │                  ├ [8] : https://bugzilla.redhat.com/2294000 
-                        │     │                  ├ [9] : https://bugzilla.redhat.com/2295010 
-                        │     │                  ├ [10]: https://discuss.hashicorp.com/c/security 
-                        │     │                  ├ [11]: https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
+                        │     │                  ├ [2] : https://bugzilla.redhat.com/2279814 
+                        │     │                  ├ [3] : https://bugzilla.redhat.com/2292668 
+                        │     │                  ├ [4] : https://bugzilla.redhat.com/2292787 
+                        │     │                  ├ [5] : https://bugzilla.redhat.com/2294000 
+                        │     │                  ├ [6] : https://bugzilla.redhat.com/2295310 
+                        │     │                  ├ [7] : https://discuss.hashicorp.com/c/security 
+                        │     │                  ├ [8] : https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
                         │     │                  │       ablehttp-can-leak-basic-auth-credentials-to-log-files/
                         │     │                  │       68027 
-                        │     │                  ├ [12]: https://errata.almalinux.org/8/ALSA-2024-5258.html 
-                        │     │                  ├ [13]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
-                        │     │                  ├ [14]: https://github.com/hashicorp/go-retryablehttp 
-                        │     │                  ├ [15]: https://github.com/hashicorp/go-retryablehttp/commit/a
+                        │     │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2024-9115.html 
+                        │     │                  ├ [10]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
+                        │     │                  ├ [11]: https://github.com/hashicorp/go-retryablehttp 
+                        │     │                  ├ [12]: https://github.com/hashicorp/go-retryablehttp/commit/a
                         │     │                  │       99f07beb3c5faaa0a283617e6eb6bcf25f5049a 
-                        │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-6104.html 
-                        │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
-                        │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
-                        │     │                  ╰ [19]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
+                        │     │                  ├ [13]: https://linux.oracle.com/cve/CVE-2024-6104.html 
+                        │     │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
+                        │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
+                        │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
                         │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
                         │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
                         ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
@@ -1087,44 +1143,75 @@
                         │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-22870 
                         │     ├ PublishedDate   : 2025-03-12T19:15:38.31Z 
                         │     ╰ LastModifiedDate: 2025-03-18T17:15:45.467Z 
-                        ╰ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
-                              ├ PkgID           : google.golang.org/grpc@v1.64.0 
-                              ├ PkgName         : google.golang.org/grpc 
-                              ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
-                              │                  ╰ UID : 6c7f57c93d4ea9eb 
-                              ├ InstalledVersion: v1.64.0 
-                              ├ FixedVersion    : 1.64.1 
+                        ├ [6] ╭ VulnerabilityID : GHSA-xr7q-jx4m-x55m 
+                        │     ├ PkgID           : google.golang.org/grpc@v1.64.0 
+                        │     ├ PkgName         : google.golang.org/grpc 
+                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/google.golang.org/grpc@v1.64.0 
+                        │     │                  ╰ UID : 6c7f57c93d4ea9eb 
+                        │     ├ InstalledVersion: v1.64.0 
+                        │     ├ FixedVersion    : 1.64.1 
+                        │     ├ Status          : fixed 
+                        │     ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
+                        │     │                  │         4af43faf4c28b307cc6 
+                        │     │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
+                        │     │                            0ab909cd3098459ca2b 
+                        │     ├ SeveritySource  : ghsa 
+                        │     ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
+                        │     ├ DataSource       ╭ ID  : ghsa 
+                        │     │                  ├ Name: GitHub Security Advisory Go 
+                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+                        │     │                          osystem%3Ago 
+                        │     ├ Title           : Private tokens could appear in logs if context containing
+                        │     │                   gRPC metadata is logged in github.com/grpc/grpc-go 
+                        │     ├ Description     : ### Impact
+                        │     │                   This issue represents a potential PII concern.  If
+                        │     │                   applications were printing or logging a context containing
+                        │     │                   gRPC metadata, the affected versions will contain all the
+                        │     │                   metadata, which may include private information.
+                        │     │                   
+                        │     │                   ### Patches
+                        │     │                   The issue first appeared in 1.64.0 and is patched in 1.64.1
+                        │     │                   and 1.65.0
+                        │     │                   ### Workarounds
+                        │     │                   If using an affected version and upgrading is not possible,
+                        │     │                   ensuring you do not log or print contexts will avoid the
+                        │     │                   problem. 
+                        │     ├ Severity        : LOW 
+                        │     ├ VendorSeverity   ─ ghsa: 1 
+                        │     ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
+                        │                        ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
+                        │                        │      a7786754d1fe05264c3021eb 
+                        │                        ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
+                        │                               A-xr7q-jx4m-x55m 
+                        ╰ [7] ╭ VulnerabilityID : CVE-2025-22871 
+                              ├ PkgID           : stdlib@v1.24.1 
+                              ├ PkgName         : stdlib 
+                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.1 
+                              │                  ╰ UID : baf46196f9fd41f2 
+                              ├ InstalledVersion: v1.24.1 
+                              ├ FixedVersion    : 1.23.8, 1.24.2 
                               ├ Status          : fixed 
                               ├ Layer            ╭ Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc2
                               │                  │         4af43faf4c28b307cc6 
                               │                  ╰ DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa
                               │                            0ab909cd3098459ca2b 
-                              ├ SeveritySource  : ghsa 
-                              ├ PrimaryURL      : https://github.com/advisories/GHSA-xr7q-jx4m-x55m 
-                              ├ DataSource       ╭ ID  : ghsa 
-                              │                  ├ Name: GitHub Security Advisory Go 
-                              │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-                              │                          osystem%3Ago 
-                              ├ Title           : Private tokens could appear in logs if context containing
-                              │                   gRPC metadata is logged in github.com/grpc/grpc-go 
-                              ├ Description     : ### Impact
-                              │                   This issue represents a potential PII concern.  If
-                              │                   applications were printing or logging a context containing
-                              │                   gRPC metadata, the affected versions will contain all the
-                              │                   metadata, which may include private information.
-                              │                   
-                              │                   ### Patches
-                              │                   The issue first appeared in 1.64.0 and is patched in 1.64.1
-                              │                   and 1.65.0
-                              │                   ### Workarounds
-                              │                   If using an affected version and upgrading is not possible,
-                              │                   ensuring you do not log or print contexts will avoid the
-                              │                   problem. 
-                              ├ Severity        : LOW 
-                              ├ VendorSeverity   ─ ghsa: 1 
-                              ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
-                                                 ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
-                                                 │      a7786754d1fe05264c3021eb 
-                                                 ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
-                                                        A-xr7q-jx4m-x55m 
+                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-22871 
+                              ├ DataSource       ╭ ID  : govulndb 
+                              │                  ├ Name: The Go Vulnerability Database 
+                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                              ├ Title           : The net/http package improperly accepts a bare LF as a line
+                              │                   terminator ... 
+                              ├ Description     : The net/http package improperly accepts a bare LF as a line
+                              │                   terminator in chunked data chunk-size lines. This can permit
+                              │                   request smuggling if a net/http server is used in conjunction
+                              │                    with a server that incorrectly accepts a bare LF as part of
+                              │                   a chunk-ext. 
+                              ├ Severity        : UNKNOWN 
+                              ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/04/04/4 
+                              │                  ├ [1]: https://go.dev/cl/652998 
+                              │                  ├ [2]: https://go.dev/issue/71988 
+                              │                  ├ [3]: https://groups.google.com/g/golang-announce/c/Y2uBTVKjBQk 
+                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3563 
+                              ├ PublishedDate   : 2025-04-08T20:15:20.183Z 
+                              ╰ LastModifiedDate: 2025-04-08T21:15:48.173Z 
 ````
