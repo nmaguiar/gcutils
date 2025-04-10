@@ -159,6 +159,34 @@
     - https://www.cve.org/CVERecord?id=CVE-2025-29923
     PublishedDate: '2025-03-20T18:15:19.23Z'
     LastModifiedDate: '2025-03-20T18:15:19.23Z'
+  - VulnerabilityID: CVE-2025-22871
+    PkgID: stdlib@v1.24.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.24.1
+      UID: 50ed6516c22510a2
+    InstalledVersion: v1.24.1
+    FixedVersion: 1.23.8, 1.24.2
+    Status: fixed
+    Layer:
+      Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc24af43faf4c28b307cc6
+      DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa0ab909cd3098459ca2b
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22871
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Title: The net/http package improperly accepts a bare LF as a line terminator ...
+    Description: The net/http package improperly accepts a bare LF as a line terminator in chunked data chunk-size lines. This can permit request smuggling if a net/http server is used in conjunction with a server that incorrectly accepts a bare LF as part of a chunk-ext.
+    Severity: UNKNOWN
+    References:
+    - http://www.openwall.com/lists/oss-security/2025/04/04/4
+    - https://go.dev/cl/652998
+    - https://go.dev/issue/71988
+    - https://groups.google.com/g/golang-announce/c/Y2uBTVKjBQk
+    - https://pkg.go.dev/vuln/GO-2025-3563
+    PublishedDate: '2025-04-08T20:15:20.183Z'
+    LastModifiedDate: '2025-04-08T21:15:48.173Z'
 - Target: usr/bin/prometheus
   Class: lang-pkgs
   Type: gobinary
@@ -360,7 +388,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 3
+      alma: 2
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -379,19 +407,16 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:5258
+    - https://access.redhat.com/errata/RHSA-2024:9115
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2262921
-    - https://bugzilla.redhat.com/2268017
-    - https://bugzilla.redhat.com/2268019
-    - https://bugzilla.redhat.com/2268021
-    - https://bugzilla.redhat.com/2274767
+    - https://bugzilla.redhat.com/2279814
     - https://bugzilla.redhat.com/2292668
+    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295010
+    - https://bugzilla.redhat.com/2295310
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/8/ALSA-2024-5258.html
+    - https://errata.almalinux.org/9/ALSA-2024-9115.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -532,6 +557,34 @@
     - https://github.com/grpc/grpc-go
     - https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7a7786754d1fe05264c3021eb
     - https://github.com/grpc/grpc-go/security/advisories/GHSA-xr7q-jx4m-x55m
+  - VulnerabilityID: CVE-2025-22871
+    PkgID: stdlib@v1.24.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.24.1
+      UID: 91238c20ef5583e2
+    InstalledVersion: v1.24.1
+    FixedVersion: 1.23.8, 1.24.2
+    Status: fixed
+    Layer:
+      Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc24af43faf4c28b307cc6
+      DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa0ab909cd3098459ca2b
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22871
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Title: The net/http package improperly accepts a bare LF as a line terminator ...
+    Description: The net/http package improperly accepts a bare LF as a line terminator in chunked data chunk-size lines. This can permit request smuggling if a net/http server is used in conjunction with a server that incorrectly accepts a bare LF as part of a chunk-ext.
+    Severity: UNKNOWN
+    References:
+    - http://www.openwall.com/lists/oss-security/2025/04/04/4
+    - https://go.dev/cl/652998
+    - https://go.dev/issue/71988
+    - https://groups.google.com/g/golang-announce/c/Y2uBTVKjBQk
+    - https://pkg.go.dev/vuln/GO-2025-3563
+    PublishedDate: '2025-04-08T20:15:20.183Z'
+    LastModifiedDate: '2025-04-08T21:15:48.173Z'
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -733,7 +786,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 3
+      alma: 2
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -752,19 +805,16 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:5258
+    - https://access.redhat.com/errata/RHSA-2024:9115
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2262921
-    - https://bugzilla.redhat.com/2268017
-    - https://bugzilla.redhat.com/2268019
-    - https://bugzilla.redhat.com/2268021
-    - https://bugzilla.redhat.com/2274767
+    - https://bugzilla.redhat.com/2279814
     - https://bugzilla.redhat.com/2292668
+    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295010
+    - https://bugzilla.redhat.com/2295310
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/8/ALSA-2024-5258.html
+    - https://errata.almalinux.org/9/ALSA-2024-9115.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -905,3 +955,31 @@
     - https://github.com/grpc/grpc-go
     - https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7a7786754d1fe05264c3021eb
     - https://github.com/grpc/grpc-go/security/advisories/GHSA-xr7q-jx4m-x55m
+  - VulnerabilityID: CVE-2025-22871
+    PkgID: stdlib@v1.24.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.24.1
+      UID: baf46196f9fd41f2
+    InstalledVersion: v1.24.1
+    FixedVersion: 1.23.8, 1.24.2
+    Status: fixed
+    Layer:
+      Digest: sha256:d95fa95d334474473a44f736ebaeb06e1e050a657ebc24af43faf4c28b307cc6
+      DiffID: sha256:cd394ff36f13c1413354f8ddb35f42ffb7f71527444aa0ab909cd3098459ca2b
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-22871
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Title: The net/http package improperly accepts a bare LF as a line terminator ...
+    Description: The net/http package improperly accepts a bare LF as a line terminator in chunked data chunk-size lines. This can permit request smuggling if a net/http server is used in conjunction with a server that incorrectly accepts a bare LF as part of a chunk-ext.
+    Severity: UNKNOWN
+    References:
+    - http://www.openwall.com/lists/oss-security/2025/04/04/4
+    - https://go.dev/cl/652998
+    - https://go.dev/issue/71988
+    - https://groups.google.com/g/golang-announce/c/Y2uBTVKjBQk
+    - https://pkg.go.dev/vuln/GO-2025-3563
+    PublishedDate: '2025-04-08T20:15:20.183Z'
+    LastModifiedDate: '2025-04-08T21:15:48.173Z'
