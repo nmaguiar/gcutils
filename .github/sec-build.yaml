@@ -179,17 +179,25 @@
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: The tokenizer incorrectly interprets tags with unquoted attribute valu ...
+    Title: 'golang.org/x/net/html: Incorrect Neutralization of Input During Web Page Generation in x/net in golang.org/x/net'
     Description: The tokenizer incorrectly interprets tags with unquoted attribute values that end with a solidus character (/) as self-closing. When directly using Tokenizer, this can result in such tags incorrectly being marked as self-closing, and when using the Parse functions, this can result in content following such tags as being placed in the wrong scope during DOM construction, but only when tags are in foreign content (e.g. <math>, <svg>, etc contexts).
     Severity: MEDIUM
     VendorSeverity:
       ghsa: 2
+      redhat: 2
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L
+        V3Score: 6.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2025-22872
+    - https://github.com/advisories/GHSA-vvgc-356p-c3xw
     - https://go.dev/cl/662715
     - https://go.dev/issue/73070
     - https://groups.google.com/g/golang-announce/c/ezSKR9vqbqA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-22872
     - https://pkg.go.dev/vuln/GO-2025-3595
+    - https://www.cve.org/CVERecord?id=CVE-2025-22872
     PublishedDate: '2025-04-16T18:16:04.183Z'
     LastModifiedDate: '2025-04-17T20:22:16.24Z'
 - Target: usr/bin/prometheus
@@ -395,7 +403,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -414,16 +422,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -604,17 +615,25 @@
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: The tokenizer incorrectly interprets tags with unquoted attribute valu ...
+    Title: 'golang.org/x/net/html: Incorrect Neutralization of Input During Web Page Generation in x/net in golang.org/x/net'
     Description: The tokenizer incorrectly interprets tags with unquoted attribute values that end with a solidus character (/) as self-closing. When directly using Tokenizer, this can result in such tags incorrectly being marked as self-closing, and when using the Parse functions, this can result in content following such tags as being placed in the wrong scope during DOM construction, but only when tags are in foreign content (e.g. <math>, <svg>, etc contexts).
     Severity: MEDIUM
     VendorSeverity:
       ghsa: 2
+      redhat: 2
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L
+        V3Score: 6.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2025-22872
+    - https://github.com/advisories/GHSA-vvgc-356p-c3xw
     - https://go.dev/cl/662715
     - https://go.dev/issue/73070
     - https://groups.google.com/g/golang-announce/c/ezSKR9vqbqA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-22872
     - https://pkg.go.dev/vuln/GO-2025-3595
+    - https://www.cve.org/CVERecord?id=CVE-2025-22872
     PublishedDate: '2025-04-16T18:16:04.183Z'
     LastModifiedDate: '2025-04-17T20:22:16.24Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
@@ -855,7 +874,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -874,16 +893,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -1064,17 +1086,25 @@
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Title: The tokenizer incorrectly interprets tags with unquoted attribute valu ...
+    Title: 'golang.org/x/net/html: Incorrect Neutralization of Input During Web Page Generation in x/net in golang.org/x/net'
     Description: The tokenizer incorrectly interprets tags with unquoted attribute values that end with a solidus character (/) as self-closing. When directly using Tokenizer, this can result in such tags incorrectly being marked as self-closing, and when using the Parse functions, this can result in content following such tags as being placed in the wrong scope during DOM construction, but only when tags are in foreign content (e.g. <math>, <svg>, etc contexts).
     Severity: MEDIUM
     VendorSeverity:
       ghsa: 2
+      redhat: 2
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L
+        V3Score: 6.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2025-22872
+    - https://github.com/advisories/GHSA-vvgc-356p-c3xw
     - https://go.dev/cl/662715
     - https://go.dev/issue/73070
     - https://groups.google.com/g/golang-announce/c/ezSKR9vqbqA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-22872
     - https://pkg.go.dev/vuln/GO-2025-3595
+    - https://www.cve.org/CVERecord?id=CVE-2025-22872
     PublishedDate: '2025-04-16T18:16:04.183Z'
     LastModifiedDate: '2025-04-17T20:22:16.24Z'
   - VulnerabilityID: GHSA-xr7q-jx4m-x55m
