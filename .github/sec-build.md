@@ -47,6 +47,7 @@
 │                       │     ├ Severity        : HIGH 
 │                       │     ├ CweIDs           ─ [0]: CWE-405 
 │                       │     ├ VendorSeverity   ╭ alma       : 3 
+│                       │     │                  ├ amazon     : 3 
 │                       │     │                  ├ azure      : 3 
 │                       │     │                  ├ cbl-mariner: 3 
 │                       │     │                  ├ ghsa       : 3 
@@ -110,6 +111,7 @@
 │                       │     ├ Severity        : HIGH 
 │                       │     ├ CweIDs           ─ [0]: CWE-405 
 │                       │     ├ VendorSeverity   ╭ alma       : 3 
+│                       │     │                  ├ amazon     : 3 
 │                       │     │                  ├ azure      : 3 
 │                       │     │                  ├ cbl-mariner: 3 
 │                       │     │                  ├ ghsa       : 3 
@@ -443,6 +445,7 @@
 │                       │     ├ Severity        : HIGH 
 │                       │     ├ CweIDs           ─ [0]: CWE-405 
 │                       │     ├ VendorSeverity   ╭ alma       : 3 
+│                       │     │                  ├ amazon     : 3 
 │                       │     │                  ├ azure      : 3 
 │                       │     │                  ├ cbl-mariner: 3 
 │                       │     │                  ├ ghsa       : 3 
@@ -1017,6 +1020,7 @@
                         │     ├ Severity        : HIGH 
                         │     ├ CweIDs           ─ [0]: CWE-405 
                         │     ├ VendorSeverity   ╭ alma       : 3 
+                        │     │                  ├ amazon     : 3 
                         │     │                  ├ azure      : 3 
                         │     │                  ├ cbl-mariner: 3 
                         │     │                  ├ ghsa       : 3 
