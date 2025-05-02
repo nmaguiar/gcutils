@@ -142,7 +142,43 @@
 │                       │     │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2025-30204 
 │                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
 │                       │     ╰ LastModifiedDate: 2025-04-10T13:15:52.097Z 
-│                       ├ [2] ╭ VulnerabilityID : CVE-2025-29923 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2025-46331 
+│                       │     ├ PkgID           : github.com/openfga/openfga@v1.8.6 
+│                       │     ├ PkgName         : github.com/openfga/openfga 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.8.6 
+│                       │     │                  ╰ UID : 5b5fa0b1c66307f6 
+│                       │     ├ InstalledVersion: v1.8.6 
+│                       │     ├ FixedVersion    : 1.8.11 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:a5e1f117aa0424eaa8a3399c0d4272122fad6ec30ee00
+│                       │     │                  │         1facd6d66836ba53e07 
+│                       │     │                  ╰ DiffID: sha256:5b73cffc363fe10fe7498c84511e83d8462a852fd1a74
+│                       │     │                            1f933d33b1af9550c87 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-46331 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : OpenFGA Authorization Bypass 
+│                       │     ├ Description     : OpenFGA is a high-performance and flexible
+│                       │     │                   authorization/permission engine built for developers and
+│                       │     │                   inspired by Google Zanzibar. OpenFGA v1.8.10 to v1.3.6 (Helm
+│                       │     │                   chart <= openfga-0.2.28, docker <= v.1.8.10) are vulnerable
+│                       │     │                   to authorization bypass when certain Check and ListObject
+│                       │     │                   calls are executed. This issue has been patched in version
+│                       │     │                   1.8.11. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ CweIDs           ─ [0]: CWE-284 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ References       ╭ [0]: https://github.com/openfga/openfga 
+│                       │     │                  ├ [1]: https://github.com/openfga/openfga/commit/244302e7a8b97
+│                       │     │                  │      9d66cc1874a3899cdff7d47862f 
+│                       │     │                  ╰ [2]: https://github.com/openfga/openfga/security/advisories/
+│                       │     │                         GHSA-w222-m46c-mgh6 
+│                       │     ├ PublishedDate   : 2025-04-30T19:15:55.49Z 
+│                       │     ╰ LastModifiedDate: 2025-04-30T19:15:55.49Z 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2025-29923 
 │                       │     ├ PkgID           : github.com/redis/go-redis/v9@v9.7.0 
 │                       │     ├ PkgName         : github.com/redis/go-redis/v9 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/redis/go-redis/v9@v9.7.0 
@@ -204,7 +240,7 @@
 │                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-29923 
 │                       │     ├ PublishedDate   : 2025-03-20T18:15:19.23Z 
 │                       │     ╰ LastModifiedDate: 2025-03-20T18:15:19.23Z 
-│                       ╰ [3] ╭ VulnerabilityID : CVE-2025-22872 
+│                       ╰ [4] ╭ VulnerabilityID : CVE-2025-22872 
 │                             ├ PkgID           : golang.org/x/net@v0.36.0 
 │                             ├ PkgName         : golang.org/x/net 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.36.0 
@@ -233,7 +269,8 @@
 │                             │                    DOM construction, but only when tags are in foreign content
 │                             │                   (e.g. <math>, <svg>, etc contexts). 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ╭ ghsa  : 2 
+│                             ├ VendorSeverity   ╭ azure : 2 
+│                             │                  ├ ghsa  : 2 
 │                             │                  ╰ redhat: 2 
 │                             ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/
 │                             │                           │           A:L 
@@ -768,7 +805,8 @@
 │                       │     │                    DOM construction, but only when tags are in foreign content
 │                       │     │                   (e.g. <math>, <svg>, etc contexts). 
 │                       │     ├ Severity        : MEDIUM 
-│                       │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                       │     ├ VendorSeverity   ╭ azure : 2 
+│                       │     │                  ├ ghsa  : 2 
 │                       │     │                  ╰ redhat: 2 
 │                       │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/
 │                       │     │                           │           A:L 
@@ -1343,7 +1381,8 @@
                         │     │                    DOM construction, but only when tags are in foreign content
                         │     │                   (e.g. <math>, <svg>, etc contexts). 
                         │     ├ Severity        : MEDIUM 
-                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+                        │     ├ VendorSeverity   ╭ azure : 2 
+                        │     │                  ├ ghsa  : 2 
                         │     │                  ╰ redhat: 2 
                         │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/
                         │     │                           │           A:L 
