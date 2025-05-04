@@ -155,7 +155,7 @@
     - https://github.com/openfga/openfga/security/advisories/GHSA-w222-m46c-mgh6
     - https://nvd.nist.gov/vuln/detail/CVE-2025-46331
     PublishedDate: '2025-04-30T19:15:55.49Z'
-    LastModifiedDate: '2025-04-30T19:15:55.49Z'
+    LastModifiedDate: '2025-05-02T13:53:40.163Z'
   - VulnerabilityID: CVE-2025-29923
     PkgID: github.com/redis/go-redis/v9@v9.7.0
     PkgName: github.com/redis/go-redis/v9
