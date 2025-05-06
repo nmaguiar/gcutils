@@ -446,7 +446,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -465,16 +465,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -918,7 +921,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -937,16 +940,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
