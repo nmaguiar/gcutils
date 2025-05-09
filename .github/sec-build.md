@@ -14,7 +14,79 @@
 ├ [4] ╭ Target         : usr/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2025-30204 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2022-31022 
+│                       │     ├ PkgID           : github.com/blevesearch/bleve/v2@v2.4.4-0.20250319135056-b82ba
+│                       │     │                   f10b205 
+│                       │     ├ PkgName         : github.com/blevesearch/bleve/v2 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/blevesearch/bleve/v2@v2.4.4-0.20
+│                       │     │                  │       250319135056-b82baf10b205 
+│                       │     │                  ╰ UID : 90ce2902070dd9b4 
+│                       │     ├ InstalledVersion: v2.4.4-0.20250319135056-b82baf10b205 
+│                       │     ├ FixedVersion    : 2.5.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:e6741dfb0723e1625fb969da883443dbd5ed6a5a92840
+│                       │     │                  │         ac879744f03c749bf66 
+│                       │     │                  ╰ DiffID: sha256:2815a6f156e2af983eb95a4f76a23f79da2435d412844
+│                       │     │                            a95f524b2ed997d5793 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2022-31022 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : Bleve is a text indexing library for go. Bleve includes HTTP
+│                       │     │                   utilities ... 
+│                       │     ├ Description     : Bleve is a text indexing library for go. Bleve includes HTTP
+│                       │     │                   utilities under bleve/http package, that are used by its
+│                       │     │                   sample application. These HTTP methods pave way for
+│                       │     │                   exploitation of a node’s filesystem where the bleve index
+│                       │     │                   resides, if the user has used bleve’s own HTTP (bleve/http)
+│                       │     │                   handlers for exposing the access to the indexes. For
+│                       │     │                   instance, the CreateIndexHandler (`http/index_create.go`) and
+│                       │     │                    DeleteIndexHandler (`http/index_delete.go`) enable an
+│                       │     │                   attacker to create a bleve index (directory structure)
+│                       │     │                   anywhere where the user running the server has the write
+│                       │     │                   permissions and to delete recursively any directory owned by
+│                       │     │                   the same user account. Users who have used the bleve/http
+│                       │     │                   package for exposing access to bleve index without the
+│                       │     │                   explicit 
+│                       │     │                   handling for the Role Based Access Controls(RBAC) of the
+│                       │     │                   index assets would be impacted by this issue. Version 2.5.0
+│                       │     │                   relocated the `http/` dir used _only_ by bleve-explorer to
+│                       │     │                   `blevesearch/bleve-explorer`, thereby addressing the issue.
+│                       │     │                   However, the http package is purely intended to be used for
+│                       │     │                   demonstration purposes. Bleve was never designed handle the
+│                       │     │                   RBACs, nor it was ever advertised to be used in that way. The
+│                       │     │                    collaborators of this project have decided to stay away from
+│                       │     │                    adding any authentication or authorization to bleve project
+│                       │     │                   at the moment. The bleve/http package is mainly for
+│                       │     │                   demonstration purposes and it lacks exhaustive validation of
+│                       │     │                   the user inputs as well as any authentication and
+│                       │     │                   authorization measures. It is recommended to not use
+│                       │     │                   bleve/http in production use cases. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ CweIDs           ╭ [0]: CWE-288 
+│                       │     │                  ╰ [1]: CWE-306 
+│                       │     ├ VendorSeverity   ╭ ghsa: 2 
+│                       │     │                  ╰ nvd : 2 
+│                       │     ├ CVSS             ╭ ghsa ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N 
+│                       │     │                  │      ╰ V3Score : 5.5 
+│                       │     │                  ╰ nvd  ╭ V2Vector: AV:L/AC:L/Au:N/C:N/I:P/A:N 
+│                       │     │                         ├ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N 
+│                       │     │                         ├ V2Score : 2.1 
+│                       │     │                         ╰ V3Score : 5.5 
+│                       │     ├ References       ╭ [0]: github.com/blevesearch/bleve 
+│                       │     │                  ├ [1]: https://github.com/blevesearch/bleve/commit/1c7509d6a17
+│                       │     │                  │      d36f265c90b4e8f4e3a3182fe79ff 
+│                       │     │                  ├ [2]: https://github.com/blevesearch/bleve/commit/af9e3111dad
+│                       │     │                  │      fedf9d30f0448506b4a57fecc8550 
+│                       │     │                  ├ [3]: https://github.com/blevesearch/bleve/security/advisorie
+│                       │     │                  │      s/GHSA-9w9f-6mg8-jp7w 
+│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2022-31022 
+│                       │     │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2022-0470 
+│                       │     ├ PublishedDate   : 2022-06-01T20:15:08.037Z 
+│                       │     ╰ LastModifiedDate: 2025-05-08T14:15:24.48Z 
+│                       ├ [1] ╭ VulnerabilityID : CVE-2025-30204 
 │                       │     ├ PkgID           : github.com/golang-jwt/jwt/v4@v4.5.1 
 │                       │     ├ PkgName         : github.com/golang-jwt/jwt/v4 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v4@v4.5.1 
@@ -71,14 +143,14 @@
 │                       │     │                  ├ [7] : https://github.com/golang-jwt/jwt/security/advisories/
 │                       │     │                  │       GHSA-mh63-6h87-95cp 
 │                       │     │                  ├ [8] : https://linux.oracle.com/cve/CVE-2025-30204.html 
-│                       │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-3344.html 
+│                       │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-4669.html 
 │                       │     │                  ├ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-30204 
 │                       │     │                  ├ [11]: https://security.netapp.com/advisory/ntap-20250404-0002 
 │                       │     │                  ├ [12]: https://security.netapp.com/advisory/ntap-20250404-0002/ 
 │                       │     │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2025-30204 
 │                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
 │                       │     ╰ LastModifiedDate: 2025-04-10T13:15:52.097Z 
-│                       ├ [1] ╭ VulnerabilityID : CVE-2025-30204 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2025-30204 
 │                       │     ├ PkgID           : github.com/golang-jwt/jwt/v5@v5.2.1 
 │                       │     ├ PkgName         : github.com/golang-jwt/jwt/v5 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v5@v5.2.1 
@@ -135,14 +207,14 @@
 │                       │     │                  ├ [7] : https://github.com/golang-jwt/jwt/security/advisories/
 │                       │     │                  │       GHSA-mh63-6h87-95cp 
 │                       │     │                  ├ [8] : https://linux.oracle.com/cve/CVE-2025-30204.html 
-│                       │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-3344.html 
+│                       │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-4669.html 
 │                       │     │                  ├ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-30204 
 │                       │     │                  ├ [11]: https://security.netapp.com/advisory/ntap-20250404-0002 
 │                       │     │                  ├ [12]: https://security.netapp.com/advisory/ntap-20250404-0002/ 
 │                       │     │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2025-30204 
 │                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
 │                       │     ╰ LastModifiedDate: 2025-04-10T13:15:52.097Z 
-│                       ├ [2] ╭ VulnerabilityID : CVE-2025-46331 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2025-46331 
 │                       │     ├ PkgID           : github.com/openfga/openfga@v1.8.6 
 │                       │     ├ PkgName         : github.com/openfga/openfga 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.8.6 
@@ -179,7 +251,7 @@
 │                       │     │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-46331 
 │                       │     ├ PublishedDate   : 2025-04-30T19:15:55.49Z 
 │                       │     ╰ LastModifiedDate: 2025-05-02T13:53:40.163Z 
-│                       ├ [3] ╭ VulnerabilityID : CVE-2025-29923 
+│                       ├ [4] ╭ VulnerabilityID : CVE-2025-29923 
 │                       │     ├ PkgID           : github.com/redis/go-redis/v9@v9.7.0 
 │                       │     ├ PkgName         : github.com/redis/go-redis/v9 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/redis/go-redis/v9@v9.7.0 
@@ -241,7 +313,7 @@
 │                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-29923 
 │                       │     ├ PublishedDate   : 2025-03-20T18:15:19.23Z 
 │                       │     ╰ LastModifiedDate: 2025-03-20T18:15:19.23Z 
-│                       ╰ [4] ╭ VulnerabilityID : CVE-2025-22872 
+│                       ╰ [5] ╭ VulnerabilityID : CVE-2025-22872 
 │                             ├ PkgID           : golang.org/x/net@v0.36.0 
 │                             ├ PkgName         : golang.org/x/net 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.36.0 
@@ -508,7 +580,7 @@
 │                       │     │                  ├ [7] : https://github.com/golang-jwt/jwt/security/advisories/
 │                       │     │                  │       GHSA-mh63-6h87-95cp 
 │                       │     │                  ├ [8] : https://linux.oracle.com/cve/CVE-2025-30204.html 
-│                       │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-3344.html 
+│                       │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-4669.html 
 │                       │     │                  ├ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-30204 
 │                       │     │                  ├ [11]: https://security.netapp.com/advisory/ntap-20250404-0002 
 │                       │     │                  ├ [12]: https://security.netapp.com/advisory/ntap-20250404-0002/ 
@@ -1085,7 +1157,7 @@
                         │     │                  ├ [7] : https://github.com/golang-jwt/jwt/security/advisories/
                         │     │                  │       GHSA-mh63-6h87-95cp 
                         │     │                  ├ [8] : https://linux.oracle.com/cve/CVE-2025-30204.html 
-                        │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-3344.html 
+                        │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-4669.html 
                         │     │                  ├ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-30204 
                         │     │                  ├ [11]: https://security.netapp.com/advisory/ntap-20250404-0002 
                         │     │                  ├ [12]: https://security.netapp.com/advisory/ntap-20250404-0002/ 
