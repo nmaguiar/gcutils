@@ -131,10 +131,10 @@
 │                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
 │                       │     │                           │           A:H 
 │                       │     │                           ╰ V3Score : 7.5 
-│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:3344 
+│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:4669 
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2025-30204 
 │                       │     │                  ├ [2] : https://bugzilla.redhat.com/2354195 
-│                       │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-3344.html 
+│                       │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-4669.html 
 │                       │     │                  ├ [4] : https://github.com/golang-jwt/jwt 
 │                       │     │                  ├ [5] : https://github.com/golang-jwt/jwt/commit/0951d184286de
 │                       │     │                  │       ce21f73c85673fd308786ffe9c3 
@@ -195,10 +195,10 @@
 │                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
 │                       │     │                           │           A:H 
 │                       │     │                           ╰ V3Score : 7.5 
-│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:3344 
+│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:4669 
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2025-30204 
 │                       │     │                  ├ [2] : https://bugzilla.redhat.com/2354195 
-│                       │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-3344.html 
+│                       │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-4669.html 
 │                       │     │                  ├ [4] : https://github.com/golang-jwt/jwt 
 │                       │     │                  ├ [5] : https://github.com/golang-jwt/jwt/commit/0951d184286de
 │                       │     │                  │       ce21f73c85673fd308786ffe9c3 
@@ -568,10 +568,10 @@
 │                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
 │                       │     │                           │           A:H 
 │                       │     │                           ╰ V3Score : 7.5 
-│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:3344 
+│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:4669 
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2025-30204 
 │                       │     │                  ├ [2] : https://bugzilla.redhat.com/2354195 
-│                       │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-3344.html 
+│                       │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-4669.html 
 │                       │     │                  ├ [4] : https://github.com/golang-jwt/jwt 
 │                       │     │                  ├ [5] : https://github.com/golang-jwt/jwt/commit/0951d184286de
 │                       │     │                  │       ce21f73c85673fd308786ffe9c3 
@@ -933,11 +933,13 @@
 │                             │                   problem. 
 │                             ├ Severity        : LOW 
 │                             ├ VendorSeverity   ─ ghsa: 1 
-│                             ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
-│                                                ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
-│                                                │      a7786754d1fe05264c3021eb 
-│                                                ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
-│                                                       A-xr7q-jx4m-x55m 
+│                             ├ References       ╭ [0]: https://github.com/grpc/grpc-go 
+│                             │                  ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
+│                             │                  │      a7786754d1fe05264c3021eb 
+│                             │                  ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
+│                             │                         A-xr7q-jx4m-x55m 
+│                             ├ PublishedDate   : 2024-07-05T20:07:01Z 
+│                             ╰ LastModifiedDate: 2024-07-09T21:38:29Z 
 ╰ [6] ╭ Target         : usr/bin/promtool 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -1147,10 +1149,10 @@
                         │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
                         │     │                           │           A:H 
                         │     │                           ╰ V3Score : 7.5 
-                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:3344 
+                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:4669 
                         │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2025-30204 
                         │     │                  ├ [2] : https://bugzilla.redhat.com/2354195 
-                        │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-3344.html 
+                        │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-4669.html 
                         │     │                  ├ [4] : https://github.com/golang-jwt/jwt 
                         │     │                  ├ [5] : https://github.com/golang-jwt/jwt/commit/0951d184286de
                         │     │                  │       ce21f73c85673fd308786ffe9c3 
@@ -1512,9 +1514,11 @@
                               │                   problem. 
                               ├ Severity        : LOW 
                               ├ VendorSeverity   ─ ghsa: 1 
-                              ╰ References       ╭ [0]: https://github.com/grpc/grpc-go 
-                                                 ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
-                                                 │      a7786754d1fe05264c3021eb 
-                                                 ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
-                                                        A-xr7q-jx4m-x55m 
+                              ├ References       ╭ [0]: https://github.com/grpc/grpc-go 
+                              │                  ├ [1]: https://github.com/grpc/grpc-go/commit/ab292411ddc0f3b7
+                              │                  │      a7786754d1fe05264c3021eb 
+                              │                  ╰ [2]: https://github.com/grpc/grpc-go/security/advisories/GHS
+                              │                         A-xr7q-jx4m-x55m 
+                              ├ PublishedDate   : 2024-07-05T20:07:01Z 
+                              ╰ LastModifiedDate: 2024-07-09T21:38:29Z 
 ````
