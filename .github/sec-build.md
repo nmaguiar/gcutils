@@ -86,7 +86,65 @@
 │                       │     │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2022-0470 
 │                       │     ├ PublishedDate   : 2022-06-01T20:15:08.037Z 
 │                       │     ╰ LastModifiedDate: 2025-05-08T14:15:24.48Z 
-│                       ├ [1] ╭ VulnerabilityID : CVE-2025-30204 
+│                       ├ [1] ╭ VulnerabilityID : CVE-2025-30153 
+│                       │     ├ PkgID           : github.com/getkin/kin-openapi@v0.126.0 
+│                       │     ├ PkgName         : github.com/getkin/kin-openapi 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/getkin/kin-openapi@v0.126.0 
+│                       │     │                  ╰ UID : a83660a330d9bcf6 
+│                       │     ├ InstalledVersion: v0.126.0 
+│                       │     ├ FixedVersion    : 0.131.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:365a93c8dcdeaba5be575115c57d8834054ee39025dbf
+│                       │     │                  │         92895846ed79713aca4 
+│                       │     │                  ╰ DiffID: sha256:f3b185da91e2b017f39ef9adaa3ac7f9d1278f66e4170
+│                       │     │                            17de02f5d75b8072630 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-30153 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : github.com/getkin/kin-openapi/openapi3filter: Improper
+│                       │     │                   Handling of Highly Compressed Data (Data Amplification) in
+│                       │     │                   github.com/getkin/kin-openapi/openapi3filter 
+│                       │     ├ Description     : kin-openapi is a Go project for handling OpenAPI files. Prior
+│                       │     │                    to 0.131.0, when validating a request with a
+│                       │     │                   multipart/form-data schema, if the OpenAPI schema allows it,
+│                       │     │                   an attacker can upload a crafted ZIP file (e.g., a ZIP bomb),
+│                       │     │                    causing the server to consume all available system memory.
+│                       │     │                   The root cause comes from the ZipFileBodyDecoder, which is
+│                       │     │                   registered automatically by the module (contrary to what the
+│                       │     │                   documentation says). This vulnerability is fixed in 0.131.0. 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ CweIDs           ─ [0]: CWE-409 
+│                       │     ├ VendorSeverity   ╭ ghsa  : 3 
+│                       │     │                  ╰ redhat: 3 
+│                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
+│                       │     │                  │        │           A:H 
+│                       │     │                  │        ╰ V3Score : 7.5 
+│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
+│                       │     │                           │           A:H 
+│                       │     │                           ╰ V3Score : 7.5 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-30153 
+│                       │     │                  ├ [1]: https://github.com/getkin/kin-openapi 
+│                       │     │                  ├ [2]: https://github.com/getkin/kin-openapi/blob/6da871e0e170
+│                       │     │                  │      b7637eb568c265c08bc2b5d6e7a3/openapi3filter/req_resp_de
+│                       │     │                  │      coder.go#L1275 
+│                       │     │                  ├ [3]: https://github.com/getkin/kin-openapi/blob/6da871e0e170
+│                       │     │                  │      b7637eb568c265c08bc2b5d6e7a3/openapi3filter/req_resp_de
+│                       │     │                  │      coder.go#L1523 
+│                       │     │                  ├ [4]: https://github.com/getkin/kin-openapi/commit/67f0b233ff
+│                       │     │                  │      c01332f7d993f79490fbea5f4455f1 
+│                       │     │                  ├ [5]: https://github.com/getkin/kin-openapi/pull/1059 
+│                       │     │                  ├ [6]: https://github.com/getkin/kin-openapi/security/advisori
+│                       │     │                  │      es/GHSA-wq9g-9vfc-cfq9 
+│                       │     │                  ├ [7]: https://github.com/getkin/kin-openapi?tab=readme-ov-fil
+│                       │     │                  │      e#custom-content-type-for-body-of-http-requestresponse 
+│                       │     │                  ├ [8]: https://nvd.nist.gov/vuln/detail/CVE-2025-30153 
+│                       │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-30153 
+│                       │     ├ PublishedDate   : 2025-03-19T16:15:33.607Z 
+│                       │     ╰ LastModifiedDate: 2025-03-19T16:15:33.607Z 
+│                       ├ [2] ╭ VulnerabilityID : CVE-2025-30204 
 │                       │     ├ PkgID           : github.com/golang-jwt/jwt/v4@v4.5.1 
 │                       │     ├ PkgName         : github.com/golang-jwt/jwt/v4 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v4@v4.5.1 
@@ -150,7 +208,7 @@
 │                       │     │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2025-30204 
 │                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
 │                       │     ╰ LastModifiedDate: 2025-04-10T13:15:52.097Z 
-│                       ├ [2] ╭ VulnerabilityID : CVE-2025-30204 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2025-30204 
 │                       │     ├ PkgID           : github.com/golang-jwt/jwt/v5@v5.2.1 
 │                       │     ├ PkgName         : github.com/golang-jwt/jwt/v5 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/golang-jwt/jwt/v5@v5.2.1 
@@ -214,7 +272,7 @@
 │                       │     │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2025-30204 
 │                       │     ├ PublishedDate   : 2025-03-21T22:15:26.42Z 
 │                       │     ╰ LastModifiedDate: 2025-04-10T13:15:52.097Z 
-│                       ├ [3] ╭ VulnerabilityID : CVE-2025-46331 
+│                       ├ [4] ╭ VulnerabilityID : CVE-2025-46331 
 │                       │     ├ PkgID           : github.com/openfga/openfga@v1.8.6 
 │                       │     ├ PkgName         : github.com/openfga/openfga 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.8.6 
@@ -251,7 +309,7 @@
 │                       │     │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-46331 
 │                       │     ├ PublishedDate   : 2025-04-30T19:15:55.49Z 
 │                       │     ╰ LastModifiedDate: 2025-05-02T13:53:40.163Z 
-│                       ├ [4] ╭ VulnerabilityID : CVE-2025-29923 
+│                       ├ [5] ╭ VulnerabilityID : CVE-2025-29923 
 │                       │     ├ PkgID           : github.com/redis/go-redis/v9@v9.7.0 
 │                       │     ├ PkgName         : github.com/redis/go-redis/v9 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/redis/go-redis/v9@v9.7.0 
@@ -313,7 +371,7 @@
 │                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-29923 
 │                       │     ├ PublishedDate   : 2025-03-20T18:15:19.23Z 
 │                       │     ╰ LastModifiedDate: 2025-03-20T18:15:19.23Z 
-│                       ╰ [5] ╭ VulnerabilityID : CVE-2025-22872 
+│                       ╰ [6] ╭ VulnerabilityID : CVE-2025-22872 
 │                             ├ PkgID           : golang.org/x/net@v0.36.0 
 │                             ├ PkgName         : golang.org/x/net 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.36.0 
@@ -614,7 +672,7 @@
 │                       │     │                   CVE-2024-6104, was fixed in go-retryablehttp 0.7.7. 
 │                       │     ├ Severity        : MEDIUM 
 │                       │     ├ CweIDs           ─ [0]: CWE-532 
-│                       │     ├ VendorSeverity   ╭ alma       : 2 
+│                       │     ├ VendorSeverity   ╭ alma       : 3 
 │                       │     │                  ├ amazon     : 3 
 │                       │     │                  ├ azure      : 2 
 │                       │     │                  ├ cbl-mariner: 2 
@@ -631,26 +689,29 @@
 │                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/
 │                       │     │                           │           A:N 
 │                       │     │                           ╰ V3Score : 6 
-│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:9115 
+│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:5258 
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-6104 
-│                       │     │                  ├ [2] : https://bugzilla.redhat.com/2279814 
-│                       │     │                  ├ [3] : https://bugzilla.redhat.com/2292668 
-│                       │     │                  ├ [4] : https://bugzilla.redhat.com/2292787 
-│                       │     │                  ├ [5] : https://bugzilla.redhat.com/2294000 
-│                       │     │                  ├ [6] : https://bugzilla.redhat.com/2295310 
-│                       │     │                  ├ [7] : https://discuss.hashicorp.com/c/security 
-│                       │     │                  ├ [8] : https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
+│                       │     │                  ├ [2] : https://bugzilla.redhat.com/2262921 
+│                       │     │                  ├ [3] : https://bugzilla.redhat.com/2268017 
+│                       │     │                  ├ [4] : https://bugzilla.redhat.com/2268019 
+│                       │     │                  ├ [5] : https://bugzilla.redhat.com/2268021 
+│                       │     │                  ├ [6] : https://bugzilla.redhat.com/2274767 
+│                       │     │                  ├ [7] : https://bugzilla.redhat.com/2292668 
+│                       │     │                  ├ [8] : https://bugzilla.redhat.com/2294000 
+│                       │     │                  ├ [9] : https://bugzilla.redhat.com/2295010 
+│                       │     │                  ├ [10]: https://discuss.hashicorp.com/c/security 
+│                       │     │                  ├ [11]: https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
 │                       │     │                  │       ablehttp-can-leak-basic-auth-credentials-to-log-files/
 │                       │     │                  │       68027 
-│                       │     │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2024-9115.html 
-│                       │     │                  ├ [10]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
-│                       │     │                  ├ [11]: https://github.com/hashicorp/go-retryablehttp 
-│                       │     │                  ├ [12]: https://github.com/hashicorp/go-retryablehttp/commit/a
+│                       │     │                  ├ [12]: https://errata.almalinux.org/8/ALSA-2024-5258.html 
+│                       │     │                  ├ [13]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
+│                       │     │                  ├ [14]: https://github.com/hashicorp/go-retryablehttp 
+│                       │     │                  ├ [15]: https://github.com/hashicorp/go-retryablehttp/commit/a
 │                       │     │                  │       99f07beb3c5faaa0a283617e6eb6bcf25f5049a 
-│                       │     │                  ├ [13]: https://linux.oracle.com/cve/CVE-2024-6104.html 
-│                       │     │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
-│                       │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
-│                       │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
+│                       │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-6104.html 
+│                       │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
+│                       │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
+│                       │     │                  ╰ [19]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
 │                       │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
 │                       │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
 │                       ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
@@ -1195,7 +1256,7 @@
                         │     │                   CVE-2024-6104, was fixed in go-retryablehttp 0.7.7. 
                         │     ├ Severity        : MEDIUM 
                         │     ├ CweIDs           ─ [0]: CWE-532 
-                        │     ├ VendorSeverity   ╭ alma       : 2 
+                        │     ├ VendorSeverity   ╭ alma       : 3 
                         │     │                  ├ amazon     : 3 
                         │     │                  ├ azure      : 2 
                         │     │                  ├ cbl-mariner: 2 
@@ -1212,26 +1273,29 @@
                         │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/
                         │     │                           │           A:N 
                         │     │                           ╰ V3Score : 6 
-                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:9115 
+                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2024:5258 
                         │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2024-6104 
-                        │     │                  ├ [2] : https://bugzilla.redhat.com/2279814 
-                        │     │                  ├ [3] : https://bugzilla.redhat.com/2292668 
-                        │     │                  ├ [4] : https://bugzilla.redhat.com/2292787 
-                        │     │                  ├ [5] : https://bugzilla.redhat.com/2294000 
-                        │     │                  ├ [6] : https://bugzilla.redhat.com/2295310 
-                        │     │                  ├ [7] : https://discuss.hashicorp.com/c/security 
-                        │     │                  ├ [8] : https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
+                        │     │                  ├ [2] : https://bugzilla.redhat.com/2262921 
+                        │     │                  ├ [3] : https://bugzilla.redhat.com/2268017 
+                        │     │                  ├ [4] : https://bugzilla.redhat.com/2268019 
+                        │     │                  ├ [5] : https://bugzilla.redhat.com/2268021 
+                        │     │                  ├ [6] : https://bugzilla.redhat.com/2274767 
+                        │     │                  ├ [7] : https://bugzilla.redhat.com/2292668 
+                        │     │                  ├ [8] : https://bugzilla.redhat.com/2294000 
+                        │     │                  ├ [9] : https://bugzilla.redhat.com/2295010 
+                        │     │                  ├ [10]: https://discuss.hashicorp.com/c/security 
+                        │     │                  ├ [11]: https://discuss.hashicorp.com/t/hcsec-2024-12-go-retry
                         │     │                  │       ablehttp-can-leak-basic-auth-credentials-to-log-files/
                         │     │                  │       68027 
-                        │     │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2024-9115.html 
-                        │     │                  ├ [10]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
-                        │     │                  ├ [11]: https://github.com/hashicorp/go-retryablehttp 
-                        │     │                  ├ [12]: https://github.com/hashicorp/go-retryablehttp/commit/a
+                        │     │                  ├ [12]: https://errata.almalinux.org/8/ALSA-2024-5258.html 
+                        │     │                  ├ [13]: https://github.com/advisories/GHSA-v6v8-xj6m-xwqh 
+                        │     │                  ├ [14]: https://github.com/hashicorp/go-retryablehttp 
+                        │     │                  ├ [15]: https://github.com/hashicorp/go-retryablehttp/commit/a
                         │     │                  │       99f07beb3c5faaa0a283617e6eb6bcf25f5049a 
-                        │     │                  ├ [13]: https://linux.oracle.com/cve/CVE-2024-6104.html 
-                        │     │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
-                        │     │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
-                        │     │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
+                        │     │                  ├ [16]: https://linux.oracle.com/cve/CVE-2024-6104.html 
+                        │     │                  ├ [17]: https://linux.oracle.com/errata/ELSA-2024-9115.html 
+                        │     │                  ├ [18]: https://nvd.nist.gov/vuln/detail/CVE-2024-6104 
+                        │     │                  ╰ [19]: https://www.cve.org/CVERecord?id=CVE-2024-6104 
                         │     ├ PublishedDate   : 2024-06-24T17:15:11.087Z 
                         │     ╰ LastModifiedDate: 2024-11-21T09:48:58.263Z 
                         ├ [4] ╭ VulnerabilityID : CVE-2024-45337 
