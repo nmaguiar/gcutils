@@ -61,6 +61,52 @@
     - https://pkg.go.dev/vuln/GO-2022-0470
     PublishedDate: '2022-06-01T20:15:08.037Z'
     LastModifiedDate: '2025-05-08T14:15:24.48Z'
+  - VulnerabilityID: CVE-2025-30153
+    PkgID: github.com/getkin/kin-openapi@v0.126.0
+    PkgName: github.com/getkin/kin-openapi
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/getkin/kin-openapi@v0.126.0
+      UID: a83660a330d9bcf6
+    InstalledVersion: v0.126.0
+    FixedVersion: 0.131.0
+    Status: fixed
+    Layer:
+      Digest: sha256:365a93c8dcdeaba5be575115c57d8834054ee39025dbf92895846ed79713aca4
+      DiffID: sha256:f3b185da91e2b017f39ef9adaa3ac7f9d1278f66e417017de02f5d75b8072630
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-30153
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Title: 'github.com/getkin/kin-openapi/openapi3filter: Improper Handling of Highly Compressed Data (Data Amplification) in github.com/getkin/kin-openapi/openapi3filter'
+    Description: kin-openapi is a Go project for handling OpenAPI files. Prior to 0.131.0, when validating a request with a multipart/form-data schema, if the OpenAPI schema allows it, an attacker can upload a crafted ZIP file (e.g., a ZIP bomb), causing the server to consume all available system memory. The root cause comes from the ZipFileBodyDecoder, which is registered automatically by the module (contrary to what the documentation says). This vulnerability is fixed in 0.131.0.
+    Severity: HIGH
+    CweIDs:
+    - CWE-409
+    VendorSeverity:
+      ghsa: 3
+      redhat: 3
+    CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
+    References:
+    - https://access.redhat.com/security/cve/CVE-2025-30153
+    - https://github.com/getkin/kin-openapi
+    - https://github.com/getkin/kin-openapi/blob/6da871e0e170b7637eb568c265c08bc2b5d6e7a3/openapi3filter/req_resp_decoder.go#L1275
+    - https://github.com/getkin/kin-openapi/blob/6da871e0e170b7637eb568c265c08bc2b5d6e7a3/openapi3filter/req_resp_decoder.go#L1523
+    - https://github.com/getkin/kin-openapi/commit/67f0b233ffc01332f7d993f79490fbea5f4455f1
+    - https://github.com/getkin/kin-openapi/pull/1059
+    - https://github.com/getkin/kin-openapi/security/advisories/GHSA-wq9g-9vfc-cfq9
+    - https://github.com/getkin/kin-openapi?tab=readme-ov-file#custom-content-type-for-body-of-http-requestresponse
+    - https://nvd.nist.gov/vuln/detail/CVE-2025-30153
+    - https://www.cve.org/CVERecord?id=CVE-2025-30153
+    PublishedDate: '2025-03-19T16:15:33.607Z'
+    LastModifiedDate: '2025-03-19T16:15:33.607Z'
   - VulnerabilityID: CVE-2025-30204
     PkgID: github.com/golang-jwt/jwt/v4@v4.5.1
     PkgName: github.com/golang-jwt/jwt/v4
@@ -494,7 +540,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -513,16 +559,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
@@ -971,7 +1020,7 @@
     CweIDs:
     - CWE-532
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       azure: 2
       cbl-mariner: 2
@@ -990,16 +1039,19 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N
         V3Score: 6
     References:
-    - https://access.redhat.com/errata/RHSA-2024:9115
+    - https://access.redhat.com/errata/RHSA-2024:5258
     - https://access.redhat.com/security/cve/CVE-2024-6104
-    - https://bugzilla.redhat.com/2279814
+    - https://bugzilla.redhat.com/2262921
+    - https://bugzilla.redhat.com/2268017
+    - https://bugzilla.redhat.com/2268019
+    - https://bugzilla.redhat.com/2268021
+    - https://bugzilla.redhat.com/2274767
     - https://bugzilla.redhat.com/2292668
-    - https://bugzilla.redhat.com/2292787
     - https://bugzilla.redhat.com/2294000
-    - https://bugzilla.redhat.com/2295310
+    - https://bugzilla.redhat.com/2295010
     - https://discuss.hashicorp.com/c/security
     - https://discuss.hashicorp.com/t/hcsec-2024-12-go-retryablehttp-can-leak-basic-auth-credentials-to-log-files/68027
-    - https://errata.almalinux.org/9/ALSA-2024-9115.html
+    - https://errata.almalinux.org/8/ALSA-2024-5258.html
     - https://github.com/advisories/GHSA-v6v8-xj6m-xwqh
     - https://github.com/hashicorp/go-retryablehttp
     - https://github.com/hashicorp/go-retryablehttp/commit/a99f07beb3c5faaa0a283617e6eb6bcf25f5049a
