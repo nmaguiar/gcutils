@@ -318,10 +318,10 @@
 │                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
 │                       │     │                           │           A:H 
 │                       │     │                           ╰ V3Score : 7.5 
-│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:4669 
+│                       │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:7404 
 │                       │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2025-30204 
 │                       │     │                  ├ [2] : https://bugzilla.redhat.com/2354195 
-│                       │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-4669.html 
+│                       │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-7404.html 
 │                       │     │                  ├ [4] : https://github.com/golang-jwt/jwt 
 │                       │     │                  ├ [5] : https://github.com/golang-jwt/jwt/commit/0951d184286de
 │                       │     │                  │       ce21f73c85673fd308786ffe9c3 
@@ -330,7 +330,7 @@
 │                       │     │                  ├ [7] : https://github.com/golang-jwt/jwt/security/advisories/
 │                       │     │                  │       GHSA-mh63-6h87-95cp 
 │                       │     │                  ├ [8] : https://linux.oracle.com/cve/CVE-2025-30204.html 
-│                       │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-4669.html 
+│                       │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-7967.html 
 │                       │     │                  ├ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-30204 
 │                       │     │                  ├ [11]: https://security.netapp.com/advisory/ntap-20250404-0002 
 │                       │     │                  ├ [12]: https://security.netapp.com/advisory/ntap-20250404-0002/ 
@@ -544,7 +544,7 @@
 │                       │     │                  ├ [7] : https://go.dev/cl/652135 
 │                       │     │                  ├ [8] : https://go.dev/issue/71931 
 │                       │     │                  ├ [9] : https://linux.oracle.com/cve/CVE-2025-22869.html 
-│                       │     │                  ├ [10]: https://linux.oracle.com/errata/ELSA-2025-3833.html 
+│                       │     │                  ├ [10]: https://linux.oracle.com/errata/ELSA-2025-7391.html 
 │                       │     │                  ├ [11]: https://nvd.nist.gov/vuln/detail/CVE-2025-22869 
 │                       │     │                  ├ [12]: https://pkg.go.dev/vuln/GO-2025-3487 
 │                       │     │                  ├ [13]: https://security.netapp.com/advisory/ntap-20250411-0010 
@@ -901,10 +901,10 @@
                         │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/
                         │     │                           │           A:H 
                         │     │                           ╰ V3Score : 7.5 
-                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:4669 
+                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2025:7404 
                         │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2025-30204 
                         │     │                  ├ [2] : https://bugzilla.redhat.com/2354195 
-                        │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-4669.html 
+                        │     │                  ├ [3] : https://errata.almalinux.org/9/ALSA-2025-7404.html 
                         │     │                  ├ [4] : https://github.com/golang-jwt/jwt 
                         │     │                  ├ [5] : https://github.com/golang-jwt/jwt/commit/0951d184286de
                         │     │                  │       ce21f73c85673fd308786ffe9c3 
@@ -913,7 +913,7 @@
                         │     │                  ├ [7] : https://github.com/golang-jwt/jwt/security/advisories/
                         │     │                  │       GHSA-mh63-6h87-95cp 
                         │     │                  ├ [8] : https://linux.oracle.com/cve/CVE-2025-30204.html 
-                        │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-4669.html 
+                        │     │                  ├ [9] : https://linux.oracle.com/errata/ELSA-2025-7967.html 
                         │     │                  ├ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-30204 
                         │     │                  ├ [11]: https://security.netapp.com/advisory/ntap-20250404-0002 
                         │     │                  ├ [12]: https://security.netapp.com/advisory/ntap-20250404-0002/ 
@@ -1127,7 +1127,7 @@
                         │     │                  ├ [7] : https://go.dev/cl/652135 
                         │     │                  ├ [8] : https://go.dev/issue/71931 
                         │     │                  ├ [9] : https://linux.oracle.com/cve/CVE-2025-22869.html 
-                        │     │                  ├ [10]: https://linux.oracle.com/errata/ELSA-2025-3833.html 
+                        │     │                  ├ [10]: https://linux.oracle.com/errata/ELSA-2025-7391.html 
                         │     │                  ├ [11]: https://nvd.nist.gov/vuln/detail/CVE-2025-22869 
                         │     │                  ├ [12]: https://pkg.go.dev/vuln/GO-2025-3487 
                         │     │                  ├ [13]: https://security.netapp.com/advisory/ntap-20250411-0010 
