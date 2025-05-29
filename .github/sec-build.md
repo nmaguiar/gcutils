@@ -152,7 +152,8 @@
 │                             │                  │      723de8ff3a5346a07f50c1379ca 
 │                             │                  ├ [2]: https://github.com/openfga/openfga/security/advisories/
 │                             │                  │      GHSA-c72g-53hw-82q7 
-│                             │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-48371 
+│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-48371 
+│                             │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3707 
 │                             ├ PublishedDate   : 2025-05-22T23:15:19.23Z 
 │                             ╰ LastModifiedDate: 2025-05-23T15:54:42.643Z 
 ├ [5] ╭ Target         : usr/bin/prometheus 
