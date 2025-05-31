@@ -2,13 +2,12 @@
 
 # Start prometheus and grafana
 echo "Starting Prometheus and Grafana..."
-sudo mkdir -p /usr/share/prometheus && sudo chown -R prometheus:prometheus /usr/share/prometheus
-sudo mkdir -p /usr/share/grafana && sudo chown -R grafana:grafana /usr/share/grafana
 sudo mkdir -p /var/log && sudo touch /var/log/prometheus.log && sudo touch /var/log/grafana.log
-sudo chown -R prometheus:prometheus /var/log/prometheus.log
-sudo chown -R grafana:grafana /var/log/grafana.log
-sudo -u prometheus /bin/bash -c "cd /usr/share/prometheus && nohup prometheus --config.file=/etc/prometheus/prometheus.yml 2>&1 > /var/log/prometheus.log" &
-sudo -u grafana /bin/bash -c "nohup bash -c 'export GF_AUTH_ANONYMOUS_ENABLED=true && export GF_AUTH_ANONYMOUS_ORG_ROLE=Admin && grafana-server -homepath /usr/share/grafana' 2>&1 > /var/log/grafana.log" &
+sudo chown -R openaf: /var/log/prometheus.log
+sudo chown -R openaf: /var/log/grafana.log
+/bin/bash -c "cd /usr/share/prometheus && nohup prometheus --config.file=/etc/prometheus.yml 2>&1 > /var/log/prometheus.log" &
+/bin/bash -c "nohup bash -c 'export GF_AUTH_ANONYMOUS_ENABLED=true && export GF_AUTH_ANONYMOUS_ORG_ROLE=Admin && grafana server -homepath /usr/share/grafana' 2>&1 > /var/log/grafana.log" &
+
 
 echo "Wait for Grafana to start..."
 # Wait for Grafana to start

@@ -21,4 +21,4 @@ fi
 # Create the blocks
 sed -i '/ NaN [0-9]\+$/d' $1
 sed -i '/^$/d' $1
-sudo -u prometheus promtool tsdb create-blocks-from openmetrics $1 /usr/share/prometheus/data
+promtool tsdb create-blocks-from openmetrics $1 /usr/share/prometheus/data

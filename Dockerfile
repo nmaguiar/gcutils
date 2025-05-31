@@ -8,8 +8,9 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
  && apk del openjdk21-jre openjdk21-jre-headless\
- && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip strace openjdk21 prometheus grafana htop htop-doc iotop iotop-doc procps\
+ && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip strace openjdk21 libc6-compat htop htop-doc iotop iotop-doc procps\
  && cd /openaf\
+ && rm -rf /openaf/jre\
  && java -jar openaf.jar --install\
  && /openaf/openaf --update --force\
  && /openaf/opack install py-textual plugin-xls oafproc nattrmon\
@@ -30,7 +31,33 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && chmod a+rwx /openaf\
  && rm /lib/apk/db/*\
  && sed -i "s/\/bin\/sh/\/bin\/bash/g" /etc/passwd
- 
+
+# Install prometheus from github.com/prometheus/prometheus
+RUN VERSION=$(curl -s https://api.github.com/repos/prometheus/prometheus/releases/latest | grep '"tag_name"' | cut -d '"' -f 4 | sed 's/^v//g')\
+ && ARCH=$(uname -m | sed 's/x86_64/amd64/g' | sed 's/aarch64/arm64/g')\
+ && echo "Installing Prometheus version $VERSION $ARCH"\
+ && curl -sL https://github.com/prometheus/prometheus/releases/download/v$VERSION/prometheus-$VERSION.linux-$ARCH.tar.gz | tar xz -C /tmp\
+ && mv /tmp/prometheus-$VERSION.linux-$ARCH/prometheus /usr/bin/\
+ && mv /tmp/prometheus-$VERSION.linux-$ARCH/promtool /usr/bin/\
+ && mv /tmp/prometheus-$VERSION.linux-$ARCH/prometheus.yml /etc/prometheus.yml\
+ && chmod a+x /usr/bin/prometheus /usr/bin/promtool\
+ && mkdir -p /usr/share/prometheus\
+ && chown -R openaf:openaf /usr/share/prometheus\
+ && rm -rf /tmp/prometheus-$VERSION.linux-$ARCH
+
+# Install grafana from dl.grafana.com/oss/release
+RUN VERSION=$(curl -s https://api.github.com/repos/grafana/grafana/releases/latest | grep '"tag_name"' | cut -d '"' -f 4 | sed 's/^v//g')\
+ && ARCH=$(uname -m | sed 's/x86_64/amd64/g' | sed 's/aarch64/arm64/g')\
+ && echo "Installing Grafana version $VERSION $ARCH"\
+ && curl -sL https://dl.grafana.com/oss/release/grafana-$VERSION.linux-$ARCH.tar.gz | tar xz -C /tmp\
+ && mkdir -p /usr/share/grafana\
+ && mv /tmp/grafana-v$VERSION/bin /usr/share/grafana/bin\
+ && mv /tmp/grafana-v$VERSION/conf /usr/share/grafana/conf\
+ && mv /tmp/grafana-v$VERSION/public /usr/share/grafana/public\
+ && ln -s /usr/share/grafana/bin/grafana /usr/bin/grafana\
+ && chown -R openaf:openaf /usr/share/grafana\
+ && rm -rf /tmp/grafana-$VERSION
+
 # Setup bash completion
 # ---------------------
 RUN /openaf/oaf --bashcompletion all > /openaf/.openaf_completion.sh\
