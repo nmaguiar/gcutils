@@ -1,4 +1,4 @@
-FROM openaf/oaf:t8 as main
+FROM openaf/oaf:edge as main
 
 USER root
 COPY ojobs/collect4pid_live.yaml /openaf/ojobs/collect4pid_live.yaml
