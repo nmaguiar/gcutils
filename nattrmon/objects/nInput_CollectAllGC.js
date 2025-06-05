@@ -19,6 +19,7 @@ var nInput_CollectAllGC = function(aMap) {
     }
 
     this.params.pid = _$(Number(global.pid), "pid").isNumber().$_()
+    this.params.path = _$(global.pidpath), "pidpath").isString().$_()
     log("nInput_CollectAllGC | pid = " + this.params.pid)
 
     if (isUnDef(this.params.attrTemplate)) this.params.attrTemplate = "gc4pid"
