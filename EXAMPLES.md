@@ -93,6 +93,12 @@ ps -axf
 collect4pid_live.yaml pid=1105 prefix=myjava
 ```
 
+If the Java PID is running on another container with which the current container shares the process namespace:
+
+```bash
+collect4pid_live.yaml path=/proc/1105/root/tmp/hsperfdata_1234/1105 prefix=myjava
+```
+
 > Don't forget to start nmaguiar/gcutils exposing the Grafana port 3000: ```docker run --rm -ti -p 3000:3000 nmaguiar/gcutils /bin/bash```
 
 ---
