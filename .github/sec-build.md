@@ -28,10 +28,10 @@
 │                             ├ InstalledVersion: v1.8.12 
 │                             ├ FixedVersion    : 1.8.13 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:768e6cc8343264f8a7e0d7769c9952ea055f38c5651fc
-│                             │                  │         45cb717b1fdab4cea32 
-│                             │                  ╰ DiffID: sha256:82a3ccc14a820452b9ae4691dfe76c759a1f6b53dd801
-│                             │                            900c9c63c3fd99bb22b 
+│                             ├ Layer            ╭ Digest: sha256:fb7a7a38f47a84fce9b2c84e8a2c77fd944cd94f36dc4
+│                             │                  │         73f88c798c54a477bfe 
+│                             │                  ╰ DiffID: sha256:c743fc956e3a6aac2acf93f75ebf40b46b6455ca85011
+│                             │                            6a61edc57d22b7c7313 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-48371 
 │                             ├ DataSource       ╭ ID  : ghsa 
