@@ -85,6 +85,7 @@ jobs:
 - name : Init functions
   exec : | #js
     global.pid = args.pid
+    global.pidpath = args.path
     global.prefix = _$(args.prefix).isString().default("java")
 
     global.fn = function(data) {
