@@ -5,9 +5,11 @@ help:
   - name     : pid
     desc     : The PID of the Java process to retrieve the data from
     example  : "1234"
-    mandatory: true
+    mandatory: false
   - name     : path
     desc     : The path to the hsperf file of the Java process to retrieve the data from
+    example  : /proc/1234/root/tmp/hsperfdata_1000/1234
+    mandatory: false
   - name     : prefix
     desc     : The prefix to use for the Prometheus metrics
     example  : myapp
