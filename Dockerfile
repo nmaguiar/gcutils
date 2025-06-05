@@ -43,6 +43,7 @@ RUN VERSION=$(curl -s https://api.github.com/repos/prometheus/prometheus/release
  && chmod a+x /usr/bin/prometheus /usr/bin/promtool\
  && mkdir -p /usr/share/prometheus\
  && chown -R openaf:openaf /usr/share/prometheus\
+ && chmod -R a+w /usr/share/prometheus\
  && rm -rf /tmp/prometheus-$VERSION.linux-$ARCH
 
 # Install grafana from dl.grafana.com/oss/release

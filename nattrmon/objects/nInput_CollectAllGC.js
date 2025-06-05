@@ -18,9 +18,10 @@ var nInput_CollectAllGC = function(aMap) {
         this.params = {}
     }
 
-    this.params.pid = _$(Number(global.pid), "pid").isNumber().$_()
-    this.params.path = _$(global.pidpath), "pidpath").isString().$_()
-    log("nInput_CollectAllGC | pid = " + this.params.pid)
+    this.params.pid  = _$(global.pid, "pid").isNumber().default(__)
+    this.params.path = _$(global.pidpath, "pidpath").isString().default(__)
+    if (isDef(this.params.pid)) log("nInput_CollectAllGC | pid = " + this.params.pid)
+    if (isDef(this.params.path)) log("nInput_CollectAllGC | path = " + this.params.path)
 
     if (isUnDef(this.params.attrTemplate)) this.params.attrTemplate = "gc4pid"
     ow.loadJava()
@@ -76,8 +77,9 @@ nInput_CollectAllGC.prototype._get = function(data) {
 
 nInput_CollectAllGC.prototype.get = function() {
     var _path = isDef(this.params.path) ? this.params.path : $from(ow.java.getLocalJavaPIDs()).equals("pid", this.params.pid).at(0)
-    if (isUnDef(_path) || !io.fileExists(_path.path)) throw "pid " + this.params.pid + " hsperfdata not found!"
-    var res = this._get(ow.java.parseHSPerf(_path.path))
+    if (isDef(_path) && isDef(_path.path)) _path = _path.path
+    if (isUnDef(_path) || !io.fileExists(_path)) throw "hsperfdata not found!"
+    var res = this._get(ow.java.parseHSPerf(_path))
 
     return res
 }
