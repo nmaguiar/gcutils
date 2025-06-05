@@ -5,6 +5,7 @@ echo "Starting Prometheus and Grafana..."
 sudo mkdir -p /var/log && sudo touch /var/log/prometheus.log && sudo touch /var/log/grafana.log
 sudo chown -R openaf: /var/log/prometheus.log
 sudo chown -R openaf: /var/log/grafana.log
+sudo chmod -R a+w /usr/share/prometheus
 /bin/bash -c "cd /usr/share/prometheus && nohup prometheus --config.file=/etc/prometheus.yml 2>&1 > /var/log/prometheus.log" &
 /bin/bash -c "nohup bash -c 'export GF_AUTH_ANONYMOUS_ENABLED=true && export GF_AUTH_ANONYMOUS_ORG_ROLE=Admin && grafana server -homepath /usr/share/grafana' 2>&1 > /var/log/grafana.log" &
 
