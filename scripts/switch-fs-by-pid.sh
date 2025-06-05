@@ -20,7 +20,7 @@ if [ ! -d "$CWD" ]; then
     exit 1
 fi
 
-# Get the user and group of the process
+# Get the user and group of the process (Alpine/BusyBox compatible)
 USER=$(ps -o user= -p "$PID")
 GROUP=$(ps -o group= -p "$PID")
 
@@ -34,21 +34,14 @@ if [[ "$GROUP" =~ ^[0-9]+$ ]]; then
   GROUP="u$GROUP"
 fi
 
-# Create the group if it doesn't exist
+# Create the group if it doesn't exist (Alpine/BusyBox)
 if ! getent group "$GROUP" > /dev/null 2>&1; then
-  groupadd "$GROUP"
+  sudo addgroup "$GROUP"
 fi
 
-# Create the user if it doesn't exist
+# Create the user if it doesn't exist (Alpine/BusyBox)
 if ! getent passwd "$USER" > /dev/null 2>&1; then
-  if command -v useradd > /dev/null 2>&1; then
-    useradd -m -g "$GROUP" "$USER"
-  elif command -v adduser > /dev/null 2>&1; then
-    adduser -m --ingroup "$GROUP" "$USER"
-  else
-    echo "Neither useradd nor adduser command is available."
-    exit 1
-  fi
+  sudo adduser -D -G "$GROUP" "$USER"
 fi
 
 sudo -g $GROUP -u $USER -i bash -c "cd $CWD/root; exec /bin/bash"

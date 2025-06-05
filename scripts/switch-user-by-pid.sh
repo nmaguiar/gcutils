@@ -15,8 +15,8 @@ fi
 # Store the PID argument
 PID=$1
 
-# Get process details for the given PID
-PROCESS_INFO=$(ps -ax -o pid=,user=,group= | egrep "^\s+$PID" 2>/dev/null)
+# Get process details for the given PID (Alpine/BusyBox compatible)
+PROCESS_INFO=$(ps -o pid=,user=,group= -p "$PID")
 
 # Check if the process exists
 if [ -z "$PROCESS_INFO" ]; then
@@ -38,24 +38,16 @@ if [[ "$GROUP" =~ ^[0-9]+$ ]]; then
   GROUP="u$GROUP"
 fi
 
-# Create the group if it doesn't exist
+# Create the group if it doesn't exist (Alpine/BusyBox)
 if ! getent group "$GROUP" > /dev/null 2>&1; then
-  groupadd "$GROUP"
+  sudo addgroup "$GROUP"
 fi
 
-# Create the user if it doesn't exist
+# Create the user if it doesn't exist (Alpine/BusyBox)
 if ! getent passwd "$USER" > /dev/null 2>&1; then
-  if command -v useradd > /dev/null 2>&1; then
-    useradd -m -g "$GROUP" "$USER"
-  elif command -v adduser > /dev/null 2>&1; then
-    adduser -m --ingroup "$GROUP" "$USER"
-  else
-    echo "Neither useradd nor adduser command is available."
-    exit 1
-  fi
+  sudo adduser -D -G "$GROUP" "$USER"
 fi
 
 # Switch to the user and group of the process
 echo "Switching to user '$USER' and group '$GROUP' based on process with PID $PID."
-#sudo -g $GROUP -u $USER -- /bin/sh -c "cd /proc/$PID/root && bash"
 sudo -g $GROUP -u $USER -i bash
