@@ -74,7 +74,7 @@ nInput_CollectAllGC.prototype._get = function(data) {
 }
 
 nInput_CollectAllGC.prototype.get = function() {
-    var _path = $from(ow.java.getLocalJavaPIDs()).equals("pid", this.params.pid).at(0)
+    var _path = isDef(this.params.path) ? this.params.path : $from(ow.java.getLocalJavaPIDs()).equals("pid", this.params.pid).at(0)
     if (isUnDef(_path) || !io.fileExists(_path.path)) throw "pid " + this.params.pid + " hsperfdata not found!"
     var res = this._get(ow.java.parseHSPerf(_path.path))
 
