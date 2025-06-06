@@ -30,8 +30,8 @@
     FixedVersion: 1.8.13
     Status: fixed
     Layer:
-      Digest: sha256:fb7a7a38f47a84fce9b2c84e8a2c77fd944cd94f36dc473f88c798c54a477bfe
-      DiffID: sha256:c743fc956e3a6aac2acf93f75ebf40b46b6455ca850116a61edc57d22b7c7313
+      Digest: sha256:5cfad64fef91b46b7efc5115fb7ed3ebed9f8f3e085a2b3d363951b18cec8018
+      DiffID: sha256:fd48fb93c6179d5f8866cc2b2286e5f36a40b6806ff0da38377ac2eb9090ad0b
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-48371
     DataSource:
