@@ -20,7 +20,50 @@
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ─ [0] ╭ VulnerabilityID : CVE-2025-48371 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : GHSA-2x5j-vhc8-9cwm 
+│                       │     ├ PkgID           : github.com/cloudflare/circl@v1.6.0 
+│                       │     ├ PkgName         : github.com/cloudflare/circl 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/cloudflare/circl@v1.6.0 
+│                       │     │                  ╰ UID : ad3bafe31fc946d5 
+│                       │     ├ InstalledVersion: v1.6.0 
+│                       │     ├ FixedVersion    : 1.6.1 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:d253c11497bdc7c88bcb2fd17d32c6e18cbe53cf7cb69
+│                       │     │                  │         f23a5d7c92ceb2f8ed5 
+│                       │     │                  ╰ DiffID: sha256:a5692e237fc0a903f126ab825a18b72e43934098e9744
+│                       │     │                            96e054bc4bf9b9bd481 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-2x5j-vhc8-9cwm 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : CIRCL-Fourq: Missing and wrong validation can lead to
+│                       │     │                   incorrect results 
+│                       │     ├ Description     : ### Impact
+│                       │     │                   The CIRCL implementation of FourQ fails to validate
+│                       │     │                   user-supplied low-order points during Diffie-Hellman key
+│                       │     │                   exchange, potentially allowing attackers to force the
+│                       │     │                   identity point and compromise session security.
+│                       │     │                   
+│                       │     │                   Moreover, there is an incorrect point validation in
+│                       │     │                   ScalarMult can lead to incorrect results in the isEqual
+│                       │     │                   function and if a point is on the curve.
+│                       │     │                   ### Patches
+│                       │     │                   Version 1.6.1
+│                       │     │                   (https://github.com/cloudflare/circl/tree/v1.6.1) mitigates
+│                       │     │                   the identified issues.
+│                       │     │                   We acknowledge Alon Livne (Botanica Software Labs) for the
+│                       │     │                   reported findings. 
+│                       │     ├ Severity        : LOW 
+│                       │     ├ VendorSeverity   ─ ghsa: 1 
+│                       │     ├ References       ╭ [0]: https://github.com/cloudflare/circl 
+│                       │     │                  ├ [1]: https://github.com/cloudflare/circl/security/advisories
+│                       │     │                  │      /GHSA-2x5j-vhc8-9cwm 
+│                       │     │                  ╰ [2]: https://github.com/cloudflare/circl/tree/v1.6.1 
+│                       │     ├ PublishedDate   : 2025-06-10T21:18:33Z 
+│                       │     ╰ LastModifiedDate: 2025-06-10T21:18:33Z 
+│                       ╰ [1] ╭ VulnerabilityID : CVE-2025-48371 
 │                             ├ PkgID           : github.com/openfga/openfga@v1.8.12 
 │                             ├ PkgName         : github.com/openfga/openfga 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.8.12 
