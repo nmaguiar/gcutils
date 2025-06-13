@@ -43,7 +43,7 @@
 │                       │     │                  ├ [3]: https://pkg.go.dev/vuln/GO-2025-3751 
 │                       │     │                  ╰ [4]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
 │                       │     ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
-│                       │     ╰ LastModifiedDate: 2025-06-11T17:15:42.993Z 
+│                       │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 │                       ├ [1] ╭ VulnerabilityID : CVE-2025-0913 
 │                       │     ├ PkgID           : stdlib@v1.24.3 
 │                       │     ├ PkgName         : stdlib 
@@ -71,10 +71,12 @@
 │                       │     │                   an error when the O_CREATE and O_EXCL flags are both set and
 │                       │     │                   the target path is a symlink. 
 │                       │     ├ Severity        : UNKNOWN 
-│                       │     ╰ References       ╭ [0]: https://go.dev/cl/672396 
-│                       │                        ├ [1]: https://go.dev/issue/73702 
-│                       │                        ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-│                       │                        ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+│                       │     ├ References       ╭ [0]: https://go.dev/cl/672396 
+│                       │     │                  ├ [1]: https://go.dev/issue/73702 
+│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+│                       │     ├ PublishedDate   : 2025-06-11T18:15:24.627Z 
+│                       │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 │                       ╰ [2] ╭ VulnerabilityID : CVE-2025-22874 
 │                             ├ PkgID           : stdlib@v1.24.3 
 │                             ├ PkgName         : stdlib 
@@ -103,7 +105,7 @@
 │                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
 │                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3749 
 │                             ├ PublishedDate   : 2025-06-11T17:15:42.167Z 
-│                             ╰ LastModifiedDate: 2025-06-11T17:15:42.167Z 
+│                             ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -136,7 +138,7 @@
 │                       │     │                  ├ [3]: https://pkg.go.dev/vuln/GO-2025-3751 
 │                       │     │                  ╰ [4]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
 │                       │     ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
-│                       │     ╰ LastModifiedDate: 2025-06-11T17:15:42.993Z 
+│                       │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 │                       ├ [1] ╭ VulnerabilityID : CVE-2025-0913 
 │                       │     ├ PkgID           : stdlib@v1.24.3 
 │                       │     ├ PkgName         : stdlib 
@@ -164,10 +166,12 @@
 │                       │     │                   an error when the O_CREATE and O_EXCL flags are both set and
 │                       │     │                   the target path is a symlink. 
 │                       │     ├ Severity        : UNKNOWN 
-│                       │     ╰ References       ╭ [0]: https://go.dev/cl/672396 
-│                       │                        ├ [1]: https://go.dev/issue/73702 
-│                       │                        ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-│                       │                        ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+│                       │     ├ References       ╭ [0]: https://go.dev/cl/672396 
+│                       │     │                  ├ [1]: https://go.dev/issue/73702 
+│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+│                       │     ├ PublishedDate   : 2025-06-11T18:15:24.627Z 
+│                       │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 │                       ╰ [2] ╭ VulnerabilityID : CVE-2025-22874 
 │                             ├ PkgID           : stdlib@v1.24.3 
 │                             ├ PkgName         : stdlib 
@@ -196,7 +200,7 @@
 │                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
 │                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3749 
 │                             ├ PublishedDate   : 2025-06-11T17:15:42.167Z 
-│                             ╰ LastModifiedDate: 2025-06-11T17:15:42.167Z 
+│                             ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -319,7 +323,7 @@
 │                       │     │                  ├ [3]: https://pkg.go.dev/vuln/GO-2025-3751 
 │                       │     │                  ╰ [4]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
 │                       │     ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
-│                       │     ╰ LastModifiedDate: 2025-06-11T17:15:42.993Z 
+│                       │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 │                       ├ [3] ╭ VulnerabilityID : CVE-2025-0913 
 │                       │     ├ PkgID           : stdlib@v1.24.3 
 │                       │     ├ PkgName         : stdlib 
@@ -347,10 +351,12 @@
 │                       │     │                   an error when the O_CREATE and O_EXCL flags are both set and
 │                       │     │                   the target path is a symlink. 
 │                       │     ├ Severity        : UNKNOWN 
-│                       │     ╰ References       ╭ [0]: https://go.dev/cl/672396 
-│                       │                        ├ [1]: https://go.dev/issue/73702 
-│                       │                        ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-│                       │                        ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+│                       │     ├ References       ╭ [0]: https://go.dev/cl/672396 
+│                       │     │                  ├ [1]: https://go.dev/issue/73702 
+│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+│                       │     ├ PublishedDate   : 2025-06-11T18:15:24.627Z 
+│                       │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 │                       ╰ [4] ╭ VulnerabilityID : CVE-2025-22874 
 │                             ├ PkgID           : stdlib@v1.24.3 
 │                             ├ PkgName         : stdlib 
@@ -379,7 +385,7 @@
 │                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
 │                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3749 
 │                             ├ PublishedDate   : 2025-06-11T17:15:42.167Z 
-│                             ╰ LastModifiedDate: 2025-06-11T17:15:42.167Z 
+│                             ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -412,7 +418,7 @@
 │                       │     │                  ├ [3]: https://pkg.go.dev/vuln/GO-2025-3751 
 │                       │     │                  ╰ [4]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
 │                       │     ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
-│                       │     ╰ LastModifiedDate: 2025-06-11T17:15:42.993Z 
+│                       │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 │                       ├ [1] ╭ VulnerabilityID : CVE-2025-0913 
 │                       │     ├ PkgID           : stdlib@v1.24.3 
 │                       │     ├ PkgName         : stdlib 
@@ -440,10 +446,12 @@
 │                       │     │                   an error when the O_CREATE and O_EXCL flags are both set and
 │                       │     │                   the target path is a symlink. 
 │                       │     ├ Severity        : UNKNOWN 
-│                       │     ╰ References       ╭ [0]: https://go.dev/cl/672396 
-│                       │                        ├ [1]: https://go.dev/issue/73702 
-│                       │                        ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-│                       │                        ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+│                       │     ├ References       ╭ [0]: https://go.dev/cl/672396 
+│                       │     │                  ├ [1]: https://go.dev/issue/73702 
+│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+│                       │     ├ PublishedDate   : 2025-06-11T18:15:24.627Z 
+│                       │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 │                       ╰ [2] ╭ VulnerabilityID : CVE-2025-22874 
 │                             ├ PkgID           : stdlib@v1.24.3 
 │                             ├ PkgName         : stdlib 
@@ -472,7 +480,7 @@
 │                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
 │                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3749 
 │                             ├ PublishedDate   : 2025-06-11T17:15:42.167Z 
-│                             ╰ LastModifiedDate: 2025-06-11T17:15:42.167Z 
+│                             ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -505,7 +513,7 @@
                         │     │                  ├ [3]: https://pkg.go.dev/vuln/GO-2025-3751 
                         │     │                  ╰ [4]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
                         │     ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
-                        │     ╰ LastModifiedDate: 2025-06-11T17:15:42.993Z 
+                        │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
                         ├ [1] ╭ VulnerabilityID : CVE-2025-0913 
                         │     ├ PkgID           : stdlib@v1.24.3 
                         │     ├ PkgName         : stdlib 
@@ -533,10 +541,12 @@
                         │     │                   an error when the O_CREATE and O_EXCL flags are both set and
                         │     │                   the target path is a symlink. 
                         │     ├ Severity        : UNKNOWN 
-                        │     ╰ References       ╭ [0]: https://go.dev/cl/672396 
-                        │                        ├ [1]: https://go.dev/issue/73702 
-                        │                        ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-                        │                        ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+                        │     ├ References       ╭ [0]: https://go.dev/cl/672396 
+                        │     │                  ├ [1]: https://go.dev/issue/73702 
+                        │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+                        │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3750 
+                        │     ├ PublishedDate   : 2025-06-11T18:15:24.627Z 
+                        │     ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
                         ╰ [2] ╭ VulnerabilityID : CVE-2025-22874 
                               ├ PkgID           : stdlib@v1.24.3 
                               ├ PkgName         : stdlib 
@@ -565,5 +575,5 @@
                               │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
                               │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3749 
                               ├ PublishedDate   : 2025-06-11T17:15:42.167Z 
-                              ╰ LastModifiedDate: 2025-06-11T17:15:42.167Z 
+                              ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ````
