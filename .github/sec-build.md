@@ -20,7 +20,7 @@
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.3 
 │                       │     │                  ╰ UID : d7a45da0b76d3d81 
 │                       │     ├ InstalledVersion: v1.24.3 
-│                       │     ├ FixedVersion    : 1.23.10, 1.24.4 
+│                       │     ├ FixedVersion    : 1.24.4 
 │                       │     ├ Status          : fixed 
 │                       │     ├ Layer            ╭ Digest: sha256:c556489409ea928543730bec8f86bc85df05aeba5e88f
 │                       │     │                  │         61dc60d4239845e09ee 
@@ -136,7 +136,7 @@
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.3 
 │                       │     │                  ╰ UID : edbc862110f114c1 
 │                       │     ├ InstalledVersion: v1.24.3 
-│                       │     ├ FixedVersion    : 1.23.10, 1.24.4 
+│                       │     ├ FixedVersion    : 1.24.4 
 │                       │     ├ Status          : fixed 
 │                       │     ├ Layer            ╭ Digest: sha256:c556489409ea928543730bec8f86bc85df05aeba5e88f
 │                       │     │                  │         61dc60d4239845e09ee 
@@ -342,7 +342,7 @@
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.3 
 │                       │     │                  ╰ UID : 51a6e3310bee5d5c 
 │                       │     ├ InstalledVersion: v1.24.3 
-│                       │     ├ FixedVersion    : 1.23.10, 1.24.4 
+│                       │     ├ FixedVersion    : 1.24.4 
 │                       │     ├ Status          : fixed 
 │                       │     ├ Layer            ╭ Digest: sha256:c556489409ea928543730bec8f86bc85df05aeba5e88f
 │                       │     │                  │         61dc60d4239845e09ee 
@@ -458,7 +458,7 @@
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.3 
 │                       │     │                  ╰ UID : 8115bbbfba1b4e5d 
 │                       │     ├ InstalledVersion: v1.24.3 
-│                       │     ├ FixedVersion    : 1.23.10, 1.24.4 
+│                       │     ├ FixedVersion    : 1.24.4 
 │                       │     ├ Status          : fixed 
 │                       │     ├ Layer            ╭ Digest: sha256:c556489409ea928543730bec8f86bc85df05aeba5e88f
 │                       │     │                  │         61dc60d4239845e09ee 
@@ -574,7 +574,7 @@
                         │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.3 
                         │     │                  ╰ UID : 54cec8ce05afa237 
                         │     ├ InstalledVersion: v1.24.3 
-                        │     ├ FixedVersion    : 1.23.10, 1.24.4 
+                        │     ├ FixedVersion    : 1.24.4 
                         │     ├ Status          : fixed 
                         │     ├ Layer            ╭ Digest: sha256:c556489409ea928543730bec8f86bc85df05aeba5e88f
                         │     │                  │         61dc60d4239845e09ee 
