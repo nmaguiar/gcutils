@@ -108,23 +108,29 @@
 │                             ├ DataSource       ╭ ID  : govulndb 
 │                             │                  ├ Name: The Go Vulnerability Database 
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Title           : Proxy-Authorization and Proxy-Authenticate headers persisted
-│                             │                   on cross- ... 
+│                             ├ Title           : net/http: Sensitive headers not cleared on cross-origin
+│                             │                   redirect in net/http 
 │                             ├ Description     : Proxy-Authorization and Proxy-Authenticate headers persisted
 │                             │                   on cross-origin redirects potentially leaking sensitive
 │                             │                   information. 
 │                             ├ Severity        : MEDIUM 
 │                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             │                  ├ redhat : 2 
 │                             │                  ╰ ubuntu : 2 
-│                             ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+│                             │                  │         │           /A:N 
+│                             │                  │         ╰ V3Score : 6.8 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
 │                             │                            │           /A:N 
 │                             │                            ╰ V3Score : 6.8 
-│                             ├ References       ╭ [0]: https://go.dev/cl/679257 
-│                             │                  ├ [1]: https://go.dev/issue/73816 
-│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
-│                             │                  ├ [4]: https://pkg.go.dev/vuln/GO-2025-3751 
-│                             │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-4673 
+│                             │                  ├ [1]: https://go.dev/cl/679257 
+│                             │                  ├ [2]: https://go.dev/issue/73816 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3751 
+│                             │                  ├ [6]: https://ubuntu.com/security/notices/USN-7574-1 
+│                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
 │                             ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
 │                             ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
@@ -224,23 +230,29 @@
 │                             ├ DataSource       ╭ ID  : govulndb 
 │                             │                  ├ Name: The Go Vulnerability Database 
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Title           : Proxy-Authorization and Proxy-Authenticate headers persisted
-│                             │                   on cross- ... 
+│                             ├ Title           : net/http: Sensitive headers not cleared on cross-origin
+│                             │                   redirect in net/http 
 │                             ├ Description     : Proxy-Authorization and Proxy-Authenticate headers persisted
 │                             │                   on cross-origin redirects potentially leaking sensitive
 │                             │                   information. 
 │                             ├ Severity        : MEDIUM 
 │                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             │                  ├ redhat : 2 
 │                             │                  ╰ ubuntu : 2 
-│                             ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+│                             │                  │         │           /A:N 
+│                             │                  │         ╰ V3Score : 6.8 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
 │                             │                            │           /A:N 
 │                             │                            ╰ V3Score : 6.8 
-│                             ├ References       ╭ [0]: https://go.dev/cl/679257 
-│                             │                  ├ [1]: https://go.dev/issue/73816 
-│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
-│                             │                  ├ [4]: https://pkg.go.dev/vuln/GO-2025-3751 
-│                             │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-4673 
+│                             │                  ├ [1]: https://go.dev/cl/679257 
+│                             │                  ├ [2]: https://go.dev/issue/73816 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3751 
+│                             │                  ├ [6]: https://ubuntu.com/security/notices/USN-7574-1 
+│                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
 │                             ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
 │                             ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
@@ -430,23 +442,29 @@
 │                             ├ DataSource       ╭ ID  : govulndb 
 │                             │                  ├ Name: The Go Vulnerability Database 
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Title           : Proxy-Authorization and Proxy-Authenticate headers persisted
-│                             │                   on cross- ... 
+│                             ├ Title           : net/http: Sensitive headers not cleared on cross-origin
+│                             │                   redirect in net/http 
 │                             ├ Description     : Proxy-Authorization and Proxy-Authenticate headers persisted
 │                             │                   on cross-origin redirects potentially leaking sensitive
 │                             │                   information. 
 │                             ├ Severity        : MEDIUM 
 │                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             │                  ├ redhat : 2 
 │                             │                  ╰ ubuntu : 2 
-│                             ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+│                             │                  │         │           /A:N 
+│                             │                  │         ╰ V3Score : 6.8 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
 │                             │                            │           /A:N 
 │                             │                            ╰ V3Score : 6.8 
-│                             ├ References       ╭ [0]: https://go.dev/cl/679257 
-│                             │                  ├ [1]: https://go.dev/issue/73816 
-│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
-│                             │                  ├ [4]: https://pkg.go.dev/vuln/GO-2025-3751 
-│                             │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-4673 
+│                             │                  ├ [1]: https://go.dev/cl/679257 
+│                             │                  ├ [2]: https://go.dev/issue/73816 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3751 
+│                             │                  ├ [6]: https://ubuntu.com/security/notices/USN-7574-1 
+│                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
 │                             ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
 │                             ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
@@ -546,23 +564,29 @@
 │                             ├ DataSource       ╭ ID  : govulndb 
 │                             │                  ├ Name: The Go Vulnerability Database 
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Title           : Proxy-Authorization and Proxy-Authenticate headers persisted
-│                             │                   on cross- ... 
+│                             ├ Title           : net/http: Sensitive headers not cleared on cross-origin
+│                             │                   redirect in net/http 
 │                             ├ Description     : Proxy-Authorization and Proxy-Authenticate headers persisted
 │                             │                   on cross-origin redirects potentially leaking sensitive
 │                             │                   information. 
 │                             ├ Severity        : MEDIUM 
 │                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             │                  ├ redhat : 2 
 │                             │                  ╰ ubuntu : 2 
-│                             ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+│                             │                  │         │           /A:N 
+│                             │                  │         ╰ V3Score : 6.8 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
 │                             │                            │           /A:N 
 │                             │                            ╰ V3Score : 6.8 
-│                             ├ References       ╭ [0]: https://go.dev/cl/679257 
-│                             │                  ├ [1]: https://go.dev/issue/73816 
-│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
-│                             │                  ├ [4]: https://pkg.go.dev/vuln/GO-2025-3751 
-│                             │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-4673 
+│                             │                  ├ [1]: https://go.dev/cl/679257 
+│                             │                  ├ [2]: https://go.dev/issue/73816 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3751 
+│                             │                  ├ [6]: https://ubuntu.com/security/notices/USN-7574-1 
+│                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
 │                             ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
 │                             ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
@@ -662,23 +686,29 @@
                               ├ DataSource       ╭ ID  : govulndb 
                               │                  ├ Name: The Go Vulnerability Database 
                               │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                              ├ Title           : Proxy-Authorization and Proxy-Authenticate headers persisted
-                              │                   on cross- ... 
+                              ├ Title           : net/http: Sensitive headers not cleared on cross-origin
+                              │                   redirect in net/http 
                               ├ Description     : Proxy-Authorization and Proxy-Authenticate headers persisted
                               │                   on cross-origin redirects potentially leaking sensitive
                               │                   information. 
                               ├ Severity        : MEDIUM 
                               ├ VendorSeverity   ╭ bitnami: 2 
+                              │                  ├ redhat : 2 
                               │                  ╰ ubuntu : 2 
-                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
+                              │                  │         │           /A:N 
+                              │                  │         ╰ V3Score : 6.8 
+                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
                               │                            │           /A:N 
                               │                            ╰ V3Score : 6.8 
-                              ├ References       ╭ [0]: https://go.dev/cl/679257 
-                              │                  ├ [1]: https://go.dev/issue/73816 
-                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
-                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
-                              │                  ├ [4]: https://pkg.go.dev/vuln/GO-2025-3751 
-                              │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
+                              ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-4673 
+                              │                  ├ [1]: https://go.dev/cl/679257 
+                              │                  ├ [2]: https://go.dev/issue/73816 
+                              │                  ├ [3]: https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A 
+                              │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-4673 
+                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3751 
+                              │                  ├ [6]: https://ubuntu.com/security/notices/USN-7574-1 
+                              │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-4673 
                               ├ PublishedDate   : 2025-06-11T17:15:42.993Z 
                               ╰ LastModifiedDate: 2025-06-12T16:06:20.18Z 
 ````
