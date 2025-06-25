@@ -37,7 +37,8 @@
 │                       │     │                   This only affected certificate chains which contain policy
 │                       │     │                   graphs, which are rather uncommon. 
 │                       │     ├ Severity        : HIGH 
-│                       │     ├ VendorSeverity   ╭ bitnami: 3 
+│                       │     ├ VendorSeverity   ╭ amazon : 2 
+│                       │     │                  ├ bitnami: 3 
 │                       │     │                  ╰ redhat : 3 
 │                       │     ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H
 │                       │     │                  │         │           /A:N 
@@ -114,7 +115,8 @@
 │                             │                   on cross-origin redirects potentially leaking sensitive
 │                             │                   information. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             ├ VendorSeverity   ╭ amazon : 2 
+│                             │                  ├ bitnami: 2 
 │                             │                  ├ redhat : 2 
 │                             │                  ╰ ubuntu : 2 
 │                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
@@ -159,7 +161,8 @@
 │                       │     │                   This only affected certificate chains which contain policy
 │                       │     │                   graphs, which are rather uncommon. 
 │                       │     ├ Severity        : HIGH 
-│                       │     ├ VendorSeverity   ╭ bitnami: 3 
+│                       │     ├ VendorSeverity   ╭ amazon : 2 
+│                       │     │                  ├ bitnami: 3 
 │                       │     │                  ╰ redhat : 3 
 │                       │     ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H
 │                       │     │                  │         │           /A:N 
@@ -236,7 +239,8 @@
 │                             │                   on cross-origin redirects potentially leaking sensitive
 │                             │                   information. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             ├ VendorSeverity   ╭ amazon : 2 
+│                             │                  ├ bitnami: 2 
 │                             │                  ├ redhat : 2 
 │                             │                  ╰ ubuntu : 2 
 │                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N
