@@ -22,10 +22,10 @@
 │                             ├ InstalledVersion: v2.2.1 
 │                             ├ FixedVersion    : 2.3.0 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:8477c9eba7f2a31092d2e6527fab728a5505453bce37c
-│                             │                  │         03463f55456f47ae581 
-│                             │                  ╰ DiffID: sha256:3ce6ccea102aa8ac82fc7873fe7ad36954dfaf5c63f8e
-│                             │                            b19f61afab9f1adedd8 
+│                             ├ Layer            ╭ Digest: sha256:641eb5e82ad8676eec0aa33ee618ca745df872b354ae4
+│                             │                  │         9004bf8f118d145dcee 
+│                             │                  ╰ DiffID: sha256:0b0f59fc74b2c5e82c5d16a0a2d1c6d8937a52ccf58dc
+│                             │                            4f3b288accffe4a8dd3 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://github.com/advisories/GHSA-fv92-fjc5-jj9h 
 │                             ├ DataSource       ╭ ID  : ghsa 
@@ -122,10 +122,10 @@
 │                             ├ InstalledVersion: v2.2.1 
 │                             ├ FixedVersion    : 2.3.0 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:8477c9eba7f2a31092d2e6527fab728a5505453bce37c
-│                             │                  │         03463f55456f47ae581 
-│                             │                  ╰ DiffID: sha256:3ce6ccea102aa8ac82fc7873fe7ad36954dfaf5c63f8e
-│                             │                            b19f61afab9f1adedd8 
+│                             ├ Layer            ╭ Digest: sha256:641eb5e82ad8676eec0aa33ee618ca745df872b354ae4
+│                             │                  │         9004bf8f118d145dcee 
+│                             │                  ╰ DiffID: sha256:0b0f59fc74b2c5e82c5d16a0a2d1c6d8937a52ccf58dc
+│                             │                            4f3b288accffe4a8dd3 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://github.com/advisories/GHSA-fv92-fjc5-jj9h 
 │                             ├ DataSource       ╭ ID  : ghsa 
@@ -222,10 +222,10 @@
 │                       │     ├ InstalledVersion: v1.6.0 
 │                       │     ├ FixedVersion    : 1.6.1 
 │                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:8477c9eba7f2a31092d2e6527fab728a5505453bce37c
-│                       │     │                  │         03463f55456f47ae581 
-│                       │     │                  ╰ DiffID: sha256:3ce6ccea102aa8ac82fc7873fe7ad36954dfaf5c63f8e
-│                       │     │                            b19f61afab9f1adedd8 
+│                       │     ├ Layer            ╭ Digest: sha256:641eb5e82ad8676eec0aa33ee618ca745df872b354ae4
+│                       │     │                  │         9004bf8f118d145dcee 
+│                       │     │                  ╰ DiffID: sha256:0b0f59fc74b2c5e82c5d16a0a2d1c6d8937a52ccf58dc
+│                       │     │                            4f3b288accffe4a8dd3 
 │                       │     ├ SeveritySource  : ghsa 
 │                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-2x5j-vhc8-9cwm 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
@@ -265,10 +265,10 @@
 │                             ├ InstalledVersion: v2.2.1 
 │                             ├ FixedVersion    : 2.3.0 
 │                             ├ Status          : fixed 
-│                             ├ Layer            ╭ Digest: sha256:8477c9eba7f2a31092d2e6527fab728a5505453bce37c
-│                             │                  │         03463f55456f47ae581 
-│                             │                  ╰ DiffID: sha256:3ce6ccea102aa8ac82fc7873fe7ad36954dfaf5c63f8e
-│                             │                            b19f61afab9f1adedd8 
+│                             ├ Layer            ╭ Digest: sha256:641eb5e82ad8676eec0aa33ee618ca745df872b354ae4
+│                             │                  │         9004bf8f118d145dcee 
+│                             │                  ╰ DiffID: sha256:0b0f59fc74b2c5e82c5d16a0a2d1c6d8937a52ccf58dc
+│                             │                            4f3b288accffe4a8dd3 
 │                             ├ SeveritySource  : ghsa 
 │                             ├ PrimaryURL      : https://github.com/advisories/GHSA-fv92-fjc5-jj9h 
 │                             ├ DataSource       ╭ ID  : ghsa 
