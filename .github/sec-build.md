@@ -14,7 +14,86 @@
 ├ [4] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ─ [0] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2025-54388 
+│                       │     ├ PkgID           : github.com/docker/docker@v28.2.2+incompatible 
+│                       │     ├ PkgName         : github.com/docker/docker 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/docker/docker@v28.2.2%2Bincompat
+│                       │     │                  │       ible 
+│                       │     │                  ╰ UID : a7f6f4efaa24e38e 
+│                       │     ├ InstalledVersion: v28.2.2+incompatible 
+│                       │     ├ FixedVersion    : 28.3.3 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:cb64939deae135f24f0cac5c121beae8551dc0f53dddf
+│                       │     │                  │         0cd2bf50b021cbc8562 
+│                       │     │                  ╰ DiffID: sha256:ce37ac9563e76948f819b89de5a694438e79d7e6040da
+│                       │     │                            26c555f5f835bf9a62c 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-54388 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : Moby firewalld reload makes published container ports
+│                       │     │                   accessible from remote hosts  
+│                       │     ├ Description     : Moby is an open source container framework developed by
+│                       │     │                   Docker Inc. that is distributed as Docker Engine, Mirantis
+│                       │     │                   Container Runtime, and various other downstream
+│                       │     │                   projects/products. The Moby daemon component (dockerd), which
+│                       │     │                    is developed as [moby/moby](https://github.com/moby/moby) is
+│                       │     │                    commonly referred to as Docker, or Docker Engine.
+│                       │     │                   
+│                       │     │                   Firewalld is a daemon used by some Linux distributions to
+│                       │     │                   provide a dynamically managed firewall. When Firewalld is
+│                       │     │                   running, Docker uses its iptables backend to create rules,
+│                       │     │                   including rules to isolate containers in one bridge network
+│                       │     │                   from containers in other bridge networks.
+│                       │     │                   ### Impact
+│                       │     │                   The iptables rules created by Docker are removed when
+│                       │     │                   firewalld is reloaded using, for example "firewall-cmd
+│                       │     │                   --reload", "killall -HUP firewalld", or "systemctl reload
+│                       │     │                   firewalld".
+│                       │     │                   When that happens, Docker must re-create the rules. However,
+│                       │     │                   in affected versions of Docker, the iptables rules that
+│                       │     │                   prevent packets arriving on a host interface from reaching
+│                       │     │                   container addresses are not re-created.
+│                       │     │                   Once these rules have been removed, a remote host configured
+│                       │     │                   with a route to a Docker bridge network can access published
+│                       │     │                   ports, even when those ports were only published to a
+│                       │     │                   loopback address. Unpublished ports remain inaccessible.
+│                       │     │                   For example, following a firewalld reload on a Docker host
+│                       │     │                   with address `192.168.0.10` and a bridge network with subnet
+│                       │     │                   `172.17.0.0/16`, running the following command on another
+│                       │     │                   host in the local network will give it access to published
+│                       │     │                   ports on container addresses in that network: `ip route add
+│                       │     │                   172.17.0.0/16 via 192.168.0.10`.
+│                       │     │                   Containers running in networks created with `--internal` or
+│                       │     │                   equivalent have no access to other networks. Containers that
+│                       │     │                   are only connected to these networks remain isolated after a
+│                       │     │                   firewalld reload.
+│                       │     │                   Where Docker Engine is not running in the host's network
+│                       │     │                   namespace, it is unaffected. Including, for example, Rootless
+│                       │     │                    Mode, and Docker Desktop.
+│                       │     │                   ### Patches
+│                       │     │                   Moby releases older than 28.2.0 are not affected. A fix is
+│                       │     │                   available in moby release 28.3.3.
+│                       │     │                   ### Workarounds
+│                       │     │                   After reloading firewalld, either:
+│                       │     │                   - Restart the docker daemon,
+│                       │     │                   - Re-create bridge networks, or
+│                       │     │                   - Use rootless mode.
+│                       │     │                   ### References
+│                       │     │                   https://firewalld.org/
+│                       │     │                   https://firewalld.org/documentation/howto/reload-firewalld.ht
+│                       │     │                   ml 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ╰ References       ╭ [0]: https://github.com/moby/moby 
+│                       │                        ├ [1]: https://github.com/moby/moby/commit/bea959c7b793b32a893
+│                       │                        │      820b97c4eadc7c87fabb0 
+│                       │                        ├ [2]: https://github.com/moby/moby/pull/50506 
+│                       │                        ╰ [3]: https://github.com/moby/moby/security/advisories/GHSA-x
+│                       │                               4rx-4gw3-53p4 
+│                       ╰ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                             ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                             ├ PkgName         : github.com/go-viper/mapstructure/v2 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
@@ -114,7 +193,86 @@
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ─ [0] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2025-54388 
+│                       │     ├ PkgID           : github.com/docker/docker@v28.2.2+incompatible 
+│                       │     ├ PkgName         : github.com/docker/docker 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/docker/docker@v28.2.2%2Bincompat
+│                       │     │                  │       ible 
+│                       │     │                  ╰ UID : a5222116e4820de6 
+│                       │     ├ InstalledVersion: v28.2.2+incompatible 
+│                       │     ├ FixedVersion    : 28.3.3 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:cb64939deae135f24f0cac5c121beae8551dc0f53dddf
+│                       │     │                  │         0cd2bf50b021cbc8562 
+│                       │     │                  ╰ DiffID: sha256:ce37ac9563e76948f819b89de5a694438e79d7e6040da
+│                       │     │                            26c555f5f835bf9a62c 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-54388 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : Moby firewalld reload makes published container ports
+│                       │     │                   accessible from remote hosts  
+│                       │     ├ Description     : Moby is an open source container framework developed by
+│                       │     │                   Docker Inc. that is distributed as Docker Engine, Mirantis
+│                       │     │                   Container Runtime, and various other downstream
+│                       │     │                   projects/products. The Moby daemon component (dockerd), which
+│                       │     │                    is developed as [moby/moby](https://github.com/moby/moby) is
+│                       │     │                    commonly referred to as Docker, or Docker Engine.
+│                       │     │                   
+│                       │     │                   Firewalld is a daemon used by some Linux distributions to
+│                       │     │                   provide a dynamically managed firewall. When Firewalld is
+│                       │     │                   running, Docker uses its iptables backend to create rules,
+│                       │     │                   including rules to isolate containers in one bridge network
+│                       │     │                   from containers in other bridge networks.
+│                       │     │                   ### Impact
+│                       │     │                   The iptables rules created by Docker are removed when
+│                       │     │                   firewalld is reloaded using, for example "firewall-cmd
+│                       │     │                   --reload", "killall -HUP firewalld", or "systemctl reload
+│                       │     │                   firewalld".
+│                       │     │                   When that happens, Docker must re-create the rules. However,
+│                       │     │                   in affected versions of Docker, the iptables rules that
+│                       │     │                   prevent packets arriving on a host interface from reaching
+│                       │     │                   container addresses are not re-created.
+│                       │     │                   Once these rules have been removed, a remote host configured
+│                       │     │                   with a route to a Docker bridge network can access published
+│                       │     │                   ports, even when those ports were only published to a
+│                       │     │                   loopback address. Unpublished ports remain inaccessible.
+│                       │     │                   For example, following a firewalld reload on a Docker host
+│                       │     │                   with address `192.168.0.10` and a bridge network with subnet
+│                       │     │                   `172.17.0.0/16`, running the following command on another
+│                       │     │                   host in the local network will give it access to published
+│                       │     │                   ports on container addresses in that network: `ip route add
+│                       │     │                   172.17.0.0/16 via 192.168.0.10`.
+│                       │     │                   Containers running in networks created with `--internal` or
+│                       │     │                   equivalent have no access to other networks. Containers that
+│                       │     │                   are only connected to these networks remain isolated after a
+│                       │     │                   firewalld reload.
+│                       │     │                   Where Docker Engine is not running in the host's network
+│                       │     │                   namespace, it is unaffected. Including, for example, Rootless
+│                       │     │                    Mode, and Docker Desktop.
+│                       │     │                   ### Patches
+│                       │     │                   Moby releases older than 28.2.0 are not affected. A fix is
+│                       │     │                   available in moby release 28.3.3.
+│                       │     │                   ### Workarounds
+│                       │     │                   After reloading firewalld, either:
+│                       │     │                   - Restart the docker daemon,
+│                       │     │                   - Re-create bridge networks, or
+│                       │     │                   - Use rootless mode.
+│                       │     │                   ### References
+│                       │     │                   https://firewalld.org/
+│                       │     │                   https://firewalld.org/documentation/howto/reload-firewalld.ht
+│                       │     │                   ml 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ╰ References       ╭ [0]: https://github.com/moby/moby 
+│                       │                        ├ [1]: https://github.com/moby/moby/commit/bea959c7b793b32a893
+│                       │                        │      820b97c4eadc7c87fabb0 
+│                       │                        ├ [2]: https://github.com/moby/moby/pull/50506 
+│                       │                        ╰ [3]: https://github.com/moby/moby/security/advisories/GHSA-x
+│                       │                               4rx-4gw3-53p4 
+│                       ╰ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                             ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                             ├ PkgName         : github.com/go-viper/mapstructure/v2 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
@@ -786,8 +944,7 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
-│                       │      ├ Title           : Grafana is vulnerable to XSS attacks through open redirects
-│                       │      │                   and path traversal 
+│                       │      ├ Title           : grafana: Cross Site Scripting in Grafana 
 │                       │      ├ Description     : An open redirect vulnerability has been identified in
 │                       │      │                   Grafana OSS that can be exploited to achieve XSS attacks.
 │                       │      │                   The vulnerability was introduced in Grafana v11.5.0.
@@ -801,35 +958,41 @@
 │                       │      ├ CweIDs           ╭ [0]: CWE-79 
 │                       │      │                  ╰ [1]: CWE-601 
 │                       │      ├ VendorSeverity   ╭ bitnami: 3 
-│                       │      │                  ╰ ghsa   : 3 
+│                       │      │                  ├ ghsa   : 3 
+│                       │      │                  ╰ redhat : 3 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
 │                       │      │                  │         │           L/A:L 
 │                       │      │                  │         ╰ V3Score : 7.6 
-│                       │      │                  ╰ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
-│                       │      │                            │           L/A:L 
-│                       │      │                            ╰ V3Score : 7.6 
-│                       │      ├ References       ╭ [0] : https://github.com/grafana/grafana 
-│                       │      │                  ├ [1] : https://github.com/grafana/grafana/commit/0ba0b99665a
+│                       │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
+│                       │      │                  │         │           L/A:L 
+│                       │      │                  │         ╰ V3Score : 7.6 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:
+│                       │      │                            │           L/A:N 
+│                       │      │                            ╰ V3Score : 7.1 
+│                       │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2025-6023 
+│                       │      │                  ├ [1] : https://github.com/grafana/grafana 
+│                       │      │                  ├ [2] : https://github.com/grafana/grafana/commit/0ba0b99665a
 │                       │      │                  │       946cd96676ef85ec8bc83028cb1d7 
-│                       │      │                  ├ [2] : https://github.com/grafana/grafana/commit/40ed88fe86d
+│                       │      │                  ├ [3] : https://github.com/grafana/grafana/commit/40ed88fe86d
 │                       │      │                  │       347bcde5ddaed6c4a20a95d2f0d55 
-│                       │      │                  ├ [3] : https://github.com/grafana/grafana/commit/5b00e21638f
+│                       │      │                  ├ [4] : https://github.com/grafana/grafana/commit/5b00e21638f
 │                       │      │                  │       565eed46acb4d0b7c009968df4c3b 
-│                       │      │                  ├ [4] : https://github.com/grafana/grafana/commit/b6dd2b70c65
+│                       │      │                  ├ [5] : https://github.com/grafana/grafana/commit/b6dd2b70c65
 │                       │      │                  │       5c61b111b328f1a7dcca6b3954936 
-│                       │      │                  ├ [5] : https://github.com/grafana/grafana/commit/e0ba4b48095
+│                       │      │                  ├ [6] : https://github.com/grafana/grafana/commit/e0ba4b48095
 │                       │      │                  │       4f8a33aa2cff3229f6bcc05777bd9 
-│                       │      │                  ├ [6] : https://grafana.com/blog/2025/07/17/grafana-security-
-│                       │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
-│                       │      │                  │       197-and-cve-2025-6023 
 │                       │      │                  ├ [7] : https://grafana.com/blog/2025/07/17/grafana-security-
 │                       │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
+│                       │      │                  │       197-and-cve-2025-6023 
+│                       │      │                  ├ [8] : https://grafana.com/blog/2025/07/17/grafana-security-
+│                       │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
 │                       │      │                  │       197-and-cve-2025-6023/ 
-│                       │      │                  ├ [8] : https://grafana.com/security/security-advisories/cve-
-│                       │      │                  │       2025-6023 
 │                       │      │                  ├ [9] : https://grafana.com/security/security-advisories/cve-
+│                       │      │                  │       2025-6023 
+│                       │      │                  ├ [10]: https://grafana.com/security/security-advisories/cve-
 │                       │      │                  │       2025-6023/ 
-│                       │      │                  ╰ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-6023 
+│                       │      │                  ├ [11]: https://nvd.nist.gov/vuln/detail/CVE-2025-6023 
+│                       │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-6023 
 │                       │      ├ PublishedDate   : 2025-07-18T08:15:28.04Z 
 │                       │      ╰ LastModifiedDate: 2025-07-22T13:06:27.983Z 
 │                       ├ [8]  ╭ VulnerabilityID : CVE-2018-1000816 
@@ -2453,8 +2616,7 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
-│                       │      ├ Title           : Grafana is vulnerable to XSS attacks through open redirects
-│                       │      │                   and path traversal 
+│                       │      ├ Title           : grafana: Cross Site Scripting in Grafana 
 │                       │      ├ Description     : An open redirect vulnerability has been identified in
 │                       │      │                   Grafana OSS that can be exploited to achieve XSS attacks.
 │                       │      │                   The vulnerability was introduced in Grafana v11.5.0.
@@ -2468,35 +2630,41 @@
 │                       │      ├ CweIDs           ╭ [0]: CWE-79 
 │                       │      │                  ╰ [1]: CWE-601 
 │                       │      ├ VendorSeverity   ╭ bitnami: 3 
-│                       │      │                  ╰ ghsa   : 3 
+│                       │      │                  ├ ghsa   : 3 
+│                       │      │                  ╰ redhat : 3 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
 │                       │      │                  │         │           L/A:L 
 │                       │      │                  │         ╰ V3Score : 7.6 
-│                       │      │                  ╰ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
-│                       │      │                            │           L/A:L 
-│                       │      │                            ╰ V3Score : 7.6 
-│                       │      ├ References       ╭ [0] : https://github.com/grafana/grafana 
-│                       │      │                  ├ [1] : https://github.com/grafana/grafana/commit/0ba0b99665a
+│                       │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
+│                       │      │                  │         │           L/A:L 
+│                       │      │                  │         ╰ V3Score : 7.6 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:
+│                       │      │                            │           L/A:N 
+│                       │      │                            ╰ V3Score : 7.1 
+│                       │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2025-6023 
+│                       │      │                  ├ [1] : https://github.com/grafana/grafana 
+│                       │      │                  ├ [2] : https://github.com/grafana/grafana/commit/0ba0b99665a
 │                       │      │                  │       946cd96676ef85ec8bc83028cb1d7 
-│                       │      │                  ├ [2] : https://github.com/grafana/grafana/commit/40ed88fe86d
+│                       │      │                  ├ [3] : https://github.com/grafana/grafana/commit/40ed88fe86d
 │                       │      │                  │       347bcde5ddaed6c4a20a95d2f0d55 
-│                       │      │                  ├ [3] : https://github.com/grafana/grafana/commit/5b00e21638f
+│                       │      │                  ├ [4] : https://github.com/grafana/grafana/commit/5b00e21638f
 │                       │      │                  │       565eed46acb4d0b7c009968df4c3b 
-│                       │      │                  ├ [4] : https://github.com/grafana/grafana/commit/b6dd2b70c65
+│                       │      │                  ├ [5] : https://github.com/grafana/grafana/commit/b6dd2b70c65
 │                       │      │                  │       5c61b111b328f1a7dcca6b3954936 
-│                       │      │                  ├ [5] : https://github.com/grafana/grafana/commit/e0ba4b48095
+│                       │      │                  ├ [6] : https://github.com/grafana/grafana/commit/e0ba4b48095
 │                       │      │                  │       4f8a33aa2cff3229f6bcc05777bd9 
-│                       │      │                  ├ [6] : https://grafana.com/blog/2025/07/17/grafana-security-
-│                       │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
-│                       │      │                  │       197-and-cve-2025-6023 
 │                       │      │                  ├ [7] : https://grafana.com/blog/2025/07/17/grafana-security-
 │                       │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
+│                       │      │                  │       197-and-cve-2025-6023 
+│                       │      │                  ├ [8] : https://grafana.com/blog/2025/07/17/grafana-security-
+│                       │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
 │                       │      │                  │       197-and-cve-2025-6023/ 
-│                       │      │                  ├ [8] : https://grafana.com/security/security-advisories/cve-
-│                       │      │                  │       2025-6023 
 │                       │      │                  ├ [9] : https://grafana.com/security/security-advisories/cve-
+│                       │      │                  │       2025-6023 
+│                       │      │                  ├ [10]: https://grafana.com/security/security-advisories/cve-
 │                       │      │                  │       2025-6023/ 
-│                       │      │                  ╰ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-6023 
+│                       │      │                  ├ [11]: https://nvd.nist.gov/vuln/detail/CVE-2025-6023 
+│                       │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-6023 
 │                       │      ├ PublishedDate   : 2025-07-18T08:15:28.04Z 
 │                       │      ╰ LastModifiedDate: 2025-07-22T13:06:27.983Z 
 │                       ├ [8]  ╭ VulnerabilityID : CVE-2018-1000816 
@@ -4120,8 +4288,7 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
-                        │      ├ Title           : Grafana is vulnerable to XSS attacks through open redirects
-                        │      │                   and path traversal 
+                        │      ├ Title           : grafana: Cross Site Scripting in Grafana 
                         │      ├ Description     : An open redirect vulnerability has been identified in
                         │      │                   Grafana OSS that can be exploited to achieve XSS attacks.
                         │      │                   The vulnerability was introduced in Grafana v11.5.0.
@@ -4135,35 +4302,41 @@
                         │      ├ CweIDs           ╭ [0]: CWE-79 
                         │      │                  ╰ [1]: CWE-601 
                         │      ├ VendorSeverity   ╭ bitnami: 3 
-                        │      │                  ╰ ghsa   : 3 
+                        │      │                  ├ ghsa   : 3 
+                        │      │                  ╰ redhat : 3 
                         │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
                         │      │                  │         │           L/A:L 
                         │      │                  │         ╰ V3Score : 7.6 
-                        │      │                  ╰ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
-                        │      │                            │           L/A:L 
-                        │      │                            ╰ V3Score : 7.6 
-                        │      ├ References       ╭ [0] : https://github.com/grafana/grafana 
-                        │      │                  ├ [1] : https://github.com/grafana/grafana/commit/0ba0b99665a
+                        │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:
+                        │      │                  │         │           L/A:L 
+                        │      │                  │         ╰ V3Score : 7.6 
+                        │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:
+                        │      │                            │           L/A:N 
+                        │      │                            ╰ V3Score : 7.1 
+                        │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2025-6023 
+                        │      │                  ├ [1] : https://github.com/grafana/grafana 
+                        │      │                  ├ [2] : https://github.com/grafana/grafana/commit/0ba0b99665a
                         │      │                  │       946cd96676ef85ec8bc83028cb1d7 
-                        │      │                  ├ [2] : https://github.com/grafana/grafana/commit/40ed88fe86d
+                        │      │                  ├ [3] : https://github.com/grafana/grafana/commit/40ed88fe86d
                         │      │                  │       347bcde5ddaed6c4a20a95d2f0d55 
-                        │      │                  ├ [3] : https://github.com/grafana/grafana/commit/5b00e21638f
+                        │      │                  ├ [4] : https://github.com/grafana/grafana/commit/5b00e21638f
                         │      │                  │       565eed46acb4d0b7c009968df4c3b 
-                        │      │                  ├ [4] : https://github.com/grafana/grafana/commit/b6dd2b70c65
+                        │      │                  ├ [5] : https://github.com/grafana/grafana/commit/b6dd2b70c65
                         │      │                  │       5c61b111b328f1a7dcca6b3954936 
-                        │      │                  ├ [5] : https://github.com/grafana/grafana/commit/e0ba4b48095
+                        │      │                  ├ [6] : https://github.com/grafana/grafana/commit/e0ba4b48095
                         │      │                  │       4f8a33aa2cff3229f6bcc05777bd9 
-                        │      │                  ├ [6] : https://grafana.com/blog/2025/07/17/grafana-security-
-                        │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
-                        │      │                  │       197-and-cve-2025-6023 
                         │      │                  ├ [7] : https://grafana.com/blog/2025/07/17/grafana-security-
                         │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
+                        │      │                  │       197-and-cve-2025-6023 
+                        │      │                  ├ [8] : https://grafana.com/blog/2025/07/17/grafana-security-
+                        │      │                  │       release-medium-and-high-severity-fixes-for-cve-2025-6
                         │      │                  │       197-and-cve-2025-6023/ 
-                        │      │                  ├ [8] : https://grafana.com/security/security-advisories/cve-
-                        │      │                  │       2025-6023 
                         │      │                  ├ [9] : https://grafana.com/security/security-advisories/cve-
+                        │      │                  │       2025-6023 
+                        │      │                  ├ [10]: https://grafana.com/security/security-advisories/cve-
                         │      │                  │       2025-6023/ 
-                        │      │                  ╰ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-6023 
+                        │      │                  ├ [11]: https://nvd.nist.gov/vuln/detail/CVE-2025-6023 
+                        │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-6023 
                         │      ├ PublishedDate   : 2025-07-18T08:15:28.04Z 
                         │      ╰ LastModifiedDate: 2025-07-22T13:06:27.983Z 
                         ├ [8]  ╭ VulnerabilityID : CVE-2018-1000816 
