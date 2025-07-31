@@ -38,61 +38,31 @@
 │                       │     ├ Description     : Moby is an open source container framework developed by
 │                       │     │                   Docker Inc. that is distributed as Docker Engine, Mirantis
 │                       │     │                   Container Runtime, and various other downstream
-│                       │     │                   projects/products. The Moby daemon component (dockerd), which
-│                       │     │                    is developed as [moby/moby](https://github.com/moby/moby) is
-│                       │     │                    commonly referred to as Docker, or Docker Engine.
-│                       │     │                   
-│                       │     │                   Firewalld is a daemon used by some Linux distributions to
-│                       │     │                   provide a dynamically managed firewall. When Firewalld is
-│                       │     │                   running, Docker uses its iptables backend to create rules,
-│                       │     │                   including rules to isolate containers in one bridge network
-│                       │     │                   from containers in other bridge networks.
-│                       │     │                   ### Impact
-│                       │     │                   The iptables rules created by Docker are removed when
-│                       │     │                   firewalld is reloaded using, for example "firewall-cmd
-│                       │     │                   --reload", "killall -HUP firewalld", or "systemctl reload
-│                       │     │                   firewalld".
-│                       │     │                   When that happens, Docker must re-create the rules. However,
-│                       │     │                   in affected versions of Docker, the iptables rules that
-│                       │     │                   prevent packets arriving on a host interface from reaching
-│                       │     │                   container addresses are not re-created.
-│                       │     │                   Once these rules have been removed, a remote host configured
-│                       │     │                   with a route to a Docker bridge network can access published
-│                       │     │                   ports, even when those ports were only published to a
-│                       │     │                   loopback address. Unpublished ports remain inaccessible.
-│                       │     │                   For example, following a firewalld reload on a Docker host
-│                       │     │                   with address `192.168.0.10` and a bridge network with subnet
-│                       │     │                   `172.17.0.0/16`, running the following command on another
-│                       │     │                   host in the local network will give it access to published
-│                       │     │                   ports on container addresses in that network: `ip route add
-│                       │     │                   172.17.0.0/16 via 192.168.0.10`.
-│                       │     │                   Containers running in networks created with `--internal` or
-│                       │     │                   equivalent have no access to other networks. Containers that
-│                       │     │                   are only connected to these networks remain isolated after a
-│                       │     │                   firewalld reload.
-│                       │     │                   Where Docker Engine is not running in the host's network
-│                       │     │                   namespace, it is unaffected. Including, for example, Rootless
-│                       │     │                    Mode, and Docker Desktop.
-│                       │     │                   ### Patches
-│                       │     │                   Moby releases older than 28.2.0 are not affected. A fix is
-│                       │     │                   available in moby release 28.3.3.
-│                       │     │                   ### Workarounds
-│                       │     │                   After reloading firewalld, either:
-│                       │     │                   - Restart the docker daemon,
-│                       │     │                   - Re-create bridge networks, or
-│                       │     │                   - Use rootless mode.
-│                       │     │                   ### References
-│                       │     │                   https://firewalld.org/
-│                       │     │                   https://firewalld.org/documentation/howto/reload-firewalld.ht
-│                       │     │                   ml 
+│                       │     │                   projects/products. In versions 28.2.0 through 28.3.2, when
+│                       │     │                   the firewalld service is reloaded it removes all iptables
+│                       │     │                   rules including those created by Docker. While Docker should
+│                       │     │                   automatically recreate these rules, versions before 28.3.3
+│                       │     │                   fail to recreate the specific rules that block external
+│                       │     │                   access to containers. This means that after a firewalld
+│                       │     │                   reload, containers with ports published to localhost (like
+│                       │     │                   127.0.0.1:8080) become accessible from remote machines that
+│                       │     │                   have network routing to the Docker bridge, even though they
+│                       │     │                   should only be accessible from the host itself. The
+│                       │     │                   vulnerability only affects explicitly published ports -
+│                       │     │                   unpublished ports remain protected. This issue is fixed in
+│                       │     │                   version 28.3.3. 
 │                       │     ├ Severity        : MEDIUM 
+│                       │     ├ CweIDs           ─ [0]: CWE-909 
 │                       │     ├ VendorSeverity   ─ ghsa: 2 
-│                       │     ╰ References       ╭ [0]: https://github.com/moby/moby 
-│                       │                        ├ [1]: https://github.com/moby/moby/commit/bea959c7b793b32a893
-│                       │                        │      820b97c4eadc7c87fabb0 
-│                       │                        ├ [2]: https://github.com/moby/moby/pull/50506 
-│                       │                        ╰ [3]: https://github.com/moby/moby/security/advisories/GHSA-x
-│                       │                               4rx-4gw3-53p4 
+│                       │     ├ References       ╭ [0]: https://github.com/moby/moby 
+│                       │     │                  ├ [1]: https://github.com/moby/moby/commit/bea959c7b793b32a893
+│                       │     │                  │      820b97c4eadc7c87fabb0 
+│                       │     │                  ├ [2]: https://github.com/moby/moby/pull/50506 
+│                       │     │                  ├ [3]: https://github.com/moby/moby/security/advisories/GHSA-x
+│                       │     │                  │      4rx-4gw3-53p4 
+│                       │     │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-54388 
+│                       │     ├ PublishedDate   : 2025-07-30T14:15:28.693Z 
+│                       │     ╰ LastModifiedDate: 2025-07-30T14:15:28.693Z 
 │                       ╰ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                             ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                             ├ PkgName         : github.com/go-viper/mapstructure/v2 
@@ -217,61 +187,31 @@
 │                       │     ├ Description     : Moby is an open source container framework developed by
 │                       │     │                   Docker Inc. that is distributed as Docker Engine, Mirantis
 │                       │     │                   Container Runtime, and various other downstream
-│                       │     │                   projects/products. The Moby daemon component (dockerd), which
-│                       │     │                    is developed as [moby/moby](https://github.com/moby/moby) is
-│                       │     │                    commonly referred to as Docker, or Docker Engine.
-│                       │     │                   
-│                       │     │                   Firewalld is a daemon used by some Linux distributions to
-│                       │     │                   provide a dynamically managed firewall. When Firewalld is
-│                       │     │                   running, Docker uses its iptables backend to create rules,
-│                       │     │                   including rules to isolate containers in one bridge network
-│                       │     │                   from containers in other bridge networks.
-│                       │     │                   ### Impact
-│                       │     │                   The iptables rules created by Docker are removed when
-│                       │     │                   firewalld is reloaded using, for example "firewall-cmd
-│                       │     │                   --reload", "killall -HUP firewalld", or "systemctl reload
-│                       │     │                   firewalld".
-│                       │     │                   When that happens, Docker must re-create the rules. However,
-│                       │     │                   in affected versions of Docker, the iptables rules that
-│                       │     │                   prevent packets arriving on a host interface from reaching
-│                       │     │                   container addresses are not re-created.
-│                       │     │                   Once these rules have been removed, a remote host configured
-│                       │     │                   with a route to a Docker bridge network can access published
-│                       │     │                   ports, even when those ports were only published to a
-│                       │     │                   loopback address. Unpublished ports remain inaccessible.
-│                       │     │                   For example, following a firewalld reload on a Docker host
-│                       │     │                   with address `192.168.0.10` and a bridge network with subnet
-│                       │     │                   `172.17.0.0/16`, running the following command on another
-│                       │     │                   host in the local network will give it access to published
-│                       │     │                   ports on container addresses in that network: `ip route add
-│                       │     │                   172.17.0.0/16 via 192.168.0.10`.
-│                       │     │                   Containers running in networks created with `--internal` or
-│                       │     │                   equivalent have no access to other networks. Containers that
-│                       │     │                   are only connected to these networks remain isolated after a
-│                       │     │                   firewalld reload.
-│                       │     │                   Where Docker Engine is not running in the host's network
-│                       │     │                   namespace, it is unaffected. Including, for example, Rootless
-│                       │     │                    Mode, and Docker Desktop.
-│                       │     │                   ### Patches
-│                       │     │                   Moby releases older than 28.2.0 are not affected. A fix is
-│                       │     │                   available in moby release 28.3.3.
-│                       │     │                   ### Workarounds
-│                       │     │                   After reloading firewalld, either:
-│                       │     │                   - Restart the docker daemon,
-│                       │     │                   - Re-create bridge networks, or
-│                       │     │                   - Use rootless mode.
-│                       │     │                   ### References
-│                       │     │                   https://firewalld.org/
-│                       │     │                   https://firewalld.org/documentation/howto/reload-firewalld.ht
-│                       │     │                   ml 
+│                       │     │                   projects/products. In versions 28.2.0 through 28.3.2, when
+│                       │     │                   the firewalld service is reloaded it removes all iptables
+│                       │     │                   rules including those created by Docker. While Docker should
+│                       │     │                   automatically recreate these rules, versions before 28.3.3
+│                       │     │                   fail to recreate the specific rules that block external
+│                       │     │                   access to containers. This means that after a firewalld
+│                       │     │                   reload, containers with ports published to localhost (like
+│                       │     │                   127.0.0.1:8080) become accessible from remote machines that
+│                       │     │                   have network routing to the Docker bridge, even though they
+│                       │     │                   should only be accessible from the host itself. The
+│                       │     │                   vulnerability only affects explicitly published ports -
+│                       │     │                   unpublished ports remain protected. This issue is fixed in
+│                       │     │                   version 28.3.3. 
 │                       │     ├ Severity        : MEDIUM 
+│                       │     ├ CweIDs           ─ [0]: CWE-909 
 │                       │     ├ VendorSeverity   ─ ghsa: 2 
-│                       │     ╰ References       ╭ [0]: https://github.com/moby/moby 
-│                       │                        ├ [1]: https://github.com/moby/moby/commit/bea959c7b793b32a893
-│                       │                        │      820b97c4eadc7c87fabb0 
-│                       │                        ├ [2]: https://github.com/moby/moby/pull/50506 
-│                       │                        ╰ [3]: https://github.com/moby/moby/security/advisories/GHSA-x
-│                       │                               4rx-4gw3-53p4 
+│                       │     ├ References       ╭ [0]: https://github.com/moby/moby 
+│                       │     │                  ├ [1]: https://github.com/moby/moby/commit/bea959c7b793b32a893
+│                       │     │                  │      820b97c4eadc7c87fabb0 
+│                       │     │                  ├ [2]: https://github.com/moby/moby/pull/50506 
+│                       │     │                  ├ [3]: https://github.com/moby/moby/security/advisories/GHSA-x
+│                       │     │                  │      4rx-4gw3-53p4 
+│                       │     │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-54388 
+│                       │     ├ PublishedDate   : 2025-07-30T14:15:28.693Z 
+│                       │     ╰ LastModifiedDate: 2025-07-30T14:15:28.693Z 
 │                       ╰ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                             ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                             ├ PkgName         : github.com/go-viper/mapstructure/v2 
