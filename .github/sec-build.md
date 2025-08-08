@@ -69,103 +69,135 @@
 │                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-54388 
 │                       │     ├ PublishedDate   : 2025-07-30T14:15:28.693Z 
 │                       │     ╰ LastModifiedDate: 2025-07-31T18:42:37.87Z 
-│                       ╰ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
-│                             ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
-│                             ├ PkgName         : github.com/go-viper/mapstructure/v2 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
-│                             │                  ╰ UID : e2c1d5fc4a675546 
-│                             ├ InstalledVersion: v2.2.1 
-│                             ├ FixedVersion    : 2.3.0 
+│                       ├ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
+│                       │     ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
+│                       │     ├ PkgName         : github.com/go-viper/mapstructure/v2 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
+│                       │     │                  ╰ UID : e2c1d5fc4a675546 
+│                       │     ├ InstalledVersion: v2.2.1 
+│                       │     ├ FixedVersion    : 2.3.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c32
+│                       │     │                  │         f0d9d8f867b94af94f7 
+│                       │     │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1b
+│                       │     │                            3ab241bb6e9d7032177 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-fv92-fjc5-jj9h 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : mapstructure May Leak Sensitive Information in Logs When
+│                       │     │                   Processing Malformed Data 
+│                       │     ├ Description     : ### Summary
+│                       │     │                   
+│                       │     │                   Use of this library in a security-critical context may result
+│                       │     │                    in leaking sensitive information, if used to process
+│                       │     │                   sensitive fields.
+│                       │     │                   ### Details
+│                       │     │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
+│                       │     │                   messages from `mapstructure` as follows:
+│                       │     │                   https://github.com/openbao/openbao/blob/98c3a59c040efca724353
+│                       │     │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
+│                       │     │                   ```go
+│                       │     │                   			_, _, err := d.getPrimitive(field, schema)
+│                       │     │                   			if err != nil {
+│                       │     │                   				return fmt.Errorf("error converting input for field %q:
+│                       │     │                   %w", field, err)
+│                       │     │                   			}
+│                       │     │                   ```
+│                       │     │                   where this calls `mapstructure.WeakDecode(...)`:
+│                       │     │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
+│                       │     │                   func (d *FieldData) getPrimitive(k string, schema
+│                       │     │                   *FieldSchema) (interface{}, bool, error) {
+│                       │     │                   	raw, ok := d.Raw[k]
+│                       │     │                   	if !ok {
+│                       │     │                   		return nil, false, nil
+│                       │     │                   	}
+│                       │     │                   	switch t := schema.Type; t {
+│                       │     │                   	case TypeBool:
+│                       │     │                   		var result bool
+│                       │     │                   		if err := mapstructure.WeakDecode(raw, &result); err != nil
+│                       │     │                    {
+│                       │     │                   			return nil, false, err
+│                       │     │                   		}
+│                       │     │                   		return result, true, nil
+│                       │     │                   Notably, `WeakDecode(...)` eventually calls one of the decode
+│                       │     │                    helpers, which surfaces the original value:
+│                       │     │                   https://github.com/go-viper/mapstructure/blob/1a66224d5e54d87
+│                       │     │                   57f63bd66339cf764c3292c21/mapstructure.go#L679-L686
+│                       │     │                   57f63bd66339cf764c3292c21/mapstructure.go#L726-L730
+│                       │     │                   57f63bd66339cf764c3292c21/mapstructure.go#L783-L787
+│                       │     │                   & more.
+│                       │     │                   ### PoC
+│                       │     │                   To reproduce with OpenBao:
+│                       │     │                   $ podman run -p 8300:8300 openbao/openbao:latest server -dev
+│                       │     │                   -dev-root-token-id=root -dev-listen-address=0.0.0.0:8300
+│                       │     │                   and in a new tab:
+│                       │     │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
+│                       │     │                   enable userpass
+│                       │     │                   Success! Enabled userpass auth method at: userpass/
+│                       │     │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
+│                       │     │                   root" -d '{"password":{"asdf":"my-sensitive-value"}}'
+│                       │     │                   "http://localhost:8300/v1/auth/userpass/users/adsf"
+│                       │     │                   {"errors":["error converting input for field \"password\": ''
+│                       │     │                    expected type 'string', got unconvertible type
+│                       │     │                   'map[string]interface {}', value:
+│                       │     │                   'map[asdf:my-sensitive-value]'"]}
+│                       │     │                   ### Impact
+│                       │     │                   This is an information disclosure bug with little mitigation.
+│                       │     │                    See
+│                       │     │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expos
+│                       │     │                   e-sensitive-information-in-error-logs-when-processing-malform
+│                       │     │                   ed-data-with-the-kv-v2-plugin/74717 for a previous version.
+│                       │     │                   That version was fixed, but this is in the second part of
+│                       │     │                   that error message (starting at `'' expected a map, got
+│                       │     │                   'string'` -- when the field type is `string` and a `map` is
+│                       │     │                   provided, we see the above information leak -- the previous
+│                       │     │                   example had a `map` type field with a `string` value
+│                       │     │                   provided).
+│                       │     │                   This was rated 4.5 Medium by HashiCorp in the past iteration. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
+│                       │     │                         ╰ V3Score : 5.3 
+│                       │     ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
+│                       │     │                  ╰ [1]: https://github.com/go-viper/mapstructure/security/advis
+│                       │     │                         ories/GHSA-fv92-fjc5-jj9h 
+│                       │     ├ PublishedDate   : 2025-06-27T16:24:59Z 
+│                       │     ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
+│                       ╰ [2] ╭ VulnerabilityID : CVE-2025-47907 
+│                             ├ PkgID           : stdlib@v1.24.5 
+│                             ├ PkgName         : stdlib 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                             │                  ╰ UID : a47daf835496b0ec 
+│                             ├ InstalledVersion: v1.24.5 
+│                             ├ FixedVersion    : 1.23.12, 1.24.6 
 │                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c32
 │                             │                  │         f0d9d8f867b94af94f7 
 │                             │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1b
 │                             │                            3ab241bb6e9d7032177 
-│                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://github.com/advisories/GHSA-fv92-fjc5-jj9h 
-│                             ├ DataSource       ╭ ID  : ghsa 
-│                             │                  ├ Name: GitHub Security Advisory Go 
-│                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                             │                          osystem%3Ago 
-│                             ├ Title           : mapstructure May Leak Sensitive Information in Logs When
-│                             │                   Processing Malformed Data 
-│                             ├ Description     : ### Summary
-│                             │                   
-│                             │                   Use of this library in a security-critical context may result
-│                             │                    in leaking sensitive information, if used to process
-│                             │                   sensitive fields.
-│                             │                   ### Details
-│                             │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
-│                             │                   messages from `mapstructure` as follows:
-│                             │                   https://github.com/openbao/openbao/blob/98c3a59c040efca724353
-│                             │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
-│                             │                   ```go
-│                             │                   			_, _, err := d.getPrimitive(field, schema)
-│                             │                   			if err != nil {
-│                             │                   				return fmt.Errorf("error converting input for field %q:
-│                             │                   %w", field, err)
-│                             │                   			}
-│                             │                   ```
-│                             │                   where this calls `mapstructure.WeakDecode(...)`:
-│                             │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
-│                             │                   func (d *FieldData) getPrimitive(k string, schema
-│                             │                   *FieldSchema) (interface{}, bool, error) {
-│                             │                   	raw, ok := d.Raw[k]
-│                             │                   	if !ok {
-│                             │                   		return nil, false, nil
-│                             │                   	}
-│                             │                   	switch t := schema.Type; t {
-│                             │                   	case TypeBool:
-│                             │                   		var result bool
-│                             │                   		if err := mapstructure.WeakDecode(raw, &result); err != nil
-│                             │                    {
-│                             │                   			return nil, false, err
-│                             │                   		}
-│                             │                   		return result, true, nil
-│                             │                   Notably, `WeakDecode(...)` eventually calls one of the decode
-│                             │                    helpers, which surfaces the original value:
-│                             │                   https://github.com/go-viper/mapstructure/blob/1a66224d5e54d87
-│                             │                   57f63bd66339cf764c3292c21/mapstructure.go#L679-L686
-│                             │                   57f63bd66339cf764c3292c21/mapstructure.go#L726-L730
-│                             │                   57f63bd66339cf764c3292c21/mapstructure.go#L783-L787
-│                             │                   & more.
-│                             │                   ### PoC
-│                             │                   To reproduce with OpenBao:
-│                             │                   $ podman run -p 8300:8300 openbao/openbao:latest server -dev
-│                             │                   -dev-root-token-id=root -dev-listen-address=0.0.0.0:8300
-│                             │                   and in a new tab:
-│                             │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
-│                             │                   enable userpass
-│                             │                   Success! Enabled userpass auth method at: userpass/
-│                             │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
-│                             │                   root" -d '{"password":{"asdf":"my-sensitive-value"}}'
-│                             │                   "http://localhost:8300/v1/auth/userpass/users/adsf"
-│                             │                   {"errors":["error converting input for field \"password\": ''
-│                             │                    expected type 'string', got unconvertible type
-│                             │                   'map[string]interface {}', value:
-│                             │                   'map[asdf:my-sensitive-value]'"]}
-│                             │                   ### Impact
-│                             │                   This is an information disclosure bug with little mitigation.
-│                             │                    See
-│                             │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expos
-│                             │                   e-sensitive-information-in-error-logs-when-processing-malform
-│                             │                   ed-data-with-the-kv-v2-plugin/74717 for a previous version.
-│                             │                   That version was fixed, but this is in the second part of
-│                             │                   that error message (starting at `'' expected a map, got
-│                             │                   'string'` -- when the field type is `string` and a `map` is
-│                             │                   provided, we see the above information leak -- the previous
-│                             │                   example had a `map` type field with a `string` value
-│                             │                   provided).
-│                             │                   This was rated 4.5 Medium by HashiCorp in the past iteration. 
-│                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ─ ghsa: 2 
-│                             ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
-│                             │                         ╰ V3Score : 5.3 
-│                             ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
-│                             │                  ╰ [1]: https://github.com/go-viper/mapstructure/security/advis
-│                             │                         ories/GHSA-fv92-fjc5-jj9h 
-│                             ├ PublishedDate   : 2025-06-27T16:24:59Z 
-│                             ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+│                             ├ DataSource       ╭ ID  : govulndb 
+│                             │                  ├ Name: The Go Vulnerability Database 
+│                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                             ├ Title           : Cancelling a query (e.g. by cancelling the context passed to
+│                             │                   one of th ... 
+│                             ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+│                             │                   one of the query methods) during a call to the Scan method of
+│                             │                    the returned Rows can result in unexpected results if other
+│                             │                   queries are being made in parallel. This can result in a race
+│                             │                    condition that may overwrite the expected results with those
+│                             │                    of another query, causing the call to Scan to return either
+│                             │                   unexpected results from the other query or an error. 
+│                             ├ Severity        : UNKNOWN 
+│                             ├ References       ╭ [0]: https://go.dev/cl/693735 
+│                             │                  ├ [1]: https://go.dev/issue/74831 
+│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML2yM 
+│                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3849 
+│                             ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+│                             ╰ LastModifiedDate: 2025-08-07T16:15:30.357Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -224,103 +256,135 @@
 │                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-54388 
 │                       │     ├ PublishedDate   : 2025-07-30T14:15:28.693Z 
 │                       │     ╰ LastModifiedDate: 2025-07-31T18:42:37.87Z 
-│                       ╰ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
-│                             ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
-│                             ├ PkgName         : github.com/go-viper/mapstructure/v2 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
-│                             │                  ╰ UID : 83ec1cc3df41ba2 
-│                             ├ InstalledVersion: v2.2.1 
-│                             ├ FixedVersion    : 2.3.0 
+│                       ├ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
+│                       │     ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
+│                       │     ├ PkgName         : github.com/go-viper/mapstructure/v2 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
+│                       │     │                  ╰ UID : 83ec1cc3df41ba2 
+│                       │     ├ InstalledVersion: v2.2.1 
+│                       │     ├ FixedVersion    : 2.3.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c32
+│                       │     │                  │         f0d9d8f867b94af94f7 
+│                       │     │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1b
+│                       │     │                            3ab241bb6e9d7032177 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-fv92-fjc5-jj9h 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : mapstructure May Leak Sensitive Information in Logs When
+│                       │     │                   Processing Malformed Data 
+│                       │     ├ Description     : ### Summary
+│                       │     │                   
+│                       │     │                   Use of this library in a security-critical context may result
+│                       │     │                    in leaking sensitive information, if used to process
+│                       │     │                   sensitive fields.
+│                       │     │                   ### Details
+│                       │     │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
+│                       │     │                   messages from `mapstructure` as follows:
+│                       │     │                   https://github.com/openbao/openbao/blob/98c3a59c040efca724353
+│                       │     │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
+│                       │     │                   ```go
+│                       │     │                   			_, _, err := d.getPrimitive(field, schema)
+│                       │     │                   			if err != nil {
+│                       │     │                   				return fmt.Errorf("error converting input for field %q:
+│                       │     │                   %w", field, err)
+│                       │     │                   			}
+│                       │     │                   ```
+│                       │     │                   where this calls `mapstructure.WeakDecode(...)`:
+│                       │     │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
+│                       │     │                   func (d *FieldData) getPrimitive(k string, schema
+│                       │     │                   *FieldSchema) (interface{}, bool, error) {
+│                       │     │                   	raw, ok := d.Raw[k]
+│                       │     │                   	if !ok {
+│                       │     │                   		return nil, false, nil
+│                       │     │                   	}
+│                       │     │                   	switch t := schema.Type; t {
+│                       │     │                   	case TypeBool:
+│                       │     │                   		var result bool
+│                       │     │                   		if err := mapstructure.WeakDecode(raw, &result); err != nil
+│                       │     │                    {
+│                       │     │                   			return nil, false, err
+│                       │     │                   		}
+│                       │     │                   		return result, true, nil
+│                       │     │                   Notably, `WeakDecode(...)` eventually calls one of the decode
+│                       │     │                    helpers, which surfaces the original value:
+│                       │     │                   https://github.com/go-viper/mapstructure/blob/1a66224d5e54d87
+│                       │     │                   57f63bd66339cf764c3292c21/mapstructure.go#L679-L686
+│                       │     │                   57f63bd66339cf764c3292c21/mapstructure.go#L726-L730
+│                       │     │                   57f63bd66339cf764c3292c21/mapstructure.go#L783-L787
+│                       │     │                   & more.
+│                       │     │                   ### PoC
+│                       │     │                   To reproduce with OpenBao:
+│                       │     │                   $ podman run -p 8300:8300 openbao/openbao:latest server -dev
+│                       │     │                   -dev-root-token-id=root -dev-listen-address=0.0.0.0:8300
+│                       │     │                   and in a new tab:
+│                       │     │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
+│                       │     │                   enable userpass
+│                       │     │                   Success! Enabled userpass auth method at: userpass/
+│                       │     │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
+│                       │     │                   root" -d '{"password":{"asdf":"my-sensitive-value"}}'
+│                       │     │                   "http://localhost:8300/v1/auth/userpass/users/adsf"
+│                       │     │                   {"errors":["error converting input for field \"password\": ''
+│                       │     │                    expected type 'string', got unconvertible type
+│                       │     │                   'map[string]interface {}', value:
+│                       │     │                   'map[asdf:my-sensitive-value]'"]}
+│                       │     │                   ### Impact
+│                       │     │                   This is an information disclosure bug with little mitigation.
+│                       │     │                    See
+│                       │     │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expos
+│                       │     │                   e-sensitive-information-in-error-logs-when-processing-malform
+│                       │     │                   ed-data-with-the-kv-v2-plugin/74717 for a previous version.
+│                       │     │                   That version was fixed, but this is in the second part of
+│                       │     │                   that error message (starting at `'' expected a map, got
+│                       │     │                   'string'` -- when the field type is `string` and a `map` is
+│                       │     │                   provided, we see the above information leak -- the previous
+│                       │     │                   example had a `map` type field with a `string` value
+│                       │     │                   provided).
+│                       │     │                   This was rated 4.5 Medium by HashiCorp in the past iteration. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
+│                       │     │                         ╰ V3Score : 5.3 
+│                       │     ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
+│                       │     │                  ╰ [1]: https://github.com/go-viper/mapstructure/security/advis
+│                       │     │                         ories/GHSA-fv92-fjc5-jj9h 
+│                       │     ├ PublishedDate   : 2025-06-27T16:24:59Z 
+│                       │     ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
+│                       ╰ [2] ╭ VulnerabilityID : CVE-2025-47907 
+│                             ├ PkgID           : stdlib@v1.24.5 
+│                             ├ PkgName         : stdlib 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                             │                  ╰ UID : e5d180b56c39c5d0 
+│                             ├ InstalledVersion: v1.24.5 
+│                             ├ FixedVersion    : 1.23.12, 1.24.6 
 │                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c32
 │                             │                  │         f0d9d8f867b94af94f7 
 │                             │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1b
 │                             │                            3ab241bb6e9d7032177 
-│                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://github.com/advisories/GHSA-fv92-fjc5-jj9h 
-│                             ├ DataSource       ╭ ID  : ghsa 
-│                             │                  ├ Name: GitHub Security Advisory Go 
-│                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
-│                             │                          osystem%3Ago 
-│                             ├ Title           : mapstructure May Leak Sensitive Information in Logs When
-│                             │                   Processing Malformed Data 
-│                             ├ Description     : ### Summary
-│                             │                   
-│                             │                   Use of this library in a security-critical context may result
-│                             │                    in leaking sensitive information, if used to process
-│                             │                   sensitive fields.
-│                             │                   ### Details
-│                             │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
-│                             │                   messages from `mapstructure` as follows:
-│                             │                   https://github.com/openbao/openbao/blob/98c3a59c040efca724353
-│                             │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
-│                             │                   ```go
-│                             │                   			_, _, err := d.getPrimitive(field, schema)
-│                             │                   			if err != nil {
-│                             │                   				return fmt.Errorf("error converting input for field %q:
-│                             │                   %w", field, err)
-│                             │                   			}
-│                             │                   ```
-│                             │                   where this calls `mapstructure.WeakDecode(...)`:
-│                             │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
-│                             │                   func (d *FieldData) getPrimitive(k string, schema
-│                             │                   *FieldSchema) (interface{}, bool, error) {
-│                             │                   	raw, ok := d.Raw[k]
-│                             │                   	if !ok {
-│                             │                   		return nil, false, nil
-│                             │                   	}
-│                             │                   	switch t := schema.Type; t {
-│                             │                   	case TypeBool:
-│                             │                   		var result bool
-│                             │                   		if err := mapstructure.WeakDecode(raw, &result); err != nil
-│                             │                    {
-│                             │                   			return nil, false, err
-│                             │                   		}
-│                             │                   		return result, true, nil
-│                             │                   Notably, `WeakDecode(...)` eventually calls one of the decode
-│                             │                    helpers, which surfaces the original value:
-│                             │                   https://github.com/go-viper/mapstructure/blob/1a66224d5e54d87
-│                             │                   57f63bd66339cf764c3292c21/mapstructure.go#L679-L686
-│                             │                   57f63bd66339cf764c3292c21/mapstructure.go#L726-L730
-│                             │                   57f63bd66339cf764c3292c21/mapstructure.go#L783-L787
-│                             │                   & more.
-│                             │                   ### PoC
-│                             │                   To reproduce with OpenBao:
-│                             │                   $ podman run -p 8300:8300 openbao/openbao:latest server -dev
-│                             │                   -dev-root-token-id=root -dev-listen-address=0.0.0.0:8300
-│                             │                   and in a new tab:
-│                             │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
-│                             │                   enable userpass
-│                             │                   Success! Enabled userpass auth method at: userpass/
-│                             │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
-│                             │                   root" -d '{"password":{"asdf":"my-sensitive-value"}}'
-│                             │                   "http://localhost:8300/v1/auth/userpass/users/adsf"
-│                             │                   {"errors":["error converting input for field \"password\": ''
-│                             │                    expected type 'string', got unconvertible type
-│                             │                   'map[string]interface {}', value:
-│                             │                   'map[asdf:my-sensitive-value]'"]}
-│                             │                   ### Impact
-│                             │                   This is an information disclosure bug with little mitigation.
-│                             │                    See
-│                             │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expos
-│                             │                   e-sensitive-information-in-error-logs-when-processing-malform
-│                             │                   ed-data-with-the-kv-v2-plugin/74717 for a previous version.
-│                             │                   That version was fixed, but this is in the second part of
-│                             │                   that error message (starting at `'' expected a map, got
-│                             │                   'string'` -- when the field type is `string` and a `map` is
-│                             │                   provided, we see the above information leak -- the previous
-│                             │                   example had a `map` type field with a `string` value
-│                             │                   provided).
-│                             │                   This was rated 4.5 Medium by HashiCorp in the past iteration. 
-│                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ─ ghsa: 2 
-│                             ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
-│                             │                         ╰ V3Score : 5.3 
-│                             ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
-│                             │                  ╰ [1]: https://github.com/go-viper/mapstructure/security/advis
-│                             │                         ories/GHSA-fv92-fjc5-jj9h 
-│                             ├ PublishedDate   : 2025-06-27T16:24:59Z 
-│                             ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+│                             ├ DataSource       ╭ ID  : govulndb 
+│                             │                  ├ Name: The Go Vulnerability Database 
+│                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                             ├ Title           : Cancelling a query (e.g. by cancelling the context passed to
+│                             │                   one of th ... 
+│                             ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+│                             │                   one of the query methods) during a call to the Scan method of
+│                             │                    the returned Rows can result in unexpected results if other
+│                             │                   queries are being made in parallel. This can result in a race
+│                             │                    condition that may overwrite the expected results with those
+│                             │                    of another query, causing the call to Scan to return either
+│                             │                   unexpected results from the other query or an error. 
+│                             ├ Severity        : UNKNOWN 
+│                             ├ References       ╭ [0]: https://go.dev/cl/693735 
+│                             │                  ├ [1]: https://go.dev/issue/74831 
+│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML2yM 
+│                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3849 
+│                             ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+│                             ╰ LastModifiedDate: 2025-08-07T16:15:30.357Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -1944,55 +2008,89 @@
 │                       │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-3415 
 │                       │      ├ PublishedDate   : 2025-07-17T11:15:22.24Z 
 │                       │      ╰ LastModifiedDate: 2025-07-17T21:15:50.197Z 
-│                       ╰ [24] ╭ VulnerabilityID : CVE-2024-10452 
-│                              ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
-│                              │                   6+dirty 
-│                              ├ PkgName         : github.com/grafana/grafana 
-│                              ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/grafana/grafana@v0.0.0-20250718
-│                              │                  │       201843-ccd7b6ce7ea6%2Bdirty 
-│                              │                  ╰ UID : 200a0142000fee77 
-│                              ├ InstalledVersion: v0.0.0-20250718201843-ccd7b6ce7ea6+dirty 
-│                              ├ Status          : affected 
+│                       ├ [24] ╭ VulnerabilityID : CVE-2024-10452 
+│                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
+│                       │      │                   6+dirty 
+│                       │      ├ PkgName         : github.com/grafana/grafana 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/grafana/grafana@v0.0.0-20250718
+│                       │      │                  │       201843-ccd7b6ce7ea6%2Bdirty 
+│                       │      │                  ╰ UID : 200a0142000fee77 
+│                       │      ├ InstalledVersion: v0.0.0-20250718201843-ccd7b6ce7ea6+dirty 
+│                       │      ├ Status          : affected 
+│                       │      ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c3
+│                       │      │                  │         2f0d9d8f867b94af94f7 
+│                       │      │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1
+│                       │      │                            b3ab241bb6e9d7032177 
+│                       │      ├ SeveritySource  : ghsa 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-10452 
+│                       │      ├ DataSource       ╭ ID  : ghsa 
+│                       │      │                  ├ Name: GitHub Security Advisory Go 
+│                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                       │      │                          cosystem%3Ago 
+│                       │      ├ Title           : grafana: Org admin can delete pending invites in different org 
+│                       │      ├ Description     : Organization admins can delete pending invites created in an
+│                       │      │                    organization they are not part of. 
+│                       │      ├ Severity        : LOW 
+│                       │      ├ CweIDs           ─ [0]: CWE-639 
+│                       │      ├ VendorSeverity   ╭ bitnami: 1 
+│                       │      │                  ├ ghsa   : 1 
+│                       │      │                  ├ nvd    : 1 
+│                       │      │                  ╰ redhat : 1 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           L/A:N 
+│                       │      │                  │         ╰ V3Score : 2.7 
+│                       │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           L/A:N 
+│                       │      │                  │         ╰ V3Score : 2.2 
+│                       │      │                  ├ nvd     ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           L/A:N 
+│                       │      │                  │         ╰ V3Score : 2.7 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
+│                       │      │                            │           L/A:N 
+│                       │      │                            ╰ V3Score : 2.2 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2024-10452 
+│                       │      │                  ├ [1]: https://github.com/advisories/GHSA-66c4-2g2v-54qw 
+│                       │      │                  ├ [2]: https://github.com/grafana/grafana 
+│                       │      │                  ├ [3]: https://grafana.com/security/security-advisories/cve-2
+│                       │      │                  │      024-10452 
+│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2024-10452 
+│                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
+│                       │      ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
+│                       │      ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
+│                       ╰ [25] ╭ VulnerabilityID : CVE-2025-47907 
+│                              ├ PkgID           : stdlib@v1.24.4 
+│                              ├ PkgName         : stdlib 
+│                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                              │                  ╰ UID : 62ef03d8a7514265 
+│                              ├ InstalledVersion: v1.24.4 
+│                              ├ FixedVersion    : 1.23.12, 1.24.6 
+│                              ├ Status          : fixed 
 │                              ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c3
 │                              │                  │         2f0d9d8f867b94af94f7 
 │                              │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1
 │                              │                            b3ab241bb6e9d7032177 
-│                              ├ SeveritySource  : ghsa 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-10452 
-│                              ├ DataSource       ╭ ID  : ghsa 
-│                              │                  ├ Name: GitHub Security Advisory Go 
-│                              │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
-│                              │                          cosystem%3Ago 
-│                              ├ Title           : grafana: Org admin can delete pending invites in different org 
-│                              ├ Description     : Organization admins can delete pending invites created in an
-│                              │                    organization they are not part of. 
-│                              ├ Severity        : LOW 
-│                              ├ CweIDs           ─ [0]: CWE-639 
-│                              ├ VendorSeverity   ╭ bitnami: 1 
-│                              │                  ├ ghsa   : 1 
-│                              │                  ├ nvd    : 1 
-│                              │                  ╰ redhat : 1 
-│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
-│                              │                  │         │           L/A:N 
-│                              │                  │         ╰ V3Score : 2.7 
-│                              │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
-│                              │                  │         │           L/A:N 
-│                              │                  │         ╰ V3Score : 2.2 
-│                              │                  ├ nvd     ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
-│                              │                  │         │           L/A:N 
-│                              │                  │         ╰ V3Score : 2.7 
-│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
-│                              │                            │           L/A:N 
-│                              │                            ╰ V3Score : 2.2 
-│                              ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2024-10452 
-│                              │                  ├ [1]: https://github.com/advisories/GHSA-66c4-2g2v-54qw 
-│                              │                  ├ [2]: https://github.com/grafana/grafana 
-│                              │                  ├ [3]: https://grafana.com/security/security-advisories/cve-2
-│                              │                  │      024-10452 
-│                              │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2024-10452 
-│                              │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
-│                              ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
-│                              ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+│                              ├ DataSource       ╭ ID  : govulndb 
+│                              │                  ├ Name: The Go Vulnerability Database 
+│                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                              ├ Title           : Cancelling a query (e.g. by cancelling the context passed to
+│                              │                    one of th ... 
+│                              ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+│                              │                    one of the query methods) during a call to the Scan method
+│                              │                   of the returned Rows can result in unexpected results if
+│                              │                   other queries are being made in parallel. This can result in
+│                              │                    a race condition that may overwrite the expected results
+│                              │                   with those of another query, causing the call to Scan to
+│                              │                   return either unexpected results from the other query or an
+│                              │                   error. 
+│                              ├ Severity        : UNKNOWN 
+│                              ├ References       ╭ [0]: https://go.dev/cl/693735 
+│                              │                  ├ [1]: https://go.dev/issue/74831 
+│                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML
+│                              │                  │      2yM 
+│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3849 
+│                              ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+│                              ╰ LastModifiedDate: 2025-08-07T16:15:30.357Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -3616,55 +3714,89 @@
 │                       │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-3415 
 │                       │      ├ PublishedDate   : 2025-07-17T11:15:22.24Z 
 │                       │      ╰ LastModifiedDate: 2025-07-17T21:15:50.197Z 
-│                       ╰ [24] ╭ VulnerabilityID : CVE-2024-10452 
-│                              ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
-│                              │                   6+dirty 
-│                              ├ PkgName         : github.com/grafana/grafana 
-│                              ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/grafana/grafana@v0.0.0-20250718
-│                              │                  │       201843-ccd7b6ce7ea6%2Bdirty 
-│                              │                  ╰ UID : d6bcccd7fecead8 
-│                              ├ InstalledVersion: v0.0.0-20250718201843-ccd7b6ce7ea6+dirty 
-│                              ├ Status          : affected 
+│                       ├ [24] ╭ VulnerabilityID : CVE-2024-10452 
+│                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
+│                       │      │                   6+dirty 
+│                       │      ├ PkgName         : github.com/grafana/grafana 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/grafana/grafana@v0.0.0-20250718
+│                       │      │                  │       201843-ccd7b6ce7ea6%2Bdirty 
+│                       │      │                  ╰ UID : d6bcccd7fecead8 
+│                       │      ├ InstalledVersion: v0.0.0-20250718201843-ccd7b6ce7ea6+dirty 
+│                       │      ├ Status          : affected 
+│                       │      ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c3
+│                       │      │                  │         2f0d9d8f867b94af94f7 
+│                       │      │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1
+│                       │      │                            b3ab241bb6e9d7032177 
+│                       │      ├ SeveritySource  : ghsa 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-10452 
+│                       │      ├ DataSource       ╭ ID  : ghsa 
+│                       │      │                  ├ Name: GitHub Security Advisory Go 
+│                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                       │      │                          cosystem%3Ago 
+│                       │      ├ Title           : grafana: Org admin can delete pending invites in different org 
+│                       │      ├ Description     : Organization admins can delete pending invites created in an
+│                       │      │                    organization they are not part of. 
+│                       │      ├ Severity        : LOW 
+│                       │      ├ CweIDs           ─ [0]: CWE-639 
+│                       │      ├ VendorSeverity   ╭ bitnami: 1 
+│                       │      │                  ├ ghsa   : 1 
+│                       │      │                  ├ nvd    : 1 
+│                       │      │                  ╰ redhat : 1 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           L/A:N 
+│                       │      │                  │         ╰ V3Score : 2.7 
+│                       │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           L/A:N 
+│                       │      │                  │         ╰ V3Score : 2.2 
+│                       │      │                  ├ nvd     ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           L/A:N 
+│                       │      │                  │         ╰ V3Score : 2.7 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
+│                       │      │                            │           L/A:N 
+│                       │      │                            ╰ V3Score : 2.2 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2024-10452 
+│                       │      │                  ├ [1]: https://github.com/advisories/GHSA-66c4-2g2v-54qw 
+│                       │      │                  ├ [2]: https://github.com/grafana/grafana 
+│                       │      │                  ├ [3]: https://grafana.com/security/security-advisories/cve-2
+│                       │      │                  │      024-10452 
+│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2024-10452 
+│                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
+│                       │      ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
+│                       │      ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
+│                       ╰ [25] ╭ VulnerabilityID : CVE-2025-47907 
+│                              ├ PkgID           : stdlib@v1.24.4 
+│                              ├ PkgName         : stdlib 
+│                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                              │                  ╰ UID : f1dc505fdca49da0 
+│                              ├ InstalledVersion: v1.24.4 
+│                              ├ FixedVersion    : 1.23.12, 1.24.6 
+│                              ├ Status          : fixed 
 │                              ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c3
 │                              │                  │         2f0d9d8f867b94af94f7 
 │                              │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1
 │                              │                            b3ab241bb6e9d7032177 
-│                              ├ SeveritySource  : ghsa 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-10452 
-│                              ├ DataSource       ╭ ID  : ghsa 
-│                              │                  ├ Name: GitHub Security Advisory Go 
-│                              │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
-│                              │                          cosystem%3Ago 
-│                              ├ Title           : grafana: Org admin can delete pending invites in different org 
-│                              ├ Description     : Organization admins can delete pending invites created in an
-│                              │                    organization they are not part of. 
-│                              ├ Severity        : LOW 
-│                              ├ CweIDs           ─ [0]: CWE-639 
-│                              ├ VendorSeverity   ╭ bitnami: 1 
-│                              │                  ├ ghsa   : 1 
-│                              │                  ├ nvd    : 1 
-│                              │                  ╰ redhat : 1 
-│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
-│                              │                  │         │           L/A:N 
-│                              │                  │         ╰ V3Score : 2.7 
-│                              │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
-│                              │                  │         │           L/A:N 
-│                              │                  │         ╰ V3Score : 2.2 
-│                              │                  ├ nvd     ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
-│                              │                  │         │           L/A:N 
-│                              │                  │         ╰ V3Score : 2.7 
-│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
-│                              │                            │           L/A:N 
-│                              │                            ╰ V3Score : 2.2 
-│                              ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2024-10452 
-│                              │                  ├ [1]: https://github.com/advisories/GHSA-66c4-2g2v-54qw 
-│                              │                  ├ [2]: https://github.com/grafana/grafana 
-│                              │                  ├ [3]: https://grafana.com/security/security-advisories/cve-2
-│                              │                  │      024-10452 
-│                              │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2024-10452 
-│                              │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
-│                              ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
-│                              ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+│                              ├ DataSource       ╭ ID  : govulndb 
+│                              │                  ├ Name: The Go Vulnerability Database 
+│                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                              ├ Title           : Cancelling a query (e.g. by cancelling the context passed to
+│                              │                    one of th ... 
+│                              ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+│                              │                    one of the query methods) during a call to the Scan method
+│                              │                   of the returned Rows can result in unexpected results if
+│                              │                   other queries are being made in parallel. This can result in
+│                              │                    a race condition that may overwrite the expected results
+│                              │                   with those of another query, causing the call to Scan to
+│                              │                   return either unexpected results from the other query or an
+│                              │                   error. 
+│                              ├ Severity        : UNKNOWN 
+│                              ├ References       ╭ [0]: https://go.dev/cl/693735 
+│                              │                  ├ [1]: https://go.dev/issue/74831 
+│                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML
+│                              │                  │      2yM 
+│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3849 
+│                              ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+│                              ╰ LastModifiedDate: 2025-08-07T16:15:30.357Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -5288,53 +5420,87 @@
                         │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-3415 
                         │      ├ PublishedDate   : 2025-07-17T11:15:22.24Z 
                         │      ╰ LastModifiedDate: 2025-07-17T21:15:50.197Z 
-                        ╰ [24] ╭ VulnerabilityID : CVE-2024-10452 
-                               ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
-                               │                   6+dirty 
-                               ├ PkgName         : github.com/grafana/grafana 
-                               ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/grafana/grafana@v0.0.0-20250718
-                               │                  │       201843-ccd7b6ce7ea6%2Bdirty 
-                               │                  ╰ UID : 8eebf1780b834016 
-                               ├ InstalledVersion: v0.0.0-20250718201843-ccd7b6ce7ea6+dirty 
-                               ├ Status          : affected 
+                        ├ [24] ╭ VulnerabilityID : CVE-2024-10452 
+                        │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
+                        │      │                   6+dirty 
+                        │      ├ PkgName         : github.com/grafana/grafana 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/grafana/grafana@v0.0.0-20250718
+                        │      │                  │       201843-ccd7b6ce7ea6%2Bdirty 
+                        │      │                  ╰ UID : 8eebf1780b834016 
+                        │      ├ InstalledVersion: v0.0.0-20250718201843-ccd7b6ce7ea6+dirty 
+                        │      ├ Status          : affected 
+                        │      ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c3
+                        │      │                  │         2f0d9d8f867b94af94f7 
+                        │      │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1
+                        │      │                            b3ab241bb6e9d7032177 
+                        │      ├ SeveritySource  : ghsa 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-10452 
+                        │      ├ DataSource       ╭ ID  : ghsa 
+                        │      │                  ├ Name: GitHub Security Advisory Go 
+                        │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+                        │      │                          cosystem%3Ago 
+                        │      ├ Title           : grafana: Org admin can delete pending invites in different org 
+                        │      ├ Description     : Organization admins can delete pending invites created in an
+                        │      │                    organization they are not part of. 
+                        │      ├ Severity        : LOW 
+                        │      ├ CweIDs           ─ [0]: CWE-639 
+                        │      ├ VendorSeverity   ╭ bitnami: 1 
+                        │      │                  ├ ghsa   : 1 
+                        │      │                  ├ nvd    : 1 
+                        │      │                  ╰ redhat : 1 
+                        │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
+                        │      │                  │         │           L/A:N 
+                        │      │                  │         ╰ V3Score : 2.7 
+                        │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
+                        │      │                  │         │           L/A:N 
+                        │      │                  │         ╰ V3Score : 2.2 
+                        │      │                  ├ nvd     ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
+                        │      │                  │         │           L/A:N 
+                        │      │                  │         ╰ V3Score : 2.7 
+                        │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
+                        │      │                            │           L/A:N 
+                        │      │                            ╰ V3Score : 2.2 
+                        │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2024-10452 
+                        │      │                  ├ [1]: https://github.com/advisories/GHSA-66c4-2g2v-54qw 
+                        │      │                  ├ [2]: https://github.com/grafana/grafana 
+                        │      │                  ├ [3]: https://grafana.com/security/security-advisories/cve-2
+                        │      │                  │      024-10452 
+                        │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2024-10452 
+                        │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
+                        │      ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
+                        │      ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
+                        ╰ [25] ╭ VulnerabilityID : CVE-2025-47907 
+                               ├ PkgID           : stdlib@v1.24.4 
+                               ├ PkgName         : stdlib 
+                               ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+                               │                  ╰ UID : f23281c51e136f56 
+                               ├ InstalledVersion: v1.24.4 
+                               ├ FixedVersion    : 1.23.12, 1.24.6 
+                               ├ Status          : fixed 
                                ├ Layer            ╭ Digest: sha256:510fa2d750f44db284b3fd891ed9f5274d36df9ed6c3
                                │                  │         2f0d9d8f867b94af94f7 
                                │                  ╰ DiffID: sha256:0af7cca851802199087aaf6b4e11c5f1afe6d8c12cd1
                                │                            b3ab241bb6e9d7032177 
-                               ├ SeveritySource  : ghsa 
-                               ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2024-10452 
-                               ├ DataSource       ╭ ID  : ghsa 
-                               │                  ├ Name: GitHub Security Advisory Go 
-                               │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
-                               │                          cosystem%3Ago 
-                               ├ Title           : grafana: Org admin can delete pending invites in different org 
-                               ├ Description     : Organization admins can delete pending invites created in an
-                               │                    organization they are not part of. 
-                               ├ Severity        : LOW 
-                               ├ CweIDs           ─ [0]: CWE-639 
-                               ├ VendorSeverity   ╭ bitnami: 1 
-                               │                  ├ ghsa   : 1 
-                               │                  ├ nvd    : 1 
-                               │                  ╰ redhat : 1 
-                               ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
-                               │                  │         │           L/A:N 
-                               │                  │         ╰ V3Score : 2.7 
-                               │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
-                               │                  │         │           L/A:N 
-                               │                  │         ╰ V3Score : 2.2 
-                               │                  ├ nvd     ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:
-                               │                  │         │           L/A:N 
-                               │                  │         ╰ V3Score : 2.7 
-                               │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:
-                               │                            │           L/A:N 
-                               │                            ╰ V3Score : 2.2 
-                               ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2024-10452 
-                               │                  ├ [1]: https://github.com/advisories/GHSA-66c4-2g2v-54qw 
-                               │                  ├ [2]: https://github.com/grafana/grafana 
-                               │                  ├ [3]: https://grafana.com/security/security-advisories/cve-2
-                               │                  │      024-10452 
-                               │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2024-10452 
-                               │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
-                               ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
-                               ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
+                               ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+                               ├ DataSource       ╭ ID  : govulndb 
+                               │                  ├ Name: The Go Vulnerability Database 
+                               │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                               ├ Title           : Cancelling a query (e.g. by cancelling the context passed to
+                               │                    one of th ... 
+                               ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+                               │                    one of the query methods) during a call to the Scan method
+                               │                   of the returned Rows can result in unexpected results if
+                               │                   other queries are being made in parallel. This can result in
+                               │                    a race condition that may overwrite the expected results
+                               │                   with those of another query, causing the call to Scan to
+                               │                   return either unexpected results from the other query or an
+                               │                   error. 
+                               ├ Severity        : UNKNOWN 
+                               ├ References       ╭ [0]: https://go.dev/cl/693735 
+                               │                  ├ [1]: https://go.dev/issue/74831 
+                               │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML
+                               │                  │      2yM 
+                               │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3849 
+                               ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+                               ╰ LastModifiedDate: 2025-08-07T16:15:30.357Z 
 ````
