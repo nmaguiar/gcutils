@@ -69,7 +69,111 @@
 │                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-54388 
 │                       │     ├ PublishedDate   : 2025-07-30T14:15:28.693Z 
 │                       │     ╰ LastModifiedDate: 2025-07-31T18:42:37.87Z 
-│                       ├ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
+│                       ├ [1] ╭ VulnerabilityID : GHSA-2464-8j7c-4cjm 
+│                       │     ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
+│                       │     ├ PkgName         : github.com/go-viper/mapstructure/v2 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
+│                       │     │                  ╰ UID : e2c1d5fc4a675546 
+│                       │     ├ InstalledVersion: v2.2.1 
+│                       │     ├ FixedVersion    : 2.4.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:8e0ee2ca54bf1a097ba3463e4be008b20647a6650e83e
+│                       │     │                  │         e57e95386cb56a08736 
+│                       │     │                  ╰ DiffID: sha256:a1685a8bf881e52f263085cb2b4a6c50a1cf8204b0077
+│                       │     │                            a6dc07ad5fbd28aada7 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-2464-8j7c-4cjm 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
+│                       │     │                   Logs When Processing Malformed Data 
+│                       │     ├ Description     : ### Summary
+│                       │     │                   
+│                       │     │                   Use of this library in a security-critical context may result
+│                       │     │                    in leaking sensitive information, if used to process
+│                       │     │                   sensitive fields.
+│                       │     │                   ### Details
+│                       │     │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
+│                       │     │                   messages from `mapstructure` as follows:
+│                       │     │                   https://github.com/openbao/openbao/blob/98c3a59c040efca724353
+│                       │     │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
+│                       │     │                   ```go
+│                       │     │                   			_, _, err := d.getPrimitive(field, schema)
+│                       │     │                   			if err != nil {
+│                       │     │                   				return fmt.Errorf("error converting input for field %q:
+│                       │     │                   %w", field, err)
+│                       │     │                   			}
+│                       │     │                   ```
+│                       │     │                   where this calls `mapstructure.WeakDecode(...)`:
+│                       │     │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
+│                       │     │                   func (d *FieldData) getPrimitive(k string, schema
+│                       │     │                   *FieldSchema) (interface{}, bool, error) {
+│                       │     │                   	raw, ok := d.Raw[k]
+│                       │     │                   	if !ok {
+│                       │     │                   		return nil, false, nil
+│                       │     │                   	}
+│                       │     │                   	switch t := schema.Type; t {
+│                       │     │                   	case TypeBool:
+│                       │     │                   		var result bool
+│                       │     │                   		if err := mapstructure.WeakDecode(raw, &result); err != nil
+│                       │     │                    {
+│                       │     │                   			return nil, false, err
+│                       │     │                   		}
+│                       │     │                   		return result, true, nil
+│                       │     │                   Notably, `WeakDecode(...)` eventually calls one of the decode
+│                       │     │                    helpers, which surfaces the original value via `strconv`
+│                       │     │                   helpers:
+│                       │     │                   https://github.com/go-viper/mapstructure/blob/8c61ec1924fcfa5
+│                       │     │                   22f9fc6b4618c672db61d1a38/mapstructure.go#L720-L727
+│                       │     │                   22f9fc6b4618c672db61d1a38/mapstructure.go#L791-L798
+│                       │     │                   22f9fc6b4618c672db61d1a38/decode_hooks.go#L180
+│                       │     │                   & more. These are different code paths than are fixed in the
+│                       │     │                   previous iteration at
+│                       │     │                   https://github.com/go-viper/mapstructure/security/advisories/
+│                       │     │                   GHSA-fv92-fjc5-jj9h.
+│                       │     │                   ### PoC
+│                       │     │                   To reproduce with OpenBao:
+│                       │     │                   $ podman run --pull=always -p 8300:8300
+│                       │     │                   openbao/openbao:latest server -dev -dev-root-token-id=root
+│                       │     │                   -dev-listen-address=0.0.0.0:8300
+│                       │     │                   and in a new tab:
+│                       │     │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
+│                       │     │                   enable userpass
+│                       │     │                   Success! Enabled userpass auth method at: userpass/
+│                       │     │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
+│                       │     │                   root" -d '{"ttl":"asdf"}'
+│                       │     │                   "http://localhost:8200/v1/auth/userpass/users/asdf"
+│                       │     │                   --> server logs:
+│                       │     │                   2025-06-25T21:32:25.101-0500 [ERROR] core: failed to run
+│                       │     │                   existence check: error="error converting input for field
+│                       │     │                   \"ttl\": time: invalid duration \"asdf\""
+│                       │     │                   ### Impact
+│                       │     │                   This is an information disclosure bug with little mitigation.
+│                       │     │                    See
+│                       │     │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expos
+│                       │     │                   e-sensitive-information-in-error-logs-when-processing-malform
+│                       │     │                   ed-data-with-the-kv-v2-plugin/74717 for a previous version.
+│                       │     │                   That version was fixed, but this is in the second part of
+│                       │     │                   that error message (starting at `'' expected a map, got
+│                       │     │                   'string'` -- when the field type is `string` and a `map` is
+│                       │     │                   provided, we see the above information leak -- the previous
+│                       │     │                   example had a `map` type field with a `string` value
+│                       │     │                   provided).
+│                       │     │                   This was rated 4.5 Medium by HashiCorp in the past iteration. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
+│                       │     │                         ╰ V3Score : 5.3 
+│                       │     ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
+│                       │     │                  ├ [1]: https://github.com/go-viper/mapstructure/commit/742921c
+│                       │     │                  │      9ba2854d27baa64272487fc5075d2c39c 
+│                       │     │                  ╰ [2]: https://github.com/go-viper/mapstructure/security/advis
+│                       │     │                         ories/GHSA-2464-8j7c-4cjm 
+│                       │     ├ PublishedDate   : 2025-08-21T14:37:19Z 
+│                       │     ╰ LastModifiedDate: 2025-08-21T14:37:19Z 
+│                       ├ [2] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                       │     ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                       │     ├ PkgName         : github.com/go-viper/mapstructure/v2 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
@@ -166,7 +270,7 @@
 │                       │     │                         ories/GHSA-fv92-fjc5-jj9h 
 │                       │     ├ PublishedDate   : 2025-06-27T16:24:59Z 
 │                       │     ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
-│                       ╰ [2] ╭ VulnerabilityID : CVE-2025-47907 
+│                       ╰ [3] ╭ VulnerabilityID : CVE-2025-47907 
 │                             ├ PkgID           : stdlib@v1.24.5 
 │                             ├ PkgName         : stdlib 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
@@ -266,7 +370,111 @@
 │                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-54388 
 │                       │     ├ PublishedDate   : 2025-07-30T14:15:28.693Z 
 │                       │     ╰ LastModifiedDate: 2025-07-31T18:42:37.87Z 
-│                       ├ [1] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
+│                       ├ [1] ╭ VulnerabilityID : GHSA-2464-8j7c-4cjm 
+│                       │     ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
+│                       │     ├ PkgName         : github.com/go-viper/mapstructure/v2 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
+│                       │     │                  ╰ UID : 83ec1cc3df41ba2 
+│                       │     ├ InstalledVersion: v2.2.1 
+│                       │     ├ FixedVersion    : 2.4.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:8e0ee2ca54bf1a097ba3463e4be008b20647a6650e83e
+│                       │     │                  │         e57e95386cb56a08736 
+│                       │     │                  ╰ DiffID: sha256:a1685a8bf881e52f263085cb2b4a6c50a1cf8204b0077
+│                       │     │                            a6dc07ad5fbd28aada7 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-2464-8j7c-4cjm 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
+│                       │     │                   Logs When Processing Malformed Data 
+│                       │     ├ Description     : ### Summary
+│                       │     │                   
+│                       │     │                   Use of this library in a security-critical context may result
+│                       │     │                    in leaking sensitive information, if used to process
+│                       │     │                   sensitive fields.
+│                       │     │                   ### Details
+│                       │     │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
+│                       │     │                   messages from `mapstructure` as follows:
+│                       │     │                   https://github.com/openbao/openbao/blob/98c3a59c040efca724353
+│                       │     │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
+│                       │     │                   ```go
+│                       │     │                   			_, _, err := d.getPrimitive(field, schema)
+│                       │     │                   			if err != nil {
+│                       │     │                   				return fmt.Errorf("error converting input for field %q:
+│                       │     │                   %w", field, err)
+│                       │     │                   			}
+│                       │     │                   ```
+│                       │     │                   where this calls `mapstructure.WeakDecode(...)`:
+│                       │     │                   ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
+│                       │     │                   func (d *FieldData) getPrimitive(k string, schema
+│                       │     │                   *FieldSchema) (interface{}, bool, error) {
+│                       │     │                   	raw, ok := d.Raw[k]
+│                       │     │                   	if !ok {
+│                       │     │                   		return nil, false, nil
+│                       │     │                   	}
+│                       │     │                   	switch t := schema.Type; t {
+│                       │     │                   	case TypeBool:
+│                       │     │                   		var result bool
+│                       │     │                   		if err := mapstructure.WeakDecode(raw, &result); err != nil
+│                       │     │                    {
+│                       │     │                   			return nil, false, err
+│                       │     │                   		}
+│                       │     │                   		return result, true, nil
+│                       │     │                   Notably, `WeakDecode(...)` eventually calls one of the decode
+│                       │     │                    helpers, which surfaces the original value via `strconv`
+│                       │     │                   helpers:
+│                       │     │                   https://github.com/go-viper/mapstructure/blob/8c61ec1924fcfa5
+│                       │     │                   22f9fc6b4618c672db61d1a38/mapstructure.go#L720-L727
+│                       │     │                   22f9fc6b4618c672db61d1a38/mapstructure.go#L791-L798
+│                       │     │                   22f9fc6b4618c672db61d1a38/decode_hooks.go#L180
+│                       │     │                   & more. These are different code paths than are fixed in the
+│                       │     │                   previous iteration at
+│                       │     │                   https://github.com/go-viper/mapstructure/security/advisories/
+│                       │     │                   GHSA-fv92-fjc5-jj9h.
+│                       │     │                   ### PoC
+│                       │     │                   To reproduce with OpenBao:
+│                       │     │                   $ podman run --pull=always -p 8300:8300
+│                       │     │                   openbao/openbao:latest server -dev -dev-root-token-id=root
+│                       │     │                   -dev-listen-address=0.0.0.0:8300
+│                       │     │                   and in a new tab:
+│                       │     │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
+│                       │     │                   enable userpass
+│                       │     │                   Success! Enabled userpass auth method at: userpass/
+│                       │     │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
+│                       │     │                   root" -d '{"ttl":"asdf"}'
+│                       │     │                   "http://localhost:8200/v1/auth/userpass/users/asdf"
+│                       │     │                   --> server logs:
+│                       │     │                   2025-06-25T21:32:25.101-0500 [ERROR] core: failed to run
+│                       │     │                   existence check: error="error converting input for field
+│                       │     │                   \"ttl\": time: invalid duration \"asdf\""
+│                       │     │                   ### Impact
+│                       │     │                   This is an information disclosure bug with little mitigation.
+│                       │     │                    See
+│                       │     │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expos
+│                       │     │                   e-sensitive-information-in-error-logs-when-processing-malform
+│                       │     │                   ed-data-with-the-kv-v2-plugin/74717 for a previous version.
+│                       │     │                   That version was fixed, but this is in the second part of
+│                       │     │                   that error message (starting at `'' expected a map, got
+│                       │     │                   'string'` -- when the field type is `string` and a `map` is
+│                       │     │                   provided, we see the above information leak -- the previous
+│                       │     │                   example had a `map` type field with a `string` value
+│                       │     │                   provided).
+│                       │     │                   This was rated 4.5 Medium by HashiCorp in the past iteration. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ ghsa: 2 
+│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
+│                       │     │                         ╰ V3Score : 5.3 
+│                       │     ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
+│                       │     │                  ├ [1]: https://github.com/go-viper/mapstructure/commit/742921c
+│                       │     │                  │      9ba2854d27baa64272487fc5075d2c39c 
+│                       │     │                  ╰ [2]: https://github.com/go-viper/mapstructure/security/advis
+│                       │     │                         ories/GHSA-2464-8j7c-4cjm 
+│                       │     ├ PublishedDate   : 2025-08-21T14:37:19Z 
+│                       │     ╰ LastModifiedDate: 2025-08-21T14:37:19Z 
+│                       ├ [2] ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                       │     ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                       │     ├ PkgName         : github.com/go-viper/mapstructure/v2 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
@@ -363,7 +571,7 @@
 │                       │     │                         ories/GHSA-fv92-fjc5-jj9h 
 │                       │     ├ PublishedDate   : 2025-06-27T16:24:59Z 
 │                       │     ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
-│                       ╰ [2] ╭ VulnerabilityID : CVE-2025-47907 
+│                       ╰ [3] ╭ VulnerabilityID : CVE-2025-47907 
 │                             ├ PkgID           : stdlib@v1.24.5 
 │                             ├ PkgName         : stdlib 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
@@ -408,7 +616,112 @@
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ╰ Vulnerabilities ╭ [0]  ╭ VulnerabilityID : CVE-2018-15727 
+│     ╰ Vulnerabilities ╭ [0]  ╭ VulnerabilityID : GHSA-2464-8j7c-4cjm 
+│                       │      ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.3.0 
+│                       │      ├ PkgName         : github.com/go-viper/mapstructure/v2 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.3.0 
+│                       │      │                  ╰ UID : 4febd0a310b879df 
+│                       │      ├ InstalledVersion: v2.3.0 
+│                       │      ├ FixedVersion    : 2.4.0 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:8e0ee2ca54bf1a097ba3463e4be008b20647a6650e83
+│                       │      │                  │         ee57e95386cb56a08736 
+│                       │      │                  ╰ DiffID: sha256:a1685a8bf881e52f263085cb2b4a6c50a1cf8204b007
+│                       │      │                            7a6dc07ad5fbd28aada7 
+│                       │      ├ SeveritySource  : ghsa 
+│                       │      ├ PrimaryURL      : https://github.com/advisories/GHSA-2464-8j7c-4cjm 
+│                       │      ├ DataSource       ╭ ID  : ghsa 
+│                       │      │                  ├ Name: GitHub Security Advisory Go 
+│                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                       │      │                          cosystem%3Ago 
+│                       │      ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
+│                       │      │                   Logs When Processing Malformed Data 
+│                       │      ├ Description     : ### Summary
+│                       │      │                   
+│                       │      │                   Use of this library in a security-critical context may
+│                       │      │                   result in leaking sensitive information, if used to process
+│                       │      │                   sensitive fields.
+│                       │      │                   ### Details
+│                       │      │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
+│                       │      │                    messages from `mapstructure` as follows:
+│                       │      │                   https://github.com/openbao/openbao/blob/98c3a59c040efca72435
+│                       │      │                   3ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
+│                       │      │                   ```go
+│                       │      │                   			_, _, err := d.getPrimitive(field, schema)
+│                       │      │                   			if err != nil {
+│                       │      │                   				return fmt.Errorf("error converting input for field %q:
+│                       │      │                   %w", field, err)
+│                       │      │                   			}
+│                       │      │                   ```
+│                       │      │                   where this calls `mapstructure.WeakDecode(...)`:
+│                       │      │                   3ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
+│                       │      │                   func (d *FieldData) getPrimitive(k string, schema
+│                       │      │                   *FieldSchema) (interface{}, bool, error) {
+│                       │      │                   	raw, ok := d.Raw[k]
+│                       │      │                   	if !ok {
+│                       │      │                   		return nil, false, nil
+│                       │      │                   	}
+│                       │      │                   	switch t := schema.Type; t {
+│                       │      │                   	case TypeBool:
+│                       │      │                   		var result bool
+│                       │      │                   		if err := mapstructure.WeakDecode(raw, &result); err !=
+│                       │      │                   nil {
+│                       │      │                   			return nil, false, err
+│                       │      │                   		}
+│                       │      │                   		return result, true, nil
+│                       │      │                   Notably, `WeakDecode(...)` eventually calls one of the
+│                       │      │                   decode helpers, which surfaces the original value via
+│                       │      │                   `strconv` helpers:
+│                       │      │                   https://github.com/go-viper/mapstructure/blob/8c61ec1924fcfa
+│                       │      │                   522f9fc6b4618c672db61d1a38/mapstructure.go#L720-L727
+│                       │      │                   522f9fc6b4618c672db61d1a38/mapstructure.go#L791-L798
+│                       │      │                   522f9fc6b4618c672db61d1a38/decode_hooks.go#L180
+│                       │      │                   & more. These are different code paths than are fixed in the
+│                       │      │                    previous iteration at
+│                       │      │                   https://github.com/go-viper/mapstructure/security/advisories
+│                       │      │                   /GHSA-fv92-fjc5-jj9h.
+│                       │      │                   ### PoC
+│                       │      │                   To reproduce with OpenBao:
+│                       │      │                   $ podman run --pull=always -p 8300:8300
+│                       │      │                   openbao/openbao:latest server -dev -dev-root-token-id=root
+│                       │      │                   -dev-listen-address=0.0.0.0:8300
+│                       │      │                   and in a new tab:
+│                       │      │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
+│                       │      │                   enable userpass
+│                       │      │                   Success! Enabled userpass auth method at: userpass/
+│                       │      │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
+│                       │      │                   root" -d '{"ttl":"asdf"}'
+│                       │      │                   "http://localhost:8200/v1/auth/userpass/users/asdf"
+│                       │      │                   --> server logs:
+│                       │      │                   2025-06-25T21:32:25.101-0500 [ERROR] core: failed to run
+│                       │      │                   existence check: error="error converting input for field
+│                       │      │                   \"ttl\": time: invalid duration \"asdf\""
+│                       │      │                   ### Impact
+│                       │      │                   This is an information disclosure bug with little
+│                       │      │                   mitigation. See
+│                       │      │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expo
+│                       │      │                   se-sensitive-information-in-error-logs-when-processing-malfo
+│                       │      │                   rmed-data-with-the-kv-v2-plugin/74717 for a previous
+│                       │      │                   version. That version was fixed, but this is in the second
+│                       │      │                   part of that error message (starting at `'' expected a map,
+│                       │      │                   got 'string'` -- when the field type is `string` and a `map`
+│                       │      │                    is provided, we see the above information leak -- the
+│                       │      │                   previous example had a `map` type field with a `string`
+│                       │      │                   value provided).
+│                       │      │                   This was rated 4.5 Medium by HashiCorp in the past iteration
+│                       │      │                   . 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ─ ghsa: 2 
+│                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
+│                       │      │                         ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
+│                       │      │                  ├ [1]: https://github.com/go-viper/mapstructure/commit/742921
+│                       │      │                  │      c9ba2854d27baa64272487fc5075d2c39c 
+│                       │      │                  ╰ [2]: https://github.com/go-viper/mapstructure/security/advi
+│                       │      │                         sories/GHSA-2464-8j7c-4cjm 
+│                       │      ├ PublishedDate   : 2025-08-21T14:37:19Z 
+│                       │      ╰ LastModifiedDate: 2025-08-21T14:37:19Z 
+│                       ├ [1]  ╭ VulnerabilityID : CVE-2018-15727 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -468,7 +781,7 @@
 │                       │      │                  ╰ [10]: https://www.securityfocus.com/bid/105184 
 │                       │      ├ PublishedDate   : 2018-08-29T15:29:00.24Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T03:51:20.95Z 
-│                       ├ [1]  ╭ VulnerabilityID : CVE-2023-3128 
+│                       ├ [2]  ╭ VulnerabilityID : CVE-2023-3128 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -545,7 +858,7 @@
 │                       │      │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2023-3128 
 │                       │      ├ PublishedDate   : 2023-06-22T21:15:09.573Z 
 │                       │      ╰ LastModifiedDate: 2025-02-13T17:16:55.49Z 
-│                       ├ [2]  ╭ VulnerabilityID : CVE-2020-12458 
+│                       ├ [3]  ╭ VulnerabilityID : CVE-2020-12458 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -622,7 +935,7 @@
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2020-12458 
 │                       │      ├ PublishedDate   : 2020-04-29T16:15:11.76Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T04:59:44.517Z 
-│                       ├ [3]  ╭ VulnerabilityID : CVE-2021-39226 
+│                       ├ [4]  ╭ VulnerabilityID : CVE-2021-39226 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -736,7 +1049,7 @@
 │                       │      │                  ╰ [23]: https://www.cve.org/CVERecord?id=CVE-2021-39226 
 │                       │      ├ PublishedDate   : 2021-10-05T18:15:07.947Z 
 │                       │      ╰ LastModifiedDate: 2025-02-18T14:53:42.247Z 
-│                       ├ [4]  ╭ VulnerabilityID : CVE-2022-35957 
+│                       ├ [5]  ╭ VulnerabilityID : CVE-2022-35957 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -815,7 +1128,7 @@
 │                       │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2022-35957 
 │                       │      ├ PublishedDate   : 2022-09-20T23:15:09.457Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T07:12:03.05Z 
-│                       ├ [5]  ╭ VulnerabilityID : CVE-2022-39307 
+│                       ├ [6]  ╭ VulnerabilityID : CVE-2022-39307 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -895,7 +1208,7 @@
 │                       │      │                  ╰ [20]: https://www.cve.org/CVERecord?id=CVE-2022-39307 
 │                       │      ├ PublishedDate   : 2022-11-09T23:15:12.617Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T07:18:00.08Z 
-│                       ├ [6]  ╭ VulnerabilityID : CVE-2023-2801 
+│                       ├ [7]  ╭ VulnerabilityID : CVE-2023-2801 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -960,7 +1273,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2023-2801 
 │                       │      ├ PublishedDate   : 2023-06-06T19:15:11.413Z 
 │                       │      ╰ LastModifiedDate: 2025-02-13T17:16:22.81Z 
-│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-6023 
+│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-6023 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1031,7 +1344,7 @@
 │                       │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-6023 
 │                       │      ├ PublishedDate   : 2025-07-18T08:15:28.04Z 
 │                       │      ╰ LastModifiedDate: 2025-07-22T13:06:27.983Z 
-│                       ├ [8]  ╭ VulnerabilityID : CVE-2018-1000816 
+│                       ├ [9]  ╭ VulnerabilityID : CVE-2018-1000816 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1086,7 +1399,7 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2018-1000816 
 │                       │      ├ PublishedDate   : 2018-12-20T15:29:00.643Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T03:40:25.107Z 
-│                       ├ [9]  ╭ VulnerabilityID : CVE-2018-12099 
+│                       ├ [10] ╭ VulnerabilityID : CVE-2018-12099 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1136,7 +1449,7 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2018-12099 
 │                       │      ├ PublishedDate   : 2018-06-11T11:29:00.413Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T03:44:35.77Z 
-│                       ├ [10] ╭ VulnerabilityID : CVE-2018-18623 
+│                       ├ [11] ╭ VulnerabilityID : CVE-2018-18623 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1190,7 +1503,7 @@
 │                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2018-18623 
 │                       │      ├ PublishedDate   : 2020-06-02T17:15:11.427Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T03:56:15.137Z 
-│                       ├ [11] ╭ VulnerabilityID : CVE-2018-18624 
+│                       ├ [12] ╭ VulnerabilityID : CVE-2018-18624 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1249,7 +1562,7 @@
 │                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2018-18624 
 │                       │      ├ PublishedDate   : 2020-06-02T17:15:11.487Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T03:56:15.3Z 
-│                       ├ [12] ╭ VulnerabilityID : CVE-2018-18625 
+│                       ├ [13] ╭ VulnerabilityID : CVE-2018-18625 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1302,7 +1615,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2018-18625 
 │                       │      ├ PublishedDate   : 2020-06-02T17:15:11.567Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T03:56:15.443Z 
-│                       ├ [13] ╭ VulnerabilityID : CVE-2019-13068 
+│                       ├ [14] ╭ VulnerabilityID : CVE-2019-13068 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1346,7 +1659,7 @@
 │                       │      │                  ╰ [6]: https://security.netapp.com/advisory/ntap-20190710-0001/ 
 │                       │      ├ PublishedDate   : 2019-06-30T00:15:11.313Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T04:24:08.057Z 
-│                       ├ [14] ╭ VulnerabilityID : CVE-2019-19499 
+│                       ├ [15] ╭ VulnerabilityID : CVE-2019-19499 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1407,7 +1720,7 @@
 │                       │      │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2019-19499 
 │                       │      ├ PublishedDate   : 2020-08-28T15:15:11.953Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T04:34:50.603Z 
-│                       ├ [15] ╭ VulnerabilityID : CVE-2020-11110 
+│                       ├ [16] ╭ VulnerabilityID : CVE-2020-11110 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1472,7 +1785,7 @@
 │                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2020-11110 
 │                       │      ├ PublishedDate   : 2020-07-27T13:15:11.293Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T04:56:48.55Z 
-│                       ├ [16] ╭ VulnerabilityID : CVE-2020-12245 
+│                       ├ [17] ╭ VulnerabilityID : CVE-2020-12245 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1544,7 +1857,7 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2020-12245 
 │                       │      ├ PublishedDate   : 2020-04-24T21:15:13.92Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T04:59:22.397Z 
-│                       ├ [17] ╭ VulnerabilityID : CVE-2020-13430 
+│                       ├ [18] ╭ VulnerabilityID : CVE-2020-13430 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1604,7 +1917,7 @@
 │                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2020-13430 
 │                       │      ├ PublishedDate   : 2020-05-24T18:15:10.097Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T05:01:14.78Z 
-│                       ├ [18] ╭ VulnerabilityID : CVE-2020-24303 
+│                       ├ [19] ╭ VulnerabilityID : CVE-2020-24303 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1663,7 +1976,7 @@
 │                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2020-24303 
 │                       │      ├ PublishedDate   : 2020-10-28T14:15:12.33Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T05:14:34.773Z 
-│                       ├ [19] ╭ VulnerabilityID : CVE-2022-39229 
+│                       ├ [20] ╭ VulnerabilityID : CVE-2022-39229 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1743,7 +2056,7 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2022-39229 
 │                       │      ├ PublishedDate   : 2022-10-13T23:15:10.937Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T07:17:50.027Z 
-│                       ├ [20] ╭ VulnerabilityID : CVE-2022-39324 
+│                       ├ [21] ╭ VulnerabilityID : CVE-2022-39324 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1827,7 +2140,7 @@
 │                       │      │                  ╰ [23]: https://www.cve.org/CVERecord?id=CVE-2022-39324 
 │                       │      ├ PublishedDate   : 2023-01-27T23:15:08.723Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T07:18:02.36Z 
-│                       ├ [21] ╭ VulnerabilityID : CVE-2023-2183 
+│                       ├ [22] ╭ VulnerabilityID : CVE-2023-2183 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1895,7 +2208,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2023-2183 
 │                       │      ├ PublishedDate   : 2023-06-06T19:15:11.277Z 
 │                       │      ╰ LastModifiedDate: 2025-02-13T17:16:19.957Z 
-│                       ├ [22] ╭ VulnerabilityID : CVE-2023-4822 
+│                       ├ [23] ╭ VulnerabilityID : CVE-2023-4822 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -1961,7 +2274,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2023-4822 
 │                       │      ├ PublishedDate   : 2023-10-16T09:15:11.687Z 
 │                       │      ╰ LastModifiedDate: 2025-06-16T17:15:27.72Z 
-│                       ├ [23] ╭ VulnerabilityID : CVE-2025-3415 
+│                       ├ [24] ╭ VulnerabilityID : CVE-2025-3415 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -2028,7 +2341,7 @@
 │                       │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-3415 
 │                       │      ├ PublishedDate   : 2025-07-17T11:15:22.24Z 
 │                       │      ╰ LastModifiedDate: 2025-07-17T21:15:50.197Z 
-│                       ├ [24] ╭ VulnerabilityID : CVE-2024-10452 
+│                       ├ [25] ╭ VulnerabilityID : CVE-2024-10452 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
 │                       │      ├ PkgName         : github.com/grafana/grafana 
@@ -2077,7 +2390,7 @@
 │                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
 │                       │      ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
 │                       │      ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
-│                       ╰ [25] ╭ VulnerabilityID : CVE-2025-47907 
+│                       ╰ [26] ╭ VulnerabilityID : CVE-2025-47907 
 │                              ├ PkgID           : stdlib@v1.24.4 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
