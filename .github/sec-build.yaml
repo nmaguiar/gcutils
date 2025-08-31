@@ -433,7 +433,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -454,12 +454,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -1517,13 +1517,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
@@ -1951,7 +1952,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -1972,12 +1973,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -3035,13 +3036,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
@@ -3469,7 +3471,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -3490,12 +3492,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -4553,13 +4555,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
