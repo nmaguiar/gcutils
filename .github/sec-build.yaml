@@ -144,6 +144,7 @@
       amazon: 3
       azure: 3
       bitnami: 3
+      cbl-mariner: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -296,6 +297,7 @@
       amazon: 3
       azure: 3
       bitnami: 3
+      cbl-mariner: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -1850,6 +1852,7 @@
       amazon: 3
       azure: 3
       bitnami: 3
+      cbl-mariner: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -3370,6 +3373,7 @@
       amazon: 3
       azure: 3
       bitnami: 3
+      cbl-mariner: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -4890,6 +4894,7 @@
       amazon: 3
       azure: 3
       bitnami: 3
+      cbl-mariner: 3
       redhat: 3
     CVSS:
       bitnami:
