@@ -42,6 +42,9 @@
       nvd: 2
       redhat: 2
     CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+        V3Score: 4.6
       nvd:
         V3Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
         V3Score: 4.6
@@ -199,6 +202,9 @@
       nvd: 2
       redhat: 2
     CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+        V3Score: 4.6
       nvd:
         V3Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
         V3Score: 4.6
