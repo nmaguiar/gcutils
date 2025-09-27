@@ -67,7 +67,8 @@
 │                             │                  ├ [5]: https://mail.python.org/archives/list/security-announce
 │                             │                  │      @python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN/ 
 │                             │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2025-8869 
-│                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-8869 
+│                             │                  ├ [7]: https://pip.pypa.io/en/stable/news/#v25-2 
+│                             │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-8869 
 │                             ├ PublishedDate   : 2025-09-24T15:15:41.293Z 
 │                             ╰ LastModifiedDate: 2025-09-24T18:11:24.52Z 
 ├ [4] ╭ Target         : usr/bin/prometheus 
@@ -337,7 +338,7 @@
 │                       │     │                         ories/GHSA-fv92-fjc5-jj9h 
 │                       │     ├ PublishedDate   : 2025-06-27T16:24:59Z 
 │                       │     ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
-│                       ├ [3] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2025-47907 
 │                       │     ├ PkgID           : stdlib@v1.24.5 
 │                       │     ├ PkgName         : stdlib 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
@@ -349,30 +350,40 @@
 │                       │     │                  │         23d576cc7fbfc24b686 
 │                       │     │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
 │                       │     │                            478f2d229b68f52d773 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
 │                       │     ├ DataSource       ╭ ID  : govulndb 
 │                       │     │                  ├ Name: The Go Vulnerability Database 
 │                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │     ├ Title           : If the PATH environment variable contains paths which are
-│                       │     │                   executables  ... 
-│                       │     ├ Description     : If the PATH environment variable contains paths which are
-│                       │     │                   executables (rather than just directories), passing certain
-│                       │     │                   strings to LookPath ("", ".", and ".."), can result in the
-│                       │     │                   binaries listed in the PATH being unexpectedly returned. 
+│                       │     ├ Title           : database/sql: Postgres Scan Race Condition 
+│                       │     ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+│                       │     │                   one of the query methods) during a call to the Scan method of
+│                       │     │                    the returned Rows can result in unexpected results if other
+│                       │     │                   queries are being made in parallel. This can result in a race
+│                       │     │                    condition that may overwrite the expected results with those
+│                       │     │                    of another query, causing the call to Scan to return either
+│                       │     │                   unexpected results from the other query or an error. 
 │                       │     ├ Severity        : HIGH 
-│                       │     ├ VendorSeverity   ╭ amazon : 3 
-│                       │     │                  ╰ bitnami: 2 
-│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
+│                       │     ├ VendorSeverity   ╭ amazon     : 3 
+│                       │     │                  ├ azure      : 3 
+│                       │     │                  ├ bitnami    : 3 
+│                       │     │                  ├ cbl-mariner: 3 
+│                       │     │                  ╰ redhat     : 2 
+│                       │     ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L
+│                       │     │                  │         │           /A:L 
+│                       │     │                  │         ╰ V3Score : 7 
+│                       │     │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L
 │                       │     │                            │           /A:L 
-│                       │     │                            ╰ V3Score : 6.5 
-│                       │     ├ References       ╭ [0]: https://go.dev/cl/691775 
-│                       │     │                  ├ [1]: https://go.dev/issue/74466 
-│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML2yM 
-│                       │     │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3956 
-│                       │     ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-│                       │     ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
-│                       ╰ [4] ╭ VulnerabilityID : CVE-2025-47907 
+│                       │     │                            ╰ V3Score : 7 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
+│                       │     │                  ├ [1]: https://go.dev/cl/693735 
+│                       │     │                  ├ [2]: https://go.dev/issue/74831 
+│                       │     │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML2yM 
+│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
+│                       │     │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
+│                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
+│                       │     ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+│                       │     ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+│                       ╰ [4] ╭ VulnerabilityID : CVE-2025-47906 
 │                             ├ PkgID           : stdlib@v1.24.5 
 │                             ├ PkgName         : stdlib 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
@@ -384,39 +395,34 @@
 │                             │                  │         23d576cc7fbfc24b686 
 │                             │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
 │                             │                            478f2d229b68f52d773 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
 │                             ├ DataSource       ╭ ID  : govulndb 
 │                             │                  ├ Name: The Go Vulnerability Database 
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Title           : database/sql: Postgres Scan Race Condition 
-│                             ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
-│                             │                   one of the query methods) during a call to the Scan method of
-│                             │                    the returned Rows can result in unexpected results if other
-│                             │                   queries are being made in parallel. This can result in a race
-│                             │                    condition that may overwrite the expected results with those
-│                             │                    of another query, causing the call to Scan to return either
-│                             │                   unexpected results from the other query or an error. 
-│                             ├ Severity        : HIGH 
-│                             ├ VendorSeverity   ╭ amazon     : 3 
-│                             │                  ├ azure      : 3 
-│                             │                  ├ bitnami    : 3 
-│                             │                  ├ cbl-mariner: 3 
-│                             │                  ╰ redhat     : 2 
-│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L
+│                             ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
+│                             ├ Description     : If the PATH environment variable contains paths which are
+│                             │                   executables (rather than just directories), passing certain
+│                             │                   strings to LookPath ("", ".", and ".."), can result in the
+│                             │                   binaries listed in the PATH being unexpectedly returned. 
+│                             ├ Severity        : MEDIUM 
+│                             ├ VendorSeverity   ╭ amazon : 3 
+│                             │                  ├ bitnami: 2 
+│                             │                  ╰ redhat : 2 
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
 │                             │                  │         │           /A:L 
-│                             │                  │         ╰ V3Score : 7 
-│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L
+│                             │                  │         ╰ V3Score : 6.5 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
 │                             │                            │           /A:L 
-│                             │                            ╰ V3Score : 7 
-│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
-│                             │                  ├ [1]: https://go.dev/cl/693735 
-│                             │                  ├ [2]: https://go.dev/issue/74831 
+│                             │                            ╰ V3Score : 6.5 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47906 
+│                             │                  ├ [1]: https://go.dev/cl/691775 
+│                             │                  ├ [2]: https://go.dev/issue/74466 
 │                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML2yM 
-│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
-│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
-│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
-│                             ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
-│                             ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3956 
+│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+│                             ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
+│                             ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -684,7 +690,7 @@
 │                       │     │                         ories/GHSA-fv92-fjc5-jj9h 
 │                       │     ├ PublishedDate   : 2025-06-27T16:24:59Z 
 │                       │     ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
-│                       ├ [3] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2025-47907 
 │                       │     ├ PkgID           : stdlib@v1.24.5 
 │                       │     ├ PkgName         : stdlib 
 │                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
@@ -696,30 +702,40 @@
 │                       │     │                  │         23d576cc7fbfc24b686 
 │                       │     │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
 │                       │     │                            478f2d229b68f52d773 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
 │                       │     ├ DataSource       ╭ ID  : govulndb 
 │                       │     │                  ├ Name: The Go Vulnerability Database 
 │                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │     ├ Title           : If the PATH environment variable contains paths which are
-│                       │     │                   executables  ... 
-│                       │     ├ Description     : If the PATH environment variable contains paths which are
-│                       │     │                   executables (rather than just directories), passing certain
-│                       │     │                   strings to LookPath ("", ".", and ".."), can result in the
-│                       │     │                   binaries listed in the PATH being unexpectedly returned. 
+│                       │     ├ Title           : database/sql: Postgres Scan Race Condition 
+│                       │     ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+│                       │     │                   one of the query methods) during a call to the Scan method of
+│                       │     │                    the returned Rows can result in unexpected results if other
+│                       │     │                   queries are being made in parallel. This can result in a race
+│                       │     │                    condition that may overwrite the expected results with those
+│                       │     │                    of another query, causing the call to Scan to return either
+│                       │     │                   unexpected results from the other query or an error. 
 │                       │     ├ Severity        : HIGH 
-│                       │     ├ VendorSeverity   ╭ amazon : 3 
-│                       │     │                  ╰ bitnami: 2 
-│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
+│                       │     ├ VendorSeverity   ╭ amazon     : 3 
+│                       │     │                  ├ azure      : 3 
+│                       │     │                  ├ bitnami    : 3 
+│                       │     │                  ├ cbl-mariner: 3 
+│                       │     │                  ╰ redhat     : 2 
+│                       │     ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L
+│                       │     │                  │         │           /A:L 
+│                       │     │                  │         ╰ V3Score : 7 
+│                       │     │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L
 │                       │     │                            │           /A:L 
-│                       │     │                            ╰ V3Score : 6.5 
-│                       │     ├ References       ╭ [0]: https://go.dev/cl/691775 
-│                       │     │                  ├ [1]: https://go.dev/issue/74466 
-│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML2yM 
-│                       │     │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3956 
-│                       │     ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-│                       │     ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
-│                       ╰ [4] ╭ VulnerabilityID : CVE-2025-47907 
+│                       │     │                            ╰ V3Score : 7 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
+│                       │     │                  ├ [1]: https://go.dev/cl/693735 
+│                       │     │                  ├ [2]: https://go.dev/issue/74831 
+│                       │     │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML2yM 
+│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
+│                       │     │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
+│                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
+│                       │     ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+│                       │     ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+│                       ╰ [4] ╭ VulnerabilityID : CVE-2025-47906 
 │                             ├ PkgID           : stdlib@v1.24.5 
 │                             ├ PkgName         : stdlib 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
@@ -731,39 +747,34 @@
 │                             │                  │         23d576cc7fbfc24b686 
 │                             │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
 │                             │                            478f2d229b68f52d773 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
 │                             ├ DataSource       ╭ ID  : govulndb 
 │                             │                  ├ Name: The Go Vulnerability Database 
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Title           : database/sql: Postgres Scan Race Condition 
-│                             ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
-│                             │                   one of the query methods) during a call to the Scan method of
-│                             │                    the returned Rows can result in unexpected results if other
-│                             │                   queries are being made in parallel. This can result in a race
-│                             │                    condition that may overwrite the expected results with those
-│                             │                    of another query, causing the call to Scan to return either
-│                             │                   unexpected results from the other query or an error. 
-│                             ├ Severity        : HIGH 
-│                             ├ VendorSeverity   ╭ amazon     : 3 
-│                             │                  ├ azure      : 3 
-│                             │                  ├ bitnami    : 3 
-│                             │                  ├ cbl-mariner: 3 
-│                             │                  ╰ redhat     : 2 
-│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L
+│                             ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
+│                             ├ Description     : If the PATH environment variable contains paths which are
+│                             │                   executables (rather than just directories), passing certain
+│                             │                   strings to LookPath ("", ".", and ".."), can result in the
+│                             │                   binaries listed in the PATH being unexpectedly returned. 
+│                             ├ Severity        : MEDIUM 
+│                             ├ VendorSeverity   ╭ amazon : 3 
+│                             │                  ├ bitnami: 2 
+│                             │                  ╰ redhat : 2 
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
 │                             │                  │         │           /A:L 
-│                             │                  │         ╰ V3Score : 7 
-│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L
+│                             │                  │         ╰ V3Score : 6.5 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
 │                             │                            │           /A:L 
-│                             │                            ╰ V3Score : 7 
-│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
-│                             │                  ├ [1]: https://go.dev/cl/693735 
-│                             │                  ├ [2]: https://go.dev/issue/74831 
+│                             │                            ╰ V3Score : 6.5 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47906 
+│                             │                  ├ [1]: https://go.dev/cl/691775 
+│                             │                  ├ [2]: https://go.dev/issue/74466 
 │                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML2yM 
-│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
-│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
-│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
-│                             ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
-│                             ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3956 
+│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+│                             ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
+│                             ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -2542,7 +2553,7 @@
 │                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
 │                       │      ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
 │                       │      ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
-│                       ├ [26] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [26] ╭ VulnerabilityID : CVE-2025-47907 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
 │                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
@@ -2554,31 +2565,42 @@
 │                       │      │                  │         c23d576cc7fbfc24b686 
 │                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Title           : If the PATH environment variable contains paths which are
-│                       │      │                   executables  ... 
-│                       │      ├ Description     : If the PATH environment variable contains paths which are
-│                       │      │                   executables (rather than just directories), passing certain
-│                       │      │                   strings to LookPath ("", ".", and ".."), can result in the
-│                       │      │                   binaries listed in the PATH being unexpectedly returned. 
+│                       │      ├ Title           : database/sql: Postgres Scan Race Condition 
+│                       │      ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+│                       │      │                    one of the query methods) during a call to the Scan method
+│                       │      │                   of the returned Rows can result in unexpected results if
+│                       │      │                   other queries are being made in parallel. This can result in
+│                       │      │                    a race condition that may overwrite the expected results
+│                       │      │                   with those of another query, causing the call to Scan to
+│                       │      │                   return either unexpected results from the other query or an
+│                       │      │                   error. 
 │                       │      ├ Severity        : HIGH 
-│                       │      ├ VendorSeverity   ╭ amazon : 3 
-│                       │      │                  ╰ bitnami: 2 
-│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
-│                       │      │                            │           N/A:L 
-│                       │      │                            ╰ V3Score : 6.5 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/691775 
-│                       │      │                  ├ [1]: https://go.dev/issue/74466 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML
+│                       │      ├ VendorSeverity   ╭ amazon     : 3 
+│                       │      │                  ├ azure      : 3 
+│                       │      │                  ├ bitnami    : 3 
+│                       │      │                  ├ cbl-mariner: 3 
+│                       │      │                  ╰ redhat     : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
+│                       │      │                  │         │           L/A:L 
+│                       │      │                  │         ╰ V3Score : 7 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
+│                       │      │                            │           L/A:L 
+│                       │      │                            ╰ V3Score : 7 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
+│                       │      │                  ├ [1]: https://go.dev/cl/693735 
+│                       │      │                  ├ [2]: https://go.dev/issue/74831 
+│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML
 │                       │      │                  │      2yM 
-│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3956 
-│                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-│                       │      ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
-│                       ╰ [27] ╭ VulnerabilityID : CVE-2025-47907 
+│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
+│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
+│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
+│                       │      ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+│                       │      ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+│                       ╰ [27] ╭ VulnerabilityID : CVE-2025-47906 
 │                              ├ PkgID           : stdlib@v1.24.4 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
@@ -2590,41 +2612,35 @@
 │                              │                  │         c23d576cc7fbfc24b686 
 │                              │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                              │                            0478f2d229b68f52d773 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
 │                              ├ DataSource       ╭ ID  : govulndb 
 │                              │                  ├ Name: The Go Vulnerability Database 
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                              ├ Title           : database/sql: Postgres Scan Race Condition 
-│                              ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
-│                              │                    one of the query methods) during a call to the Scan method
-│                              │                   of the returned Rows can result in unexpected results if
-│                              │                   other queries are being made in parallel. This can result in
-│                              │                    a race condition that may overwrite the expected results
-│                              │                   with those of another query, causing the call to Scan to
-│                              │                   return either unexpected results from the other query or an
-│                              │                   error. 
-│                              ├ Severity        : HIGH 
-│                              ├ VendorSeverity   ╭ amazon     : 3 
-│                              │                  ├ azure      : 3 
-│                              │                  ├ bitnami    : 3 
-│                              │                  ├ cbl-mariner: 3 
-│                              │                  ╰ redhat     : 2 
-│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
-│                              │                  │         │           L/A:L 
-│                              │                  │         ╰ V3Score : 7 
-│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
-│                              │                            │           L/A:L 
-│                              │                            ╰ V3Score : 7 
-│                              ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
-│                              │                  ├ [1]: https://go.dev/cl/693735 
-│                              │                  ├ [2]: https://go.dev/issue/74831 
+│                              ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
+│                              ├ Description     : If the PATH environment variable contains paths which are
+│                              │                   executables (rather than just directories), passing certain
+│                              │                   strings to LookPath ("", ".", and ".."), can result in the
+│                              │                   binaries listed in the PATH being unexpectedly returned. 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ╭ amazon : 3 
+│                              │                  ├ bitnami: 2 
+│                              │                  ╰ redhat : 2 
+│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                              │                  │         │           N/A:L 
+│                              │                  │         ╰ V3Score : 6.5 
+│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                              │                            │           N/A:L 
+│                              │                            ╰ V3Score : 6.5 
+│                              ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47906 
+│                              │                  ├ [1]: https://go.dev/cl/691775 
+│                              │                  ├ [2]: https://go.dev/issue/74466 
 │                              │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML
 │                              │                  │      2yM 
-│                              │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
-│                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
-│                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
-│                              ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
-│                              ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+│                              │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+│                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3956 
+│                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+│                              ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
+│                              ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -4297,7 +4313,7 @@
 │                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
 │                       │      ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
 │                       │      ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
-│                       ├ [25] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [25] ╭ VulnerabilityID : CVE-2025-47907 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
 │                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
@@ -4309,31 +4325,42 @@
 │                       │      │                  │         c23d576cc7fbfc24b686 
 │                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Title           : If the PATH environment variable contains paths which are
-│                       │      │                   executables  ... 
-│                       │      ├ Description     : If the PATH environment variable contains paths which are
-│                       │      │                   executables (rather than just directories), passing certain
-│                       │      │                   strings to LookPath ("", ".", and ".."), can result in the
-│                       │      │                   binaries listed in the PATH being unexpectedly returned. 
+│                       │      ├ Title           : database/sql: Postgres Scan Race Condition 
+│                       │      ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+│                       │      │                    one of the query methods) during a call to the Scan method
+│                       │      │                   of the returned Rows can result in unexpected results if
+│                       │      │                   other queries are being made in parallel. This can result in
+│                       │      │                    a race condition that may overwrite the expected results
+│                       │      │                   with those of another query, causing the call to Scan to
+│                       │      │                   return either unexpected results from the other query or an
+│                       │      │                   error. 
 │                       │      ├ Severity        : HIGH 
-│                       │      ├ VendorSeverity   ╭ amazon : 3 
-│                       │      │                  ╰ bitnami: 2 
-│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
-│                       │      │                            │           N/A:L 
-│                       │      │                            ╰ V3Score : 6.5 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/691775 
-│                       │      │                  ├ [1]: https://go.dev/issue/74466 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML
+│                       │      ├ VendorSeverity   ╭ amazon     : 3 
+│                       │      │                  ├ azure      : 3 
+│                       │      │                  ├ bitnami    : 3 
+│                       │      │                  ├ cbl-mariner: 3 
+│                       │      │                  ╰ redhat     : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
+│                       │      │                  │         │           L/A:L 
+│                       │      │                  │         ╰ V3Score : 7 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
+│                       │      │                            │           L/A:L 
+│                       │      │                            ╰ V3Score : 7 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
+│                       │      │                  ├ [1]: https://go.dev/cl/693735 
+│                       │      │                  ├ [2]: https://go.dev/issue/74831 
+│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML
 │                       │      │                  │      2yM 
-│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3956 
-│                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-│                       │      ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
-│                       ╰ [26] ╭ VulnerabilityID : CVE-2025-47907 
+│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
+│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
+│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
+│                       │      ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+│                       │      ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+│                       ╰ [26] ╭ VulnerabilityID : CVE-2025-47906 
 │                              ├ PkgID           : stdlib@v1.24.4 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
@@ -4345,41 +4372,35 @@
 │                              │                  │         c23d576cc7fbfc24b686 
 │                              │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                              │                            0478f2d229b68f52d773 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
 │                              ├ DataSource       ╭ ID  : govulndb 
 │                              │                  ├ Name: The Go Vulnerability Database 
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                              ├ Title           : database/sql: Postgres Scan Race Condition 
-│                              ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
-│                              │                    one of the query methods) during a call to the Scan method
-│                              │                   of the returned Rows can result in unexpected results if
-│                              │                   other queries are being made in parallel. This can result in
-│                              │                    a race condition that may overwrite the expected results
-│                              │                   with those of another query, causing the call to Scan to
-│                              │                   return either unexpected results from the other query or an
-│                              │                   error. 
-│                              ├ Severity        : HIGH 
-│                              ├ VendorSeverity   ╭ amazon     : 3 
-│                              │                  ├ azure      : 3 
-│                              │                  ├ bitnami    : 3 
-│                              │                  ├ cbl-mariner: 3 
-│                              │                  ╰ redhat     : 2 
-│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
-│                              │                  │         │           L/A:L 
-│                              │                  │         ╰ V3Score : 7 
-│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
-│                              │                            │           L/A:L 
-│                              │                            ╰ V3Score : 7 
-│                              ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
-│                              │                  ├ [1]: https://go.dev/cl/693735 
-│                              │                  ├ [2]: https://go.dev/issue/74831 
+│                              ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
+│                              ├ Description     : If the PATH environment variable contains paths which are
+│                              │                   executables (rather than just directories), passing certain
+│                              │                   strings to LookPath ("", ".", and ".."), can result in the
+│                              │                   binaries listed in the PATH being unexpectedly returned. 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ╭ amazon : 3 
+│                              │                  ├ bitnami: 2 
+│                              │                  ╰ redhat : 2 
+│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                              │                  │         │           N/A:L 
+│                              │                  │         ╰ V3Score : 6.5 
+│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                              │                            │           N/A:L 
+│                              │                            ╰ V3Score : 6.5 
+│                              ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47906 
+│                              │                  ├ [1]: https://go.dev/cl/691775 
+│                              │                  ├ [2]: https://go.dev/issue/74466 
 │                              │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML
 │                              │                  │      2yM 
-│                              │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
-│                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
-│                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
-│                              ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
-│                              ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+│                              │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+│                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3956 
+│                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+│                              ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
+│                              ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -6052,7 +6073,7 @@
                         │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2024-10452 
                         │      ├ PublishedDate   : 2024-10-29T16:15:04.593Z 
                         │      ╰ LastModifiedDate: 2024-11-08T17:59:10.977Z 
-                        ├ [25] ╭ VulnerabilityID : CVE-2025-47906 
+                        ├ [25] ╭ VulnerabilityID : CVE-2025-47907 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
                         │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
@@ -6064,31 +6085,42 @@
                         │      │                  │         c23d576cc7fbfc24b686 
                         │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
                         │      │                            0478f2d229b68f52d773 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Title           : If the PATH environment variable contains paths which are
-                        │      │                   executables  ... 
-                        │      ├ Description     : If the PATH environment variable contains paths which are
-                        │      │                   executables (rather than just directories), passing certain
-                        │      │                   strings to LookPath ("", ".", and ".."), can result in the
-                        │      │                   binaries listed in the PATH being unexpectedly returned. 
+                        │      ├ Title           : database/sql: Postgres Scan Race Condition 
+                        │      ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
+                        │      │                    one of the query methods) during a call to the Scan method
+                        │      │                   of the returned Rows can result in unexpected results if
+                        │      │                   other queries are being made in parallel. This can result in
+                        │      │                    a race condition that may overwrite the expected results
+                        │      │                   with those of another query, causing the call to Scan to
+                        │      │                   return either unexpected results from the other query or an
+                        │      │                   error. 
                         │      ├ Severity        : HIGH 
-                        │      ├ VendorSeverity   ╭ amazon : 3 
-                        │      │                  ╰ bitnami: 2 
-                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
-                        │      │                            │           N/A:L 
-                        │      │                            ╰ V3Score : 6.5 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/691775 
-                        │      │                  ├ [1]: https://go.dev/issue/74466 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/x5MKroML
+                        │      ├ VendorSeverity   ╭ amazon     : 3 
+                        │      │                  ├ azure      : 3 
+                        │      │                  ├ bitnami    : 3 
+                        │      │                  ├ cbl-mariner: 3 
+                        │      │                  ╰ redhat     : 2 
+                        │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
+                        │      │                  │         │           L/A:L 
+                        │      │                  │         ╰ V3Score : 7 
+                        │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
+                        │      │                            │           L/A:L 
+                        │      │                            ╰ V3Score : 7 
+                        │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
+                        │      │                  ├ [1]: https://go.dev/cl/693735 
+                        │      │                  ├ [2]: https://go.dev/issue/74831 
+                        │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML
                         │      │                  │      2yM 
-                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-3956 
-                        │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-                        │      ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
-                        ╰ [26] ╭ VulnerabilityID : CVE-2025-47907 
+                        │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
+                        │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
+                        │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
+                        │      ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
+                        │      ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+                        ╰ [26] ╭ VulnerabilityID : CVE-2025-47906 
                                ├ PkgID           : stdlib@v1.24.4 
                                ├ PkgName         : stdlib 
                                ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
@@ -6100,39 +6132,33 @@
                                │                  │         c23d576cc7fbfc24b686 
                                │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
                                │                            0478f2d229b68f52d773 
-                               ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47907 
+                               ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-47906 
                                ├ DataSource       ╭ ID  : govulndb 
                                │                  ├ Name: The Go Vulnerability Database 
                                │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                               ├ Title           : database/sql: Postgres Scan Race Condition 
-                               ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
-                               │                    one of the query methods) during a call to the Scan method
-                               │                   of the returned Rows can result in unexpected results if
-                               │                   other queries are being made in parallel. This can result in
-                               │                    a race condition that may overwrite the expected results
-                               │                   with those of another query, causing the call to Scan to
-                               │                   return either unexpected results from the other query or an
-                               │                   error. 
-                               ├ Severity        : HIGH 
-                               ├ VendorSeverity   ╭ amazon     : 3 
-                               │                  ├ azure      : 3 
-                               │                  ├ bitnami    : 3 
-                               │                  ├ cbl-mariner: 3 
-                               │                  ╰ redhat     : 2 
-                               ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
-                               │                  │         │           L/A:L 
-                               │                  │         ╰ V3Score : 7 
-                               │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:
-                               │                            │           L/A:L 
-                               │                            ╰ V3Score : 7 
-                               ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47907 
-                               │                  ├ [1]: https://go.dev/cl/693735 
-                               │                  ├ [2]: https://go.dev/issue/74831 
+                               ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
+                               ├ Description     : If the PATH environment variable contains paths which are
+                               │                   executables (rather than just directories), passing certain
+                               │                   strings to LookPath ("", ".", and ".."), can result in the
+                               │                   binaries listed in the PATH being unexpectedly returned. 
+                               ├ Severity        : MEDIUM 
+                               ├ VendorSeverity   ╭ amazon : 3 
+                               │                  ├ bitnami: 2 
+                               │                  ╰ redhat : 2 
+                               ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+                               │                  │         │           N/A:L 
+                               │                  │         ╰ V3Score : 6.5 
+                               │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+                               │                            │           N/A:L 
+                               │                            ╰ V3Score : 6.5 
+                               ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-47906 
+                               │                  ├ [1]: https://go.dev/cl/691775 
+                               │                  ├ [2]: https://go.dev/issue/74466 
                                │                  ├ [3]: https://groups.google.com/g/golang-announce/c/x5MKroML
                                │                  │      2yM 
-                               │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47907 
-                               │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3849 
-                               │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
-                               ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
-                               ╰ LastModifiedDate: 2025-08-07T21:26:37.453Z 
+                               │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+                               │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-3956 
+                               │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+                               ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
+                               ╰ LastModifiedDate: 2025-09-19T16:00:27.847Z 
 ````
