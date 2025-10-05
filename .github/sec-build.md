@@ -3701,9 +3701,10 @@
 │                             │                   strings to LookPath ("", ".", and ".."), can result in the
 │                             │                   binaries listed in the PATH being unexpectedly returned. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ╭ amazon : 3 
-│                             │                  ├ bitnami: 2 
-│                             │                  ╰ redhat : 2 
+│                             ├ VendorSeverity   ╭ amazon     : 3 
+│                             │                  ├ bitnami    : 2 
+│                             │                  ├ cbl-mariner: 3 
+│                             │                  ╰ redhat     : 2 
 │                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
 │                             │                  │         │           /A:L 
 │                             │                  │         ╰ V3Score : 6.5 
@@ -6187,9 +6188,10 @@
 │                             │                   strings to LookPath ("", ".", and ".."), can result in the
 │                             │                   binaries listed in the PATH being unexpectedly returned. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ╭ amazon : 3 
-│                             │                  ├ bitnami: 2 
-│                             │                  ╰ redhat : 2 
+│                             ├ VendorSeverity   ╭ amazon     : 3 
+│                             │                  ├ bitnami    : 2 
+│                             │                  ├ cbl-mariner: 3 
+│                             │                  ╰ redhat     : 2 
 │                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
 │                             │                  │         │           /A:L 
 │                             │                  │         ╰ V3Score : 6.5 
@@ -13583,9 +13585,10 @@
 │                              │                   strings to LookPath ("", ".", and ".."), can result in the
 │                              │                   binaries listed in the PATH being unexpectedly returned. 
 │                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon : 3 
-│                              │                  ├ bitnami: 2 
-│                              │                  ╰ redhat : 2 
+│                              ├ VendorSeverity   ╭ amazon     : 3 
+│                              │                  ├ bitnami    : 2 
+│                              │                  ├ cbl-mariner: 3 
+│                              │                  ╰ redhat     : 2 
 │                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
 │                              │                  │         │           N/A:L 
 │                              │                  │         ╰ V3Score : 6.5 
@@ -15405,9 +15408,10 @@
 │                              │                   strings to LookPath ("", ".", and ".."), can result in the
 │                              │                   binaries listed in the PATH being unexpectedly returned. 
 │                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon : 3 
-│                              │                  ├ bitnami: 2 
-│                              │                  ╰ redhat : 2 
+│                              ├ VendorSeverity   ╭ amazon     : 3 
+│                              │                  ├ bitnami    : 2 
+│                              │                  ├ cbl-mariner: 3 
+│                              │                  ╰ redhat     : 2 
 │                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
 │                              │                  │         │           N/A:L 
 │                              │                  │         ╰ V3Score : 6.5 
@@ -17227,9 +17231,10 @@
                                │                   strings to LookPath ("", ".", and ".."), can result in the
                                │                   binaries listed in the PATH being unexpectedly returned. 
                                ├ Severity        : MEDIUM 
-                               ├ VendorSeverity   ╭ amazon : 3 
-                               │                  ├ bitnami: 2 
-                               │                  ╰ redhat : 2 
+                               ├ VendorSeverity   ╭ amazon     : 3 
+                               │                  ├ bitnami    : 2 
+                               │                  ├ cbl-mariner: 3 
+                               │                  ╰ redhat     : 2 
                                ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
                                │                  │         │           N/A:L 
                                │                  │         ╰ V3Score : 6.5 
