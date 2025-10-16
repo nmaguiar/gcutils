@@ -1085,6 +1085,7 @@
       applying the linked patch, or inspecting source distributions (sdists) before installation as is already a best-practice.
     Severity: MEDIUM
     VendorSeverity:
+      amazon: 2
       ghsa: 2
       redhat: 2
     CVSS:
