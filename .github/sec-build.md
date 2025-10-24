@@ -12118,7 +12118,7 @@
 │                       │      │                  │         │           L/A:L 
 │                       │      │                  │         ╰ V3Score : 7.3 
 │                       │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
-│                       │      │                  │         │           L/A:L 
+│                       │      │                  │         │           L/A:L/E:H 
 │                       │      │                  │         ╰ V3Score : 7.3 
 │                       │      │                  ├ nvd     ╭ V2Vector: AV:N/AC:M/Au:N/C:P/I:P/A:P 
 │                       │      │                  │         ├ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
@@ -13943,7 +13943,7 @@
 │                       │      │                  │         │           L/A:L 
 │                       │      │                  │         ╰ V3Score : 7.3 
 │                       │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
-│                       │      │                  │         │           L/A:L 
+│                       │      │                  │         │           L/A:L/E:H 
 │                       │      │                  │         ╰ V3Score : 7.3 
 │                       │      │                  ├ nvd     ╭ V2Vector: AV:N/AC:M/Au:N/C:P/I:P/A:P 
 │                       │      │                  │         ├ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
@@ -15768,7 +15768,7 @@
                         │      │                  │         │           L/A:L 
                         │      │                  │         ╰ V3Score : 7.3 
                         │      │                  ├ ghsa    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
-                        │      │                  │         │           L/A:L 
+                        │      │                  │         │           L/A:L/E:H 
                         │      │                  │         ╰ V3Score : 7.3 
                         │      │                  ├ nvd     ╭ V2Vector: AV:N/AC:M/Au:N/C:P/I:P/A:P 
                         │      │                  │         ├ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
