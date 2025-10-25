@@ -12177,7 +12177,7 @@
 │                       │      │                  │       catalog?field_cve=CVE-2021-39226 
 │                       │      │                  ╰ [24]: https://www.cve.org/CVERecord?id=CVE-2021-39226 
 │                       │      ├ PublishedDate   : 2021-10-05T18:15:07.947Z 
-│                       │      ╰ LastModifiedDate: 2025-10-22T00:17:43.32Z 
+│                       │      ╰ LastModifiedDate: 2025-10-24T14:47:23.56Z 
 │                       ├ [5]  ╭ VulnerabilityID : CVE-2022-35957 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
@@ -14002,7 +14002,7 @@
 │                       │      │                  │       catalog?field_cve=CVE-2021-39226 
 │                       │      │                  ╰ [24]: https://www.cve.org/CVERecord?id=CVE-2021-39226 
 │                       │      ├ PublishedDate   : 2021-10-05T18:15:07.947Z 
-│                       │      ╰ LastModifiedDate: 2025-10-22T00:17:43.32Z 
+│                       │      ╰ LastModifiedDate: 2025-10-24T14:47:23.56Z 
 │                       ├ [4]  ╭ VulnerabilityID : CVE-2022-35957 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
@@ -15827,7 +15827,7 @@
                         │      │                  │       catalog?field_cve=CVE-2021-39226 
                         │      │                  ╰ [24]: https://www.cve.org/CVERecord?id=CVE-2021-39226 
                         │      ├ PublishedDate   : 2021-10-05T18:15:07.947Z 
-                        │      ╰ LastModifiedDate: 2025-10-22T00:17:43.32Z 
+                        │      ╰ LastModifiedDate: 2025-10-24T14:47:23.56Z 
                         ├ [4]  ╭ VulnerabilityID : CVE-2022-35957 
                         │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
                         │      │                   6+dirty 
