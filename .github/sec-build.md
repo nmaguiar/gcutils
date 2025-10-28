@@ -1065,7 +1065,8 @@
 │                             ├ PkgIdentifier    ╭ PURL: pkg:pypi/pip@25.1.1 
 │                             │                  ╰ UID : f93d18504d4fdf15 
 │                             ├ InstalledVersion: 25.1.1 
-│                             ├ Status          : affected 
+│                             ├ FixedVersion    : 25.3 
+│                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c
 │                             │                  │         23d576cc7fbfc24b686 
 │                             │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
