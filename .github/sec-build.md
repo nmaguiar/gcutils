@@ -1101,6 +1101,7 @@
 │                             │                    (sdists) before installation as is already a best-practice. 
 │                             ├ Severity        : MEDIUM 
 │                             ├ VendorSeverity   ╭ amazon: 2 
+│                             │                  ├ azure : 2 
 │                             │                  ├ ghsa  : 2 
 │                             │                  ╰ redhat: 2 
 │                             ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/
