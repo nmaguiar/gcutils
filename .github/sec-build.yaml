@@ -1087,6 +1087,7 @@
     Severity: MEDIUM
     VendorSeverity:
       amazon: 2
+      azure: 2
       ghsa: 2
       redhat: 2
     CVSS:
