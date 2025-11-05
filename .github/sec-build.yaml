@@ -1099,13 +1099,14 @@
     - https://github.com/pypa/pip
     - https://github.com/pypa/pip/commit/f2b92314da012b9fffa36b3f3e67748a37ef464a
     - https://github.com/pypa/pip/pull/13550
+    - https://lists.debian.org/debian-lts-announce/2025/10/msg00028.html
     - https://mail.python.org/archives/list/security-announce@python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN
     - https://mail.python.org/archives/list/security-announce@python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN/
     - https://nvd.nist.gov/vuln/detail/CVE-2025-8869
     - https://pip.pypa.io/en/stable/news/#v25-2
     - https://www.cve.org/CVERecord?id=CVE-2025-8869
     PublishedDate: '2025-09-24T15:15:41.293Z'
-    LastModifiedDate: '2025-09-24T18:11:24.52Z'
+    LastModifiedDate: '2025-11-03T18:17:02.783Z'
 - Target: usr/bin/prometheus
   Class: lang-pkgs
   Type: gobinary
@@ -3477,7 +3478,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-10-30T15:15:39.793Z'
+    LastModifiedDate: '2025-11-03T20:19:15.39Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3535,7 +3536,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-10-30T21:15:33.983Z'
+    LastModifiedDate: '2025-11-03T20:19:15.52Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3785,7 +3786,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-10-30T21:15:37.19Z'
+    LastModifiedDate: '2025-11-03T20:19:17.47Z'
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -6047,7 +6048,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-10-30T15:15:39.793Z'
+    LastModifiedDate: '2025-11-03T20:19:15.39Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6105,7 +6106,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-10-30T21:15:33.983Z'
+    LastModifiedDate: '2025-11-03T20:19:15.52Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6355,7 +6356,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-10-30T21:15:37.19Z'
+    LastModifiedDate: '2025-11-03T20:19:17.47Z'
 - Target: usr/share/grafana/bin/grafana
   Class: lang-pkgs
   Type: gobinary
@@ -13229,7 +13230,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-10-30T15:15:39.793Z'
+    LastModifiedDate: '2025-11-03T20:19:15.39Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13287,7 +13288,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-10-30T21:15:33.983Z'
+    LastModifiedDate: '2025-11-03T20:19:15.52Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13537,7 +13538,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-10-30T21:15:37.19Z'
+    LastModifiedDate: '2025-11-03T20:19:17.47Z'
 - Target: usr/share/grafana/bin/grafana-cli
   Class: lang-pkgs
   Type: gobinary
@@ -15180,7 +15181,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-10-30T15:15:39.793Z'
+    LastModifiedDate: '2025-11-03T20:19:15.39Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15238,7 +15239,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-10-30T21:15:33.983Z'
+    LastModifiedDate: '2025-11-03T20:19:15.52Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15488,7 +15489,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-10-30T21:15:37.19Z'
+    LastModifiedDate: '2025-11-03T20:19:17.47Z'
 - Target: usr/share/grafana/bin/grafana-server
   Class: lang-pkgs
   Type: gobinary
@@ -17131,7 +17132,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-10-30T15:15:39.793Z'
+    LastModifiedDate: '2025-11-03T20:19:15.39Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17189,7 +17190,7 @@
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-10-30T21:15:33.983Z'
+    LastModifiedDate: '2025-11-03T20:19:15.52Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17439,4 +17440,4 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-10-30T21:15:37.19Z'
+    LastModifiedDate: '2025-11-03T20:19:17.47Z'
