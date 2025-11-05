@@ -1112,15 +1112,17 @@
 │                             │                  ├ [2]: https://github.com/pypa/pip/commit/f2b92314da012b9fffa3
 │                             │                  │      6b3f3e67748a37ef464a 
 │                             │                  ├ [3]: https://github.com/pypa/pip/pull/13550 
-│                             │                  ├ [4]: https://mail.python.org/archives/list/security-announce
-│                             │                  │      @python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN 
+│                             │                  ├ [4]: https://lists.debian.org/debian-lts-announce/2025/10/ms
+│                             │                  │      g00028.html 
 │                             │                  ├ [5]: https://mail.python.org/archives/list/security-announce
+│                             │                  │      @python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN 
+│                             │                  ├ [6]: https://mail.python.org/archives/list/security-announce
 │                             │                  │      @python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN/ 
-│                             │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2025-8869 
-│                             │                  ├ [7]: https://pip.pypa.io/en/stable/news/#v25-2 
-│                             │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-8869 
+│                             │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-8869 
+│                             │                  ├ [8]: https://pip.pypa.io/en/stable/news/#v25-2 
+│                             │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-8869 
 │                             ├ PublishedDate   : 2025-09-24T15:15:41.293Z 
-│                             ╰ LastModifiedDate: 2025-09-24T18:11:24.52Z 
+│                             ╰ LastModifiedDate: 2025-11-03T18:17:02.783Z 
 ├ [4] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -3754,7 +3756,7 @@
 │                       │      │                  │      _bI 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4014 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
-│                       │      ╰ LastModifiedDate: 2025-10-30T15:15:39.793Z 
+│                       │      ╰ LastModifiedDate: 2025-11-03T20:19:15.39Z 
 │                       ├ [6]  ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -3817,7 +3819,7 @@
 │                       │      │                  │      _bI 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4007 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
-│                       │      ╰ LastModifiedDate: 2025-10-30T21:15:33.983Z 
+│                       │      ╰ LastModifiedDate: 2025-11-03T20:19:15.52Z 
 │                       ├ [8]  ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4073,7 +4075,7 @@
 │                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4006 
 │                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                              ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                              ╰ LastModifiedDate: 2025-10-30T21:15:37.19Z 
+│                              ╰ LastModifiedDate: 2025-11-03T20:19:17.47Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -6592,7 +6594,7 @@
 │                       │      │                  │      _bI 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4014 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
-│                       │      ╰ LastModifiedDate: 2025-10-30T15:15:39.793Z 
+│                       │      ╰ LastModifiedDate: 2025-11-03T20:19:15.39Z 
 │                       ├ [6]  ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -6655,7 +6657,7 @@
 │                       │      │                  │      _bI 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4007 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
-│                       │      ╰ LastModifiedDate: 2025-10-30T21:15:33.983Z 
+│                       │      ╰ LastModifiedDate: 2025-11-03T20:19:15.52Z 
 │                       ├ [8]  ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -6911,7 +6913,7 @@
 │                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4006 
 │                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                              ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                              ╰ LastModifiedDate: 2025-10-30T21:15:37.19Z 
+│                              ╰ LastModifiedDate: 2025-11-03T20:19:17.47Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -14337,7 +14339,7 @@
 │                       │      │                  │      _bI 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4014 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
-│                       │      ╰ LastModifiedDate: 2025-10-30T15:15:39.793Z 
+│                       │      ╰ LastModifiedDate: 2025-11-03T20:19:15.39Z 
 │                       ├ [29] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -14400,7 +14402,7 @@
 │                       │      │                  │      _bI 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4007 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
-│                       │      ╰ LastModifiedDate: 2025-10-30T21:15:33.983Z 
+│                       │      ╰ LastModifiedDate: 2025-11-03T20:19:15.52Z 
 │                       ├ [31] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -14656,7 +14658,7 @@
 │                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4006 
 │                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                              ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                              ╰ LastModifiedDate: 2025-10-30T21:15:37.19Z 
+│                              ╰ LastModifiedDate: 2025-11-03T20:19:17.47Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -16507,7 +16509,7 @@
 │                       │      │                  │      _bI 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4014 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
-│                       │      ╰ LastModifiedDate: 2025-10-30T15:15:39.793Z 
+│                       │      ╰ LastModifiedDate: 2025-11-03T20:19:15.39Z 
 │                       ├ [28] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -16570,7 +16572,7 @@
 │                       │      │                  │      _bI 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4007 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
-│                       │      ╰ LastModifiedDate: 2025-10-30T21:15:33.983Z 
+│                       │      ╰ LastModifiedDate: 2025-11-03T20:19:15.52Z 
 │                       ├ [30] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -16826,7 +16828,7 @@
 │                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4006 
 │                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                              ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                              ╰ LastModifiedDate: 2025-10-30T21:15:37.19Z 
+│                              ╰ LastModifiedDate: 2025-11-03T20:19:17.47Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -18677,7 +18679,7 @@
                         │      │                  │      _bI 
                         │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4014 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
-                        │      ╰ LastModifiedDate: 2025-10-30T15:15:39.793Z 
+                        │      ╰ LastModifiedDate: 2025-11-03T20:19:15.39Z 
                         ├ [28] ╭ VulnerabilityID : CVE-2025-58186 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -18740,7 +18742,7 @@
                         │      │                  │      _bI 
                         │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4007 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
-                        │      ╰ LastModifiedDate: 2025-10-30T21:15:33.983Z 
+                        │      ╰ LastModifiedDate: 2025-11-03T20:19:15.52Z 
                         ├ [30] ╭ VulnerabilityID : CVE-2025-58188 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -18996,5 +18998,5 @@
                                │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4006 
                                │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
                                ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-                               ╰ LastModifiedDate: 2025-10-30T21:15:37.19Z 
+                               ╰ LastModifiedDate: 2025-11-03T20:19:17.47Z 
 ````
