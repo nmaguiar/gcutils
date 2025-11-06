@@ -3412,6 +3412,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L
         V3Score: 7
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
@@ -3420,7 +3421,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3849
     - https://www.cve.org/CVERecord?id=CVE-2025-47907
     PublishedDate: '2025-08-07T16:15:30.357Z'
-    LastModifiedDate: '2025-08-07T21:26:37.453Z'
+    LastModifiedDate: '2025-11-04T22:16:16.347Z'
   - VulnerabilityID: CVE-2025-47912
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3444,12 +3445,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709857
     - https://go.dev/issue/75678
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4010
     PublishedDate: '2025-10-29T23:16:18.187Z'
-    LastModifiedDate: '2025-10-30T21:15:32.79Z'
+    LastModifiedDate: '2025-11-04T22:16:16.497Z'
   - VulnerabilityID: CVE-2025-58183
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3473,12 +3475,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-11-03T20:19:15.39Z'
+    LastModifiedDate: '2025-11-04T22:16:33.2Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3502,12 +3505,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709855
     - https://go.dev/issue/75672
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4012
     PublishedDate: '2025-10-29T23:16:19.547Z'
-    LastModifiedDate: '2025-10-30T15:15:40.07Z'
+    LastModifiedDate: '2025-11-04T22:16:33.45Z'
   - VulnerabilityID: CVE-2025-58187
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3531,12 +3535,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709854
     - https://go.dev/issue/75681
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-03T20:19:15.52Z'
+    LastModifiedDate: '2025-11-04T22:16:33.593Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3560,12 +3565,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709853
     - https://go.dev/issue/75675
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4013
     PublishedDate: '2025-10-29T23:16:19.74Z'
-    LastModifiedDate: '2025-10-30T15:15:40.203Z'
+    LastModifiedDate: '2025-11-04T22:16:33.74Z'
   - VulnerabilityID: CVE-2025-61724
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3589,12 +3595,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709859
     - https://go.dev/issue/75716
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4015
     PublishedDate: '2025-10-29T23:16:20.02Z'
-    LastModifiedDate: '2025-10-30T15:15:41.31Z'
+    LastModifiedDate: '2025-11-04T22:16:36.567Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3628,6 +3635,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
         V3Score: 6.5
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -3636,7 +3644,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
     PublishedDate: '2025-09-18T19:15:37.66Z'
-    LastModifiedDate: '2025-09-19T16:00:27.847Z'
+    LastModifiedDate: '2025-11-04T22:16:16.207Z'
   - VulnerabilityID: CVE-2025-58185
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3665,6 +3673,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58185
     - https://github.com/golang/go/commit/8709a41d5ef7321f486a1857f189c3fee20e8edd
     - https://go.dev/cl/709856
@@ -3674,7 +3683,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4011
     - https://www.cve.org/CVERecord?id=CVE-2025-58185
     PublishedDate: '2025-10-29T23:16:19.45Z'
-    LastModifiedDate: '2025-10-30T15:15:39.937Z'
+    LastModifiedDate: '2025-11-04T22:16:33.327Z'
   - VulnerabilityID: CVE-2025-58189
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3703,6 +3712,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58189
     - https://go.dev/cl/707776
     - https://go.dev/issue/75652
@@ -3711,7 +3721,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4008
     - https://www.cve.org/CVERecord?id=CVE-2025-58189
     PublishedDate: '2025-10-29T23:16:19.833Z'
-    LastModifiedDate: '2025-10-30T21:15:34.127Z'
+    LastModifiedDate: '2025-11-04T22:16:33.877Z'
   - VulnerabilityID: CVE-2025-61723
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3740,6 +3750,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61723
     - https://github.com/golang/go/commit/5ce8cd16f3859ec5ac4106ad8ec15d6236f4501b
     - https://go.dev/cl/709858
@@ -3749,7 +3760,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4009
     - https://www.cve.org/CVERecord?id=CVE-2025-61723
     PublishedDate: '2025-10-29T23:16:19.927Z'
-    LastModifiedDate: '2025-11-03T15:15:36.157Z'
+    LastModifiedDate: '2025-11-04T22:16:36.42Z'
   - VulnerabilityID: CVE-2025-61725
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3778,6 +3789,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61725
     - https://go.dev/cl/709860
     - https://go.dev/issue/75680
@@ -3786,7 +3798,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-11-03T20:19:17.47Z'
+    LastModifiedDate: '2025-11-04T22:16:36.693Z'
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -5982,6 +5994,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L
         V3Score: 7
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
@@ -5990,7 +6003,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3849
     - https://www.cve.org/CVERecord?id=CVE-2025-47907
     PublishedDate: '2025-08-07T16:15:30.357Z'
-    LastModifiedDate: '2025-08-07T21:26:37.453Z'
+    LastModifiedDate: '2025-11-04T22:16:16.347Z'
   - VulnerabilityID: CVE-2025-47912
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6014,12 +6027,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709857
     - https://go.dev/issue/75678
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4010
     PublishedDate: '2025-10-29T23:16:18.187Z'
-    LastModifiedDate: '2025-10-30T21:15:32.79Z'
+    LastModifiedDate: '2025-11-04T22:16:16.497Z'
   - VulnerabilityID: CVE-2025-58183
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6043,12 +6057,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-11-03T20:19:15.39Z'
+    LastModifiedDate: '2025-11-04T22:16:33.2Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6072,12 +6087,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709855
     - https://go.dev/issue/75672
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4012
     PublishedDate: '2025-10-29T23:16:19.547Z'
-    LastModifiedDate: '2025-10-30T15:15:40.07Z'
+    LastModifiedDate: '2025-11-04T22:16:33.45Z'
   - VulnerabilityID: CVE-2025-58187
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6101,12 +6117,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709854
     - https://go.dev/issue/75681
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-03T20:19:15.52Z'
+    LastModifiedDate: '2025-11-04T22:16:33.593Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6130,12 +6147,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709853
     - https://go.dev/issue/75675
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4013
     PublishedDate: '2025-10-29T23:16:19.74Z'
-    LastModifiedDate: '2025-10-30T15:15:40.203Z'
+    LastModifiedDate: '2025-11-04T22:16:33.74Z'
   - VulnerabilityID: CVE-2025-61724
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6159,12 +6177,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709859
     - https://go.dev/issue/75716
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4015
     PublishedDate: '2025-10-29T23:16:20.02Z'
-    LastModifiedDate: '2025-10-30T15:15:41.31Z'
+    LastModifiedDate: '2025-11-04T22:16:36.567Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6198,6 +6217,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
         V3Score: 6.5
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -6206,7 +6226,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
     PublishedDate: '2025-09-18T19:15:37.66Z'
-    LastModifiedDate: '2025-09-19T16:00:27.847Z'
+    LastModifiedDate: '2025-11-04T22:16:16.207Z'
   - VulnerabilityID: CVE-2025-58185
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6235,6 +6255,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58185
     - https://github.com/golang/go/commit/8709a41d5ef7321f486a1857f189c3fee20e8edd
     - https://go.dev/cl/709856
@@ -6244,7 +6265,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4011
     - https://www.cve.org/CVERecord?id=CVE-2025-58185
     PublishedDate: '2025-10-29T23:16:19.45Z'
-    LastModifiedDate: '2025-10-30T15:15:39.937Z'
+    LastModifiedDate: '2025-11-04T22:16:33.327Z'
   - VulnerabilityID: CVE-2025-58189
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6273,6 +6294,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58189
     - https://go.dev/cl/707776
     - https://go.dev/issue/75652
@@ -6281,7 +6303,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4008
     - https://www.cve.org/CVERecord?id=CVE-2025-58189
     PublishedDate: '2025-10-29T23:16:19.833Z'
-    LastModifiedDate: '2025-10-30T21:15:34.127Z'
+    LastModifiedDate: '2025-11-04T22:16:33.877Z'
   - VulnerabilityID: CVE-2025-61723
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6310,6 +6332,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61723
     - https://github.com/golang/go/commit/5ce8cd16f3859ec5ac4106ad8ec15d6236f4501b
     - https://go.dev/cl/709858
@@ -6319,7 +6342,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4009
     - https://www.cve.org/CVERecord?id=CVE-2025-61723
     PublishedDate: '2025-10-29T23:16:19.927Z'
-    LastModifiedDate: '2025-11-03T15:15:36.157Z'
+    LastModifiedDate: '2025-11-04T22:16:36.42Z'
   - VulnerabilityID: CVE-2025-61725
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6348,6 +6371,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61725
     - https://go.dev/cl/709860
     - https://go.dev/issue/75680
@@ -6356,7 +6380,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-11-03T20:19:17.47Z'
+    LastModifiedDate: '2025-11-04T22:16:36.693Z'
 - Target: usr/share/grafana/bin/grafana
   Class: lang-pkgs
   Type: gobinary
@@ -13164,6 +13188,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L
         V3Score: 7
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
@@ -13172,7 +13197,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3849
     - https://www.cve.org/CVERecord?id=CVE-2025-47907
     PublishedDate: '2025-08-07T16:15:30.357Z'
-    LastModifiedDate: '2025-08-07T21:26:37.453Z'
+    LastModifiedDate: '2025-11-04T22:16:16.347Z'
   - VulnerabilityID: CVE-2025-47912
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13196,12 +13221,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709857
     - https://go.dev/issue/75678
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4010
     PublishedDate: '2025-10-29T23:16:18.187Z'
-    LastModifiedDate: '2025-10-30T21:15:32.79Z'
+    LastModifiedDate: '2025-11-04T22:16:16.497Z'
   - VulnerabilityID: CVE-2025-58183
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13225,12 +13251,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-11-03T20:19:15.39Z'
+    LastModifiedDate: '2025-11-04T22:16:33.2Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13254,12 +13281,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709855
     - https://go.dev/issue/75672
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4012
     PublishedDate: '2025-10-29T23:16:19.547Z'
-    LastModifiedDate: '2025-10-30T15:15:40.07Z'
+    LastModifiedDate: '2025-11-04T22:16:33.45Z'
   - VulnerabilityID: CVE-2025-58187
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13283,12 +13311,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709854
     - https://go.dev/issue/75681
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-03T20:19:15.52Z'
+    LastModifiedDate: '2025-11-04T22:16:33.593Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13312,12 +13341,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709853
     - https://go.dev/issue/75675
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4013
     PublishedDate: '2025-10-29T23:16:19.74Z'
-    LastModifiedDate: '2025-10-30T15:15:40.203Z'
+    LastModifiedDate: '2025-11-04T22:16:33.74Z'
   - VulnerabilityID: CVE-2025-61724
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13341,12 +13371,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709859
     - https://go.dev/issue/75716
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4015
     PublishedDate: '2025-10-29T23:16:20.02Z'
-    LastModifiedDate: '2025-10-30T15:15:41.31Z'
+    LastModifiedDate: '2025-11-04T22:16:36.567Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13380,6 +13411,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
         V3Score: 6.5
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -13388,7 +13420,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
     PublishedDate: '2025-09-18T19:15:37.66Z'
-    LastModifiedDate: '2025-09-19T16:00:27.847Z'
+    LastModifiedDate: '2025-11-04T22:16:16.207Z'
   - VulnerabilityID: CVE-2025-58185
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13417,6 +13449,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58185
     - https://github.com/golang/go/commit/8709a41d5ef7321f486a1857f189c3fee20e8edd
     - https://go.dev/cl/709856
@@ -13426,7 +13459,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4011
     - https://www.cve.org/CVERecord?id=CVE-2025-58185
     PublishedDate: '2025-10-29T23:16:19.45Z'
-    LastModifiedDate: '2025-10-30T15:15:39.937Z'
+    LastModifiedDate: '2025-11-04T22:16:33.327Z'
   - VulnerabilityID: CVE-2025-58189
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13455,6 +13488,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58189
     - https://go.dev/cl/707776
     - https://go.dev/issue/75652
@@ -13463,7 +13497,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4008
     - https://www.cve.org/CVERecord?id=CVE-2025-58189
     PublishedDate: '2025-10-29T23:16:19.833Z'
-    LastModifiedDate: '2025-10-30T21:15:34.127Z'
+    LastModifiedDate: '2025-11-04T22:16:33.877Z'
   - VulnerabilityID: CVE-2025-61723
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13492,6 +13526,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61723
     - https://github.com/golang/go/commit/5ce8cd16f3859ec5ac4106ad8ec15d6236f4501b
     - https://go.dev/cl/709858
@@ -13501,7 +13536,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4009
     - https://www.cve.org/CVERecord?id=CVE-2025-61723
     PublishedDate: '2025-10-29T23:16:19.927Z'
-    LastModifiedDate: '2025-11-03T15:15:36.157Z'
+    LastModifiedDate: '2025-11-04T22:16:36.42Z'
   - VulnerabilityID: CVE-2025-61725
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13530,6 +13565,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61725
     - https://go.dev/cl/709860
     - https://go.dev/issue/75680
@@ -13538,7 +13574,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-11-03T20:19:17.47Z'
+    LastModifiedDate: '2025-11-04T22:16:36.693Z'
 - Target: usr/share/grafana/bin/grafana-cli
   Class: lang-pkgs
   Type: gobinary
@@ -15115,6 +15151,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L
         V3Score: 7
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
@@ -15123,7 +15160,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3849
     - https://www.cve.org/CVERecord?id=CVE-2025-47907
     PublishedDate: '2025-08-07T16:15:30.357Z'
-    LastModifiedDate: '2025-08-07T21:26:37.453Z'
+    LastModifiedDate: '2025-11-04T22:16:16.347Z'
   - VulnerabilityID: CVE-2025-47912
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15147,12 +15184,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709857
     - https://go.dev/issue/75678
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4010
     PublishedDate: '2025-10-29T23:16:18.187Z'
-    LastModifiedDate: '2025-10-30T21:15:32.79Z'
+    LastModifiedDate: '2025-11-04T22:16:16.497Z'
   - VulnerabilityID: CVE-2025-58183
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15176,12 +15214,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-11-03T20:19:15.39Z'
+    LastModifiedDate: '2025-11-04T22:16:33.2Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15205,12 +15244,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709855
     - https://go.dev/issue/75672
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4012
     PublishedDate: '2025-10-29T23:16:19.547Z'
-    LastModifiedDate: '2025-10-30T15:15:40.07Z'
+    LastModifiedDate: '2025-11-04T22:16:33.45Z'
   - VulnerabilityID: CVE-2025-58187
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15234,12 +15274,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709854
     - https://go.dev/issue/75681
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-03T20:19:15.52Z'
+    LastModifiedDate: '2025-11-04T22:16:33.593Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15263,12 +15304,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709853
     - https://go.dev/issue/75675
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4013
     PublishedDate: '2025-10-29T23:16:19.74Z'
-    LastModifiedDate: '2025-10-30T15:15:40.203Z'
+    LastModifiedDate: '2025-11-04T22:16:33.74Z'
   - VulnerabilityID: CVE-2025-61724
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15292,12 +15334,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709859
     - https://go.dev/issue/75716
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4015
     PublishedDate: '2025-10-29T23:16:20.02Z'
-    LastModifiedDate: '2025-10-30T15:15:41.31Z'
+    LastModifiedDate: '2025-11-04T22:16:36.567Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15331,6 +15374,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
         V3Score: 6.5
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -15339,7 +15383,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
     PublishedDate: '2025-09-18T19:15:37.66Z'
-    LastModifiedDate: '2025-09-19T16:00:27.847Z'
+    LastModifiedDate: '2025-11-04T22:16:16.207Z'
   - VulnerabilityID: CVE-2025-58185
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15368,6 +15412,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58185
     - https://github.com/golang/go/commit/8709a41d5ef7321f486a1857f189c3fee20e8edd
     - https://go.dev/cl/709856
@@ -15377,7 +15422,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4011
     - https://www.cve.org/CVERecord?id=CVE-2025-58185
     PublishedDate: '2025-10-29T23:16:19.45Z'
-    LastModifiedDate: '2025-10-30T15:15:39.937Z'
+    LastModifiedDate: '2025-11-04T22:16:33.327Z'
   - VulnerabilityID: CVE-2025-58189
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15406,6 +15451,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58189
     - https://go.dev/cl/707776
     - https://go.dev/issue/75652
@@ -15414,7 +15460,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4008
     - https://www.cve.org/CVERecord?id=CVE-2025-58189
     PublishedDate: '2025-10-29T23:16:19.833Z'
-    LastModifiedDate: '2025-10-30T21:15:34.127Z'
+    LastModifiedDate: '2025-11-04T22:16:33.877Z'
   - VulnerabilityID: CVE-2025-61723
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15443,6 +15489,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61723
     - https://github.com/golang/go/commit/5ce8cd16f3859ec5ac4106ad8ec15d6236f4501b
     - https://go.dev/cl/709858
@@ -15452,7 +15499,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4009
     - https://www.cve.org/CVERecord?id=CVE-2025-61723
     PublishedDate: '2025-10-29T23:16:19.927Z'
-    LastModifiedDate: '2025-11-03T15:15:36.157Z'
+    LastModifiedDate: '2025-11-04T22:16:36.42Z'
   - VulnerabilityID: CVE-2025-61725
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15481,6 +15528,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61725
     - https://go.dev/cl/709860
     - https://go.dev/issue/75680
@@ -15489,7 +15537,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-11-03T20:19:17.47Z'
+    LastModifiedDate: '2025-11-04T22:16:36.693Z'
 - Target: usr/share/grafana/bin/grafana-server
   Class: lang-pkgs
   Type: gobinary
@@ -17066,6 +17114,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L
         V3Score: 7
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
@@ -17074,7 +17123,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3849
     - https://www.cve.org/CVERecord?id=CVE-2025-47907
     PublishedDate: '2025-08-07T16:15:30.357Z'
-    LastModifiedDate: '2025-08-07T21:26:37.453Z'
+    LastModifiedDate: '2025-11-04T22:16:16.347Z'
   - VulnerabilityID: CVE-2025-47912
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17098,12 +17147,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709857
     - https://go.dev/issue/75678
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4010
     PublishedDate: '2025-10-29T23:16:18.187Z'
-    LastModifiedDate: '2025-10-30T21:15:32.79Z'
+    LastModifiedDate: '2025-11-04T22:16:16.497Z'
   - VulnerabilityID: CVE-2025-58183
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17127,12 +17177,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4014
     PublishedDate: '2025-10-29T23:16:19.357Z'
-    LastModifiedDate: '2025-11-03T20:19:15.39Z'
+    LastModifiedDate: '2025-11-04T22:16:33.2Z'
   - VulnerabilityID: CVE-2025-58186
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17156,12 +17207,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709855
     - https://go.dev/issue/75672
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4012
     PublishedDate: '2025-10-29T23:16:19.547Z'
-    LastModifiedDate: '2025-10-30T15:15:40.07Z'
+    LastModifiedDate: '2025-11-04T22:16:33.45Z'
   - VulnerabilityID: CVE-2025-58187
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17185,12 +17237,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709854
     - https://go.dev/issue/75681
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-03T20:19:15.52Z'
+    LastModifiedDate: '2025-11-04T22:16:33.593Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17214,12 +17267,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709853
     - https://go.dev/issue/75675
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4013
     PublishedDate: '2025-10-29T23:16:19.74Z'
-    LastModifiedDate: '2025-10-30T15:15:40.203Z'
+    LastModifiedDate: '2025-11-04T22:16:33.74Z'
   - VulnerabilityID: CVE-2025-61724
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17243,12 +17297,13 @@
     VendorSeverity:
       amazon: 3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://go.dev/cl/709859
     - https://go.dev/issue/75716
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://pkg.go.dev/vuln/GO-2025-4015
     PublishedDate: '2025-10-29T23:16:20.02Z'
-    LastModifiedDate: '2025-10-30T15:15:41.31Z'
+    LastModifiedDate: '2025-11-04T22:16:36.567Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17282,6 +17337,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L
         V3Score: 6.5
     References:
+    - http://www.openwall.com/lists/oss-security/2025/08/06/1
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -17290,7 +17346,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
     PublishedDate: '2025-09-18T19:15:37.66Z'
-    LastModifiedDate: '2025-09-19T16:00:27.847Z'
+    LastModifiedDate: '2025-11-04T22:16:16.207Z'
   - VulnerabilityID: CVE-2025-58185
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17319,6 +17375,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58185
     - https://github.com/golang/go/commit/8709a41d5ef7321f486a1857f189c3fee20e8edd
     - https://go.dev/cl/709856
@@ -17328,7 +17385,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4011
     - https://www.cve.org/CVERecord?id=CVE-2025-58185
     PublishedDate: '2025-10-29T23:16:19.45Z'
-    LastModifiedDate: '2025-10-30T15:15:39.937Z'
+    LastModifiedDate: '2025-11-04T22:16:33.327Z'
   - VulnerabilityID: CVE-2025-58189
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17357,6 +17414,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-58189
     - https://go.dev/cl/707776
     - https://go.dev/issue/75652
@@ -17365,7 +17423,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4008
     - https://www.cve.org/CVERecord?id=CVE-2025-58189
     PublishedDate: '2025-10-29T23:16:19.833Z'
-    LastModifiedDate: '2025-10-30T21:15:34.127Z'
+    LastModifiedDate: '2025-11-04T22:16:33.877Z'
   - VulnerabilityID: CVE-2025-61723
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17394,6 +17452,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61723
     - https://github.com/golang/go/commit/5ce8cd16f3859ec5ac4106ad8ec15d6236f4501b
     - https://go.dev/cl/709858
@@ -17403,7 +17462,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4009
     - https://www.cve.org/CVERecord?id=CVE-2025-61723
     PublishedDate: '2025-10-29T23:16:19.927Z'
-    LastModifiedDate: '2025-11-03T15:15:36.157Z'
+    LastModifiedDate: '2025-11-04T22:16:36.42Z'
   - VulnerabilityID: CVE-2025-61725
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17432,6 +17491,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
     References:
+    - http://www.openwall.com/lists/oss-security/2025/10/08/1
     - https://access.redhat.com/security/cve/CVE-2025-61725
     - https://go.dev/cl/709860
     - https://go.dev/issue/75680
@@ -17440,4 +17500,4 @@
     - https://pkg.go.dev/vuln/GO-2025-4006
     - https://www.cve.org/CVERecord?id=CVE-2025-61725
     PublishedDate: '2025-10-29T23:16:20.113Z'
-    LastModifiedDate: '2025-11-03T20:19:17.47Z'
+    LastModifiedDate: '2025-11-04T22:16:36.693Z'
