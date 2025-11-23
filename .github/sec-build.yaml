@@ -3410,11 +3410,12 @@
     References:
     - https://go.dev/cl/721960
     - https://go.dev/issue/76364
+    - https://go.googlesource.com/crypto
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-47914
     - https://pkg.go.dev/vuln/GO-2025-4135
     PublishedDate: '2025-11-19T21:15:50.517Z'
-    LastModifiedDate: '2025-11-19T21:15:50.517Z'
+    LastModifiedDate: '2025-11-21T15:13:59.083Z'
   - VulnerabilityID: CVE-2025-58181
     PkgID: golang.org/x/crypto@v0.39.0
     PkgName: golang.org/x/crypto
@@ -3451,7 +3452,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
     PublishedDate: '2025-11-19T21:15:50.85Z'
-    LastModifiedDate: '2025-11-19T21:15:50.85Z'
+    LastModifiedDate: '2025-11-21T15:13:59.083Z'
   - VulnerabilityID: CVE-2025-47907
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -3517,6 +3518,7 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
+      alma: 2
       amazon: 3
       bitnami: 2
       redhat: 2
@@ -3529,7 +3531,10 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
+    - https://access.redhat.com/errata/RHSA-2025:21815
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2407258
+    - https://errata.almalinux.org/9/ALSA-2025-21815.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -3592,7 +3597,7 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Title: Due to the design of the name constraint checking algorithm, the proce ...
-    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scals non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
+    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scale non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
     Severity: HIGH
     VendorSeverity:
       amazon: 3
@@ -3609,7 +3614,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58187
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-04T22:16:33.593Z'
+    LastModifiedDate: '2025-11-20T23:15:52.007Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6137,11 +6142,12 @@
     References:
     - https://go.dev/cl/721960
     - https://go.dev/issue/76364
+    - https://go.googlesource.com/crypto
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-47914
     - https://pkg.go.dev/vuln/GO-2025-4135
     PublishedDate: '2025-11-19T21:15:50.517Z'
-    LastModifiedDate: '2025-11-19T21:15:50.517Z'
+    LastModifiedDate: '2025-11-21T15:13:59.083Z'
   - VulnerabilityID: CVE-2025-58181
     PkgID: golang.org/x/crypto@v0.39.0
     PkgName: golang.org/x/crypto
@@ -6178,7 +6184,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
     PublishedDate: '2025-11-19T21:15:50.85Z'
-    LastModifiedDate: '2025-11-19T21:15:50.85Z'
+    LastModifiedDate: '2025-11-21T15:13:59.083Z'
   - VulnerabilityID: CVE-2025-47907
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6244,6 +6250,7 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
+      alma: 2
       amazon: 3
       bitnami: 2
       redhat: 2
@@ -6256,7 +6263,10 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
+    - https://access.redhat.com/errata/RHSA-2025:21815
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2407258
+    - https://errata.almalinux.org/9/ALSA-2025-21815.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -6319,7 +6329,7 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Title: Due to the design of the name constraint checking algorithm, the proce ...
-    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scals non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
+    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scale non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
     Severity: HIGH
     VendorSeverity:
       amazon: 3
@@ -6336,7 +6346,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58187
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-04T22:16:33.593Z'
+    LastModifiedDate: '2025-11-20T23:15:52.007Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -13444,6 +13454,38 @@
     - https://www.cve.org/CVERecord?id=CVE-2024-10452
     PublishedDate: '2024-10-29T16:15:04.593Z'
     LastModifiedDate: '2024-11-08T17:59:10.977Z'
+  - VulnerabilityID: CVE-2025-64751
+    PkgID: github.com/openfga/openfga@v1.8.13
+    PkgName: github.com/openfga/openfga
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/openfga/openfga@v1.8.13
+      UID: 2a9430e3500a9dd8
+    InstalledVersion: v1.8.13
+    FixedVersion: 1.11.1
+    Status: fixed
+    Layer:
+      Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d576cc7fbfc24b686
+      DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f2d229b68f52d773
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-64751
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Title: OpenFGA Improper Policy Enforcement
+    Description: OpenFGA is a high-performance and flexible authorization/permission engine built for developers and inspired by Google Zanzibar. OpenFGA v1.4.0 to v1.11.0 ( openfga-0.1.34 <= Helm chart <= openfga-0.2.48, v.1.4.0 <= docker <= v.1.11.0) are vulnerable to improper policy enforcement when certain Check and ListObject calls are executed. This issue has been patched in version 1.11.1.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-285
+    VendorSeverity:
+      ghsa: 2
+    References:
+    - https://github.com/openfga/openfga
+    - https://github.com/openfga/openfga/releases/tag/v1.11.1
+    - https://github.com/openfga/openfga/security/advisories/GHSA-2c64-vmv2-hgfc
+    - https://nvd.nist.gov/vuln/detail/CVE-2025-64751
+    PublishedDate: '2025-11-21T02:15:43.747Z'
+    LastModifiedDate: '2025-11-21T15:13:13.8Z'
   - VulnerabilityID: CVE-2025-47914
     PkgID: golang.org/x/crypto@v0.39.0
     PkgName: golang.org/x/crypto
@@ -13476,11 +13518,12 @@
     References:
     - https://go.dev/cl/721960
     - https://go.dev/issue/76364
+    - https://go.googlesource.com/crypto
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-47914
     - https://pkg.go.dev/vuln/GO-2025-4135
     PublishedDate: '2025-11-19T21:15:50.517Z'
-    LastModifiedDate: '2025-11-19T21:15:50.517Z'
+    LastModifiedDate: '2025-11-21T15:13:59.083Z'
   - VulnerabilityID: CVE-2025-58181
     PkgID: golang.org/x/crypto@v0.39.0
     PkgName: golang.org/x/crypto
@@ -13517,7 +13560,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
     PublishedDate: '2025-11-19T21:15:50.85Z'
-    LastModifiedDate: '2025-11-19T21:15:50.85Z'
+    LastModifiedDate: '2025-11-21T15:13:59.083Z'
   - VulnerabilityID: CVE-2025-47907
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -13583,6 +13626,7 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
+      alma: 2
       amazon: 3
       bitnami: 2
       redhat: 2
@@ -13595,7 +13639,10 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
+    - https://access.redhat.com/errata/RHSA-2025:21815
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2407258
+    - https://errata.almalinux.org/9/ALSA-2025-21815.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -13658,7 +13705,7 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Title: Due to the design of the name constraint checking algorithm, the proce ...
-    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scals non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
+    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scale non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
     Severity: HIGH
     VendorSeverity:
       amazon: 3
@@ -13675,7 +13722,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58187
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-04T22:16:33.593Z'
+    LastModifiedDate: '2025-11-20T23:15:52.007Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -15617,6 +15664,7 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
+      alma: 2
       amazon: 3
       bitnami: 2
       redhat: 2
@@ -15629,7 +15677,10 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
+    - https://access.redhat.com/errata/RHSA-2025:21815
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2407258
+    - https://errata.almalinux.org/9/ALSA-2025-21815.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -15692,7 +15743,7 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Title: Due to the design of the name constraint checking algorithm, the proce ...
-    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scals non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
+    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scale non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
     Severity: HIGH
     VendorSeverity:
       amazon: 3
@@ -15709,7 +15760,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58187
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-04T22:16:33.593Z'
+    LastModifiedDate: '2025-11-20T23:15:52.007Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -17651,6 +17702,7 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
+      alma: 2
       amazon: 3
       bitnami: 2
       redhat: 2
@@ -17663,7 +17715,10 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
+    - https://access.redhat.com/errata/RHSA-2025:21815
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2407258
+    - https://errata.almalinux.org/9/ALSA-2025-21815.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -17726,7 +17781,7 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Title: Due to the design of the name constraint checking algorithm, the proce ...
-    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scals non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
+    Description: Due to the design of the name constraint checking algorithm, the processing time of some inputs scale non-linearly with respect to the size of the certificate. This affects programs which validate arbitrary certificate chains.
     Severity: HIGH
     VendorSeverity:
       amazon: 3
@@ -17743,7 +17798,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58187
     - https://pkg.go.dev/vuln/GO-2025-4007
     PublishedDate: '2025-10-29T23:16:19.643Z'
-    LastModifiedDate: '2025-11-04T22:16:33.593Z'
+    LastModifiedDate: '2025-11-20T23:15:52.007Z'
   - VulnerabilityID: CVE-2025-58188
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
