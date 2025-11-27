@@ -3474,6 +3474,7 @@
     Description: Cancelling a query (e.g. by cancelling the context passed to one of the query methods) during a call to the Scan method of the returned Rows can result in unexpected results if other queries are being made in parallel. This can result in a race condition that may overwrite the expected results with those of another query, causing the call to Scan to return either unexpected results from the other query or an error.
     Severity: HIGH
     VendorSeverity:
+      alma: 3
       amazon: 3
       azure: 3
       bitnami: 3
@@ -3488,7 +3489,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
+    - https://bugzilla.redhat.com/2387083
+    - https://bugzilla.redhat.com/2393152
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -3518,9 +3523,10 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       bitnami: 2
+      oracle-oval: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -3531,13 +3537,16 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:21815
+    - https://access.redhat.com/errata/RHSA-2025:22011
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://errata.almalinux.org/9/ALSA-2025-21815.html
+    - https://errata.almalinux.org/9/ALSA-2025-22011.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
+    - https://linux.oracle.com/cve/CVE-2025-58183.html
+    - https://linux.oracle.com/errata/ELSA-2025-22011.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -3672,10 +3681,12 @@
     Description: If the PATH environment variable contains paths which are executables (rather than just directories), passing certain strings to LookPath ("", ".", and ".."), can result in the binaries listed in the PATH being unexpectedly returned.
     Severity: MEDIUM
     VendorSeverity:
+      alma: 2
       amazon: 3
       azure: 3
       bitnami: 2
       cbl-mariner: 2
+      oracle-oval: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -3686,10 +3697,15 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
+    - https://bugzilla.redhat.com/2396546
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
+    - https://linux.oracle.com/cve/CVE-2025-47906.html
+    - https://linux.oracle.com/errata/ELSA-2025-22005.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-47906
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
@@ -6206,6 +6222,7 @@
     Description: Cancelling a query (e.g. by cancelling the context passed to one of the query methods) during a call to the Scan method of the returned Rows can result in unexpected results if other queries are being made in parallel. This can result in a race condition that may overwrite the expected results with those of another query, causing the call to Scan to return either unexpected results from the other query or an error.
     Severity: HIGH
     VendorSeverity:
+      alma: 3
       amazon: 3
       azure: 3
       bitnami: 3
@@ -6220,7 +6237,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
+    - https://bugzilla.redhat.com/2387083
+    - https://bugzilla.redhat.com/2393152
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -6250,9 +6271,10 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       bitnami: 2
+      oracle-oval: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -6263,13 +6285,16 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:21815
+    - https://access.redhat.com/errata/RHSA-2025:22011
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://errata.almalinux.org/9/ALSA-2025-21815.html
+    - https://errata.almalinux.org/9/ALSA-2025-22011.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
+    - https://linux.oracle.com/cve/CVE-2025-58183.html
+    - https://linux.oracle.com/errata/ELSA-2025-22011.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -6404,10 +6429,12 @@
     Description: If the PATH environment variable contains paths which are executables (rather than just directories), passing certain strings to LookPath ("", ".", and ".."), can result in the binaries listed in the PATH being unexpectedly returned.
     Severity: MEDIUM
     VendorSeverity:
+      alma: 2
       amazon: 3
       azure: 3
       bitnami: 2
       cbl-mariner: 2
+      oracle-oval: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -6418,10 +6445,15 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
+    - https://bugzilla.redhat.com/2396546
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
+    - https://linux.oracle.com/cve/CVE-2025-47906.html
+    - https://linux.oracle.com/errata/ELSA-2025-22005.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-47906
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
@@ -13582,6 +13614,7 @@
     Description: Cancelling a query (e.g. by cancelling the context passed to one of the query methods) during a call to the Scan method of the returned Rows can result in unexpected results if other queries are being made in parallel. This can result in a race condition that may overwrite the expected results with those of another query, causing the call to Scan to return either unexpected results from the other query or an error.
     Severity: HIGH
     VendorSeverity:
+      alma: 3
       amazon: 3
       azure: 3
       bitnami: 3
@@ -13596,7 +13629,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
+    - https://bugzilla.redhat.com/2387083
+    - https://bugzilla.redhat.com/2393152
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -13626,9 +13663,10 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       bitnami: 2
+      oracle-oval: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -13639,13 +13677,16 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:21815
+    - https://access.redhat.com/errata/RHSA-2025:22011
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://errata.almalinux.org/9/ALSA-2025-21815.html
+    - https://errata.almalinux.org/9/ALSA-2025-22011.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
+    - https://linux.oracle.com/cve/CVE-2025-58183.html
+    - https://linux.oracle.com/errata/ELSA-2025-22011.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -13780,10 +13821,12 @@
     Description: If the PATH environment variable contains paths which are executables (rather than just directories), passing certain strings to LookPath ("", ".", and ".."), can result in the binaries listed in the PATH being unexpectedly returned.
     Severity: MEDIUM
     VendorSeverity:
+      alma: 2
       amazon: 3
       azure: 3
       bitnami: 2
       cbl-mariner: 2
+      oracle-oval: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -13794,10 +13837,15 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
+    - https://bugzilla.redhat.com/2396546
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
+    - https://linux.oracle.com/cve/CVE-2025-47906.html
+    - https://linux.oracle.com/errata/ELSA-2025-22005.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-47906
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
@@ -15620,6 +15668,7 @@
     Description: Cancelling a query (e.g. by cancelling the context passed to one of the query methods) during a call to the Scan method of the returned Rows can result in unexpected results if other queries are being made in parallel. This can result in a race condition that may overwrite the expected results with those of another query, causing the call to Scan to return either unexpected results from the other query or an error.
     Severity: HIGH
     VendorSeverity:
+      alma: 3
       amazon: 3
       azure: 3
       bitnami: 3
@@ -15634,7 +15683,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
+    - https://bugzilla.redhat.com/2387083
+    - https://bugzilla.redhat.com/2393152
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -15664,9 +15717,10 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       bitnami: 2
+      oracle-oval: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -15677,13 +15731,16 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:21815
+    - https://access.redhat.com/errata/RHSA-2025:22011
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://errata.almalinux.org/9/ALSA-2025-21815.html
+    - https://errata.almalinux.org/9/ALSA-2025-22011.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
+    - https://linux.oracle.com/cve/CVE-2025-58183.html
+    - https://linux.oracle.com/errata/ELSA-2025-22011.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -15818,10 +15875,12 @@
     Description: If the PATH environment variable contains paths which are executables (rather than just directories), passing certain strings to LookPath ("", ".", and ".."), can result in the binaries listed in the PATH being unexpectedly returned.
     Severity: MEDIUM
     VendorSeverity:
+      alma: 2
       amazon: 3
       azure: 3
       bitnami: 2
       cbl-mariner: 2
+      oracle-oval: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -15832,10 +15891,15 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
+    - https://bugzilla.redhat.com/2396546
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
+    - https://linux.oracle.com/cve/CVE-2025-47906.html
+    - https://linux.oracle.com/errata/ELSA-2025-22005.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-47906
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
@@ -17658,6 +17722,7 @@
     Description: Cancelling a query (e.g. by cancelling the context passed to one of the query methods) during a call to the Scan method of the returned Rows can result in unexpected results if other queries are being made in parallel. This can result in a race condition that may overwrite the expected results with those of another query, causing the call to Scan to return either unexpected results from the other query or an error.
     Severity: HIGH
     VendorSeverity:
+      alma: 3
       amazon: 3
       azure: 3
       bitnami: 3
@@ -17672,7 +17737,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
+    - https://bugzilla.redhat.com/2387083
+    - https://bugzilla.redhat.com/2393152
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -17702,9 +17771,10 @@
     Description: tar.Reader does not set a maximum size on the number of sparse region data blocks in GNU tar pax 1.0 sparse files. A maliciously-crafted archive containing a large number of sparse regions can cause a Reader to read an unbounded amount of data from the archive into memory. When reading from a compressed source, a small compressed input can result in large allocations.
     Severity: HIGH
     VendorSeverity:
-      alma: 2
+      alma: 3
       amazon: 3
       bitnami: 2
+      oracle-oval: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -17715,13 +17785,16 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:21815
+    - https://access.redhat.com/errata/RHSA-2025:22011
     - https://access.redhat.com/security/cve/CVE-2025-58183
+    - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://errata.almalinux.org/9/ALSA-2025-21815.html
+    - https://errata.almalinux.org/9/ALSA-2025-22011.html
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
+    - https://linux.oracle.com/cve/CVE-2025-58183.html
+    - https://linux.oracle.com/errata/ELSA-2025-22011.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -17856,10 +17929,12 @@
     Description: If the PATH environment variable contains paths which are executables (rather than just directories), passing certain strings to LookPath ("", ".", and ".."), can result in the binaries listed in the PATH being unexpectedly returned.
     Severity: MEDIUM
     VendorSeverity:
+      alma: 2
       amazon: 3
       azure: 3
       bitnami: 2
       cbl-mariner: 2
+      oracle-oval: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -17870,10 +17945,15 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
+    - https://bugzilla.redhat.com/2396546
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
+    - https://linux.oracle.com/cve/CVE-2025-47906.html
+    - https://linux.oracle.com/errata/ELSA-2025-22005.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-47906
     - https://pkg.go.dev/vuln/GO-2025-3956
     - https://www.cve.org/CVERecord?id=CVE-2025-47906
