@@ -1077,6 +1077,8 @@
 │                             │                  ├ Name: GitHub Security Advisory pip 
 │                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                             │                          osystem%3Apip 
+│                             ├ Fingerprint     : sha256:c5fddf47a726d63a36040299124da114c878b3cf9d47141357bdfb
+│                             │                   e65c2647e6 
 │                             ├ Title           : pip: pip missing checks on symbolic link extraction 
 │                             ├ Description     : When extracting a tar archive pip may not check symbolic
 │                             │                   links point into the extraction directory if the tarfile
@@ -3394,6 +3396,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:5e860f905e09a84808f5d8b45e8ef995dc0c20071d4d57c6f47fc
+│                       │      │                   36186a4af72 
 │                       │      ├ Title           : github.com/moby/moby: Moby's Firewalld reload makes
 │                       │      │                   container ports accessible 
 │                       │      ├ Description     : Moby is an open source container framework developed by
@@ -3456,6 +3460,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:20398a383d958cf302cdcf3cd7ec3f493b7c0572d32803ffd449e
+│                       │      │                   b2097716dd9 
 │                       │      ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
 │                       │      │                   Logs When Processing Malformed Data 
 │                       │      ├ Description     : ### Summary
@@ -3562,6 +3568,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:f9f8d2e152487824b87d8aa5926d4b2eee04c12acbb7bdcdd3b1a
+│                       │      │                   6603ab00462 
 │                       │      ├ Title           : mapstructure May Leak Sensitive Information in Logs When
 │                       │      │                   Processing Malformed Data 
 │                       │      ├ Description     : ### Summary
@@ -3660,6 +3668,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:1cebf523ee8af4c08afe0324ee2c783d88a0bdb4f118df52df715
+│                       │      │                   25eaeed7e9b 
 │                       │      ├ Title           : SSH Agent servers do not validate the size of messages when
 │                       │      │                   processing ... 
 │                       │      ├ Description     : SSH Agent servers do not validate the size of messages when
@@ -3698,6 +3708,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:8f58aeea797b86d88b204b429f1f118f8e49598bed774a466f2ec
+│                       │      │                   970c18045d3 
 │                       │      ├ Title           : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the ... 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
@@ -3732,6 +3744,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:1da38bce25ee28a5b733d26218191aedd2a325228b4754c5f8d58
+│                       │      │                   f3792235860 
 │                       │      ├ Title           : database/sql: Postgres Scan Race Condition 
 │                       │      ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
 │                       │      │                    one of the query methods) during a call to the Scan method
@@ -3788,6 +3802,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:e52615627ca3781c2b1169604ccb319d9ccb2e9af497ab5721b20
+│                       │      │                   800d3994a25 
 │                       │      ├ Title           : golang: archive/tar: Unbounded allocation when parsing GNU
 │                       │      │                   sparse map 
 │                       │      ├ Description     : tar.Reader does not set a maximum size on the number of
@@ -3850,6 +3866,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:17dfb5f94254d0a4e5e7a962c42b83ba0733543d8cb07507b0382
+│                       │      │                   bce50963fab 
 │                       │      ├ Title           : Despite HTTP headers having a default limit of 1MB, the
 │                       │      │                   number of cook ... 
 │                       │      ├ Description     : Despite HTTP headers having a default limit of 1MB, the
@@ -3888,6 +3906,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:0f6c565936ff51e0c879b053e8b5952f34061a8f9d51f88d1b928
+│                       │      │                   830640ac682 
 │                       │      ├ Title           : Due to the design of the name constraint checking algorithm,
 │                       │      │                    the proce ... 
 │                       │      ├ Description     : Due to the design of the name constraint checking algorithm,
@@ -3925,6 +3945,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:038e13f487ea0df7f5ce47e60ca660b50bf4735d39faedef01cd0
+│                       │      │                   2917dd974cd 
 │                       │      ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
 │                       │      ├ Description     : If the PATH environment variable contains paths which are
 │                       │      │                   executables (rather than just directories), passing certain
@@ -3981,6 +4003,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:6d63593f87475e89034b83a372fc6ae52e4fcd1152250756a61ea
+│                       │      │                   df78a4a141f 
 │                       │      ├ Title           : net/url: Insufficient validation of bracketed IPv6 hostnames
 │                       │      │                    in net/url 
 │                       │      ├ Description     : The Parse function permits values other than IPv6 addresses
@@ -4027,6 +4051,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:04d513a079419c6f77576b5f0da0f8e6cc3a1bcf34bee7b801874
+│                       │      │                   d17546c8f71 
 │                       │      ├ Title           : encoding/asn1: Parsing DER payload can cause memory
 │                       │      │                   exhaustion in encoding/asn1 
 │                       │      ├ Description     : Parsing a maliciously crafted DER payload could allocate
@@ -4070,6 +4096,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:1e689a8d53ae440f8cfd699da8b5389983a62c41dbe2de690786f
+│                       │      │                   142f5799d32 
 │                       │      ├ Title           : crypto/x509: golang: Panic when validating certificates with
 │                       │      │                    DSA public keys in crypto/x509 
 │                       │      ├ Description     : Validating certificate chains which contain DSA public keys
@@ -4115,6 +4143,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:668f6a0cc934e0efa67ea9acb398a849c5767452af09a0e38484d
+│                       │      │                   427ffdd9513 
 │                       │      ├ Title           : crypto/tls: go crypto/tls ALPN negotiation error contains
 │                       │      │                   attacker controlled information 
 │                       │      ├ Description     : When Conn.Handshake fails during ALPN negotiation the error
@@ -4157,6 +4187,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:976e78afbc09ce9d846812c352601fd74a14122575dc5dae6856d
+│                       │      │                   5f4ecc3ca59 
 │                       │      ├ Title           : encoding/pem: Quadratic complexity when parsing some invalid
 │                       │      │                    inputs in encoding/pem 
 │                       │      ├ Description     : The processing time for parsing some invalid inputs scales
@@ -4201,6 +4233,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:894c35ab56cc630dfb64ae6210f1ab91c1162eebbc8ee3ddd0490
+│                       │      │                   d596a5e6bb9 
 │                       │      ├ Title           : net/textproto: Excessive CPU consumption in
 │                       │      │                   Reader.ReadResponse in net/textproto 
 │                       │      ├ Description     : The Reader.ReadResponse function constructs a response
@@ -4228,49 +4262,116 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.567Z 
-│                       ╰ [16] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [16] ╭ VulnerabilityID : CVE-2025-61725 
+│                       │      ├ PkgID           : stdlib@v1.24.5 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                       │      │                  ╰ UID : a47daf835496b0ec 
+│                       │      ├ InstalledVersion: v1.24.5 
+│                       │      ├ FixedVersion    : 1.24.8, 1.25.2 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:c93585161ad3d6b8ae75b79770c46939fa162073a7c6053b573fa
+│                       │      │                   aa127ed0ebe 
+│                       │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
+│                       │      │                   net/mail 
+│                       │      ├ Description     : The ParseAddress function constructeds domain-literal
+│                       │      │                   address components through repeated string concatenation.
+│                       │      │                   When parsing large domain-literal components, this can cause
+│                       │      │                    excessive CPU consumption. 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
+│                       │      │                  ├ bitnami: 3 
+│                       │      │                  ╰ redhat : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           N/A:H 
+│                       │      │                  │         ╰ V3Score : 7.5 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:L 
+│                       │      │                            ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
+│                       │      │                  ├ [2]: https://go.dev/cl/709860 
+│                       │      │                  ├ [3]: https://go.dev/issue/75680 
+│                       │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
+│                       │      │                  │      _bI 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
+│                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
+│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                       ├ [17] ╭ VulnerabilityID : CVE-2025-61727 
+│                       │      ├ PkgID           : stdlib@v1.24.5 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                       │      │                  ╰ UID : a47daf835496b0ec 
+│                       │      ├ InstalledVersion: v1.24.5 
+│                       │      ├ FixedVersion    : 1.24.11, 1.25.5 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61727 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:40b82b09059fb279443f1153f0411db41635a9e46a52d4d1c1aca
+│                       │      │                   e8d967eb921 
+│                       │      ├ Title           : Improper application of excluded DNS name constraints when
+│                       │      │                   verifying wildcard names in crypto/x509 
+│                       │      ├ Description     : An excluded subdomain constraint in a certificate chain does
+│                       │      │                    not restrict the usage of wildcard SANs in the leaf
+│                       │      │                   certificate. For example a constraint that excludes the
+│                       │      │                   subdomain test.example.com does not prevent a leaf
+│                       │      │                   certificate from claiming the SAN *.example.com. 
+│                       │      ├ Severity        : UNKNOWN 
+│                       │      ╰ References       ╭ [0]: https://go.dev/cl/723900 
+│                       │                         ├ [1]: https://go.dev/issue/76442 
+│                       │                         ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+│                       │                         │      dm4 
+│                       │                         ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+│                       ╰ [18] ╭ VulnerabilityID : CVE-2025-61729 
 │                              ├ PkgID           : stdlib@v1.24.5 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
 │                              │                  ╰ UID : a47daf835496b0ec 
 │                              ├ InstalledVersion: v1.24.5 
-│                              ├ FixedVersion    : 1.24.8, 1.25.2 
+│                              ├ FixedVersion    : 1.24.11, 1.25.5 
 │                              ├ Status          : fixed 
 │                              ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
 │                              │                  │         c23d576cc7fbfc24b686 
 │                              │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                              │                            0478f2d229b68f52d773 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61729 
 │                              ├ DataSource       ╭ ID  : govulndb 
 │                              │                  ├ Name: The Go Vulnerability Database 
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                              ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
-│                              │                   net/mail 
-│                              ├ Description     : The ParseAddress function constructeds domain-literal
-│                              │                   address components through repeated string concatenation.
-│                              │                   When parsing large domain-literal components, this can cause
-│                              │                    excessive CPU consumption. 
-│                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon : 3 
-│                              │                  ├ bitnami: 3 
-│                              │                  ╰ redhat : 2 
-│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-│                              │                  │         │           N/A:H 
-│                              │                  │         ╰ V3Score : 7.5 
-│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-│                              │                            │           N/A:L 
-│                              │                            ╰ V3Score : 5.3 
-│                              ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                              │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
-│                              │                  ├ [2]: https://go.dev/cl/709860 
-│                              │                  ├ [3]: https://go.dev/issue/75680 
-│                              │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
-│                              │                  │      _bI 
-│                              │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
-│                              │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
-│                              │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
-│                              ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                              ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                              ├ Fingerprint     : sha256:1e94257f916baed5d11d17c7050cf479df672e83b639bbcc13bdf
+│                              │                   d7c1a99718c 
+│                              ├ Title           : Within HostnameError.Error(), when constructing an error
+│                              │                   string, there ... 
+│                              ├ Description     : Within HostnameError.Error(), when constructing an error
+│                              │                   string, there is no limit to the number of hosts that will
+│                              │                   be printed out. Furthermore, the error string is constructed
+│                              │                    by repeated string concatenation, leading to quadratic
+│                              │                   runtime. Therefore, a certificate provided by a malicious
+│                              │                   actor can result in excessive resource consumption. 
+│                              ├ Severity        : UNKNOWN 
+│                              ├ References       ╭ [0]: https://go.dev/cl/725920 
+│                              │                  ├ [1]: https://go.dev/issue/76445 
+│                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+│                              │                  │      dm4 
+│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4155 
+│                              ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
+│                              ╰ LastModifiedDate: 2025-12-02T22:16:08.527Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -6427,6 +6528,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:8eff3bc33d5d2ad2239dca42ff93290fd6da55bf9125853d3904f
+│                       │      │                   16ea4d196af 
 │                       │      ├ Title           : github.com/moby/moby: Moby's Firewalld reload makes
 │                       │      │                   container ports accessible 
 │                       │      ├ Description     : Moby is an open source container framework developed by
@@ -6489,6 +6592,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:c29209f421e6572ab65c0b6420e2216dffe682dc917f3f45cce5e
+│                       │      │                   78b890c3f2e 
 │                       │      ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
 │                       │      │                   Logs When Processing Malformed Data 
 │                       │      ├ Description     : ### Summary
@@ -6595,6 +6700,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:c6ef2df4ae36eceecc5ffefbe256201355818014cd2070fb2e87c
+│                       │      │                   456a7cfdb3b 
 │                       │      ├ Title           : mapstructure May Leak Sensitive Information in Logs When
 │                       │      │                   Processing Malformed Data 
 │                       │      ├ Description     : ### Summary
@@ -6693,6 +6800,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:d6626099c422d9cee01323a665ce66c375b259ba73206120997d0
+│                       │      │                   ebc72d8b3db 
 │                       │      ├ Title           : SSH Agent servers do not validate the size of messages when
 │                       │      │                   processing ... 
 │                       │      ├ Description     : SSH Agent servers do not validate the size of messages when
@@ -6731,6 +6840,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:08b2a184d90b238b596ed76ec894ba89064c339c301cd7a80649a
+│                       │      │                   bc70897fc14 
 │                       │      ├ Title           : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the ... 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
@@ -6765,6 +6876,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:c32c4eacb7e952aacb0d962db5a1281efb77eb38ee004ac456c6a
+│                       │      │                   9bdb64eaa66 
 │                       │      ├ Title           : database/sql: Postgres Scan Race Condition 
 │                       │      ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
 │                       │      │                    one of the query methods) during a call to the Scan method
@@ -6821,6 +6934,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:d078ccf22be71c2edbcd0fc628dbfc55d37e1f06e2ecb1d0efdc5
+│                       │      │                   e2f15862773 
 │                       │      ├ Title           : golang: archive/tar: Unbounded allocation when parsing GNU
 │                       │      │                   sparse map 
 │                       │      ├ Description     : tar.Reader does not set a maximum size on the number of
@@ -6883,6 +6998,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:eb97802f6e9836d4798347324433f11866e09e154a712cf99f2be
+│                       │      │                   95128864b08 
 │                       │      ├ Title           : Despite HTTP headers having a default limit of 1MB, the
 │                       │      │                   number of cook ... 
 │                       │      ├ Description     : Despite HTTP headers having a default limit of 1MB, the
@@ -6921,6 +7038,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:5ac58aaa3addb60f6985251b327091827977fd5e355ea6cd0d525
+│                       │      │                   f6c9ac5e487 
 │                       │      ├ Title           : Due to the design of the name constraint checking algorithm,
 │                       │      │                    the proce ... 
 │                       │      ├ Description     : Due to the design of the name constraint checking algorithm,
@@ -6958,6 +7077,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:f48b93794f92daf8efade58ae5635ac9d015d20566680b9978672
+│                       │      │                   e58666ecc99 
 │                       │      ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
 │                       │      ├ Description     : If the PATH environment variable contains paths which are
 │                       │      │                   executables (rather than just directories), passing certain
@@ -7014,6 +7135,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:a5e60fdc2322c2fef66d0c32d8b87a545f138966b54e17367a82f
+│                       │      │                   be0b8ed7886 
 │                       │      ├ Title           : net/url: Insufficient validation of bracketed IPv6 hostnames
 │                       │      │                    in net/url 
 │                       │      ├ Description     : The Parse function permits values other than IPv6 addresses
@@ -7060,6 +7183,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:2fd2843de7c51241a7935309ae806e26e8368c4f7390013f63d49
+│                       │      │                   a1a815d2447 
 │                       │      ├ Title           : encoding/asn1: Parsing DER payload can cause memory
 │                       │      │                   exhaustion in encoding/asn1 
 │                       │      ├ Description     : Parsing a maliciously crafted DER payload could allocate
@@ -7103,6 +7228,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:bc1ac6de76f67297e34207e4d5d4095f7bdcadb2f59c8f0d060c9
+│                       │      │                   b55afb1edb1 
 │                       │      ├ Title           : crypto/x509: golang: Panic when validating certificates with
 │                       │      │                    DSA public keys in crypto/x509 
 │                       │      ├ Description     : Validating certificate chains which contain DSA public keys
@@ -7148,6 +7275,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:f58caa807ab42eb717c70041b81c79b088d403fc42ef595d32b7a
+│                       │      │                   418933bdddc 
 │                       │      ├ Title           : crypto/tls: go crypto/tls ALPN negotiation error contains
 │                       │      │                   attacker controlled information 
 │                       │      ├ Description     : When Conn.Handshake fails during ALPN negotiation the error
@@ -7190,6 +7319,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:0750713c0fb76304057d66e3190a9adf35f1cc16966d7cc819427
+│                       │      │                   ff4ec0b0f8f 
 │                       │      ├ Title           : encoding/pem: Quadratic complexity when parsing some invalid
 │                       │      │                    inputs in encoding/pem 
 │                       │      ├ Description     : The processing time for parsing some invalid inputs scales
@@ -7234,6 +7365,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:711492d2e435410fb93819f8a49f01705860c66ca50bdccd90429
+│                       │      │                   9e48d81319f 
 │                       │      ├ Title           : net/textproto: Excessive CPU consumption in
 │                       │      │                   Reader.ReadResponse in net/textproto 
 │                       │      ├ Description     : The Reader.ReadResponse function constructs a response
@@ -7261,49 +7394,116 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.567Z 
-│                       ╰ [16] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [16] ╭ VulnerabilityID : CVE-2025-61725 
+│                       │      ├ PkgID           : stdlib@v1.24.5 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                       │      │                  ╰ UID : e5d180b56c39c5d0 
+│                       │      ├ InstalledVersion: v1.24.5 
+│                       │      ├ FixedVersion    : 1.24.8, 1.25.2 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:661777faca96f55e24336126f45e99a88cfe8e19b6976d1409962
+│                       │      │                   aaf01222d32 
+│                       │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
+│                       │      │                   net/mail 
+│                       │      ├ Description     : The ParseAddress function constructeds domain-literal
+│                       │      │                   address components through repeated string concatenation.
+│                       │      │                   When parsing large domain-literal components, this can cause
+│                       │      │                    excessive CPU consumption. 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
+│                       │      │                  ├ bitnami: 3 
+│                       │      │                  ╰ redhat : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           N/A:H 
+│                       │      │                  │         ╰ V3Score : 7.5 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:L 
+│                       │      │                            ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
+│                       │      │                  ├ [2]: https://go.dev/cl/709860 
+│                       │      │                  ├ [3]: https://go.dev/issue/75680 
+│                       │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
+│                       │      │                  │      _bI 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
+│                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
+│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                       ├ [17] ╭ VulnerabilityID : CVE-2025-61727 
+│                       │      ├ PkgID           : stdlib@v1.24.5 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                       │      │                  ╰ UID : e5d180b56c39c5d0 
+│                       │      ├ InstalledVersion: v1.24.5 
+│                       │      ├ FixedVersion    : 1.24.11, 1.25.5 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61727 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:235e67341cc4307e63707861ecff623c057c1bf27aa61ab3f92a2
+│                       │      │                   f8ff0277417 
+│                       │      ├ Title           : Improper application of excluded DNS name constraints when
+│                       │      │                   verifying wildcard names in crypto/x509 
+│                       │      ├ Description     : An excluded subdomain constraint in a certificate chain does
+│                       │      │                    not restrict the usage of wildcard SANs in the leaf
+│                       │      │                   certificate. For example a constraint that excludes the
+│                       │      │                   subdomain test.example.com does not prevent a leaf
+│                       │      │                   certificate from claiming the SAN *.example.com. 
+│                       │      ├ Severity        : UNKNOWN 
+│                       │      ╰ References       ╭ [0]: https://go.dev/cl/723900 
+│                       │                         ├ [1]: https://go.dev/issue/76442 
+│                       │                         ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+│                       │                         │      dm4 
+│                       │                         ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+│                       ╰ [18] ╭ VulnerabilityID : CVE-2025-61729 
 │                              ├ PkgID           : stdlib@v1.24.5 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
 │                              │                  ╰ UID : e5d180b56c39c5d0 
 │                              ├ InstalledVersion: v1.24.5 
-│                              ├ FixedVersion    : 1.24.8, 1.25.2 
+│                              ├ FixedVersion    : 1.24.11, 1.25.5 
 │                              ├ Status          : fixed 
 │                              ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
 │                              │                  │         c23d576cc7fbfc24b686 
 │                              │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                              │                            0478f2d229b68f52d773 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61729 
 │                              ├ DataSource       ╭ ID  : govulndb 
 │                              │                  ├ Name: The Go Vulnerability Database 
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                              ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
-│                              │                   net/mail 
-│                              ├ Description     : The ParseAddress function constructeds domain-literal
-│                              │                   address components through repeated string concatenation.
-│                              │                   When parsing large domain-literal components, this can cause
-│                              │                    excessive CPU consumption. 
-│                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon : 3 
-│                              │                  ├ bitnami: 3 
-│                              │                  ╰ redhat : 2 
-│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-│                              │                  │         │           N/A:H 
-│                              │                  │         ╰ V3Score : 7.5 
-│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-│                              │                            │           N/A:L 
-│                              │                            ╰ V3Score : 5.3 
-│                              ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                              │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
-│                              │                  ├ [2]: https://go.dev/cl/709860 
-│                              │                  ├ [3]: https://go.dev/issue/75680 
-│                              │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
-│                              │                  │      _bI 
-│                              │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
-│                              │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
-│                              │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
-│                              ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                              ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                              ├ Fingerprint     : sha256:a6831174c92d740abf066222c0ba03dff0a293ffc1ee1d79475b3
+│                              │                   a78effba257 
+│                              ├ Title           : Within HostnameError.Error(), when constructing an error
+│                              │                   string, there ... 
+│                              ├ Description     : Within HostnameError.Error(), when constructing an error
+│                              │                   string, there is no limit to the number of hosts that will
+│                              │                   be printed out. Furthermore, the error string is constructed
+│                              │                    by repeated string concatenation, leading to quadratic
+│                              │                   runtime. Therefore, a certificate provided by a malicious
+│                              │                   actor can result in excessive resource consumption. 
+│                              ├ Severity        : UNKNOWN 
+│                              ├ References       ╭ [0]: https://go.dev/cl/725920 
+│                              │                  ├ [1]: https://go.dev/issue/76445 
+│                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+│                              │                  │      dm4 
+│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4155 
+│                              ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
+│                              ╰ LastModifiedDate: 2025-12-02T22:16:08.527Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -12856,6 +13056,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:27f83596e16172ff061ad8ec286902172b8e5d8aea520175bbb19
+│                       │      │                   757278e9f55 
 │                       │      ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
 │                       │      │                   Logs When Processing Malformed Data 
 │                       │      ├ Description     : ### Summary
@@ -12964,6 +13166,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:43ded5df32cdf5696d76aed67041e68f21b6f91bb93623e60dffe
+│                       │      │                   6042cc467af 
 │                       │      ├ Title           : grafana: authentication bypass  knowing only a username of
 │                       │      │                   an LDAP or OAuth user 
 │                       │      ├ Description     : Grafana 2.x, 3.x, and 4.x before 4.6.4 and 5.x before 5.2.3
@@ -13024,6 +13228,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:6cc0832da88861052c4e86664829eed99429e16d8c6b3a9a07e72
+│                       │      │                   4ebcb7e2030 
 │                       │      ├ Title           : grafana: account takeover possible when using Azure AD OAuth 
 │                       │      ├ Description     : Grafana is validating Azure AD accounts based on the email
 │                       │      │                   claim. 
@@ -13101,6 +13307,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:59603fac8b6d6fd47ab8dac9f784fa38f47d219babe5a18db923b
+│                       │      │                   45297ddf4a1 
 │                       │      ├ Title           : grafana: information disclosure through world-readable
 │                       │      │                   /var/lib/grafana/grafana.db 
 │                       │      ├ Description     : An information-disclosure flaw was found in Grafana through
@@ -13178,6 +13386,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:705659e5b9be6a1f6c29e8c1460daa35343df60486b91c34b304c
+│                       │      │                   390dd1616c9 
 │                       │      ├ Title           : grafana: Snapshot authentication bypass 
 │                       │      ├ Description     : Grafana is an open source data visualization platform. In
 │                       │      │                   affected versions unauthenticated and authenticated users
@@ -13294,6 +13504,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:c31f8288a5a072b54fbf7f8324af73eb68d8b4870fa00647cfcd9
+│                       │      │                   1bf1e6dd041 
 │                       │      ├ Title           : grafana: Escalation from admin to server admin when auth
 │                       │      │                   proxy is used 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -13373,6 +13585,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:4ee41782a744126f467f4be0be8c5fac10a51849684426f4d81a4
+│                       │      │                   2d453526937 
 │                       │      ├ Title           : grafana: User enumeration via forget password 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
 │                       │      │                   observability. When using the forget password on the login
@@ -13453,6 +13667,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:fa902a18a8fd2efd86769f6cd3ab8b0db8c2527280517bc2b14e9
+│                       │      │                   6721c76ab52 
 │                       │      ├ Title           : grafana: data source proxy race condition 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
 │                       │      │                   observability. 
@@ -13518,6 +13734,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:ed78e16f01281eae8d44faf107ed5e9ab031d16119ef5dcdec2c3
+│                       │      │                   7c2c1c7d5ba 
 │                       │      ├ Title           : grafana: Cross Site Scripting in Grafana 
 │                       │      ├ Description     : An open redirect vulnerability has been identified in
 │                       │      │                   Grafana OSS that can be exploited to achieve XSS attacks.
@@ -13589,6 +13807,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:eae38a81740ea918913de89f694711b135bc18496162b8d63f414
+│                       │      │                   39ca8f04011 
 │                       │      ├ Title           : grafana: Cross site scripting in Influxdb and Graphite query
 │                       │      │                    editor 
 │                       │      ├ Description     : Grafana version confirmed for 5.2.4 and 5.3.0 contains a
@@ -13644,6 +13864,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:2b331892cba2bcb6815b568ca57f35fd228d21aa5c1b94e8893c7
+│                       │      │                   80788d048c3 
 │                       │      ├ Title           : grafana: Cross-site Scripting (XSS) in dashboard links 
 │                       │      ├ Description     : Grafana before 5.2.0-beta1 has XSS vulnerabilities in
 │                       │      │                   dashboard links. 
@@ -13694,6 +13916,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:75867e68664411f35c5dd34641f7568b2b97347c50c2d753af377
+│                       │      │                   40166b00ced 
 │                       │      ├ Title           : grafana: XSS vulnerability via the "Dashboard > Text Panel"
 │                       │      │                   screen 
 │                       │      ├ Description     : Grafana 5.3.1 has XSS via the "Dashboard > Text Panel"
@@ -13748,6 +13972,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:f46b589341cfeee3eb46b28779ba047d3a520d01329f63757b46b
+│                       │      │                   84e73469967 
 │                       │      ├ Title           : grafana: XSS vulnerability via a column style on the
 │                       │      │                   "Dashboard > Table Panel" screen 
 │                       │      ├ Description     : Grafana 5.3.1 has XSS via a column style on the "Dashboard >
@@ -13807,6 +14033,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:b0d4dc90071aa51f8c11c42c66f1bdecd66d08ce40f24de9c8c0f
+│                       │      │                   ab3dbc7c721 
 │                       │      ├ Title           : grafana: XSS vulnerability via a link on the "Dashboard >
 │                       │      │                   All Panels > General" screen 
 │                       │      ├ Description     : Grafana 5.3.1 has XSS via a link on the "Dashboard > All
@@ -13860,6 +14088,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:160c39f7da1ddb5ea874bb010ce7249a537fc8684f183113f0025
+│                       │      │                   c44f5f04688 
 │                       │      ├ Title           : Grafana Cross-site Scripting vulnerability 
 │                       │      ├ Description     : public/app/features/panel/panel_ctrl.ts in Grafana before
 │                       │      │                   6.2.5 allows HTML Injection in panel drilldown links (via
@@ -13904,6 +14134,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:435cfe30c4dadc59678af22c7f6bf013f4be1e5c324565d5a7a6e
+│                       │      │                   486df519ffa 
 │                       │      ├ Title           : grafana: arbitrary file read via MySQL data source 
 │                       │      ├ Description     : Grafana <= 6.4.3 has an Arbitrary File Read vulnerability,
 │                       │      │                   which could be exploited by an authenticated attacker that
@@ -13965,6 +14197,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:5888966bcd3d655f112aa2a60ca3baf15fea28438eb71c1680778
+│                       │      │                   106d9669dd6 
 │                       │      ├ Title           : grafana: stored XSS 
 │                       │      ├ Description     : Grafana through 6.7.1 allows stored XSS due to insufficient
 │                       │      │                   input protection in the originalUrl field, which allows an
@@ -14030,6 +14264,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:81d0eef14fe6f2d172f5a4823b4294dc0b879a41996d22f0ae430
+│                       │      │                   ddd9fb05b2e 
 │                       │      ├ Title           : grafana: XSS via column.title or cellLinkTooltip 
 │                       │      ├ Description     : Grafana before 6.7.3 allows table-panel XSS via column.title
 │                       │      │                    or cellLinkTooltip. 
@@ -14102,6 +14338,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:751c009ae49c8ee629beb5a4b14ee737a600ebcd5dea618ad22c5
+│                       │      │                   d28f1642102 
 │                       │      ├ Title           : grafana: XSS via the OpenTSDB datasource 
 │                       │      ├ Description     : Grafana before 7.0.0 allows tag value XSS via the OpenTSDB
 │                       │      │                   datasource. 
@@ -14162,6 +14400,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:676f9e027011a70ee610b60e556dbe9ea5468dbb43e63bbc2abd7
+│                       │      │                   fb4d1c44149 
 │                       │      ├ Title           : grafana: XSS via a query alias for the Elasticsearch and
 │                       │      │                   Testdata datasource 
 │                       │      ├ Description     : Grafana before 7.1.0-beta 1 allows XSS via a query alias for
@@ -14221,6 +14461,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:77f428615f1131f5c61f213738e8b4455d97df8e44564522f7f38
+│                       │      │                   6e610f76569 
 │                       │      ├ Title           : grafana: using email as a username can block other users
 │                       │      │                   from signing in 
 │                       │      ├ Description     : Grafana is an open source data visualization platform for
@@ -14301,6 +14543,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:3a0e2db88fb64ed948298794884240219dece9fda3f77f524180e
+│                       │      │                   f51c07e133e 
 │                       │      ├ Title           : grafana: Spoofing of the originalUrl parameter of snapshots 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
 │                       │      │                   observability. Prior to versions 8.5.16 and 9.2.8, malicious
@@ -14385,6 +14629,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:0045d7f0df591883f718ccde65e910d14297d1d916c15a6e1ade0
+│                       │      │                   ee2bc736e18 
 │                       │      ├ Title           : grafana: missing access control allows test alerts by
 │                       │      │                   underprivileged user 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -14452,6 +14698,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:aaaa4773a17bd7d780657ad1b6b21190e13da5fde35a47a338e32
+│                       │      │                   bb47044e07a 
 │                       │      ├ Title           : grafana: incorrect assessment of permissions across
 │                       │      │                   organizations 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -14519,6 +14767,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:70a6f18dfcab0ffb9f37dbed2529ce39d5e67732b3e8c863a9237
+│                       │      │                   37ba497d374 
 │                       │      ├ Title           : grafana: Exposure of DingDing alerting integration URL to
 │                       │      │                   Viewer level users 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -14585,6 +14835,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:f695458458548025dbb09a7d475e933259dc5e14785b66101a27c
+│                       │      │                   9a7e301b1b6 
 │                       │      ├ Title           : grafana: Org admin can delete pending invites in different org 
 │                       │      ├ Description     : Organization admins can delete pending invites created in an
 │                       │      │                    organization they are not part of. 
@@ -14633,6 +14885,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:789f6c9925d18b84ce9a97bfe5526d0b4f3b967643d089644e66b
+│                       │      │                   26189a34a3c 
 │                       │      ├ Title           : OpenFGA Improper Policy Enforcement 
 │                       │      ├ Description     : OpenFGA is a high-performance and flexible
 │                       │      │                   authorization/permission engine built for developers and
@@ -14669,6 +14923,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:10e1b4ac96ab6542d8b7d7522d68e0b5be50cfc687da31d0e0cf2
+│                       │      │                   febe6703e8e 
 │                       │      ├ Title           : SSH Agent servers do not validate the size of messages when
 │                       │      │                   processing ... 
 │                       │      ├ Description     : SSH Agent servers do not validate the size of messages when
@@ -14707,6 +14963,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:6a913d7f356953613dc9417f48491aa19f68a50d66c1c9b8bebe6
+│                       │      │                   a7bc57c0b6d 
 │                       │      ├ Title           : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the ... 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
@@ -14741,6 +14999,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:e0eeb6c7c55b27ac38ad5b46080534b85002ee0317c0182791304
+│                       │      │                   ba3a0acf990 
 │                       │      ├ Title           : database/sql: Postgres Scan Race Condition 
 │                       │      ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
 │                       │      │                    one of the query methods) during a call to the Scan method
@@ -14797,6 +15057,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:cbcf2fa882bccf91d5e19f3a88e17a97b7ccbe39b078d712bc679
+│                       │      │                   6280b49556b 
 │                       │      ├ Title           : golang: archive/tar: Unbounded allocation when parsing GNU
 │                       │      │                   sparse map 
 │                       │      ├ Description     : tar.Reader does not set a maximum size on the number of
@@ -14859,6 +15121,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:deb267a6b7bbeeb2fef962977e9da79354deab5a0090baf44222c
+│                       │      │                   7755dab2e75 
 │                       │      ├ Title           : Despite HTTP headers having a default limit of 1MB, the
 │                       │      │                   number of cook ... 
 │                       │      ├ Description     : Despite HTTP headers having a default limit of 1MB, the
@@ -14897,6 +15161,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:7a64e4ff386d84080da8e2efb1d7104f9c1727b02b250f71d9c0f
+│                       │      │                   5e5bb0703bf 
 │                       │      ├ Title           : Due to the design of the name constraint checking algorithm,
 │                       │      │                    the proce ... 
 │                       │      ├ Description     : Due to the design of the name constraint checking algorithm,
@@ -14934,6 +15200,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:ef453439eac615b88cd8347b23c442b3a4011ff28ad0611cd2937
+│                       │      │                   b6a0c65d7d7 
 │                       │      ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
 │                       │      ├ Description     : If the PATH environment variable contains paths which are
 │                       │      │                   executables (rather than just directories), passing certain
@@ -14990,6 +15258,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:0f24b1b479caceb27a3ba3bf6d9f98efee224e0d522b7792e44a2
+│                       │      │                   b9e4eab708f 
 │                       │      ├ Title           : net/url: Insufficient validation of bracketed IPv6 hostnames
 │                       │      │                    in net/url 
 │                       │      ├ Description     : The Parse function permits values other than IPv6 addresses
@@ -15036,6 +15306,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:5f7fed7399f57c6e6a3aa7b730c7717df091b539fb26a7317d822
+│                       │      │                   fb58c9ec815 
 │                       │      ├ Title           : encoding/asn1: Parsing DER payload can cause memory
 │                       │      │                   exhaustion in encoding/asn1 
 │                       │      ├ Description     : Parsing a maliciously crafted DER payload could allocate
@@ -15079,6 +15351,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:ad286a355058c5e57942cd400662017e7494fd537e9f494b1eca9
+│                       │      │                   4974345e107 
 │                       │      ├ Title           : crypto/x509: golang: Panic when validating certificates with
 │                       │      │                    DSA public keys in crypto/x509 
 │                       │      ├ Description     : Validating certificate chains which contain DSA public keys
@@ -15124,6 +15398,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:1f53c18d08ea431dd2d26937aed914b3764f0cb2aa6e0e480995c
+│                       │      │                   a451468a236 
 │                       │      ├ Title           : crypto/tls: go crypto/tls ALPN negotiation error contains
 │                       │      │                   attacker controlled information 
 │                       │      ├ Description     : When Conn.Handshake fails during ALPN negotiation the error
@@ -15166,6 +15442,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:fb1714ec0e10609a128916b19e0cf1b01a0b7ce23c24bc8a2c0d8
+│                       │      │                   5a79f7ced43 
 │                       │      ├ Title           : encoding/pem: Quadratic complexity when parsing some invalid
 │                       │      │                    inputs in encoding/pem 
 │                       │      ├ Description     : The processing time for parsing some invalid inputs scales
@@ -15210,6 +15488,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:4f6c2640db3a39e1b24cabd814777d4c0f628bee89316e62de23b
+│                       │      │                   ac725981869 
 │                       │      ├ Title           : net/textproto: Excessive CPU consumption in
 │                       │      │                   Reader.ReadResponse in net/textproto 
 │                       │      ├ Description     : The Reader.ReadResponse function constructs a response
@@ -15237,49 +15517,116 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.567Z 
-│                       ╰ [40] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [40] ╭ VulnerabilityID : CVE-2025-61725 
+│                       │      ├ PkgID           : stdlib@v1.24.4 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                       │      │                  ╰ UID : 62ef03d8a7514265 
+│                       │      ├ InstalledVersion: v1.24.4 
+│                       │      ├ FixedVersion    : 1.24.8, 1.25.2 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:2424325288827cd64caaa23155fda8c7fd9847e999abc48bc1cf1
+│                       │      │                   74b89c5fe19 
+│                       │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
+│                       │      │                   net/mail 
+│                       │      ├ Description     : The ParseAddress function constructeds domain-literal
+│                       │      │                   address components through repeated string concatenation.
+│                       │      │                   When parsing large domain-literal components, this can cause
+│                       │      │                    excessive CPU consumption. 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
+│                       │      │                  ├ bitnami: 3 
+│                       │      │                  ╰ redhat : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           N/A:H 
+│                       │      │                  │         ╰ V3Score : 7.5 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:L 
+│                       │      │                            ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
+│                       │      │                  ├ [2]: https://go.dev/cl/709860 
+│                       │      │                  ├ [3]: https://go.dev/issue/75680 
+│                       │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
+│                       │      │                  │      _bI 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
+│                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
+│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                       ├ [41] ╭ VulnerabilityID : CVE-2025-61727 
+│                       │      ├ PkgID           : stdlib@v1.24.4 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                       │      │                  ╰ UID : 62ef03d8a7514265 
+│                       │      ├ InstalledVersion: v1.24.4 
+│                       │      ├ FixedVersion    : 1.24.11, 1.25.5 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61727 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:596a5b028f5fac088a9d7747c0e17ecd8f9e66d64acae7f83c8fb
+│                       │      │                   378bc7d8edb 
+│                       │      ├ Title           : Improper application of excluded DNS name constraints when
+│                       │      │                   verifying wildcard names in crypto/x509 
+│                       │      ├ Description     : An excluded subdomain constraint in a certificate chain does
+│                       │      │                    not restrict the usage of wildcard SANs in the leaf
+│                       │      │                   certificate. For example a constraint that excludes the
+│                       │      │                   subdomain test.example.com does not prevent a leaf
+│                       │      │                   certificate from claiming the SAN *.example.com. 
+│                       │      ├ Severity        : UNKNOWN 
+│                       │      ╰ References       ╭ [0]: https://go.dev/cl/723900 
+│                       │                         ├ [1]: https://go.dev/issue/76442 
+│                       │                         ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+│                       │                         │      dm4 
+│                       │                         ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+│                       ╰ [42] ╭ VulnerabilityID : CVE-2025-61729 
 │                              ├ PkgID           : stdlib@v1.24.4 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
 │                              │                  ╰ UID : 62ef03d8a7514265 
 │                              ├ InstalledVersion: v1.24.4 
-│                              ├ FixedVersion    : 1.24.8, 1.25.2 
+│                              ├ FixedVersion    : 1.24.11, 1.25.5 
 │                              ├ Status          : fixed 
 │                              ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
 │                              │                  │         c23d576cc7fbfc24b686 
 │                              │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                              │                            0478f2d229b68f52d773 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61729 
 │                              ├ DataSource       ╭ ID  : govulndb 
 │                              │                  ├ Name: The Go Vulnerability Database 
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                              ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
-│                              │                   net/mail 
-│                              ├ Description     : The ParseAddress function constructeds domain-literal
-│                              │                   address components through repeated string concatenation.
-│                              │                   When parsing large domain-literal components, this can cause
-│                              │                    excessive CPU consumption. 
-│                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon : 3 
-│                              │                  ├ bitnami: 3 
-│                              │                  ╰ redhat : 2 
-│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-│                              │                  │         │           N/A:H 
-│                              │                  │         ╰ V3Score : 7.5 
-│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-│                              │                            │           N/A:L 
-│                              │                            ╰ V3Score : 5.3 
-│                              ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                              │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
-│                              │                  ├ [2]: https://go.dev/cl/709860 
-│                              │                  ├ [3]: https://go.dev/issue/75680 
-│                              │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
-│                              │                  │      _bI 
-│                              │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
-│                              │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
-│                              │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
-│                              ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                              ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                              ├ Fingerprint     : sha256:48b34607a5bd3ef223a081140a70ff538481efef10c370f49e047
+│                              │                   b85a0e68e6f 
+│                              ├ Title           : Within HostnameError.Error(), when constructing an error
+│                              │                   string, there ... 
+│                              ├ Description     : Within HostnameError.Error(), when constructing an error
+│                              │                   string, there is no limit to the number of hosts that will
+│                              │                   be printed out. Furthermore, the error string is constructed
+│                              │                    by repeated string concatenation, leading to quadratic
+│                              │                   runtime. Therefore, a certificate provided by a malicious
+│                              │                   actor can result in excessive resource consumption. 
+│                              ├ Severity        : UNKNOWN 
+│                              ├ References       ╭ [0]: https://go.dev/cl/725920 
+│                              │                  ├ [1]: https://go.dev/issue/76445 
+│                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+│                              │                  │      dm4 
+│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4155 
+│                              ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
+│                              ╰ LastModifiedDate: 2025-12-02T22:16:08.527Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -15365,6 +15712,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:9c17f55d12b44026618b998e3c846965f0022ae10c6a476ec774a
+│                       │      │                   c7a695f66b5 
 │                       │      ├ Title           : grafana: authentication bypass  knowing only a username of
 │                       │      │                   an LDAP or OAuth user 
 │                       │      ├ Description     : Grafana 2.x, 3.x, and 4.x before 4.6.4 and 5.x before 5.2.3
@@ -15425,6 +15774,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:c092e60d015ba26aa6a9faf6b0245a1407bf08470a579b2198cd1
+│                       │      │                   1aaf97de0b5 
 │                       │      ├ Title           : grafana: account takeover possible when using Azure AD OAuth 
 │                       │      ├ Description     : Grafana is validating Azure AD accounts based on the email
 │                       │      │                   claim. 
@@ -15502,6 +15853,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:40fb0b6c6e27c4fd890a8a4da387a85981452009e5d32ee928e82
+│                       │      │                   8a5c31071b6 
 │                       │      ├ Title           : grafana: information disclosure through world-readable
 │                       │      │                   /var/lib/grafana/grafana.db 
 │                       │      ├ Description     : An information-disclosure flaw was found in Grafana through
@@ -15579,6 +15932,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:3d6c833306f6d4260085df23cc3166203cd61dbd3dbe690300030
+│                       │      │                   fca51e07944 
 │                       │      ├ Title           : grafana: Snapshot authentication bypass 
 │                       │      ├ Description     : Grafana is an open source data visualization platform. In
 │                       │      │                   affected versions unauthenticated and authenticated users
@@ -15695,6 +16050,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:f98506e2502f1a4b7efd9a2da287c065fea6f5ed557f9d58c78e6
+│                       │      │                   f3641ff19c4 
 │                       │      ├ Title           : grafana: Escalation from admin to server admin when auth
 │                       │      │                   proxy is used 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -15774,6 +16131,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:0023114a4a33ec723e88d27d764d06f4b1effe24f91885910a68c
+│                       │      │                   a851d368c44 
 │                       │      ├ Title           : grafana: User enumeration via forget password 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
 │                       │      │                   observability. When using the forget password on the login
@@ -15854,6 +16213,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:ddd1c0e8f9e7222293eb7152c556e2954772bc133b0fa2ca0e170
+│                       │      │                   45d103d0ee8 
 │                       │      ├ Title           : grafana: data source proxy race condition 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
 │                       │      │                   observability. 
@@ -15919,6 +16280,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:9abff97ea9fa056a5720d362a163d54c72a4d4822c3703ad5cfb3
+│                       │      │                   79eaa8c5d52 
 │                       │      ├ Title           : grafana: Cross Site Scripting in Grafana 
 │                       │      ├ Description     : An open redirect vulnerability has been identified in
 │                       │      │                   Grafana OSS that can be exploited to achieve XSS attacks.
@@ -15990,6 +16353,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:d43431d3fa4285e6836e75f46bde4736acd9418a3b24e381417c3
+│                       │      │                   833a7cff393 
 │                       │      ├ Title           : grafana: Cross site scripting in Influxdb and Graphite query
 │                       │      │                    editor 
 │                       │      ├ Description     : Grafana version confirmed for 5.2.4 and 5.3.0 contains a
@@ -16045,6 +16410,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:3ccbaa82c7059275d860e24fd63f52f01d8d7225bfcaec14de52f
+│                       │      │                   64fbe78b286 
 │                       │      ├ Title           : grafana: Cross-site Scripting (XSS) in dashboard links 
 │                       │      ├ Description     : Grafana before 5.2.0-beta1 has XSS vulnerabilities in
 │                       │      │                   dashboard links. 
@@ -16095,6 +16462,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:4c521d005acbf32475db7cc85455f2337eff2b7457c65008f9ed4
+│                       │      │                   3953ebcda0b 
 │                       │      ├ Title           : grafana: XSS vulnerability via the "Dashboard > Text Panel"
 │                       │      │                   screen 
 │                       │      ├ Description     : Grafana 5.3.1 has XSS via the "Dashboard > Text Panel"
@@ -16149,6 +16518,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:60d0e0d5d9bf296271fb157ce5672c27f556b267a40f1bbcf4f84
+│                       │      │                   d6a3b2acdbe 
 │                       │      ├ Title           : grafana: XSS vulnerability via a column style on the
 │                       │      │                   "Dashboard > Table Panel" screen 
 │                       │      ├ Description     : Grafana 5.3.1 has XSS via a column style on the "Dashboard >
@@ -16208,6 +16579,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:475c0946d94d3402d11e12f566428c850075fef6e9ffb3afb479c
+│                       │      │                   1103dd0fdd6 
 │                       │      ├ Title           : grafana: XSS vulnerability via a link on the "Dashboard >
 │                       │      │                   All Panels > General" screen 
 │                       │      ├ Description     : Grafana 5.3.1 has XSS via a link on the "Dashboard > All
@@ -16261,6 +16634,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:7ab6f6cf9b6e6a50d8deca3fad2430ff1cf02e064981eac9c5c3d
+│                       │      │                   f1006ed11bd 
 │                       │      ├ Title           : Grafana Cross-site Scripting vulnerability 
 │                       │      ├ Description     : public/app/features/panel/panel_ctrl.ts in Grafana before
 │                       │      │                   6.2.5 allows HTML Injection in panel drilldown links (via
@@ -16305,6 +16680,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:69a84fcf9de949f63825e095f63a21114159dfa84bf3fff5c8589
+│                       │      │                   79fb66eff1d 
 │                       │      ├ Title           : grafana: arbitrary file read via MySQL data source 
 │                       │      ├ Description     : Grafana <= 6.4.3 has an Arbitrary File Read vulnerability,
 │                       │      │                   which could be exploited by an authenticated attacker that
@@ -16366,6 +16743,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:168c6aa6645bb2ea0a7e5ecb79ad63461eb5c0185d02f4bfe359e
+│                       │      │                   36530afd1aa 
 │                       │      ├ Title           : grafana: stored XSS 
 │                       │      ├ Description     : Grafana through 6.7.1 allows stored XSS due to insufficient
 │                       │      │                   input protection in the originalUrl field, which allows an
@@ -16431,6 +16810,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:2bb82f7f24a5c698908e97c0ea18c3d6a8383e967e3ec6b1b49a9
+│                       │      │                   a6780c9fae3 
 │                       │      ├ Title           : grafana: XSS via column.title or cellLinkTooltip 
 │                       │      ├ Description     : Grafana before 6.7.3 allows table-panel XSS via column.title
 │                       │      │                    or cellLinkTooltip. 
@@ -16503,6 +16884,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:dbc355312048e3041588adce973d8f1c160421f27798a09dc1763
+│                       │      │                   297d7f263c1 
 │                       │      ├ Title           : grafana: XSS via the OpenTSDB datasource 
 │                       │      ├ Description     : Grafana before 7.0.0 allows tag value XSS via the OpenTSDB
 │                       │      │                   datasource. 
@@ -16563,6 +16946,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:87e6338b0924a9e478f5d18de9ada742362b5002a877a04138298
+│                       │      │                   f4114f3fe62 
 │                       │      ├ Title           : grafana: XSS via a query alias for the Elasticsearch and
 │                       │      │                   Testdata datasource 
 │                       │      ├ Description     : Grafana before 7.1.0-beta 1 allows XSS via a query alias for
@@ -16622,6 +17007,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:83147b3ed577f2382b87764cd87566096f38cd4e0a78051e21648
+│                       │      │                   a901b96a29c 
 │                       │      ├ Title           : grafana: using email as a username can block other users
 │                       │      │                   from signing in 
 │                       │      ├ Description     : Grafana is an open source data visualization platform for
@@ -16702,6 +17089,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:89b0305ab011920c1c3e9ad89c14c2393528e743ee83b0fc1f3dc
+│                       │      │                   815c584a23c 
 │                       │      ├ Title           : grafana: Spoofing of the originalUrl parameter of snapshots 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
 │                       │      │                   observability. Prior to versions 8.5.16 and 9.2.8, malicious
@@ -16786,6 +17175,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:cba15c504e9d5405a35f1beabc6a6fb908c39f8b5926e65268f39
+│                       │      │                   04c61dfda79 
 │                       │      ├ Title           : grafana: missing access control allows test alerts by
 │                       │      │                   underprivileged user 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -16853,6 +17244,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:1ced10ce476bb96444d1fb9a980c427d12fb42c40ca290396e684
+│                       │      │                   fe49c92292b 
 │                       │      ├ Title           : grafana: incorrect assessment of permissions across
 │                       │      │                   organizations 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -16920,6 +17313,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:1601842c578338053bf65632b02db3de01bbeea1467f33c78c5f6
+│                       │      │                   4c492191cf5 
 │                       │      ├ Title           : grafana: Exposure of DingDing alerting integration URL to
 │                       │      │                   Viewer level users 
 │                       │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -16986,6 +17381,8 @@
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:435b7fc56578a7874f0c4b4aca885c32a55b953805b23120038ea
+│                       │      │                   09d25a685ec 
 │                       │      ├ Title           : grafana: Org admin can delete pending invites in different org 
 │                       │      ├ Description     : Organization admins can delete pending invites created in an
 │                       │      │                    organization they are not part of. 
@@ -17032,6 +17429,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:d924823f617f6a97dc9fee5a0a7d2e46ccd87c765dc363036d8d2
+│                       │      │                   7cef449043f 
 │                       │      ├ Title           : database/sql: Postgres Scan Race Condition 
 │                       │      ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
 │                       │      │                    one of the query methods) during a call to the Scan method
@@ -17088,6 +17487,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:4be9e5ffc57e3782bfd3ea80385c64b4510abc6d113e30f17c8ff
+│                       │      │                   f227be74945 
 │                       │      ├ Title           : golang: archive/tar: Unbounded allocation when parsing GNU
 │                       │      │                   sparse map 
 │                       │      ├ Description     : tar.Reader does not set a maximum size on the number of
@@ -17150,6 +17551,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:ce92af1e90ebd991e24dbf0c69bd3465d598d47ac878e1226ef44
+│                       │      │                   45861f3e7c5 
 │                       │      ├ Title           : Despite HTTP headers having a default limit of 1MB, the
 │                       │      │                   number of cook ... 
 │                       │      ├ Description     : Despite HTTP headers having a default limit of 1MB, the
@@ -17188,6 +17591,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:a9e93c24d0a662dcb9739f750d2c0a1129b3d1475cc09e4c479c2
+│                       │      │                   5b5e8906331 
 │                       │      ├ Title           : Due to the design of the name constraint checking algorithm,
 │                       │      │                    the proce ... 
 │                       │      ├ Description     : Due to the design of the name constraint checking algorithm,
@@ -17225,6 +17630,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:eafb8b49ae735d779ae51d3e32661572e203751eeba6a4662457d
+│                       │      │                   cecc6e8e39c 
 │                       │      ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
 │                       │      ├ Description     : If the PATH environment variable contains paths which are
 │                       │      │                   executables (rather than just directories), passing certain
@@ -17281,6 +17688,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:d77911879c4f51e90d6f13bb10399569fe0dcd51ab4065760e5f3
+│                       │      │                   7a58e6a7144 
 │                       │      ├ Title           : net/url: Insufficient validation of bracketed IPv6 hostnames
 │                       │      │                    in net/url 
 │                       │      ├ Description     : The Parse function permits values other than IPv6 addresses
@@ -17327,6 +17736,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:8501311789e5997a51cdc8dd5d8db2f013147fa53e44a44f16b28
+│                       │      │                   8638d527c98 
 │                       │      ├ Title           : encoding/asn1: Parsing DER payload can cause memory
 │                       │      │                   exhaustion in encoding/asn1 
 │                       │      ├ Description     : Parsing a maliciously crafted DER payload could allocate
@@ -17370,6 +17781,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:6c17f5de8935bc545b51d946b083f66674f43d3394d73e3e7d6f3
+│                       │      │                   4984efebd75 
 │                       │      ├ Title           : crypto/x509: golang: Panic when validating certificates with
 │                       │      │                    DSA public keys in crypto/x509 
 │                       │      ├ Description     : Validating certificate chains which contain DSA public keys
@@ -17415,6 +17828,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:472ccc3c51816e545976acb74758273dd00a02ae012b1bc2a9ad6
+│                       │      │                   5d1bd294504 
 │                       │      ├ Title           : crypto/tls: go crypto/tls ALPN negotiation error contains
 │                       │      │                   attacker controlled information 
 │                       │      ├ Description     : When Conn.Handshake fails during ALPN negotiation the error
@@ -17457,6 +17872,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:314f424ba84072b8ca769d4178403ec5ec88e8ca03dbc1c95066a
+│                       │      │                   6fb01da32e4 
 │                       │      ├ Title           : encoding/pem: Quadratic complexity when parsing some invalid
 │                       │      │                    inputs in encoding/pem 
 │                       │      ├ Description     : The processing time for parsing some invalid inputs scales
@@ -17501,6 +17918,8 @@
 │                       │      ├ DataSource       ╭ ID  : govulndb 
 │                       │      │                  ├ Name: The Go Vulnerability Database 
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:5f1627bf66f4899807514c08855adaf1b16c943ad81949b752b47
+│                       │      │                   1e51ca2967f 
 │                       │      ├ Title           : net/textproto: Excessive CPU consumption in
 │                       │      │                   Reader.ReadResponse in net/textproto 
 │                       │      ├ Description     : The Reader.ReadResponse function constructs a response
@@ -17528,49 +17947,116 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.567Z 
-│                       ╰ [36] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [36] ╭ VulnerabilityID : CVE-2025-61725 
+│                       │      ├ PkgID           : stdlib@v1.24.4 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                       │      │                  ╰ UID : f1dc505fdca49da0 
+│                       │      ├ InstalledVersion: v1.24.4 
+│                       │      ├ FixedVersion    : 1.24.8, 1.25.2 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:019ddd91e45efad5428f64ce18a9c57bdcbbc057dc85889e4e3ea
+│                       │      │                   941c03641b9 
+│                       │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
+│                       │      │                   net/mail 
+│                       │      ├ Description     : The ParseAddress function constructeds domain-literal
+│                       │      │                   address components through repeated string concatenation.
+│                       │      │                   When parsing large domain-literal components, this can cause
+│                       │      │                    excessive CPU consumption. 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
+│                       │      │                  ├ bitnami: 3 
+│                       │      │                  ╰ redhat : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                  │         │           N/A:H 
+│                       │      │                  │         ╰ V3Score : 7.5 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:L 
+│                       │      │                            ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
+│                       │      │                  ├ [2]: https://go.dev/cl/709860 
+│                       │      │                  ├ [3]: https://go.dev/issue/75680 
+│                       │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
+│                       │      │                  │      _bI 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
+│                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
+│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                       ├ [37] ╭ VulnerabilityID : CVE-2025-61727 
+│                       │      ├ PkgID           : stdlib@v1.24.4 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                       │      │                  ╰ UID : f1dc505fdca49da0 
+│                       │      ├ InstalledVersion: v1.24.4 
+│                       │      ├ FixedVersion    : 1.24.11, 1.25.5 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61727 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:4758893edf3fc9e55d6882adc577f09c3969e1650bca5fe1ffe0c
+│                       │      │                   37b1dff7edc 
+│                       │      ├ Title           : Improper application of excluded DNS name constraints when
+│                       │      │                   verifying wildcard names in crypto/x509 
+│                       │      ├ Description     : An excluded subdomain constraint in a certificate chain does
+│                       │      │                    not restrict the usage of wildcard SANs in the leaf
+│                       │      │                   certificate. For example a constraint that excludes the
+│                       │      │                   subdomain test.example.com does not prevent a leaf
+│                       │      │                   certificate from claiming the SAN *.example.com. 
+│                       │      ├ Severity        : UNKNOWN 
+│                       │      ╰ References       ╭ [0]: https://go.dev/cl/723900 
+│                       │                         ├ [1]: https://go.dev/issue/76442 
+│                       │                         ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+│                       │                         │      dm4 
+│                       │                         ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+│                       ╰ [38] ╭ VulnerabilityID : CVE-2025-61729 
 │                              ├ PkgID           : stdlib@v1.24.4 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
 │                              │                  ╰ UID : f1dc505fdca49da0 
 │                              ├ InstalledVersion: v1.24.4 
-│                              ├ FixedVersion    : 1.24.8, 1.25.2 
+│                              ├ FixedVersion    : 1.24.11, 1.25.5 
 │                              ├ Status          : fixed 
 │                              ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
 │                              │                  │         c23d576cc7fbfc24b686 
 │                              │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                              │                            0478f2d229b68f52d773 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61729 
 │                              ├ DataSource       ╭ ID  : govulndb 
 │                              │                  ├ Name: The Go Vulnerability Database 
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                              ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
-│                              │                   net/mail 
-│                              ├ Description     : The ParseAddress function constructeds domain-literal
-│                              │                   address components through repeated string concatenation.
-│                              │                   When parsing large domain-literal components, this can cause
-│                              │                    excessive CPU consumption. 
-│                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon : 3 
-│                              │                  ├ bitnami: 3 
-│                              │                  ╰ redhat : 2 
-│                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-│                              │                  │         │           N/A:H 
-│                              │                  │         ╰ V3Score : 7.5 
-│                              │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-│                              │                            │           N/A:L 
-│                              │                            ╰ V3Score : 5.3 
-│                              ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                              │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
-│                              │                  ├ [2]: https://go.dev/cl/709860 
-│                              │                  ├ [3]: https://go.dev/issue/75680 
-│                              │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
-│                              │                  │      _bI 
-│                              │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
-│                              │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
-│                              │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
-│                              ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                              ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                              ├ Fingerprint     : sha256:2ea25af5d7745985d5837fc21bf7393d86a8ef83a8d41994b1987
+│                              │                   d521451dbc0 
+│                              ├ Title           : Within HostnameError.Error(), when constructing an error
+│                              │                   string, there ... 
+│                              ├ Description     : Within HostnameError.Error(), when constructing an error
+│                              │                   string, there is no limit to the number of hosts that will
+│                              │                   be printed out. Furthermore, the error string is constructed
+│                              │                    by repeated string concatenation, leading to quadratic
+│                              │                   runtime. Therefore, a certificate provided by a malicious
+│                              │                   actor can result in excessive resource consumption. 
+│                              ├ Severity        : UNKNOWN 
+│                              ├ References       ╭ [0]: https://go.dev/cl/725920 
+│                              │                  ├ [1]: https://go.dev/issue/76445 
+│                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+│                              │                  │      dm4 
+│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4155 
+│                              ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
+│                              ╰ LastModifiedDate: 2025-12-02T22:16:08.527Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -17656,6 +18142,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:1b010938f6d0888d2eba88ae9cdcd20e464204f0811f699637d71
+                        │      │                   58f63a82d65 
                         │      ├ Title           : grafana: authentication bypass  knowing only a username of
                         │      │                   an LDAP or OAuth user 
                         │      ├ Description     : Grafana 2.x, 3.x, and 4.x before 4.6.4 and 5.x before 5.2.3
@@ -17716,6 +18204,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:68c8be98340ec5ce14e82a36fdd1fd6c5de2eda31f9e80035f948
+                        │      │                   8b104a2bb00 
                         │      ├ Title           : grafana: account takeover possible when using Azure AD OAuth 
                         │      ├ Description     : Grafana is validating Azure AD accounts based on the email
                         │      │                   claim. 
@@ -17793,6 +18283,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:5b6ef6654155909acabe185a21f8500df41ad8e65a6d7ca8bfc1e
+                        │      │                   02a2bd7aaf6 
                         │      ├ Title           : grafana: information disclosure through world-readable
                         │      │                   /var/lib/grafana/grafana.db 
                         │      ├ Description     : An information-disclosure flaw was found in Grafana through
@@ -17870,6 +18362,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:b91fd6d9158aacdd1a796bc0c9f0c54b0a2059b94a85a4d49215b
+                        │      │                   6243d2d4587 
                         │      ├ Title           : grafana: Snapshot authentication bypass 
                         │      ├ Description     : Grafana is an open source data visualization platform. In
                         │      │                   affected versions unauthenticated and authenticated users
@@ -17986,6 +18480,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:8105bbeb30a1f93bcb278f692e6bf9fc056a630cdeb854ab456dd
+                        │      │                   d42658068a6 
                         │      ├ Title           : grafana: Escalation from admin to server admin when auth
                         │      │                   proxy is used 
                         │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -18065,6 +18561,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:9bcb26127bed41ddd24f28ddf73bcfe31d9a9f1d4f2642efb5aa0
+                        │      │                   0b7b220b6a9 
                         │      ├ Title           : grafana: User enumeration via forget password 
                         │      ├ Description     : Grafana is an open-source platform for monitoring and
                         │      │                   observability. When using the forget password on the login
@@ -18145,6 +18643,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:8b668ab5ae741ace0b591eff2b0ed2fc43d63ff3c0e9960408e5d
+                        │      │                   ec63375a82c 
                         │      ├ Title           : grafana: data source proxy race condition 
                         │      ├ Description     : Grafana is an open-source platform for monitoring and
                         │      │                   observability. 
@@ -18210,6 +18710,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:ee7e2c12452122c90c27cc9346603d3a58acdd64ba6a34fe696a7
+                        │      │                   d7861bd32c2 
                         │      ├ Title           : grafana: Cross Site Scripting in Grafana 
                         │      ├ Description     : An open redirect vulnerability has been identified in
                         │      │                   Grafana OSS that can be exploited to achieve XSS attacks.
@@ -18281,6 +18783,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:237ff758274b243f964a7d03bb7c665e5a4c376838ebbc9bfa3ff
+                        │      │                   6a7f4e6d3e9 
                         │      ├ Title           : grafana: Cross site scripting in Influxdb and Graphite query
                         │      │                    editor 
                         │      ├ Description     : Grafana version confirmed for 5.2.4 and 5.3.0 contains a
@@ -18336,6 +18840,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:b94c47e93c957e7c083010f55e2049b2108e9670192cc2e729fad
+                        │      │                   4af41bee7fe 
                         │      ├ Title           : grafana: Cross-site Scripting (XSS) in dashboard links 
                         │      ├ Description     : Grafana before 5.2.0-beta1 has XSS vulnerabilities in
                         │      │                   dashboard links. 
@@ -18386,6 +18892,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:08ce30c6a7fc35818bb492b07ed00cbd55f8be73c1ab0058204e9
+                        │      │                   37509f31c37 
                         │      ├ Title           : grafana: XSS vulnerability via the "Dashboard > Text Panel"
                         │      │                   screen 
                         │      ├ Description     : Grafana 5.3.1 has XSS via the "Dashboard > Text Panel"
@@ -18440,6 +18948,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:7b9c42e35a8c8cb7a745703a86253121dddf182c6d6c181a59978
+                        │      │                   fbf17d60e0b 
                         │      ├ Title           : grafana: XSS vulnerability via a column style on the
                         │      │                   "Dashboard > Table Panel" screen 
                         │      ├ Description     : Grafana 5.3.1 has XSS via a column style on the "Dashboard >
@@ -18499,6 +19009,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:768b2be3e3c3a8c05afe78ad78ce48ed73a7ddc8ac3028839c799
+                        │      │                   728d1742f07 
                         │      ├ Title           : grafana: XSS vulnerability via a link on the "Dashboard >
                         │      │                   All Panels > General" screen 
                         │      ├ Description     : Grafana 5.3.1 has XSS via a link on the "Dashboard > All
@@ -18552,6 +19064,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:14da4495729c5642e239ed1f04a6989ca0a6d733dad781bbcf419
+                        │      │                   e08a54cde1e 
                         │      ├ Title           : Grafana Cross-site Scripting vulnerability 
                         │      ├ Description     : public/app/features/panel/panel_ctrl.ts in Grafana before
                         │      │                   6.2.5 allows HTML Injection in panel drilldown links (via
@@ -18596,6 +19110,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:515458edbcb46c9aee8569f28ee5daea81e280e41d312abc60bc2
+                        │      │                   8e1cdb313f8 
                         │      ├ Title           : grafana: arbitrary file read via MySQL data source 
                         │      ├ Description     : Grafana <= 6.4.3 has an Arbitrary File Read vulnerability,
                         │      │                   which could be exploited by an authenticated attacker that
@@ -18657,6 +19173,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:92665f4294e8292638d5d912b2b15f189080d6928d39095390f4e
+                        │      │                   8678b0e876b 
                         │      ├ Title           : grafana: stored XSS 
                         │      ├ Description     : Grafana through 6.7.1 allows stored XSS due to insufficient
                         │      │                   input protection in the originalUrl field, which allows an
@@ -18722,6 +19240,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:f044e979dfb93b32f3f08a383ed9e2231fb7f60248c82fc1bc650
+                        │      │                   1906030fb19 
                         │      ├ Title           : grafana: XSS via column.title or cellLinkTooltip 
                         │      ├ Description     : Grafana before 6.7.3 allows table-panel XSS via column.title
                         │      │                    or cellLinkTooltip. 
@@ -18794,6 +19314,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:03f7e137595ea2cfafcb59741a22fa88500cb806c47aa787d3259
+                        │      │                   bf5d6fd9ef1 
                         │      ├ Title           : grafana: XSS via the OpenTSDB datasource 
                         │      ├ Description     : Grafana before 7.0.0 allows tag value XSS via the OpenTSDB
                         │      │                   datasource. 
@@ -18854,6 +19376,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:b8ed5780e2d8507ec022d868ef8ab2401592b7cdf02d4e7ca7864
+                        │      │                   7d02e7a38d4 
                         │      ├ Title           : grafana: XSS via a query alias for the Elasticsearch and
                         │      │                   Testdata datasource 
                         │      ├ Description     : Grafana before 7.1.0-beta 1 allows XSS via a query alias for
@@ -18913,6 +19437,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:44703d6ae668bf7d658415acfb5792ab6e53c4b8369b2186b7617
+                        │      │                   886989099e0 
                         │      ├ Title           : grafana: using email as a username can block other users
                         │      │                   from signing in 
                         │      ├ Description     : Grafana is an open source data visualization platform for
@@ -18993,6 +19519,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:b020fc43cacd36a6e66ae5f1426af12fb5ac4e25c87c7668fb6ec
+                        │      │                   4696b11b3d6 
                         │      ├ Title           : grafana: Spoofing of the originalUrl parameter of snapshots 
                         │      ├ Description     : Grafana is an open-source platform for monitoring and
                         │      │                   observability. Prior to versions 8.5.16 and 9.2.8, malicious
@@ -19077,6 +19605,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:c51653a57463150389e57659a1e32a3376429b94822fff1200f13
+                        │      │                   e0d76d2bfd5 
                         │      ├ Title           : grafana: missing access control allows test alerts by
                         │      │                   underprivileged user 
                         │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -19144,6 +19674,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:20c933db89a15a483dfd883130e3b00b1e5a58bb6581416254a3d
+                        │      │                   ac599867a3e 
                         │      ├ Title           : grafana: incorrect assessment of permissions across
                         │      │                   organizations 
                         │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -19211,6 +19743,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:a0ab4a712534ff11ca01406ff59d93c0787d72c185d4585b19a76
+                        │      │                   4bf99bca53f 
                         │      ├ Title           : grafana: Exposure of DingDing alerting integration URL to
                         │      │                   Viewer level users 
                         │      ├ Description     : Grafana is an open-source platform for monitoring and
@@ -19277,6 +19811,8 @@
                         │      │                  ├ Name: GitHub Security Advisory Go 
                         │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
                         │      │                          cosystem%3Ago 
+                        │      ├ Fingerprint     : sha256:52ead98dea6eaefabddb8ed9e49719cdd11cd894ed0b813ce9fba
+                        │      │                   1d728958a84 
                         │      ├ Title           : grafana: Org admin can delete pending invites in different org 
                         │      ├ Description     : Organization admins can delete pending invites created in an
                         │      │                    organization they are not part of. 
@@ -19323,6 +19859,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:52307de725186edee3ed5d3d076e11a636dea770deaf629cae03e
+                        │      │                   d6ff50d3180 
                         │      ├ Title           : database/sql: Postgres Scan Race Condition 
                         │      ├ Description     : Cancelling a query (e.g. by cancelling the context passed to
                         │      │                    one of the query methods) during a call to the Scan method
@@ -19379,6 +19917,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:98c8ba9aa8be3c4318f11780ba5482b6366ff9188a12bfee514aa
+                        │      │                   f99ef8f4d26 
                         │      ├ Title           : golang: archive/tar: Unbounded allocation when parsing GNU
                         │      │                   sparse map 
                         │      ├ Description     : tar.Reader does not set a maximum size on the number of
@@ -19441,6 +19981,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:1d57c188f461d72439769e306465a1bacf90cb5ae66062e90c199
+                        │      │                   eb67140cf65 
                         │      ├ Title           : Despite HTTP headers having a default limit of 1MB, the
                         │      │                   number of cook ... 
                         │      ├ Description     : Despite HTTP headers having a default limit of 1MB, the
@@ -19479,6 +20021,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:656e573a9b1a4ee90bcfc17a29e9c8ccb3c302af7b684339b217d
+                        │      │                   1e9388d5642 
                         │      ├ Title           : Due to the design of the name constraint checking algorithm,
                         │      │                    the proce ... 
                         │      ├ Description     : Due to the design of the name constraint checking algorithm,
@@ -19516,6 +20060,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:92b21d1946f0e202631aee0e01b1b239069a734dc386b830d6b77
+                        │      │                   0d32dca8703 
                         │      ├ Title           : os/exec: Unexpected paths returned from LookPath in os/exec 
                         │      ├ Description     : If the PATH environment variable contains paths which are
                         │      │                   executables (rather than just directories), passing certain
@@ -19572,6 +20118,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:b25041750935f645693ab853d6c8f1dccf3e88827a168b8291480
+                        │      │                   e0bc858b609 
                         │      ├ Title           : net/url: Insufficient validation of bracketed IPv6 hostnames
                         │      │                    in net/url 
                         │      ├ Description     : The Parse function permits values other than IPv6 addresses
@@ -19618,6 +20166,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:7b655808e08fa1c1e85e080bdf31824a0f7ba60168f3ac46e163c
+                        │      │                   e283504d19c 
                         │      ├ Title           : encoding/asn1: Parsing DER payload can cause memory
                         │      │                   exhaustion in encoding/asn1 
                         │      ├ Description     : Parsing a maliciously crafted DER payload could allocate
@@ -19661,6 +20211,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:625029348e4157b0ae74745d1f50eaad2249795aef3d2202447da
+                        │      │                   e6d4a4ebeca 
                         │      ├ Title           : crypto/x509: golang: Panic when validating certificates with
                         │      │                    DSA public keys in crypto/x509 
                         │      ├ Description     : Validating certificate chains which contain DSA public keys
@@ -19706,6 +20258,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:332c66db47bbf2b417a3d1dd0ebf3cc8a68bf70306a9e3b5b9741
+                        │      │                   a011450b88d 
                         │      ├ Title           : crypto/tls: go crypto/tls ALPN negotiation error contains
                         │      │                   attacker controlled information 
                         │      ├ Description     : When Conn.Handshake fails during ALPN negotiation the error
@@ -19748,6 +20302,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:e80b0355d9370a6f9f57a09252d5c0867c4162eef736cae0c21c3
+                        │      │                   2aa3b1138d5 
                         │      ├ Title           : encoding/pem: Quadratic complexity when parsing some invalid
                         │      │                    inputs in encoding/pem 
                         │      ├ Description     : The processing time for parsing some invalid inputs scales
@@ -19792,6 +20348,8 @@
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:73033a94dfab35a4100c37d4cc67ecbc62f582ea54890a6dc7a24
+                        │      │                   14164c35d69 
                         │      ├ Title           : net/textproto: Excessive CPU consumption in
                         │      │                   Reader.ReadResponse in net/textproto 
                         │      ├ Description     : The Reader.ReadResponse function constructs a response
@@ -19819,47 +20377,114 @@
                         │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
                         │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
                         │      ╰ LastModifiedDate: 2025-11-04T22:16:36.567Z 
-                        ╰ [36] ╭ VulnerabilityID : CVE-2025-61725 
+                        ├ [36] ╭ VulnerabilityID : CVE-2025-61725 
+                        │      ├ PkgID           : stdlib@v1.24.4 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+                        │      │                  ╰ UID : f23281c51e136f56 
+                        │      ├ InstalledVersion: v1.24.4 
+                        │      ├ FixedVersion    : 1.24.8, 1.25.2 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+                        │      │                  │         c23d576cc7fbfc24b686 
+                        │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+                        │      │                            0478f2d229b68f52d773 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:6cbe8db837313dc9c367a59367b4ab2ca21deb7f73bb7dc2bdf1a
+                        │      │                   cbf1764978a 
+                        │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
+                        │      │                   net/mail 
+                        │      ├ Description     : The ParseAddress function constructeds domain-literal
+                        │      │                   address components through repeated string concatenation.
+                        │      │                   When parsing large domain-literal components, this can cause
+                        │      │                    excessive CPU consumption. 
+                        │      ├ Severity        : MEDIUM 
+                        │      ├ VendorSeverity   ╭ amazon : 3 
+                        │      │                  ├ bitnami: 3 
+                        │      │                  ╰ redhat : 2 
+                        │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                  │         │           N/A:H 
+                        │      │                  │         ╰ V3Score : 7.5 
+                        │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:L 
+                        │      │                            ╰ V3Score : 5.3 
+                        │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
+                        │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
+                        │      │                  ├ [2]: https://go.dev/cl/709860 
+                        │      │                  ├ [3]: https://go.dev/issue/75680 
+                        │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
+                        │      │                  │      _bI 
+                        │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
+                        │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
+                        │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
+                        │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
+                        │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+                        ├ [37] ╭ VulnerabilityID : CVE-2025-61727 
+                        │      ├ PkgID           : stdlib@v1.24.4 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+                        │      │                  ╰ UID : f23281c51e136f56 
+                        │      ├ InstalledVersion: v1.24.4 
+                        │      ├ FixedVersion    : 1.24.11, 1.25.5 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+                        │      │                  │         c23d576cc7fbfc24b686 
+                        │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+                        │      │                            0478f2d229b68f52d773 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61727 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:e5106b30c8c73e40a186adfbc590b32f252e79998cb70e1c60ca7
+                        │      │                   c90267d2c87 
+                        │      ├ Title           : Improper application of excluded DNS name constraints when
+                        │      │                   verifying wildcard names in crypto/x509 
+                        │      ├ Description     : An excluded subdomain constraint in a certificate chain does
+                        │      │                    not restrict the usage of wildcard SANs in the leaf
+                        │      │                   certificate. For example a constraint that excludes the
+                        │      │                   subdomain test.example.com does not prevent a leaf
+                        │      │                   certificate from claiming the SAN *.example.com. 
+                        │      ├ Severity        : UNKNOWN 
+                        │      ╰ References       ╭ [0]: https://go.dev/cl/723900 
+                        │                         ├ [1]: https://go.dev/issue/76442 
+                        │                         ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+                        │                         │      dm4 
+                        │                         ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+                        ╰ [38] ╭ VulnerabilityID : CVE-2025-61729 
                                ├ PkgID           : stdlib@v1.24.4 
                                ├ PkgName         : stdlib 
                                ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
                                │                  ╰ UID : f23281c51e136f56 
                                ├ InstalledVersion: v1.24.4 
-                               ├ FixedVersion    : 1.24.8, 1.25.2 
+                               ├ FixedVersion    : 1.24.11, 1.25.5 
                                ├ Status          : fixed 
                                ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
                                │                  │         c23d576cc7fbfc24b686 
                                │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
                                │                            0478f2d229b68f52d773 
-                               ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61725 
+                               ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61729 
                                ├ DataSource       ╭ ID  : govulndb 
                                │                  ├ Name: The Go Vulnerability Database 
                                │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                               ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
-                               │                   net/mail 
-                               ├ Description     : The ParseAddress function constructeds domain-literal
-                               │                   address components through repeated string concatenation.
-                               │                   When parsing large domain-literal components, this can cause
-                               │                    excessive CPU consumption. 
-                               ├ Severity        : MEDIUM 
-                               ├ VendorSeverity   ╭ amazon : 3 
-                               │                  ├ bitnami: 3 
-                               │                  ╰ redhat : 2 
-                               ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-                               │                  │         │           N/A:H 
-                               │                  │         ╰ V3Score : 7.5 
-                               │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-                               │                            │           N/A:L 
-                               │                            ╰ V3Score : 5.3 
-                               ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2025/10/08/1 
-                               │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61725 
-                               │                  ├ [2]: https://go.dev/cl/709860 
-                               │                  ├ [3]: https://go.dev/issue/75680 
-                               │                  ├ [4]: https://groups.google.com/g/golang-announce/c/4Emdl2iQ
-                               │                  │      _bI 
-                               │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61725 
-                               │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
-                               │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
-                               ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-                               ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+                               ├ Fingerprint     : sha256:4253f82369285c39c4f860600c26fa08eed898951e2cdd13db04a
+                               │                   fc8fec5a7ad 
+                               ├ Title           : Within HostnameError.Error(), when constructing an error
+                               │                   string, there ... 
+                               ├ Description     : Within HostnameError.Error(), when constructing an error
+                               │                   string, there is no limit to the number of hosts that will
+                               │                   be printed out. Furthermore, the error string is constructed
+                               │                    by repeated string concatenation, leading to quadratic
+                               │                   runtime. Therefore, a certificate provided by a malicious
+                               │                   actor can result in excessive resource consumption. 
+                               ├ Severity        : UNKNOWN 
+                               ├ References       ╭ [0]: https://go.dev/cl/725920 
+                               │                  ├ [1]: https://go.dev/issue/76445 
+                               │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
+                               │                  │      dm4 
+                               │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4155 
+                               ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
+                               ╰ LastModifiedDate: 2025-12-02T22:16:08.527Z 
 ````
