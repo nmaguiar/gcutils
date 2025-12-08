@@ -3770,11 +3770,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -3827,7 +3827,7 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22012 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22011 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2404715 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2407258 
@@ -3837,7 +3837,7 @@
 │                       │      │                  │       25-52881 
 │                       │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [9] : https://errata.almalinux.org/10/ALSA-2025-22012.html 
+│                       │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
 │                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
 │                       │      │                  ├ [11]: https://go.dev/cl/709861 
 │                       │      │                  ├ [12]: https://go.dev/issue/75677 
@@ -4371,12 +4371,17 @@
 │                              │                   certificate. For example a constraint that excludes the
 │                              │                   subdomain test.example.com does not prevent a leaf
 │                              │                   certificate from claiming the SAN *.example.com. 
-│                              ├ Severity        : UNKNOWN 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                              │                            │           L/A:N 
+│                              │                            ╰ V3Score : 6.5 
 │                              ├ References       ╭ [0]: https://go.dev/cl/723900 
 │                              │                  ├ [1]: https://go.dev/issue/76442 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
 │                              │                  │      dm4 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61727 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-4175 
 │                              ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
 │                              ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
@@ -6909,11 +6914,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -6966,7 +6971,7 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22012 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22011 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2404715 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2407258 
@@ -6976,7 +6981,7 @@
 │                       │      │                  │       25-52881 
 │                       │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [9] : https://errata.almalinux.org/10/ALSA-2025-22012.html 
+│                       │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
 │                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
 │                       │      │                  ├ [11]: https://go.dev/cl/709861 
 │                       │      │                  ├ [12]: https://go.dev/issue/75677 
@@ -7510,12 +7515,17 @@
 │                              │                   certificate. For example a constraint that excludes the
 │                              │                   subdomain test.example.com does not prevent a leaf
 │                              │                   certificate from claiming the SAN *.example.com. 
-│                              ├ Severity        : UNKNOWN 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                              │                            │           L/A:N 
+│                              │                            ╰ V3Score : 6.5 
 │                              ├ References       ╭ [0]: https://go.dev/cl/723900 
 │                              │                  ├ [1]: https://go.dev/issue/76442 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
 │                              │                  │      dm4 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61727 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-4175 
 │                              ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
 │                              ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
@@ -14427,6 +14437,7 @@
 │                       │      │                  ├ nvd        : 2 
 │                       │      │                  ├ oracle-oval: 2 
 │                       │      │                  ├ redhat     : 2 
+│                       │      │                  ├ rocky      : 2 
 │                       │      │                  ╰ ubuntu     : 2 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
 │                       │      │                  │         │           L/A:N 
@@ -14442,17 +14453,28 @@
 │                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
 │                       │      │                            │           L/A:N 
 │                       │      │                            ╰ V3Score : 6.1 
-│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2020-24303 
-│                       │      │                  ├ [1]: https://github.com/grafana/grafana 
-│                       │      │                  ├ [2]: https://github.com/grafana/grafana/blob/master/CHANGEL
-│                       │      │                  │      OG.md#710-beta-1-2020-07-01 
-│                       │      │                  ├ [3]: https://github.com/grafana/grafana/pull/25401 
-│                       │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2020-24303.html 
-│                       │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2021-1859.html 
-│                       │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2020-24303 
-│                       │      │                  ├ [7]: https://security.netapp.com/advisory/ntap-20201123-0002 
-│                       │      │                  ├ [8]: https://security.netapp.com/advisory/ntap-20201123-0002/ 
-│                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2020-24303 
+│                       │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2020-24303 
+│                       │      │                  ├ [1] : https://bugzilla.redhat.com/show_bug.cgi?id=1843170 
+│                       │      │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=1850471 
+│                       │      │                  ├ [3] : https://bugzilla.redhat.com/show_bug.cgi?id=1892418 
+│                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=1907670 
+│                       │      │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=1916083 
+│                       │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  │       20-24303 
+│                       │      │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  │       20-27846 
+│                       │      │                  ├ [8] : https://errata.rockylinux.org/RLSA-2021:1859 
+│                       │      │                  ├ [9] : https://github.com/grafana/grafana 
+│                       │      │                  ├ [10]: https://github.com/grafana/grafana/blob/master/CHANGE
+│                       │      │                  │       LOG.md#710-beta-1-2020-07-01 
+│                       │      │                  ├ [11]: https://github.com/grafana/grafana/pull/25401 
+│                       │      │                  ├ [12]: https://linux.oracle.com/cve/CVE-2020-24303.html 
+│                       │      │                  ├ [13]: https://linux.oracle.com/errata/ELSA-2021-1859.html 
+│                       │      │                  ├ [14]: https://nvd.nist.gov/vuln/detail/CVE-2020-24303 
+│                       │      │                  ├ [15]: https://security.netapp.com/advisory/ntap-20201123-0002 
+│                       │      │                  ├ [16]: https://security.netapp.com/advisory/ntap-20201123-00
+│                       │      │                  │       02/ 
+│                       │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2020-24303 
 │                       │      ├ PublishedDate   : 2020-10-28T14:15:12.33Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T05:14:34.773Z 
 │                       ├ [20] ╭ VulnerabilityID : CVE-2022-39229 
@@ -15039,11 +15061,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -15096,7 +15118,7 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22012 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22011 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2404715 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2407258 
@@ -15106,7 +15128,7 @@
 │                       │      │                  │       25-52881 
 │                       │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [9] : https://errata.almalinux.org/10/ALSA-2025-22012.html 
+│                       │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
 │                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
 │                       │      │                  ├ [11]: https://go.dev/cl/709861 
 │                       │      │                  ├ [12]: https://go.dev/issue/75677 
@@ -15640,12 +15662,17 @@
 │                              │                   certificate. For example a constraint that excludes the
 │                              │                   subdomain test.example.com does not prevent a leaf
 │                              │                   certificate from claiming the SAN *.example.com. 
-│                              ├ Severity        : UNKNOWN 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                              │                            │           L/A:N 
+│                              │                            ╰ V3Score : 6.5 
 │                              ├ References       ╭ [0]: https://go.dev/cl/723900 
 │                              │                  ├ [1]: https://go.dev/issue/76442 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
 │                              │                  │      dm4 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61727 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-4175 
 │                              ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
 │                              ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
@@ -16980,6 +17007,7 @@
 │                       │      │                  ├ nvd        : 2 
 │                       │      │                  ├ oracle-oval: 2 
 │                       │      │                  ├ redhat     : 2 
+│                       │      │                  ├ rocky      : 2 
 │                       │      │                  ╰ ubuntu     : 2 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
 │                       │      │                  │         │           L/A:N 
@@ -16995,17 +17023,28 @@
 │                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
 │                       │      │                            │           L/A:N 
 │                       │      │                            ╰ V3Score : 6.1 
-│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2020-24303 
-│                       │      │                  ├ [1]: https://github.com/grafana/grafana 
-│                       │      │                  ├ [2]: https://github.com/grafana/grafana/blob/master/CHANGEL
-│                       │      │                  │      OG.md#710-beta-1-2020-07-01 
-│                       │      │                  ├ [3]: https://github.com/grafana/grafana/pull/25401 
-│                       │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2020-24303.html 
-│                       │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2021-1859.html 
-│                       │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2020-24303 
-│                       │      │                  ├ [7]: https://security.netapp.com/advisory/ntap-20201123-0002 
-│                       │      │                  ├ [8]: https://security.netapp.com/advisory/ntap-20201123-0002/ 
-│                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2020-24303 
+│                       │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2020-24303 
+│                       │      │                  ├ [1] : https://bugzilla.redhat.com/show_bug.cgi?id=1843170 
+│                       │      │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=1850471 
+│                       │      │                  ├ [3] : https://bugzilla.redhat.com/show_bug.cgi?id=1892418 
+│                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=1907670 
+│                       │      │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=1916083 
+│                       │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  │       20-24303 
+│                       │      │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  │       20-27846 
+│                       │      │                  ├ [8] : https://errata.rockylinux.org/RLSA-2021:1859 
+│                       │      │                  ├ [9] : https://github.com/grafana/grafana 
+│                       │      │                  ├ [10]: https://github.com/grafana/grafana/blob/master/CHANGE
+│                       │      │                  │       LOG.md#710-beta-1-2020-07-01 
+│                       │      │                  ├ [11]: https://github.com/grafana/grafana/pull/25401 
+│                       │      │                  ├ [12]: https://linux.oracle.com/cve/CVE-2020-24303.html 
+│                       │      │                  ├ [13]: https://linux.oracle.com/errata/ELSA-2021-1859.html 
+│                       │      │                  ├ [14]: https://nvd.nist.gov/vuln/detail/CVE-2020-24303 
+│                       │      │                  ├ [15]: https://security.netapp.com/advisory/ntap-20201123-0002 
+│                       │      │                  ├ [16]: https://security.netapp.com/advisory/ntap-20201123-00
+│                       │      │                  │       02/ 
+│                       │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2020-24303 
 │                       │      ├ PublishedDate   : 2020-10-28T14:15:12.33Z 
 │                       │      ╰ LastModifiedDate: 2024-11-21T05:14:34.773Z 
 │                       ├ [19] ╭ VulnerabilityID : CVE-2022-39229 
@@ -17476,11 +17515,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -17533,7 +17572,7 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22012 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22011 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2404715 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2407258 
@@ -17543,7 +17582,7 @@
 │                       │      │                  │       25-52881 
 │                       │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [9] : https://errata.almalinux.org/10/ALSA-2025-22012.html 
+│                       │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
 │                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
 │                       │      │                  ├ [11]: https://go.dev/cl/709861 
 │                       │      │                  ├ [12]: https://go.dev/issue/75677 
@@ -18077,12 +18116,17 @@
 │                              │                   certificate. For example a constraint that excludes the
 │                              │                   subdomain test.example.com does not prevent a leaf
 │                              │                   certificate from claiming the SAN *.example.com. 
-│                              ├ Severity        : UNKNOWN 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                              │                            │           L/A:N 
+│                              │                            ╰ V3Score : 6.5 
 │                              ├ References       ╭ [0]: https://go.dev/cl/723900 
 │                              │                  ├ [1]: https://go.dev/issue/76442 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
 │                              │                  │      dm4 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61727 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-4175 
 │                              ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
 │                              ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
@@ -19417,6 +19461,7 @@
                         │      │                  ├ nvd        : 2 
                         │      │                  ├ oracle-oval: 2 
                         │      │                  ├ redhat     : 2 
+                        │      │                  ├ rocky      : 2 
                         │      │                  ╰ ubuntu     : 2 
                         │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
                         │      │                  │         │           L/A:N 
@@ -19432,17 +19477,28 @@
                         │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
                         │      │                            │           L/A:N 
                         │      │                            ╰ V3Score : 6.1 
-                        │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2020-24303 
-                        │      │                  ├ [1]: https://github.com/grafana/grafana 
-                        │      │                  ├ [2]: https://github.com/grafana/grafana/blob/master/CHANGEL
-                        │      │                  │      OG.md#710-beta-1-2020-07-01 
-                        │      │                  ├ [3]: https://github.com/grafana/grafana/pull/25401 
-                        │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2020-24303.html 
-                        │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2021-1859.html 
-                        │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2020-24303 
-                        │      │                  ├ [7]: https://security.netapp.com/advisory/ntap-20201123-0002 
-                        │      │                  ├ [8]: https://security.netapp.com/advisory/ntap-20201123-0002/ 
-                        │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2020-24303 
+                        │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2020-24303 
+                        │      │                  ├ [1] : https://bugzilla.redhat.com/show_bug.cgi?id=1843170 
+                        │      │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=1850471 
+                        │      │                  ├ [3] : https://bugzilla.redhat.com/show_bug.cgi?id=1892418 
+                        │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=1907670 
+                        │      │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=1916083 
+                        │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+                        │      │                  │       20-24303 
+                        │      │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+                        │      │                  │       20-27846 
+                        │      │                  ├ [8] : https://errata.rockylinux.org/RLSA-2021:1859 
+                        │      │                  ├ [9] : https://github.com/grafana/grafana 
+                        │      │                  ├ [10]: https://github.com/grafana/grafana/blob/master/CHANGE
+                        │      │                  │       LOG.md#710-beta-1-2020-07-01 
+                        │      │                  ├ [11]: https://github.com/grafana/grafana/pull/25401 
+                        │      │                  ├ [12]: https://linux.oracle.com/cve/CVE-2020-24303.html 
+                        │      │                  ├ [13]: https://linux.oracle.com/errata/ELSA-2021-1859.html 
+                        │      │                  ├ [14]: https://nvd.nist.gov/vuln/detail/CVE-2020-24303 
+                        │      │                  ├ [15]: https://security.netapp.com/advisory/ntap-20201123-0002 
+                        │      │                  ├ [16]: https://security.netapp.com/advisory/ntap-20201123-00
+                        │      │                  │       02/ 
+                        │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2020-24303 
                         │      ├ PublishedDate   : 2020-10-28T14:15:12.33Z 
                         │      ╰ LastModifiedDate: 2024-11-21T05:14:34.773Z 
                         ├ [19] ╭ VulnerabilityID : CVE-2022-39229 
@@ -19913,11 +19969,11 @@
                         │      │                            │           L/A:L 
                         │      │                            ╰ V3Score : 7 
                         │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
                         │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
                         │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
                         │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-                        │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+                        │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
                         │      │                  ├ [6] : https://go.dev/cl/693735 
                         │      │                  ├ [7] : https://go.dev/issue/74831 
                         │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -19970,7 +20026,7 @@
                         │      │                            │           N/A:H 
                         │      │                            ╰ V3Score : 7.5 
                         │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22012 
+                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:22011 
                         │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
                         │      │                  ├ [3] : https://bugzilla.redhat.com/2404715 
                         │      │                  ├ [4] : https://bugzilla.redhat.com/2407258 
@@ -19980,7 +20036,7 @@
                         │      │                  │       25-52881 
                         │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-58183 
-                        │      │                  ├ [9] : https://errata.almalinux.org/10/ALSA-2025-22012.html 
+                        │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
                         │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
                         │      │                  ├ [11]: https://go.dev/cl/709861 
                         │      │                  ├ [12]: https://go.dev/issue/75677 
@@ -20514,12 +20570,17 @@
                                │                   certificate. For example a constraint that excludes the
                                │                   subdomain test.example.com does not prevent a leaf
                                │                   certificate from claiming the SAN *.example.com. 
-                               ├ Severity        : UNKNOWN 
+                               ├ Severity        : MEDIUM 
+                               ├ VendorSeverity   ─ bitnami: 2 
+                               ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+                               │                            │           L/A:N 
+                               │                            ╰ V3Score : 6.5 
                                ├ References       ╭ [0]: https://go.dev/cl/723900 
                                │                  ├ [1]: https://go.dev/issue/76442 
                                │                  ├ [2]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
                                │                  │      dm4 
-                               │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-4175 
+                               │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61727 
+                               │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2025-4175 
                                ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
                                ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
 ````
