@@ -3838,7 +3838,7 @@
 │                       │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
-│                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22012 
+│                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
 │                       │      │                  ├ [11]: https://go.dev/cl/709861 
 │                       │      │                  ├ [12]: https://go.dev/issue/75677 
 │                       │      │                  ├ [13]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -4321,10 +4321,10 @@
 │                       │      │                   aa127ed0ebe 
 │                       │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
 │                       │      │                   net/mail 
-│                       │      ├ Description     : The ParseAddress function constructeds domain-literal
-│                       │      │                   address components through repeated string concatenation.
-│                       │      │                   When parsing large domain-literal components, this can cause
-│                       │      │                    excessive CPU consumption. 
+│                       │      ├ Description     : The ParseAddress function constructs domain-literal address
+│                       │      │                   components through repeated string concatenation. When
+│                       │      │                   parsing large domain-literal components, this can cause
+│                       │      │                   excessive CPU consumption. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ├ bitnami: 3 
@@ -4345,7 +4345,7 @@
 │                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
 │                       ╰ [18] ╭ VulnerabilityID : CVE-2025-61727 
 │                              ├ PkgID           : stdlib@v1.24.5 
 │                              ├ PkgName         : stdlib 
@@ -6982,7 +6982,7 @@
 │                       │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
-│                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22012 
+│                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
 │                       │      │                  ├ [11]: https://go.dev/cl/709861 
 │                       │      │                  ├ [12]: https://go.dev/issue/75677 
 │                       │      │                  ├ [13]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -7465,10 +7465,10 @@
 │                       │      │                   aaf01222d32 
 │                       │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
 │                       │      │                   net/mail 
-│                       │      ├ Description     : The ParseAddress function constructeds domain-literal
-│                       │      │                   address components through repeated string concatenation.
-│                       │      │                   When parsing large domain-literal components, this can cause
-│                       │      │                    excessive CPU consumption. 
+│                       │      ├ Description     : The ParseAddress function constructs domain-literal address
+│                       │      │                   components through repeated string concatenation. When
+│                       │      │                   parsing large domain-literal components, this can cause
+│                       │      │                   excessive CPU consumption. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ├ bitnami: 3 
@@ -7489,7 +7489,7 @@
 │                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
 │                       ╰ [18] ╭ VulnerabilityID : CVE-2025-61727 
 │                              ├ PkgID           : stdlib@v1.24.5 
 │                              ├ PkgName         : stdlib 
@@ -15129,7 +15129,7 @@
 │                       │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
-│                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22012 
+│                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
 │                       │      │                  ├ [11]: https://go.dev/cl/709861 
 │                       │      │                  ├ [12]: https://go.dev/issue/75677 
 │                       │      │                  ├ [13]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -15612,10 +15612,10 @@
 │                       │      │                   74b89c5fe19 
 │                       │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
 │                       │      │                   net/mail 
-│                       │      ├ Description     : The ParseAddress function constructeds domain-literal
-│                       │      │                   address components through repeated string concatenation.
-│                       │      │                   When parsing large domain-literal components, this can cause
-│                       │      │                    excessive CPU consumption. 
+│                       │      ├ Description     : The ParseAddress function constructs domain-literal address
+│                       │      │                   components through repeated string concatenation. When
+│                       │      │                   parsing large domain-literal components, this can cause
+│                       │      │                   excessive CPU consumption. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ├ bitnami: 3 
@@ -15636,7 +15636,7 @@
 │                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
 │                       ╰ [42] ╭ VulnerabilityID : CVE-2025-61727 
 │                              ├ PkgID           : stdlib@v1.24.4 
 │                              ├ PkgName         : stdlib 
@@ -17583,7 +17583,7 @@
 │                       │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
-│                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22012 
+│                       │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
 │                       │      │                  ├ [11]: https://go.dev/cl/709861 
 │                       │      │                  ├ [12]: https://go.dev/issue/75677 
 │                       │      │                  ├ [13]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -18066,10 +18066,10 @@
 │                       │      │                   941c03641b9 
 │                       │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
 │                       │      │                   net/mail 
-│                       │      ├ Description     : The ParseAddress function constructeds domain-literal
-│                       │      │                   address components through repeated string concatenation.
-│                       │      │                   When parsing large domain-literal components, this can cause
-│                       │      │                    excessive CPU consumption. 
+│                       │      ├ Description     : The ParseAddress function constructs domain-literal address
+│                       │      │                   components through repeated string concatenation. When
+│                       │      │                   parsing large domain-literal components, this can cause
+│                       │      │                   excessive CPU consumption. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ├ bitnami: 3 
@@ -18090,7 +18090,7 @@
 │                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+│                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
 │                       ╰ [38] ╭ VulnerabilityID : CVE-2025-61727 
 │                              ├ PkgID           : stdlib@v1.24.4 
 │                              ├ PkgName         : stdlib 
@@ -20037,7 +20037,7 @@
                         │      │                  ├ [8] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-58183 
                         │      │                  ├ [9] : https://errata.almalinux.org/9/ALSA-2025-22011.html 
-                        │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22012 
+                        │      │                  ├ [10]: https://errata.rockylinux.org/RLSA-2025:22011 
                         │      │                  ├ [11]: https://go.dev/cl/709861 
                         │      │                  ├ [12]: https://go.dev/issue/75677 
                         │      │                  ├ [13]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -20520,10 +20520,10 @@
                         │      │                   cbf1764978a 
                         │      ├ Title           : net/mail: Excessive CPU consumption in ParseAddress in
                         │      │                   net/mail 
-                        │      ├ Description     : The ParseAddress function constructeds domain-literal
-                        │      │                   address components through repeated string concatenation.
-                        │      │                   When parsing large domain-literal components, this can cause
-                        │      │                    excessive CPU consumption. 
+                        │      ├ Description     : The ParseAddress function constructs domain-literal address
+                        │      │                   components through repeated string concatenation. When
+                        │      │                   parsing large domain-literal components, this can cause
+                        │      │                   excessive CPU consumption. 
                         │      ├ Severity        : MEDIUM 
                         │      ├ VendorSeverity   ╭ amazon : 3 
                         │      │                  ├ bitnami: 3 
@@ -20544,7 +20544,7 @@
                         │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-4006 
                         │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
                         │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
-                        │      ╰ LastModifiedDate: 2025-11-04T22:16:36.693Z 
+                        │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
                         ╰ [38] ╭ VulnerabilityID : CVE-2025-61727 
                                ├ PkgID           : stdlib@v1.24.4 
                                ├ PkgName         : stdlib 
