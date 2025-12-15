@@ -3539,7 +3539,7 @@
       bitnami: 2
       oracle-oval: 2
       redhat: 2
-      rocky: 3
+      rocky: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
@@ -3553,12 +3553,10 @@
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2404715
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-52881
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22011.html
-    - https://errata.rockylinux.org/RLSA-2025:22011
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -6400,7 +6398,7 @@
       bitnami: 2
       oracle-oval: 2
       redhat: 2
-      rocky: 3
+      rocky: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
@@ -6414,12 +6412,10 @@
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2404715
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-52881
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22011.html
-    - https://errata.rockylinux.org/RLSA-2025:22011
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -13938,7 +13934,7 @@
       bitnami: 2
       oracle-oval: 2
       redhat: 2
-      rocky: 3
+      rocky: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
@@ -13952,12 +13948,10 @@
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2404715
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-52881
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22011.html
-    - https://errata.rockylinux.org/RLSA-2025:22011
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -16134,7 +16128,7 @@
       bitnami: 2
       oracle-oval: 2
       redhat: 2
-      rocky: 3
+      rocky: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
@@ -16148,12 +16142,10 @@
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2404715
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-52881
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22011.html
-    - https://errata.rockylinux.org/RLSA-2025:22011
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -18330,7 +18322,7 @@
       bitnami: 2
       oracle-oval: 2
       redhat: 2
-      rocky: 3
+      rocky: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L
@@ -18344,12 +18336,10 @@
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2404715
     - https://bugzilla.redhat.com/2407258
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2404715
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-52881
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22011.html
-    - https://errata.rockylinux.org/RLSA-2025:22011
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
