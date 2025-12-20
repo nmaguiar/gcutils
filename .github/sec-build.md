@@ -3843,13 +3843,13 @@
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23087.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23087 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23088 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
 │                       │      │                  │       Q_bI 
 │                       │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-58183.html 
-│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23088.html 
+│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23295.html 
 │                       │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-58183 
 │                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-4014 
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
@@ -4397,6 +4397,7 @@
 │                              │                   subdomain test.example.com does not prevent a leaf
 │                              │                   certificate from claiming the SAN *.example.com. 
 │                              ├ Severity        : MEDIUM 
+│                              ├ CweIDs           ─ [0]: CWE-295 
 │                              ├ VendorSeverity   ╭ bitnami: 2 
 │                              │                  ╰ redhat : 2 
 │                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
@@ -4414,7 +4415,7 @@
 │                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4175 
 │                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
 │                              ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
-│                              ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
+│                              ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -7018,13 +7019,13 @@
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23087.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23087 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23088 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
 │                       │      │                  │       Q_bI 
 │                       │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-58183.html 
-│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23088.html 
+│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23295.html 
 │                       │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-58183 
 │                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-4014 
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
@@ -7572,6 +7573,7 @@
 │                              │                   subdomain test.example.com does not prevent a leaf
 │                              │                   certificate from claiming the SAN *.example.com. 
 │                              ├ Severity        : MEDIUM 
+│                              ├ CweIDs           ─ [0]: CWE-295 
 │                              ├ VendorSeverity   ╭ bitnami: 2 
 │                              │                  ╰ redhat : 2 
 │                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
@@ -7589,7 +7591,7 @@
 │                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4175 
 │                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
 │                              ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
-│                              ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
+│                              ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -15196,13 +15198,13 @@
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23087.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23087 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23088 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
 │                       │      │                  │       Q_bI 
 │                       │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-58183.html 
-│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23088.html 
+│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23295.html 
 │                       │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-58183 
 │                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-4014 
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
@@ -15750,6 +15752,7 @@
 │                              │                   subdomain test.example.com does not prevent a leaf
 │                              │                   certificate from claiming the SAN *.example.com. 
 │                              ├ Severity        : MEDIUM 
+│                              ├ CweIDs           ─ [0]: CWE-295 
 │                              ├ VendorSeverity   ╭ bitnami: 2 
 │                              │                  ╰ redhat : 2 
 │                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
@@ -15767,7 +15770,7 @@
 │                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4175 
 │                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
 │                              ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
-│                              ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
+│                              ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -17674,13 +17677,13 @@
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23087.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23087 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23088 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
 │                       │      │                  │       Q_bI 
 │                       │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-58183.html 
-│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23088.html 
+│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23295.html 
 │                       │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-58183 
 │                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-4014 
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
@@ -18228,6 +18231,7 @@
 │                              │                   subdomain test.example.com does not prevent a leaf
 │                              │                   certificate from claiming the SAN *.example.com. 
 │                              ├ Severity        : MEDIUM 
+│                              ├ CweIDs           ─ [0]: CWE-295 
 │                              ├ VendorSeverity   ╭ bitnami: 2 
 │                              │                  ╰ redhat : 2 
 │                              ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
@@ -18245,7 +18249,7 @@
 │                              │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4175 
 │                              │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
 │                              ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
-│                              ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
+│                              ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -20152,13 +20156,13 @@
                         │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-58183 
                         │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23087.html 
-                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23087 
+                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23088 
                         │      │                  ├ [8] : https://go.dev/cl/709861 
                         │      │                  ├ [9] : https://go.dev/issue/75677 
                         │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
                         │      │                  │       Q_bI 
                         │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-58183.html 
-                        │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23088.html 
+                        │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-23295.html 
                         │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-58183 
                         │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-4014 
                         │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
@@ -20706,6 +20710,7 @@
                                │                   subdomain test.example.com does not prevent a leaf
                                │                   certificate from claiming the SAN *.example.com. 
                                ├ Severity        : MEDIUM 
+                               ├ CweIDs           ─ [0]: CWE-295 
                                ├ VendorSeverity   ╭ bitnami: 2 
                                │                  ╰ redhat : 2 
                                ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
@@ -20723,5 +20728,5 @@
                                │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4175 
                                │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
                                ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
-                               ╰ LastModifiedDate: 2025-12-04T17:15:08.283Z 
+                               ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
 ````
