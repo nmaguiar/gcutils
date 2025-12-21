@@ -671,6 +671,57 @@
       Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d576cc7fbfc24b686
       DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f2d229b68f52d773
     FilePath: openaf/openaf.jar
+  Vulnerabilities:
+  - VulnerabilityID: CVE-2025-68161
+    PkgName: org.apache.logging.log4j:log4j-core
+    PkgPath: openaf/plugin-XLS/log4j-core-2.25.0.jar
+    PkgIdentifier:
+      PURL: pkg:maven/org.apache.logging.log4j/log4j-core@2.25.0
+      UID: ebc3042b961ae47a
+    InstalledVersion: 2.25.0
+    FixedVersion: 2.25.3
+    Status: fixed
+    Layer:
+      Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d576cc7fbfc24b686
+      DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f2d229b68f52d773
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-68161
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Maven
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
+    Fingerprint: sha256:5f27b1acb93890e2a4fee3566eb6694bb3cab26edb878fcb00700c4497a22fe0
+    Title: The Socket Appender in Apache Log4j Core versions 2.0-beta9 through 2. ...
+    Description: |-
+      The Socket Appender in Apache Log4j Core versions 2.0-beta9 through 2.25.2 does not perform TLS hostname verification of the peer certificate, even when the  verifyHostName https://logging.apache.org/log4j/2.x/manual/appenders/network.html#SslConfiguration-attr-verifyHostName  configuration attribute or the  log4j2.sslVerifyHostName https://logging.apache.org/log4j/2.x/manual/systemproperties.html#log4j2.sslVerifyHostName  system property is set to true.
+
+      This issue may allow a man-in-the-middle attacker to intercept or redirect log traffic under the following conditions:
+
+        *  The attacker is able to intercept or redirect network traffic between the client and the log receiver.
+        *  The attacker can present a server certificate issued by a certification authority trusted by the Socket Appender’s configured trust store (or by the default Java trust store if no custom trust store is configured).
+
+
+      Users are advised to upgrade to Apache Log4j Core version 2.25.3, which addresses this issue.
+
+      As an alternative mitigation, the Socket Appender may be configured to use a private or restricted trust root to limit the set of trusted certificates.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-297
+    VendorSeverity:
+      ghsa: 2
+    References:
+    - http://www.openwall.com/lists/oss-security/2025/12/18/1
+    - https://github.com/apache/logging-log4j2
+    - https://github.com/apache/logging-log4j2/commit/3b93748497e1adbbd027fda8a5e7268ec5d0d578
+    - https://github.com/apache/logging-log4j2/pull/4002
+    - https://lists.apache.org/thread/xr33kyxq3sl67lwb61ggvm1fzc8k7dvx
+    - https://logging.apache.org/cyclonedx/vdr.xml
+    - https://logging.apache.org/log4j/2.x/manual/appenders/network.html#SslConfiguration-attr-verifyHostName
+    - https://logging.apache.org/log4j/2.x/manual/systemproperties.html#log4j2.sslVerifyHostName
+    - https://logging.apache.org/security.html#CVE-2025-68161
+    - https://nvd.nist.gov/vuln/detail/CVE-2025-68161
+    PublishedDate: '2025-12-18T21:15:57.96Z'
+    LastModifiedDate: '2025-12-19T18:00:18.33Z'
 - Target: Node.js
   Class: lang-pkgs
   Type: node-pkg
@@ -3446,23 +3497,29 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:8f58aeea797b86d88b204b429f1f118f8e49598bed774a466f2ec970c18045d3
-    Title: SSH servers parsing GSSAPI authentication requests do not validate the ...
+    Title: 'golang.org/x/crypto/ssh: in golang.org/x/crypto/ssh'
     Description: SSH servers parsing GSSAPI authentication requests do not validate the number of mechanisms specified in the request, allowing an attacker to cause unbounded memory consumption.
     Severity: MEDIUM
     CweIDs:
     - CWE-770
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2025-58181
     - https://go.dev/cl/721961
     - https://go.dev/issue/76363
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
+    - https://www.cve.org/CVERecord?id=CVE-2025-58181
     PublishedDate: '2025-11-19T21:15:50.85Z'
     LastModifiedDate: '2025-12-11T19:29:24.9Z'
   - VulnerabilityID: CVE-2025-47907
@@ -3563,12 +3620,12 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23087.html
-    - https://errata.rockylinux.org/RLSA-2025:23088
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://linux.oracle.com/cve/CVE-2025-58183.html
-    - https://linux.oracle.com/errata/ELSA-2025-23295.html
+    - https://linux.oracle.com/errata/ELSA-2025-23326.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -3595,6 +3652,8 @@
     Title: 'crypto/x509: Excessive resource consumption when printing error string for host certificate validation in crypto/x509'
     Description: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.
     Severity: HIGH
+    CweIDs:
+    - CWE-295
     VendorSeverity:
       bitnami: 3
       redhat: 3
@@ -3614,7 +3673,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
     PublishedDate: '2025-12-02T19:15:51.447Z'
-    LastModifiedDate: '2025-12-04T17:15:25.86Z'
+    LastModifiedDate: '2025-12-19T18:25:28.283Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -6333,23 +6392,29 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:08b2a184d90b238b596ed76ec894ba89064c339c301cd7a80649abc70897fc14
-    Title: SSH servers parsing GSSAPI authentication requests do not validate the ...
+    Title: 'golang.org/x/crypto/ssh: in golang.org/x/crypto/ssh'
     Description: SSH servers parsing GSSAPI authentication requests do not validate the number of mechanisms specified in the request, allowing an attacker to cause unbounded memory consumption.
     Severity: MEDIUM
     CweIDs:
     - CWE-770
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2025-58181
     - https://go.dev/cl/721961
     - https://go.dev/issue/76363
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
+    - https://www.cve.org/CVERecord?id=CVE-2025-58181
     PublishedDate: '2025-11-19T21:15:50.85Z'
     LastModifiedDate: '2025-12-11T19:29:24.9Z'
   - VulnerabilityID: CVE-2025-47907
@@ -6450,12 +6515,12 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23087.html
-    - https://errata.rockylinux.org/RLSA-2025:23088
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://linux.oracle.com/cve/CVE-2025-58183.html
-    - https://linux.oracle.com/errata/ELSA-2025-23295.html
+    - https://linux.oracle.com/errata/ELSA-2025-23326.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -6482,6 +6547,8 @@
     Title: 'crypto/x509: Excessive resource consumption when printing error string for host certificate validation in crypto/x509'
     Description: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.
     Severity: HIGH
+    CweIDs:
+    - CWE-295
     VendorSeverity:
       bitnami: 3
       redhat: 3
@@ -6501,7 +6568,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
     PublishedDate: '2025-12-02T19:15:51.447Z'
-    LastModifiedDate: '2025-12-04T17:15:25.86Z'
+    LastModifiedDate: '2025-12-19T18:25:28.283Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.5
     PkgName: stdlib
@@ -13897,23 +13964,29 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:6a913d7f356953613dc9417f48491aa19f68a50d66c1c9b8bebe6a7bc57c0b6d
-    Title: SSH servers parsing GSSAPI authentication requests do not validate the ...
+    Title: 'golang.org/x/crypto/ssh: in golang.org/x/crypto/ssh'
     Description: SSH servers parsing GSSAPI authentication requests do not validate the number of mechanisms specified in the request, allowing an attacker to cause unbounded memory consumption.
     Severity: MEDIUM
     CweIDs:
     - CWE-770
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2025-58181
     - https://go.dev/cl/721961
     - https://go.dev/issue/76363
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
+    - https://www.cve.org/CVERecord?id=CVE-2025-58181
     PublishedDate: '2025-11-19T21:15:50.85Z'
     LastModifiedDate: '2025-12-11T19:29:24.9Z'
   - VulnerabilityID: CVE-2025-47907
@@ -14014,12 +14087,12 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23087.html
-    - https://errata.rockylinux.org/RLSA-2025:23088
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://linux.oracle.com/cve/CVE-2025-58183.html
-    - https://linux.oracle.com/errata/ELSA-2025-23295.html
+    - https://linux.oracle.com/errata/ELSA-2025-23326.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -14046,6 +14119,8 @@
     Title: 'crypto/x509: Excessive resource consumption when printing error string for host certificate validation in crypto/x509'
     Description: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.
     Severity: HIGH
+    CweIDs:
+    - CWE-295
     VendorSeverity:
       bitnami: 3
       redhat: 3
@@ -14065,7 +14140,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
     PublishedDate: '2025-12-02T19:15:51.447Z'
-    LastModifiedDate: '2025-12-04T17:15:25.86Z'
+    LastModifiedDate: '2025-12-19T18:25:28.283Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -16230,12 +16305,12 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23087.html
-    - https://errata.rockylinux.org/RLSA-2025:23088
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://linux.oracle.com/cve/CVE-2025-58183.html
-    - https://linux.oracle.com/errata/ELSA-2025-23295.html
+    - https://linux.oracle.com/errata/ELSA-2025-23326.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -16262,6 +16337,8 @@
     Title: 'crypto/x509: Excessive resource consumption when printing error string for host certificate validation in crypto/x509'
     Description: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.
     Severity: HIGH
+    CweIDs:
+    - CWE-295
     VendorSeverity:
       bitnami: 3
       redhat: 3
@@ -16281,7 +16358,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
     PublishedDate: '2025-12-02T19:15:51.447Z'
-    LastModifiedDate: '2025-12-04T17:15:25.86Z'
+    LastModifiedDate: '2025-12-19T18:25:28.283Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
@@ -18446,12 +18523,12 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23087.html
-    - https://errata.rockylinux.org/RLSA-2025:23088
+    - https://errata.rockylinux.org/RLSA-2025:23087
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
     - https://linux.oracle.com/cve/CVE-2025-58183.html
-    - https://linux.oracle.com/errata/ELSA-2025-23295.html
+    - https://linux.oracle.com/errata/ELSA-2025-23326.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58183
     - https://pkg.go.dev/vuln/GO-2025-4014
     - https://www.cve.org/CVERecord?id=CVE-2025-58183
@@ -18478,6 +18555,8 @@
     Title: 'crypto/x509: Excessive resource consumption when printing error string for host certificate validation in crypto/x509'
     Description: Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.
     Severity: HIGH
+    CweIDs:
+    - CWE-295
     VendorSeverity:
       bitnami: 3
       redhat: 3
@@ -18497,7 +18576,7 @@
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
     PublishedDate: '2025-12-02T19:15:51.447Z'
-    LastModifiedDate: '2025-12-04T17:15:25.86Z'
+    LastModifiedDate: '2025-12-19T18:25:28.283Z'
   - VulnerabilityID: CVE-2025-47906
     PkgID: stdlib@v1.24.4
     PkgName: stdlib
