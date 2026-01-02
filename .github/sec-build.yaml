@@ -3620,7 +3620,7 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23326.html
-    - https://errata.rockylinux.org/RLSA-2025:23295
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -6515,7 +6515,7 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23326.html
-    - https://errata.rockylinux.org/RLSA-2025:23295
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -13893,13 +13893,18 @@
     - CWE-285
     VendorSeverity:
       ghsa: 2
+      nvd: 3
+    CVSS:
+      nvd:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 8.8
     References:
     - https://github.com/openfga/openfga
     - https://github.com/openfga/openfga/releases/tag/v1.11.1
     - https://github.com/openfga/openfga/security/advisories/GHSA-2c64-vmv2-hgfc
     - https://nvd.nist.gov/vuln/detail/CVE-2025-64751
     PublishedDate: '2025-11-21T02:15:43.747Z'
-    LastModifiedDate: '2025-11-21T15:13:13.8Z'
+    LastModifiedDate: '2025-12-31T13:43:35.017Z'
   - VulnerabilityID: CVE-2025-47914
     PkgID: golang.org/x/crypto@v0.39.0
     PkgName: golang.org/x/crypto
@@ -14087,7 +14092,7 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23326.html
-    - https://errata.rockylinux.org/RLSA-2025:23295
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -16305,7 +16310,7 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23326.html
-    - https://errata.rockylinux.org/RLSA-2025:23295
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -18523,7 +18528,7 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-23326.html
-    - https://errata.rockylinux.org/RLSA-2025:23295
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
