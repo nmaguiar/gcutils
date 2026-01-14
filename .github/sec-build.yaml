@@ -707,10 +707,15 @@
     Severity: MEDIUM
     CweIDs:
     - CWE-297
+    - CWE-295
     VendorSeverity:
       ghsa: 2
+      nvd: 2
       redhat: 2
     CVSS:
+      nvd:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
+        V3Score: 4.8
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
         V3Score: 5.9
@@ -728,7 +733,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-68161
     - https://www.cve.org/CVERecord?id=CVE-2025-68161
     PublishedDate: '2025-12-18T21:15:57.96Z'
-    LastModifiedDate: '2025-12-19T18:00:18.33Z'
+    LastModifiedDate: '2026-01-12T15:26:10.73Z'
 - Target: Node.js
   Class: lang-pkgs
   Type: node-pkg
@@ -3514,6 +3519,7 @@
       amazon: 3
       ghsa: 2
       redhat: 2
+      ubuntu: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
@@ -3523,9 +3529,12 @@
         V3Score: 5.3
     References:
     - https://access.redhat.com/security/cve/CVE-2025-58181
+    - https://github.com/golang/crypto/commit/e79546e28b85ea53dd37afe1c4102746ef553b9c
+    - https://github.com/golang/go/issues/76363
     - https://go.dev/cl/721961
     - https://go.dev/issue/76363
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
+    - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA?pli=1
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
     - https://www.cve.org/CVERecord?id=CVE-2025-58181
@@ -6413,6 +6422,7 @@
       amazon: 3
       ghsa: 2
       redhat: 2
+      ubuntu: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
@@ -6422,9 +6432,12 @@
         V3Score: 5.3
     References:
     - https://access.redhat.com/security/cve/CVE-2025-58181
+    - https://github.com/golang/crypto/commit/e79546e28b85ea53dd37afe1c4102746ef553b9c
+    - https://github.com/golang/go/issues/76363
     - https://go.dev/cl/721961
     - https://go.dev/issue/76363
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
+    - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA?pli=1
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
     - https://www.cve.org/CVERecord?id=CVE-2025-58181
@@ -13994,6 +14007,7 @@
       amazon: 3
       ghsa: 2
       redhat: 2
+      ubuntu: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
@@ -14003,9 +14017,12 @@
         V3Score: 5.3
     References:
     - https://access.redhat.com/security/cve/CVE-2025-58181
+    - https://github.com/golang/crypto/commit/e79546e28b85ea53dd37afe1c4102746ef553b9c
+    - https://github.com/golang/go/issues/76363
     - https://go.dev/cl/721961
     - https://go.dev/issue/76363
     - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA
+    - https://groups.google.com/g/golang-announce/c/w-oX3UxNcZA?pli=1
     - https://nvd.nist.gov/vuln/detail/CVE-2025-58181
     - https://pkg.go.dev/vuln/GO-2025-4134
     - https://www.cve.org/CVERecord?id=CVE-2025-58181
