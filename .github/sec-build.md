@@ -727,10 +727,15 @@
 │                             │                   configured to use a private or restricted trust root to limit
 │                             │                    the set of trusted certificates. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ CweIDs           ─ [0]: CWE-297 
+│                             ├ CweIDs           ╭ [0]: CWE-297 
+│                             │                  ╰ [1]: CWE-295 
 │                             ├ VendorSeverity   ╭ ghsa  : 2 
+│                             │                  ├ nvd   : 2 
 │                             │                  ╰ redhat: 2 
-│                             ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/
+│                             ├ CVSS             ╭ nvd    ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/
+│                             │                  │        │           A:N 
+│                             │                  │        ╰ V3Score : 4.8 
+│                             │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/
 │                             │                           │           A:N 
 │                             │                           ╰ V3Score : 5.9 
 │                             ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/12/18/1 
@@ -750,7 +755,7 @@
 │                             │                  ├ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-68161 
 │                             │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2025-68161 
 │                             ├ PublishedDate   : 2025-12-18T21:15:57.96Z 
-│                             ╰ LastModifiedDate: 2025-12-19T18:00:18.33Z 
+│                             ╰ LastModifiedDate: 2026-01-12T15:26:10.73Z 
 ├ [2] ╭ Target  : Node.js 
 │     ├ Class   : lang-pkgs 
 │     ├ Type    : node-pkg 
@@ -3800,7 +3805,8 @@
 │                       │      ├ CweIDs           ─ [0]: CWE-770 
 │                       │      ├ VendorSeverity   ╭ amazon: 3 
 │                       │      │                  ├ ghsa  : 2 
-│                       │      │                  ╰ redhat: 2 
+│                       │      │                  ├ redhat: 2 
+│                       │      │                  ╰ ubuntu: 2 
 │                       │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                       │      │                  │        │           /A:L 
 │                       │      │                  │        ╰ V3Score : 5.3 
@@ -3808,13 +3814,18 @@
 │                       │      │                           │           /A:L 
 │                       │      │                           ╰ V3Score : 5.3 
 │                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-58181 
-│                       │      │                  ├ [1]: https://go.dev/cl/721961 
-│                       │      │                  ├ [2]: https://go.dev/issue/76363 
-│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
+│                       │      │                  ├ [1]: https://github.com/golang/crypto/commit/e79546e28b85ea
+│                       │      │                  │      53dd37afe1c4102746ef553b9c 
+│                       │      │                  ├ [2]: https://github.com/golang/go/issues/76363 
+│                       │      │                  ├ [3]: https://go.dev/cl/721961 
+│                       │      │                  ├ [4]: https://go.dev/issue/76363 
+│                       │      │                  ├ [5]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
 │                       │      │                  │      cZA 
-│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
-│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4134 
-│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
+│                       │      │                  ├ [6]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
+│                       │      │                  │      cZA?pli=1 
+│                       │      │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
+│                       │      │                  ├ [8]: https://pkg.go.dev/vuln/GO-2025-4134 
+│                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
 │                       ├ [5]  ╭ VulnerabilityID : CVE-2025-47907 
@@ -6987,7 +6998,8 @@
 │                       │      ├ CweIDs           ─ [0]: CWE-770 
 │                       │      ├ VendorSeverity   ╭ amazon: 3 
 │                       │      │                  ├ ghsa  : 2 
-│                       │      │                  ╰ redhat: 2 
+│                       │      │                  ├ redhat: 2 
+│                       │      │                  ╰ ubuntu: 2 
 │                       │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                       │      │                  │        │           /A:L 
 │                       │      │                  │        ╰ V3Score : 5.3 
@@ -6995,13 +7007,18 @@
 │                       │      │                           │           /A:L 
 │                       │      │                           ╰ V3Score : 5.3 
 │                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-58181 
-│                       │      │                  ├ [1]: https://go.dev/cl/721961 
-│                       │      │                  ├ [2]: https://go.dev/issue/76363 
-│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
+│                       │      │                  ├ [1]: https://github.com/golang/crypto/commit/e79546e28b85ea
+│                       │      │                  │      53dd37afe1c4102746ef553b9c 
+│                       │      │                  ├ [2]: https://github.com/golang/go/issues/76363 
+│                       │      │                  ├ [3]: https://go.dev/cl/721961 
+│                       │      │                  ├ [4]: https://go.dev/issue/76363 
+│                       │      │                  ├ [5]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
 │                       │      │                  │      cZA 
-│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
-│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4134 
-│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
+│                       │      │                  ├ [6]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
+│                       │      │                  │      cZA?pli=1 
+│                       │      │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
+│                       │      │                  ├ [8]: https://pkg.go.dev/vuln/GO-2025-4134 
+│                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
 │                       ├ [5]  ╭ VulnerabilityID : CVE-2025-47907 
@@ -15180,7 +15197,8 @@
 │                       │      ├ CweIDs           ─ [0]: CWE-770 
 │                       │      ├ VendorSeverity   ╭ amazon: 3 
 │                       │      │                  ├ ghsa  : 2 
-│                       │      │                  ╰ redhat: 2 
+│                       │      │                  ├ redhat: 2 
+│                       │      │                  ╰ ubuntu: 2 
 │                       │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                       │      │                  │        │           /A:L 
 │                       │      │                  │        ╰ V3Score : 5.3 
@@ -15188,13 +15206,18 @@
 │                       │      │                           │           /A:L 
 │                       │      │                           ╰ V3Score : 5.3 
 │                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-58181 
-│                       │      │                  ├ [1]: https://go.dev/cl/721961 
-│                       │      │                  ├ [2]: https://go.dev/issue/76363 
-│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
+│                       │      │                  ├ [1]: https://github.com/golang/crypto/commit/e79546e28b85ea
+│                       │      │                  │      53dd37afe1c4102746ef553b9c 
+│                       │      │                  ├ [2]: https://github.com/golang/go/issues/76363 
+│                       │      │                  ├ [3]: https://go.dev/cl/721961 
+│                       │      │                  ├ [4]: https://go.dev/issue/76363 
+│                       │      │                  ├ [5]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
 │                       │      │                  │      cZA 
-│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
-│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4134 
-│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
+│                       │      │                  ├ [6]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
+│                       │      │                  │      cZA?pli=1 
+│                       │      │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
+│                       │      │                  ├ [8]: https://pkg.go.dev/vuln/GO-2025-4134 
+│                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
 │                       ├ [29] ╭ VulnerabilityID : CVE-2025-47907 
