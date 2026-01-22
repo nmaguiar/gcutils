@@ -746,16 +746,18 @@
 │                             │                  ├ [4] : https://github.com/apache/logging-log4j2/pull/4002 
 │                             │                  ├ [5] : https://lists.apache.org/thread/xr33kyxq3sl67lwb61ggvm
 │                             │                  │       1fzc8k7dvx 
-│                             │                  ├ [6] : https://logging.apache.org/cyclonedx/vdr.xml 
-│                             │                  ├ [7] : https://logging.apache.org/log4j/2.x/manual/appenders/
+│                             │                  ├ [6] : https://lists.debian.org/debian-lts-announce/2026/01/m
+│                             │                  │       sg00015.html 
+│                             │                  ├ [7] : https://logging.apache.org/cyclonedx/vdr.xml 
+│                             │                  ├ [8] : https://logging.apache.org/log4j/2.x/manual/appenders/
 │                             │                  │       network.html#SslConfiguration-attr-verifyHostName 
-│                             │                  ├ [8] : https://logging.apache.org/log4j/2.x/manual/systemprop
+│                             │                  ├ [9] : https://logging.apache.org/log4j/2.x/manual/systemprop
 │                             │                  │       erties.html#log4j2.sslVerifyHostName 
-│                             │                  ├ [9] : https://logging.apache.org/security.html#CVE-2025-68161 
-│                             │                  ├ [10]: https://nvd.nist.gov/vuln/detail/CVE-2025-68161 
-│                             │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2025-68161 
+│                             │                  ├ [10]: https://logging.apache.org/security.html#CVE-2025-68161 
+│                             │                  ├ [11]: https://nvd.nist.gov/vuln/detail/CVE-2025-68161 
+│                             │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2025-68161 
 │                             ├ PublishedDate   : 2025-12-18T21:15:57.96Z 
-│                             ╰ LastModifiedDate: 2026-01-12T15:26:10.73Z 
+│                             ╰ LastModifiedDate: 2026-01-20T01:15:55.067Z 
 ├ [2] ╭ Target  : Node.js 
 │     ├ Class   : lang-pkgs 
 │     ├ Type    : node-pkg 
@@ -4176,11 +4178,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -4235,14 +4237,14 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
+│                       │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -7370,11 +7372,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -7429,14 +7431,14 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
+│                       │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -15570,11 +15572,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -15629,14 +15631,14 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
+│                       │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -18052,11 +18054,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -18111,14 +18113,14 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
+│                       │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -20534,11 +20536,11 @@
                         │      │                            │           L/A:L 
                         │      │                            ╰ V3Score : 7 
                         │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
+                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
                         │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
                         │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
                         │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-                        │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
+                        │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
                         │      │                  ├ [6] : https://go.dev/cl/693735 
                         │      │                  ├ [7] : https://go.dev/issue/74831 
                         │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -20593,14 +20595,14 @@
                         │      │                            │           N/A:H 
                         │      │                            ╰ V3Score : 7.5 
                         │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
+                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
                         │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
                         │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
                         │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
                         │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-58183 
-                        │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
+                        │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
+                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
                         │      │                  ├ [8] : https://go.dev/cl/709861 
                         │      │                  ├ [9] : https://go.dev/issue/75677 
                         │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
