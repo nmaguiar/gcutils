@@ -1291,8 +1291,8 @@
 │                             │                          osystem%3Apip 
 │                             ├ Fingerprint     : sha256:0c24e09c4d738b8ea2aa815698a3079573aa0dd7cb1d4f553631a6
 │                             │                   d10585ace2 
-│                             ├ Title           : Wheel Affected by Arbitrary File Permission Modification via
-│                             │                   Path Traversal in wheel unpack 
+│                             ├ Title           : wheel: wheel: Privilege Escalation or Arbitrary Code
+│                             │                   Execution via malicious wheel file unpacking 
 │                             ├ Description     : wheel is a command line tool for manipulating Python wheel
 │                             │                   files, as defined in PEP 427. In versions 0.46.1 and below,
 │                             │                   the unpack function is vulnerable to file permission
@@ -1309,16 +1309,25 @@
 │                             ├ Severity        : HIGH 
 │                             ├ CweIDs           ╭ [0]: CWE-22 
 │                             │                  ╰ [1]: CWE-732 
-│                             ├ VendorSeverity   ─ ghsa: 3 
-│                             ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H 
-│                             │                         ╰ V3Score : 7.1 
-│                             ├ References       ╭ [0]: https://github.com/pypa/wheel 
-│                             │                  ├ [1]: https://github.com/pypa/wheel/commit/7a7d2de96b22a9adf9
+│                             ├ VendorSeverity   ╭ ghsa  : 3 
+│                             │                  ╰ redhat: 3 
+│                             ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/
+│                             │                  │        │           A:H 
+│                             │                  │        ╰ V3Score : 7.1 
+│                             │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/
+│                             │                           │           A:H 
+│                             │                           ╰ V3Score : 7.1 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-24049 
+│                             │                  ├ [1]: https://github.com/pypa/wheel 
+│                             │                  ├ [2]: https://github.com/pypa/wheel/commit/7a7d2de96b22a9adf9
 │                             │                  │      208afcc9547e1001569fef 
-│                             │                  ├ [2]: https://github.com/pypa/wheel/releases/tag/0.46.2 
-│                             │                  ├ [3]: https://github.com/pypa/wheel/security/advisories/GHSA-
+│                             │                  ├ [3]: https://github.com/pypa/wheel/commit/934fe177ff912c8e03
+│                             │                  │      d5ae951d3805e1fd90ba5e 
+│                             │                  ├ [4]: https://github.com/pypa/wheel/releases/tag/0.46.2 
+│                             │                  ├ [5]: https://github.com/pypa/wheel/security/advisories/GHSA-
 │                             │                  │      8rrh-rw8j-w5fx 
-│                             │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-24049 
+│                             │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-24049 
+│                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2026-24049 
 │                             ├ PublishedDate   : 2026-01-22T05:16:23.157Z 
 │                             ╰ LastModifiedDate: 2026-01-22T05:16:23.157Z 
 ├ [4] ╭ Target         : usr/bin/prometheus 
