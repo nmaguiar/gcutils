@@ -1237,7 +1237,7 @@
       Name: GitHub Security Advisory pip
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip
     Fingerprint: sha256:0c24e09c4d738b8ea2aa815698a3079573aa0dd7cb1d4f553631a6d10585ace2
-    Title: Wheel Affected by Arbitrary File Permission Modification via Path Traversal in wheel unpack
+    Title: 'wheel: wheel: Privilege Escalation or Arbitrary Code Execution via malicious wheel file unpacking'
     Description: wheel is a command line tool for manipulating Python wheel files, as defined in PEP 427. In versions 0.46.1 and below, the unpack function is vulnerable to file permission modification through mishandling of file permissions after extraction. The logic blindly trusts the filename from the archive header for the chmod operation, even though the extraction process itself might have sanitized the path. Attackers can craft a malicious wheel file that, when unpacked, changes the permissions of critical system files (e.g., /etc/passwd, SSH keys, config files), allowing for Privilege Escalation or arbitrary code execution by modifying now-writable scripts. This issue has been fixed in version 0.46.2.
     Severity: HIGH
     CweIDs:
@@ -1245,16 +1245,23 @@
     - CWE-732
     VendorSeverity:
       ghsa: 3
+      redhat: 3
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
         V3Score: 7.1
+      redhat:
+        V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
+        V3Score: 7.1
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-24049
     - https://github.com/pypa/wheel
     - https://github.com/pypa/wheel/commit/7a7d2de96b22a9adf9208afcc9547e1001569fef
+    - https://github.com/pypa/wheel/commit/934fe177ff912c8e03d5ae951d3805e1fd90ba5e
     - https://github.com/pypa/wheel/releases/tag/0.46.2
     - https://github.com/pypa/wheel/security/advisories/GHSA-8rrh-rw8j-w5fx
     - https://nvd.nist.gov/vuln/detail/CVE-2026-24049
+    - https://www.cve.org/CVERecord?id=CVE-2026-24049
     PublishedDate: '2026-01-22T05:16:23.157Z'
     LastModifiedDate: '2026-01-22T05:16:23.157Z'
 - Target: usr/bin/prometheus
