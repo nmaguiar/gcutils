@@ -3672,11 +3672,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -3726,12 +3726,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:23948
+    - https://access.redhat.com/errata/RHSA-2025:23326
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2025-23948.html
+    - https://errata.almalinux.org/9/ALSA-2025-23326.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -3781,12 +3781,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:0922
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/10/ALSA-2026-0922.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -3837,13 +3837,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -6588,11 +6587,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -6642,12 +6641,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:23948
+    - https://access.redhat.com/errata/RHSA-2025:23326
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2025-23948.html
+    - https://errata.almalinux.org/9/ALSA-2025-23326.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -6697,12 +6696,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:0922
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/10/ALSA-2026-0922.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -6753,13 +6752,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -12590,7 +12588,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -12611,12 +12609,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -13702,13 +13700,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
@@ -14185,11 +14184,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -14239,12 +14238,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:23948
+    - https://access.redhat.com/errata/RHSA-2025:23326
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2025-23948.html
+    - https://errata.almalinux.org/9/ALSA-2025-23326.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -14294,12 +14293,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:0922
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/10/ALSA-2026-0922.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -14350,13 +14349,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -14955,7 +14953,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -14976,12 +14974,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -16067,13 +16065,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
@@ -16416,11 +16415,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -16470,12 +16469,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:23948
+    - https://access.redhat.com/errata/RHSA-2025:23326
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2025-23948.html
+    - https://errata.almalinux.org/9/ALSA-2025-23326.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -16525,12 +16524,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:0922
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/10/ALSA-2026-0922.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -16581,13 +16580,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -17186,7 +17184,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -17207,12 +17205,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -18298,13 +18296,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
@@ -18647,11 +18646,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -18701,12 +18700,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2025:23948
+    - https://access.redhat.com/errata/RHSA-2025:23326
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2025-23948.html
+    - https://errata.almalinux.org/9/ALSA-2025-23326.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -18756,12 +18755,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:0922
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/10/ALSA-2026-0922.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -18812,13 +18811,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
