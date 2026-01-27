@@ -1202,7 +1202,7 @@
 │                       │     │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-23949 
 │                       │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2026-23949 
 │                       │     ├ PublishedDate   : 2026-01-20T01:15:57.723Z 
-│                       │     ╰ LastModifiedDate: 2026-01-20T01:15:57.723Z 
+│                       │     ╰ LastModifiedDate: 2026-01-26T15:05:23.427Z 
 │                       ├ [1] ╭ VulnerabilityID : CVE-2025-8869 
 │                       │     ├ PkgName         : pip 
 │                       │     ├ PkgPath         : usr/lib/python3.12/site-packages/pip-25.1.1.dist-info/METADATA 
@@ -1329,7 +1329,7 @@
 │                             │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-24049 
 │                             │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2026-24049 
 │                             ├ PublishedDate   : 2026-01-22T05:16:23.157Z 
-│                             ╰ LastModifiedDate: 2026-01-23T18:16:04.037Z 
+│                             ╰ LastModifiedDate: 2026-01-26T15:04:59.737Z 
 ├ [4] ╭ Target         : usr/bin/prometheus 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
