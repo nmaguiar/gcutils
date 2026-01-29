@@ -3647,7 +3647,7 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-54388 
 │                       │      ├ PublishedDate   : 2025-07-30T14:15:28.693Z 
 │                       │      ╰ LastModifiedDate: 2025-09-08T16:34:31.63Z 
-│                       ├ [1]  ╭ VulnerabilityID : GHSA-2464-8j7c-4cjm 
+│                       ├ [1]  ╭ VulnerabilityID : CVE-2025-11065 
 │                       │      ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                       │      ├ PkgName         : github.com/go-viper/mapstructure/v2 
 │                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
@@ -3660,101 +3660,45 @@
 │                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                       │      │                            0478f2d229b68f52d773 
 │                       │      ├ SeveritySource  : ghsa 
-│                       │      ├ PrimaryURL      : https://github.com/advisories/GHSA-2464-8j7c-4cjm 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-11065 
 │                       │      ├ DataSource       ╭ ID  : ghsa 
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
-│                       │      ├ Fingerprint     : sha256:20398a383d958cf302cdcf3cd7ec3f493b7c0572d32803ffd449e
-│                       │      │                   b2097716dd9 
-│                       │      ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
-│                       │      │                   Logs When Processing Malformed Data 
-│                       │      ├ Description     : ### Summary
-│                       │      │                   
-│                       │      │                   Use of this library in a security-critical context may
-│                       │      │                   result in leaking sensitive information, if used to process
-│                       │      │                   sensitive fields.
-│                       │      │                   ### Details
-│                       │      │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
-│                       │      │                    messages from `mapstructure` as follows:
-│                       │      │                   https://github.com/openbao/openbao/blob/98c3a59c040efca72435
-│                       │      │                   3ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
-│                       │      │                   ```go
-│                       │      │                   			_, _, err := d.getPrimitive(field, schema)
-│                       │      │                   			if err != nil {
-│                       │      │                   				return fmt.Errorf("error converting input for field %q:
-│                       │      │                   %w", field, err)
-│                       │      │                   			}
-│                       │      │                   ```
-│                       │      │                   where this calls `mapstructure.WeakDecode(...)`:
-│                       │      │                   3ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
-│                       │      │                   func (d *FieldData) getPrimitive(k string, schema
-│                       │      │                   *FieldSchema) (interface{}, bool, error) {
-│                       │      │                   	raw, ok := d.Raw[k]
-│                       │      │                   	if !ok {
-│                       │      │                   		return nil, false, nil
-│                       │      │                   	}
-│                       │      │                   	switch t := schema.Type; t {
-│                       │      │                   	case TypeBool:
-│                       │      │                   		var result bool
-│                       │      │                   		if err := mapstructure.WeakDecode(raw, &result); err !=
-│                       │      │                   nil {
-│                       │      │                   			return nil, false, err
-│                       │      │                   		}
-│                       │      │                   		return result, true, nil
-│                       │      │                   Notably, `WeakDecode(...)` eventually calls one of the
-│                       │      │                   decode helpers, which surfaces the original value via
-│                       │      │                   `strconv` helpers:
-│                       │      │                   https://github.com/go-viper/mapstructure/blob/8c61ec1924fcfa
-│                       │      │                   522f9fc6b4618c672db61d1a38/mapstructure.go#L720-L727
-│                       │      │                   522f9fc6b4618c672db61d1a38/mapstructure.go#L791-L798
-│                       │      │                   522f9fc6b4618c672db61d1a38/decode_hooks.go#L180
-│                       │      │                   & more. These are different code paths than are fixed in the
-│                       │      │                    previous iteration at
-│                       │      │                   https://github.com/go-viper/mapstructure/security/advisories
-│                       │      │                   /GHSA-fv92-fjc5-jj9h.
-│                       │      │                   ### PoC
-│                       │      │                   To reproduce with OpenBao:
-│                       │      │                   $ podman run --pull=always -p 8300:8300
-│                       │      │                   openbao/openbao:latest server -dev -dev-root-token-id=root
-│                       │      │                   -dev-listen-address=0.0.0.0:8300
-│                       │      │                   and in a new tab:
-│                       │      │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
-│                       │      │                   enable userpass
-│                       │      │                   Success! Enabled userpass auth method at: userpass/
-│                       │      │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
-│                       │      │                   root" -d '{"ttl":"asdf"}'
-│                       │      │                   "http://localhost:8200/v1/auth/userpass/users/asdf"
-│                       │      │                   --> server logs:
-│                       │      │                   2025-06-25T21:32:25.101-0500 [ERROR] core: failed to run
-│                       │      │                   existence check: error="error converting input for field
-│                       │      │                   \"ttl\": time: invalid duration \"asdf\""
-│                       │      │                   ### Impact
-│                       │      │                   This is an information disclosure bug with little
-│                       │      │                   mitigation. See
-│                       │      │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expo
-│                       │      │                   se-sensitive-information-in-error-logs-when-processing-malfo
-│                       │      │                   rmed-data-with-the-kv-v2-plugin/74717 for a previous
-│                       │      │                   version. That version was fixed, but this is in the second
-│                       │      │                   part of that error message (starting at `'' expected a map,
-│                       │      │                   got 'string'` -- when the field type is `string` and a `map`
-│                       │      │                    is provided, we see the above information leak -- the
-│                       │      │                   previous example had a `map` type field with a `string`
-│                       │      │                   value provided).
-│                       │      │                   This was rated 4.5 Medium by HashiCorp in the past iteration
-│                       │      │                   . 
+│                       │      ├ Fingerprint     : sha256:5918d78c2a427085083d9550d775aa1ee017d16ed3385c4cfa2b0
+│                       │      │                   95a46a008e1 
+│                       │      ├ Title           : github.com/go-viper/mapstructure/v2: Go-viper's mapstructure
+│                       │      │                    May Leak Sensitive Information in Logs in
+│                       │      │                   github.com/go-viper/mapstructure 
+│                       │      ├ Description     : A flaw was found in github.com/go-viper/mapstructure/v2, in
+│                       │      │                   the field processing component using
+│                       │      │                   mapstructure.WeakDecode. This vulnerability allows
+│                       │      │                   information disclosure through detailed error messages that
+│                       │      │                   may leak sensitive input values via malformed user-supplied
+│                       │      │                   data processed in security-critical contexts. 
 │                       │      ├ Severity        : MEDIUM 
-│                       │      ├ VendorSeverity   ─ ghsa: 2 
-│                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
-│                       │      │                         ╰ V3Score : 5.3 
-│                       │      ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
-│                       │      │                  ├ [1]: https://github.com/go-viper/mapstructure/commit/742921
+│                       │      ├ CweIDs           ─ [0]: CWE-209 
+│                       │      ├ VendorSeverity   ╭ amazon: 2 
+│                       │      │                  ├ ghsa  : 2 
+│                       │      │                  ╰ redhat: 2 
+│                       │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N
+│                       │      │                  │        │           /A:N 
+│                       │      │                  │        ╰ V3Score : 5.3 
+│                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N
+│                       │      │                           │           /A:N 
+│                       │      │                           ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-11065 
+│                       │      │                  ├ [1]: https://bugzilla.redhat.com/show_bug.cgi?id=2391829 
+│                       │      │                  ├ [2]: https://github.com/go-viper/mapstructure 
+│                       │      │                  ├ [3]: https://github.com/go-viper/mapstructure/commit/742921
 │                       │      │                  │      c9ba2854d27baa64272487fc5075d2c39c 
-│                       │      │                  ├ [2]: https://github.com/go-viper/mapstructure/security/advi
+│                       │      │                  ├ [4]: https://github.com/go-viper/mapstructure/security/advi
 │                       │      │                  │      sories/GHSA-2464-8j7c-4cjm 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3900 
-│                       │      ├ PublishedDate   : 2025-08-21T14:37:19Z 
-│                       │      ╰ LastModifiedDate: 2025-08-29T20:44:25Z 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-11065 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3900 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-11065 
+│                       │      ├ PublishedDate   : 2026-01-26T20:16:06.84Z 
+│                       │      ╰ LastModifiedDate: 2026-01-27T14:59:34.073Z 
 │                       ├ [2]  ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                       │      ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                       │      ├ PkgName         : github.com/go-viper/mapstructure/v2 
@@ -4130,7 +4074,7 @@
 │                       │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
 │                       │      │                  │       ddm4 
 │                       │      │                  ├ [10]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-│                       │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+│                       │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-1344.html 
 │                       │      │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
 │                       │      │                  ├ [13]: https://pkg.go.dev/vuln/GO-2025-4155 
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
@@ -4193,7 +4137,7 @@
 │                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:16.207Z 
+│                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
 │                       ├ [9]  ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -6855,7 +6799,7 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-54388 
 │                       │      ├ PublishedDate   : 2025-07-30T14:15:28.693Z 
 │                       │      ╰ LastModifiedDate: 2025-09-08T16:34:31.63Z 
-│                       ├ [1]  ╭ VulnerabilityID : GHSA-2464-8j7c-4cjm 
+│                       ├ [1]  ╭ VulnerabilityID : CVE-2025-11065 
 │                       │      ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                       │      ├ PkgName         : github.com/go-viper/mapstructure/v2 
 │                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.2.1 
@@ -6868,101 +6812,45 @@
 │                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                       │      │                            0478f2d229b68f52d773 
 │                       │      ├ SeveritySource  : ghsa 
-│                       │      ├ PrimaryURL      : https://github.com/advisories/GHSA-2464-8j7c-4cjm 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-11065 
 │                       │      ├ DataSource       ╭ ID  : ghsa 
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
-│                       │      ├ Fingerprint     : sha256:c29209f421e6572ab65c0b6420e2216dffe682dc917f3f45cce5e
-│                       │      │                   78b890c3f2e 
-│                       │      ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
-│                       │      │                   Logs When Processing Malformed Data 
-│                       │      ├ Description     : ### Summary
-│                       │      │                   
-│                       │      │                   Use of this library in a security-critical context may
-│                       │      │                   result in leaking sensitive information, if used to process
-│                       │      │                   sensitive fields.
-│                       │      │                   ### Details
-│                       │      │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
-│                       │      │                    messages from `mapstructure` as follows:
-│                       │      │                   https://github.com/openbao/openbao/blob/98c3a59c040efca72435
-│                       │      │                   3ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
-│                       │      │                   ```go
-│                       │      │                   			_, _, err := d.getPrimitive(field, schema)
-│                       │      │                   			if err != nil {
-│                       │      │                   				return fmt.Errorf("error converting input for field %q:
-│                       │      │                   %w", field, err)
-│                       │      │                   			}
-│                       │      │                   ```
-│                       │      │                   where this calls `mapstructure.WeakDecode(...)`:
-│                       │      │                   3ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
-│                       │      │                   func (d *FieldData) getPrimitive(k string, schema
-│                       │      │                   *FieldSchema) (interface{}, bool, error) {
-│                       │      │                   	raw, ok := d.Raw[k]
-│                       │      │                   	if !ok {
-│                       │      │                   		return nil, false, nil
-│                       │      │                   	}
-│                       │      │                   	switch t := schema.Type; t {
-│                       │      │                   	case TypeBool:
-│                       │      │                   		var result bool
-│                       │      │                   		if err := mapstructure.WeakDecode(raw, &result); err !=
-│                       │      │                   nil {
-│                       │      │                   			return nil, false, err
-│                       │      │                   		}
-│                       │      │                   		return result, true, nil
-│                       │      │                   Notably, `WeakDecode(...)` eventually calls one of the
-│                       │      │                   decode helpers, which surfaces the original value via
-│                       │      │                   `strconv` helpers:
-│                       │      │                   https://github.com/go-viper/mapstructure/blob/8c61ec1924fcfa
-│                       │      │                   522f9fc6b4618c672db61d1a38/mapstructure.go#L720-L727
-│                       │      │                   522f9fc6b4618c672db61d1a38/mapstructure.go#L791-L798
-│                       │      │                   522f9fc6b4618c672db61d1a38/decode_hooks.go#L180
-│                       │      │                   & more. These are different code paths than are fixed in the
-│                       │      │                    previous iteration at
-│                       │      │                   https://github.com/go-viper/mapstructure/security/advisories
-│                       │      │                   /GHSA-fv92-fjc5-jj9h.
-│                       │      │                   ### PoC
-│                       │      │                   To reproduce with OpenBao:
-│                       │      │                   $ podman run --pull=always -p 8300:8300
-│                       │      │                   openbao/openbao:latest server -dev -dev-root-token-id=root
-│                       │      │                   -dev-listen-address=0.0.0.0:8300
-│                       │      │                   and in a new tab:
-│                       │      │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
-│                       │      │                   enable userpass
-│                       │      │                   Success! Enabled userpass auth method at: userpass/
-│                       │      │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
-│                       │      │                   root" -d '{"ttl":"asdf"}'
-│                       │      │                   "http://localhost:8200/v1/auth/userpass/users/asdf"
-│                       │      │                   --> server logs:
-│                       │      │                   2025-06-25T21:32:25.101-0500 [ERROR] core: failed to run
-│                       │      │                   existence check: error="error converting input for field
-│                       │      │                   \"ttl\": time: invalid duration \"asdf\""
-│                       │      │                   ### Impact
-│                       │      │                   This is an information disclosure bug with little
-│                       │      │                   mitigation. See
-│                       │      │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expo
-│                       │      │                   se-sensitive-information-in-error-logs-when-processing-malfo
-│                       │      │                   rmed-data-with-the-kv-v2-plugin/74717 for a previous
-│                       │      │                   version. That version was fixed, but this is in the second
-│                       │      │                   part of that error message (starting at `'' expected a map,
-│                       │      │                   got 'string'` -- when the field type is `string` and a `map`
-│                       │      │                    is provided, we see the above information leak -- the
-│                       │      │                   previous example had a `map` type field with a `string`
-│                       │      │                   value provided).
-│                       │      │                   This was rated 4.5 Medium by HashiCorp in the past iteration
-│                       │      │                   . 
+│                       │      ├ Fingerprint     : sha256:1405f2a6c3bf4565aab1d62571c1a46a425bca1d916a3b8c4e62b
+│                       │      │                   b1265fd8088 
+│                       │      ├ Title           : github.com/go-viper/mapstructure/v2: Go-viper's mapstructure
+│                       │      │                    May Leak Sensitive Information in Logs in
+│                       │      │                   github.com/go-viper/mapstructure 
+│                       │      ├ Description     : A flaw was found in github.com/go-viper/mapstructure/v2, in
+│                       │      │                   the field processing component using
+│                       │      │                   mapstructure.WeakDecode. This vulnerability allows
+│                       │      │                   information disclosure through detailed error messages that
+│                       │      │                   may leak sensitive input values via malformed user-supplied
+│                       │      │                   data processed in security-critical contexts. 
 │                       │      ├ Severity        : MEDIUM 
-│                       │      ├ VendorSeverity   ─ ghsa: 2 
-│                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
-│                       │      │                         ╰ V3Score : 5.3 
-│                       │      ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
-│                       │      │                  ├ [1]: https://github.com/go-viper/mapstructure/commit/742921
+│                       │      ├ CweIDs           ─ [0]: CWE-209 
+│                       │      ├ VendorSeverity   ╭ amazon: 2 
+│                       │      │                  ├ ghsa  : 2 
+│                       │      │                  ╰ redhat: 2 
+│                       │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N
+│                       │      │                  │        │           /A:N 
+│                       │      │                  │        ╰ V3Score : 5.3 
+│                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N
+│                       │      │                           │           /A:N 
+│                       │      │                           ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-11065 
+│                       │      │                  ├ [1]: https://bugzilla.redhat.com/show_bug.cgi?id=2391829 
+│                       │      │                  ├ [2]: https://github.com/go-viper/mapstructure 
+│                       │      │                  ├ [3]: https://github.com/go-viper/mapstructure/commit/742921
 │                       │      │                  │      c9ba2854d27baa64272487fc5075d2c39c 
-│                       │      │                  ├ [2]: https://github.com/go-viper/mapstructure/security/advi
+│                       │      │                  ├ [4]: https://github.com/go-viper/mapstructure/security/advi
 │                       │      │                  │      sories/GHSA-2464-8j7c-4cjm 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3900 
-│                       │      ├ PublishedDate   : 2025-08-21T14:37:19Z 
-│                       │      ╰ LastModifiedDate: 2025-08-29T20:44:25Z 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-11065 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3900 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-11065 
+│                       │      ├ PublishedDate   : 2026-01-26T20:16:06.84Z 
+│                       │      ╰ LastModifiedDate: 2026-01-27T14:59:34.073Z 
 │                       ├ [2]  ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                       │      ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                       │      ├ PkgName         : github.com/go-viper/mapstructure/v2 
@@ -7338,7 +7226,7 @@
 │                       │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
 │                       │      │                  │       ddm4 
 │                       │      │                  ├ [10]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-│                       │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+│                       │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-1344.html 
 │                       │      │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
 │                       │      │                  ├ [13]: https://pkg.go.dev/vuln/GO-2025-4155 
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
@@ -7401,7 +7289,7 @@
 │                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:16.207Z 
+│                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
 │                       ├ [9]  ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -13395,7 +13283,7 @@
 │     │                                      │         76cc7fbfc24b686 
 │     │                                      ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f
 │     │                                                2d229b68f52d773 
-│     ╰ Vulnerabilities ╭ [0]  ╭ VulnerabilityID : GHSA-2464-8j7c-4cjm 
+│     ╰ Vulnerabilities ╭ [0]  ╭ VulnerabilityID : CVE-2025-11065 
 │                       │      ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.3.0 
 │                       │      ├ PkgName         : github.com/go-viper/mapstructure/v2 
 │                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/go-viper/mapstructure/v2@v2.3.0 
@@ -13408,101 +13296,45 @@
 │                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
 │                       │      │                            0478f2d229b68f52d773 
 │                       │      ├ SeveritySource  : ghsa 
-│                       │      ├ PrimaryURL      : https://github.com/advisories/GHSA-2464-8j7c-4cjm 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-11065 
 │                       │      ├ DataSource       ╭ ID  : ghsa 
 │                       │      │                  ├ Name: GitHub Security Advisory Go 
 │                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
 │                       │      │                          cosystem%3Ago 
-│                       │      ├ Fingerprint     : sha256:27f83596e16172ff061ad8ec286902172b8e5d8aea520175bbb19
-│                       │      │                   757278e9f55 
-│                       │      ├ Title           : go-viper's mapstructure May Leak Sensitive Information in
-│                       │      │                   Logs When Processing Malformed Data 
-│                       │      ├ Description     : ### Summary
-│                       │      │                   
-│                       │      │                   Use of this library in a security-critical context may
-│                       │      │                   result in leaking sensitive information, if used to process
-│                       │      │                   sensitive fields.
-│                       │      │                   ### Details
-│                       │      │                   OpenBao (and presumably HashiCorp Vault) have surfaced error
-│                       │      │                    messages from `mapstructure` as follows:
-│                       │      │                   https://github.com/openbao/openbao/blob/98c3a59c040efca72435
-│                       │      │                   3ca46ca79bd5cdbab920/sdk/framework/field_data.go#L43-L50
-│                       │      │                   ```go
-│                       │      │                   			_, _, err := d.getPrimitive(field, schema)
-│                       │      │                   			if err != nil {
-│                       │      │                   				return fmt.Errorf("error converting input for field %q:
-│                       │      │                   %w", field, err)
-│                       │      │                   			}
-│                       │      │                   ```
-│                       │      │                   where this calls `mapstructure.WeakDecode(...)`:
-│                       │      │                   3ca46ca79bd5cdbab920/sdk/framework/field_data.go#L181-L193
-│                       │      │                   func (d *FieldData) getPrimitive(k string, schema
-│                       │      │                   *FieldSchema) (interface{}, bool, error) {
-│                       │      │                   	raw, ok := d.Raw[k]
-│                       │      │                   	if !ok {
-│                       │      │                   		return nil, false, nil
-│                       │      │                   	}
-│                       │      │                   	switch t := schema.Type; t {
-│                       │      │                   	case TypeBool:
-│                       │      │                   		var result bool
-│                       │      │                   		if err := mapstructure.WeakDecode(raw, &result); err !=
-│                       │      │                   nil {
-│                       │      │                   			return nil, false, err
-│                       │      │                   		}
-│                       │      │                   		return result, true, nil
-│                       │      │                   Notably, `WeakDecode(...)` eventually calls one of the
-│                       │      │                   decode helpers, which surfaces the original value via
-│                       │      │                   `strconv` helpers:
-│                       │      │                   https://github.com/go-viper/mapstructure/blob/8c61ec1924fcfa
-│                       │      │                   522f9fc6b4618c672db61d1a38/mapstructure.go#L720-L727
-│                       │      │                   522f9fc6b4618c672db61d1a38/mapstructure.go#L791-L798
-│                       │      │                   522f9fc6b4618c672db61d1a38/decode_hooks.go#L180
-│                       │      │                   & more. These are different code paths than are fixed in the
-│                       │      │                    previous iteration at
-│                       │      │                   https://github.com/go-viper/mapstructure/security/advisories
-│                       │      │                   /GHSA-fv92-fjc5-jj9h.
-│                       │      │                   ### PoC
-│                       │      │                   To reproduce with OpenBao:
-│                       │      │                   $ podman run --pull=always -p 8300:8300
-│                       │      │                   openbao/openbao:latest server -dev -dev-root-token-id=root
-│                       │      │                   -dev-listen-address=0.0.0.0:8300
-│                       │      │                   and in a new tab:
-│                       │      │                   $ BAO_TOKEN=root BAO_ADDR=http://localhost:8300 bao auth
-│                       │      │                   enable userpass
-│                       │      │                   Success! Enabled userpass auth method at: userpass/
-│                       │      │                   $ curl -X PUT -H "X-Vault-Request: true" -H "X-Vault-Token:
-│                       │      │                   root" -d '{"ttl":"asdf"}'
-│                       │      │                   "http://localhost:8200/v1/auth/userpass/users/asdf"
-│                       │      │                   --> server logs:
-│                       │      │                   2025-06-25T21:32:25.101-0500 [ERROR] core: failed to run
-│                       │      │                   existence check: error="error converting input for field
-│                       │      │                   \"ttl\": time: invalid duration \"asdf\""
-│                       │      │                   ### Impact
-│                       │      │                   This is an information disclosure bug with little
-│                       │      │                   mitigation. See
-│                       │      │                   https://discuss.hashicorp.com/t/hcsec-2025-09-vault-may-expo
-│                       │      │                   se-sensitive-information-in-error-logs-when-processing-malfo
-│                       │      │                   rmed-data-with-the-kv-v2-plugin/74717 for a previous
-│                       │      │                   version. That version was fixed, but this is in the second
-│                       │      │                   part of that error message (starting at `'' expected a map,
-│                       │      │                   got 'string'` -- when the field type is `string` and a `map`
-│                       │      │                    is provided, we see the above information leak -- the
-│                       │      │                   previous example had a `map` type field with a `string`
-│                       │      │                   value provided).
-│                       │      │                   This was rated 4.5 Medium by HashiCorp in the past iteration
-│                       │      │                   . 
+│                       │      ├ Fingerprint     : sha256:26ae1d59df6f8e6da090ef24339652d213094069efdbccdef2286
+│                       │      │                   caae8cad545 
+│                       │      ├ Title           : github.com/go-viper/mapstructure/v2: Go-viper's mapstructure
+│                       │      │                    May Leak Sensitive Information in Logs in
+│                       │      │                   github.com/go-viper/mapstructure 
+│                       │      ├ Description     : A flaw was found in github.com/go-viper/mapstructure/v2, in
+│                       │      │                   the field processing component using
+│                       │      │                   mapstructure.WeakDecode. This vulnerability allows
+│                       │      │                   information disclosure through detailed error messages that
+│                       │      │                   may leak sensitive input values via malformed user-supplied
+│                       │      │                   data processed in security-critical contexts. 
 │                       │      ├ Severity        : MEDIUM 
-│                       │      ├ VendorSeverity   ─ ghsa: 2 
-│                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
-│                       │      │                         ╰ V3Score : 5.3 
-│                       │      ├ References       ╭ [0]: https://github.com/go-viper/mapstructure 
-│                       │      │                  ├ [1]: https://github.com/go-viper/mapstructure/commit/742921
+│                       │      ├ CweIDs           ─ [0]: CWE-209 
+│                       │      ├ VendorSeverity   ╭ amazon: 2 
+│                       │      │                  ├ ghsa  : 2 
+│                       │      │                  ╰ redhat: 2 
+│                       │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N
+│                       │      │                  │        │           /A:N 
+│                       │      │                  │        ╰ V3Score : 5.3 
+│                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N
+│                       │      │                           │           /A:N 
+│                       │      │                           ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2025-11065 
+│                       │      │                  ├ [1]: https://bugzilla.redhat.com/show_bug.cgi?id=2391829 
+│                       │      │                  ├ [2]: https://github.com/go-viper/mapstructure 
+│                       │      │                  ├ [3]: https://github.com/go-viper/mapstructure/commit/742921
 │                       │      │                  │      c9ba2854d27baa64272487fc5075d2c39c 
-│                       │      │                  ├ [2]: https://github.com/go-viper/mapstructure/security/advi
+│                       │      │                  ├ [4]: https://github.com/go-viper/mapstructure/security/advi
 │                       │      │                  │      sories/GHSA-2464-8j7c-4cjm 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2025-3900 
-│                       │      ├ PublishedDate   : 2025-08-21T14:37:19Z 
-│                       │      ╰ LastModifiedDate: 2025-08-29T20:44:25Z 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-11065 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3900 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-11065 
+│                       │      ├ PublishedDate   : 2026-01-26T20:16:06.84Z 
+│                       │      ╰ LastModifiedDate: 2026-01-27T14:59:34.073Z 
 │                       ├ [1]  ╭ VulnerabilityID : CVE-2018-15727 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
 │                       │      │                   6+dirty 
@@ -15552,7 +15384,7 @@
 │                       │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
 │                       │      │                  │       ddm4 
 │                       │      │                  ├ [10]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-│                       │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+│                       │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-1344.html 
 │                       │      │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
 │                       │      │                  ├ [13]: https://pkg.go.dev/vuln/GO-2025-4155 
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
@@ -15615,7 +15447,7 @@
 │                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:16.207Z 
+│                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
 │                       ├ [33] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -18046,7 +17878,7 @@
 │                       │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
 │                       │      │                  │       ddm4 
 │                       │      │                  ├ [10]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-│                       │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+│                       │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-1344.html 
 │                       │      │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
 │                       │      │                  ├ [13]: https://pkg.go.dev/vuln/GO-2025-4155 
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
@@ -18109,7 +17941,7 @@
 │                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-│                       │      ╰ LastModifiedDate: 2025-11-04T22:16:16.207Z 
+│                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
 │                       ├ [29] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -20540,7 +20372,7 @@
                         │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
                         │      │                  │       ddm4 
                         │      │                  ├ [10]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-                        │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-0923.html 
+                        │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-1344.html 
                         │      │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
                         │      │                  ├ [13]: https://pkg.go.dev/vuln/GO-2025-4155 
                         │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
@@ -20603,7 +20435,7 @@
                         │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
                         │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
                         │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
-                        │      ╰ LastModifiedDate: 2025-11-04T22:16:16.207Z 
+                        │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
                         ├ [29] ╭ VulnerabilityID : CVE-2025-47912 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
