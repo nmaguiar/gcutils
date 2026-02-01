@@ -4344,7 +4344,7 @@
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23948 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -4356,7 +4356,93 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.2Z 
-│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-61729 
+│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-61726 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
+│                       │      ├ PkgID           : stdlib@v1.24.5 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                       │      │                  ╰ UID : 947642ee78d5d9b6 
+│                       │      ├ InstalledVersion: v1.24.5 
+│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:ec7118867071df5e185ab51a9ef06fe5b46e18ce7d97f2893036c
+│                       │      │                   96e6adc1635 
+│                       │      ├ Title           : The net/url package does not set a limit on the number of
+│                       │      │                   query parame ... 
+│                       │      ├ Description     : The net/url package does not set a limit on the number of
+│                       │      │                   query parameters in a query. While the maximum size of query
+│                       │      │                    parameters in URLs is generally limited by the maximum
+│                       │      │                   request header size, the net/http.Request.ParseForm method
+│                       │      │                   can parse large URL-encoded forms. Parsing a large form
+│                       │      │                   containing many unique query parameters can cause excessive
+│                       │      │                   memory consumption. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: https://go.dev/cl/736712 
+│                       │      │                  ├ [1]: https://go.dev/issue/77101 
+│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+│                       │      │                  │      eUc 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61726 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4341 
+│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
+│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
+│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-61728 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
+│                       │      ├ PkgID           : stdlib@v1.24.5 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                       │      │                  ╰ UID : 947642ee78d5d9b6 
+│                       │      ├ InstalledVersion: v1.24.5 
+│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:8dc5685e54c58ef099a30beeba76bbcd5746219ec95480cc04c86
+│                       │      │                   2f5ed47ffa6 
+│                       │      ├ Title           : golang: archive/zip: Excessive CPU consumption when building
+│                       │      │                    archive index in archive/zip 
+│                       │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
+│                       │      │                    that is invoked the first time a file in an archive is
+│                       │      │                   opened. This can lead to a denial of service when consuming
+│                       │      │                   a maliciously constructed ZIP archive. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ╭ bitnami: 2 
+│                       │      │                  ╰ redhat : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:
+│                       │      │                  │         │           N/A:H 
+│                       │      │                  │         ╰ V3Score : 6.5 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61728 
+│                       │      │                  ├ [2]: https://go.dev/cl/736713 
+│                       │      │                  ├ [3]: https://go.dev/issue/77102 
+│                       │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+│                       │      │                  │      eUc 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2026-4342 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
+│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
+│                       ├ [9]  ╭ VulnerabilityID : CVE-2025-61729 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4155 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4404,7 +4490,7 @@
 │                       │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61729 
 │                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2026-0923.html 
-│                       │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:1344 
+│                       │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:0922 
 │                       │      │                  ├ [7] : https://go.dev/cl/725920 
 │                       │      │                  ├ [8] : https://go.dev/issue/76445 
 │                       │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
@@ -4416,7 +4502,7 @@
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
-│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [10] ╭ VulnerabilityID : CVE-2025-47906 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3956 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4460,25 +4546,22 @@
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47906 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2396546 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2396546 
-│                       │      │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
-│                       │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-47906 
-│                       │      │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-│                       │      │                  │       25-58183 
-│                       │      │                  ├ [8] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
-│                       │      │                  ├ [9] : https://errata.rockylinux.org/RLSA-2025:22668 
-│                       │      │                  ├ [10]: https://go.dev/cl/691775 
-│                       │      │                  ├ [11]: https://go.dev/issue/74466 
-│                       │      │                  ├ [12]: https://groups.google.com/g/golang-announce/c/x5MKroM
+│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:22005 
+│                       │      │                  ├ [8] : https://go.dev/cl/691775 
+│                       │      │                  ├ [9] : https://go.dev/issue/74466 
+│                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/x5MKroM
 │                       │      │                  │       L2yM 
-│                       │      │                  ├ [13]: https://linux.oracle.com/cve/CVE-2025-47906.html 
-│                       │      │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
-│                       │      │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-│                       │      │                  ├ [16]: https://pkg.go.dev/vuln/GO-2025-3956 
-│                       │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+│                       │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-47906.html 
+│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
+│                       │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+│                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
+│                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
 │                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
-│                       ├ [9]  ╭ VulnerabilityID : CVE-2025-47912 
+│                       ├ [11] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4010 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4527,7 +4610,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47912 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:18.187Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:57:18.69Z 
-│                       ├ [10] ╭ VulnerabilityID : CVE-2025-58185 
+│                       ├ [12] ╭ VulnerabilityID : CVE-2025-58185 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4011 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4574,7 +4657,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58185 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.45Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:26:08.45Z 
-│                       ├ [11] ╭ VulnerabilityID : CVE-2025-58186 
+│                       ├ [13] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4012 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4621,7 +4704,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58186 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.547Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.45Z 
-│                       ├ [12] ╭ VulnerabilityID : CVE-2025-58187 
+│                       ├ [14] ╭ VulnerabilityID : CVE-2025-58187 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4007 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4670,7 +4753,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58187 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T16:02:27.08Z 
-│                       ├ [13] ╭ VulnerabilityID : CVE-2025-58188 
+│                       ├ [15] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4013 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4719,7 +4802,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58188 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.74Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:55:11.97Z 
-│                       ├ [14] ╭ VulnerabilityID : CVE-2025-58189 
+│                       ├ [16] ╭ VulnerabilityID : CVE-2025-58189 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4008 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4765,7 +4848,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58189 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.833Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:24.543Z 
-│                       ├ [15] ╭ VulnerabilityID : CVE-2025-61723 
+│                       ├ [17] ╭ VulnerabilityID : CVE-2025-61723 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4009 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4813,7 +4896,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61723 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.927Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:05.343Z 
-│                       ├ [16] ╭ VulnerabilityID : CVE-2025-61724 
+│                       ├ [18] ╭ VulnerabilityID : CVE-2025-61724 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4015 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4860,7 +4943,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:30:53.69Z 
-│                       ├ [17] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [19] ╭ VulnerabilityID : CVE-2025-61725 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4006 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4906,7 +4989,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
 │                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
-│                       ├ [18] ╭ VulnerabilityID : CVE-2025-61727 
+│                       ├ [20] ╭ VulnerabilityID : CVE-2025-61727 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4175 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4953,76 +5036,6 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
 │                       │      ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
 │                       │      ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
-│                       ├ [19] ╭ VulnerabilityID : CVE-2025-61726 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
-│                       │      ├ PkgID           : stdlib@v1.24.5 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
-│                       │      │                  ╰ UID : 947642ee78d5d9b6 
-│                       │      ├ InstalledVersion: v1.24.5 
-│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-│                       │      │                  │         c23d576cc7fbfc24b686 
-│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-│                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:ec7118867071df5e185ab51a9ef06fe5b46e18ce7d97f2893036c
-│                       │      │                   96e6adc1635 
-│                       │      ├ Title           : The net/url package does not set a limit on the number of
-│                       │      │                   query parame ... 
-│                       │      ├ Description     : The net/url package does not set a limit on the number of
-│                       │      │                   query parameters in a query. While the maximum size of query
-│                       │      │                    parameters in URLs is generally limited by the maximum
-│                       │      │                   request header size, the net/http.Request.ParseForm method
-│                       │      │                   can parse large URL-encoded forms. Parsing a large form
-│                       │      │                   containing many unique query parameters can cause excessive
-│                       │      │                   memory consumption. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/736712 
-│                       │      │                  ├ [1]: https://go.dev/issue/77101 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-│                       │      │                  │      eUc 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4341 
-│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
-│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
-│                       ├ [20] ╭ VulnerabilityID : CVE-2025-61728 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
-│                       │      ├ PkgID           : stdlib@v1.24.5 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
-│                       │      │                  ╰ UID : 947642ee78d5d9b6 
-│                       │      ├ InstalledVersion: v1.24.5 
-│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-│                       │      │                  │         c23d576cc7fbfc24b686 
-│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-│                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:8dc5685e54c58ef099a30beeba76bbcd5746219ec95480cc04c86
-│                       │      │                   2f5ed47ffa6 
-│                       │      ├ Title           : archive/zip uses a super-linear file name indexing algorithm
-│                       │      │                    that is i ... 
-│                       │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
-│                       │      │                    that is invoked the first time a file in an archive is
-│                       │      │                   opened. This can lead to a denial of service when consuming
-│                       │      │                   a maliciously constructed ZIP archive. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
-│                       │      │                  ├ [1]: https://go.dev/cl/736713 
-│                       │      │                  ├ [2]: https://go.dev/issue/77102 
-│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-│                       │      │                  │      eUc 
-│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4342 
-│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
-│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
 │                       ╰ [21] ╭ VulnerabilityID : CVE-2025-61730 
 │                              ├ VendorIDs        ─ [0]: GO-2026-4340 
 │                              ├ PkgID           : stdlib@v1.24.5 
@@ -5051,12 +5064,17 @@
 │                              │                   the encryption level changes. This can cause some minor
 │                              │                   information disclosure if a network-local attacker can
 │                              │                   inject messages during the handshake. 
-│                              ├ Severity        : UNKNOWN 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:
+│                              │                            │           N/A:N 
+│                              │                            ╰ V3Score : 6.2 
 │                              ├ References       ╭ [0]: https://go.dev/cl/724120 
 │                              │                  ├ [1]: https://go.dev/issue/76443 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
 │                              │                  │      eUc 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4340 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                              ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
 │                              ╰ LastModifiedDate: 2026-01-29T19:16:16.533Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
@@ -7834,7 +7852,7 @@
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23948 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -7846,7 +7864,93 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.2Z 
-│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-61729 
+│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-61726 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
+│                       │      ├ PkgID           : stdlib@v1.24.5 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                       │      │                  ╰ UID : f7b8ab7708e95856 
+│                       │      ├ InstalledVersion: v1.24.5 
+│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:36840f52d03adc4f5f06f7b0cd72c092ce51daf06e107ba97ecd3
+│                       │      │                   2d71082dbc4 
+│                       │      ├ Title           : The net/url package does not set a limit on the number of
+│                       │      │                   query parame ... 
+│                       │      ├ Description     : The net/url package does not set a limit on the number of
+│                       │      │                   query parameters in a query. While the maximum size of query
+│                       │      │                    parameters in URLs is generally limited by the maximum
+│                       │      │                   request header size, the net/http.Request.ParseForm method
+│                       │      │                   can parse large URL-encoded forms. Parsing a large form
+│                       │      │                   containing many unique query parameters can cause excessive
+│                       │      │                   memory consumption. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: https://go.dev/cl/736712 
+│                       │      │                  ├ [1]: https://go.dev/issue/77101 
+│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+│                       │      │                  │      eUc 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61726 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4341 
+│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
+│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
+│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-61728 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
+│                       │      ├ PkgID           : stdlib@v1.24.5 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
+│                       │      │                  ╰ UID : f7b8ab7708e95856 
+│                       │      ├ InstalledVersion: v1.24.5 
+│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:a6fca595f2935034031b3a92491f2ce484518de8d3b5e589c3a82
+│                       │      │                   247e4e3fdf0 
+│                       │      ├ Title           : golang: archive/zip: Excessive CPU consumption when building
+│                       │      │                    archive index in archive/zip 
+│                       │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
+│                       │      │                    that is invoked the first time a file in an archive is
+│                       │      │                   opened. This can lead to a denial of service when consuming
+│                       │      │                   a maliciously constructed ZIP archive. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ╭ bitnami: 2 
+│                       │      │                  ╰ redhat : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:
+│                       │      │                  │         │           N/A:H 
+│                       │      │                  │         ╰ V3Score : 6.5 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61728 
+│                       │      │                  ├ [2]: https://go.dev/cl/736713 
+│                       │      │                  ├ [3]: https://go.dev/issue/77102 
+│                       │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+│                       │      │                  │      eUc 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2026-4342 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
+│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
+│                       ├ [9]  ╭ VulnerabilityID : CVE-2025-61729 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4155 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -7894,7 +7998,7 @@
 │                       │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61729 
 │                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2026-0923.html 
-│                       │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:1344 
+│                       │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:0922 
 │                       │      │                  ├ [7] : https://go.dev/cl/725920 
 │                       │      │                  ├ [8] : https://go.dev/issue/76445 
 │                       │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
@@ -7906,7 +8010,7 @@
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
-│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [10] ╭ VulnerabilityID : CVE-2025-47906 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3956 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -7950,25 +8054,22 @@
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47906 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2396546 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2396546 
-│                       │      │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
-│                       │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-47906 
-│                       │      │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-│                       │      │                  │       25-58183 
-│                       │      │                  ├ [8] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
-│                       │      │                  ├ [9] : https://errata.rockylinux.org/RLSA-2025:22668 
-│                       │      │                  ├ [10]: https://go.dev/cl/691775 
-│                       │      │                  ├ [11]: https://go.dev/issue/74466 
-│                       │      │                  ├ [12]: https://groups.google.com/g/golang-announce/c/x5MKroM
+│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:22005 
+│                       │      │                  ├ [8] : https://go.dev/cl/691775 
+│                       │      │                  ├ [9] : https://go.dev/issue/74466 
+│                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/x5MKroM
 │                       │      │                  │       L2yM 
-│                       │      │                  ├ [13]: https://linux.oracle.com/cve/CVE-2025-47906.html 
-│                       │      │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
-│                       │      │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-│                       │      │                  ├ [16]: https://pkg.go.dev/vuln/GO-2025-3956 
-│                       │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+│                       │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-47906.html 
+│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
+│                       │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+│                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
+│                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
 │                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
-│                       ├ [9]  ╭ VulnerabilityID : CVE-2025-47912 
+│                       ├ [11] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4010 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8017,7 +8118,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47912 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:18.187Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:57:18.69Z 
-│                       ├ [10] ╭ VulnerabilityID : CVE-2025-58185 
+│                       ├ [12] ╭ VulnerabilityID : CVE-2025-58185 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4011 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8064,7 +8165,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58185 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.45Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:26:08.45Z 
-│                       ├ [11] ╭ VulnerabilityID : CVE-2025-58186 
+│                       ├ [13] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4012 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8111,7 +8212,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58186 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.547Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.45Z 
-│                       ├ [12] ╭ VulnerabilityID : CVE-2025-58187 
+│                       ├ [14] ╭ VulnerabilityID : CVE-2025-58187 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4007 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8160,7 +8261,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58187 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T16:02:27.08Z 
-│                       ├ [13] ╭ VulnerabilityID : CVE-2025-58188 
+│                       ├ [15] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4013 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8209,7 +8310,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58188 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.74Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:55:11.97Z 
-│                       ├ [14] ╭ VulnerabilityID : CVE-2025-58189 
+│                       ├ [16] ╭ VulnerabilityID : CVE-2025-58189 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4008 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8255,7 +8356,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58189 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.833Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:24.543Z 
-│                       ├ [15] ╭ VulnerabilityID : CVE-2025-61723 
+│                       ├ [17] ╭ VulnerabilityID : CVE-2025-61723 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4009 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8303,7 +8404,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61723 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.927Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:05.343Z 
-│                       ├ [16] ╭ VulnerabilityID : CVE-2025-61724 
+│                       ├ [18] ╭ VulnerabilityID : CVE-2025-61724 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4015 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8350,7 +8451,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:30:53.69Z 
-│                       ├ [17] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [19] ╭ VulnerabilityID : CVE-2025-61725 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4006 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8396,7 +8497,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
 │                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
-│                       ├ [18] ╭ VulnerabilityID : CVE-2025-61727 
+│                       ├ [20] ╭ VulnerabilityID : CVE-2025-61727 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4175 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8443,76 +8544,6 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
 │                       │      ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
 │                       │      ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
-│                       ├ [19] ╭ VulnerabilityID : CVE-2025-61726 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
-│                       │      ├ PkgID           : stdlib@v1.24.5 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
-│                       │      │                  ╰ UID : f7b8ab7708e95856 
-│                       │      ├ InstalledVersion: v1.24.5 
-│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-│                       │      │                  │         c23d576cc7fbfc24b686 
-│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-│                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:36840f52d03adc4f5f06f7b0cd72c092ce51daf06e107ba97ecd3
-│                       │      │                   2d71082dbc4 
-│                       │      ├ Title           : The net/url package does not set a limit on the number of
-│                       │      │                   query parame ... 
-│                       │      ├ Description     : The net/url package does not set a limit on the number of
-│                       │      │                   query parameters in a query. While the maximum size of query
-│                       │      │                    parameters in URLs is generally limited by the maximum
-│                       │      │                   request header size, the net/http.Request.ParseForm method
-│                       │      │                   can parse large URL-encoded forms. Parsing a large form
-│                       │      │                   containing many unique query parameters can cause excessive
-│                       │      │                   memory consumption. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/736712 
-│                       │      │                  ├ [1]: https://go.dev/issue/77101 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-│                       │      │                  │      eUc 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4341 
-│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
-│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
-│                       ├ [20] ╭ VulnerabilityID : CVE-2025-61728 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
-│                       │      ├ PkgID           : stdlib@v1.24.5 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.5 
-│                       │      │                  ╰ UID : f7b8ab7708e95856 
-│                       │      ├ InstalledVersion: v1.24.5 
-│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-│                       │      │                  │         c23d576cc7fbfc24b686 
-│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-│                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:a6fca595f2935034031b3a92491f2ce484518de8d3b5e589c3a82
-│                       │      │                   247e4e3fdf0 
-│                       │      ├ Title           : archive/zip uses a super-linear file name indexing algorithm
-│                       │      │                    that is i ... 
-│                       │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
-│                       │      │                    that is invoked the first time a file in an archive is
-│                       │      │                   opened. This can lead to a denial of service when consuming
-│                       │      │                   a maliciously constructed ZIP archive. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
-│                       │      │                  ├ [1]: https://go.dev/cl/736713 
-│                       │      │                  ├ [2]: https://go.dev/issue/77102 
-│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-│                       │      │                  │      eUc 
-│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4342 
-│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
-│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
 │                       ╰ [21] ╭ VulnerabilityID : CVE-2025-61730 
 │                              ├ VendorIDs        ─ [0]: GO-2026-4340 
 │                              ├ PkgID           : stdlib@v1.24.5 
@@ -8541,12 +8572,17 @@
 │                              │                   the encryption level changes. This can cause some minor
 │                              │                   information disclosure if a network-local attacker can
 │                              │                   inject messages during the handshake. 
-│                              ├ Severity        : UNKNOWN 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:
+│                              │                            │           N/A:N 
+│                              │                            ╰ V3Score : 6.2 
 │                              ├ References       ╭ [0]: https://go.dev/cl/724120 
 │                              │                  ├ [1]: https://go.dev/issue/76443 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
 │                              │                  │      eUc 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4340 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                              ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
 │                              ╰ LastModifiedDate: 2026-01-29T19:16:16.533Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
@@ -16678,7 +16714,7 @@
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23948 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -16690,7 +16726,93 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.2Z 
-│                       ├ [31] ╭ VulnerabilityID : CVE-2025-61729 
+│                       ├ [31] ╭ VulnerabilityID : CVE-2025-61726 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
+│                       │      ├ PkgID           : stdlib@v1.24.4 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                       │      │                  ╰ UID : 4a6fd1e276d5ebfd 
+│                       │      ├ InstalledVersion: v1.24.4 
+│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:6a7da778b76844b8d4677f178d2bb70dfc279d5d57e495193fe99
+│                       │      │                   9357792b36b 
+│                       │      ├ Title           : The net/url package does not set a limit on the number of
+│                       │      │                   query parame ... 
+│                       │      ├ Description     : The net/url package does not set a limit on the number of
+│                       │      │                   query parameters in a query. While the maximum size of query
+│                       │      │                    parameters in URLs is generally limited by the maximum
+│                       │      │                   request header size, the net/http.Request.ParseForm method
+│                       │      │                   can parse large URL-encoded forms. Parsing a large form
+│                       │      │                   containing many unique query parameters can cause excessive
+│                       │      │                   memory consumption. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: https://go.dev/cl/736712 
+│                       │      │                  ├ [1]: https://go.dev/issue/77101 
+│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+│                       │      │                  │      eUc 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61726 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4341 
+│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
+│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
+│                       ├ [32] ╭ VulnerabilityID : CVE-2025-61728 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
+│                       │      ├ PkgID           : stdlib@v1.24.4 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                       │      │                  ╰ UID : 4a6fd1e276d5ebfd 
+│                       │      ├ InstalledVersion: v1.24.4 
+│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:e44a932eed35fac7f3285402918422236141c5e07b731a068a5db
+│                       │      │                   e80443a7cba 
+│                       │      ├ Title           : golang: archive/zip: Excessive CPU consumption when building
+│                       │      │                    archive index in archive/zip 
+│                       │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
+│                       │      │                    that is invoked the first time a file in an archive is
+│                       │      │                   opened. This can lead to a denial of service when consuming
+│                       │      │                   a maliciously constructed ZIP archive. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ╭ bitnami: 2 
+│                       │      │                  ╰ redhat : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:
+│                       │      │                  │         │           N/A:H 
+│                       │      │                  │         ╰ V3Score : 6.5 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61728 
+│                       │      │                  ├ [2]: https://go.dev/cl/736713 
+│                       │      │                  ├ [3]: https://go.dev/issue/77102 
+│                       │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+│                       │      │                  │      eUc 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2026-4342 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
+│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
+│                       ├ [33] ╭ VulnerabilityID : CVE-2025-61729 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4155 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -16738,7 +16860,7 @@
 │                       │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61729 
 │                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2026-0923.html 
-│                       │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:1344 
+│                       │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:0922 
 │                       │      │                  ├ [7] : https://go.dev/cl/725920 
 │                       │      │                  ├ [8] : https://go.dev/issue/76445 
 │                       │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
@@ -16750,7 +16872,7 @@
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
-│                       ├ [32] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [34] ╭ VulnerabilityID : CVE-2025-47906 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3956 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -16794,25 +16916,22 @@
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47906 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2396546 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2396546 
-│                       │      │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
-│                       │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-47906 
-│                       │      │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-│                       │      │                  │       25-58183 
-│                       │      │                  ├ [8] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
-│                       │      │                  ├ [9] : https://errata.rockylinux.org/RLSA-2025:22668 
-│                       │      │                  ├ [10]: https://go.dev/cl/691775 
-│                       │      │                  ├ [11]: https://go.dev/issue/74466 
-│                       │      │                  ├ [12]: https://groups.google.com/g/golang-announce/c/x5MKroM
+│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:22005 
+│                       │      │                  ├ [8] : https://go.dev/cl/691775 
+│                       │      │                  ├ [9] : https://go.dev/issue/74466 
+│                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/x5MKroM
 │                       │      │                  │       L2yM 
-│                       │      │                  ├ [13]: https://linux.oracle.com/cve/CVE-2025-47906.html 
-│                       │      │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
-│                       │      │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-│                       │      │                  ├ [16]: https://pkg.go.dev/vuln/GO-2025-3956 
-│                       │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+│                       │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-47906.html 
+│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
+│                       │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+│                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
+│                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
 │                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
-│                       ├ [33] ╭ VulnerabilityID : CVE-2025-47912 
+│                       ├ [35] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4010 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -16861,7 +16980,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47912 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:18.187Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:57:18.69Z 
-│                       ├ [34] ╭ VulnerabilityID : CVE-2025-58185 
+│                       ├ [36] ╭ VulnerabilityID : CVE-2025-58185 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4011 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -16908,7 +17027,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58185 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.45Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:26:08.45Z 
-│                       ├ [35] ╭ VulnerabilityID : CVE-2025-58186 
+│                       ├ [37] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4012 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -16955,7 +17074,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58186 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.547Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.45Z 
-│                       ├ [36] ╭ VulnerabilityID : CVE-2025-58187 
+│                       ├ [38] ╭ VulnerabilityID : CVE-2025-58187 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4007 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17004,7 +17123,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58187 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T16:02:27.08Z 
-│                       ├ [37] ╭ VulnerabilityID : CVE-2025-58188 
+│                       ├ [39] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4013 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17053,7 +17172,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58188 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.74Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:55:11.97Z 
-│                       ├ [38] ╭ VulnerabilityID : CVE-2025-58189 
+│                       ├ [40] ╭ VulnerabilityID : CVE-2025-58189 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4008 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17099,7 +17218,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58189 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.833Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:24.543Z 
-│                       ├ [39] ╭ VulnerabilityID : CVE-2025-61723 
+│                       ├ [41] ╭ VulnerabilityID : CVE-2025-61723 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4009 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17147,7 +17266,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61723 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.927Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:05.343Z 
-│                       ├ [40] ╭ VulnerabilityID : CVE-2025-61724 
+│                       ├ [42] ╭ VulnerabilityID : CVE-2025-61724 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4015 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17194,7 +17313,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:30:53.69Z 
-│                       ├ [41] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [43] ╭ VulnerabilityID : CVE-2025-61725 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4006 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17240,7 +17359,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
 │                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
-│                       ├ [42] ╭ VulnerabilityID : CVE-2025-61727 
+│                       ├ [44] ╭ VulnerabilityID : CVE-2025-61727 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4175 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17287,76 +17406,6 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
 │                       │      ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
 │                       │      ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
-│                       ├ [43] ╭ VulnerabilityID : CVE-2025-61726 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
-│                       │      ├ PkgID           : stdlib@v1.24.4 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
-│                       │      │                  ╰ UID : 4a6fd1e276d5ebfd 
-│                       │      ├ InstalledVersion: v1.24.4 
-│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-│                       │      │                  │         c23d576cc7fbfc24b686 
-│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-│                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:6a7da778b76844b8d4677f178d2bb70dfc279d5d57e495193fe99
-│                       │      │                   9357792b36b 
-│                       │      ├ Title           : The net/url package does not set a limit on the number of
-│                       │      │                   query parame ... 
-│                       │      ├ Description     : The net/url package does not set a limit on the number of
-│                       │      │                   query parameters in a query. While the maximum size of query
-│                       │      │                    parameters in URLs is generally limited by the maximum
-│                       │      │                   request header size, the net/http.Request.ParseForm method
-│                       │      │                   can parse large URL-encoded forms. Parsing a large form
-│                       │      │                   containing many unique query parameters can cause excessive
-│                       │      │                   memory consumption. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/736712 
-│                       │      │                  ├ [1]: https://go.dev/issue/77101 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-│                       │      │                  │      eUc 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4341 
-│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
-│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
-│                       ├ [44] ╭ VulnerabilityID : CVE-2025-61728 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
-│                       │      ├ PkgID           : stdlib@v1.24.4 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
-│                       │      │                  ╰ UID : 4a6fd1e276d5ebfd 
-│                       │      ├ InstalledVersion: v1.24.4 
-│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-│                       │      │                  │         c23d576cc7fbfc24b686 
-│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-│                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:e44a932eed35fac7f3285402918422236141c5e07b731a068a5db
-│                       │      │                   e80443a7cba 
-│                       │      ├ Title           : archive/zip uses a super-linear file name indexing algorithm
-│                       │      │                    that is i ... 
-│                       │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
-│                       │      │                    that is invoked the first time a file in an archive is
-│                       │      │                   opened. This can lead to a denial of service when consuming
-│                       │      │                   a maliciously constructed ZIP archive. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
-│                       │      │                  ├ [1]: https://go.dev/cl/736713 
-│                       │      │                  ├ [2]: https://go.dev/issue/77102 
-│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-│                       │      │                  │      eUc 
-│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4342 
-│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
-│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
 │                       ╰ [45] ╭ VulnerabilityID : CVE-2025-61730 
 │                              ├ VendorIDs        ─ [0]: GO-2026-4340 
 │                              ├ PkgID           : stdlib@v1.24.4 
@@ -17385,12 +17434,17 @@
 │                              │                   the encryption level changes. This can cause some minor
 │                              │                   information disclosure if a network-local attacker can
 │                              │                   inject messages during the handshake. 
-│                              ├ Severity        : UNKNOWN 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:
+│                              │                            │           N/A:N 
+│                              │                            ╰ V3Score : 6.2 
 │                              ├ References       ╭ [0]: https://go.dev/cl/724120 
 │                              │                  ├ [1]: https://go.dev/issue/76443 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
 │                              │                  │      eUc 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4340 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                              ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
 │                              ╰ LastModifiedDate: 2026-01-29T19:16:16.533Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
@@ -19333,7 +19387,7 @@
 │                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-58183 
 │                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23948 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
 │                       │      │                  ├ [8] : https://go.dev/cl/709861 
 │                       │      │                  ├ [9] : https://go.dev/issue/75677 
 │                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -19345,7 +19399,93 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.2Z 
-│                       ├ [27] ╭ VulnerabilityID : CVE-2025-61729 
+│                       ├ [27] ╭ VulnerabilityID : CVE-2025-61726 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
+│                       │      ├ PkgID           : stdlib@v1.24.4 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                       │      │                  ╰ UID : 44ef8c97c6b72d3c 
+│                       │      ├ InstalledVersion: v1.24.4 
+│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:24c40f93c6923092924f3d2aa3aed2dcb7d9f73b66220fc5e68c8
+│                       │      │                   6dce2ed5600 
+│                       │      ├ Title           : The net/url package does not set a limit on the number of
+│                       │      │                   query parame ... 
+│                       │      ├ Description     : The net/url package does not set a limit on the number of
+│                       │      │                   query parameters in a query. While the maximum size of query
+│                       │      │                    parameters in URLs is generally limited by the maximum
+│                       │      │                   request header size, the net/http.Request.ParseForm method
+│                       │      │                   can parse large URL-encoded forms. Parsing a large form
+│                       │      │                   containing many unique query parameters can cause excessive
+│                       │      │                   memory consumption. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: https://go.dev/cl/736712 
+│                       │      │                  ├ [1]: https://go.dev/issue/77101 
+│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+│                       │      │                  │      eUc 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61726 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4341 
+│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
+│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
+│                       ├ [28] ╭ VulnerabilityID : CVE-2025-61728 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
+│                       │      ├ PkgID           : stdlib@v1.24.4 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+│                       │      │                  ╰ UID : 44ef8c97c6b72d3c 
+│                       │      ├ InstalledVersion: v1.24.4 
+│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:f069c33ad23375388ef6cdd490e943c9c34230ef7dc036240f168
+│                       │      │                   ffff29da004 
+│                       │      ├ Title           : golang: archive/zip: Excessive CPU consumption when building
+│                       │      │                    archive index in archive/zip 
+│                       │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
+│                       │      │                    that is invoked the first time a file in an archive is
+│                       │      │                   opened. This can lead to a denial of service when consuming
+│                       │      │                   a maliciously constructed ZIP archive. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ╭ bitnami: 2 
+│                       │      │                  ╰ redhat : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:
+│                       │      │                  │         │           N/A:H 
+│                       │      │                  │         ╰ V3Score : 6.5 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61728 
+│                       │      │                  ├ [2]: https://go.dev/cl/736713 
+│                       │      │                  ├ [3]: https://go.dev/issue/77102 
+│                       │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+│                       │      │                  │      eUc 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+│                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2026-4342 
+│                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
+│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
+│                       ├ [29] ╭ VulnerabilityID : CVE-2025-61729 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4155 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19393,7 +19533,7 @@
 │                       │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61729 
 │                       │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2026-0923.html 
-│                       │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:1344 
+│                       │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:0922 
 │                       │      │                  ├ [7] : https://go.dev/cl/725920 
 │                       │      │                  ├ [8] : https://go.dev/issue/76445 
 │                       │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
@@ -19405,7 +19545,7 @@
 │                       │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
-│                       ├ [28] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [30] ╭ VulnerabilityID : CVE-2025-47906 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3956 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19449,25 +19589,22 @@
 │                       │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47906 
 │                       │      │                  ├ [3] : https://bugzilla.redhat.com/2396546 
 │                       │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2396546 
-│                       │      │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
-│                       │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-47906 
-│                       │      │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-│                       │      │                  │       25-58183 
-│                       │      │                  ├ [8] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
-│                       │      │                  ├ [9] : https://errata.rockylinux.org/RLSA-2025:22668 
-│                       │      │                  ├ [10]: https://go.dev/cl/691775 
-│                       │      │                  ├ [11]: https://go.dev/issue/74466 
-│                       │      │                  ├ [12]: https://groups.google.com/g/golang-announce/c/x5MKroM
+│                       │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
+│                       │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:22005 
+│                       │      │                  ├ [8] : https://go.dev/cl/691775 
+│                       │      │                  ├ [9] : https://go.dev/issue/74466 
+│                       │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/x5MKroM
 │                       │      │                  │       L2yM 
-│                       │      │                  ├ [13]: https://linux.oracle.com/cve/CVE-2025-47906.html 
-│                       │      │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
-│                       │      │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-│                       │      │                  ├ [16]: https://pkg.go.dev/vuln/GO-2025-3956 
-│                       │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+│                       │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-47906.html 
+│                       │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
+│                       │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+│                       │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
+│                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
 │                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
-│                       ├ [29] ╭ VulnerabilityID : CVE-2025-47912 
+│                       ├ [31] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4010 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19516,7 +19653,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47912 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:18.187Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:57:18.69Z 
-│                       ├ [30] ╭ VulnerabilityID : CVE-2025-58185 
+│                       ├ [32] ╭ VulnerabilityID : CVE-2025-58185 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4011 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19563,7 +19700,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58185 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.45Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:26:08.45Z 
-│                       ├ [31] ╭ VulnerabilityID : CVE-2025-58186 
+│                       ├ [33] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4012 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19610,7 +19747,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58186 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.547Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.45Z 
-│                       ├ [32] ╭ VulnerabilityID : CVE-2025-58187 
+│                       ├ [34] ╭ VulnerabilityID : CVE-2025-58187 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4007 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19659,7 +19796,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58187 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T16:02:27.08Z 
-│                       ├ [33] ╭ VulnerabilityID : CVE-2025-58188 
+│                       ├ [35] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4013 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19708,7 +19845,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58188 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.74Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:55:11.97Z 
-│                       ├ [34] ╭ VulnerabilityID : CVE-2025-58189 
+│                       ├ [36] ╭ VulnerabilityID : CVE-2025-58189 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4008 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19754,7 +19891,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58189 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.833Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:24.543Z 
-│                       ├ [35] ╭ VulnerabilityID : CVE-2025-61723 
+│                       ├ [37] ╭ VulnerabilityID : CVE-2025-61723 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4009 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19802,7 +19939,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61723 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.927Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:05.343Z 
-│                       ├ [36] ╭ VulnerabilityID : CVE-2025-61724 
+│                       ├ [38] ╭ VulnerabilityID : CVE-2025-61724 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4015 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19849,7 +19986,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:30:53.69Z 
-│                       ├ [37] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [39] ╭ VulnerabilityID : CVE-2025-61725 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4006 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19895,7 +20032,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
 │                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
-│                       ├ [38] ╭ VulnerabilityID : CVE-2025-61727 
+│                       ├ [40] ╭ VulnerabilityID : CVE-2025-61727 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4175 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -19942,76 +20079,6 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
 │                       │      ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
 │                       │      ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
-│                       ├ [39] ╭ VulnerabilityID : CVE-2025-61726 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
-│                       │      ├ PkgID           : stdlib@v1.24.4 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
-│                       │      │                  ╰ UID : 44ef8c97c6b72d3c 
-│                       │      ├ InstalledVersion: v1.24.4 
-│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-│                       │      │                  │         c23d576cc7fbfc24b686 
-│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-│                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:24c40f93c6923092924f3d2aa3aed2dcb7d9f73b66220fc5e68c8
-│                       │      │                   6dce2ed5600 
-│                       │      ├ Title           : The net/url package does not set a limit on the number of
-│                       │      │                   query parame ... 
-│                       │      ├ Description     : The net/url package does not set a limit on the number of
-│                       │      │                   query parameters in a query. While the maximum size of query
-│                       │      │                    parameters in URLs is generally limited by the maximum
-│                       │      │                   request header size, the net/http.Request.ParseForm method
-│                       │      │                   can parse large URL-encoded forms. Parsing a large form
-│                       │      │                   containing many unique query parameters can cause excessive
-│                       │      │                   memory consumption. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/736712 
-│                       │      │                  ├ [1]: https://go.dev/issue/77101 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-│                       │      │                  │      eUc 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4341 
-│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
-│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
-│                       ├ [40] ╭ VulnerabilityID : CVE-2025-61728 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
-│                       │      ├ PkgID           : stdlib@v1.24.4 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
-│                       │      │                  ╰ UID : 44ef8c97c6b72d3c 
-│                       │      ├ InstalledVersion: v1.24.4 
-│                       │      ├ FixedVersion    : 1.24.12, 1.25.6 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-│                       │      │                  │         c23d576cc7fbfc24b686 
-│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-│                       │      │                            0478f2d229b68f52d773 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:f069c33ad23375388ef6cdd490e943c9c34230ef7dc036240f168
-│                       │      │                   ffff29da004 
-│                       │      ├ Title           : archive/zip uses a super-linear file name indexing algorithm
-│                       │      │                    that is i ... 
-│                       │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
-│                       │      │                    that is invoked the first time a file in an archive is
-│                       │      │                   opened. This can lead to a denial of service when consuming
-│                       │      │                   a maliciously constructed ZIP archive. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
-│                       │      │                  ├ [1]: https://go.dev/cl/736713 
-│                       │      │                  ├ [2]: https://go.dev/issue/77102 
-│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-│                       │      │                  │      eUc 
-│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4342 
-│                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
-│                       │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
 │                       ╰ [41] ╭ VulnerabilityID : CVE-2025-61730 
 │                              ├ VendorIDs        ─ [0]: GO-2026-4340 
 │                              ├ PkgID           : stdlib@v1.24.4 
@@ -20040,12 +20107,17 @@
 │                              │                   the encryption level changes. This can cause some minor
 │                              │                   information disclosure if a network-local attacker can
 │                              │                   inject messages during the handshake. 
-│                              ├ Severity        : UNKNOWN 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:
+│                              │                            │           N/A:N 
+│                              │                            ╰ V3Score : 6.2 
 │                              ├ References       ╭ [0]: https://go.dev/cl/724120 
 │                              │                  ├ [1]: https://go.dev/issue/76443 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
 │                              │                  │      eUc 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4340 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                              ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
 │                              ╰ LastModifiedDate: 2026-01-29T19:16:16.533Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
@@ -21988,7 +22060,7 @@
                         │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-58183 
                         │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-23326.html 
-                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23948 
+                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:23295 
                         │      │                  ├ [8] : https://go.dev/cl/709861 
                         │      │                  ├ [9] : https://go.dev/issue/75677 
                         │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/4Emdl2i
@@ -22000,7 +22072,93 @@
                         │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
                         │      ╰ LastModifiedDate: 2025-11-04T22:16:33.2Z 
-                        ├ [27] ╭ VulnerabilityID : CVE-2025-61729 
+                        ├ [27] ╭ VulnerabilityID : CVE-2025-61726 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4341 
+                        │      ├ PkgID           : stdlib@v1.24.4 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+                        │      │                  ╰ UID : 33fae79fadb1d576 
+                        │      ├ InstalledVersion: v1.24.4 
+                        │      ├ FixedVersion    : 1.24.12, 1.25.6 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+                        │      │                  │         c23d576cc7fbfc24b686 
+                        │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+                        │      │                            0478f2d229b68f52d773 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:f9bb4f83d7c3298233b0ec617960941a66786dc9a6dd269ebeed9
+                        │      │                   a26fbbfcbbf 
+                        │      ├ Title           : The net/url package does not set a limit on the number of
+                        │      │                   query parame ... 
+                        │      ├ Description     : The net/url package does not set a limit on the number of
+                        │      │                   query parameters in a query. While the maximum size of query
+                        │      │                    parameters in URLs is generally limited by the maximum
+                        │      │                   request header size, the net/http.Request.ParseForm method
+                        │      │                   can parse large URL-encoded forms. Parsing a large form
+                        │      │                   containing many unique query parameters can cause excessive
+                        │      │                   memory consumption. 
+                        │      ├ Severity        : HIGH 
+                        │      ├ VendorSeverity   ─ bitnami: 3 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:H 
+                        │      │                            ╰ V3Score : 7.5 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/736712 
+                        │      │                  ├ [1]: https://go.dev/issue/77101 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+                        │      │                  │      eUc 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61726 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4341 
+                        │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
+                        │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
+                        ├ [28] ╭ VulnerabilityID : CVE-2025-61728 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4342 
+                        │      ├ PkgID           : stdlib@v1.24.4 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
+                        │      │                  ╰ UID : 33fae79fadb1d576 
+                        │      ├ InstalledVersion: v1.24.4 
+                        │      ├ FixedVersion    : 1.24.12, 1.25.6 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+                        │      │                  │         c23d576cc7fbfc24b686 
+                        │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+                        │      │                            0478f2d229b68f52d773 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:5103d39b2ee67d78c6751684fe3422b66485915539e8a9fa04740
+                        │      │                   790c08fce80 
+                        │      ├ Title           : golang: archive/zip: Excessive CPU consumption when building
+                        │      │                    archive index in archive/zip 
+                        │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
+                        │      │                    that is invoked the first time a file in an archive is
+                        │      │                   opened. This can lead to a denial of service when consuming
+                        │      │                   a maliciously constructed ZIP archive. 
+                        │      ├ Severity        : HIGH 
+                        │      ├ VendorSeverity   ╭ bitnami: 2 
+                        │      │                  ╰ redhat : 2 
+                        │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:
+                        │      │                  │         │           N/A:H 
+                        │      │                  │         ╰ V3Score : 6.5 
+                        │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:H 
+                        │      │                            ╰ V3Score : 7.5 
+                        │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
+                        │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2025-61728 
+                        │      │                  ├ [2]: https://go.dev/cl/736713 
+                        │      │                  ├ [3]: https://go.dev/issue/77102 
+                        │      │                  ├ [4]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
+                        │      │                  │      eUc 
+                        │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+                        │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2026-4342 
+                        │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+                        │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
+                        │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
+                        ├ [29] ╭ VulnerabilityID : CVE-2025-61729 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4155 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22048,7 +22206,7 @@
                         │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-61729 
                         │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2026-0923.html 
-                        │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:1344 
+                        │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:0922 
                         │      │                  ├ [7] : https://go.dev/cl/725920 
                         │      │                  ├ [8] : https://go.dev/issue/76445 
                         │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/8FJoBkP
@@ -22060,7 +22218,7 @@
                         │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
                         │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
                         │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
-                        ├ [28] ╭ VulnerabilityID : CVE-2025-47906 
+                        ├ [30] ╭ VulnerabilityID : CVE-2025-47906 
                         │      ├ VendorIDs        ─ [0]: GO-2025-3956 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22104,25 +22262,22 @@
                         │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2025-47906 
                         │      │                  ├ [3] : https://bugzilla.redhat.com/2396546 
                         │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2396546 
-                        │      │                  ├ [5] : https://bugzilla.redhat.com/show_bug.cgi?id=2407258 
-                        │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+                        │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-47906 
-                        │      │                  ├ [7] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-                        │      │                  │       25-58183 
-                        │      │                  ├ [8] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
-                        │      │                  ├ [9] : https://errata.rockylinux.org/RLSA-2025:22668 
-                        │      │                  ├ [10]: https://go.dev/cl/691775 
-                        │      │                  ├ [11]: https://go.dev/issue/74466 
-                        │      │                  ├ [12]: https://groups.google.com/g/golang-announce/c/x5MKroM
+                        │      │                  ├ [6] : https://errata.almalinux.org/9/ALSA-2025-22005.html 
+                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2025:22005 
+                        │      │                  ├ [8] : https://go.dev/cl/691775 
+                        │      │                  ├ [9] : https://go.dev/issue/74466 
+                        │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/x5MKroM
                         │      │                  │       L2yM 
-                        │      │                  ├ [13]: https://linux.oracle.com/cve/CVE-2025-47906.html 
-                        │      │                  ├ [14]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
-                        │      │                  ├ [15]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
-                        │      │                  ├ [16]: https://pkg.go.dev/vuln/GO-2025-3956 
-                        │      │                  ╰ [17]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
+                        │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2025-47906.html 
+                        │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2025-22668.html 
+                        │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2025-47906 
+                        │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2025-3956 
+                        │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
                         │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
                         │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
-                        ├ [29] ╭ VulnerabilityID : CVE-2025-47912 
+                        ├ [31] ╭ VulnerabilityID : CVE-2025-47912 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4010 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22171,7 +22326,7 @@
                         │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47912 
                         │      ├ PublishedDate   : 2025-10-29T23:16:18.187Z 
                         │      ╰ LastModifiedDate: 2026-01-29T13:57:18.69Z 
-                        ├ [30] ╭ VulnerabilityID : CVE-2025-58185 
+                        ├ [32] ╭ VulnerabilityID : CVE-2025-58185 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4011 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22218,7 +22373,7 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58185 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.45Z 
                         │      ╰ LastModifiedDate: 2026-01-29T13:26:08.45Z 
-                        ├ [31] ╭ VulnerabilityID : CVE-2025-58186 
+                        ├ [33] ╭ VulnerabilityID : CVE-2025-58186 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4012 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22265,7 +22420,7 @@
                         │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58186 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.547Z 
                         │      ╰ LastModifiedDate: 2025-11-04T22:16:33.45Z 
-                        ├ [32] ╭ VulnerabilityID : CVE-2025-58187 
+                        ├ [34] ╭ VulnerabilityID : CVE-2025-58187 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4007 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22314,7 +22469,7 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58187 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
                         │      ╰ LastModifiedDate: 2026-01-29T16:02:27.08Z 
-                        ├ [33] ╭ VulnerabilityID : CVE-2025-58188 
+                        ├ [35] ╭ VulnerabilityID : CVE-2025-58188 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4013 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22363,7 +22518,7 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58188 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.74Z 
                         │      ╰ LastModifiedDate: 2026-01-29T15:55:11.97Z 
-                        ├ [34] ╭ VulnerabilityID : CVE-2025-58189 
+                        ├ [36] ╭ VulnerabilityID : CVE-2025-58189 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4008 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22409,7 +22564,7 @@
                         │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58189 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.833Z 
                         │      ╰ LastModifiedDate: 2026-01-29T15:49:24.543Z 
-                        ├ [35] ╭ VulnerabilityID : CVE-2025-61723 
+                        ├ [37] ╭ VulnerabilityID : CVE-2025-61723 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4009 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22457,7 +22612,7 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61723 
                         │      ├ PublishedDate   : 2025-10-29T23:16:19.927Z 
                         │      ╰ LastModifiedDate: 2026-01-29T15:49:05.343Z 
-                        ├ [36] ╭ VulnerabilityID : CVE-2025-61724 
+                        ├ [38] ╭ VulnerabilityID : CVE-2025-61724 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4015 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22504,7 +22659,7 @@
                         │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
                         │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
                         │      ╰ LastModifiedDate: 2026-01-29T15:30:53.69Z 
-                        ├ [37] ╭ VulnerabilityID : CVE-2025-61725 
+                        ├ [39] ╭ VulnerabilityID : CVE-2025-61725 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4006 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22550,7 +22705,7 @@
                         │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
                         │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
                         │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
-                        ├ [38] ╭ VulnerabilityID : CVE-2025-61727 
+                        ├ [40] ╭ VulnerabilityID : CVE-2025-61727 
                         │      ├ VendorIDs        ─ [0]: GO-2025-4175 
                         │      ├ PkgID           : stdlib@v1.24.4 
                         │      ├ PkgName         : stdlib 
@@ -22597,76 +22752,6 @@
                         │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2025-61727 
                         │      ├ PublishedDate   : 2025-12-03T20:16:25.607Z 
                         │      ╰ LastModifiedDate: 2025-12-18T20:15:10.957Z 
-                        ├ [39] ╭ VulnerabilityID : CVE-2025-61726 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4341 
-                        │      ├ PkgID           : stdlib@v1.24.4 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
-                        │      │                  ╰ UID : 33fae79fadb1d576 
-                        │      ├ InstalledVersion: v1.24.4 
-                        │      ├ FixedVersion    : 1.24.12, 1.25.6 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-                        │      │                  │         c23d576cc7fbfc24b686 
-                        │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-                        │      │                            0478f2d229b68f52d773 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61726 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:f9bb4f83d7c3298233b0ec617960941a66786dc9a6dd269ebeed9
-                        │      │                   a26fbbfcbbf 
-                        │      ├ Title           : The net/url package does not set a limit on the number of
-                        │      │                   query parame ... 
-                        │      ├ Description     : The net/url package does not set a limit on the number of
-                        │      │                   query parameters in a query. While the maximum size of query
-                        │      │                    parameters in URLs is generally limited by the maximum
-                        │      │                   request header size, the net/http.Request.ParseForm method
-                        │      │                   can parse large URL-encoded forms. Parsing a large form
-                        │      │                   containing many unique query parameters can cause excessive
-                        │      │                   memory consumption. 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/736712 
-                        │      │                  ├ [1]: https://go.dev/issue/77101 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-                        │      │                  │      eUc 
-                        │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4341 
-                        │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
-                        │      ╰ LastModifiedDate: 2026-01-29T19:16:16.243Z 
-                        ├ [40] ╭ VulnerabilityID : CVE-2025-61728 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4342 
-                        │      ├ PkgID           : stdlib@v1.24.4 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.24.4 
-                        │      │                  ╰ UID : 33fae79fadb1d576 
-                        │      ├ InstalledVersion: v1.24.4 
-                        │      ├ FixedVersion    : 1.24.12, 1.25.6 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
-                        │      │                  │         c23d576cc7fbfc24b686 
-                        │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
-                        │      │                            0478f2d229b68f52d773 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2025-61728 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:5103d39b2ee67d78c6751684fe3422b66485915539e8a9fa04740
-                        │      │                   790c08fce80 
-                        │      ├ Title           : archive/zip uses a super-linear file name indexing algorithm
-                        │      │                    that is i ... 
-                        │      ├ Description     : archive/zip uses a super-linear file name indexing algorithm
-                        │      │                    that is invoked the first time a file in an archive is
-                        │      │                   opened. This can lead to a denial of service when consuming
-                        │      │                   a maliciously constructed ZIP archive. 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: http://www.openwall.com/lists/oss-security/2026/01/15/4 
-                        │      │                  ├ [1]: https://go.dev/cl/736713 
-                        │      │                  ├ [2]: https://go.dev/issue/77102 
-                        │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
-                        │      │                  │      eUc 
-                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4342 
-                        │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
-                        │      ╰ LastModifiedDate: 2026-01-29T19:16:16.39Z 
                         ╰ [41] ╭ VulnerabilityID : CVE-2025-61730 
                                ├ VendorIDs        ─ [0]: GO-2026-4340 
                                ├ PkgID           : stdlib@v1.24.4 
@@ -22695,12 +22780,17 @@
                                │                   the encryption level changes. This can cause some minor
                                │                   information disclosure if a network-local attacker can
                                │                   inject messages during the handshake. 
-                               ├ Severity        : UNKNOWN 
+                               ├ Severity        : MEDIUM 
+                               ├ VendorSeverity   ─ bitnami: 2 
+                               ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:
+                               │                            │           N/A:N 
+                               │                            ╰ V3Score : 6.2 
                                ├ References       ╭ [0]: https://go.dev/cl/724120 
                                │                  ├ [1]: https://go.dev/issue/76443 
                                │                  ├ [2]: https://groups.google.com/g/golang-announce/c/Vd2tYVM8
                                │                  │      eUc 
-                               │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4340 
+                               │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
+                               │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
                                ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
                                ╰ LastModifiedDate: 2026-01-29T19:16:16.533Z 
 ````
