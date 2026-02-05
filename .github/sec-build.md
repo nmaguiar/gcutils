@@ -1403,8 +1403,8 @@
 │                       │     │                          osystem%3Apip 
 │                       │     ├ Fingerprint     : sha256:4842e5a49a854ea35547106a6a0060d399932818059f55de898c99
 │                       │     │                   d774392f93 
-│                       │     ├ Title           : When pip is installing and extracting a maliciously crafted
-│                       │     │                   wheel arch ... 
+│                       │     ├ Title           : pip: pip: Information disclosure via path traversal when
+│                       │     │                   installing crafted wheel archives 
 │                       │     ├ Description     : When pip is installing and extracting a maliciously crafted
 │                       │     │                   wheel archive, files may be extracted outside the
 │                       │     │                   installation directory. The path traversal is limited to
@@ -1412,18 +1412,24 @@
 │                       │     │                   inject or overwrite executable files in typical situations. 
 │                       │     ├ Severity        : LOW 
 │                       │     ├ CweIDs           ─ [0]: CWE-22 
-│                       │     ├ VendorSeverity   ─ ghsa: 1 
-│                       │     ├ References       ╭ [0]: https://github.com/pypa/pip 
-│                       │     │                  ├ [1]: https://github.com/pypa/pip/commit/8e227a9be4faa9594e05
+│                       │     ├ VendorSeverity   ╭ ghsa  : 1 
+│                       │     │                  ╰ redhat: 1 
+│                       │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/
+│                       │     │                           │           A:N 
+│                       │     │                           ╰ V3Score : 3.9 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-1703 
+│                       │     │                  ├ [1]: https://github.com/pypa/pip 
+│                       │     │                  ├ [2]: https://github.com/pypa/pip/commit/8e227a9be4faa9594e05
 │                       │     │                  │      d02ca05a413a2a4e7735 
-│                       │     │                  ├ [2]: https://github.com/pypa/pip/pull/13777 
-│                       │     │                  ├ [3]: https://mail.python.org/archives/list/security-announce
-│                       │     │                  │      @python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ 
+│                       │     │                  ├ [3]: https://github.com/pypa/pip/pull/13777 
 │                       │     │                  ├ [4]: https://mail.python.org/archives/list/security-announce
+│                       │     │                  │      @python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ 
+│                       │     │                  ├ [5]: https://mail.python.org/archives/list/security-announce
 │                       │     │                  │      @python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ/ 
-│                       │     │                  ╰ [5]: https://nvd.nist.gov/vuln/detail/CVE-2026-1703 
+│                       │     │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-1703 
+│                       │     │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2026-1703 
 │                       │     ├ PublishedDate   : 2026-02-02T15:16:30.51Z 
-│                       │     ╰ LastModifiedDate: 2026-02-02T15:16:30.51Z 
+│                       │     ╰ LastModifiedDate: 2026-02-03T16:44:36.63Z 
 │                       ╰ [3] ╭ VulnerabilityID : CVE-2026-24049 
 │                             ├ VendorIDs        ─ [0]: GHSA-8rrh-rw8j-w5fx 
 │                             ├ PkgName         : wheel 
@@ -4070,7 +4076,7 @@
 │                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3900 
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-11065 
 │                       │      ├ PublishedDate   : 2026-01-26T20:16:06.84Z 
-│                       │      ╰ LastModifiedDate: 2026-01-27T14:59:34.073Z 
+│                       │      ╰ LastModifiedDate: 2026-02-03T20:15:56.087Z 
 │                       ├ [2]  ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                       │      ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                       │      ├ PkgName         : github.com/go-viper/mapstructure/v2 
@@ -5125,7 +5131,7 @@
 │                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
 │                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                              ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
-│                              ╰ LastModifiedDate: 2026-02-02T18:16:12.647Z 
+│                              ╰ LastModifiedDate: 2026-02-03T20:36:41.3Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -7585,7 +7591,7 @@
 │                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3900 
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-11065 
 │                       │      ├ PublishedDate   : 2026-01-26T20:16:06.84Z 
-│                       │      ╰ LastModifiedDate: 2026-01-27T14:59:34.073Z 
+│                       │      ╰ LastModifiedDate: 2026-02-03T20:15:56.087Z 
 │                       ├ [2]  ╭ VulnerabilityID : GHSA-fv92-fjc5-jj9h 
 │                       │      ├ PkgID           : github.com/go-viper/mapstructure/v2@v2.2.1 
 │                       │      ├ PkgName         : github.com/go-viper/mapstructure/v2 
@@ -8640,7 +8646,7 @@
 │                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
 │                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                              ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
-│                              ╰ LastModifiedDate: 2026-02-02T18:16:12.647Z 
+│                              ╰ LastModifiedDate: 2026-02-03T20:36:41.3Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -14754,7 +14760,7 @@
 │                       │      │                  ├ [6]: https://pkg.go.dev/vuln/GO-2025-3900 
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-11065 
 │                       │      ├ PublishedDate   : 2026-01-26T20:16:06.84Z 
-│                       │      ╰ LastModifiedDate: 2026-01-27T14:59:34.073Z 
+│                       │      ╰ LastModifiedDate: 2026-02-03T20:15:56.087Z 
 │                       ├ [1]  ╭ VulnerabilityID : CVE-2018-15727 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-rgjg-66cx-5x9m 
 │                       │      ├ PkgID           : github.com/grafana/grafana@v0.0.0-20250718201843-ccd7b6ce7ea
@@ -17508,7 +17514,7 @@
 │                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
 │                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                              ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
-│                              ╰ LastModifiedDate: 2026-02-02T18:16:12.647Z 
+│                              ╰ LastModifiedDate: 2026-02-03T20:36:41.3Z 
 ├ [7] ╭ Target         : usr/share/grafana/bin/grafana-cli 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -20187,7 +20193,7 @@
 │                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
 │                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                              ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
-│                              ╰ LastModifiedDate: 2026-02-02T18:16:12.647Z 
+│                              ╰ LastModifiedDate: 2026-02-03T20:36:41.3Z 
 ╰ [8] ╭ Target         : usr/share/grafana/bin/grafana-server 
       ├ Class          : lang-pkgs 
       ├ Type           : gobinary 
@@ -22866,5 +22872,5 @@
                                │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2025-61730 
                                │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
                                ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
-                               ╰ LastModifiedDate: 2026-02-02T18:16:12.647Z 
+                               ╰ LastModifiedDate: 2026-02-03T20:36:41.3Z 
 ````
