@@ -1354,22 +1354,29 @@
       Name: GitHub Security Advisory pip
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip
     Fingerprint: sha256:4842e5a49a854ea35547106a6a0060d399932818059f55de898c99d774392f93
-    Title: When pip is installing and extracting a maliciously crafted wheel arch ...
+    Title: 'pip: pip: Information disclosure via path traversal when installing crafted wheel archives'
     Description: When pip is installing and extracting a maliciously crafted wheel archive, files may be extracted outside the installation directory. The path traversal is limited to prefixes of the installation directory, thus isn't able to inject or overwrite executable files in typical situations.
     Severity: LOW
     CweIDs:
     - CWE-22
     VendorSeverity:
       ghsa: 1
+      redhat: 1
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N
+        V3Score: 3.9
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-1703
     - https://github.com/pypa/pip
     - https://github.com/pypa/pip/commit/8e227a9be4faa9594e05d02ca05a413a2a4e7735
     - https://github.com/pypa/pip/pull/13777
     - https://mail.python.org/archives/list/security-announce@python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ
     - https://mail.python.org/archives/list/security-announce@python.org/thread/WIEA34D4TABF2UNQJAOMXKCICSPBE2DJ/
     - https://nvd.nist.gov/vuln/detail/CVE-2026-1703
+    - https://www.cve.org/CVERecord?id=CVE-2026-1703
     PublishedDate: '2026-02-02T15:16:30.51Z'
-    LastModifiedDate: '2026-02-02T15:16:30.51Z'
+    LastModifiedDate: '2026-02-03T16:44:36.63Z'
   - VulnerabilityID: CVE-2026-24049
     VendorIDs:
     - GHSA-8rrh-rw8j-w5fx
@@ -3888,7 +3895,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3900
     - https://www.cve.org/CVERecord?id=CVE-2025-11065
     PublishedDate: '2026-01-26T20:16:06.84Z'
-    LastModifiedDate: '2026-01-27T14:59:34.073Z'
+    LastModifiedDate: '2026-02-03T20:15:56.087Z'
   - VulnerabilityID: GHSA-fv92-fjc5-jj9h
     PkgID: github.com/go-viper/mapstructure/v2@v2.2.1
     PkgName: github.com/go-viper/mapstructure/v2
@@ -4843,7 +4850,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61730
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
-    LastModifiedDate: '2026-02-02T18:16:12.647Z'
+    LastModifiedDate: '2026-02-03T20:36:41.3Z'
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -7193,7 +7200,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3900
     - https://www.cve.org/CVERecord?id=CVE-2025-11065
     PublishedDate: '2026-01-26T20:16:06.84Z'
-    LastModifiedDate: '2026-01-27T14:59:34.073Z'
+    LastModifiedDate: '2026-02-03T20:15:56.087Z'
   - VulnerabilityID: GHSA-fv92-fjc5-jj9h
     PkgID: github.com/go-viper/mapstructure/v2@v2.2.1
     PkgName: github.com/go-viper/mapstructure/v2
@@ -8148,7 +8155,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61730
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
-    LastModifiedDate: '2026-02-02T18:16:12.647Z'
+    LastModifiedDate: '2026-02-03T20:36:41.3Z'
 - Target: usr/share/grafana/bin/grafana
   Class: lang-pkgs
   Type: gobinary
@@ -13987,7 +13994,7 @@
     - https://pkg.go.dev/vuln/GO-2025-3900
     - https://www.cve.org/CVERecord?id=CVE-2025-11065
     PublishedDate: '2026-01-26T20:16:06.84Z'
-    LastModifiedDate: '2026-01-27T14:59:34.073Z'
+    LastModifiedDate: '2026-02-03T20:15:56.087Z'
   - VulnerabilityID: CVE-2018-15727
     VendorIDs:
     - GHSA-rgjg-66cx-5x9m
@@ -16507,7 +16514,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61730
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
-    LastModifiedDate: '2026-02-02T18:16:12.647Z'
+    LastModifiedDate: '2026-02-03T20:36:41.3Z'
 - Target: usr/share/grafana/bin/grafana-cli
   Class: lang-pkgs
   Type: gobinary
@@ -18960,7 +18967,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61730
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
-    LastModifiedDate: '2026-02-02T18:16:12.647Z'
+    LastModifiedDate: '2026-02-03T20:36:41.3Z'
 - Target: usr/share/grafana/bin/grafana-server
   Class: lang-pkgs
   Type: gobinary
@@ -21413,4 +21420,4 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61730
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
-    LastModifiedDate: '2026-02-02T18:16:12.647Z'
+    LastModifiedDate: '2026-02-03T20:36:41.3Z'
