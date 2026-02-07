@@ -1405,7 +1405,9 @@
     - CWE-22
     - CWE-732
     VendorSeverity:
+      alma: 3
       ghsa: 3
+      oracle-oval: 3
       redhat: 3
     CVSS:
       ghsa:
@@ -1415,12 +1417,17 @@
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
         V3Score: 7.1
     References:
+    - https://access.redhat.com/errata/RHSA-2026:1902
     - https://access.redhat.com/security/cve/CVE-2026-24049
+    - https://bugzilla.redhat.com/2431959
+    - https://errata.almalinux.org/10/ALSA-2026-1902.html
     - https://github.com/pypa/wheel
     - https://github.com/pypa/wheel/commit/7a7d2de96b22a9adf9208afcc9547e1001569fef
     - https://github.com/pypa/wheel/commit/934fe177ff912c8e03d5ae951d3805e1fd90ba5e
     - https://github.com/pypa/wheel/releases/tag/0.46.2
     - https://github.com/pypa/wheel/security/advisories/GHSA-8rrh-rw8j-w5fx
+    - https://linux.oracle.com/cve/CVE-2026-24049.html
+    - https://linux.oracle.com/errata/ELSA-2026-1939.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-24049
     - https://www.cve.org/CVERecord?id=CVE-2026-24049
     PublishedDate: '2026-01-22T05:16:23.157Z'
@@ -4071,11 +4078,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -4127,12 +4134,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1380
+    - https://access.redhat.com/errata/RHSA-2026:1381
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2026-1380.html
+    - https://errata.almalinux.org/9/ALSA-2026-1381.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -4168,6 +4175,7 @@
     Description: The net/url package does not set a limit on the number of query parameters in a query. While the maximum size of query parameters in URLs is generally limited by the maximum request header size, the net/http.Request.ParseForm method can parse large URL-encoded forms. Parsing a large form containing many unique query parameters can cause excessive memory consumption.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 3
       redhat: 3
     CVSS:
@@ -4211,6 +4219,7 @@
     Description: archive/zip uses a super-linear file name indexing algorithm that is invoked the first time a file in an archive is opened. This can lead to a denial of service when consuming a maliciously constructed ZIP archive.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 2
       redhat: 2
     CVSS:
@@ -4271,12 +4280,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1518
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/8/ALSA-2026-1518.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -4329,13 +4338,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -4851,6 +4859,34 @@
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
     LastModifiedDate: '2026-02-03T20:36:41.3Z'
+  - VulnerabilityID: CVE-2025-68121
+    VendorIDs:
+    - GO-2026-4337
+    PkgID: stdlib@v1.24.5
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.24.5
+      UID: 947642ee78d5d9b6
+    InstalledVersion: v1.24.5
+    FixedVersion: 1.24.13, 1.25.7, 1.26.0-rc.3
+    Status: fixed
+    Layer:
+      Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d576cc7fbfc24b686
+      DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f2d229b68f52d773
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-68121
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:e4394a34371d5d6977a9167e8d0020adc5134308260bfad644a19d4ec61b5197
+    Title: '[crypto/tls: Config.Clone copies automatically generated session ticket keys, session resumption does not account for the expiration of full certificate chain]'
+    Description: During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/737700
+    - https://go.dev/issue/77217
+    - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
+    - https://pkg.go.dev/vuln/GO-2026-4337
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -7376,11 +7412,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -7432,12 +7468,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1380
+    - https://access.redhat.com/errata/RHSA-2026:1381
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2026-1380.html
+    - https://errata.almalinux.org/9/ALSA-2026-1381.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -7473,6 +7509,7 @@
     Description: The net/url package does not set a limit on the number of query parameters in a query. While the maximum size of query parameters in URLs is generally limited by the maximum request header size, the net/http.Request.ParseForm method can parse large URL-encoded forms. Parsing a large form containing many unique query parameters can cause excessive memory consumption.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 3
       redhat: 3
     CVSS:
@@ -7516,6 +7553,7 @@
     Description: archive/zip uses a super-linear file name indexing algorithm that is invoked the first time a file in an archive is opened. This can lead to a denial of service when consuming a maliciously constructed ZIP archive.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 2
       redhat: 2
     CVSS:
@@ -7576,12 +7614,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1518
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/8/ALSA-2026-1518.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -7634,13 +7672,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -8156,6 +8193,34 @@
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
     LastModifiedDate: '2026-02-03T20:36:41.3Z'
+  - VulnerabilityID: CVE-2025-68121
+    VendorIDs:
+    - GO-2026-4337
+    PkgID: stdlib@v1.24.5
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.24.5
+      UID: f7b8ab7708e95856
+    InstalledVersion: v1.24.5
+    FixedVersion: 1.24.13, 1.25.7, 1.26.0-rc.3
+    Status: fixed
+    Layer:
+      Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d576cc7fbfc24b686
+      DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f2d229b68f52d773
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-68121
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:26116a70d36242704243f36c7cf36df070a1dcb6138e1c5f85f2e27e747b0a46
+    Title: '[crypto/tls: Config.Clone copies automatically generated session ticket keys, session resumption does not account for the expiration of full certificate chain]'
+    Description: During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/737700
+    - https://go.dev/issue/77217
+    - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
+    - https://pkg.go.dev/vuln/GO-2026-4337
 - Target: usr/share/grafana/bin/grafana
   Class: lang-pkgs
   Type: gobinary
@@ -14084,7 +14149,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -14105,12 +14170,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -15232,13 +15297,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
@@ -15735,11 +15801,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -15791,12 +15857,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1380
+    - https://access.redhat.com/errata/RHSA-2026:1381
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2026-1380.html
+    - https://errata.almalinux.org/9/ALSA-2026-1381.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -15832,6 +15898,7 @@
     Description: The net/url package does not set a limit on the number of query parameters in a query. While the maximum size of query parameters in URLs is generally limited by the maximum request header size, the net/http.Request.ParseForm method can parse large URL-encoded forms. Parsing a large form containing many unique query parameters can cause excessive memory consumption.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 3
       redhat: 3
     CVSS:
@@ -15875,6 +15942,7 @@
     Description: archive/zip uses a super-linear file name indexing algorithm that is invoked the first time a file in an archive is opened. This can lead to a denial of service when consuming a maliciously constructed ZIP archive.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 2
       redhat: 2
     CVSS:
@@ -15935,12 +16003,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1518
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/8/ALSA-2026-1518.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -15993,13 +16061,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -16515,6 +16582,34 @@
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
     LastModifiedDate: '2026-02-03T20:36:41.3Z'
+  - VulnerabilityID: CVE-2025-68121
+    VendorIDs:
+    - GO-2026-4337
+    PkgID: stdlib@v1.24.4
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.24.4
+      UID: 4a6fd1e276d5ebfd
+    InstalledVersion: v1.24.4
+    FixedVersion: 1.24.13, 1.25.7, 1.26.0-rc.3
+    Status: fixed
+    Layer:
+      Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d576cc7fbfc24b686
+      DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f2d229b68f52d773
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-68121
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:cedcdd50d5f78c4a5ff71eb9e338f119da104ca894e1c773e217eccb4eb6c5aa
+    Title: '[crypto/tls: Config.Clone copies automatically generated session ticket keys, session resumption does not account for the expiration of full certificate chain]'
+    Description: During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/737700
+    - https://go.dev/issue/77217
+    - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
+    - https://pkg.go.dev/vuln/GO-2026-4337
 - Target: usr/share/grafana/bin/grafana-cli
   Class: lang-pkgs
   Type: gobinary
@@ -16677,7 +16772,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -16698,12 +16793,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -17825,13 +17920,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
@@ -18188,11 +18284,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -18244,12 +18340,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1380
+    - https://access.redhat.com/errata/RHSA-2026:1381
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2026-1380.html
+    - https://errata.almalinux.org/9/ALSA-2026-1381.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -18285,6 +18381,7 @@
     Description: The net/url package does not set a limit on the number of query parameters in a query. While the maximum size of query parameters in URLs is generally limited by the maximum request header size, the net/http.Request.ParseForm method can parse large URL-encoded forms. Parsing a large form containing many unique query parameters can cause excessive memory consumption.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 3
       redhat: 3
     CVSS:
@@ -18328,6 +18425,7 @@
     Description: archive/zip uses a super-linear file name indexing algorithm that is invoked the first time a file in an archive is opened. This can lead to a denial of service when consuming a maliciously constructed ZIP archive.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 2
       redhat: 2
     CVSS:
@@ -18388,12 +18486,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1518
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/8/ALSA-2026-1518.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -18446,13 +18544,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -18968,6 +19065,34 @@
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
     LastModifiedDate: '2026-02-03T20:36:41.3Z'
+  - VulnerabilityID: CVE-2025-68121
+    VendorIDs:
+    - GO-2026-4337
+    PkgID: stdlib@v1.24.4
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.24.4
+      UID: 44ef8c97c6b72d3c
+    InstalledVersion: v1.24.4
+    FixedVersion: 1.24.13, 1.25.7, 1.26.0-rc.3
+    Status: fixed
+    Layer:
+      Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d576cc7fbfc24b686
+      DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f2d229b68f52d773
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-68121
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:b8f4630d1dd4ced9dd9922913b3212fb0dc0f71559fdc52c8a1e7a22a9be0f37
+    Title: '[crypto/tls: Config.Clone copies automatically generated session ticket keys, session resumption does not account for the expiration of full certificate chain]'
+    Description: During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/737700
+    - https://go.dev/issue/77217
+    - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
+    - https://pkg.go.dev/vuln/GO-2026-4337
 - Target: usr/share/grafana/bin/grafana-server
   Class: lang-pkgs
   Type: gobinary
@@ -19130,7 +19255,7 @@
     CweIDs:
     - CWE-290
     VendorSeverity:
-      alma: 2
+      alma: 4
       bitnami: 4
       ghsa: 4
       nvd: 4
@@ -19151,12 +19276,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 9.8
     References:
-    - https://access.redhat.com/errata/RHSA-2023:6972
+    - https://access.redhat.com/errata/RHSA-2023:4030
     - https://access.redhat.com/security/cve/CVE-2023-3128
     - https://bugzilla.redhat.com/2213626
     - https://bugzilla.redhat.com/show_bug.cgi?id=2213626
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3128
-    - https://errata.almalinux.org/8/ALSA-2023-6972.html
+    - https://errata.almalinux.org/9/ALSA-2023-4030.html
     - https://errata.rockylinux.org/RLSA-2023:4030
     - https://github.com/grafana/bugbounty/security/advisories/GHSA-gxh2-6vvc-rrgp
     - https://github.com/grafana/grafana
@@ -20278,13 +20403,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
     References:
-    - https://access.redhat.com/errata/RHSA-2023:2784
+    - https://access.redhat.com/errata/RHSA-2023:2167
     - https://access.redhat.com/security/cve/CVE-2022-39229
     - https://bugzilla.redhat.com/2124669
+    - https://bugzilla.redhat.com/2125514
     - https://bugzilla.redhat.com/2131149
     - https://bugzilla.redhat.com/2132868
     - https://bugzilla.redhat.com/2132872
-    - https://errata.almalinux.org/8/ALSA-2023-2784.html
+    - https://errata.almalinux.org/9/ALSA-2023-2167.html
     - https://github.com/grafana/grafana
     - https://github.com/grafana/grafana/commit/5644758f0c5ae9955a4e5480d71f9bef57fdce35
     - https://github.com/grafana/grafana/releases/tag/v9.1.8
@@ -20641,11 +20767,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20983
+    - https://access.redhat.com/errata/RHSA-2025:20909
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/10/ALSA-2025-20983.html
+    - https://errata.almalinux.org/9/ALSA-2025-20909.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -20697,12 +20823,12 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1380
+    - https://access.redhat.com/errata/RHSA-2026:1381
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/8/ALSA-2026-1380.html
+    - https://errata.almalinux.org/9/ALSA-2026-1381.html
     - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
@@ -20738,6 +20864,7 @@
     Description: The net/url package does not set a limit on the number of query parameters in a query. While the maximum size of query parameters in URLs is generally limited by the maximum request header size, the net/http.Request.ParseForm method can parse large URL-encoded forms. Parsing a large form containing many unique query parameters can cause excessive memory consumption.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 3
       redhat: 3
     CVSS:
@@ -20781,6 +20908,7 @@
     Description: archive/zip uses a super-linear file name indexing algorithm that is invoked the first time a file in an archive is opened. This can lead to a denial of service when consuming a maliciously constructed ZIP archive.
     Severity: HIGH
     VendorSeverity:
+      azure: 2
       bitnami: 2
       redhat: 2
     CVSS:
@@ -20841,12 +20969,12 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1518
+    - https://access.redhat.com/errata/RHSA-2026:0923
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/8/ALSA-2026-1518.html
+    - https://errata.almalinux.org/9/ALSA-2026-0923.html
     - https://errata.rockylinux.org/RLSA-2026:0923
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
@@ -20899,13 +21027,12 @@
         V3Score: 6.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:22668
+    - https://access.redhat.com/errata/RHSA-2025:22005
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
-    - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://errata.almalinux.org/8/ALSA-2025-22668.html
+    - https://errata.almalinux.org/9/ALSA-2025-22005.html
     - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
@@ -21421,3 +21548,31 @@
     - https://pkg.go.dev/vuln/GO-2026-4340
     PublishedDate: '2026-01-28T20:16:09.94Z'
     LastModifiedDate: '2026-02-03T20:36:41.3Z'
+  - VulnerabilityID: CVE-2025-68121
+    VendorIDs:
+    - GO-2026-4337
+    PkgID: stdlib@v1.24.4
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.24.4
+      UID: 33fae79fadb1d576
+    InstalledVersion: v1.24.4
+    FixedVersion: 1.24.13, 1.25.7, 1.26.0-rc.3
+    Status: fixed
+    Layer:
+      Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d576cc7fbfc24b686
+      DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f2d229b68f52d773
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2025-68121
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:bc3b29f4839dcbdc8f8e40e5c2a1e3b5e9f328fff5bf13297f78cd3a073c0605
+    Title: '[crypto/tls: Config.Clone copies automatically generated session ticket keys, session resumption does not account for the expiration of full certificate chain]'
+    Description: During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/737700
+    - https://go.dev/issue/77217
+    - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
+    - https://pkg.go.dev/vuln/GO-2026-4337
