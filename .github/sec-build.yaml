@@ -785,10 +785,14 @@
     - CWE-297
     - CWE-295
     VendorSeverity:
+      amazon: 2
       ghsa: 2
       nvd: 2
       redhat: 2
     CVSS:
+      ghsa:
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:L/SA:N
+        V40Score: 6.3
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 4.8
@@ -1315,10 +1319,17 @@
     VendorSeverity:
       amazon: 2
       azure: 2
+      bitnami: 2
       ghsa: 2
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+        V40Score: 5.9
+      ghsa:
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:A/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N
+        V40Score: 5.9
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N
         V3Score: 5.3
@@ -1366,6 +1377,12 @@
       ghsa: 1
       redhat: 1
     CVSS:
+      bitnami:
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+        V40Score: 2
+      ghsa:
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
+        V40Score: 2
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N
         V3Score: 3.9
@@ -1411,6 +1428,7 @@
       alma: 3
       amazon: 3
       ghsa: 3
+      nvd: 2
       oracle-oval: 3
       redhat: 3
       rocky: 3
@@ -1418,17 +1436,20 @@
       ghsa:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
         V3Score: 7.1
+      nvd:
+        V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
+        V3Score: 5.5
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H
         V3Score: 7.1
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1939
+    - https://access.redhat.com/errata/RHSA-2026:1902
     - https://access.redhat.com/security/cve/CVE-2026-24049
     - https://bugzilla.redhat.com/2431959
     - https://bugzilla.redhat.com/show_bug.cgi?id=2431959
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-24049
-    - https://errata.almalinux.org/9/ALSA-2026-1939.html
-    - https://errata.rockylinux.org/RLSA-2026:2090
+    - https://errata.almalinux.org/10/ALSA-2026-1902.html
+    - https://errata.rockylinux.org/RLSA-2026:1939
     - https://github.com/pypa/wheel
     - https://github.com/pypa/wheel/commit/7a7d2de96b22a9adf9208afcc9547e1001569fef
     - https://github.com/pypa/wheel/commit/934fe177ff912c8e03d5ae951d3805e1fd90ba5e
@@ -1439,7 +1460,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2026-24049
     - https://www.cve.org/CVERecord?id=CVE-2026-24049
     PublishedDate: '2026-01-22T05:16:23.157Z'
-    LastModifiedDate: '2026-01-26T15:04:59.737Z'
+    LastModifiedDate: '2026-02-18T14:56:48.657Z'
 - Target: usr/bin/prometheus
   Class: lang-pkgs
   Type: gobinary
@@ -3846,7 +3867,9 @@
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
         V3Score: 4.6
+        V40Score: 5.1
       nvd:
         V3Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
         V3Score: 4.6
@@ -4076,6 +4099,7 @@
       bitnami: 4
       nvd: 4
       oracle-oval: 3
+      photon: 4
       redhat: 2
     CVSS:
       bitnami:
@@ -4088,18 +4112,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 7.4
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-68121
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/737700
     - https://go.dev/issue/77217
     - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
     - https://linux.oracle.com/cve/CVE-2025-68121.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-68121
     - https://pkg.go.dev/vuln/GO-2026-4337
     - https://www.cve.org/CVERecord?id=CVE-2025-68121
@@ -4137,6 +4161,7 @@
       bitnami: 3
       cbl-mariner: 3
       oracle-oval: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -4147,11 +4172,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20909
+    - https://access.redhat.com/errata/RHSA-2025:20983
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/9/ALSA-2025-20909.html
+    - https://errata.almalinux.org/10/ALSA-2025-20983.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -4192,6 +4217,7 @@
       bitnami: 2
       cbl-mariner: 2
       oracle-oval: 2
+      photon: 2
       redhat: 2
       rocky: 2
     CVSS:
@@ -4203,13 +4229,13 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1381
+    - https://access.redhat.com/errata/RHSA-2026:1837
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/9/ALSA-2026-1381.html
-    - https://errata.rockylinux.org/RLSA-2025:23948
+    - https://errata.almalinux.org/10/ALSA-2026-1837.html
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -4252,6 +4278,7 @@
       bitnami: 3
       cbl-mariner: 2
       oracle-oval: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -4261,18 +4288,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61726
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736712
     - https://go.dev/issue/77101
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61726.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61726
     - https://pkg.go.dev/vuln/GO-2026-4341
     - https://www.cve.org/CVERecord?id=CVE-2025-61726
@@ -4309,6 +4336,7 @@
       azure: 2
       bitnami: 2
       oracle-oval: 3
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -4319,18 +4347,18 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2026/01/15/4
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61728
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736713
     - https://go.dev/issue/77102
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61728.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61728
     - https://pkg.go.dev/vuln/GO-2026-4342
     - https://www.cve.org/CVERecord?id=CVE-2025-61728
@@ -4366,6 +4394,7 @@
       amazon: 3
       bitnami: 3
       oracle-oval: 3
+      photon: 3
       redhat: 3
       rocky: 3
     CVSS:
@@ -4376,18 +4405,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1908
+    - https://access.redhat.com/errata/RHSA-2026:1907
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/9/ALSA-2026-1908.html
-    - https://errata.rockylinux.org/RLSA-2026:2323
+    - https://errata.almalinux.org/10/ALSA-2026-1907.html
+    - https://errata.rockylinux.org/RLSA-2026:1908
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
     - https://groups.google.com/g/golang-announce/c/8FJoBkPddm4
     - https://linux.oracle.com/cve/CVE-2025-61729.html
-    - https://linux.oracle.com/errata/ELSA-2026-2323.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61729
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
@@ -4419,6 +4448,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
@@ -4477,11 +4507,9 @@
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22005.html
-    - https://errata.rockylinux.org/RLSA-2025:22668
+    - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -4518,6 +4546,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -4565,6 +4594,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -4611,6 +4641,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 1
     CVSS:
       bitnami:
@@ -4658,6 +4689,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -4706,6 +4738,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -4754,6 +4787,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -4801,6 +4835,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -4849,6 +4884,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -4894,6 +4930,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -4941,6 +4978,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -7244,7 +7282,9 @@
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
         V3Score: 4.6
+        V40Score: 5.1
       nvd:
         V3Vector: CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
         V3Score: 4.6
@@ -7474,6 +7514,7 @@
       bitnami: 4
       nvd: 4
       oracle-oval: 3
+      photon: 4
       redhat: 2
     CVSS:
       bitnami:
@@ -7486,18 +7527,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 7.4
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-68121
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/737700
     - https://go.dev/issue/77217
     - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
     - https://linux.oracle.com/cve/CVE-2025-68121.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-68121
     - https://pkg.go.dev/vuln/GO-2026-4337
     - https://www.cve.org/CVERecord?id=CVE-2025-68121
@@ -7535,6 +7576,7 @@
       bitnami: 3
       cbl-mariner: 3
       oracle-oval: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -7545,11 +7587,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20909
+    - https://access.redhat.com/errata/RHSA-2025:20983
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/9/ALSA-2025-20909.html
+    - https://errata.almalinux.org/10/ALSA-2025-20983.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -7590,6 +7632,7 @@
       bitnami: 2
       cbl-mariner: 2
       oracle-oval: 2
+      photon: 2
       redhat: 2
       rocky: 2
     CVSS:
@@ -7601,13 +7644,13 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1381
+    - https://access.redhat.com/errata/RHSA-2026:1837
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/9/ALSA-2026-1381.html
-    - https://errata.rockylinux.org/RLSA-2025:23948
+    - https://errata.almalinux.org/10/ALSA-2026-1837.html
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -7650,6 +7693,7 @@
       bitnami: 3
       cbl-mariner: 2
       oracle-oval: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -7659,18 +7703,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61726
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736712
     - https://go.dev/issue/77101
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61726.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61726
     - https://pkg.go.dev/vuln/GO-2026-4341
     - https://www.cve.org/CVERecord?id=CVE-2025-61726
@@ -7707,6 +7751,7 @@
       azure: 2
       bitnami: 2
       oracle-oval: 3
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -7717,18 +7762,18 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2026/01/15/4
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61728
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736713
     - https://go.dev/issue/77102
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61728.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61728
     - https://pkg.go.dev/vuln/GO-2026-4342
     - https://www.cve.org/CVERecord?id=CVE-2025-61728
@@ -7764,6 +7809,7 @@
       amazon: 3
       bitnami: 3
       oracle-oval: 3
+      photon: 3
       redhat: 3
       rocky: 3
     CVSS:
@@ -7774,18 +7820,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1908
+    - https://access.redhat.com/errata/RHSA-2026:1907
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/9/ALSA-2026-1908.html
-    - https://errata.rockylinux.org/RLSA-2026:2323
+    - https://errata.almalinux.org/10/ALSA-2026-1907.html
+    - https://errata.rockylinux.org/RLSA-2026:1908
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
     - https://groups.google.com/g/golang-announce/c/8FJoBkPddm4
     - https://linux.oracle.com/cve/CVE-2025-61729.html
-    - https://linux.oracle.com/errata/ELSA-2026-2323.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61729
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
@@ -7817,6 +7863,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
@@ -7875,11 +7922,9 @@
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22005.html
-    - https://errata.rockylinux.org/RLSA-2025:22668
+    - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -7916,6 +7961,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -7963,6 +8009,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -8009,6 +8056,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 1
     CVSS:
       bitnami:
@@ -8056,6 +8104,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -8104,6 +8153,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -8152,6 +8202,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -8199,6 +8250,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -8247,6 +8299,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -8292,6 +8345,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -8339,6 +8393,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -14412,7 +14467,9 @@
         V3Score: 5.5
       ghsa:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
         V3Score: 5.5
+        V40Score: 7.1
       nvd:
         V2Vector: AV:L/AC:L/Au:N/C:P/I:N/A:N
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
@@ -14556,7 +14613,9 @@
         V3Score: 6.6
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
         V3Score: 6.6
+        V40Score: 7.5
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
         V3Score: 6.6
@@ -14625,7 +14684,9 @@
         V3Score: 5.3
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:A/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N
         V3Score: 6.7
+        V40Score: 7.3
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
         V3Score: 5.3
@@ -14981,7 +15042,9 @@
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -15142,7 +15205,9 @@
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:P
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P
         V3Score: 6.2
+        V40Score: 5.7
       nvd:
         V2Vector: AV:N/AC:L/Au:S/C:P/I:N/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
@@ -15206,7 +15271,9 @@
         V3Score: 5.4
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 5.4
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:S/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
@@ -15269,7 +15336,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.3
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -15337,7 +15406,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -15400,7 +15471,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -15470,7 +15543,9 @@
         V3Score: 4.3
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N
         V3Score: 4.3
+        V40Score: 5.1
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
@@ -15536,7 +15611,9 @@
         V3Score: 3.5
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:L
         V3Score: 6.7
+        V40Score: 5.3
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
         V3Score: 3.5
@@ -15784,7 +15861,9 @@
         V3Score: 2.7
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
         V3Score: 2.2
+        V40Score: 2.1
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N
         V3Score: 2.7
@@ -15836,6 +15915,9 @@
       ghsa: 2
       nvd: 3
     CVSS:
+      ghsa:
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H
+        V40Score: 5.8
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
         V3Score: 8.8
@@ -15876,6 +15958,9 @@
       ghsa: 2
       redhat: 2
     CVSS:
+      ghsa:
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:H
+        V40Score: 5.8
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:L
         V3Score: 6
@@ -16021,6 +16106,7 @@
       bitnami: 4
       nvd: 4
       oracle-oval: 3
+      photon: 4
       redhat: 2
     CVSS:
       bitnami:
@@ -16033,18 +16119,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 7.4
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-68121
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/737700
     - https://go.dev/issue/77217
     - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
     - https://linux.oracle.com/cve/CVE-2025-68121.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-68121
     - https://pkg.go.dev/vuln/GO-2026-4337
     - https://www.cve.org/CVERecord?id=CVE-2025-68121
@@ -16082,6 +16168,7 @@
       bitnami: 3
       cbl-mariner: 3
       oracle-oval: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -16092,11 +16179,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20909
+    - https://access.redhat.com/errata/RHSA-2025:20983
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/9/ALSA-2025-20909.html
+    - https://errata.almalinux.org/10/ALSA-2025-20983.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -16137,6 +16224,7 @@
       bitnami: 2
       cbl-mariner: 2
       oracle-oval: 2
+      photon: 2
       redhat: 2
       rocky: 2
     CVSS:
@@ -16148,13 +16236,13 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1381
+    - https://access.redhat.com/errata/RHSA-2026:1837
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/9/ALSA-2026-1381.html
-    - https://errata.rockylinux.org/RLSA-2025:23948
+    - https://errata.almalinux.org/10/ALSA-2026-1837.html
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -16197,6 +16285,7 @@
       bitnami: 3
       cbl-mariner: 2
       oracle-oval: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -16206,18 +16295,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61726
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736712
     - https://go.dev/issue/77101
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61726.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61726
     - https://pkg.go.dev/vuln/GO-2026-4341
     - https://www.cve.org/CVERecord?id=CVE-2025-61726
@@ -16254,6 +16343,7 @@
       azure: 2
       bitnami: 2
       oracle-oval: 3
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -16264,18 +16354,18 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2026/01/15/4
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61728
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736713
     - https://go.dev/issue/77102
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61728.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61728
     - https://pkg.go.dev/vuln/GO-2026-4342
     - https://www.cve.org/CVERecord?id=CVE-2025-61728
@@ -16311,6 +16401,7 @@
       amazon: 3
       bitnami: 3
       oracle-oval: 3
+      photon: 3
       redhat: 3
       rocky: 3
     CVSS:
@@ -16321,18 +16412,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1908
+    - https://access.redhat.com/errata/RHSA-2026:1907
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/9/ALSA-2026-1908.html
-    - https://errata.rockylinux.org/RLSA-2026:2323
+    - https://errata.almalinux.org/10/ALSA-2026-1907.html
+    - https://errata.rockylinux.org/RLSA-2026:1908
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
     - https://groups.google.com/g/golang-announce/c/8FJoBkPddm4
     - https://linux.oracle.com/cve/CVE-2025-61729.html
-    - https://linux.oracle.com/errata/ELSA-2026-2323.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61729
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
@@ -16364,6 +16455,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
@@ -16422,11 +16514,9 @@
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22005.html
-    - https://errata.rockylinux.org/RLSA-2025:22668
+    - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -16463,6 +16553,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -16510,6 +16601,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -16556,6 +16648,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 1
     CVSS:
       bitnami:
@@ -16603,6 +16696,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -16651,6 +16745,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -16699,6 +16794,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -16746,6 +16842,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -16794,6 +16891,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -16839,6 +16937,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -16886,6 +16985,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -17148,7 +17248,9 @@
         V3Score: 5.5
       ghsa:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
         V3Score: 5.5
+        V40Score: 7.1
       nvd:
         V2Vector: AV:L/AC:L/Au:N/C:P/I:N/A:N
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
@@ -17292,7 +17394,9 @@
         V3Score: 6.6
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
         V3Score: 6.6
+        V40Score: 7.5
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
         V3Score: 6.6
@@ -17361,7 +17465,9 @@
         V3Score: 5.3
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:A/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N
         V3Score: 6.7
+        V40Score: 7.3
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
         V3Score: 5.3
@@ -17717,7 +17823,9 @@
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -17878,7 +17986,9 @@
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:P
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P
         V3Score: 6.2
+        V40Score: 5.7
       nvd:
         V2Vector: AV:N/AC:L/Au:S/C:P/I:N/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
@@ -17942,7 +18052,9 @@
         V3Score: 5.4
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 5.4
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:S/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
@@ -18005,7 +18117,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.3
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -18073,7 +18187,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -18136,7 +18252,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -18206,7 +18324,9 @@
         V3Score: 4.3
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N
         V3Score: 4.3
+        V40Score: 5.1
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
@@ -18272,7 +18392,9 @@
         V3Score: 3.5
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:L
         V3Score: 6.7
+        V40Score: 5.3
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
         V3Score: 3.5
@@ -18520,7 +18642,9 @@
         V3Score: 2.7
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
         V3Score: 2.2
+        V40Score: 2.1
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N
         V3Score: 2.7
@@ -18574,6 +18698,7 @@
       bitnami: 4
       nvd: 4
       oracle-oval: 3
+      photon: 4
       redhat: 2
     CVSS:
       bitnami:
@@ -18586,18 +18711,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 7.4
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-68121
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/737700
     - https://go.dev/issue/77217
     - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
     - https://linux.oracle.com/cve/CVE-2025-68121.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-68121
     - https://pkg.go.dev/vuln/GO-2026-4337
     - https://www.cve.org/CVERecord?id=CVE-2025-68121
@@ -18635,6 +18760,7 @@
       bitnami: 3
       cbl-mariner: 3
       oracle-oval: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -18645,11 +18771,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20909
+    - https://access.redhat.com/errata/RHSA-2025:20983
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/9/ALSA-2025-20909.html
+    - https://errata.almalinux.org/10/ALSA-2025-20983.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -18690,6 +18816,7 @@
       bitnami: 2
       cbl-mariner: 2
       oracle-oval: 2
+      photon: 2
       redhat: 2
       rocky: 2
     CVSS:
@@ -18701,13 +18828,13 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1381
+    - https://access.redhat.com/errata/RHSA-2026:1837
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/9/ALSA-2026-1381.html
-    - https://errata.rockylinux.org/RLSA-2025:23948
+    - https://errata.almalinux.org/10/ALSA-2026-1837.html
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -18750,6 +18877,7 @@
       bitnami: 3
       cbl-mariner: 2
       oracle-oval: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -18759,18 +18887,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61726
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736712
     - https://go.dev/issue/77101
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61726.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61726
     - https://pkg.go.dev/vuln/GO-2026-4341
     - https://www.cve.org/CVERecord?id=CVE-2025-61726
@@ -18807,6 +18935,7 @@
       azure: 2
       bitnami: 2
       oracle-oval: 3
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -18817,18 +18946,18 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2026/01/15/4
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61728
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736713
     - https://go.dev/issue/77102
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61728.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61728
     - https://pkg.go.dev/vuln/GO-2026-4342
     - https://www.cve.org/CVERecord?id=CVE-2025-61728
@@ -18864,6 +18993,7 @@
       amazon: 3
       bitnami: 3
       oracle-oval: 3
+      photon: 3
       redhat: 3
       rocky: 3
     CVSS:
@@ -18874,18 +19004,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1908
+    - https://access.redhat.com/errata/RHSA-2026:1907
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/9/ALSA-2026-1908.html
-    - https://errata.rockylinux.org/RLSA-2026:2323
+    - https://errata.almalinux.org/10/ALSA-2026-1907.html
+    - https://errata.rockylinux.org/RLSA-2026:1908
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
     - https://groups.google.com/g/golang-announce/c/8FJoBkPddm4
     - https://linux.oracle.com/cve/CVE-2025-61729.html
-    - https://linux.oracle.com/errata/ELSA-2026-2323.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61729
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
@@ -18917,6 +19047,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
@@ -18975,11 +19106,9 @@
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22005.html
-    - https://errata.rockylinux.org/RLSA-2025:22668
+    - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -19016,6 +19145,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -19063,6 +19193,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -19109,6 +19240,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 1
     CVSS:
       bitnami:
@@ -19156,6 +19288,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -19204,6 +19337,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -19252,6 +19386,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -19299,6 +19434,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -19347,6 +19483,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -19392,6 +19529,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -19439,6 +19577,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -19701,7 +19840,9 @@
         V3Score: 5.5
       ghsa:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N
         V3Score: 5.5
+        V40Score: 7.1
       nvd:
         V2Vector: AV:L/AC:L/Au:N/C:P/I:N/A:N
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
@@ -19845,7 +19986,9 @@
         V3Score: 6.6
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
         V3Score: 6.6
+        V40Score: 7.5
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
         V3Score: 6.6
@@ -19914,7 +20057,9 @@
         V3Score: 5.3
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:A/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N
         V3Score: 6.7
+        V40Score: 7.3
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
         V3Score: 5.3
@@ -20270,7 +20415,9 @@
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -20431,7 +20578,9 @@
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:P
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P
         V3Score: 6.2
+        V40Score: 5.7
       nvd:
         V2Vector: AV:N/AC:L/Au:S/C:P/I:N/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N
@@ -20495,7 +20644,9 @@
         V3Score: 5.4
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 5.4
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:S/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N
@@ -20558,7 +20709,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.3
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -20626,7 +20779,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -20689,7 +20844,9 @@
         V3Score: 6.1
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N
         V3Score: 6.1
+        V40Score: 5.1
       nvd:
         V2Vector: AV:N/AC:M/Au:N/C:N/I:P/A:N
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
@@ -20759,7 +20916,9 @@
         V3Score: 4.3
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N
         V3Score: 4.3
+        V40Score: 5.1
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
         V3Score: 4.3
@@ -20825,7 +20984,9 @@
         V3Score: 3.5
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L
+        V40Vector: CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:H/SI:H/SA:L
         V3Score: 6.7
+        V40Score: 5.3
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N
         V3Score: 3.5
@@ -21073,7 +21234,9 @@
         V3Score: 2.7
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:L/A:N
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
         V3Score: 2.2
+        V40Score: 2.1
       nvd:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N
         V3Score: 2.7
@@ -21127,6 +21290,7 @@
       bitnami: 4
       nvd: 4
       oracle-oval: 3
+      photon: 4
       redhat: 2
     CVSS:
       bitnami:
@@ -21139,18 +21303,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 7.4
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-68121
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/737700
     - https://go.dev/issue/77217
     - https://groups.google.com/g/golang-announce/c/K09ubi9FQFk
     - https://linux.oracle.com/cve/CVE-2025-68121.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-68121
     - https://pkg.go.dev/vuln/GO-2026-4337
     - https://www.cve.org/CVERecord?id=CVE-2025-68121
@@ -21188,6 +21352,7 @@
       bitnami: 3
       cbl-mariner: 3
       oracle-oval: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -21198,11 +21363,11 @@
         V3Score: 7
     References:
     - http://www.openwall.com/lists/oss-security/2025/08/06/1
-    - https://access.redhat.com/errata/RHSA-2025:20909
+    - https://access.redhat.com/errata/RHSA-2025:20983
     - https://access.redhat.com/security/cve/CVE-2025-47907
     - https://bugzilla.redhat.com/2387083
     - https://bugzilla.redhat.com/2393152
-    - https://errata.almalinux.org/9/ALSA-2025-20909.html
+    - https://errata.almalinux.org/10/ALSA-2025-20983.html
     - https://go.dev/cl/693735
     - https://go.dev/issue/74831
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -21243,6 +21408,7 @@
       bitnami: 2
       cbl-mariner: 2
       oracle-oval: 2
+      photon: 2
       redhat: 2
       rocky: 2
     CVSS:
@@ -21254,13 +21420,13 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2025/10/08/1
-    - https://access.redhat.com/errata/RHSA-2026:1381
+    - https://access.redhat.com/errata/RHSA-2026:1837
     - https://access.redhat.com/security/cve/CVE-2025-58183
     - https://bugzilla.redhat.com/2407258
     - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
-    - https://errata.almalinux.org/9/ALSA-2026-1381.html
-    - https://errata.rockylinux.org/RLSA-2025:23948
+    - https://errata.almalinux.org/10/ALSA-2026-1837.html
+    - https://errata.rockylinux.org/RLSA-2025:23326
     - https://go.dev/cl/709861
     - https://go.dev/issue/75677
     - https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI
@@ -21303,6 +21469,7 @@
       bitnami: 3
       cbl-mariner: 2
       oracle-oval: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -21312,18 +21479,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61726
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736712
     - https://go.dev/issue/77101
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61726.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61726
     - https://pkg.go.dev/vuln/GO-2026-4341
     - https://www.cve.org/CVERecord?id=CVE-2025-61726
@@ -21360,6 +21527,7 @@
       azure: 2
       bitnami: 2
       oracle-oval: 3
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -21370,18 +21538,18 @@
         V3Score: 7.5
     References:
     - http://www.openwall.com/lists/oss-security/2026/01/15/4
-    - https://access.redhat.com/errata/RHSA-2026:2709
+    - https://access.redhat.com/errata/RHSA-2026:2706
     - https://access.redhat.com/security/cve/CVE-2025-61728
     - https://bugzilla.redhat.com/2434431
     - https://bugzilla.redhat.com/2434432
     - https://bugzilla.redhat.com/2437016
     - https://bugzilla.redhat.com/2437111
-    - https://errata.almalinux.org/9/ALSA-2026-2709.html
+    - https://errata.almalinux.org/10/ALSA-2026-2706.html
     - https://go.dev/cl/736713
     - https://go.dev/issue/77102
     - https://groups.google.com/g/golang-announce/c/Vd2tYVM8eUc
     - https://linux.oracle.com/cve/CVE-2025-61728.html
-    - https://linux.oracle.com/errata/ELSA-2026-2709.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61728
     - https://pkg.go.dev/vuln/GO-2026-4342
     - https://www.cve.org/CVERecord?id=CVE-2025-61728
@@ -21417,6 +21585,7 @@
       amazon: 3
       bitnami: 3
       oracle-oval: 3
+      photon: 3
       redhat: 3
       rocky: 3
     CVSS:
@@ -21427,18 +21596,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
-    - https://access.redhat.com/errata/RHSA-2026:1908
+    - https://access.redhat.com/errata/RHSA-2026:1907
     - https://access.redhat.com/security/cve/CVE-2025-61729
     - https://bugzilla.redhat.com/2418462
     - https://bugzilla.redhat.com/show_bug.cgi?id=2418462
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-61729
-    - https://errata.almalinux.org/9/ALSA-2026-1908.html
-    - https://errata.rockylinux.org/RLSA-2026:2323
+    - https://errata.almalinux.org/10/ALSA-2026-1907.html
+    - https://errata.rockylinux.org/RLSA-2026:1908
     - https://go.dev/cl/725920
     - https://go.dev/issue/76445
     - https://groups.google.com/g/golang-announce/c/8FJoBkPddm4
     - https://linux.oracle.com/cve/CVE-2025-61729.html
-    - https://linux.oracle.com/errata/ELSA-2026-2323.html
+    - https://linux.oracle.com/errata/ELSA-2026-2920.html
     - https://nvd.nist.gov/vuln/detail/CVE-2025-61729
     - https://pkg.go.dev/vuln/GO-2025-4155
     - https://www.cve.org/CVERecord?id=CVE-2025-61729
@@ -21470,6 +21639,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
@@ -21528,11 +21698,9 @@
     - https://access.redhat.com/security/cve/CVE-2025-47906
     - https://bugzilla.redhat.com/2396546
     - https://bugzilla.redhat.com/show_bug.cgi?id=2396546
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2407258
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47906
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183
     - https://errata.almalinux.org/9/ALSA-2025-22005.html
-    - https://errata.rockylinux.org/RLSA-2025:22668
+    - https://errata.rockylinux.org/RLSA-2025:22005
     - https://go.dev/cl/691775
     - https://go.dev/issue/74466
     - https://groups.google.com/g/golang-announce/c/x5MKroML2yM
@@ -21569,6 +21737,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -21616,6 +21785,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -21662,6 +21832,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 1
     CVSS:
       bitnami:
@@ -21709,6 +21880,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -21757,6 +21929,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -21805,6 +21978,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -21852,6 +22026,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -21900,6 +22075,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -21945,6 +22121,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 3
+      photon: 3
       redhat: 2
     CVSS:
       bitnami:
@@ -21992,6 +22169,7 @@
     VendorSeverity:
       amazon: 3
       bitnami: 2
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
