@@ -754,7 +754,196 @@
 │     │                        │                      d229b68f52d773 
 │     │                        ├ FilePath  : openaf/openaf.jar 
 │     │                        ╰ AnalyzedBy: jar 
-│     ╰ Vulnerabilities ─ [0] ╭ VulnerabilityID : CVE-2025-68161 
+│     ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : GHSA-72hv-8253-57qq 
+│                       │     ├ PkgName         : com.fasterxml.jackson.core:jackson-core 
+│                       │     ├ PkgPath         : openaf/openaf.jar 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:maven/com.fasterxml.jackson.core/jackson-core@2.19.2 
+│                       │     │                  ╰ UID : 60d5a004108f3dbe 
+│                       │     ├ InstalledVersion: 2.19.2 
+│                       │     ├ FixedVersion    : 2.18.6, 2.21.1, 3.1.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c
+│                       │     │                  │         23d576cc7fbfc24b686 
+│                       │     │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950
+│                       │     │                            478f2d229b68f52d773 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://github.com/advisories/GHSA-72hv-8253-57qq 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Maven 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Amaven 
+│                       │     ├ Fingerprint     : sha256:c42ca125bb5e78a408c89abb675e57f49ec601c1529d0ac6ecc4e8
+│                       │     │                   de72e14bb6 
+│                       │     ├ Title           : jackson-core: Number Length Constraint Bypass in Async Parser
+│                       │     │                    Leads to Potential DoS Condition 
+│                       │     ├ Description     : ### Summary
+│                       │     │                   The non-blocking (async) JSON parser in `jackson-core`
+│                       │     │                   bypasses the `maxNumberLength` constraint (default: 1000
+│                       │     │                   characters) defined in `StreamReadConstraints`. This allows
+│                       │     │                   an attacker to send JSON with arbitrarily long numbers
+│                       │     │                   through the async parser API, leading to excessive memory
+│                       │     │                   allocation and potential CPU exhaustion, resulting in a
+│                       │     │                   Denial of Service (DoS).
+│                       │     │                   
+│                       │     │                   The standard synchronous parser correctly enforces this
+│                       │     │                   limit, but the async parser fails to do so, creating an
+│                       │     │                   inconsistent enforcement policy.
+│                       │     │                   ### Details
+│                       │     │                   The root cause is that the async parsing path in
+│                       │     │                   `NonBlockingUtf8JsonParserBase` (and related classes) does
+│                       │     │                   not call the methods responsible for number length
+│                       │     │                   validation.
+│                       │     │                   - The number parsing methods (e.g.,
+│                       │     │                   `_finishNumberIntegralPart`) accumulate digits into the
+│                       │     │                   `TextBuffer` without any length checks.
+│                       │     │                   - After parsing, they call `_valueComplete()`, which
+│                       │     │                   finalizes the token but does **not** call `resetInt()` or
+│                       │     │                   `resetFloat()`.
+│                       │     │                   - The `resetInt()`/`resetFloat()` methods in `ParserBase` are
+│                       │     │                    where the `validateIntegerLength()` and `validateFPLength()`
+│                       │     │                    checks are performed.
+│                       │     │                   - Because this validation step is skipped, the
+│                       │     │                   `maxNumberLength` constraint is never enforced in the async
+│                       │     │                   code path.
+│                       │     │                   ### PoC
+│                       │     │                   The following JUnit 5 test demonstrates the vulnerability. It
+│                       │     │                    shows that the async parser accepts a 5,000-digit number,
+│                       │     │                   whereas the limit should be 1,000.
+│                       │     │                   ```java
+│                       │     │                   package tools.jackson.core.unittest.dos;
+│                       │     │                   import java.nio.charset.StandardCharsets;
+│                       │     │                   import org.junit.jupiter.api.Test;
+│                       │     │                   import tools.jackson.core.*;
+│                       │     │                   import tools.jackson.core.exc.StreamConstraintsException;
+│                       │     │                   import tools.jackson.core.json.JsonFactory;
+│                       │     │                   import
+│                       │     │                   tools.jackson.core.json.async.NonBlockingByteArrayJsonParser;
+│                       │     │                   import static org.junit.jupiter.api.Assertions.*;
+│                       │     │                   /**
+│                       │     │                    * POC: Number Length Constraint Bypass in Non-Blocking
+│                       │     │                   (Async) JSON Parsers
+│                       │     │                    *
+│                       │     │                    * Authors: sprabhav7, rohan-repos
+│                       │     │                    * 
+│                       │     │                    * maxNumberLength default = 1000 characters (digits).
+│                       │     │                    * A number with more than 1000 digits should be rejected by
+│                       │     │                   any parser.
+│                       │     │                    * BUG: The async parser never calls resetInt()/resetFloat()
+│                       │     │                   which is where
+│                       │     │                    * validateIntegerLength()/validateFPLength() lives. Instead
+│                       │     │                   it calls
+│                       │     │                    * _valueComplete() which skips all number length
+│                       │     │                    * CWE-770: Allocation of Resources Without Limits or
+│                       │     │                   Throttling
+│                       │     │                    */
+│                       │     │                   class AsyncParserNumberLengthBypassTest {
+│                       │     │                       private static final int MAX_NUMBER_LENGTH = 1000;
+│                       │     │                       private static final int TEST_NUMBER_LENGTH = 5000;
+│                       │     │                       private final JsonFactory factory = new JsonFactory();
+│                       │     │                       // CONTROL: Sync parser correctly rejects a number
+│                       │     │                   exceeding maxNumberLength
+│                       │     │                       @Test
+│                       │     │                       void syncParserRejectsLongNumber() throws Exception {
+│                       │     │                           byte[] payload =
+│                       │     │                   buildPayloadWithLongInteger(TEST_NUMBER_LENGTH);
+│                       │     │                   		
+│                       │     │                   		// Output to console
+│                       │     │                           System.out.println("[SYNC] Parsing " +
+│                       │     │                   TEST_NUMBER_LENGTH + "-digit number (limit: " +
+│                       │     │                   MAX_NUMBER_LENGTH + ")");
+│                       │     │                           try {
+│                       │     │                               try (JsonParser p =
+│                       │     │                   factory.createParser(ObjectReadContext.empty(), payload)) {
+│                       │     │                                   while (p.nextToken() != null) {
+│                       │     │                                       if (p.currentToken() ==
+│                       │     │                   JsonToken.VALUE_NUMBER_INT) {
+│                       │     │                                           System.out.println("[SYNC] Accepted
+│                       │     │                   number with " + p.getText().length() + " digits —
+│                       │     │                   UNEXPECTED");
+│                       │     │                                       }
+│                       │     │                                   }
+│                       │     │                               }
+│                       │     │                               fail("Sync parser must reject a " +
+│                       │     │                   TEST_NUMBER_LENGTH + "-digit number");
+│                       │     │                           } catch (StreamConstraintsException e) {
+│                       │     │                               System.out.println("[SYNC] Rejected with
+│                       │     │                   StreamConstraintsException: " + e.getMessage());
+│                       │     │                           }
+│                       │     │                       }
+│                       │     │                       // VULNERABILITY: Async parser accepts the SAME number
+│                       │     │                   that sync rejects
+│                       │     │                       void asyncParserAcceptsLongNumber() throws Exception {
+│                       │     │                           NonBlockingByteArrayJsonParser p =
+│                       │     │                               (NonBlockingByteArrayJsonParser)
+│                       │     │                   factory.createNonBlockingByteArrayParser(ObjectReadContext.em
+│                       │     │                   pty());
+│                       │     │                           p.feedInput(payload, 0, payload.length);
+│                       │     │                           p.endOfInput();
+│                       │     │                           boolean foundNumber = false;
+│                       │     │                               while (p.nextToken() != null) {
+│                       │     │                                   if (p.currentToken() ==
+│                       │     │                                       foundNumber = true;
+│                       │     │                                       String numberText = p.getText();
+│                       │     │                                       assertEquals(TEST_NUMBER_LENGTH,
+│                       │     │                   numberText.length(),
+│                       │     │                                           "Async parser silently accepted all "
+│                       │     │                    + TEST_NUMBER_LENGTH + " digits");
+│                       │     │                               // Output to console
+│                       │     │                               System.out.println("[ASYNC INT] Accepted number
+│                       │     │                   with " + TEST_NUMBER_LENGTH + " digits — BUG CONFIRMED");
+│                       │     │                               assertTrue(foundNumber, "Parser should have
+│                       │     │                   produced a VALUE_NUMBER_INT token");
+│                       │     │                               fail("Bug is fixed — async parser now correctly
+│                       │     │                   rejects long numbers: " + e.getMessage());
+│                       │     │                           p.close();
+│                       │     │                       private byte[] buildPayloadWithLongInteger(int numDigits)
+│                       │     │                    {
+│                       │     │                           StringBuilder sb = new StringBuilder(numDigits +
+│                       │     │                   10);
+│                       │     │                           sb.append("{\"v\":");
+│                       │     │                           for (int i = 0; i < numDigits; i++) {
+│                       │     │                               sb.append((char) ('1' + (i % 9)));
+│                       │     │                           sb.append('}');
+│                       │     │                           return
+│                       │     │                   sb.toString().getBytes(StandardCharsets.UTF_8);
+│                       │     │                   }
+│                       │     │                   ```
+│                       │     │                   ### Impact
+│                       │     │                   A malicious actor can send a JSON document with an
+│                       │     │                   arbitrarily long number to an application using the async
+│                       │     │                   parser (e.g., in a Spring WebFlux or other reactive
+│                       │     │                   application). This can cause:
+│                       │     │                   1.  **Memory Exhaustion:** Unbounded allocation of memory in
+│                       │     │                   the `TextBuffer` to store the number's digits, leading to an
+│                       │     │                   `OutOfMemoryError`.
+│                       │     │                   2.  **CPU Exhaustion:** If the application subsequently calls
+│                       │     │                    `getBigIntegerValue()` or `getDecimalValue()`, the JVM can
+│                       │     │                   be tied up in O(n^2) `BigInteger` parsing operations, leading
+│                       │     │                    to a CPU-based DoS.
+│                       │     │                   ### Suggested Remediation
+│                       │     │                   The async parsing path should be updated to respect the
+│                       │     │                   `maxNumberLength` constraint. The simplest fix appears to
+│                       │     │                   ensure that `_valueComplete()` or a similar method in the
+│                       │     │                   async path calls the appropriate validation methods
+│                       │     │                   (`resetInt()` or `resetFloat()`) already present in
+│                       │     │                   `ParserBase`, mirroring the behavior of the synchronous
+│                       │     │                   parsers.
+│                       │     │                   **NOTE:** This research was performed in collaboration with
+│                       │     │                   [rohan-repos](https://github.com/rohan-repos) 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ VendorSeverity   ─ ghsa: 3 
+│                       │     ├ CVSS             ─ ghsa ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:
+│                       │     │                         │            N/VA:H/SC:N/SI:N/SA:N 
+│                       │     │                         ╰ V40Score : 8.7 
+│                       │     ├ References       ╭ [0]: https://github.com/FasterXML/jackson-core 
+│                       │     │                  ├ [1]: https://github.com/FasterXML/jackson-core/commit/a004e9
+│                       │     │                  │      789c2cc6b41b379d02d229d58474d9a738 
+│                       │     │                  ├ [2]: https://github.com/FasterXML/jackson-core/issues/1538 
+│                       │     │                  ╰ [3]: https://github.com/FasterXML/jackson-core/security/advi
+│                       │     │                         sories/GHSA-72hv-8253-57qq 
+│                       │     ├ PublishedDate   : 2026-02-28T02:01:05Z 
+│                       │     ╰ LastModifiedDate: 2026-02-28T02:01:06Z 
+│                       ╰ [1] ╭ VulnerabilityID : CVE-2025-68161 
 │                             ├ VendorIDs        ─ [0]: GHSA-vc5p-v9hr-52mj 
 │                             ├ PkgName         : org.apache.logging.log4j:log4j-core 
 │                             ├ PkgPath         : openaf/plugin-XLS/log4j-core-2.25.0.jar 
@@ -4217,7 +4406,53 @@
 │                       │      │                         sories/GHSA-fv92-fjc5-jj9h 
 │                       │      ├ PublishedDate   : 2025-06-27T16:24:59Z 
 │                       │      ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
-│                       ├ [3]  ╭ VulnerabilityID : CVE-2025-47914 
+│                       ├ [3]  ╭ VulnerabilityID : CVE-2026-24051 
+│                       │      ├ VendorIDs        ─ [0]: GHSA-9h8m-3fm2-qjrq 
+│                       │      ├ PkgID           : go.opentelemetry.io/otel/sdk@v1.36.0 
+│                       │      ├ PkgName         : go.opentelemetry.io/otel/sdk 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.36.0 
+│                       │      │                  ╰ UID : 72ff38c8990650a3 
+│                       │      ├ InstalledVersion: v1.36.0 
+│                       │      ├ FixedVersion    : 1.40.0 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ SeveritySource  : ghsa 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-24051 
+│                       │      ├ DataSource       ╭ ID  : ghsa 
+│                       │      │                  ├ Name: GitHub Security Advisory Go 
+│                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:a33d3a6434d331f6793da3e6563850a181c737f0a11c70152a6d0
+│                       │      │                   77895cb3690 
+│                       │      ├ Title           : OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution
+│                       │      │                   via PATH Hijacking 
+│                       │      ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                       │      │                   The OpenTelemetry Go SDK in version v1.20.0-1.39.0 is
+│                       │      │                   vulnerable to Path Hijacking (Untrusted Search Paths) on
+│                       │      │                   macOS/Darwin systems. The resource detection code in
+│                       │      │                   sdk/resource/host_id.go executes the ioreg system command
+│                       │      │                   using a search path. An attacker with the ability to locally
+│                       │      │                    modify the PATH environment variable can achieve Arbitrary
+│                       │      │                   Code Execution (ACE) within the context of the application.
+│                       │      │                   A fix was released with v1.40.0. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ CweIDs           ─ [0]: CWE-426 
+│                       │      ├ VendorSeverity   ─ ghsa: 3 
+│                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H 
+│                       │      │                         ╰ V3Score : 7 
+│                       │      ├ References       ╭ [0]: https://github.com/open-telemetry/opentelemetry-go 
+│                       │      │                  ├ [1]: https://github.com/open-telemetry/opentelemetry-go/com
+│                       │      │                  │      mit/d45961bcda453fcbdb6469c22d6e88a1f9970a53 
+│                       │      │                  ├ [2]: https://github.com/open-telemetry/opentelemetry-go/sec
+│                       │      │                  │      urity/advisories/GHSA-9h8m-3fm2-qjrq 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-24051 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4394 
+│                       │      ├ PublishedDate   : 2026-02-02T23:16:07.963Z 
+│                       │      ╰ LastModifiedDate: 2026-02-27T20:32:10.693Z 
+│                       ├ [4]  ╭ VulnerabilityID : CVE-2025-47914 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-f6x5-jh6r-wrfv 
 │                       │      ├ PkgID           : golang.org/x/crypto@v0.39.0 
 │                       │      ├ PkgName         : golang.org/x/crypto 
@@ -4266,7 +4501,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47914 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.517Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:36:41.373Z 
-│                       ├ [4]  ╭ VulnerabilityID : CVE-2025-58181 
+│                       ├ [5]  ╭ VulnerabilityID : CVE-2025-58181 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-j5w8-q4qc-rx2x 
 │                       │      ├ PkgID           : golang.org/x/crypto@v0.39.0 
 │                       │      ├ PkgName         : golang.org/x/crypto 
@@ -4321,7 +4556,7 @@
 │                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
-│                       ├ [5]  ╭ VulnerabilityID : CVE-2025-68121 
+│                       ├ [6]  ╭ VulnerabilityID : CVE-2025-68121 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4337 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4387,7 +4622,7 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/737700 
 │                       │      │                  ├ [15]: https://go.dev/issue/77217 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/K09ubi9
@@ -4399,7 +4634,7 @@
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-68121 
 │                       │      ├ PublishedDate   : 2026-02-05T18:16:10.857Z 
 │                       │      ╰ LastModifiedDate: 2026-02-20T17:25:50.303Z 
-│                       ├ [6]  ╭ VulnerabilityID : CVE-2025-47907 
+│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-47907 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3849 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4460,7 +4695,7 @@
 │                       │      │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
 │                       │      ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T19:11:50.67Z 
-│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-58183 
+│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-58183 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4014 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4524,7 +4759,7 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.2Z 
-│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-61726 
+│                       ├ [9]  ╭ VulnerabilityID : CVE-2025-61726 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4585,7 +4820,7 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/736712 
 │                       │      │                  ├ [15]: https://go.dev/issue/77101 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
@@ -4597,7 +4832,7 @@
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-61726 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T18:47:34.52Z 
-│                       ├ [9]  ╭ VulnerabilityID : CVE-2025-61728 
+│                       ├ [10] ╭ VulnerabilityID : CVE-2025-61728 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4646,34 +4881,31 @@
 │                       │      │                  ├ [5] : https://bugzilla.redhat.com/2434432 
 │                       │      │                  ├ [6] : https://bugzilla.redhat.com/2437111 
 │                       │      │                  ├ [7] : https://bugzilla.redhat.com/show_bug.cgi?id=2418462 
-│                       │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2433242 
-│                       │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
-│                       │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
-│                       │      │                  ├ [11]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
-│                       │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
+│                       │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
+│                       │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
+│                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61726 
-│                       │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61728 
-│                       │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61729 
-│                       │      │                  ├ [15]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
-│                       │      │                  ├ [16]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-│                       │      │                  │       26-21721 
-│                       │      │                  ├ [17]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [18]: https://errata.rockylinux.org/RLSA-2026:2920 
-│                       │      │                  ├ [19]: https://go.dev/cl/736713 
-│                       │      │                  ├ [20]: https://go.dev/issue/77102 
-│                       │      │                  ├ [21]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
+│                       │      │                  ├ [15]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
+│                       │      │                  ├ [16]: https://errata.rockylinux.org/RLSA-2026:3337 
+│                       │      │                  ├ [17]: https://go.dev/cl/736713 
+│                       │      │                  ├ [18]: https://go.dev/issue/77102 
+│                       │      │                  ├ [19]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
 │                       │      │                  │       8eUc 
-│                       │      │                  ├ [22]: https://linux.oracle.com/cve/CVE-2025-61728.html 
-│                       │      │                  ├ [23]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
-│                       │      │                  ├ [24]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
-│                       │      │                  ├ [25]: https://pkg.go.dev/vuln/GO-2026-4342 
-│                       │      │                  ╰ [26]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+│                       │      │                  ├ [20]: https://linux.oracle.com/cve/CVE-2025-61728.html 
+│                       │      │                  ├ [21]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
+│                       │      │                  ├ [22]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+│                       │      │                  ├ [23]: https://pkg.go.dev/vuln/GO-2026-4342 
+│                       │      │                  ╰ [24]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T18:45:10.42Z 
-│                       ├ [10] ╭ VulnerabilityID : CVE-2025-61729 
+│                       ├ [11] ╭ VulnerabilityID : CVE-2025-61729 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4155 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4731,19 +4963,19 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/725920 
 │                       │      │                  ├ [15]: https://go.dev/issue/76445 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/8FJoBkP
 │                       │      │                  │       ddm4 
 │                       │      │                  ├ [17]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-│                       │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3343.html 
+│                       │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3428.html 
 │                       │      │                  ├ [19]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
 │                       │      │                  ├ [20]: https://pkg.go.dev/vuln/GO-2025-4155 
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
-│                       ├ [11] ╭ VulnerabilityID : CVE-2025-61730 
+│                       ├ [12] ╭ VulnerabilityID : CVE-2025-61730 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4340 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4786,7 +5018,7 @@
 │                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
 │                       │      ╰ LastModifiedDate: 2026-02-03T20:36:41.3Z 
-│                       ├ [12] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [13] ╭ VulnerabilityID : CVE-2025-47906 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3956 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4846,7 +5078,7 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
 │                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
-│                       ├ [13] ╭ VulnerabilityID : CVE-2025-47912 
+│                       ├ [14] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4010 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4896,7 +5128,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47912 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:18.187Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:57:18.69Z 
-│                       ├ [14] ╭ VulnerabilityID : CVE-2025-58185 
+│                       ├ [15] ╭ VulnerabilityID : CVE-2025-58185 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4011 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4944,7 +5176,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58185 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.45Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T20:26:41.997Z 
-│                       ├ [15] ╭ VulnerabilityID : CVE-2025-58186 
+│                       ├ [16] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4012 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -4992,7 +5224,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58186 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.547Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.45Z 
-│                       ├ [16] ╭ VulnerabilityID : CVE-2025-58187 
+│                       ├ [17] ╭ VulnerabilityID : CVE-2025-58187 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4007 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -5042,7 +5274,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58187 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T16:02:27.08Z 
-│                       ├ [17] ╭ VulnerabilityID : CVE-2025-58188 
+│                       ├ [18] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4013 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -5092,7 +5324,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58188 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.74Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:55:11.97Z 
-│                       ├ [18] ╭ VulnerabilityID : CVE-2025-58189 
+│                       ├ [19] ╭ VulnerabilityID : CVE-2025-58189 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4008 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -5139,7 +5371,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58189 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.833Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:24.543Z 
-│                       ├ [19] ╭ VulnerabilityID : CVE-2025-61723 
+│                       ├ [20] ╭ VulnerabilityID : CVE-2025-61723 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4009 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -5188,7 +5420,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61723 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.927Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:05.343Z 
-│                       ├ [20] ╭ VulnerabilityID : CVE-2025-61724 
+│                       ├ [21] ╭ VulnerabilityID : CVE-2025-61724 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4015 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -5236,7 +5468,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:30:53.69Z 
-│                       ├ [21] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [22] ╭ VulnerabilityID : CVE-2025-61725 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4006 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -5283,7 +5515,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
 │                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
-│                       ╰ [22] ╭ VulnerabilityID : CVE-2025-61727 
+│                       ╰ [23] ╭ VulnerabilityID : CVE-2025-61727 
 │                              ├ VendorIDs        ─ [0]: GO-2025-4175 
 │                              ├ PkgID           : stdlib@v1.24.5 
 │                              ├ PkgName         : stdlib 
@@ -7894,7 +8126,53 @@
 │                       │      │                         sories/GHSA-fv92-fjc5-jj9h 
 │                       │      ├ PublishedDate   : 2025-06-27T16:24:59Z 
 │                       │      ╰ LastModifiedDate: 2025-06-27T16:24:59Z 
-│                       ├ [3]  ╭ VulnerabilityID : CVE-2025-47914 
+│                       ├ [3]  ╭ VulnerabilityID : CVE-2026-24051 
+│                       │      ├ VendorIDs        ─ [0]: GHSA-9h8m-3fm2-qjrq 
+│                       │      ├ PkgID           : go.opentelemetry.io/otel/sdk@v1.36.0 
+│                       │      ├ PkgName         : go.opentelemetry.io/otel/sdk 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.36.0 
+│                       │      │                  ╰ UID : f1301ca2ca18056f 
+│                       │      ├ InstalledVersion: v1.36.0 
+│                       │      ├ FixedVersion    : 1.40.0 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ SeveritySource  : ghsa 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-24051 
+│                       │      ├ DataSource       ╭ ID  : ghsa 
+│                       │      │                  ├ Name: GitHub Security Advisory Go 
+│                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:04c4ff7d27be55d8840c02b5864e2d65795a75cd733c06e742dbb
+│                       │      │                   d878498583f 
+│                       │      ├ Title           : OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution
+│                       │      │                   via PATH Hijacking 
+│                       │      ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                       │      │                   The OpenTelemetry Go SDK in version v1.20.0-1.39.0 is
+│                       │      │                   vulnerable to Path Hijacking (Untrusted Search Paths) on
+│                       │      │                   macOS/Darwin systems. The resource detection code in
+│                       │      │                   sdk/resource/host_id.go executes the ioreg system command
+│                       │      │                   using a search path. An attacker with the ability to locally
+│                       │      │                    modify the PATH environment variable can achieve Arbitrary
+│                       │      │                   Code Execution (ACE) within the context of the application.
+│                       │      │                   A fix was released with v1.40.0. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ CweIDs           ─ [0]: CWE-426 
+│                       │      ├ VendorSeverity   ─ ghsa: 3 
+│                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H 
+│                       │      │                         ╰ V3Score : 7 
+│                       │      ├ References       ╭ [0]: https://github.com/open-telemetry/opentelemetry-go 
+│                       │      │                  ├ [1]: https://github.com/open-telemetry/opentelemetry-go/com
+│                       │      │                  │      mit/d45961bcda453fcbdb6469c22d6e88a1f9970a53 
+│                       │      │                  ├ [2]: https://github.com/open-telemetry/opentelemetry-go/sec
+│                       │      │                  │      urity/advisories/GHSA-9h8m-3fm2-qjrq 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-24051 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4394 
+│                       │      ├ PublishedDate   : 2026-02-02T23:16:07.963Z 
+│                       │      ╰ LastModifiedDate: 2026-02-27T20:32:10.693Z 
+│                       ├ [4]  ╭ VulnerabilityID : CVE-2025-47914 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-f6x5-jh6r-wrfv 
 │                       │      ├ PkgID           : golang.org/x/crypto@v0.39.0 
 │                       │      ├ PkgName         : golang.org/x/crypto 
@@ -7943,7 +8221,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47914 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.517Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:36:41.373Z 
-│                       ├ [4]  ╭ VulnerabilityID : CVE-2025-58181 
+│                       ├ [5]  ╭ VulnerabilityID : CVE-2025-58181 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-j5w8-q4qc-rx2x 
 │                       │      ├ PkgID           : golang.org/x/crypto@v0.39.0 
 │                       │      ├ PkgName         : golang.org/x/crypto 
@@ -7998,7 +8276,7 @@
 │                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
-│                       ├ [5]  ╭ VulnerabilityID : CVE-2025-68121 
+│                       ├ [6]  ╭ VulnerabilityID : CVE-2025-68121 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4337 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8064,7 +8342,7 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/737700 
 │                       │      │                  ├ [15]: https://go.dev/issue/77217 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/K09ubi9
@@ -8076,7 +8354,7 @@
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-68121 
 │                       │      ├ PublishedDate   : 2026-02-05T18:16:10.857Z 
 │                       │      ╰ LastModifiedDate: 2026-02-20T17:25:50.303Z 
-│                       ├ [6]  ╭ VulnerabilityID : CVE-2025-47907 
+│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-47907 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3849 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8137,7 +8415,7 @@
 │                       │      │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
 │                       │      ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T19:11:50.67Z 
-│                       ├ [7]  ╭ VulnerabilityID : CVE-2025-58183 
+│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-58183 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4014 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8201,7 +8479,7 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.2Z 
-│                       ├ [8]  ╭ VulnerabilityID : CVE-2025-61726 
+│                       ├ [9]  ╭ VulnerabilityID : CVE-2025-61726 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8262,7 +8540,7 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/736712 
 │                       │      │                  ├ [15]: https://go.dev/issue/77101 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
@@ -8274,7 +8552,7 @@
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-61726 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T18:47:34.52Z 
-│                       ├ [9]  ╭ VulnerabilityID : CVE-2025-61728 
+│                       ├ [10] ╭ VulnerabilityID : CVE-2025-61728 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8323,34 +8601,31 @@
 │                       │      │                  ├ [5] : https://bugzilla.redhat.com/2434432 
 │                       │      │                  ├ [6] : https://bugzilla.redhat.com/2437111 
 │                       │      │                  ├ [7] : https://bugzilla.redhat.com/show_bug.cgi?id=2418462 
-│                       │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2433242 
-│                       │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
-│                       │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
-│                       │      │                  ├ [11]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
-│                       │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
+│                       │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
+│                       │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
+│                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61726 
-│                       │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61728 
-│                       │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61729 
-│                       │      │                  ├ [15]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
-│                       │      │                  ├ [16]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-│                       │      │                  │       26-21721 
-│                       │      │                  ├ [17]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [18]: https://errata.rockylinux.org/RLSA-2026:2920 
-│                       │      │                  ├ [19]: https://go.dev/cl/736713 
-│                       │      │                  ├ [20]: https://go.dev/issue/77102 
-│                       │      │                  ├ [21]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
+│                       │      │                  ├ [15]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
+│                       │      │                  ├ [16]: https://errata.rockylinux.org/RLSA-2026:3337 
+│                       │      │                  ├ [17]: https://go.dev/cl/736713 
+│                       │      │                  ├ [18]: https://go.dev/issue/77102 
+│                       │      │                  ├ [19]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
 │                       │      │                  │       8eUc 
-│                       │      │                  ├ [22]: https://linux.oracle.com/cve/CVE-2025-61728.html 
-│                       │      │                  ├ [23]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
-│                       │      │                  ├ [24]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
-│                       │      │                  ├ [25]: https://pkg.go.dev/vuln/GO-2026-4342 
-│                       │      │                  ╰ [26]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+│                       │      │                  ├ [20]: https://linux.oracle.com/cve/CVE-2025-61728.html 
+│                       │      │                  ├ [21]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
+│                       │      │                  ├ [22]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+│                       │      │                  ├ [23]: https://pkg.go.dev/vuln/GO-2026-4342 
+│                       │      │                  ╰ [24]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T18:45:10.42Z 
-│                       ├ [10] ╭ VulnerabilityID : CVE-2025-61729 
+│                       ├ [11] ╭ VulnerabilityID : CVE-2025-61729 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4155 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8408,19 +8683,19 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/725920 
 │                       │      │                  ├ [15]: https://go.dev/issue/76445 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/8FJoBkP
 │                       │      │                  │       ddm4 
 │                       │      │                  ├ [17]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-│                       │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3343.html 
+│                       │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3428.html 
 │                       │      │                  ├ [19]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
 │                       │      │                  ├ [20]: https://pkg.go.dev/vuln/GO-2025-4155 
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
-│                       ├ [11] ╭ VulnerabilityID : CVE-2025-61730 
+│                       ├ [12] ╭ VulnerabilityID : CVE-2025-61730 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4340 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8463,7 +8738,7 @@
 │                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
 │                       │      ╰ LastModifiedDate: 2026-02-03T20:36:41.3Z 
-│                       ├ [12] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [13] ╭ VulnerabilityID : CVE-2025-47906 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3956 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8523,7 +8798,7 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
 │                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
-│                       ├ [13] ╭ VulnerabilityID : CVE-2025-47912 
+│                       ├ [14] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4010 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8573,7 +8848,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47912 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:18.187Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:57:18.69Z 
-│                       ├ [14] ╭ VulnerabilityID : CVE-2025-58185 
+│                       ├ [15] ╭ VulnerabilityID : CVE-2025-58185 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4011 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8621,7 +8896,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58185 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.45Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T20:26:41.997Z 
-│                       ├ [15] ╭ VulnerabilityID : CVE-2025-58186 
+│                       ├ [16] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4012 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8669,7 +8944,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58186 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.547Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.45Z 
-│                       ├ [16] ╭ VulnerabilityID : CVE-2025-58187 
+│                       ├ [17] ╭ VulnerabilityID : CVE-2025-58187 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4007 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8719,7 +8994,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58187 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T16:02:27.08Z 
-│                       ├ [17] ╭ VulnerabilityID : CVE-2025-58188 
+│                       ├ [18] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4013 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8769,7 +9044,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58188 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.74Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:55:11.97Z 
-│                       ├ [18] ╭ VulnerabilityID : CVE-2025-58189 
+│                       ├ [19] ╭ VulnerabilityID : CVE-2025-58189 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4008 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8816,7 +9091,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58189 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.833Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:24.543Z 
-│                       ├ [19] ╭ VulnerabilityID : CVE-2025-61723 
+│                       ├ [20] ╭ VulnerabilityID : CVE-2025-61723 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4009 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8865,7 +9140,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61723 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.927Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:05.343Z 
-│                       ├ [20] ╭ VulnerabilityID : CVE-2025-61724 
+│                       ├ [21] ╭ VulnerabilityID : CVE-2025-61724 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4015 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8913,7 +9188,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:30:53.69Z 
-│                       ├ [21] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [22] ╭ VulnerabilityID : CVE-2025-61725 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4006 
 │                       │      ├ PkgID           : stdlib@v1.24.5 
 │                       │      ├ PkgName         : stdlib 
@@ -8960,7 +9235,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
 │                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
-│                       ╰ [22] ╭ VulnerabilityID : CVE-2025-61727 
+│                       ╰ [23] ╭ VulnerabilityID : CVE-2025-61727 
 │                              ├ VendorIDs        ─ [0]: GO-2025-4175 
 │                              ├ PkgID           : stdlib@v1.24.5 
 │                              ├ PkgName         : stdlib 
@@ -17137,7 +17412,53 @@
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-24851 
 │                       │      ├ PublishedDate   : 2026-02-06T18:15:58.673Z 
 │                       │      ╰ LastModifiedDate: 2026-02-24T20:52:16.493Z 
-│                       ├ [30] ╭ VulnerabilityID : CVE-2025-47914 
+│                       ├ [30] ╭ VulnerabilityID : CVE-2026-24051 
+│                       │      ├ VendorIDs        ─ [0]: GHSA-9h8m-3fm2-qjrq 
+│                       │      ├ PkgID           : go.opentelemetry.io/otel/sdk@v1.36.0 
+│                       │      ├ PkgName         : go.opentelemetry.io/otel/sdk 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.36.0 
+│                       │      │                  ╰ UID : a4a90718220489fa 
+│                       │      ├ InstalledVersion: v1.36.0 
+│                       │      ├ FixedVersion    : 1.40.0 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5
+│                       │      │                  │         c23d576cc7fbfc24b686 
+│                       │      │                  ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a395
+│                       │      │                            0478f2d229b68f52d773 
+│                       │      ├ SeveritySource  : ghsa 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-24051 
+│                       │      ├ DataSource       ╭ ID  : ghsa 
+│                       │      │                  ├ Name: GitHub Security Advisory Go 
+│                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:1e67b3afc9411818e9652b0df0ea5c114d1575ec08a70c493f761
+│                       │      │                   6112dc153f5 
+│                       │      ├ Title           : OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution
+│                       │      │                   via PATH Hijacking 
+│                       │      ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                       │      │                   The OpenTelemetry Go SDK in version v1.20.0-1.39.0 is
+│                       │      │                   vulnerable to Path Hijacking (Untrusted Search Paths) on
+│                       │      │                   macOS/Darwin systems. The resource detection code in
+│                       │      │                   sdk/resource/host_id.go executes the ioreg system command
+│                       │      │                   using a search path. An attacker with the ability to locally
+│                       │      │                    modify the PATH environment variable can achieve Arbitrary
+│                       │      │                   Code Execution (ACE) within the context of the application.
+│                       │      │                   A fix was released with v1.40.0. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ CweIDs           ─ [0]: CWE-426 
+│                       │      ├ VendorSeverity   ─ ghsa: 3 
+│                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H 
+│                       │      │                         ╰ V3Score : 7 
+│                       │      ├ References       ╭ [0]: https://github.com/open-telemetry/opentelemetry-go 
+│                       │      │                  ├ [1]: https://github.com/open-telemetry/opentelemetry-go/com
+│                       │      │                  │      mit/d45961bcda453fcbdb6469c22d6e88a1f9970a53 
+│                       │      │                  ├ [2]: https://github.com/open-telemetry/opentelemetry-go/sec
+│                       │      │                  │      urity/advisories/GHSA-9h8m-3fm2-qjrq 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-24051 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4394 
+│                       │      ├ PublishedDate   : 2026-02-02T23:16:07.963Z 
+│                       │      ╰ LastModifiedDate: 2026-02-27T20:32:10.693Z 
+│                       ├ [31] ╭ VulnerabilityID : CVE-2025-47914 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-f6x5-jh6r-wrfv 
 │                       │      ├ PkgID           : golang.org/x/crypto@v0.39.0 
 │                       │      ├ PkgName         : golang.org/x/crypto 
@@ -17186,7 +17507,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47914 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.517Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:36:41.373Z 
-│                       ├ [31] ╭ VulnerabilityID : CVE-2025-58181 
+│                       ├ [32] ╭ VulnerabilityID : CVE-2025-58181 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-j5w8-q4qc-rx2x 
 │                       │      ├ PkgID           : golang.org/x/crypto@v0.39.0 
 │                       │      ├ PkgName         : golang.org/x/crypto 
@@ -17241,7 +17562,7 @@
 │                       │      │                  ╰ [10]: https://www.cve.org/CVERecord?id=CVE-2025-58181 
 │                       │      ├ PublishedDate   : 2025-11-19T21:15:50.85Z 
 │                       │      ╰ LastModifiedDate: 2025-12-11T19:29:24.9Z 
-│                       ├ [32] ╭ VulnerabilityID : CVE-2025-68121 
+│                       ├ [33] ╭ VulnerabilityID : CVE-2025-68121 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4337 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17307,7 +17628,7 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/737700 
 │                       │      │                  ├ [15]: https://go.dev/issue/77217 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/K09ubi9
@@ -17319,7 +17640,7 @@
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-68121 
 │                       │      ├ PublishedDate   : 2026-02-05T18:16:10.857Z 
 │                       │      ╰ LastModifiedDate: 2026-02-20T17:25:50.303Z 
-│                       ├ [33] ╭ VulnerabilityID : CVE-2025-47907 
+│                       ├ [34] ╭ VulnerabilityID : CVE-2025-47907 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3849 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17380,7 +17701,7 @@
 │                       │      │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2025-47907 
 │                       │      ├ PublishedDate   : 2025-08-07T16:15:30.357Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T19:11:50.67Z 
-│                       ├ [34] ╭ VulnerabilityID : CVE-2025-58183 
+│                       ├ [35] ╭ VulnerabilityID : CVE-2025-58183 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4014 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17444,7 +17765,7 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-58183 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.357Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.2Z 
-│                       ├ [35] ╭ VulnerabilityID : CVE-2025-61726 
+│                       ├ [36] ╭ VulnerabilityID : CVE-2025-61726 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4341 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17505,7 +17826,7 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/736712 
 │                       │      │                  ├ [15]: https://go.dev/issue/77101 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
@@ -17517,7 +17838,7 @@
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-61726 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.713Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T18:47:34.52Z 
-│                       ├ [36] ╭ VulnerabilityID : CVE-2025-61728 
+│                       ├ [37] ╭ VulnerabilityID : CVE-2025-61728 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4342 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17566,34 +17887,31 @@
 │                       │      │                  ├ [5] : https://bugzilla.redhat.com/2434432 
 │                       │      │                  ├ [6] : https://bugzilla.redhat.com/2437111 
 │                       │      │                  ├ [7] : https://bugzilla.redhat.com/show_bug.cgi?id=2418462 
-│                       │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2433242 
-│                       │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
-│                       │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
-│                       │      │                  ├ [11]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
-│                       │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
+│                       │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
+│                       │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
+│                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61726 
-│                       │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61728 
-│                       │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61729 
-│                       │      │                  ├ [15]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
-│                       │      │                  ├ [16]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-│                       │      │                  │       26-21721 
-│                       │      │                  ├ [17]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [18]: https://errata.rockylinux.org/RLSA-2026:2920 
-│                       │      │                  ├ [19]: https://go.dev/cl/736713 
-│                       │      │                  ├ [20]: https://go.dev/issue/77102 
-│                       │      │                  ├ [21]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
+│                       │      │                  ├ [15]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
+│                       │      │                  ├ [16]: https://errata.rockylinux.org/RLSA-2026:3337 
+│                       │      │                  ├ [17]: https://go.dev/cl/736713 
+│                       │      │                  ├ [18]: https://go.dev/issue/77102 
+│                       │      │                  ├ [19]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
 │                       │      │                  │       8eUc 
-│                       │      │                  ├ [22]: https://linux.oracle.com/cve/CVE-2025-61728.html 
-│                       │      │                  ├ [23]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
-│                       │      │                  ├ [24]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
-│                       │      │                  ├ [25]: https://pkg.go.dev/vuln/GO-2026-4342 
-│                       │      │                  ╰ [26]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+│                       │      │                  ├ [20]: https://linux.oracle.com/cve/CVE-2025-61728.html 
+│                       │      │                  ├ [21]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
+│                       │      │                  ├ [22]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+│                       │      │                  ├ [23]: https://pkg.go.dev/vuln/GO-2026-4342 
+│                       │      │                  ╰ [24]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T18:45:10.42Z 
-│                       ├ [37] ╭ VulnerabilityID : CVE-2025-61729 
+│                       ├ [38] ╭ VulnerabilityID : CVE-2025-61729 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4155 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17651,19 +17969,19 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/725920 
 │                       │      │                  ├ [15]: https://go.dev/issue/76445 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/8FJoBkP
 │                       │      │                  │       ddm4 
 │                       │      │                  ├ [17]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-│                       │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3343.html 
+│                       │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3428.html 
 │                       │      │                  ├ [19]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
 │                       │      │                  ├ [20]: https://pkg.go.dev/vuln/GO-2025-4155 
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
 │                       │      ├ PublishedDate   : 2025-12-02T19:15:51.447Z 
 │                       │      ╰ LastModifiedDate: 2025-12-19T18:25:28.283Z 
-│                       ├ [38] ╭ VulnerabilityID : CVE-2025-61730 
+│                       ├ [39] ╭ VulnerabilityID : CVE-2025-61730 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4340 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17706,7 +18024,7 @@
 │                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4340 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.94Z 
 │                       │      ╰ LastModifiedDate: 2026-02-03T20:36:41.3Z 
-│                       ├ [39] ╭ VulnerabilityID : CVE-2025-47906 
+│                       ├ [40] ╭ VulnerabilityID : CVE-2025-47906 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-3956 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17766,7 +18084,7 @@
 │                       │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2025-47906 
 │                       │      ├ PublishedDate   : 2025-09-18T19:15:37.66Z 
 │                       │      ╰ LastModifiedDate: 2026-01-27T19:56:17.707Z 
-│                       ├ [40] ╭ VulnerabilityID : CVE-2025-47912 
+│                       ├ [41] ╭ VulnerabilityID : CVE-2025-47912 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4010 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17816,7 +18134,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-47912 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:18.187Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T13:57:18.69Z 
-│                       ├ [41] ╭ VulnerabilityID : CVE-2025-58185 
+│                       ├ [42] ╭ VulnerabilityID : CVE-2025-58185 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4011 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17864,7 +18182,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58185 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.45Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T20:26:41.997Z 
-│                       ├ [42] ╭ VulnerabilityID : CVE-2025-58186 
+│                       ├ [43] ╭ VulnerabilityID : CVE-2025-58186 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4012 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17912,7 +18230,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58186 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.547Z 
 │                       │      ╰ LastModifiedDate: 2025-11-04T22:16:33.45Z 
-│                       ├ [43] ╭ VulnerabilityID : CVE-2025-58187 
+│                       ├ [44] ╭ VulnerabilityID : CVE-2025-58187 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4007 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -17962,7 +18280,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58187 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.643Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T16:02:27.08Z 
-│                       ├ [44] ╭ VulnerabilityID : CVE-2025-58188 
+│                       ├ [45] ╭ VulnerabilityID : CVE-2025-58188 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4013 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -18012,7 +18330,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-58188 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.74Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:55:11.97Z 
-│                       ├ [45] ╭ VulnerabilityID : CVE-2025-58189 
+│                       ├ [46] ╭ VulnerabilityID : CVE-2025-58189 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4008 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -18059,7 +18377,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-58189 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.833Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:24.543Z 
-│                       ├ [46] ╭ VulnerabilityID : CVE-2025-61723 
+│                       ├ [47] ╭ VulnerabilityID : CVE-2025-61723 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4009 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -18108,7 +18426,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2025-61723 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:19.927Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:49:05.343Z 
-│                       ├ [47] ╭ VulnerabilityID : CVE-2025-61724 
+│                       ├ [48] ╭ VulnerabilityID : CVE-2025-61724 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4015 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -18156,7 +18474,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61724 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.02Z 
 │                       │      ╰ LastModifiedDate: 2026-01-29T15:30:53.69Z 
-│                       ├ [48] ╭ VulnerabilityID : CVE-2025-61725 
+│                       ├ [49] ╭ VulnerabilityID : CVE-2025-61725 
 │                       │      ├ VendorIDs        ─ [0]: GO-2025-4006 
 │                       │      ├ PkgID           : stdlib@v1.24.4 
 │                       │      ├ PkgName         : stdlib 
@@ -18203,7 +18521,7 @@
 │                       │      │                  ╰ [7]: https://www.cve.org/CVERecord?id=CVE-2025-61725 
 │                       │      ├ PublishedDate   : 2025-10-29T23:16:20.113Z 
 │                       │      ╰ LastModifiedDate: 2025-12-09T18:15:56.347Z 
-│                       ╰ [49] ╭ VulnerabilityID : CVE-2025-61727 
+│                       ╰ [50] ╭ VulnerabilityID : CVE-2025-61727 
 │                              ├ VendorIDs        ─ [0]: GO-2025-4175 
 │                              ├ PkgID           : stdlib@v1.24.4 
 │                              ├ PkgName         : stdlib 
@@ -20188,7 +20506,7 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/737700 
 │                       │      │                  ├ [15]: https://go.dev/issue/77217 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/K09ubi9
@@ -20386,7 +20704,7 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/736712 
 │                       │      │                  ├ [15]: https://go.dev/issue/77101 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
@@ -20447,31 +20765,28 @@
 │                       │      │                  ├ [5] : https://bugzilla.redhat.com/2434432 
 │                       │      │                  ├ [6] : https://bugzilla.redhat.com/2437111 
 │                       │      │                  ├ [7] : https://bugzilla.redhat.com/show_bug.cgi?id=2418462 
-│                       │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2433242 
-│                       │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
-│                       │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
-│                       │      │                  ├ [11]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
-│                       │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
+│                       │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
+│                       │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
+│                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61726 
-│                       │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61728 
-│                       │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-61729 
-│                       │      │                  ├ [15]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                       │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
-│                       │      │                  ├ [16]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-│                       │      │                  │       26-21721 
-│                       │      │                  ├ [17]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [18]: https://errata.rockylinux.org/RLSA-2026:2920 
-│                       │      │                  ├ [19]: https://go.dev/cl/736713 
-│                       │      │                  ├ [20]: https://go.dev/issue/77102 
-│                       │      │                  ├ [21]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
+│                       │      │                  ├ [15]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
+│                       │      │                  ├ [16]: https://errata.rockylinux.org/RLSA-2026:3337 
+│                       │      │                  ├ [17]: https://go.dev/cl/736713 
+│                       │      │                  ├ [18]: https://go.dev/issue/77102 
+│                       │      │                  ├ [19]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
 │                       │      │                  │       8eUc 
-│                       │      │                  ├ [22]: https://linux.oracle.com/cve/CVE-2025-61728.html 
-│                       │      │                  ├ [23]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
-│                       │      │                  ├ [24]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
-│                       │      │                  ├ [25]: https://pkg.go.dev/vuln/GO-2026-4342 
-│                       │      │                  ╰ [26]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+│                       │      │                  ├ [20]: https://linux.oracle.com/cve/CVE-2025-61728.html 
+│                       │      │                  ├ [21]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
+│                       │      │                  ├ [22]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+│                       │      │                  ├ [23]: https://pkg.go.dev/vuln/GO-2026-4342 
+│                       │      │                  ╰ [24]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
 │                       │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
 │                       │      ╰ LastModifiedDate: 2026-02-06T18:45:10.42Z 
 │                       ├ [30] ╭ VulnerabilityID : CVE-2025-61729 
@@ -20532,13 +20847,13 @@
 │                       │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
 │                       │      │                  │       25-68121 
 │                       │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+│                       │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
 │                       │      │                  ├ [14]: https://go.dev/cl/725920 
 │                       │      │                  ├ [15]: https://go.dev/issue/76445 
 │                       │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/8FJoBkP
 │                       │      │                  │       ddm4 
 │                       │      │                  ├ [17]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-│                       │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3343.html 
+│                       │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3428.html 
 │                       │      │                  ├ [19]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
 │                       │      │                  ├ [20]: https://pkg.go.dev/vuln/GO-2025-4155 
 │                       │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
@@ -23069,7 +23384,7 @@
                         │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-68121 
                         │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-                        │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+                        │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
                         │      │                  ├ [14]: https://go.dev/cl/737700 
                         │      │                  ├ [15]: https://go.dev/issue/77217 
                         │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/K09ubi9
@@ -23267,7 +23582,7 @@
                         │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-68121 
                         │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-                        │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+                        │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
                         │      │                  ├ [14]: https://go.dev/cl/736712 
                         │      │                  ├ [15]: https://go.dev/issue/77101 
                         │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
@@ -23328,31 +23643,28 @@
                         │      │                  ├ [5] : https://bugzilla.redhat.com/2434432 
                         │      │                  ├ [6] : https://bugzilla.redhat.com/2437111 
                         │      │                  ├ [7] : https://bugzilla.redhat.com/show_bug.cgi?id=2418462 
-                        │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2433242 
-                        │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
-                        │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
-                        │      │                  ├ [11]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
-                        │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+                        │      │                  ├ [8] : https://bugzilla.redhat.com/show_bug.cgi?id=2434431 
+                        │      │                  ├ [9] : https://bugzilla.redhat.com/show_bug.cgi?id=2434432 
+                        │      │                  ├ [10]: https://bugzilla.redhat.com/show_bug.cgi?id=2437111 
+                        │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-61726 
-                        │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+                        │      │                  ├ [12]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-61728 
-                        │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+                        │      │                  ├ [13]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-61729 
-                        │      │                  ├ [15]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+                        │      │                  ├ [14]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-68121 
-                        │      │                  ├ [16]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
-                        │      │                  │       26-21721 
-                        │      │                  ├ [17]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-                        │      │                  ├ [18]: https://errata.rockylinux.org/RLSA-2026:2920 
-                        │      │                  ├ [19]: https://go.dev/cl/736713 
-                        │      │                  ├ [20]: https://go.dev/issue/77102 
-                        │      │                  ├ [21]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
+                        │      │                  ├ [15]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
+                        │      │                  ├ [16]: https://errata.rockylinux.org/RLSA-2026:3337 
+                        │      │                  ├ [17]: https://go.dev/cl/736713 
+                        │      │                  ├ [18]: https://go.dev/issue/77102 
+                        │      │                  ├ [19]: https://groups.google.com/g/golang-announce/c/Vd2tYVM
                         │      │                  │       8eUc 
-                        │      │                  ├ [22]: https://linux.oracle.com/cve/CVE-2025-61728.html 
-                        │      │                  ├ [23]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
-                        │      │                  ├ [24]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
-                        │      │                  ├ [25]: https://pkg.go.dev/vuln/GO-2026-4342 
-                        │      │                  ╰ [26]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
+                        │      │                  ├ [20]: https://linux.oracle.com/cve/CVE-2025-61728.html 
+                        │      │                  ├ [21]: https://linux.oracle.com/errata/ELSA-2026-3337.html 
+                        │      │                  ├ [22]: https://nvd.nist.gov/vuln/detail/CVE-2025-61728 
+                        │      │                  ├ [23]: https://pkg.go.dev/vuln/GO-2026-4342 
+                        │      │                  ╰ [24]: https://www.cve.org/CVERecord?id=CVE-2025-61728 
                         │      ├ PublishedDate   : 2026-01-28T20:16:09.83Z 
                         │      ╰ LastModifiedDate: 2026-02-06T18:45:10.42Z 
                         ├ [30] ╭ VulnerabilityID : CVE-2025-61729 
@@ -23413,13 +23725,13 @@
                         │      │                  ├ [11]: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       25-68121 
                         │      │                  ├ [12]: https://errata.almalinux.org/9/ALSA-2026-3337.html 
-                        │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3040 
+                        │      │                  ├ [13]: https://errata.rockylinux.org/RLSA-2026:3341 
                         │      │                  ├ [14]: https://go.dev/cl/725920 
                         │      │                  ├ [15]: https://go.dev/issue/76445 
                         │      │                  ├ [16]: https://groups.google.com/g/golang-announce/c/8FJoBkP
                         │      │                  │       ddm4 
                         │      │                  ├ [17]: https://linux.oracle.com/cve/CVE-2025-61729.html 
-                        │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3343.html 
+                        │      │                  ├ [18]: https://linux.oracle.com/errata/ELSA-2026-3428.html 
                         │      │                  ├ [19]: https://nvd.nist.gov/vuln/detail/CVE-2025-61729 
                         │      │                  ├ [20]: https://pkg.go.dev/vuln/GO-2025-4155 
                         │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2025-61729 
