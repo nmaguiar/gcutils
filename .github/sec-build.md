@@ -15764,7 +15764,8 @@
 │                       │      ├ CweIDs           ─ [0]: CWE-354 
 │                       │      ├ VendorSeverity   ╭ ghsa  : 2 
 │                       │      │                  ├ nvd   : 2 
-│                       │      │                  ╰ redhat: 2 
+│                       │      │                  ├ redhat: 2 
+│                       │      │                  ╰ ubuntu: 2 
 │                       │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L
 │                       │      │                  │        │           /A:N 
 │                       │      │                  │        ╰ V3Score : 4.3 
@@ -15780,7 +15781,8 @@
 │                       │      │                  ├ [3]: https://github.com/go-git/go-git/security/advisories/G
 │                       │      │                  │      HSA-37cx-329c-33x3 
 │                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-25934 
-│                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2026-25934 
+│                       │      │                  ├ [5]: https://ubuntu.com/security/notices/USN-8088-1 
+│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-25934 
 │                       │      ├ PublishedDate   : 2026-02-09T23:16:05.937Z 
 │                       │      ╰ LastModifiedDate: 2026-02-20T20:21:19.26Z 
 │                       ├ [2]  ╭ VulnerabilityID : CVE-2025-11065 
