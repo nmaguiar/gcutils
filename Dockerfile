@@ -46,19 +46,23 @@ RUN VERSION=$(curl -s https://api.github.com/repos/prometheus/prometheus/release
  && chmod -R a+w /usr/share/prometheus\
  && rm -rf /tmp/prometheus-$VERSION.linux-$ARCH
 
-# Install grafana from dl.grafana.com/oss/release
-RUN VERSION=$(curl -s https://api.github.com/repos/grafana/grafana/releases/latest | grep '"tag_name"' | cut -d '"' -f 4 | sed 's/^v//g')\
- && ARCH=$(uname -m | sed 's/x86_64/amd64/g' | sed 's/aarch64/arm64/g')\
- && echo "Installing Grafana version $VERSION $ARCH"\
- && curl -sL https://dl.grafana.com/oss/release/grafana-$VERSION.linux-$ARCH.tar.gz | tar xz -C /tmp\
- && mkdir -p /usr/share/grafana\
- && mv /tmp/grafana-v$VERSION/bin /usr/share/grafana/bin\
- && mv /tmp/grafana-v$VERSION/conf /usr/share/grafana/conf\
- && mv /tmp/grafana-v$VERSION/public /usr/share/grafana/public\
- && ln -s /usr/share/grafana/bin/grafana /usr/bin/grafana\
- && chown -R openaf:openaf /usr/share/grafana\
- && rm -rf /tmp/grafana-$VERSION
-
+# Install grafana from dl.grafana.com/oss/release (robust extraction)
+RUN set -eux; \
+    VERSION=$(curl -s https://api.github.com/repos/grafana/grafana/releases/latest | grep '"tag_name"' | cut -d '"' -f4 | sed 's/^v//g'); \
+    ARCH=$(uname -m | sed 's/x86_64/amd64/g' | sed 's/aarch64/arm64/g'); \
+    echo "Installing Grafana version $VERSION $ARCH"; \
+    TAR="grafana-${VERSION}.linux-${ARCH}.tar.gz"; \
+    URL="https://dl.grafana.com/oss/release/${TAR}"; \
+    echo "Downloading ${URL}"; \
+    curl -fSL "${URL}" -o /tmp/${TAR}; \
+    tar -xzf /tmp/${TAR} -C /tmp; \
+    EXDIR=$(tar -tzf /tmp/${TAR} | sed -n '1p' | cut -f1 -d'/'); \
+    if [ -z "${EXDIR}" ]; then echo "ERROR: unable to detect extracted grafana directory from ${TAR}" >&2; exit 1; fi; \
+    mkdir -p /usr/share/grafana; \
+    mv /tmp/${EXDIR}/* /usr/share/grafana/; \
+    ln -sf /usr/share/grafana/bin/grafana /usr/bin/grafana; \
+    chown -R openaf:openaf /usr/share/grafana; \
+    rm -rf /tmp/${TAR} /tmp/${EXDIR}
 # Setup bash completion
 # ---------------------
 RUN /openaf/oaf --bashcompletion all > /openaf/.openaf_completion.sh\
