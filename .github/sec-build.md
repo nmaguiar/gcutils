@@ -1616,7 +1616,8 @@
 │                       │     │                   implements PEP 706 (Python >=3.9.17, >=3.10.12, >=3.11.4, or
 │                       │     │                   >=3.12),
 │                       │     │                   applying the linked patch, or inspecting source distributions
-│                       │     │                    (sdists) before installation as is already a best-practice. 
+│                       │     │                    (sdists) before installation as is already a
+│                       │     │                   best-practice. 
 │                       │     ├ Severity        : MEDIUM 
 │                       │     ├ VendorSeverity   ╭ amazon : 2 
 │                       │     │                  ├ azure  : 2 
@@ -1676,7 +1677,8 @@
 │                       │     │                   wheel archive, files may be extracted outside the
 │                       │     │                   installation directory. The path traversal is limited to
 │                       │     │                   prefixes of the installation directory, thus isn't able to
-│                       │     │                   inject or overwrite executable files in typical situations. 
+│                       │     │                   inject or overwrite executable files in typical situations.[
+│                       │     │                   m 
 │                       │     ├ Severity        : LOW 
 │                       │     ├ CweIDs           ─ [0]: CWE-22 
 │                       │     ├ VendorSeverity   ╭ azure  : 1 
@@ -3395,7 +3397,8 @@
 │     │                 │       ├ Name      : github.com/open-telemetry/opentelemetry-collector-contrib/process
 │     │                 │       │             or/deltatocumulativeprocessor 
 │     │                 │       ├ Identifier ╭ PURL: pkg:golang/github.com/open-telemetry/opentelemetry-collect
-│     │                 │       │            │       or-contrib/processor/deltatocumulativeprocessor@v0.128.0 
+│     │                 │       │            │       or-contrib/processor/deltatocumulativeprocessor@v0.128.0[
+│     │                 │       │            │       m 
 │     │                 │       │            ╰ UID : 8192c1a3bdc76d81 
 │     │                 │       ├ Version   : v0.128.0 
 │     │                 │       ├ Layer      ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d5
@@ -4463,8 +4466,8 @@
 │                       │      │                    is provided, we see the above information leak -- the
 │                       │      │                   previous example had a `map` type field with a `string`
 │                       │      │                   value provided).
-│                       │      │                   This was rated 4.5 Medium by HashiCorp in the past iteration
-│                       │      │                   . 
+│                       │      │                   This was rated 4.5 Medium by HashiCorp in the past
+│                       │      │                   iteration. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ VendorSeverity   ─ ghsa: 2 
 │                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
@@ -4595,7 +4598,8 @@
 │                       │      │                   authentication 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the number of mechanisms specified in the request,
-│                       │      │                   allowing an attacker to cause unbounded memory consumption. 
+│                       │      │                   allowing an attacker to cause unbounded memory
+│                       │      │                   consumption. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ CweIDs           ─ [0]: CWE-770 
 │                       │      ├ VendorSeverity   ╭ amazon: 2 
@@ -7441,7 +7445,8 @@
 │     │                 │       ├ Name      : github.com/open-telemetry/opentelemetry-collector-contrib/process
 │     │                 │       │             or/deltatocumulativeprocessor 
 │     │                 │       ├ Identifier ╭ PURL: pkg:golang/github.com/open-telemetry/opentelemetry-collect
-│     │                 │       │            │       or-contrib/processor/deltatocumulativeprocessor@v0.128.0 
+│     │                 │       │            │       or-contrib/processor/deltatocumulativeprocessor@v0.128.0[
+│     │                 │       │            │       m 
 │     │                 │       │            ╰ UID : 6bd21b3175d51571 
 │     │                 │       ├ Version   : v0.128.0 
 │     │                 │       ├ Layer      ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d5
@@ -8423,8 +8428,8 @@
 │                       │      │                    is provided, we see the above information leak -- the
 │                       │      │                   previous example had a `map` type field with a `string`
 │                       │      │                   value provided).
-│                       │      │                   This was rated 4.5 Medium by HashiCorp in the past iteration
-│                       │      │                   . 
+│                       │      │                   This was rated 4.5 Medium by HashiCorp in the past
+│                       │      │                   iteration. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ VendorSeverity   ─ ghsa: 2 
 │                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N 
@@ -8555,7 +8560,8 @@
 │                       │      │                   authentication 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the number of mechanisms specified in the request,
-│                       │      │                   allowing an attacker to cause unbounded memory consumption. 
+│                       │      │                   allowing an attacker to cause unbounded memory
+│                       │      │                   consumption. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ CweIDs           ─ [0]: CWE-770 
 │                       │      ├ VendorSeverity   ╭ amazon: 2 
@@ -16184,7 +16190,8 @@
 │                       │      │                   On Azure AD, the profile email field is not unique and can
 │                       │      │                   be easily modified. 
 │                       │      │                   This leads to account takeover and authentication bypass
-│                       │      │                   when Azure AD OAuth is configured with a multi-tenant app. 
+│                       │      │                   when Azure AD OAuth is configured with a multi-tenant app.[
+│                       │      │                   m 
 │                       │      ├ Severity        : CRITICAL 
 │                       │      ├ CweIDs           ─ [0]: CWE-290 
 │                       │      ├ VendorSeverity   ╭ alma       : 4 
@@ -16706,8 +16713,8 @@
 │                       │      │                   The open redirect can be chained with path traversal
 │                       │      │                   vulnerabilities to achieve XSS.
 │                       │      │                   Fixed in versions 12.0.2+security-01, 11.6.3+security-01,
-│                       │      │                   11.5.6+security-01, 11.4.6+security-01 and 11.3.8+security-0
-│                       │      │                   1 
+│                       │      │                   11.5.6+security-01, 11.4.6+security-01 and
+│                       │      │                   11.3.8+security-01 
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ╭ [0]: CWE-79 
 │                       │      │                  ╰ [1]: CWE-601 
@@ -18121,7 +18128,8 @@
 │                       │      │                   authentication 
 │                       │      ├ Description     : SSH servers parsing GSSAPI authentication requests do not
 │                       │      │                   validate the number of mechanisms specified in the request,
-│                       │      │                   allowing an attacker to cause unbounded memory consumption. 
+│                       │      │                   allowing an attacker to cause unbounded memory
+│                       │      │                   consumption. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ CweIDs           ─ [0]: CWE-770 
 │                       │      ├ VendorSeverity   ╭ amazon: 2 
@@ -19559,7 +19567,8 @@
 │                       │      │                   On Azure AD, the profile email field is not unique and can
 │                       │      │                   be easily modified. 
 │                       │      │                   This leads to account takeover and authentication bypass
-│                       │      │                   when Azure AD OAuth is configured with a multi-tenant app. 
+│                       │      │                   when Azure AD OAuth is configured with a multi-tenant app.[
+│                       │      │                   m 
 │                       │      ├ Severity        : CRITICAL 
 │                       │      ├ CweIDs           ─ [0]: CWE-290 
 │                       │      ├ VendorSeverity   ╭ alma       : 4 
@@ -20081,8 +20090,8 @@
 │                       │      │                   The open redirect can be chained with path traversal
 │                       │      │                   vulnerabilities to achieve XSS.
 │                       │      │                   Fixed in versions 12.0.2+security-01, 11.6.3+security-01,
-│                       │      │                   11.5.6+security-01, 11.4.6+security-01 and 11.3.8+security-0
-│                       │      │                   1 
+│                       │      │                   11.5.6+security-01, 11.4.6+security-01 and
+│                       │      │                   11.3.8+security-01 
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ╭ [0]: CWE-79 
 │                       │      │                  ╰ [1]: CWE-601 
@@ -22565,7 +22574,8 @@
                         │      │                   On Azure AD, the profile email field is not unique and can
                         │      │                   be easily modified. 
                         │      │                   This leads to account takeover and authentication bypass
-                        │      │                   when Azure AD OAuth is configured with a multi-tenant app. 
+                        │      │                   when Azure AD OAuth is configured with a multi-tenant app.[
+                        │      │                   m 
                         │      ├ Severity        : CRITICAL 
                         │      ├ CweIDs           ─ [0]: CWE-290 
                         │      ├ VendorSeverity   ╭ alma       : 4 
@@ -23087,8 +23097,8 @@
                         │      │                   The open redirect can be chained with path traversal
                         │      │                   vulnerabilities to achieve XSS.
                         │      │                   Fixed in versions 12.0.2+security-01, 11.6.3+security-01,
-                        │      │                   11.5.6+security-01, 11.4.6+security-01 and 11.3.8+security-0
-                        │      │                   1 
+                        │      │                   11.5.6+security-01, 11.4.6+security-01 and
+                        │      │                   11.3.8+security-01 
                         │      ├ Severity        : HIGH 
                         │      ├ CweIDs           ╭ [0]: CWE-79 
                         │      │                  ╰ [1]: CWE-601 
