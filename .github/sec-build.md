@@ -6355,16 +6355,7 @@
 │     │                 │       │            ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f
 │     │                 │       │                      2d229b68f52d773 
 │     │                 │       ╰ AnalyzedBy: gobinary 
-│     │                 ├ [23]  ╭ ID        : github.com/aws/aws-sdk-go-v2/internal/ini@v1.8.3 
-│     │                 │       ├ Name      : github.com/aws/aws-sdk-go-v2/internal/ini 
-│     │                 │       ├ Identifier ╭ PURL: pkg:golang/github.com/aws/aws-sdk-go-v2/internal/ini@v1.8.3 
-│     │                 │       │            ╰ UID : c726d53a8373863e 
-│     │                 │       ├ Version   : v1.8.3 
-│     │                 │       ├ Layer      ╭ Digest: sha256:07ea076c6cf197f1aa824b3abdc29f7138e13b80f8e5c23d5
-│     │                 │       │            │         76cc7fbfc24b686 
-│     │                 │       │            ╰ DiffID: sha256:dec68ef13d7f89a7af98553a8fe998c330c065d7a3950478f
-│     │                 │       │                      2d229b68f52d773 
-│     │                 │       ╰ AnalyzedBy: gobinary 
+
 │     │                 ├ [24]  ╭ ID        : github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding@v1.
 │     │                 │       │             12.3 
 │     │                 │       ├ Name      : github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding 
