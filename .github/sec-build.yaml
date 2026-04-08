@@ -3706,6 +3706,217 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-33997
     PublishedDate: '2026-03-31T03:15:57.523Z'
     LastModifiedDate: '2026-04-03T17:23:21.307Z'
+  - VulnerabilityID: CVE-2026-32280
+    VendorIDs:
+    - GO-2026-4947
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: b5442166f1a56cff
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32280
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:efe03e20ca6d093d24d1c3c08ceb9e9775c2dd2680604905544ddc55ad909fb4
+    Title: Unexpected work during chain building in crypto/x509
+    Description: During chain building, the amount of work that is done is not correctly limited when a large number of intermediate certificates are passed in VerifyOptions.Intermediates, which can lead to a denial of service. This affects both direct users of crypto/x509 and users of crypto/tls.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758320
+    - https://go.dev/issue/78282
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4947
+  - VulnerabilityID: CVE-2026-32281
+    VendorIDs:
+    - GO-2026-4946
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: b5442166f1a56cff
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32281
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:a42838086f9845c70a05b0db7a8ea92c3ca5fd749acc9232fdb5a72b8f06d951
+    Title: Inefficient policy validation in crypto/x509
+    Description: |-
+      Validating certificate chains which use policies is unexpectedly inefficient when certificates in the chain contain a very large number of policy mappings, possibly causing denial of service.
+
+      This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758061
+    - https://go.dev/issue/78281
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4946
+  - VulnerabilityID: CVE-2026-32282
+    VendorIDs:
+    - GO-2026-4864
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: b5442166f1a56cff
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32282
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:f397383799d2bc56117b474f34a2202267856f63426a02eff2f08e6f21a402d9
+    Title: TOCTOU permits root escape on Linux via Root.Chmod in os in internal/syscall/unix
+    Description: |-
+      On Linux, if the target of Root.Chmod is replaced with a symlink while the chmod operation is in progress, Chmod can operate on the target of the symlink, even when the target lies outside the root.
+
+      The Linux fchmodat syscall silently ignores the AT_SYMLINK_NOFOLLOW flag, which Root.Chmod uses to avoid symlink traversal. Root.Chmod checks its target before acting and returns an error if the target is a symlink lying outside the root, so the impact is limited to cases where the target is replaced with a symlink between the check and operation.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763761
+    - https://go.dev/issue/78293
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4864
+  - VulnerabilityID: CVE-2026-32283
+    VendorIDs:
+    - GO-2026-4870
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: b5442166f1a56cff
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32283
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:e3839f866130add5fb2ac35ba4bbef1186912535c8121b0f2b046077208bd4ba
+    Title: Unauthenticated TLS 1.3 KeyUpdate record can cause persistent connection retention and DoS in crypto/tls
+    Description: |-
+      If one side of the TLS connection sends multiple key update messages post-handshake in a single record, the connection can deadlock, causing uncontrolled consumption of resources. This can lead to a denial of service.
+
+      This only affects TLS 1.3.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763767
+    - https://go.dev/issue/78334
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4870
+  - VulnerabilityID: CVE-2026-32288
+    VendorIDs:
+    - GO-2026-4869
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: b5442166f1a56cff
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32288
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:d657150f6ef62f8cee383028230ff22f74ae559acafabc502946bdd6bcd6a02f
+    Title: Unbounded allocation for old GNU sparse in archive/tar
+    Description: tar.Reader can allocate an unbounded amount of memory when reading a maliciously-crafted archive containing a large number of sparse regions encoded in the "old GNU sparse map" format.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763766
+    - https://go.dev/issue/78301
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4869
+  - VulnerabilityID: CVE-2026-32289
+    VendorIDs:
+    - GO-2026-4865
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: b5442166f1a56cff
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32289
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:cca6b2b26168c07422830cfae2fda32efa9b7a966894b3c19cf8aacbf51a4734
+    Title: JsBraceDepth Context Tracking Bugs (XSS) in html/template
+    Description: |-
+      Context was not properly tracked across template branches for JS template literals, leading to possibly incorrect escaping of content when branches were used. Additionally template actions within JS template literals did not properly track the brace depth, leading to incorrect escaping being applied.
+
+      These issues could cause actions within JS template literals to be incorrectly or improperly escaped, leading to XSS vulnerabilities.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763762
+    - https://go.dev/issue/78331
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4865
+  - VulnerabilityID: CVE-2026-33810
+    VendorIDs:
+    - GO-2026-4866
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: b5442166f1a56cff
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-33810
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:1db5757f2415315c369d403db5bbd4c9a13850fc5a923e5c2cdd17c5ed532677
+    Title: Case-sensitive excludedSubtrees name constraints cause Auth Bypass in crypto/x509
+    Description: |-
+      When verifying a certificate chain containing excluded DNS constraints, these constraints are not correctly applied to wildcard DNS SANs which use a different case than the constraint.
+
+      This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763763
+    - https://go.dev/issue/78332
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4866
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -5917,6 +6128,217 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-33997
     PublishedDate: '2026-03-31T03:15:57.523Z'
     LastModifiedDate: '2026-04-03T17:23:21.307Z'
+  - VulnerabilityID: CVE-2026-32280
+    VendorIDs:
+    - GO-2026-4947
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: 8f429e5eea102aa3
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32280
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:fc7645b6308b08442f9f8fcd8c58b7618245aa2efabfcb9d0320bbea20a64e0d
+    Title: Unexpected work during chain building in crypto/x509
+    Description: During chain building, the amount of work that is done is not correctly limited when a large number of intermediate certificates are passed in VerifyOptions.Intermediates, which can lead to a denial of service. This affects both direct users of crypto/x509 and users of crypto/tls.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758320
+    - https://go.dev/issue/78282
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4947
+  - VulnerabilityID: CVE-2026-32281
+    VendorIDs:
+    - GO-2026-4946
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: 8f429e5eea102aa3
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32281
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:3bfd8e9897346f9f19bbfa114769301412785781b526e22906c420b2e8774795
+    Title: Inefficient policy validation in crypto/x509
+    Description: |-
+      Validating certificate chains which use policies is unexpectedly inefficient when certificates in the chain contain a very large number of policy mappings, possibly causing denial of service.
+
+      This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758061
+    - https://go.dev/issue/78281
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4946
+  - VulnerabilityID: CVE-2026-32282
+    VendorIDs:
+    - GO-2026-4864
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: 8f429e5eea102aa3
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32282
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:4d5d4895676ffa34d9b60f3ebbb998f4251d01fbeb7afcabf81a2032eeec7fa2
+    Title: TOCTOU permits root escape on Linux via Root.Chmod in os in internal/syscall/unix
+    Description: |-
+      On Linux, if the target of Root.Chmod is replaced with a symlink while the chmod operation is in progress, Chmod can operate on the target of the symlink, even when the target lies outside the root.
+
+      The Linux fchmodat syscall silently ignores the AT_SYMLINK_NOFOLLOW flag, which Root.Chmod uses to avoid symlink traversal. Root.Chmod checks its target before acting and returns an error if the target is a symlink lying outside the root, so the impact is limited to cases where the target is replaced with a symlink between the check and operation.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763761
+    - https://go.dev/issue/78293
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4864
+  - VulnerabilityID: CVE-2026-32283
+    VendorIDs:
+    - GO-2026-4870
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: 8f429e5eea102aa3
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32283
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:fa388b676afc0c45141dc8def985df1758b1f1d996d69bf771b1b8e9fc90d330
+    Title: Unauthenticated TLS 1.3 KeyUpdate record can cause persistent connection retention and DoS in crypto/tls
+    Description: |-
+      If one side of the TLS connection sends multiple key update messages post-handshake in a single record, the connection can deadlock, causing uncontrolled consumption of resources. This can lead to a denial of service.
+
+      This only affects TLS 1.3.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763767
+    - https://go.dev/issue/78334
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4870
+  - VulnerabilityID: CVE-2026-32288
+    VendorIDs:
+    - GO-2026-4869
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: 8f429e5eea102aa3
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32288
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:aee173e6cd704db2b45c1af79299e274483008ada91076d4d96de48cb8c1ab2a
+    Title: Unbounded allocation for old GNU sparse in archive/tar
+    Description: tar.Reader can allocate an unbounded amount of memory when reading a maliciously-crafted archive containing a large number of sparse regions encoded in the "old GNU sparse map" format.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763766
+    - https://go.dev/issue/78301
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4869
+  - VulnerabilityID: CVE-2026-32289
+    VendorIDs:
+    - GO-2026-4865
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: 8f429e5eea102aa3
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32289
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:1697aacd4112dc606f40caa34176e9106dfeda8affb17c43dfad1955496b9588
+    Title: JsBraceDepth Context Tracking Bugs (XSS) in html/template
+    Description: |-
+      Context was not properly tracked across template branches for JS template literals, leading to possibly incorrect escaping of content when branches were used. Additionally template actions within JS template literals did not properly track the brace depth, leading to incorrect escaping being applied.
+
+      These issues could cause actions within JS template literals to be incorrectly or improperly escaped, leading to XSS vulnerabilities.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763762
+    - https://go.dev/issue/78331
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4865
+  - VulnerabilityID: CVE-2026-33810
+    VendorIDs:
+    - GO-2026-4866
+    PkgID: stdlib@v1.26.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.1
+      UID: 8f429e5eea102aa3
+    InstalledVersion: v1.26.1
+    FixedVersion: 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-33810
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:5178927ff40c9c85bce73d76c4ea167cbddf927a1eb2f5637cd49b996aeaff2f
+    Title: Case-sensitive excludedSubtrees name constraints cause Auth Bypass in crypto/x509
+    Description: |-
+      When verifying a certificate chain containing excluded DNS constraints, these constraints are not correctly applied to wildcard DNS SANs which use a different case than the constraint.
+
+      This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763763
+    - https://go.dev/issue/78332
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4866
 - Target: usr/share/grafana/bin/grafana
   Class: lang-pkgs
   Type: gobinary
@@ -11855,6 +12277,159 @@
       DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
     AnalyzedBy: gobinary
   Vulnerabilities:
+  - VulnerabilityID: GHSA-xmrv-pmrh-hhx2
+    PkgID: github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream@v1.6.11
+    PkgName: github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream@v1.6.11
+      UID: 3196050983ef05ee
+    InstalledVersion: v1.6.11
+    FixedVersion: 1.7.8
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    SeveritySource: ghsa
+    PrimaryURL: https://github.com/advisories/GHSA-xmrv-pmrh-hhx2
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Fingerprint: sha256:954308cc4b0b857809d3e7abcbef4628a959850b0e48eaf0097d739ad87523e9
+    Title: Denial of Service due to Panic in AWS SDK for Go v2 SDK EventStream Decoder
+    Description: |-
+      **CVSSv3.1 Rating**: [Medium]
+      **CVSSv3.1 Score**: [5.9]
+      **CVSSv3.1 Vector String**: [CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H]
+
+      ## Summary and Impact
+      An issue exists in the the EventStream header decoder in AWS SDK for Go v2 in versions predating [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23). An actor can send a malformed EventStream response frame containing a crafted header value type byte outside the valid range, which can cause the host process to terminate.
+
+      Impacted versions: < [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23)
+
+      ## Patches
+      This issue has been addressed in versions [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23) and above. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. 
+
+      ## Workarounds
+      Not Applicable
+
+      ## References
+      If you have any questions or comments about this advisory, we ask that you contact [AWS/Amazon] Security via our [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.
+    Severity: MEDIUM
+    VendorSeverity:
+      ghsa: 2
+    CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 5.9
+    References:
+    - https://github.com/aws/aws-sdk-go-v2
+    - https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23
+    - https://github.com/aws/aws-sdk-go-v2/security/advisories/GHSA-xmrv-pmrh-hhx2
+    PublishedDate: '2026-04-08T00:18:56Z'
+    LastModifiedDate: '2026-04-08T00:18:57Z'
+  - VulnerabilityID: GHSA-xmrv-pmrh-hhx2
+    PkgID: github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs@v1.51.0
+    PkgName: github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs@v1.51.0
+      UID: 681eda24292030ae
+    InstalledVersion: v1.51.0
+    FixedVersion: 1.65.0
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    SeveritySource: ghsa
+    PrimaryURL: https://github.com/advisories/GHSA-xmrv-pmrh-hhx2
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Fingerprint: sha256:5d915af9e5e95b1c9e6fb99491da4c705f4ca4ced292d0fb8e1ece244994c74b
+    Title: Denial of Service due to Panic in AWS SDK for Go v2 SDK EventStream Decoder
+    Description: |-
+      **CVSSv3.1 Rating**: [Medium]
+      **CVSSv3.1 Score**: [5.9]
+      **CVSSv3.1 Vector String**: [CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H]
+
+      ## Summary and Impact
+      An issue exists in the the EventStream header decoder in AWS SDK for Go v2 in versions predating [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23). An actor can send a malformed EventStream response frame containing a crafted header value type byte outside the valid range, which can cause the host process to terminate.
+
+      Impacted versions: < [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23)
+
+      ## Patches
+      This issue has been addressed in versions [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23) and above. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. 
+
+      ## Workarounds
+      Not Applicable
+
+      ## References
+      If you have any questions or comments about this advisory, we ask that you contact [AWS/Amazon] Security via our [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.
+    Severity: MEDIUM
+    VendorSeverity:
+      ghsa: 2
+    CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 5.9
+    References:
+    - https://github.com/aws/aws-sdk-go-v2
+    - https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23
+    - https://github.com/aws/aws-sdk-go-v2/security/advisories/GHSA-xmrv-pmrh-hhx2
+    PublishedDate: '2026-04-08T00:18:56Z'
+    LastModifiedDate: '2026-04-08T00:18:57Z'
+  - VulnerabilityID: GHSA-xmrv-pmrh-hhx2
+    PkgID: github.com/aws/aws-sdk-go-v2/service/s3@v1.84.0
+    PkgName: github.com/aws/aws-sdk-go-v2/service/s3
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/aws/aws-sdk-go-v2/service/s3@v1.84.0
+      UID: edff18a5eb5a50d6
+    InstalledVersion: v1.84.0
+    FixedVersion: 1.97.3
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    SeveritySource: ghsa
+    PrimaryURL: https://github.com/advisories/GHSA-xmrv-pmrh-hhx2
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Fingerprint: sha256:335259d847e1c66cf35f7bfea3e447e6d88d3859365f035941f964a02a27ceaf
+    Title: Denial of Service due to Panic in AWS SDK for Go v2 SDK EventStream Decoder
+    Description: |-
+      **CVSSv3.1 Rating**: [Medium]
+      **CVSSv3.1 Score**: [5.9]
+      **CVSSv3.1 Vector String**: [CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H]
+
+      ## Summary and Impact
+      An issue exists in the the EventStream header decoder in AWS SDK for Go v2 in versions predating [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23). An actor can send a malformed EventStream response frame containing a crafted header value type byte outside the valid range, which can cause the host process to terminate.
+
+      Impacted versions: < [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23)
+
+      ## Patches
+      This issue has been addressed in versions [2026-03-23](https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23) and above. We recommend upgrading to the latest version and ensuring any forked or derivative code is patched to incorporate the new fixes. 
+
+      ## Workarounds
+      Not Applicable
+
+      ## References
+      If you have any questions or comments about this advisory, we ask that you contact [AWS/Amazon] Security via our [vulnerability reporting page](https://aws.amazon.com/security/vulnerability-reporting) or directly via email to [aws-security@amazon.com](mailto:aws-security@amazon.com). Please do not create a public GitHub issue.
+    Severity: MEDIUM
+    VendorSeverity:
+      ghsa: 2
+    CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 5.9
+    References:
+    - https://github.com/aws/aws-sdk-go-v2
+    - https://github.com/aws/aws-sdk-go-v2/releases/tag/release-2026-03-23
+    - https://github.com/aws/aws-sdk-go-v2/security/advisories/GHSA-xmrv-pmrh-hhx2
+    PublishedDate: '2026-04-08T00:18:56Z'
+    LastModifiedDate: '2026-04-08T00:18:57Z'
   - VulnerabilityID: CVE-2026-34986
     VendorIDs:
     - GHSA-78h2-9frx-2jm8
@@ -11876,24 +12451,30 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:f1021bfa7a17cfbd7c3b9d16719d1cde1811fefd283b2308588a3ad42788f6ab
-    Title: Go JOSE Panics in JWE decryption
+    Title: 'github.com/go-jose/go-jose/v3: github.com/go-jose/go-jose/v4: Go JOSE: Denial of Service via crafted JSON Web Encryption (JWE) object'
     Description: Go JOSE provides an implementation of the Javascript Object Signing and Encryption set of standards in Go, including support for JSON Web Encryption (JWE), JSON Web Signature (JWS), and JSON Web Token (JWT) standards. Prior to 4.1.4 and 3.0.5, decrypting a JSON Web Encryption (JWE) object will panic if the alg field indicates a key wrapping algorithm (one ending in KW, with the exception of A128GCMKW, A192GCMKW, and A256GCMKW) and the encrypted_key field is empty. The panic happens when cipher.KeyUnwrap() in key_wrap.go attempts to allocate a slice with a zero or negative length based on the length of the encrypted_key. This code path is reachable from ParseEncrypted() / ParseEncryptedJSON() / ParseEncryptedCompact() followed by Decrypt() on the resulting object. Note that the parse functions take a list of accepted key algorithms. If the accepted key algorithms do not include any key wrapping algorithms, parsing will fail and the application will be unaffected. This panic is also reachable by calling cipher.KeyUnwrap() directly with any ciphertext parameter less than 16 bytes long, but calling this function directly is less common. Panics can lead to denial of service. This vulnerability is fixed in 4.1.4 and 3.0.5.
     Severity: HIGH
     CweIDs:
     - CWE-248
     VendorSeverity:
       ghsa: 3
+      redhat: 3
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-34986
     - https://github.com/go-jose/go-jose
     - https://github.com/go-jose/go-jose/security/advisories/GHSA-78h2-9frx-2jm8
     - https://nvd.nist.gov/vuln/detail/CVE-2026-34986
     - https://pkg.go.dev/github.com/go-jose/go-jose/v4#pkg-constants
+    - https://www.cve.org/CVERecord?id=CVE-2026-34986
     PublishedDate: '2026-04-06T17:17:11.87Z'
-    LastModifiedDate: '2026-04-06T17:17:11.87Z'
+    LastModifiedDate: '2026-04-07T13:20:11.643Z'
   - VulnerabilityID: CVE-2026-34040
     VendorIDs:
     - GHSA-x744-4wpc-v9h2
@@ -12039,6 +12620,89 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2026-33729
     PublishedDate: '2026-03-27T01:16:20.367Z'
     LastModifiedDate: '2026-03-30T13:26:29.793Z'
+  - VulnerabilityID: CVE-2026-34972
+    VendorIDs:
+    - GHSA-jwvj-g8pc-cx45
+    PkgID: github.com/openfga/openfga@v1.11.3
+    PkgName: github.com/openfga/openfga
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/openfga/openfga@v1.11.3
+      UID: 543a9e2713c17753
+    InstalledVersion: v1.11.3
+    FixedVersion: 1.14.0
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-34972
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Fingerprint: sha256:f4208e92789570031b8d9d017733c0c6aa3603ce5a3ea48eef3e86648ed86e6b
+    Title: 'github.com/openfga/openfga: OpenFGA: Improper policy enforcement via specific BatchCheck calls'
+    Description: OpenFGA is a high-performance and flexible authorization/permission engine built for developers and inspired by Google Zanzibar. From 1.8.0 to 1.13.1, under specific conditions, BatchCheck calls with multiple checks sent for the same object, relation, and user combination can result in improper policy enforcement. This vulnerability is fixed in 1.14.0.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-863
+    VendorSeverity:
+      ghsa: 2
+      redhat: 2
+    CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L
+        V3Score: 5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N
+        V3Score: 4.2
+    References:
+    - https://access.redhat.com/security/cve/CVE-2026-34972
+    - https://github.com/openfga/openfga
+    - https://github.com/openfga/openfga/security/advisories/GHSA-jwvj-g8pc-cx45
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-34972
+    - https://www.cve.org/CVERecord?id=CVE-2026-34972
+    PublishedDate: '2026-04-06T21:16:19.997Z'
+    LastModifiedDate: '2026-04-07T13:20:11.643Z'
+  - VulnerabilityID: CVE-2026-33817
+    VendorIDs:
+    - GHSA-6jwv-w5xf-7j27
+    PkgID: go.etcd.io/bbolt@v1.4.3
+    PkgName: go.etcd.io/bbolt
+    PkgIdentifier:
+      PURL: pkg:golang/go.etcd.io/bbolt@v1.4.3
+      UID: 798d914bdef256f
+    InstalledVersion: v1.4.3
+    Status: affected
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-33817
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Fingerprint: sha256:301512ca54ee5923309c8e2244bcd11d529e22de2a69c71abb47018b49f2e21a
+    Title: go.etcd.io/bbolt affected by index out-of-range vulnerability
+    Description: Index out-of-range when encountering a branch page with zero elements in go.etcd.io/bbolt
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-125
+    VendorSeverity:
+      ghsa: 2
+    CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 6.2
+    References:
+    - https://github.com/etcd-io/bbolt
+    - https://github.com/etcd-io/bbolt/pull/1171/changes/386d5b69785937d1aa20cb25c8439404cf398143
+    - https://github.com/golang/vulndb/issues/4923
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-33817
+    - https://pkg.go.dev/vuln/GO-2026-4923
+    PublishedDate: '2026-04-06T19:16:27.677Z'
+    LastModifiedDate: '2026-04-07T13:20:11.643Z'
   - VulnerabilityID: CVE-2026-24051
     VendorIDs:
     - GHSA-9h8m-3fm2-qjrq
@@ -12079,6 +12743,186 @@
     - https://pkg.go.dev/vuln/GO-2026-4394
     PublishedDate: '2026-02-02T23:16:07.963Z'
     LastModifiedDate: '2026-02-27T20:32:10.693Z'
+  - VulnerabilityID: CVE-2026-32280
+    VendorIDs:
+    - GO-2026-4947
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 72d945d729af6c4b
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32280
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:c96a72cb27bd70f6078c88790ba18e33ca5d4a492193c9aae86be313b0010eb5
+    Title: Unexpected work during chain building in crypto/x509
+    Description: During chain building, the amount of work that is done is not correctly limited when a large number of intermediate certificates are passed in VerifyOptions.Intermediates, which can lead to a denial of service. This affects both direct users of crypto/x509 and users of crypto/tls.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758320
+    - https://go.dev/issue/78282
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4947
+  - VulnerabilityID: CVE-2026-32281
+    VendorIDs:
+    - GO-2026-4946
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 72d945d729af6c4b
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32281
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:6328b5c3bc04b3e105ce3832854fc84d12faa10c4ae980e9090ff131e49947b8
+    Title: Inefficient policy validation in crypto/x509
+    Description: |-
+      Validating certificate chains which use policies is unexpectedly inefficient when certificates in the chain contain a very large number of policy mappings, possibly causing denial of service.
+
+      This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758061
+    - https://go.dev/issue/78281
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4946
+  - VulnerabilityID: CVE-2026-32282
+    VendorIDs:
+    - GO-2026-4864
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 72d945d729af6c4b
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32282
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:f504592801c6571b10639c34ac2a0c1c3f9cf263495aac9defcaec55ec437a17
+    Title: TOCTOU permits root escape on Linux via Root.Chmod in os in internal/syscall/unix
+    Description: |-
+      On Linux, if the target of Root.Chmod is replaced with a symlink while the chmod operation is in progress, Chmod can operate on the target of the symlink, even when the target lies outside the root.
+
+      The Linux fchmodat syscall silently ignores the AT_SYMLINK_NOFOLLOW flag, which Root.Chmod uses to avoid symlink traversal. Root.Chmod checks its target before acting and returns an error if the target is a symlink lying outside the root, so the impact is limited to cases where the target is replaced with a symlink between the check and operation.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763761
+    - https://go.dev/issue/78293
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4864
+  - VulnerabilityID: CVE-2026-32283
+    VendorIDs:
+    - GO-2026-4870
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 72d945d729af6c4b
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32283
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:5d2daaeed70e0239d1449dabe53f737137eaa9ab9d8283c74d866898a705cdc8
+    Title: Unauthenticated TLS 1.3 KeyUpdate record can cause persistent connection retention and DoS in crypto/tls
+    Description: |-
+      If one side of the TLS connection sends multiple key update messages post-handshake in a single record, the connection can deadlock, causing uncontrolled consumption of resources. This can lead to a denial of service.
+
+      This only affects TLS 1.3.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763767
+    - https://go.dev/issue/78334
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4870
+  - VulnerabilityID: CVE-2026-32288
+    VendorIDs:
+    - GO-2026-4869
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 72d945d729af6c4b
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32288
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:2130aef8d98f8ee6f201ac28624819ea07e36e09ea98827eae1039448037da51
+    Title: Unbounded allocation for old GNU sparse in archive/tar
+    Description: tar.Reader can allocate an unbounded amount of memory when reading a maliciously-crafted archive containing a large number of sparse regions encoded in the "old GNU sparse map" format.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763766
+    - https://go.dev/issue/78301
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4869
+  - VulnerabilityID: CVE-2026-32289
+    VendorIDs:
+    - GO-2026-4865
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 72d945d729af6c4b
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32289
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:4786fa3bcbb4723da9f49ce31640751981d5cc2b28920fea7c38d9eb8c312e32
+    Title: JsBraceDepth Context Tracking Bugs (XSS) in html/template
+    Description: |-
+      Context was not properly tracked across template branches for JS template literals, leading to possibly incorrect escaping of content when branches were used. Additionally template actions within JS template literals did not properly track the brace depth, leading to incorrect escaping being applied.
+
+      These issues could cause actions within JS template literals to be incorrectly or improperly escaped, leading to XSS vulnerabilities.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763762
+    - https://go.dev/issue/78331
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4865
 - Target: usr/share/grafana/bin/grafana-cli
   Class: lang-pkgs
   Type: gobinary
@@ -12150,6 +12994,187 @@
       Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
       DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
     AnalyzedBy: gobinary
+  Vulnerabilities:
+  - VulnerabilityID: CVE-2026-32280
+    VendorIDs:
+    - GO-2026-4947
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: d38d18a38bfd42e2
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32280
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:4039a4d3487bf72e7790537317a902b2389902e30f5227640719add9095c166d
+    Title: Unexpected work during chain building in crypto/x509
+    Description: During chain building, the amount of work that is done is not correctly limited when a large number of intermediate certificates are passed in VerifyOptions.Intermediates, which can lead to a denial of service. This affects both direct users of crypto/x509 and users of crypto/tls.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758320
+    - https://go.dev/issue/78282
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4947
+  - VulnerabilityID: CVE-2026-32281
+    VendorIDs:
+    - GO-2026-4946
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: d38d18a38bfd42e2
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32281
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:0e72843f8f1a00bed9f4b63cf4766942d12ad57c18c564ac7a418290f94a4612
+    Title: Inefficient policy validation in crypto/x509
+    Description: |-
+      Validating certificate chains which use policies is unexpectedly inefficient when certificates in the chain contain a very large number of policy mappings, possibly causing denial of service.
+
+      This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758061
+    - https://go.dev/issue/78281
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4946
+  - VulnerabilityID: CVE-2026-32282
+    VendorIDs:
+    - GO-2026-4864
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: d38d18a38bfd42e2
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32282
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:8cee38e484c6a6ec53cf84574865c5f0b9ad2ecd840dc6b3d921ea0f30f3df9f
+    Title: TOCTOU permits root escape on Linux via Root.Chmod in os in internal/syscall/unix
+    Description: |-
+      On Linux, if the target of Root.Chmod is replaced with a symlink while the chmod operation is in progress, Chmod can operate on the target of the symlink, even when the target lies outside the root.
+
+      The Linux fchmodat syscall silently ignores the AT_SYMLINK_NOFOLLOW flag, which Root.Chmod uses to avoid symlink traversal. Root.Chmod checks its target before acting and returns an error if the target is a symlink lying outside the root, so the impact is limited to cases where the target is replaced with a symlink between the check and operation.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763761
+    - https://go.dev/issue/78293
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4864
+  - VulnerabilityID: CVE-2026-32283
+    VendorIDs:
+    - GO-2026-4870
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: d38d18a38bfd42e2
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32283
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:7c69d7b56c38bd3b04a08cf0367ed22fd27d30db1d1bbd03366f10ef10c7f72c
+    Title: Unauthenticated TLS 1.3 KeyUpdate record can cause persistent connection retention and DoS in crypto/tls
+    Description: |-
+      If one side of the TLS connection sends multiple key update messages post-handshake in a single record, the connection can deadlock, causing uncontrolled consumption of resources. This can lead to a denial of service.
+
+      This only affects TLS 1.3.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763767
+    - https://go.dev/issue/78334
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4870
+  - VulnerabilityID: CVE-2026-32288
+    VendorIDs:
+    - GO-2026-4869
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: d38d18a38bfd42e2
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32288
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:5d03e948516e06a921dac555a8fb0c3dff81fc179a5e570c5fdd99d09655e1ad
+    Title: Unbounded allocation for old GNU sparse in archive/tar
+    Description: tar.Reader can allocate an unbounded amount of memory when reading a maliciously-crafted archive containing a large number of sparse regions encoded in the "old GNU sparse map" format.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763766
+    - https://go.dev/issue/78301
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4869
+  - VulnerabilityID: CVE-2026-32289
+    VendorIDs:
+    - GO-2026-4865
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: d38d18a38bfd42e2
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32289
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:ea054661bad6f4cd001638b3bade38136054d734a63471ec100d0cb1590ade87
+    Title: JsBraceDepth Context Tracking Bugs (XSS) in html/template
+    Description: |-
+      Context was not properly tracked across template branches for JS template literals, leading to possibly incorrect escaping of content when branches were used. Additionally template actions within JS template literals did not properly track the brace depth, leading to incorrect escaping being applied.
+
+      These issues could cause actions within JS template literals to be incorrectly or improperly escaped, leading to XSS vulnerabilities.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763762
+    - https://go.dev/issue/78331
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4865
 - Target: usr/share/grafana/bin/grafana-server
   Class: lang-pkgs
   Type: gobinary
@@ -12221,3 +13246,184 @@
       Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
       DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
     AnalyzedBy: gobinary
+  Vulnerabilities:
+  - VulnerabilityID: CVE-2026-32280
+    VendorIDs:
+    - GO-2026-4947
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 2559fb36e9bac164
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32280
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:b9fa86b7c9ffc81fbedf8db08c3717b1ec1ec2b89c0e6f4d4d13e8041526e193
+    Title: Unexpected work during chain building in crypto/x509
+    Description: During chain building, the amount of work that is done is not correctly limited when a large number of intermediate certificates are passed in VerifyOptions.Intermediates, which can lead to a denial of service. This affects both direct users of crypto/x509 and users of crypto/tls.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758320
+    - https://go.dev/issue/78282
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4947
+  - VulnerabilityID: CVE-2026-32281
+    VendorIDs:
+    - GO-2026-4946
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 2559fb36e9bac164
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32281
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:a60732d12dcd2f1435af79ba11628ff69f8f7e636f85ad5e28308d9b755d7581
+    Title: Inefficient policy validation in crypto/x509
+    Description: |-
+      Validating certificate chains which use policies is unexpectedly inefficient when certificates in the chain contain a very large number of policy mappings, possibly causing denial of service.
+
+      This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/758061
+    - https://go.dev/issue/78281
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4946
+  - VulnerabilityID: CVE-2026-32282
+    VendorIDs:
+    - GO-2026-4864
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 2559fb36e9bac164
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32282
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:281968461007b5ae6bbaaa48811f22785c738a8a7ac3f9c9eecd1461895c5b32
+    Title: TOCTOU permits root escape on Linux via Root.Chmod in os in internal/syscall/unix
+    Description: |-
+      On Linux, if the target of Root.Chmod is replaced with a symlink while the chmod operation is in progress, Chmod can operate on the target of the symlink, even when the target lies outside the root.
+
+      The Linux fchmodat syscall silently ignores the AT_SYMLINK_NOFOLLOW flag, which Root.Chmod uses to avoid symlink traversal. Root.Chmod checks its target before acting and returns an error if the target is a symlink lying outside the root, so the impact is limited to cases where the target is replaced with a symlink between the check and operation.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763761
+    - https://go.dev/issue/78293
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4864
+  - VulnerabilityID: CVE-2026-32283
+    VendorIDs:
+    - GO-2026-4870
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 2559fb36e9bac164
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32283
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:615852a306e3a9030a941c0f50ff71fdf2f49e317e84c698bec84289cd1d4f49
+    Title: Unauthenticated TLS 1.3 KeyUpdate record can cause persistent connection retention and DoS in crypto/tls
+    Description: |-
+      If one side of the TLS connection sends multiple key update messages post-handshake in a single record, the connection can deadlock, causing uncontrolled consumption of resources. This can lead to a denial of service.
+
+      This only affects TLS 1.3.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763767
+    - https://go.dev/issue/78334
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4870
+  - VulnerabilityID: CVE-2026-32288
+    VendorIDs:
+    - GO-2026-4869
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 2559fb36e9bac164
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32288
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:39c1f223fef5992625035118fb980379aa71045036c393f01a92335b59347392
+    Title: Unbounded allocation for old GNU sparse in archive/tar
+    Description: tar.Reader can allocate an unbounded amount of memory when reading a maliciously-crafted archive containing a large number of sparse regions encoded in the "old GNU sparse map" format.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763766
+    - https://go.dev/issue/78301
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4869
+  - VulnerabilityID: CVE-2026-32289
+    VendorIDs:
+    - GO-2026-4865
+    PkgID: stdlib@v1.25.8
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.25.8
+      UID: 2559fb36e9bac164
+    InstalledVersion: v1.25.8
+    FixedVersion: 1.25.9, 1.26.2
+    Status: fixed
+    Layer:
+      Digest: sha256:dd01f1f1720f17d16afe3fe7693472180fae8f0ab5f2ae1913bd74d37007c848
+      DiffID: sha256:8e27a5bf3879074aa3ed2cdeab2d28896d34669b9f5bf657f13b5fc2ffc573c5
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-32289
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:8d2a7b8d6b02745e9846c7860ddbf6e191f785b9df895c815e2fe045e5109bf9
+    Title: JsBraceDepth Context Tracking Bugs (XSS) in html/template
+    Description: |-
+      Context was not properly tracked across template branches for JS template literals, leading to possibly incorrect escaping of content when branches were used. Additionally template actions within JS template literals did not properly track the brace depth, leading to incorrect escaping being applied.
+
+      These issues could cause actions within JS template literals to be incorrectly or improperly escaped, leading to XSS vulnerabilities.
+    Severity: UNKNOWN
+    References:
+    - https://go.dev/cl/763762
+    - https://go.dev/issue/78331
+    - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
+    - https://pkg.go.dev/vuln/GO-2026-4865
