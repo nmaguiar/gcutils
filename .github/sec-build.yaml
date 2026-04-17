@@ -6799,11 +6799,12 @@
   Class: lang-pkgs
   Type: gobinary
   Packages:
-  - ID: github.com/grafana/grafana
+  - ID: github.com/grafana/grafana@v12.4.2
     Name: github.com/grafana/grafana
     Identifier:
-      PURL: pkg:golang/github.com/grafana/grafana
-      UID: 9053a7685e9703e8
+      PURL: pkg:golang/github.com/grafana/grafana@12.4.2
+      UID: 616f5ec88a6fd929
+    Version: 12.4.2
     Relationship: root
     DependsOn:
     - ./apps/live
