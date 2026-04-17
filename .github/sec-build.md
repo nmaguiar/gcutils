@@ -7177,10 +7177,11 @@
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
-│     ├ Packages        ╭ [0]   ╭ ID          : github.com/grafana/grafana 
+│     ├ Packages        ╭ [0]   ╭ ID          : github.com/grafana/grafana@v12.4.2 
 │     │                 │       ├ Name        : github.com/grafana/grafana 
-│     │                 │       ├ Identifier   ╭ PURL: pkg:golang/github.com/grafana/grafana 
-│     │                 │       │              ╰ UID : 9053a7685e9703e8 
+│     │                 │       ├ Identifier   ╭ PURL: pkg:golang/github.com/grafana/grafana@12.4.2 
+│     │                 │       │              ╰ UID : 616f5ec88a6fd929 
+│     │                 │       ├ Version     : 12.4.2 
 │     │                 │       ├ Relationship: root 
 │     │                 │       ├ DependsOn    ╭ [0]  : ./apps/live 
 │     │                 │       │              ├ [1]  : buf.build/gen/go/parca-dev/parca/connectrpc/go@v1.18.1-
