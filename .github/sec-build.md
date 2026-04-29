@@ -14992,24 +14992,23 @@
                         │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
                         │      │                            │           N/A:H 
                         │      │                            ╰ V3Score : 7.5 
-                        │      ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:8842 
+                        │      ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:9044 
                         │      │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-25679 
-                        │      │                  ├ [2] : https://bugzilla.redhat.com/2445345 
-                        │      │                  ├ [3] : https://bugzilla.redhat.com/2445356 
-                        │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2445356 
-                        │      │                  ├ [5] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+                        │      │                  ├ [2] : https://bugzilla.redhat.com/2445356 
+                        │      │                  ├ [3] : https://bugzilla.redhat.com/show_bug.cgi?id=2445356 
+                        │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
                         │      │                  │       26-25679 
-                        │      │                  ├ [6] : https://errata.almalinux.org/10/ALSA-2026-8842.html 
-                        │      │                  ├ [7] : https://errata.rockylinux.org/RLSA-2026:7011 
-                        │      │                  ├ [8] : https://go.dev/cl/752180 
-                        │      │                  ├ [9] : https://go.dev/issue/77578 
-                        │      │                  ├ [10]: https://groups.google.com/g/golang-announce/c/EdhZqrQ
+                        │      │                  ├ [5] : https://errata.almalinux.org/9/ALSA-2026-9044.html 
+                        │      │                  ├ [6] : https://errata.rockylinux.org/RLSA-2026:7259 
+                        │      │                  ├ [7] : https://go.dev/cl/752180 
+                        │      │                  ├ [8] : https://go.dev/issue/77578 
+                        │      │                  ├ [9] : https://groups.google.com/g/golang-announce/c/EdhZqrQ
                         │      │                  │       98hk 
-                        │      │                  ├ [11]: https://linux.oracle.com/cve/CVE-2026-25679.html 
-                        │      │                  ├ [12]: https://linux.oracle.com/errata/ELSA-2026-9044.html 
-                        │      │                  ├ [13]: https://nvd.nist.gov/vuln/detail/CVE-2026-25679 
-                        │      │                  ├ [14]: https://pkg.go.dev/vuln/GO-2026-4601 
-                        │      │                  ╰ [15]: https://www.cve.org/CVERecord?id=CVE-2026-25679 
+                        │      │                  ├ [10]: https://linux.oracle.com/cve/CVE-2026-25679.html 
+                        │      │                  ├ [11]: https://linux.oracle.com/errata/ELSA-2026-9044.html 
+                        │      │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2026-25679 
+                        │      │                  ├ [13]: https://pkg.go.dev/vuln/GO-2026-4601 
+                        │      │                  ╰ [14]: https://www.cve.org/CVERecord?id=CVE-2026-25679 
                         │      ├ PublishedDate   : 2026-03-06T22:16:00.72Z 
                         │      ╰ LastModifiedDate: 2026-04-21T14:43:03.8Z 
                         ├ [2]  ╭ VulnerabilityID : CVE-2026-27137 
