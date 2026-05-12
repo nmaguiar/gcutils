@@ -310,12 +310,17 @@
 │                       │      ├ Description     : When using LookupCNAME with the cgo DNS resolver, a very
 │                       │      │                   long CNAME response can trigger a double-free of C memory
 │                       │      │                   and a crash. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/767860 
 │                       │      │                  ├ [1]: https://go.dev/issue/78803 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4981 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-33811 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4981 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:42.77Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T15:16:36.64Z 
 │                       ├ [6]  ╭ VulnerabilityID : CVE-2026-33814 
@@ -342,13 +347,18 @@
 │                       │      ├ Description     : When processing HTTP/2 SETTINGS frames, transport will enter
 │                       │      │                    an infinite loop of writing CONTINUATION frames if it
 │                       │      │                   receives a SETTINGS_MAX_FRAME_SIZE with a value of 0. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/761581 
 │                       │      │                  ├ [1]: https://go.dev/cl/761640 
 │                       │      │                  ├ [2]: https://go.dev/issue/78476 
 │                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4918 
+│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-33814 
+│                       │      │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2026-4918 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:42.88Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T19:16:30.567Z 
 │                       ├ [7]  ╭ VulnerabilityID : CVE-2026-39820 
@@ -375,15 +385,92 @@
 │                       │      ├ Description     : Well-crafted inputs reaching ParseAddress, ParseAddressList,
 │                       │      │                    and ParseDate were able to trigger excessive CPU exhaustion
 │                       │      │                    and memory allocations. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/759940 
 │                       │      │                  ├ [1]: https://go.dev/issue/78566 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4986 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39820 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4986 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.187Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T15:16:37.323Z 
-│                       ├ [8]  ╭ VulnerabilityID : CVE-2026-39823 
+│                       ├ [8]  ╭ VulnerabilityID : CVE-2026-39836 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4971 
+│                       │      ├ PkgID           : stdlib@v1.26.2 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
+│                       │      │                  ╰ UID : d663b72caca040b6 
+│                       │      ├ InstalledVersion: v1.26.2 
+│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+│                       │      │                  │         e604d470cc284fe84f9a 
+│                       │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+│                       │      │                            c9a6ba0df01bfc18beca 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39836 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:b89096b021429b27ab0efa816f7ecb3e0dad1ca88b748881cbb5f
+│                       │      │                   13534f498ff 
+│                       │      ├ Title           : Panic in Dial and LookupPort when handling NUL byte on
+│                       │      │                   Windows in net 
+│                       │      ├ Description     : The Dial and LookupPort functions panic on Windows when
+│                       │      │                   provided with an input containing a NUL (0). 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: https://go.dev/cl/775320 
+│                       │      │                  ├ [1]: https://go.dev/issue/79006 
+│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+│                       │      │                  │      47M 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39836 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4971 
+│                       │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
+│                       │      ╰ LastModifiedDate: 2026-05-08T22:16:29.723Z 
+│                       ├ [9]  ╭ VulnerabilityID : CVE-2026-42499 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4977 
+│                       │      ├ PkgID           : stdlib@v1.26.2 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
+│                       │      │                  ╰ UID : d663b72caca040b6 
+│                       │      ├ InstalledVersion: v1.26.2 
+│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+│                       │      │                  │         e604d470cc284fe84f9a 
+│                       │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+│                       │      │                            c9a6ba0df01bfc18beca 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42499 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:9f4a75e94deb4a3bf0d17a6c56d8a55a3d22c32bbf3e9c4a2dca7
+│                       │      │                   7252cf67baf 
+│                       │      ├ Title           : Pathological inputs could cause DoS through consumePhrase
+│                       │      │                   when parsing ... 
+│                       │      ├ Description     : Pathological inputs could cause DoS through consumePhrase
+│                       │      │                   when parsing an email address according to RFC 5322. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: https://go.dev/cl/771520 
+│                       │      │                  ├ [1]: https://go.dev/issue/78987 
+│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+│                       │      │                  │      47M 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42499 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4977 
+│                       │      ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
+│                       │      ╰ LastModifiedDate: 2026-05-08T22:16:33.183Z 
+│                       ├ [10] ╭ VulnerabilityID : CVE-2026-39823 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4982 
 │                       │      ├ PkgID           : stdlib@v1.26.2 
 │                       │      ├ PkgName         : stdlib 
@@ -410,15 +497,20 @@
 │                       │      │                   whitespaces around the '=' rune inside of the <content>
 │                       │      │                   attribute, the escaper would fail to similarly escape it,
 │                       │      │                   leading to XSS. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ─ bitnami: 2 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
+│                       │      │                            │           L/A:N 
+│                       │      │                            ╰ V3Score : 6.1 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/769920 
 │                       │      │                  ├ [1]: https://go.dev/issue/78913 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4982 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39823 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4982 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.29Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T15:16:37.5Z 
-│                       ├ [9]  ╭ VulnerabilityID : CVE-2026-39825 
+│                       ├ [11] ╭ VulnerabilityID : CVE-2026-39825 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4976 
 │                       │      ├ PkgID           : stdlib@v1.26.2 
 │                       │      ├ PkgName         : stdlib 
@@ -452,81 +544,21 @@
 │                       │      │                   example, the query "a1=x&a2=x&...&a10000=x&hidden=y" can
 │                       │      │                   forward the parameter "hidden=y" while hiding it from the
 │                       │      │                   proxy's Rewrite function. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ─ bitnami: 2 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                       │      │                            │           N/A:N 
+│                       │      │                            ╰ V3Score : 5.3 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/770541 
 │                       │      │                  ├ [1]: https://go.dev/issue/78948 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4976 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39825 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4976 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T22:16:29.547Z 
-│                       ├ [10] ╭ VulnerabilityID : CVE-2026-39826 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4980 
-│                       │      ├ PkgID           : stdlib@v1.26.2 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
-│                       │      │                  ╰ UID : d663b72caca040b6 
-│                       │      ├ InstalledVersion: v1.26.2 
-│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-│                       │      │                  │         e604d470cc284fe84f9a 
-│                       │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-│                       │      │                            c9a6ba0df01bfc18beca 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:92a277a16289653e9d650ce310fa8f80b4796f91206174aee9262
-│                       │      │                   99ff0dd2f1a 
-│                       │      ├ Title           : If a trusted template author were to write a <script> tag
-│                       │      │                   containing a ... 
-│                       │      ├ Description     : If a trusted template author were to write a <script> tag
-│                       │      │                   containing an empty 'type' attribute or a 'type' attribute
-│                       │      │                   with an ASCII whitespace, the execution of the template
-│                       │      │                   would incorrectly escape any data passed into the <script>
-│                       │      │                   block. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/771180 
-│                       │      │                  ├ [1]: https://go.dev/issue/78981 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-│                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4980 
-│                       │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
-│                       │      ╰ LastModifiedDate: 2026-05-08T15:16:37.68Z 
-│                       ├ [11] ╭ VulnerabilityID : CVE-2026-39836 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4971 
-│                       │      ├ PkgID           : stdlib@v1.26.2 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
-│                       │      │                  ╰ UID : d663b72caca040b6 
-│                       │      ├ InstalledVersion: v1.26.2 
-│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-│                       │      │                  │         e604d470cc284fe84f9a 
-│                       │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-│                       │      │                            c9a6ba0df01bfc18beca 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39836 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:b89096b021429b27ab0efa816f7ecb3e0dad1ca88b748881cbb5f
-│                       │      │                   13534f498ff 
-│                       │      ├ Title           : Panic in Dial and LookupPort when handling NUL byte on
-│                       │      │                   Windows in net 
-│                       │      ├ Description     : The Dial and LookupPort functions panic on Windows when
-│                       │      │                   provided with an input containing a NUL (0). 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/775320 
-│                       │      │                  ├ [1]: https://go.dev/issue/79006 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-│                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4971 
-│                       │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
-│                       │      ╰ LastModifiedDate: 2026-05-08T22:16:29.723Z 
-│                       ╰ [12] ╭ VulnerabilityID : CVE-2026-42499 
-│                              ├ VendorIDs        ─ [0]: GO-2026-4977 
+│                       ╰ [12] ╭ VulnerabilityID : CVE-2026-39826 
+│                              ├ VendorIDs        ─ [0]: GO-2026-4980 
 │                              ├ PkgID           : stdlib@v1.26.2 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
@@ -538,24 +570,32 @@
 │                              │                  │         e604d470cc284fe84f9a 
 │                              │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
 │                              │                            c9a6ba0df01bfc18beca 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42499 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
 │                              ├ DataSource       ╭ ID  : govulndb 
 │                              │                  ├ Name: The Go Vulnerability Database 
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                              ├ Fingerprint     : sha256:9f4a75e94deb4a3bf0d17a6c56d8a55a3d22c32bbf3e9c4a2dca7
-│                              │                   7252cf67baf 
-│                              ├ Title           : Pathological inputs could cause DoS through consumePhrase
-│                              │                   when parsing ... 
-│                              ├ Description     : Pathological inputs could cause DoS through consumePhrase
-│                              │                   when parsing an email address according to RFC 5322. 
-│                              ├ Severity        : UNKNOWN 
-│                              ├ References       ╭ [0]: https://go.dev/cl/771520 
-│                              │                  ├ [1]: https://go.dev/issue/78987 
+│                              ├ Fingerprint     : sha256:92a277a16289653e9d650ce310fa8f80b4796f91206174aee9262
+│                              │                   99ff0dd2f1a 
+│                              ├ Title           : If a trusted template author were to write a <script> tag
+│                              │                   containing a ... 
+│                              ├ Description     : If a trusted template author were to write a <script> tag
+│                              │                   containing an empty 'type' attribute or a 'type' attribute
+│                              │                   with an ASCII whitespace, the execution of the template
+│                              │                   would incorrectly escape any data passed into the <script>
+│                              │                   block. 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
+│                              │                            │           L/A:N 
+│                              │                            ╰ V3Score : 6.1 
+│                              ├ References       ╭ [0]: https://go.dev/cl/771180 
+│                              │                  ├ [1]: https://go.dev/issue/78981 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                              │                  │      47M 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4977 
-│                              ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
-│                              ╰ LastModifiedDate: 2026-05-08T22:16:33.183Z 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39826 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4980 
+│                              ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
+│                              ╰ LastModifiedDate: 2026-05-08T15:16:37.68Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -703,11 +743,16 @@
 │                       │     ├ Description     : When using LookupCNAME with the cgo DNS resolver, a very long
 │                       │     │                    CNAME response can trigger a double-free of C memory and a
 │                       │     │                   crash. 
-│                       │     ├ Severity        : UNKNOWN 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ VendorSeverity   ─ bitnami: 3 
+│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                       │     │                            │           /A:H 
+│                       │     │                            ╰ V3Score : 7.5 
 │                       │     ├ References       ╭ [0]: https://go.dev/cl/767860 
 │                       │     │                  ├ [1]: https://go.dev/issue/78803 
 │                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
-│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4981 
+│                       │     │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-33811 
+│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4981 
 │                       │     ├ PublishedDate   : 2026-05-07T20:16:42.77Z 
 │                       │     ╰ LastModifiedDate: 2026-05-08T15:16:36.64Z 
 │                       ├ [3] ╭ VulnerabilityID : CVE-2026-33814 
@@ -734,12 +779,17 @@
 │                       │     ├ Description     : When processing HTTP/2 SETTINGS frames, transport will enter
 │                       │     │                   an infinite loop of writing CONTINUATION frames if it
 │                       │     │                   receives a SETTINGS_MAX_FRAME_SIZE with a value of 0. 
-│                       │     ├ Severity        : UNKNOWN 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ VendorSeverity   ─ bitnami: 3 
+│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                       │     │                            │           /A:H 
+│                       │     │                            ╰ V3Score : 7.5 
 │                       │     ├ References       ╭ [0]: https://go.dev/cl/761581 
 │                       │     │                  ├ [1]: https://go.dev/cl/761640 
 │                       │     │                  ├ [2]: https://go.dev/issue/78476 
 │                       │     │                  ├ [3]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
-│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4918 
+│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-33814 
+│                       │     │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2026-4918 
 │                       │     ├ PublishedDate   : 2026-05-07T20:16:42.88Z 
 │                       │     ╰ LastModifiedDate: 2026-05-08T19:16:30.567Z 
 │                       ├ [4] ╭ VulnerabilityID : CVE-2026-39820 
@@ -766,14 +816,89 @@
 │                       │     ├ Description     : Well-crafted inputs reaching ParseAddress, ParseAddressList,
 │                       │     │                   and ParseDate were able to trigger excessive CPU exhaustion
 │                       │     │                   and memory allocations. 
-│                       │     ├ Severity        : UNKNOWN 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ VendorSeverity   ─ bitnami: 3 
+│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                       │     │                            │           /A:H 
+│                       │     │                            ╰ V3Score : 7.5 
 │                       │     ├ References       ╭ [0]: https://go.dev/cl/759940 
 │                       │     │                  ├ [1]: https://go.dev/issue/78566 
 │                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
-│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4986 
+│                       │     │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39820 
+│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4986 
 │                       │     ├ PublishedDate   : 2026-05-07T20:16:43.187Z 
 │                       │     ╰ LastModifiedDate: 2026-05-08T15:16:37.323Z 
-│                       ├ [5] ╭ VulnerabilityID : CVE-2026-39823 
+│                       ├ [5] ╭ VulnerabilityID : CVE-2026-39836 
+│                       │     ├ VendorIDs        ─ [0]: GO-2026-4971 
+│                       │     ├ PkgID           : stdlib@v1.26.2 
+│                       │     ├ PkgName         : stdlib 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
+│                       │     │                  ╰ UID : 337c063156626aca 
+│                       │     ├ InstalledVersion: v1.26.2 
+│                       │     ├ FixedVersion    : 1.25.10, 1.26.3 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1e
+│                       │     │                  │         604d470cc284fe84f9a 
+│                       │     │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919c
+│                       │     │                            9a6ba0df01bfc18beca 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39836 
+│                       │     ├ DataSource       ╭ ID  : govulndb 
+│                       │     │                  ├ Name: The Go Vulnerability Database 
+│                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │     ├ Fingerprint     : sha256:fd9be0e17de729058e789b65ef1f3b88212063f6043763bd7de2b1
+│                       │     │                   6d00ef69a8 
+│                       │     ├ Title           : Panic in Dial and LookupPort when handling NUL byte on
+│                       │     │                   Windows in net 
+│                       │     ├ Description     : The Dial and LookupPort functions panic on Windows when
+│                       │     │                   provided with an input containing a NUL (0). 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ VendorSeverity   ─ bitnami: 3 
+│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                       │     │                            │           /A:H 
+│                       │     │                            ╰ V3Score : 7.5 
+│                       │     ├ References       ╭ [0]: https://go.dev/cl/775320 
+│                       │     │                  ├ [1]: https://go.dev/issue/79006 
+│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
+│                       │     │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39836 
+│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4971 
+│                       │     ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
+│                       │     ╰ LastModifiedDate: 2026-05-08T22:16:29.723Z 
+│                       ├ [6] ╭ VulnerabilityID : CVE-2026-42499 
+│                       │     ├ VendorIDs        ─ [0]: GO-2026-4977 
+│                       │     ├ PkgID           : stdlib@v1.26.2 
+│                       │     ├ PkgName         : stdlib 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
+│                       │     │                  ╰ UID : 337c063156626aca 
+│                       │     ├ InstalledVersion: v1.26.2 
+│                       │     ├ FixedVersion    : 1.25.10, 1.26.3 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1e
+│                       │     │                  │         604d470cc284fe84f9a 
+│                       │     │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919c
+│                       │     │                            9a6ba0df01bfc18beca 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42499 
+│                       │     ├ DataSource       ╭ ID  : govulndb 
+│                       │     │                  ├ Name: The Go Vulnerability Database 
+│                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │     ├ Fingerprint     : sha256:088b61b592caf542ac58f58a92d9f50abd72b92dc2d031991ce1b2
+│                       │     │                   39160eb99d 
+│                       │     ├ Title           : Pathological inputs could cause DoS through consumePhrase
+│                       │     │                   when parsing ... 
+│                       │     ├ Description     : Pathological inputs could cause DoS through consumePhrase
+│                       │     │                   when parsing an email address according to RFC 5322. 
+│                       │     ├ Severity        : HIGH 
+│                       │     ├ VendorSeverity   ─ bitnami: 3 
+│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                       │     │                            │           /A:H 
+│                       │     │                            ╰ V3Score : 7.5 
+│                       │     ├ References       ╭ [0]: https://go.dev/cl/771520 
+│                       │     │                  ├ [1]: https://go.dev/issue/78987 
+│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
+│                       │     │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42499 
+│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4977 
+│                       │     ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
+│                       │     ╰ LastModifiedDate: 2026-05-08T22:16:33.183Z 
+│                       ├ [7] ╭ VulnerabilityID : CVE-2026-39823 
 │                       │     ├ VendorIDs        ─ [0]: GO-2026-4982 
 │                       │     ├ PkgID           : stdlib@v1.26.2 
 │                       │     ├ PkgName         : stdlib 
@@ -800,14 +925,19 @@
 │                       │     │                   whitespaces around the '=' rune inside of the <content>
 │                       │     │                   attribute, the escaper would fail to similarly escape it,
 │                       │     │                   leading to XSS. 
-│                       │     ├ Severity        : UNKNOWN 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ bitnami: 2 
+│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
+│                       │     │                            │           /A:N 
+│                       │     │                            ╰ V3Score : 6.1 
 │                       │     ├ References       ╭ [0]: https://go.dev/cl/769920 
 │                       │     │                  ├ [1]: https://go.dev/issue/78913 
 │                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
-│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4982 
+│                       │     │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39823 
+│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4982 
 │                       │     ├ PublishedDate   : 2026-05-07T20:16:43.29Z 
 │                       │     ╰ LastModifiedDate: 2026-05-08T15:16:37.5Z 
-│                       ├ [6] ╭ VulnerabilityID : CVE-2026-39825 
+│                       ├ [8] ╭ VulnerabilityID : CVE-2026-39825 
 │                       │     ├ VendorIDs        ─ [0]: GO-2026-4976 
 │                       │     ├ PkgID           : stdlib@v1.26.2 
 │                       │     ├ PkgName         : stdlib 
@@ -841,78 +971,20 @@
 │                       │     │                   example, the query "a1=x&a2=x&...&a10000=x&hidden=y" can
 │                       │     │                   forward the parameter "hidden=y" while hiding it from the
 │                       │     │                   proxy's Rewrite function. 
-│                       │     ├ Severity        : UNKNOWN 
+│                       │     ├ Severity        : MEDIUM 
+│                       │     ├ VendorSeverity   ─ bitnami: 2 
+│                       │     ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N
+│                       │     │                            │           /A:N 
+│                       │     │                            ╰ V3Score : 5.3 
 │                       │     ├ References       ╭ [0]: https://go.dev/cl/770541 
 │                       │     │                  ├ [1]: https://go.dev/issue/78948 
 │                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
-│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4976 
+│                       │     │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39825 
+│                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4976 
 │                       │     ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
 │                       │     ╰ LastModifiedDate: 2026-05-08T22:16:29.547Z 
-│                       ├ [7] ╭ VulnerabilityID : CVE-2026-39826 
-│                       │     ├ VendorIDs        ─ [0]: GO-2026-4980 
-│                       │     ├ PkgID           : stdlib@v1.26.2 
-│                       │     ├ PkgName         : stdlib 
-│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
-│                       │     │                  ╰ UID : 337c063156626aca 
-│                       │     ├ InstalledVersion: v1.26.2 
-│                       │     ├ FixedVersion    : 1.25.10, 1.26.3 
-│                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1e
-│                       │     │                  │         604d470cc284fe84f9a 
-│                       │     │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919c
-│                       │     │                            9a6ba0df01bfc18beca 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
-│                       │     ├ DataSource       ╭ ID  : govulndb 
-│                       │     │                  ├ Name: The Go Vulnerability Database 
-│                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │     ├ Fingerprint     : sha256:e7079255b870764a2bd1c93cb858394e31358f68def18567421466
-│                       │     │                   432fb1735f 
-│                       │     ├ Title           : If a trusted template author were to write a <script> tag
-│                       │     │                   containing a ... 
-│                       │     ├ Description     : If a trusted template author were to write a <script> tag
-│                       │     │                   containing an empty 'type' attribute or a 'type' attribute
-│                       │     │                   with an ASCII whitespace, the execution of the template would
-│                       │     │                    incorrectly escape any data passed into the <script>
-│                       │     │                   block. 
-│                       │     ├ Severity        : UNKNOWN 
-│                       │     ├ References       ╭ [0]: https://go.dev/cl/771180 
-│                       │     │                  ├ [1]: https://go.dev/issue/78981 
-│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
-│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4980 
-│                       │     ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
-│                       │     ╰ LastModifiedDate: 2026-05-08T15:16:37.68Z 
-│                       ├ [8] ╭ VulnerabilityID : CVE-2026-39836 
-│                       │     ├ VendorIDs        ─ [0]: GO-2026-4971 
-│                       │     ├ PkgID           : stdlib@v1.26.2 
-│                       │     ├ PkgName         : stdlib 
-│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
-│                       │     │                  ╰ UID : 337c063156626aca 
-│                       │     ├ InstalledVersion: v1.26.2 
-│                       │     ├ FixedVersion    : 1.25.10, 1.26.3 
-│                       │     ├ Status          : fixed 
-│                       │     ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1e
-│                       │     │                  │         604d470cc284fe84f9a 
-│                       │     │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919c
-│                       │     │                            9a6ba0df01bfc18beca 
-│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39836 
-│                       │     ├ DataSource       ╭ ID  : govulndb 
-│                       │     │                  ├ Name: The Go Vulnerability Database 
-│                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │     ├ Fingerprint     : sha256:fd9be0e17de729058e789b65ef1f3b88212063f6043763bd7de2b1
-│                       │     │                   6d00ef69a8 
-│                       │     ├ Title           : Panic in Dial and LookupPort when handling NUL byte on
-│                       │     │                   Windows in net 
-│                       │     ├ Description     : The Dial and LookupPort functions panic on Windows when
-│                       │     │                   provided with an input containing a NUL (0). 
-│                       │     ├ Severity        : UNKNOWN 
-│                       │     ├ References       ╭ [0]: https://go.dev/cl/775320 
-│                       │     │                  ├ [1]: https://go.dev/issue/79006 
-│                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
-│                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4971 
-│                       │     ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
-│                       │     ╰ LastModifiedDate: 2026-05-08T22:16:29.723Z 
-│                       ╰ [9] ╭ VulnerabilityID : CVE-2026-42499 
-│                             ├ VendorIDs        ─ [0]: GO-2026-4977 
+│                       ╰ [9] ╭ VulnerabilityID : CVE-2026-39826 
+│                             ├ VendorIDs        ─ [0]: GO-2026-4980 
 │                             ├ PkgID           : stdlib@v1.26.2 
 │                             ├ PkgName         : stdlib 
 │                             ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
@@ -924,23 +996,31 @@
 │                             │                  │         604d470cc284fe84f9a 
 │                             │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919c
 │                             │                            9a6ba0df01bfc18beca 
-│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42499 
+│                             ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
 │                             ├ DataSource       ╭ ID  : govulndb 
 │                             │                  ├ Name: The Go Vulnerability Database 
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                             ├ Fingerprint     : sha256:088b61b592caf542ac58f58a92d9f50abd72b92dc2d031991ce1b2
-│                             │                   39160eb99d 
-│                             ├ Title           : Pathological inputs could cause DoS through consumePhrase
-│                             │                   when parsing ... 
-│                             ├ Description     : Pathological inputs could cause DoS through consumePhrase
-│                             │                   when parsing an email address according to RFC 5322. 
-│                             ├ Severity        : UNKNOWN 
-│                             ├ References       ╭ [0]: https://go.dev/cl/771520 
-│                             │                  ├ [1]: https://go.dev/issue/78987 
+│                             ├ Fingerprint     : sha256:e7079255b870764a2bd1c93cb858394e31358f68def18567421466
+│                             │                   432fb1735f 
+│                             ├ Title           : If a trusted template author were to write a <script> tag
+│                             │                   containing a ... 
+│                             ├ Description     : If a trusted template author were to write a <script> tag
+│                             │                   containing an empty 'type' attribute or a 'type' attribute
+│                             │                   with an ASCII whitespace, the execution of the template would
+│                             │                    incorrectly escape any data passed into the <script>
+│                             │                   block. 
+│                             ├ Severity        : MEDIUM 
+│                             ├ VendorSeverity   ─ bitnami: 2 
+│                             ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
+│                             │                            │           /A:N 
+│                             │                            ╰ V3Score : 6.1 
+│                             ├ References       ╭ [0]: https://go.dev/cl/771180 
+│                             │                  ├ [1]: https://go.dev/issue/78981 
 │                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso47M 
-│                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4977 
-│                             ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
-│                             ╰ LastModifiedDate: 2026-05-08T22:16:33.183Z 
+│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39826 
+│                             │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4980 
+│                             ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
+│                             ╰ LastModifiedDate: 2026-05-08T15:16:37.68Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -1868,7 +1948,7 @@
 │                       │      │                  │      sories/GHSA-wg65-39gg-5wfj 
 │                       │      │                  ╰ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-42151 
 │                       │      ├ PublishedDate   : 2026-05-04T19:16:04.22Z 
-│                       │      ╰ LastModifiedDate: 2026-05-07T15:15:06.77Z 
+│                       │      ╰ LastModifiedDate: 2026-05-11T17:22:07.227Z 
 │                       ├ [17] ╭ VulnerabilityID : CVE-2026-42154 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-8rm2-7qqf-34qm 
 │                       │      ├ PkgID           : github.com/prometheus/prometheus@v0.303.1 
@@ -1923,7 +2003,7 @@
 │                       │      │                  │      sories/GHSA-8rm2-7qqf-34qm 
 │                       │      │                  ╰ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-42154 
 │                       │      ├ PublishedDate   : 2026-05-04T19:16:04.397Z 
-│                       │      ╰ LastModifiedDate: 2026-05-07T15:15:06.77Z 
+│                       │      ╰ LastModifiedDate: 2026-05-11T17:22:42.86Z 
 │                       ├ [18] ╭ VulnerabilityID : CVE-2026-40179 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-vffh-x6r8-xx99 
 │                       │      ├ PkgID           : github.com/prometheus/prometheus@v0.303.1 
@@ -2306,12 +2386,17 @@
 │                       │      ├ Description     : When using LookupCNAME with the cgo DNS resolver, a very
 │                       │      │                   long CNAME response can trigger a double-free of C memory
 │                       │      │                   and a crash. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/767860 
 │                       │      │                  ├ [1]: https://go.dev/issue/78803 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4981 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-33811 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4981 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:42.77Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T15:16:36.64Z 
 │                       ├ [25] ╭ VulnerabilityID : CVE-2026-33814 
@@ -2338,13 +2423,18 @@
 │                       │      ├ Description     : When processing HTTP/2 SETTINGS frames, transport will enter
 │                       │      │                    an infinite loop of writing CONTINUATION frames if it
 │                       │      │                   receives a SETTINGS_MAX_FRAME_SIZE with a value of 0. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/761581 
 │                       │      │                  ├ [1]: https://go.dev/cl/761640 
 │                       │      │                  ├ [2]: https://go.dev/issue/78476 
 │                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4918 
+│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-33814 
+│                       │      │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2026-4918 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:42.88Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T19:16:30.567Z 
 │                       ├ [26] ╭ VulnerabilityID : CVE-2026-39820 
@@ -2371,15 +2461,92 @@
 │                       │      ├ Description     : Well-crafted inputs reaching ParseAddress, ParseAddressList,
 │                       │      │                    and ParseDate were able to trigger excessive CPU exhaustion
 │                       │      │                    and memory allocations. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/759940 
 │                       │      │                  ├ [1]: https://go.dev/issue/78566 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4986 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39820 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4986 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.187Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T15:16:37.323Z 
-│                       ├ [27] ╭ VulnerabilityID : CVE-2026-39823 
+│                       ├ [27] ╭ VulnerabilityID : CVE-2026-39836 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4971 
+│                       │      ├ PkgID           : stdlib@v1.25.9 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.25.9 
+│                       │      │                  ╰ UID : 2f9d47014fd0da0e 
+│                       │      ├ InstalledVersion: v1.25.9 
+│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+│                       │      │                  │         e604d470cc284fe84f9a 
+│                       │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+│                       │      │                            c9a6ba0df01bfc18beca 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39836 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:5c4431a3aad5e093e33c9cee5afb2ea84c283ef8162fd5807a763
+│                       │      │                   58f7adb9920 
+│                       │      ├ Title           : Panic in Dial and LookupPort when handling NUL byte on
+│                       │      │                   Windows in net 
+│                       │      ├ Description     : The Dial and LookupPort functions panic on Windows when
+│                       │      │                   provided with an input containing a NUL (0). 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: https://go.dev/cl/775320 
+│                       │      │                  ├ [1]: https://go.dev/issue/79006 
+│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+│                       │      │                  │      47M 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39836 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4971 
+│                       │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
+│                       │      ╰ LastModifiedDate: 2026-05-08T22:16:29.723Z 
+│                       ├ [28] ╭ VulnerabilityID : CVE-2026-42499 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4977 
+│                       │      ├ PkgID           : stdlib@v1.25.9 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.25.9 
+│                       │      │                  ╰ UID : 2f9d47014fd0da0e 
+│                       │      ├ InstalledVersion: v1.25.9 
+│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+│                       │      │                  │         e604d470cc284fe84f9a 
+│                       │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+│                       │      │                            c9a6ba0df01bfc18beca 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42499 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:5208c0c73295eb5b8213b208b3de281982f8bf5c366fb8edfa980
+│                       │      │                   18edd123d2e 
+│                       │      ├ Title           : Pathological inputs could cause DoS through consumePhrase
+│                       │      │                   when parsing ... 
+│                       │      ├ Description     : Pathological inputs could cause DoS through consumePhrase
+│                       │      │                   when parsing an email address according to RFC 5322. 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ─ bitnami: 3 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                       │      │                            │           N/A:H 
+│                       │      │                            ╰ V3Score : 7.5 
+│                       │      ├ References       ╭ [0]: https://go.dev/cl/771520 
+│                       │      │                  ├ [1]: https://go.dev/issue/78987 
+│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+│                       │      │                  │      47M 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42499 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4977 
+│                       │      ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
+│                       │      ╰ LastModifiedDate: 2026-05-08T22:16:33.183Z 
+│                       ├ [29] ╭ VulnerabilityID : CVE-2026-39823 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4982 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2406,15 +2573,20 @@
 │                       │      │                   whitespaces around the '=' rune inside of the <content>
 │                       │      │                   attribute, the escaper would fail to similarly escape it,
 │                       │      │                   leading to XSS. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ─ bitnami: 2 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
+│                       │      │                            │           L/A:N 
+│                       │      │                            ╰ V3Score : 6.1 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/769920 
 │                       │      │                  ├ [1]: https://go.dev/issue/78913 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4982 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39823 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4982 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.29Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T15:16:37.5Z 
-│                       ├ [28] ╭ VulnerabilityID : CVE-2026-39825 
+│                       ├ [30] ╭ VulnerabilityID : CVE-2026-39825 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4976 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2448,81 +2620,21 @@
 │                       │      │                   example, the query "a1=x&a2=x&...&a10000=x&hidden=y" can
 │                       │      │                   forward the parameter "hidden=y" while hiding it from the
 │                       │      │                   proxy's Rewrite function. 
-│                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ VendorSeverity   ─ bitnami: 2 
+│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+│                       │      │                            │           N/A:N 
+│                       │      │                            ╰ V3Score : 5.3 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/770541 
 │                       │      │                  ├ [1]: https://go.dev/issue/78948 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4976 
+│                       │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39825 
+│                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4976 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
 │                       │      ╰ LastModifiedDate: 2026-05-08T22:16:29.547Z 
-│                       ├ [29] ╭ VulnerabilityID : CVE-2026-39826 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4980 
-│                       │      ├ PkgID           : stdlib@v1.25.9 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.25.9 
-│                       │      │                  ╰ UID : 2f9d47014fd0da0e 
-│                       │      ├ InstalledVersion: v1.25.9 
-│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-│                       │      │                  │         e604d470cc284fe84f9a 
-│                       │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-│                       │      │                            c9a6ba0df01bfc18beca 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:e88219983debee1a3e2a2c364624883c1d2e6903518f0ac8ca5e7
-│                       │      │                   c952b3ca4f3 
-│                       │      ├ Title           : If a trusted template author were to write a <script> tag
-│                       │      │                   containing a ... 
-│                       │      ├ Description     : If a trusted template author were to write a <script> tag
-│                       │      │                   containing an empty 'type' attribute or a 'type' attribute
-│                       │      │                   with an ASCII whitespace, the execution of the template
-│                       │      │                   would incorrectly escape any data passed into the <script>
-│                       │      │                   block. 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/771180 
-│                       │      │                  ├ [1]: https://go.dev/issue/78981 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-│                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4980 
-│                       │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
-│                       │      ╰ LastModifiedDate: 2026-05-08T15:16:37.68Z 
-│                       ├ [30] ╭ VulnerabilityID : CVE-2026-39836 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4971 
-│                       │      ├ PkgID           : stdlib@v1.25.9 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.25.9 
-│                       │      │                  ╰ UID : 2f9d47014fd0da0e 
-│                       │      ├ InstalledVersion: v1.25.9 
-│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-│                       │      │                  │         e604d470cc284fe84f9a 
-│                       │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-│                       │      │                            c9a6ba0df01bfc18beca 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39836 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:5c4431a3aad5e093e33c9cee5afb2ea84c283ef8162fd5807a763
-│                       │      │                   58f7adb9920 
-│                       │      ├ Title           : Panic in Dial and LookupPort when handling NUL byte on
-│                       │      │                   Windows in net 
-│                       │      ├ Description     : The Dial and LookupPort functions panic on Windows when
-│                       │      │                   provided with an input containing a NUL (0). 
-│                       │      ├ Severity        : UNKNOWN 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/775320 
-│                       │      │                  ├ [1]: https://go.dev/issue/79006 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-│                       │      │                  │      47M 
-│                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4971 
-│                       │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
-│                       │      ╰ LastModifiedDate: 2026-05-08T22:16:29.723Z 
-│                       ╰ [31] ╭ VulnerabilityID : CVE-2026-42499 
-│                              ├ VendorIDs        ─ [0]: GO-2026-4977 
+│                       ╰ [31] ╭ VulnerabilityID : CVE-2026-39826 
+│                              ├ VendorIDs        ─ [0]: GO-2026-4980 
 │                              ├ PkgID           : stdlib@v1.25.9 
 │                              ├ PkgName         : stdlib 
 │                              ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.25.9 
@@ -2534,24 +2646,32 @@
 │                              │                  │         e604d470cc284fe84f9a 
 │                              │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
 │                              │                            c9a6ba0df01bfc18beca 
-│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42499 
+│                              ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
 │                              ├ DataSource       ╭ ID  : govulndb 
 │                              │                  ├ Name: The Go Vulnerability Database 
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                              ├ Fingerprint     : sha256:5208c0c73295eb5b8213b208b3de281982f8bf5c366fb8edfa980
-│                              │                   18edd123d2e 
-│                              ├ Title           : Pathological inputs could cause DoS through consumePhrase
-│                              │                   when parsing ... 
-│                              ├ Description     : Pathological inputs could cause DoS through consumePhrase
-│                              │                   when parsing an email address according to RFC 5322. 
-│                              ├ Severity        : UNKNOWN 
-│                              ├ References       ╭ [0]: https://go.dev/cl/771520 
-│                              │                  ├ [1]: https://go.dev/issue/78987 
+│                              ├ Fingerprint     : sha256:e88219983debee1a3e2a2c364624883c1d2e6903518f0ac8ca5e7
+│                              │                   c952b3ca4f3 
+│                              ├ Title           : If a trusted template author were to write a <script> tag
+│                              │                   containing a ... 
+│                              ├ Description     : If a trusted template author were to write a <script> tag
+│                              │                   containing an empty 'type' attribute or a 'type' attribute
+│                              │                   with an ASCII whitespace, the execution of the template
+│                              │                   would incorrectly escape any data passed into the <script>
+│                              │                   block. 
+│                              ├ Severity        : MEDIUM 
+│                              ├ VendorSeverity   ─ bitnami: 2 
+│                              ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
+│                              │                            │           L/A:N 
+│                              │                            ╰ V3Score : 6.1 
+│                              ├ References       ╭ [0]: https://go.dev/cl/771180 
+│                              │                  ├ [1]: https://go.dev/issue/78981 
 │                              │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
 │                              │                  │      47M 
-│                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4977 
-│                              ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
-│                              ╰ LastModifiedDate: 2026-05-08T22:16:33.183Z 
+│                              │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39826 
+│                              │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4980 
+│                              ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
+│                              ╰ LastModifiedDate: 2026-05-08T15:16:37.68Z 
 ╰ [7] ╭ Target         : usr/share/grafana/data/plugins-bundled/elasticsearch/gpx_grafana_elasticsearch_datasou
       │                  rce_linux_amd64 
       ├ Class          : lang-pkgs 
@@ -2971,7 +3091,191 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-33810 
                         │      ├ PublishedDate   : 2026-04-08T02:16:03.95Z 
                         │      ╰ LastModifiedDate: 2026-04-20T18:16:26.813Z 
-                        ├ [7]  ╭ VulnerabilityID : CVE-2026-27142 
+                        ├ [7]  ╭ VulnerabilityID : CVE-2026-33811 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4981 
+                        │      ├ PkgID           : stdlib@v1.26.0 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
+                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
+                        │      ├ InstalledVersion: v1.26.0 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+                        │      │                  │         e604d470cc284fe84f9a 
+                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+                        │      │                            c9a6ba0df01bfc18beca 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-33811 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:2da7c6243fc9d1522b09f040d55e4f3bb70120daff8c6c38d71b1
+                        │      │                   d17c8fe1e1c 
+                        │      ├ Title           : When using LookupCNAME with the cgo DNS resolver, a very
+                        │      │                   long CNAME re ... 
+                        │      ├ Description     : When using LookupCNAME with the cgo DNS resolver, a very
+                        │      │                   long CNAME response can trigger a double-free of C memory
+                        │      │                   and a crash. 
+                        │      ├ Severity        : HIGH 
+                        │      ├ VendorSeverity   ─ bitnami: 3 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:H 
+                        │      │                            ╰ V3Score : 7.5 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/767860 
+                        │      │                  ├ [1]: https://go.dev/issue/78803 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-33811 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4981 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:42.77Z 
+                        │      ╰ LastModifiedDate: 2026-05-08T15:16:36.64Z 
+                        ├ [8]  ╭ VulnerabilityID : CVE-2026-33814 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4918 
+                        │      ├ PkgID           : stdlib@v1.26.0 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
+                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
+                        │      ├ InstalledVersion: v1.26.0 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+                        │      │                  │         e604d470cc284fe84f9a 
+                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+                        │      │                            c9a6ba0df01bfc18beca 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-33814 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:da481b9864d87d77a1d1eb8407c003c869238987551e12aca20a8
+                        │      │                   94f08e0afc8 
+                        │      ├ Title           : When processing HTTP/2 SETTINGS frames, transport will enter
+                        │      │                    an infini ... 
+                        │      ├ Description     : When processing HTTP/2 SETTINGS frames, transport will enter
+                        │      │                    an infinite loop of writing CONTINUATION frames if it
+                        │      │                   receives a SETTINGS_MAX_FRAME_SIZE with a value of 0. 
+                        │      ├ Severity        : HIGH 
+                        │      ├ VendorSeverity   ─ bitnami: 3 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:H 
+                        │      │                            ╰ V3Score : 7.5 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/761581 
+                        │      │                  ├ [1]: https://go.dev/cl/761640 
+                        │      │                  ├ [2]: https://go.dev/issue/78476 
+                        │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-33814 
+                        │      │                  ╰ [5]: https://pkg.go.dev/vuln/GO-2026-4918 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:42.88Z 
+                        │      ╰ LastModifiedDate: 2026-05-08T19:16:30.567Z 
+                        ├ [9]  ╭ VulnerabilityID : CVE-2026-39820 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4986 
+                        │      ├ PkgID           : stdlib@v1.26.0 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
+                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
+                        │      ├ InstalledVersion: v1.26.0 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+                        │      │                  │         e604d470cc284fe84f9a 
+                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+                        │      │                            c9a6ba0df01bfc18beca 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39820 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:ed578248dea0d0d6efcd8a6dd9da8266f8ed0ca8e8cfd0d0f939f
+                        │      │                   9f8e056539c 
+                        │      ├ Title           : Well-crafted inputs reaching ParseAddress, ParseAddressList,
+                        │      │                    and Parse ... 
+                        │      ├ Description     : Well-crafted inputs reaching ParseAddress, ParseAddressList,
+                        │      │                    and ParseDate were able to trigger excessive CPU exhaustion
+                        │      │                    and memory allocations. 
+                        │      ├ Severity        : HIGH 
+                        │      ├ VendorSeverity   ─ bitnami: 3 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:H 
+                        │      │                            ╰ V3Score : 7.5 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/759940 
+                        │      │                  ├ [1]: https://go.dev/issue/78566 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39820 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4986 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:43.187Z 
+                        │      ╰ LastModifiedDate: 2026-05-08T15:16:37.323Z 
+                        ├ [10] ╭ VulnerabilityID : CVE-2026-39836 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4971 
+                        │      ├ PkgID           : stdlib@v1.26.0 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
+                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
+                        │      ├ InstalledVersion: v1.26.0 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+                        │      │                  │         e604d470cc284fe84f9a 
+                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+                        │      │                            c9a6ba0df01bfc18beca 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39836 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:47baa4a075b7c4347a1a74388d303e19ece0fee0a9b299853a453
+                        │      │                   bf89652fdb3 
+                        │      ├ Title           : Panic in Dial and LookupPort when handling NUL byte on
+                        │      │                   Windows in net 
+                        │      ├ Description     : The Dial and LookupPort functions panic on Windows when
+                        │      │                   provided with an input containing a NUL (0). 
+                        │      ├ Severity        : HIGH 
+                        │      ├ VendorSeverity   ─ bitnami: 3 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:H 
+                        │      │                            ╰ V3Score : 7.5 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/775320 
+                        │      │                  ├ [1]: https://go.dev/issue/79006 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39836 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4971 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
+                        │      ╰ LastModifiedDate: 2026-05-08T22:16:29.723Z 
+                        ├ [11] ╭ VulnerabilityID : CVE-2026-42499 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4977 
+                        │      ├ PkgID           : stdlib@v1.26.0 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
+                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
+                        │      ├ InstalledVersion: v1.26.0 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+                        │      │                  │         e604d470cc284fe84f9a 
+                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+                        │      │                            c9a6ba0df01bfc18beca 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42499 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:1ea54589e14a9c29cb8e91e382a69b25cbb7a58c985570f845975
+                        │      │                   4edc06e6843 
+                        │      ├ Title           : Pathological inputs could cause DoS through consumePhrase
+                        │      │                   when parsing ... 
+                        │      ├ Description     : Pathological inputs could cause DoS through consumePhrase
+                        │      │                   when parsing an email address according to RFC 5322. 
+                        │      ├ Severity        : HIGH 
+                        │      ├ VendorSeverity   ─ bitnami: 3 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:H 
+                        │      │                            ╰ V3Score : 7.5 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/771520 
+                        │      │                  ├ [1]: https://go.dev/issue/78987 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42499 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4977 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
+                        │      ╰ LastModifiedDate: 2026-05-08T22:16:33.183Z 
+                        ├ [12] ╭ VulnerabilityID : CVE-2026-27142 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4603 
                         │      ├ PkgID           : stdlib@v1.26.0 
                         │      ├ PkgName         : stdlib 
@@ -3020,7 +3324,7 @@
                         │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-27142 
                         │      ├ PublishedDate   : 2026-03-06T22:16:01.177Z 
                         │      ╰ LastModifiedDate: 2026-04-21T14:30:01.38Z 
-                        ├ [8]  ╭ VulnerabilityID : CVE-2026-32282 
+                        ├ [13] ╭ VulnerabilityID : CVE-2026-32282 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4864 
                         │      ├ PkgID           : stdlib@v1.26.0 
                         │      ├ PkgName         : stdlib 
@@ -3097,7 +3401,7 @@
                         │      │                  ╰ [20]: https://www.cve.org/CVERecord?id=CVE-2026-32282 
                         │      ├ PublishedDate   : 2026-04-08T02:16:03.467Z 
                         │      ╰ LastModifiedDate: 2026-04-16T19:15:39.4Z 
-                        ├ [9]  ╭ VulnerabilityID : CVE-2026-32288 
+                        ├ [14] ╭ VulnerabilityID : CVE-2026-32288 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4869 
                         │      ├ PkgID           : stdlib@v1.26.0 
                         │      ├ PkgName         : stdlib 
@@ -3150,7 +3454,7 @@
                         │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-32288 
                         │      ├ PublishedDate   : 2026-04-08T02:16:03.707Z 
                         │      ╰ LastModifiedDate: 2026-04-16T19:08:52.24Z 
-                        ├ [10] ╭ VulnerabilityID : CVE-2026-32289 
+                        ├ [15] ╭ VulnerabilityID : CVE-2026-32289 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4865 
                         │      ├ PkgID           : stdlib@v1.26.0 
                         │      ├ PkgName         : stdlib 
@@ -3207,7 +3511,133 @@
                         │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-32289 
                         │      ├ PublishedDate   : 2026-04-08T02:16:03.82Z 
                         │      ╰ LastModifiedDate: 2026-04-16T19:06:57.367Z 
-                        ├ [11] ╭ VulnerabilityID : CVE-2026-27138 
+                        ├ [16] ╭ VulnerabilityID : CVE-2026-39823 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4982 
+                        │      ├ PkgID           : stdlib@v1.26.0 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
+                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
+                        │      ├ InstalledVersion: v1.26.0 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+                        │      │                  │         e604d470cc284fe84f9a 
+                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+                        │      │                            c9a6ba0df01bfc18beca 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39823 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:a9a15e4292eb734e727aeb0dd1ea0d54a8cc306c5cce5f93cecb1
+                        │      │                   3242cd553ed 
+                        │      ├ Title           : CVE-2026-27142 fixed a vulnerability in which URLs were not
+                        │      │                   correctly  ... 
+                        │      ├ Description     : CVE-2026-27142 fixed a vulnerability in which URLs were not
+                        │      │                   correctly escaped inside of a <meta> tag's <content>
+                        │      │                   attribute. If the URL content were to insert ASCII
+                        │      │                   whitespaces around the '=' rune inside of the <content>
+                        │      │                   attribute, the escaper would fail to similarly escape it,
+                        │      │                   leading to XSS. 
+                        │      ├ Severity        : MEDIUM 
+                        │      ├ VendorSeverity   ─ bitnami: 2 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
+                        │      │                            │           L/A:N 
+                        │      │                            ╰ V3Score : 6.1 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/769920 
+                        │      │                  ├ [1]: https://go.dev/issue/78913 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39823 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4982 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:43.29Z 
+                        │      ╰ LastModifiedDate: 2026-05-08T15:16:37.5Z 
+                        ├ [17] ╭ VulnerabilityID : CVE-2026-39825 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4976 
+                        │      ├ PkgID           : stdlib@v1.26.0 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
+                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
+                        │      ├ InstalledVersion: v1.26.0 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+                        │      │                  │         e604d470cc284fe84f9a 
+                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+                        │      │                            c9a6ba0df01bfc18beca 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39825 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:58dd1baded10813fad2e4db1b37771d39ee1f37ea0de7e4ae888a
+                        │      │                   52a758a34fc 
+                        │      ├ Title           : ReverseProxy can forward queries containing parameters not
+                        │      │                   visible to  ... 
+                        │      ├ Description     : ReverseProxy can forward queries containing parameters not
+                        │      │                   visible to Rewrite functions. When used with a Rewrite
+                        │      │                   function, or a Director function which parses query
+                        │      │                   parameters, ReverseProxy sanitizes the forwarded request to
+                        │      │                   remove query parameters which are not parsed by
+                        │      │                   url.ParseQuery. ReverseProxy does not take ParseQuery's
+                        │      │                   limit on the total number of query parameters (controlled by
+                        │      │                    GODEBUG=urlmaxqueryparams=N) into account. This can permit
+                        │      │                   ReverseProxy to forward a request containing a query
+                        │      │                   parameter that is not visible to the Rewrite function. For
+                        │      │                   example, the query "a1=x&a2=x&...&a10000=x&hidden=y" can
+                        │      │                   forward the parameter "hidden=y" while hiding it from the
+                        │      │                   proxy's Rewrite function. 
+                        │      ├ Severity        : MEDIUM 
+                        │      ├ VendorSeverity   ─ bitnami: 2 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:
+                        │      │                            │           N/A:N 
+                        │      │                            ╰ V3Score : 5.3 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/770541 
+                        │      │                  ├ [1]: https://go.dev/issue/78948 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39825 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4976 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
+                        │      ╰ LastModifiedDate: 2026-05-08T22:16:29.547Z 
+                        ├ [18] ╭ VulnerabilityID : CVE-2026-39826 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4980 
+                        │      ├ PkgID           : stdlib@v1.26.0 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
+                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
+                        │      ├ InstalledVersion: v1.26.0 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
+                        │      │                  │         e604d470cc284fe84f9a 
+                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
+                        │      │                            c9a6ba0df01bfc18beca 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:7563985a027e96b18e582a6508861f80d4975c25ff7b89201e99d
+                        │      │                   5cc6eb90df7 
+                        │      ├ Title           : If a trusted template author were to write a <script> tag
+                        │      │                   containing a ... 
+                        │      ├ Description     : If a trusted template author were to write a <script> tag
+                        │      │                   containing an empty 'type' attribute or a 'type' attribute
+                        │      │                   with an ASCII whitespace, the execution of the template
+                        │      │                   would incorrectly escape any data passed into the <script>
+                        │      │                   block. 
+                        │      ├ Severity        : MEDIUM 
+                        │      ├ VendorSeverity   ─ bitnami: 2 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
+                        │      │                            │           L/A:N 
+                        │      │                            ╰ V3Score : 6.1 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/771180 
+                        │      │                  ├ [1]: https://go.dev/issue/78981 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39826 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4980 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
+                        │      ╰ LastModifiedDate: 2026-05-08T15:16:37.68Z 
+                        ├ [19] ╭ VulnerabilityID : CVE-2026-27138 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4600 
                         │      ├ PkgID           : stdlib@v1.26.0 
                         │      ├ PkgName         : stdlib 
@@ -3254,323 +3684,53 @@
                         │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-27138 
                         │      ├ PublishedDate   : 2026-03-06T22:16:00.963Z 
                         │      ╰ LastModifiedDate: 2026-04-21T14:39:28.073Z 
-                        ├ [12] ╭ VulnerabilityID : CVE-2026-27139 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4602 
-                        │      ├ PkgID           : stdlib@v1.26.0 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
-                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
-                        │      ├ InstalledVersion: v1.26.0 
-                        │      ├ FixedVersion    : 1.25.8, 1.26.1 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-                        │      │                  │         e604d470cc284fe84f9a 
-                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-                        │      │                            c9a6ba0df01bfc18beca 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-27139 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:5e6cb1470305416b04226bb8fad09161bae43bdaccdde311b8f48
-                        │      │                   9a20d75e64a 
-                        │      ├ Title           : os: FileInfo can escape from a Root in golang os module 
-                        │      ├ Description     : On Unix platforms, when listing the contents of a directory
-                        │      │                   using File.ReadDir or File.Readdir the returned FileInfo
-                        │      │                   could reference a file outside of the Root in which the File
-                        │      │                    was opened. The impact of this escape is limited to reading
-                        │      │                    metadata provided by lstat from arbitrary locations on the
-                        │      │                   filesystem without permitting reading or writing files
-                        │      │                   outside the root. 
-                        │      ├ Severity        : LOW 
-                        │      ├ CweIDs           ─ [0]: CWE-22 
-                        │      ├ VendorSeverity   ╭ amazon : 3 
-                        │      │                  ├ azure  : 1 
-                        │      │                  ├ bitnami: 1 
-                        │      │                  ╰ redhat : 1 
-                        │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:
-                        │      │                  │         │           N/A:N 
-                        │      │                  │         ╰ V3Score : 2.5 
-                        │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:
-                        │      │                            │           N/A:N 
-                        │      │                            ╰ V3Score : 2.5 
-                        │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-27139 
-                        │      │                  ├ [1]: https://go.dev/cl/749480 
-                        │      │                  ├ [2]: https://go.dev/issue/77827 
-                        │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/EdhZqrQ9
-                        │      │                  │      8hk 
-                        │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-27139 
-                        │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-4602 
-                        │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-27139 
-                        │      ├ PublishedDate   : 2026-03-06T22:16:01.07Z 
-                        │      ╰ LastModifiedDate: 2026-04-21T14:32:36.317Z 
-                        ├ [13] ╭ VulnerabilityID : CVE-2026-33811 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4981 
-                        │      ├ PkgID           : stdlib@v1.26.0 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
-                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
-                        │      ├ InstalledVersion: v1.26.0 
-                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-                        │      │                  │         e604d470cc284fe84f9a 
-                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-                        │      │                            c9a6ba0df01bfc18beca 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-33811 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:2da7c6243fc9d1522b09f040d55e4f3bb70120daff8c6c38d71b1
-                        │      │                   d17c8fe1e1c 
-                        │      ├ Title           : When using LookupCNAME with the cgo DNS resolver, a very
-                        │      │                   long CNAME re ... 
-                        │      ├ Description     : When using LookupCNAME with the cgo DNS resolver, a very
-                        │      │                   long CNAME response can trigger a double-free of C memory
-                        │      │                   and a crash. 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/767860 
-                        │      │                  ├ [1]: https://go.dev/issue/78803 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                        │      │                  │      47M 
-                        │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4981 
-                        │      ├ PublishedDate   : 2026-05-07T20:16:42.77Z 
-                        │      ╰ LastModifiedDate: 2026-05-08T15:16:36.64Z 
-                        ├ [14] ╭ VulnerabilityID : CVE-2026-33814 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4918 
-                        │      ├ PkgID           : stdlib@v1.26.0 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
-                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
-                        │      ├ InstalledVersion: v1.26.0 
-                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-                        │      │                  │         e604d470cc284fe84f9a 
-                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-                        │      │                            c9a6ba0df01bfc18beca 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-33814 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:da481b9864d87d77a1d1eb8407c003c869238987551e12aca20a8
-                        │      │                   94f08e0afc8 
-                        │      ├ Title           : When processing HTTP/2 SETTINGS frames, transport will enter
-                        │      │                    an infini ... 
-                        │      ├ Description     : When processing HTTP/2 SETTINGS frames, transport will enter
-                        │      │                    an infinite loop of writing CONTINUATION frames if it
-                        │      │                   receives a SETTINGS_MAX_FRAME_SIZE with a value of 0. 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/761581 
-                        │      │                  ├ [1]: https://go.dev/cl/761640 
-                        │      │                  ├ [2]: https://go.dev/issue/78476 
-                        │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                        │      │                  │      47M 
-                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-4918 
-                        │      ├ PublishedDate   : 2026-05-07T20:16:42.88Z 
-                        │      ╰ LastModifiedDate: 2026-05-08T19:16:30.567Z 
-                        ├ [15] ╭ VulnerabilityID : CVE-2026-39820 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4986 
-                        │      ├ PkgID           : stdlib@v1.26.0 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
-                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
-                        │      ├ InstalledVersion: v1.26.0 
-                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-                        │      │                  │         e604d470cc284fe84f9a 
-                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-                        │      │                            c9a6ba0df01bfc18beca 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39820 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:ed578248dea0d0d6efcd8a6dd9da8266f8ed0ca8e8cfd0d0f939f
-                        │      │                   9f8e056539c 
-                        │      ├ Title           : Well-crafted inputs reaching ParseAddress, ParseAddressList,
-                        │      │                    and Parse ... 
-                        │      ├ Description     : Well-crafted inputs reaching ParseAddress, ParseAddressList,
-                        │      │                    and ParseDate were able to trigger excessive CPU exhaustion
-                        │      │                    and memory allocations. 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/759940 
-                        │      │                  ├ [1]: https://go.dev/issue/78566 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                        │      │                  │      47M 
-                        │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4986 
-                        │      ├ PublishedDate   : 2026-05-07T20:16:43.187Z 
-                        │      ╰ LastModifiedDate: 2026-05-08T15:16:37.323Z 
-                        ├ [16] ╭ VulnerabilityID : CVE-2026-39823 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4982 
-                        │      ├ PkgID           : stdlib@v1.26.0 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
-                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
-                        │      ├ InstalledVersion: v1.26.0 
-                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-                        │      │                  │         e604d470cc284fe84f9a 
-                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-                        │      │                            c9a6ba0df01bfc18beca 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39823 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:a9a15e4292eb734e727aeb0dd1ea0d54a8cc306c5cce5f93cecb1
-                        │      │                   3242cd553ed 
-                        │      ├ Title           : CVE-2026-27142 fixed a vulnerability in which URLs were not
-                        │      │                   correctly  ... 
-                        │      ├ Description     : CVE-2026-27142 fixed a vulnerability in which URLs were not
-                        │      │                   correctly escaped inside of a <meta> tag's <content>
-                        │      │                   attribute. If the URL content were to insert ASCII
-                        │      │                   whitespaces around the '=' rune inside of the <content>
-                        │      │                   attribute, the escaper would fail to similarly escape it,
-                        │      │                   leading to XSS. 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/769920 
-                        │      │                  ├ [1]: https://go.dev/issue/78913 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                        │      │                  │      47M 
-                        │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4982 
-                        │      ├ PublishedDate   : 2026-05-07T20:16:43.29Z 
-                        │      ╰ LastModifiedDate: 2026-05-08T15:16:37.5Z 
-                        ├ [17] ╭ VulnerabilityID : CVE-2026-39825 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4976 
-                        │      ├ PkgID           : stdlib@v1.26.0 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
-                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
-                        │      ├ InstalledVersion: v1.26.0 
-                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-                        │      │                  │         e604d470cc284fe84f9a 
-                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-                        │      │                            c9a6ba0df01bfc18beca 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39825 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:58dd1baded10813fad2e4db1b37771d39ee1f37ea0de7e4ae888a
-                        │      │                   52a758a34fc 
-                        │      ├ Title           : ReverseProxy can forward queries containing parameters not
-                        │      │                   visible to  ... 
-                        │      ├ Description     : ReverseProxy can forward queries containing parameters not
-                        │      │                   visible to Rewrite functions. When used with a Rewrite
-                        │      │                   function, or a Director function which parses query
-                        │      │                   parameters, ReverseProxy sanitizes the forwarded request to
-                        │      │                   remove query parameters which are not parsed by
-                        │      │                   url.ParseQuery. ReverseProxy does not take ParseQuery's
-                        │      │                   limit on the total number of query parameters (controlled by
-                        │      │                    GODEBUG=urlmaxqueryparams=N) into account. This can permit
-                        │      │                   ReverseProxy to forward a request containing a query
-                        │      │                   parameter that is not visible to the Rewrite function. For
-                        │      │                   example, the query "a1=x&a2=x&...&a10000=x&hidden=y" can
-                        │      │                   forward the parameter "hidden=y" while hiding it from the
-                        │      │                   proxy's Rewrite function. 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/770541 
-                        │      │                  ├ [1]: https://go.dev/issue/78948 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                        │      │                  │      47M 
-                        │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4976 
-                        │      ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
-                        │      ╰ LastModifiedDate: 2026-05-08T22:16:29.547Z 
-                        ├ [18] ╭ VulnerabilityID : CVE-2026-39826 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4980 
-                        │      ├ PkgID           : stdlib@v1.26.0 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
-                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
-                        │      ├ InstalledVersion: v1.26.0 
-                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-                        │      │                  │         e604d470cc284fe84f9a 
-                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-                        │      │                            c9a6ba0df01bfc18beca 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:7563985a027e96b18e582a6508861f80d4975c25ff7b89201e99d
-                        │      │                   5cc6eb90df7 
-                        │      ├ Title           : If a trusted template author were to write a <script> tag
-                        │      │                   containing a ... 
-                        │      ├ Description     : If a trusted template author were to write a <script> tag
-                        │      │                   containing an empty 'type' attribute or a 'type' attribute
-                        │      │                   with an ASCII whitespace, the execution of the template
-                        │      │                   would incorrectly escape any data passed into the <script>
-                        │      │                   block. 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/771180 
-                        │      │                  ├ [1]: https://go.dev/issue/78981 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                        │      │                  │      47M 
-                        │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4980 
-                        │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
-                        │      ╰ LastModifiedDate: 2026-05-08T15:16:37.68Z 
-                        ├ [19] ╭ VulnerabilityID : CVE-2026-39836 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4971 
-                        │      ├ PkgID           : stdlib@v1.26.0 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
-                        │      │                  ╰ UID : 8d6cb282fd98a7ac 
-                        │      ├ InstalledVersion: v1.26.0 
-                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
-                        │      │                  │         e604d470cc284fe84f9a 
-                        │      │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
-                        │      │                            c9a6ba0df01bfc18beca 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39836 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:47baa4a075b7c4347a1a74388d303e19ece0fee0a9b299853a453
-                        │      │                   bf89652fdb3 
-                        │      ├ Title           : Panic in Dial and LookupPort when handling NUL byte on
-                        │      │                   Windows in net 
-                        │      ├ Description     : The Dial and LookupPort functions panic on Windows when
-                        │      │                   provided with an input containing a NUL (0). 
-                        │      ├ Severity        : UNKNOWN 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/775320 
-                        │      │                  ├ [1]: https://go.dev/issue/79006 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                        │      │                  │      47M 
-                        │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4971 
-                        │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
-                        │      ╰ LastModifiedDate: 2026-05-08T22:16:29.723Z 
-                        ╰ [20] ╭ VulnerabilityID : CVE-2026-42499 
-                               ├ VendorIDs        ─ [0]: GO-2026-4977 
+                        ╰ [20] ╭ VulnerabilityID : CVE-2026-27139 
+                               ├ VendorIDs        ─ [0]: GO-2026-4602 
                                ├ PkgID           : stdlib@v1.26.0 
                                ├ PkgName         : stdlib 
                                ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.0 
                                │                  ╰ UID : 8d6cb282fd98a7ac 
                                ├ InstalledVersion: v1.26.0 
-                               ├ FixedVersion    : 1.25.10, 1.26.3 
+                               ├ FixedVersion    : 1.25.8, 1.26.1 
                                ├ Status          : fixed 
                                ├ Layer            ╭ Digest: sha256:d917dad6a375cc8ede97c53b14ae842416b6890baaf1
                                │                  │         e604d470cc284fe84f9a 
                                │                  ╰ DiffID: sha256:fbdbdf9563ccca83c63d36aa5df8acff2bc2e0ffd919
                                │                            c9a6ba0df01bfc18beca 
-                               ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42499 
+                               ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-27139 
                                ├ DataSource       ╭ ID  : govulndb 
                                │                  ├ Name: The Go Vulnerability Database 
                                │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                               ├ Fingerprint     : sha256:1ea54589e14a9c29cb8e91e382a69b25cbb7a58c985570f845975
-                               │                   4edc06e6843 
-                               ├ Title           : Pathological inputs could cause DoS through consumePhrase
-                               │                   when parsing ... 
-                               ├ Description     : Pathological inputs could cause DoS through consumePhrase
-                               │                   when parsing an email address according to RFC 5322. 
-                               ├ Severity        : UNKNOWN 
-                               ├ References       ╭ [0]: https://go.dev/cl/771520 
-                               │                  ├ [1]: https://go.dev/issue/78987 
-                               │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                               │                  │      47M 
-                               │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-4977 
-                               ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
-                               ╰ LastModifiedDate: 2026-05-08T22:16:33.183Z 
+                               ├ Fingerprint     : sha256:5e6cb1470305416b04226bb8fad09161bae43bdaccdde311b8f48
+                               │                   9a20d75e64a 
+                               ├ Title           : os: FileInfo can escape from a Root in golang os module 
+                               ├ Description     : On Unix platforms, when listing the contents of a directory
+                               │                   using File.ReadDir or File.Readdir the returned FileInfo
+                               │                   could reference a file outside of the Root in which the File
+                               │                    was opened. The impact of this escape is limited to reading
+                               │                    metadata provided by lstat from arbitrary locations on the
+                               │                   filesystem without permitting reading or writing files
+                               │                   outside the root. 
+                               ├ Severity        : LOW 
+                               ├ CweIDs           ─ [0]: CWE-22 
+                               ├ VendorSeverity   ╭ amazon : 3 
+                               │                  ├ azure  : 1 
+                               │                  ├ bitnami: 1 
+                               │                  ╰ redhat : 1 
+                               ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:
+                               │                  │         │           N/A:N 
+                               │                  │         ╰ V3Score : 2.5 
+                               │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:
+                               │                            │           N/A:N 
+                               │                            ╰ V3Score : 2.5 
+                               ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-27139 
+                               │                  ├ [1]: https://go.dev/cl/749480 
+                               │                  ├ [2]: https://go.dev/issue/77827 
+                               │                  ├ [3]: https://groups.google.com/g/golang-announce/c/EdhZqrQ9
+                               │                  │      8hk 
+                               │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-27139 
+                               │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-4602 
+                               │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-27139 
+                               ├ PublishedDate   : 2026-03-06T22:16:01.07Z 
+                               ╰ LastModifiedDate: 2026-04-21T14:32:36.317Z 
 ```
