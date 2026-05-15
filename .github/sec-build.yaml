@@ -203,6 +203,7 @@
     CweIDs:
     - CWE-789
     VendorSeverity:
+      amazon: 2
       azure: 2
       ghsa: 2
     CVSS:
@@ -2043,6 +2044,7 @@
     CweIDs:
     - CWE-789
     VendorSeverity:
+      amazon: 2
       azure: 2
       ghsa: 2
     CVSS:
@@ -2084,6 +2086,7 @@
     CweIDs:
     - CWE-789
     VendorSeverity:
+      amazon: 2
       azure: 2
       ghsa: 2
     CVSS:
@@ -2125,6 +2128,7 @@
     CweIDs:
     - CWE-789
     VendorSeverity:
+      amazon: 2
       azure: 2
       ghsa: 2
     CVSS:
@@ -2704,7 +2708,7 @@
     - CWE-770
     VendorSeverity:
       alma: 3
-      amazon: 3
+      amazon: 2
       bitnami: 3
       oracle-oval: 3
       redhat: 3
@@ -2725,17 +2729,11 @@
     - https://bugzilla.redhat.com/show_bug.cgi?id=2456336
     - https://bugzilla.redhat.com/show_bug.cgi?id=2456338
     - https://bugzilla.redhat.com/show_bug.cgi?id=2456339
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2456340
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2456341
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2456342
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27140
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27143
-    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27144
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32282
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283
     - https://errata.almalinux.org/9/ALSA-2026-14200.html
-    - https://errata.rockylinux.org/RLSA-2026:10219
+    - https://errata.rockylinux.org/RLSA-2026:14200
     - https://go.dev/cl/758320
     - https://go.dev/issue/78282
     - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
@@ -2773,7 +2771,7 @@
     CweIDs:
     - CWE-295
     VendorSeverity:
-      amazon: 3
+      amazon: 2
       bitnami: 3
       nvd: 3
       redhat: 2
@@ -2825,7 +2823,7 @@
     - CWE-770
     VendorSeverity:
       alma: 3
-      amazon: 3
+      amazon: 2
       bitnami: 3
       nvd: 3
       oracle-oval: 3
@@ -2849,10 +2847,12 @@
     - https://bugzilla.redhat.com/2456339
     - https://bugzilla.redhat.com/show_bug.cgi?id=2456336
     - https://bugzilla.redhat.com/show_bug.cgi?id=2456338
+    - https://bugzilla.redhat.com/show_bug.cgi?id=2456339
+    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32282
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283
     - https://errata.almalinux.org/9/ALSA-2026-14200.html
-    - https://errata.rockylinux.org/RLSA-2026:11711
+    - https://errata.rockylinux.org/RLSA-2026:14200
     - https://go.dev/cl/763767
     - https://go.dev/issue/78334
     - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
@@ -3156,7 +3156,7 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 2
       redhat: 2
     CVSS:
@@ -3204,7 +3204,7 @@
     - CWE-59
     VendorSeverity:
       alma: 3
-      amazon: 3
+      amazon: 2
       bitnami: 2
       nvd: 2
       oracle-oval: 3
@@ -3228,10 +3228,12 @@
     - https://bugzilla.redhat.com/2456339
     - https://bugzilla.redhat.com/show_bug.cgi?id=2456336
     - https://bugzilla.redhat.com/show_bug.cgi?id=2456338
+    - https://bugzilla.redhat.com/show_bug.cgi?id=2456339
+    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32280
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32282
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32283
     - https://errata.almalinux.org/9/ALSA-2026-14200.html
-    - https://errata.rockylinux.org/RLSA-2026:11711
+    - https://errata.rockylinux.org/RLSA-2026:14200
     - https://go.dev/cl/763761
     - https://go.dev/issue/78293
     - https://groups.google.com/g/golang-announce/c/0uYbvbPZRWU
@@ -3269,11 +3271,11 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
-      amazon: 3
+      amazon: 2
       azure: 2
       bitnami: 2
       nvd: 2
-      photon: 3
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -3322,10 +3324,10 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
-      amazon: 3
+      amazon: 2
       bitnami: 2
       nvd: 2
-      photon: 4
+      photon: 2
       redhat: 2
     CVSS:
       bitnami:
@@ -3534,7 +3536,7 @@
     CweIDs:
     - CWE-22
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       azure: 1
       bitnami: 1
       redhat: 1
