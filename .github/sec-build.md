@@ -1158,7 +1158,8 @@
 │                       │      │                   fixes the issue. 
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-190 
-│                       │      ├ VendorSeverity   ╭ bitnami: 3 
+│                       │      ├ VendorSeverity   ╭ azure  : 3 
+│                       │      │                  ├ bitnami: 3 
 │                       │      │                  ├ ghsa   : 3 
 │                       │      │                  ╰ redhat : 3 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
@@ -1592,8 +1593,8 @@
 │                       │      │                          cosystem%3Ago 
 │                       │      ├ Fingerprint     : sha256:64008b7039bf02743777f47d8f54340a1437aeca16858388bb5a2
 │                       │      │                   b327cb8b911 
-│                       │      ├ Title           : pgx is a PostgreSQL driver and toolkit for Go. Prior to
-│                       │      │                   version 5.9.2, ... 
+│                       │      ├ Title           : github.com/jackc/pgx: golang: pgx: SQL injection via
+│                       │      │                   specific SQL query conditions 
 │                       │      ├ Description     : pgx is a PostgreSQL driver and toolkit for Go. Prior to
 │                       │      │                   version 5.9.2, SQL injection can occur when the non-default
 │                       │      │                   simple protocol is used, a dollar quoted string literal is
@@ -1604,17 +1605,23 @@
 │                       │      │                    version 5.9.2. 
 │                       │      ├ Severity        : LOW 
 │                       │      ├ CweIDs           ─ [0]: CWE-89 
-│                       │      ├ VendorSeverity   ─ ghsa: 1 
-│                       │      ├ CVSS             ─ ghsa ╭ V40Vector: CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:N/VI
-│                       │      │                         │            :L/VA:N/SC:N/SI:N/SA:N 
-│                       │      │                         ╰ V40Score : 2.3 
-│                       │      ├ References       ╭ [0]: https://github.com/jackc/pgx 
-│                       │      │                  ├ [1]: https://github.com/jackc/pgx/commit/60644f84918a8af66d
+│                       │      ├ VendorSeverity   ╭ ghsa  : 1 
+│                       │      │                  ╰ redhat: 2 
+│                       │      ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:N/
+│                       │      │                  │        │            VI:L/VA:N/SC:N/SI:N/SA:N 
+│                       │      │                  │        ╰ V40Score : 2.3 
+│                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L
+│                       │      │                           │           /A:N 
+│                       │      │                           ╰ V3Score : 5.9 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-41889 
+│                       │      │                  ├ [1]: https://github.com/jackc/pgx 
+│                       │      │                  ├ [2]: https://github.com/jackc/pgx/commit/60644f84918a8af66d
 │                       │      │                  │      14a4b0d865d4edafd955da 
-│                       │      │                  ├ [2]: https://github.com/jackc/pgx/releases/tag/v5.9.2 
-│                       │      │                  ├ [3]: https://github.com/jackc/pgx/security/advisories/GHSA-
+│                       │      │                  ├ [3]: https://github.com/jackc/pgx/releases/tag/v5.9.2 
+│                       │      │                  ├ [4]: https://github.com/jackc/pgx/security/advisories/GHSA-
 │                       │      │                  │      j88v-2chj-qfwx 
-│                       │      │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-41889 
+│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2026-41889 
+│                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-41889 
 │                       │      ├ PublishedDate   : 2026-05-08T17:16:31.04Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T16:34:56.063Z 
 │                       ├ [10] ╭ VulnerabilityID : CVE-2026-34040 
