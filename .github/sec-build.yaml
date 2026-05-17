@@ -1113,6 +1113,7 @@
     CweIDs:
     - CWE-190
     VendorSeverity:
+      azure: 3
       bitnami: 3
       ghsa: 3
       redhat: 3
@@ -1499,23 +1500,29 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:64008b7039bf02743777f47d8f54340a1437aeca16858388bb5a2b327cb8b911
-    Title: pgx is a PostgreSQL driver and toolkit for Go. Prior to version 5.9.2, ...
+    Title: 'github.com/jackc/pgx: golang: pgx: SQL injection via specific SQL query conditions'
     Description: pgx is a PostgreSQL driver and toolkit for Go. Prior to version 5.9.2, SQL injection can occur when the non-default simple protocol is used, a dollar quoted string literal is used in the SQL query, that string literal contains text that would be would be interpreted as a placeholder outside of a string literal, and the value of that placeholder is controllable by the attacker. This issue has been patched in version 5.9.2.
     Severity: LOW
     CweIDs:
     - CWE-89
     VendorSeverity:
       ghsa: 1
+      redhat: 2
     CVSS:
       ghsa:
         V40Vector: CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N
         V40Score: 2.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:N
+        V3Score: 5.9
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-41889
     - https://github.com/jackc/pgx
     - https://github.com/jackc/pgx/commit/60644f84918a8af66d14a4b0d865d4edafd955da
     - https://github.com/jackc/pgx/releases/tag/v5.9.2
     - https://github.com/jackc/pgx/security/advisories/GHSA-j88v-2chj-qfwx
     - https://nvd.nist.gov/vuln/detail/CVE-2026-41889
+    - https://www.cve.org/CVERecord?id=CVE-2026-41889
     PublishedDate: '2026-05-08T17:16:31.04Z'
     LastModifiedDate: '2026-05-13T16:34:56.063Z'
   - VulnerabilityID: CVE-2026-34040
