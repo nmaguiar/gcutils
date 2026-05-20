@@ -2519,6 +2519,7 @@
     - CWE-400
     - CWE-789
     VendorSeverity:
+      azure: 2
       bitnami: 3
       ghsa: 3
     CVSS:
