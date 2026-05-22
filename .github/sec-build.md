@@ -1621,10 +1621,14 @@
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ CweIDs           ─ [0]: CWE-190 
 │                       │      ├ VendorSeverity   ╭ ghsa  : 2 
+│                       │      │                  ├ nvd   : 3 
 │                       │      │                  ╰ redhat: 2 
 │                       │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                       │      │                  │        │           /A:L 
 │                       │      │                  │        ╰ V3Score : 5.3 
+│                       │      │                  ├ nvd    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                       │      │                  │        │           /A:H 
+│                       │      │                  │        ╰ V3Score : 7.5 
 │                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                       │      │                           │           /A:L 
 │                       │      │                           ╰ V3Score : 5.3 
@@ -1636,7 +1640,7 @@
 │                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-32952 
 │                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2026-32952 
 │                       │      ├ PublishedDate   : 2026-04-24T03:16:07.833Z 
-│                       │      ╰ LastModifiedDate: 2026-04-24T14:50:56.203Z 
+│                       │      ╰ LastModifiedDate: 2026-05-21T18:22:06.247Z 
 │                       ├ [1]  ╭ VulnerabilityID : CVE-2026-41602 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-wf45-q9ch-q8gh 
 │                       │      ├ PkgID           : github.com/apache/thrift@v0.22.0 
@@ -2116,10 +2120,14 @@
 │                       │      ├ Severity        : LOW 
 │                       │      ├ CweIDs           ─ [0]: CWE-89 
 │                       │      ├ VendorSeverity   ╭ ghsa  : 1 
+│                       │      │                  ├ nvd   : 4 
 │                       │      │                  ╰ redhat: 2 
 │                       │      ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:N/
 │                       │      │                  │        │            VI:L/VA:N/SC:N/SI:N/SA:N 
 │                       │      │                  │        ╰ V40Score : 2.3 
+│                       │      │                  ├ nvd    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H
+│                       │      │                  │        │           /A:H 
+│                       │      │                  │        ╰ V3Score : 9.8 
 │                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L
 │                       │      │                           │           /A:N 
 │                       │      │                           ╰ V3Score : 5.9 
@@ -2133,7 +2141,7 @@
 │                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2026-41889 
 │                       │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-41889 
 │                       │      ├ PublishedDate   : 2026-05-08T17:16:31.04Z 
-│                       │      ╰ LastModifiedDate: 2026-05-13T16:34:56.063Z 
+│                       │      ╰ LastModifiedDate: 2026-05-21T17:50:53.66Z 
 │                       ├ [10] ╭ VulnerabilityID : CVE-2026-34040 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-x744-4wpc-v9h2 
 │                       │      ├ PkgID           : github.com/moby/moby@v28.5.2+incompatible 
