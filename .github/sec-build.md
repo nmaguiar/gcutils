@@ -2984,12 +2984,17 @@
 │                       │      │                   vulnerability is fixed in 3.5.3 and 3.11.3. 
 │                       │      ├ Severity        : MEDIUM 
 │                       │      ├ CweIDs           ─ [0]: CWE-79 
-│                       │      ├ VendorSeverity   ─ ghsa: 2 
+│                       │      ├ VendorSeverity   ╭ bitnami: 2 
+│                       │      │                  ╰ ghsa   : 2 
+│                       │      ├ CVSS             ─ bitnami ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N
+│                       │      │                            │            /VI:N/VA:N/SC:L/SI:L/SA:N 
+│                       │      │                            ╰ V40Score : 5.1 
 │                       │      ├ References       ╭ [0]: https://github.com/prometheus/prometheus 
 │                       │      │                  ├ [1]: https://github.com/prometheus/prometheus/commit/38f23b
 │                       │      │                  │      9075ced1de2b82d2dad8b2bebb1ecd5b7d 
-│                       │      │                  ╰ [2]: https://github.com/prometheus/prometheus/security/advi
-│                       │      │                         sories/GHSA-fw8g-cg8f-9j28 
+│                       │      │                  ├ [2]: https://github.com/prometheus/prometheus/security/advi
+│                       │      │                  │      sories/GHSA-fw8g-cg8f-9j28 
+│                       │      │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-44903 
 │                       │      ├ PublishedDate   : 2026-05-26T22:16:43.01Z 
 │                       │      ╰ LastModifiedDate: 2026-05-26T22:16:43.01Z 
 │                       ├ [23] ╭ VulnerabilityID : CVE-2026-39882 
