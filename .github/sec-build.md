@@ -37,7 +37,8 @@
 │                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │     ├ Fingerprint     : sha256:341b66d050dbae7df88c30aa3093ba35f98ed1fb13e47cd7d59d38
 │                       │     │                   5737e5824c 
-│                       │     ├ Title           : Inefficient candidate hostname parsing in crypto/x509 
+│                       │     ├ Title           : *x509.Certificate).VerifyHostname previously called
+│                       │     │                   matchHostnames in ... 
 │                       │     ├ Description     : (*x509.Certificate).VerifyHostname previously called
 │                       │     │                   matchHostnames in a loop over all DNS Subject Alternative
 │                       │     │                   Name (SAN) entries. This caused strings.Split(host, ".") to
@@ -73,16 +74,18 @@
 │                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │     ├ Fingerprint     : sha256:fa42f94df2dcc71f0e973f0ba7e61e67e5cfd716f753a3eac4661b
 │                       │     │                   e035270635 
-│                       │     ├ Title           : Quadratic complexity in WordDecoder.DecodeHeader in mime 
+│                       │     ├ Title           : Decoding a maliciously-crafted MIME header containing many
+│                       │     │                   invalid enc ... 
 │                       │     ├ Description     : Decoding a maliciously-crafted MIME header containing many
 │                       │     │                   invalid encoded-words can consume excessive CPU. 
 │                       │     ├ Severity        : UNKNOWN 
+│                       │     ├ CweIDs           ─ [0]: CWE-407 
 │                       │     ├ References       ╭ [0]: https://go.dev/cl/774481 
 │                       │     │                  ├ [1]: https://go.dev/issue/79217 
 │                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
 │                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5038 
 │                       │     ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
-│                       │     ╰ LastModifiedDate: 2026-06-02T23:16:37.927Z 
+│                       │     ╰ LastModifiedDate: 2026-06-03T16:16:30.157Z 
 │                       ╰ [2] ╭ VulnerabilityID : CVE-2026-42507 
 │                             ├ VendorIDs        ─ [0]: GO-2026-5039 
 │                             ├ PkgID           : stdlib@v1.26.3 
@@ -102,8 +105,8 @@
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                             ├ Fingerprint     : sha256:5966f35d0d11c4033da1ba20ce167e0329a8ff279f1649d3ecb947
 │                             │                   42089482f6 
-│                             ├ Title           : Arbitrary inputs are included in errors without any escaping
-│                             │                   in net/textproto 
+│                             ├ Title           : When returning errors, functions in the net/textproto package
+│                             │                    would in ... 
 │                             ├ Description     : When returning errors, functions in the net/textproto package
 │                             │                    would include its input as part of the error. This might
 │                             │                   allow an attacker to inject misleading content to errors that
@@ -114,7 +117,7 @@
 │                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
 │                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5039 
 │                             ├ PublishedDate   : 2026-06-02T23:16:38.027Z 
-│                             ╰ LastModifiedDate: 2026-06-02T23:16:38.027Z 
+│                             ╰ LastModifiedDate: 2026-06-03T20:16:20.65Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -138,7 +141,8 @@
 │                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │     ├ Fingerprint     : sha256:e6215588ef4e7b824249d9e074f7a58328ff13b1efa14cc407b9f2
 │                       │     │                   06a62b3883 
-│                       │     ├ Title           : Inefficient candidate hostname parsing in crypto/x509 
+│                       │     ├ Title           : *x509.Certificate).VerifyHostname previously called
+│                       │     │                   matchHostnames in ... 
 │                       │     ├ Description     : (*x509.Certificate).VerifyHostname previously called
 │                       │     │                   matchHostnames in a loop over all DNS Subject Alternative
 │                       │     │                   Name (SAN) entries. This caused strings.Split(host, ".") to
@@ -174,16 +178,18 @@
 │                       │     │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │     ├ Fingerprint     : sha256:2c7a5476c03698412466cf9458b2ec6e61e1866189caccb5e354f5
 │                       │     │                   1c42e134e7 
-│                       │     ├ Title           : Quadratic complexity in WordDecoder.DecodeHeader in mime 
+│                       │     ├ Title           : Decoding a maliciously-crafted MIME header containing many
+│                       │     │                   invalid enc ... 
 │                       │     ├ Description     : Decoding a maliciously-crafted MIME header containing many
 │                       │     │                   invalid encoded-words can consume excessive CPU. 
 │                       │     ├ Severity        : UNKNOWN 
+│                       │     ├ CweIDs           ─ [0]: CWE-407 
 │                       │     ├ References       ╭ [0]: https://go.dev/cl/774481 
 │                       │     │                  ├ [1]: https://go.dev/issue/79217 
 │                       │     │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
 │                       │     │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5038 
 │                       │     ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
-│                       │     ╰ LastModifiedDate: 2026-06-02T23:16:37.927Z 
+│                       │     ╰ LastModifiedDate: 2026-06-03T16:16:30.157Z 
 │                       ╰ [2] ╭ VulnerabilityID : CVE-2026-42507 
 │                             ├ VendorIDs        ─ [0]: GO-2026-5039 
 │                             ├ PkgID           : stdlib@v1.26.3 
@@ -203,8 +209,8 @@
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                             ├ Fingerprint     : sha256:16ddf4d7c935847cbc72c816644bf29cc7b36a88fe064a2bf80ea6
 │                             │                   b91a9fff49 
-│                             ├ Title           : Arbitrary inputs are included in errors without any escaping
-│                             │                   in net/textproto 
+│                             ├ Title           : When returning errors, functions in the net/textproto package
+│                             │                    would in ... 
 │                             ├ Description     : When returning errors, functions in the net/textproto package
 │                             │                    would include its input as part of the error. This might
 │                             │                   allow an attacker to inject misleading content to errors that
@@ -215,7 +221,7 @@
 │                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
 │                             │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5039 
 │                             ├ PublishedDate   : 2026-06-02T23:16:38.027Z 
-│                             ╰ LastModifiedDate: 2026-06-02T23:16:38.027Z 
+│                             ╰ LastModifiedDate: 2026-06-03T20:16:20.65Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
 │     ├ Class          : lang-pkgs 
 │     ├ Type           : gobinary 
@@ -1889,7 +1895,7 @@
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-835 
 │                       │      ├ VendorSeverity   ╭ amazon : 3 
-│                       │      │                  ├ azure  : 3 
+│                       │      │                  ├ azure  : 2 
 │                       │      │                  ├ bitnami: 3 
 │                       │      │                  ├ nvd    : 3 
 │                       │      │                  ╰ ubuntu : 2 
@@ -2185,7 +2191,8 @@
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │      ├ Fingerprint     : sha256:3adce4c8ff546e4d06dd0342f11e0612f75c592f3d05fec338ff5
 │                       │      │                   d51f8213598 
-│                       │      ├ Title           : Inefficient candidate hostname parsing in crypto/x509 
+│                       │      ├ Title           : *x509.Certificate).VerifyHostname previously called
+│                       │      │                   matchHostnames in ... 
 │                       │      ├ Description     : (*x509.Certificate).VerifyHostname previously called
 │                       │      │                   matchHostnames in a loop over all DNS Subject Alternative
 │                       │      │                   Name (SAN) entries. This caused strings.Split(host, ".") to
@@ -2222,17 +2229,19 @@
 │                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                       │      ├ Fingerprint     : sha256:384d801b0c9c2b8c51623229dae3a3661ca998cb451ed0c02ca8b
 │                       │      │                   ea47122de61 
-│                       │      ├ Title           : Quadratic complexity in WordDecoder.DecodeHeader in mime 
+│                       │      ├ Title           : Decoding a maliciously-crafted MIME header containing many
+│                       │      │                   invalid enc ... 
 │                       │      ├ Description     : Decoding a maliciously-crafted MIME header containing many
 │                       │      │                   invalid encoded-words can consume excessive CPU. 
 │                       │      ├ Severity        : UNKNOWN 
+│                       │      ├ CweIDs           ─ [0]: CWE-407 
 │                       │      ├ References       ╭ [0]: https://go.dev/cl/774481 
 │                       │      │                  ├ [1]: https://go.dev/issue/79217 
 │                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcB
 │                       │      │                  │      cKw 
 │                       │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5038 
 │                       │      ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
-│                       │      ╰ LastModifiedDate: 2026-06-02T23:16:37.927Z 
+│                       │      ╰ LastModifiedDate: 2026-06-03T16:16:30.157Z 
 │                       ╰ [37] ╭ VulnerabilityID : CVE-2026-42507 
 │                              ├ VendorIDs        ─ [0]: GO-2026-5039 
 │                              ├ PkgID           : stdlib@v1.25.9 
@@ -2252,8 +2261,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:5ea339d3862633bcd7d8520b601a1b0ac8088180c95bd3351e7f5
 │                              │                   ea751a05b90 
-│                              ├ Title           : Arbitrary inputs are included in errors without any escaping
-│                              │                    in net/textproto 
+│                              ├ Title           : When returning errors, functions in the net/textproto
+│                              │                   package would in ... 
 │                              ├ Description     : When returning errors, functions in the net/textproto
 │                              │                   package would include its input as part of the error. This
 │                              │                   might allow an attacker to inject misleading content to
@@ -2265,7 +2274,7 @@
 │                              │                  │      cKw 
 │                              │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5039 
 │                              ├ PublishedDate   : 2026-06-02T23:16:38.027Z 
-│                              ╰ LastModifiedDate: 2026-06-02T23:16:38.027Z 
+│                              ╰ LastModifiedDate: 2026-06-03T20:16:20.65Z 
 ╰ [7] ╭ Target         : usr/share/grafana/data/plugins-bundled/elasticsearch/gpx_grafana_elasticsearch_datasou
       │                  rce_linux_amd64 
       ├ Class          : lang-pkgs 
@@ -2349,7 +2358,7 @@
                         │      ├ Severity        : HIGH 
                         │      ├ CweIDs           ─ [0]: CWE-835 
                         │      ├ VendorSeverity   ╭ amazon : 3 
-                        │      │                  ├ azure  : 3 
+                        │      │                  ├ azure  : 2 
                         │      │                  ├ bitnami: 3 
                         │      │                  ├ nvd    : 3 
                         │      │                  ╰ ubuntu : 2 
@@ -2645,7 +2654,8 @@
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
                         │      ├ Fingerprint     : sha256:e49d6cfd1b4bf4ec81d99c2cef63f19b5e450d46f76a27f47eb69
                         │      │                   54606c54cb7 
-                        │      ├ Title           : Inefficient candidate hostname parsing in crypto/x509 
+                        │      ├ Title           : *x509.Certificate).VerifyHostname previously called
+                        │      │                   matchHostnames in ... 
                         │      ├ Description     : (*x509.Certificate).VerifyHostname previously called
                         │      │                   matchHostnames in a loop over all DNS Subject Alternative
                         │      │                   Name (SAN) entries. This caused strings.Split(host, ".") to
@@ -2682,17 +2692,19 @@
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
                         │      ├ Fingerprint     : sha256:c5d7aa8ffe654c8be2532540c6503221ef6f46dc7bec6b60ff036
                         │      │                   20415cef77b 
-                        │      ├ Title           : Quadratic complexity in WordDecoder.DecodeHeader in mime 
+                        │      ├ Title           : Decoding a maliciously-crafted MIME header containing many
+                        │      │                   invalid enc ... 
                         │      ├ Description     : Decoding a maliciously-crafted MIME header containing many
                         │      │                   invalid encoded-words can consume excessive CPU. 
                         │      ├ Severity        : UNKNOWN 
+                        │      ├ CweIDs           ─ [0]: CWE-407 
                         │      ├ References       ╭ [0]: https://go.dev/cl/774481 
                         │      │                  ├ [1]: https://go.dev/issue/79217 
                         │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcB
                         │      │                  │      cKw 
                         │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5038 
                         │      ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
-                        │      ╰ LastModifiedDate: 2026-06-02T23:16:37.927Z 
+                        │      ╰ LastModifiedDate: 2026-06-03T16:16:30.157Z 
                         ╰ [10] ╭ VulnerabilityID : CVE-2026-42507 
                                ├ VendorIDs        ─ [0]: GO-2026-5039 
                                ├ PkgID           : stdlib@v1.26.2 
@@ -2712,8 +2724,8 @@
                                │                  ╰ URL : https://pkg.go.dev/vuln/ 
                                ├ Fingerprint     : sha256:6602e43f1dca9aa9f57a1342c36bf9c98919de49e2bcd83fcf5bc
                                │                   d7f555b42c0 
-                               ├ Title           : Arbitrary inputs are included in errors without any escaping
-                               │                    in net/textproto 
+                               ├ Title           : When returning errors, functions in the net/textproto
+                               │                   package would in ... 
                                ├ Description     : When returning errors, functions in the net/textproto
                                │                   package would include its input as part of the error. This
                                │                   might allow an attacker to inject misleading content to
@@ -2725,5 +2737,5 @@
                                │                  │      cKw 
                                │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5039 
                                ├ PublishedDate   : 2026-06-02T23:16:38.027Z 
-                               ╰ LastModifiedDate: 2026-06-02T23:16:38.027Z 
+                               ╰ LastModifiedDate: 2026-06-03T20:16:20.65Z 
 ```
