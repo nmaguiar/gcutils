@@ -740,6 +740,7 @@
     CweIDs:
     - CWE-89
     VendorSeverity:
+      azure: 1
       ghsa: 1
       nvd: 4
       redhat: 2
@@ -1256,6 +1257,7 @@
     - CWE-200
     - CWE-312
     VendorSeverity:
+      azure: 2
       bitnami: 3
       ghsa: 3
       redhat: 3
