@@ -801,7 +801,8 @@
 │                       │      │                    version 5.9.2. 
 │                       │      ├ Severity        : LOW 
 │                       │      ├ CweIDs           ─ [0]: CWE-89 
-│                       │      ├ VendorSeverity   ╭ ghsa  : 1 
+│                       │      ├ VendorSeverity   ╭ azure : 1 
+│                       │      │                  ├ ghsa  : 1 
 │                       │      │                  ├ nvd   : 4 
 │                       │      │                  ╰ redhat: 2 
 │                       │      ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:N/
@@ -1414,7 +1415,8 @@
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ╭ [0]: CWE-200 
 │                       │      │                  ╰ [1]: CWE-312 
-│                       │      ├ VendorSeverity   ╭ bitnami: 3 
+│                       │      ├ VendorSeverity   ╭ azure  : 2 
+│                       │      │                  ├ bitnami: 3 
 │                       │      │                  ├ ghsa   : 3 
 │                       │      │                  ╰ redhat : 3 
 │                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:
