@@ -954,60 +954,57 @@
 │                       │      │                   e6fc1004ffb 
 │                       │      ├ Title           : Docker: Race condition in docker cp allows bind mount
 │                       │      │                   redirection to host path 
-│                       │      ├ Description     : ## Summary
+│                       │      ├ Description     : Package updates are available for Amazon Linux 2023 that fix
+│                       │      │                    the following vulnerabilities:
+│                       │      │                   CVE-2026-46595:
+│                       │      │                   	Previously, CVE-2024-45337 fixed an authorization bypass
+│                       │      │                   for misused ssh server configurations; if any other type of
+│                       │      │                   callback is passed other than public key, then the
+│                       │      │                   source-address validation would be skipped.
 │                       │      │                   
-│                       │      │                   A race condition during `docker cp` mount setup allows a
-│                       │      │                   malicious container to redirect a bind mount target to an
-│                       │      │                   arbitrary host path, potentially overwriting host files or
-│                       │      │                   causing denial of service.
-│                       │      │                   ## Details
-│                       │      │                   When copying files into a container, the daemon sets up a
-│                       │      │                   temporary filesystem view by bind-mounting volumes into a
-│                       │      │                   private mount namespace. During this setup, the mount
-│                       │      │                   destination is created inside the container root and then a
-│                       │      │                   bind mount is attached using the container-relative path
-│                       │      │                   resolved to an absolute host path.
-│                       │      │                   Between mountpoint creation and the `mount()` syscall, a
-│                       │      │                   process running inside the container can replace the
-│                       │      │                   destination (or a parent path component) with a symlink
-│                       │      │                   pointing to an arbitrary location on the host. The `mount()`
-│                       │      │                    syscall follows the symlink, causing the volume to be
-│                       │      │                   bind-mounted onto an arbitrary host path instead of the
-│                       │      │                   intended container path.
-│                       │      │                   ## Impact
-│                       │      │                   A malicious container can redirect a volume bind mount to an
-│                       │      │                    arbitrary host path. The impact depends on the volume
-│                       │      │                   content and mount options:
-│                       │      │                   - If the volume is writable, arbitrary host files at the
-│                       │      │                   redirected path could be overwritten with the volume's
-│                       │      │                   contents.
-│                       │      │                   - If the volume is read-only, the host path is masked by the
-│                       │      │                    mount for the duration of the operation, causing denial of
-│                       │      │                   service.
-│                       │      │                   - In all cases the mount is temporary (torn down after the
-│                       │      │                   `docker cp` completes), but the effects of any writes
-│                       │      │                   persist.
-│                       │      │                   ### Conditions for exploitation
-│                       │      │                   - A container must have at least one volume mount.
-│                       │      │                   - A process inside the container must be able to rapidly
-│                       │      │                   create and swap symlinks at the volume mount destination
-│                       │      │                   path.
-│                       │      │                   - An operator must initiate a `docker cp` into that
-│                       │      │                   container, or call the `PUT /containers/{id}/archive` or
-│                       │      │                   `HEAD /containers/{id}/archive` API endpoints.
-│                       │      │                   ### Not affected
-│                       │      │                   - Containers that do not have volume mounts are not
-│                       │      │                   affected, as the race occurs during volume bind-mount
-│                       │      │                   setup.
-│                       │      │                   ## Workarounds
-│                       │      │                   - Only run containers from trusted images.
-│                       │      │                   - Avoid using `docker cp` with untrusted running
-│                       │      │                   containers.
-│                       │      │                   - Use authorization plugins to restrict access to the
-│                       │      │                   archive API endpoints (`PUT /containers/{id}/archive`, `HEAD
-│                       │      │                    /containers/{id}/archive`). 
+│                       │      │                   CVE-2026-42508:
+│                       │      │                   	Previously, a revoked 'SignatureKey' belonging to a CA was
+│                       │      │                   not correctly checked for revocation. Now, both the 'key'
+│                       │      │                   and 'key.SignatureKey' are checked for @revoked.
+│                       │      │                   CVE-2026-42306:
+│                       │      │                   	Docker: Race condition in docker cp allows bind mount
+│                       │      │                   redirection to host path
+│                       │      │                   CVE-2026-39833:
+│                       │      │                   	The in-memory keyring returned by NewKeyring() silently
+│                       │      │                   accepted keys with the ConfirmBeforeUse constraint but never
+│                       │      │                    enforced it. The key would sign without any confirmation
+│                       │      │                   prompt, with no indication to the caller that the constraint
+│                       │      │                    was not in effect. NewKeyring() now returns an error when
+│                       │      │                   unsupported constraints are requested.
+│                       │      │                   CVE-2026-39831:
+│                       │      │                   	The Verify() method for FIDO/U2F security key types
+│                       │      │                   (sk-ecdsa-sha2-nistp256@openssh.com,
+│                       │      │                   sk-ssh-ed25519@openssh.com) did not check the User Presence
+│                       │      │                   flag. Signatures generated without physical touch were
+│                       │      │                   accepted, allowing unattended use of a hardware security
+│                       │      │                   key. To restore the previous behavior, return a
+│                       │      │                   "no-touch-required" extension in Permissions.Extensions from
+│                       │      │                    PublicKeyCallback.
+│                       │      │                   CVE-2026-39830:
+│                       │      │                   	A malicious SSH peer could send unsolicited global request
+│                       │      │                   responses to fill an internal buffer, blocking the
+│                       │      │                   connection's read loop. The blocked goroutine could not be
+│                       │      │                   released by calling Close(), resulting in a resource leak
+│                       │      │                   per connection. Unsolicited global responses are now
+│                       │      │                   discarded.
+│                       │      │                   CVE-2026-39829:
+│                       │      │                   	The RSA and DSA public key parsers did not enforce size
+│                       │      │                   limits on key parameters. A crafted public key with an
+│                       │      │                   excessively large modulus or DSA parameter could cause
+│                       │      │                   several minutes of CPU consumption during signature
+│                       │      │                   verification. This could be triggered by unauthenticated
+│                       │      │                   clients during public key authentication. RSA moduli are now
+│                       │      │                    limited to 8192 bits, and DSA parameters are validated per
+│                       │      │                   FIPS 186-2.
+│                       │      │                    
 │                       │      ├ Severity        : HIGH 
-│                       │      ├ VendorSeverity   ─ ghsa: 3 
+│                       │      ├ VendorSeverity   ╭ amazon: 3 
+│                       │      │                  ╰ ghsa  : 3 
 │                       │      ├ CVSS             ─ ghsa ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:C/C:N/I:H/A:H 
 │                       │      │                         ╰ V3Score : 7.2 
 │                       │      ╰ References       ╭ [0]: https://github.com/moby/moby 
@@ -1449,7 +1446,7 @@
 │                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/prometheus/prometheus@v0.303.1 
 │                       │      │                  ╰ UID : 67407d99c8563d1b 
 │                       │      ├ InstalledVersion: v0.303.1 
-│                       │      ├ FixedVersion    : 0.311.3 
+│                       │      ├ FixedVersion    : 0.311.3, 0.305.2 
 │                       │      ├ Status          : fixed 
 │                       │      ├ Layer            ╭ Digest: sha256:4b1dc5f5da38a3aa66c2e732845ee8e6079fa0c61098
 │                       │      │                  │         bf76de466b15bd74a321 
@@ -1627,6 +1624,12 @@
 │                       │      │                  ╰ nvd    : 2 
 │                       │      ├ CVSS             ╭ bitnami ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N
 │                       │      │                  │         │            /VI:N/VA:N/SC:L/SI:L/SA:N 
+│                       │      │                  │         ╰ V40Score : 5.1 
+│                       │      │                  ├ ghsa    ╭ V3Vector : CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I
+│                       │      │                  │         │            :L/A:N 
+│                       │      │                  │         ├ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N
+│                       │      │                  │         │            /VI:N/VA:N/SC:L/SI:L/SA:N 
+│                       │      │                  │         ├ V3Score  : 6.1 
 │                       │      │                  │         ╰ V40Score : 5.1 
 │                       │      │                  ╰ nvd     ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
 │                       │      │                            │           L/A:N 
@@ -2087,51 +2090,7 @@
 │                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4976 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T16:58:56.39Z 
-│                       ├ [32] ╭ VulnerabilityID : CVE-2026-39826 
-│                       │      ├ VendorIDs        ─ [0]: GO-2026-4980 
-│                       │      ├ PkgID           : stdlib@v1.25.9 
-│                       │      ├ PkgName         : stdlib 
-│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.25.9 
-│                       │      │                  ╰ UID : 2f9d47014fd0da0e 
-│                       │      ├ InstalledVersion: v1.25.9 
-│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
-│                       │      ├ Status          : fixed 
-│                       │      ├ Layer            ╭ Digest: sha256:4b1dc5f5da38a3aa66c2e732845ee8e6079fa0c61098
-│                       │      │                  │         bf76de466b15bd74a321 
-│                       │      │                  ╰ DiffID: sha256:e623b85742bf756181033fd64299ea7a208c4178a0fe
-│                       │      │                            6481c7d6adda308b7bfc 
-│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
-│                       │      ├ DataSource       ╭ ID  : govulndb 
-│                       │      │                  ├ Name: The Go Vulnerability Database 
-│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-│                       │      ├ Fingerprint     : sha256:d0a9e886f518ac9e2f580f951c9887dbbfa2c61b4f33baa206562
-│                       │      │                   a0bb63fb779 
-│                       │      ├ Title           : If a trusted template author were to write a <script> tag
-│                       │      │                   containing a ... 
-│                       │      ├ Description     : If a trusted template author were to write a <script> tag
-│                       │      │                   containing an empty 'type' attribute or a 'type' attribute
-│                       │      │                   with an ASCII whitespace, the execution of the template
-│                       │      │                   would incorrectly escape any data passed into the <script>
-│                       │      │                   block. 
-│                       │      ├ Severity        : HIGH 
-│                       │      ├ CweIDs           ─ [0]: CWE-116 
-│                       │      ├ VendorSeverity   ╭ amazon     : 3 
-│                       │      │                  ├ bitnami    : 2 
-│                       │      │                  ╰ oracle-oval: 3 
-│                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
-│                       │      │                            │           L/A:N 
-│                       │      │                            ╰ V3Score : 6.1 
-│                       │      ├ References       ╭ [0]: https://go.dev/cl/771180 
-│                       │      │                  ├ [1]: https://go.dev/issue/78981 
-│                       │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-│                       │      │                  │      47M 
-│                       │      │                  ├ [3]: https://linux.oracle.com/cve/CVE-2026-39826.html 
-│                       │      │                  ├ [4]: https://linux.oracle.com/errata/ELSA-2026-22112.html 
-│                       │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2026-39826 
-│                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4980 
-│                       │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
-│                       │      ╰ LastModifiedDate: 2026-05-13T16:59:07.48Z 
-│                       ├ [33] ╭ VulnerabilityID : CVE-2026-39836 
+│                       ├ [32] ╭ VulnerabilityID : CVE-2026-39836 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4971 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2175,7 +2134,7 @@
 │                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4971 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T15:11:10.31Z 
-│                       ├ [34] ╭ VulnerabilityID : CVE-2026-42499 
+│                       ├ [33] ╭ VulnerabilityID : CVE-2026-42499 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4977 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2215,7 +2174,7 @@
 │                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4977 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T16:59:17.563Z 
-│                       ├ [35] ╭ VulnerabilityID : CVE-2026-42504 
+│                       ├ [34] ╭ VulnerabilityID : CVE-2026-42504 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-5038 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2252,7 +2211,7 @@
 │                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5038 
 │                       │      ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
 │                       │      ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
-│                       ├ [36] ╭ VulnerabilityID : CVE-2026-27145 
+│                       ├ [35] ╭ VulnerabilityID : CVE-2026-27145 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-5037 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2295,6 +2254,56 @@
 │                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5037 
 │                       │      ├ PublishedDate   : 2026-06-02T23:16:35.57Z 
 │                       │      ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
+│                       ├ [36] ╭ VulnerabilityID : CVE-2026-39826 
+│                       │      ├ VendorIDs        ─ [0]: GO-2026-4980 
+│                       │      ├ PkgID           : stdlib@v1.25.9 
+│                       │      ├ PkgName         : stdlib 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.25.9 
+│                       │      │                  ╰ UID : 2f9d47014fd0da0e 
+│                       │      ├ InstalledVersion: v1.25.9 
+│                       │      ├ FixedVersion    : 1.25.10, 1.26.3 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:4b1dc5f5da38a3aa66c2e732845ee8e6079fa0c61098
+│                       │      │                  │         bf76de466b15bd74a321 
+│                       │      │                  ╰ DiffID: sha256:e623b85742bf756181033fd64299ea7a208c4178a0fe
+│                       │      │                            6481c7d6adda308b7bfc 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
+│                       │      ├ DataSource       ╭ ID  : govulndb 
+│                       │      │                  ├ Name: The Go Vulnerability Database 
+│                       │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+│                       │      ├ Fingerprint     : sha256:d0a9e886f518ac9e2f580f951c9887dbbfa2c61b4f33baa206562
+│                       │      │                   a0bb63fb779 
+│                       │      ├ Title           : html/template: golang: html/template: Cross-site scripting
+│                       │      │                   due to incorrect script tag escaping 
+│                       │      ├ Description     : If a trusted template author were to write a <script> tag
+│                       │      │                   containing an empty 'type' attribute or a 'type' attribute
+│                       │      │                   with an ASCII whitespace, the execution of the template
+│                       │      │                   would incorrectly escape any data passed into the <script>
+│                       │      │                   block. 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ CweIDs           ─ [0]: CWE-116 
+│                       │      ├ VendorSeverity   ╭ amazon     : 3 
+│                       │      │                  ├ bitnami    : 2 
+│                       │      │                  ├ oracle-oval: 3 
+│                       │      │                  ╰ redhat     : 2 
+│                       │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
+│                       │      │                  │         │           L/A:N 
+│                       │      │                  │         ╰ V3Score : 6.1 
+│                       │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:
+│                       │      │                            │           L/A:N 
+│                       │      │                            ╰ V3Score : 5.4 
+│                       │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-39826 
+│                       │      │                  ├ [1]: https://go.dev/cl/771180 
+│                       │      │                  ├ [2]: https://go.dev/issue/78981 
+│                       │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+│                       │      │                  │      47M 
+│                       │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2026-39826.html 
+│                       │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-22112.html 
+│                       │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-39826 
+│                       │      │                  ├ [7]: https://pkg.go.dev/vuln/GO-2026-4980 
+│                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39826 
+│                       │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
+│                       │      ╰ LastModifiedDate: 2026-05-13T16:59:07.48Z 
 │                       ╰ [37] ╭ VulnerabilityID : CVE-2026-42507 
 │                              ├ VendorIDs        ─ [0]: GO-2026-5039 
 │                              ├ PkgID           : stdlib@v1.25.9 
@@ -2588,51 +2597,7 @@
                         │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4976 
                         │      ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
                         │      ╰ LastModifiedDate: 2026-05-13T16:58:56.39Z 
-                        ├ [5]  ╭ VulnerabilityID : CVE-2026-39826 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-4980 
-                        │      ├ PkgID           : stdlib@v1.26.2 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
-                        │      │                  ╰ UID : 83c42d84cdb2ccfe 
-                        │      ├ InstalledVersion: v1.26.2 
-                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:4b1dc5f5da38a3aa66c2e732845ee8e6079fa0c61098
-                        │      │                  │         bf76de466b15bd74a321 
-                        │      │                  ╰ DiffID: sha256:e623b85742bf756181033fd64299ea7a208c4178a0fe
-                        │      │                            6481c7d6adda308b7bfc 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:16c6f228f982b17d38e28245590a9b19b0f461e40a1d337561895
-                        │      │                   444c5084e1d 
-                        │      ├ Title           : If a trusted template author were to write a <script> tag
-                        │      │                   containing a ... 
-                        │      ├ Description     : If a trusted template author were to write a <script> tag
-                        │      │                   containing an empty 'type' attribute or a 'type' attribute
-                        │      │                   with an ASCII whitespace, the execution of the template
-                        │      │                   would incorrectly escape any data passed into the <script>
-                        │      │                   block. 
-                        │      ├ Severity        : HIGH 
-                        │      ├ CweIDs           ─ [0]: CWE-116 
-                        │      ├ VendorSeverity   ╭ amazon     : 3 
-                        │      │                  ├ bitnami    : 2 
-                        │      │                  ╰ oracle-oval: 3 
-                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
-                        │      │                            │           L/A:N 
-                        │      │                            ╰ V3Score : 6.1 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/771180 
-                        │      │                  ├ [1]: https://go.dev/issue/78981 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/qcCIEXso
-                        │      │                  │      47M 
-                        │      │                  ├ [3]: https://linux.oracle.com/cve/CVE-2026-39826.html 
-                        │      │                  ├ [4]: https://linux.oracle.com/errata/ELSA-2026-22112.html 
-                        │      │                  ├ [5]: https://nvd.nist.gov/vuln/detail/CVE-2026-39826 
-                        │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4980 
-                        │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
-                        │      ╰ LastModifiedDate: 2026-05-13T16:59:07.48Z 
-                        ├ [6]  ╭ VulnerabilityID : CVE-2026-39836 
+                        ├ [5]  ╭ VulnerabilityID : CVE-2026-39836 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4971 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -2676,7 +2641,7 @@
                         │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4971 
                         │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
                         │      ╰ LastModifiedDate: 2026-05-13T15:11:10.31Z 
-                        ├ [7]  ╭ VulnerabilityID : CVE-2026-42499 
+                        ├ [6]  ╭ VulnerabilityID : CVE-2026-42499 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4977 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -2716,7 +2681,7 @@
                         │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4977 
                         │      ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
                         │      ╰ LastModifiedDate: 2026-05-13T16:59:17.563Z 
-                        ├ [8]  ╭ VulnerabilityID : CVE-2026-42504 
+                        ├ [7]  ╭ VulnerabilityID : CVE-2026-42504 
                         │      ├ VendorIDs        ─ [0]: GO-2026-5038 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -2753,7 +2718,7 @@
                         │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5038 
                         │      ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
                         │      ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
-                        ├ [9]  ╭ VulnerabilityID : CVE-2026-27145 
+                        ├ [8]  ╭ VulnerabilityID : CVE-2026-27145 
                         │      ├ VendorIDs        ─ [0]: GO-2026-5037 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -2796,6 +2761,56 @@
                         │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5037 
                         │      ├ PublishedDate   : 2026-06-02T23:16:35.57Z 
                         │      ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
+                        ├ [9]  ╭ VulnerabilityID : CVE-2026-39826 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-4980 
+                        │      ├ PkgID           : stdlib@v1.26.2 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
+                        │      │                  ╰ UID : 83c42d84cdb2ccfe 
+                        │      ├ InstalledVersion: v1.26.2 
+                        │      ├ FixedVersion    : 1.25.10, 1.26.3 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:4b1dc5f5da38a3aa66c2e732845ee8e6079fa0c61098
+                        │      │                  │         bf76de466b15bd74a321 
+                        │      │                  ╰ DiffID: sha256:e623b85742bf756181033fd64299ea7a208c4178a0fe
+                        │      │                            6481c7d6adda308b7bfc 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-39826 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:16c6f228f982b17d38e28245590a9b19b0f461e40a1d337561895
+                        │      │                   444c5084e1d 
+                        │      ├ Title           : html/template: golang: html/template: Cross-site scripting
+                        │      │                   due to incorrect script tag escaping 
+                        │      ├ Description     : If a trusted template author were to write a <script> tag
+                        │      │                   containing an empty 'type' attribute or a 'type' attribute
+                        │      │                   with an ASCII whitespace, the execution of the template
+                        │      │                   would incorrectly escape any data passed into the <script>
+                        │      │                   block. 
+                        │      ├ Severity        : MEDIUM 
+                        │      ├ CweIDs           ─ [0]: CWE-116 
+                        │      ├ VendorSeverity   ╭ amazon     : 3 
+                        │      │                  ├ bitnami    : 2 
+                        │      │                  ├ oracle-oval: 3 
+                        │      │                  ╰ redhat     : 2 
+                        │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
+                        │      │                  │         │           L/A:N 
+                        │      │                  │         ╰ V3Score : 6.1 
+                        │      │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:
+                        │      │                            │           L/A:N 
+                        │      │                            ╰ V3Score : 5.4 
+                        │      ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-39826 
+                        │      │                  ├ [1]: https://go.dev/cl/771180 
+                        │      │                  ├ [2]: https://go.dev/issue/78981 
+                        │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/qcCIEXso
+                        │      │                  │      47M 
+                        │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2026-39826.html 
+                        │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-22112.html 
+                        │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-39826 
+                        │      │                  ├ [7]: https://pkg.go.dev/vuln/GO-2026-4980 
+                        │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39826 
+                        │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
+                        │      ╰ LastModifiedDate: 2026-05-13T16:59:07.48Z 
                         ╰ [10] ╭ VulnerabilityID : CVE-2026-42507 
                                ├ VendorIDs        ─ [0]: GO-2026-5039 
                                ├ PkgID           : stdlib@v1.26.2 
