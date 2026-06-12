@@ -1198,6 +1198,50 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-41131
     PublishedDate: '2026-04-22T00:16:29.013Z'
     LastModifiedDate: '2026-04-24T13:44:37.287Z'
+  - VulnerabilityID: CVE-2026-48096
+    VendorIDs:
+    - GHSA-8396-jffm-qx4w
+    PkgID: github.com/openfga/openfga@v1.11.3
+    PkgName: github.com/openfga/openfga
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/openfga/openfga@v1.11.3
+      UID: 543a9e2713c17753
+    InstalledVersion: v1.11.3
+    FixedVersion: 1.16.0
+    Status: fixed
+    Layer:
+      Digest: sha256:4b1dc5f5da38a3aa66c2e732845ee8e6079fa0c61098bf76de466b15bd74a321
+      DiffID: sha256:e623b85742bf756181033fd64299ea7a208c4178a0fe6481c7d6adda308b7bfc
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-48096
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Fingerprint: sha256:3f0e19b633310c357331cfa6a8c2622a14e2dd4ffa7505a34498eb8284240e26
+    Title: OpenFGA has cache-key delimiter injection in shared-iterator and v2 iterator that caches enables intra-store authorization-decision poisoning
+    Description: OpenFGA is an authorization/permission engine built for developers. Prior to version 1.16.0, when iterator caching is enabled, two distinct check requests can produce the same cache key, leading to OpenFGA reusing an earlier cached result for a subsequent request. This issue has been patched in version 1.16.0.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-345
+    - CWE-668
+    VendorSeverity:
+      ghsa: 2
+      nvd: 2
+    CVSS:
+      ghsa:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L
+        V3Score: 5
+      nvd:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+        V3Score: 5.3
+    References:
+    - https://github.com/openfga/openfga
+    - https://github.com/openfga/openfga/releases/tag/v1.16.0
+    - https://github.com/openfga/openfga/security/advisories/GHSA-8396-jffm-qx4w
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-48096
+    PublishedDate: '2026-06-10T16:17:09.397Z'
+    LastModifiedDate: '2026-06-12T00:46:45.62Z'
   - VulnerabilityID: CVE-2026-42151
     VendorIDs:
     - GHSA-wg65-39gg-5wfj
@@ -1552,7 +1596,7 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:18dc3634fd433b1b34aa66f82aaca4b9990b5865a01c09314726dd1262aebbef
-    Title: 'opentelemetry-go: BSD kenv command not using absolute path enables PATH hijacking'
+    Title: 'github.com/open-telemetry/opentelemetry-go: OpenTelemetry-Go: Arbitrary code execution via PATH hijacking on BSD/Solaris'
     Description: OpenTelemetry-Go is the Go implementation of OpenTelemetry. From 1.15.0 to 1.42.0, the fix for CVE-2026-24051 changed the Darwin ioreg command to use an absolute path but left the BSD kenv command using a bare name, allowing the same PATH hijacking attack on BSD and Solaris platforms. This vulnerability is fixed in 1.43.0.
     Severity: HIGH
     CweIDs:
@@ -1560,6 +1604,7 @@
     VendorSeverity:
       ghsa: 3
       nvd: 3
+      redhat: 3
     CVSS:
       ghsa:
         V40Vector: CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N
@@ -1567,11 +1612,16 @@
       nvd:
         V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
         V3Score: 7
+      redhat:
+        V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H
+        V3Score: 8.8
     References:
     - http://github.com/open-telemetry/opentelemetry-go/releases/tag/v1.43.0
+    - https://access.redhat.com/security/cve/CVE-2026-39883
     - https://github.com/open-telemetry/opentelemetry-go
     - https://github.com/open-telemetry/opentelemetry-go/security/advisories/GHSA-hfvc-g4fc-pqhx
     - https://nvd.nist.gov/vuln/detail/CVE-2026-39883
+    - https://www.cve.org/CVERecord?id=CVE-2026-39883
     PublishedDate: '2026-04-08T21:17:00.697Z'
     LastModifiedDate: '2026-04-10T21:16:27.12Z'
   - VulnerabilityID: CVE-2026-33811
