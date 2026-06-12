@@ -1377,7 +1377,53 @@
 │                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2026-41131 
 │                       │      ├ PublishedDate   : 2026-04-22T00:16:29.013Z 
 │                       │      ╰ LastModifiedDate: 2026-04-24T13:44:37.287Z 
-│                       ├ [19] ╭ VulnerabilityID : CVE-2026-42151 
+│                       ├ [19] ╭ VulnerabilityID : CVE-2026-48096 
+│                       │      ├ VendorIDs        ─ [0]: GHSA-8396-jffm-qx4w 
+│                       │      ├ PkgID           : github.com/openfga/openfga@v1.11.3 
+│                       │      ├ PkgName         : github.com/openfga/openfga 
+│                       │      ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.11.3 
+│                       │      │                  ╰ UID : 543a9e2713c17753 
+│                       │      ├ InstalledVersion: v1.11.3 
+│                       │      ├ FixedVersion    : 1.16.0 
+│                       │      ├ Status          : fixed 
+│                       │      ├ Layer            ╭ Digest: sha256:4b1dc5f5da38a3aa66c2e732845ee8e6079fa0c61098
+│                       │      │                  │         bf76de466b15bd74a321 
+│                       │      │                  ╰ DiffID: sha256:e623b85742bf756181033fd64299ea7a208c4178a0fe
+│                       │      │                            6481c7d6adda308b7bfc 
+│                       │      ├ SeveritySource  : ghsa 
+│                       │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-48096 
+│                       │      ├ DataSource       ╭ ID  : ghsa 
+│                       │      │                  ├ Name: GitHub Security Advisory Go 
+│                       │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                       │      │                          cosystem%3Ago 
+│                       │      ├ Fingerprint     : sha256:3f0e19b633310c357331cfa6a8c2622a14e2dd4ffa7505a34498e
+│                       │      │                   b8284240e26 
+│                       │      ├ Title           : OpenFGA has cache-key delimiter injection in shared-iterator
+│                       │      │                    and v2 iterator that caches enables intra-store
+│                       │      │                   authorization-decision poisoning 
+│                       │      ├ Description     : OpenFGA is an authorization/permission engine built for
+│                       │      │                   developers. Prior to version 1.16.0, when iterator caching
+│                       │      │                   is enabled, two distinct check requests can produce the same
+│                       │      │                    cache key, leading to OpenFGA reusing an earlier cached
+│                       │      │                   result for a subsequent request. This issue has been patched
+│                       │      │                    in version 1.16.0. 
+│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ CweIDs           ╭ [0]: CWE-345 
+│                       │      │                  ╰ [1]: CWE-668 
+│                       │      ├ VendorSeverity   ╭ ghsa: 2 
+│                       │      │                  ╰ nvd : 2 
+│                       │      ├ CVSS             ╭ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L 
+│                       │      │                  │      ╰ V3Score : 5 
+│                       │      │                  ╰ nvd  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N 
+│                       │      │                         ╰ V3Score : 5.3 
+│                       │      ├ References       ╭ [0]: https://github.com/openfga/openfga 
+│                       │      │                  ├ [1]: https://github.com/openfga/openfga/releases/tag/v1.16.0 
+│                       │      │                  ├ [2]: https://github.com/openfga/openfga/security/advisories
+│                       │      │                  │      /GHSA-8396-jffm-qx4w 
+│                       │      │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-48096 
+│                       │      ├ PublishedDate   : 2026-06-10T16:17:09.397Z 
+│                       │      ╰ LastModifiedDate: 2026-06-12T00:46:45.62Z 
+│                       ├ [20] ╭ VulnerabilityID : CVE-2026-42151 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-wg65-39gg-5wfj 
 │                       │      ├ PkgID           : github.com/prometheus/prometheus@v0.303.1 
 │                       │      ├ PkgName         : github.com/prometheus/prometheus 
@@ -1440,7 +1486,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-42151 
 │                       │      ├ PublishedDate   : 2026-05-04T19:16:04.22Z 
 │                       │      ╰ LastModifiedDate: 2026-05-11T17:22:07.227Z 
-│                       ├ [20] ╭ VulnerabilityID : CVE-2026-42154 
+│                       ├ [21] ╭ VulnerabilityID : CVE-2026-42154 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-8rm2-7qqf-34qm 
 │                       │      ├ PkgID           : github.com/prometheus/prometheus@v0.303.1 
 │                       │      ├ PkgName         : github.com/prometheus/prometheus 
@@ -1503,7 +1549,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-42154 
 │                       │      ├ PublishedDate   : 2026-05-04T19:16:04.397Z 
 │                       │      ╰ LastModifiedDate: 2026-05-11T17:22:42.86Z 
-│                       ├ [21] ╭ VulnerabilityID : CVE-2026-40179 
+│                       ├ [22] ╭ VulnerabilityID : CVE-2026-40179 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-vffh-x6r8-xx99 
 │                       │      ├ PkgID           : github.com/prometheus/prometheus@v0.303.1 
 │                       │      ├ PkgName         : github.com/prometheus/prometheus 
@@ -1585,7 +1631,7 @@
 │                       │      │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-40179 
 │                       │      ├ PublishedDate   : 2026-04-15T23:16:09.87Z 
 │                       │      ╰ LastModifiedDate: 2026-04-22T20:04:15.1Z 
-│                       ├ [22] ╭ VulnerabilityID : CVE-2026-44903 
+│                       ├ [23] ╭ VulnerabilityID : CVE-2026-44903 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-fw8g-cg8f-9j28 
 │                       │      ├ PkgID           : github.com/prometheus/prometheus@v0.303.1 
 │                       │      ├ PkgName         : github.com/prometheus/prometheus 
@@ -1643,7 +1689,7 @@
 │                       │      │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-44903 
 │                       │      ├ PublishedDate   : 2026-05-26T22:16:43.01Z 
 │                       │      ╰ LastModifiedDate: 2026-06-05T17:18:32.477Z 
-│                       ├ [23] ╭ VulnerabilityID : CVE-2026-39882 
+│                       ├ [24] ╭ VulnerabilityID : CVE-2026-39882 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-w8rr-5gcm-pp58 
 │                       │      ├ PkgID           : go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploghttp@
 │                       │      │                   v0.12.2 
@@ -1693,7 +1739,7 @@
 │                       │      │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-39882 
 │                       │      ├ PublishedDate   : 2026-04-08T21:17:00.547Z 
 │                       │      ╰ LastModifiedDate: 2026-04-09T18:39:55.73Z 
-│                       ├ [24] ╭ VulnerabilityID : CVE-2026-39882 
+│                       ├ [25] ╭ VulnerabilityID : CVE-2026-39882 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-w8rr-5gcm-pp58 
 │                       │      ├ PkgID           : go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetri
 │                       │      │                   chttp@v1.39.0 
@@ -1744,7 +1790,7 @@
 │                       │      │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-39882 
 │                       │      ├ PublishedDate   : 2026-04-08T21:17:00.547Z 
 │                       │      ╰ LastModifiedDate: 2026-04-09T18:39:55.73Z 
-│                       ├ [25] ╭ VulnerabilityID : CVE-2026-39882 
+│                       ├ [26] ╭ VulnerabilityID : CVE-2026-39882 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-w8rr-5gcm-pp58 
 │                       │      ├ PkgID           : go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptraceh
 │                       │      │                   ttp@v1.40.0 
@@ -1795,7 +1841,7 @@
 │                       │      │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-39882 
 │                       │      ├ PublishedDate   : 2026-04-08T21:17:00.547Z 
 │                       │      ╰ LastModifiedDate: 2026-04-09T18:39:55.73Z 
-│                       ├ [26] ╭ VulnerabilityID : CVE-2026-39883 
+│                       ├ [27] ╭ VulnerabilityID : CVE-2026-39883 
 │                       │      ├ VendorIDs        ─ [0]: GHSA-hfvc-g4fc-pqhx 
 │                       │      ├ PkgID           : go.opentelemetry.io/otel/sdk@v1.42.0 
 │                       │      ├ PkgName         : go.opentelemetry.io/otel/sdk 
@@ -1816,8 +1862,9 @@
 │                       │      │                          cosystem%3Ago 
 │                       │      ├ Fingerprint     : sha256:18dc3634fd433b1b34aa66f82aaca4b9990b5865a01c09314726d
 │                       │      │                   d1262aebbef 
-│                       │      ├ Title           : opentelemetry-go: BSD kenv command not using absolute path
-│                       │      │                   enables PATH hijacking 
+│                       │      ├ Title           : github.com/open-telemetry/opentelemetry-go:
+│                       │      │                   OpenTelemetry-Go: Arbitrary code execution via PATH
+│                       │      │                   hijacking on BSD/Solaris 
 │                       │      ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
 │                       │      │                   From 1.15.0 to 1.42.0, the fix for CVE-2026-24051 changed
 │                       │      │                   the Darwin ioreg command to use an absolute path but left
@@ -1826,22 +1873,29 @@
 │                       │      │                   vulnerability is fixed in 1.43.0. 
 │                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-426 
-│                       │      ├ VendorSeverity   ╭ ghsa: 3 
-│                       │      │                  ╰ nvd : 3 
-│                       │      ├ CVSS             ╭ ghsa ╭ V40Vector: CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:H/VI
-│                       │      │                  │      │            :H/VA:H/SC:N/SI:N/SA:N 
-│                       │      │                  │      ╰ V40Score : 7.3 
-│                       │      │                  ╰ nvd  ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H 
-│                       │      │                         ╰ V3Score : 7 
+│                       │      ├ VendorSeverity   ╭ ghsa  : 3 
+│                       │      │                  ├ nvd   : 3 
+│                       │      │                  ╰ redhat: 3 
+│                       │      ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:H/
+│                       │      │                  │        │            VI:H/VA:H/SC:N/SI:N/SA:N 
+│                       │      │                  │        ╰ V40Score : 7.3 
+│                       │      │                  ├ nvd    ╭ V3Vector: CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H
+│                       │      │                  │        │           /A:H 
+│                       │      │                  │        ╰ V3Score : 7 
+│                       │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H
+│                       │      │                           │           /A:H 
+│                       │      │                           ╰ V3Score : 8.8 
 │                       │      ├ References       ╭ [0]: http://github.com/open-telemetry/opentelemetry-go/rele
 │                       │      │                  │      ases/tag/v1.43.0 
-│                       │      │                  ├ [1]: https://github.com/open-telemetry/opentelemetry-go 
-│                       │      │                  ├ [2]: https://github.com/open-telemetry/opentelemetry-go/sec
+│                       │      │                  ├ [1]: https://access.redhat.com/security/cve/CVE-2026-39883 
+│                       │      │                  ├ [2]: https://github.com/open-telemetry/opentelemetry-go 
+│                       │      │                  ├ [3]: https://github.com/open-telemetry/opentelemetry-go/sec
 │                       │      │                  │      urity/advisories/GHSA-hfvc-g4fc-pqhx 
-│                       │      │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-39883 
+│                       │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-39883 
+│                       │      │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2026-39883 
 │                       │      ├ PublishedDate   : 2026-04-08T21:17:00.697Z 
 │                       │      ╰ LastModifiedDate: 2026-04-10T21:16:27.12Z 
-│                       ├ [27] ╭ VulnerabilityID : CVE-2026-33811 
+│                       ├ [28] ╭ VulnerabilityID : CVE-2026-33811 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4981 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -1894,7 +1948,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-33811 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:42.77Z 
 │                       │      ╰ LastModifiedDate: 2026-05-12T20:23:02.333Z 
-│                       ├ [28] ╭ VulnerabilityID : CVE-2026-33814 
+│                       ├ [29] ╭ VulnerabilityID : CVE-2026-33814 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4918 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -1948,7 +2002,7 @@
 │                       │      │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2026-33814 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:42.88Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T14:41:59.52Z 
-│                       ├ [29] ╭ VulnerabilityID : CVE-2026-39820 
+│                       ├ [30] ╭ VulnerabilityID : CVE-2026-39820 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4986 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -1995,7 +2049,7 @@
 │                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4986 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.187Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T15:10:58.65Z 
-│                       ├ [30] ╭ VulnerabilityID : CVE-2026-39823 
+│                       ├ [31] ╭ VulnerabilityID : CVE-2026-39823 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4982 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2040,7 +2094,7 @@
 │                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4982 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.29Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T16:58:45.697Z 
-│                       ├ [31] ╭ VulnerabilityID : CVE-2026-39825 
+│                       ├ [32] ╭ VulnerabilityID : CVE-2026-39825 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4976 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2091,7 +2145,7 @@
 │                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4976 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T16:58:56.39Z 
-│                       ├ [32] ╭ VulnerabilityID : CVE-2026-39836 
+│                       ├ [33] ╭ VulnerabilityID : CVE-2026-39836 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4971 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2135,7 +2189,7 @@
 │                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4971 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T15:11:10.31Z 
-│                       ├ [33] ╭ VulnerabilityID : CVE-2026-42499 
+│                       ├ [34] ╭ VulnerabilityID : CVE-2026-42499 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4977 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2175,7 +2229,7 @@
 │                       │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4977 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T16:59:17.563Z 
-│                       ├ [34] ╭ VulnerabilityID : CVE-2026-42504 
+│                       ├ [35] ╭ VulnerabilityID : CVE-2026-42504 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-5038 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2212,7 +2266,7 @@
 │                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5038 
 │                       │      ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
 │                       │      ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
-│                       ├ [35] ╭ VulnerabilityID : CVE-2026-27145 
+│                       ├ [36] ╭ VulnerabilityID : CVE-2026-27145 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-5037 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2255,7 +2309,7 @@
 │                       │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5037 
 │                       │      ├ PublishedDate   : 2026-06-02T23:16:35.57Z 
 │                       │      ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
-│                       ├ [36] ╭ VulnerabilityID : CVE-2026-39826 
+│                       ├ [37] ╭ VulnerabilityID : CVE-2026-39826 
 │                       │      ├ VendorIDs        ─ [0]: GO-2026-4980 
 │                       │      ├ PkgID           : stdlib@v1.25.9 
 │                       │      ├ PkgName         : stdlib 
@@ -2305,7 +2359,7 @@
 │                       │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39826 
 │                       │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
 │                       │      ╰ LastModifiedDate: 2026-05-13T16:59:07.48Z 
-│                       ╰ [37] ╭ VulnerabilityID : CVE-2026-42507 
+│                       ╰ [38] ╭ VulnerabilityID : CVE-2026-42507 
 │                              ├ VendorIDs        ─ [0]: GO-2026-5039 
 │                              ├ PkgID           : stdlib@v1.25.9 
 │                              ├ PkgName         : stdlib 
