@@ -389,9 +389,8 @@
 │                       │     │                          osystem%3Ago 
 │                       │     ├ Fingerprint     : sha256:0d9ee98942e84696174d0d24b853858932eec36288dd1072e42783
 │                       │     │                   c765cc78c1 
-│                       │     ├ Title           : OpenFGA has cache-key delimiter injection in shared-iterator
-│                       │     │                   and v2 iterator that caches enables intra-store
-│                       │     │                   authorization-decision poisoning 
+│                       │     ├ Title           : OpenFGA: OpenFGA: Incorrect authorization due to cache key
+│                       │     │                   collision in iterator caching 
 │                       │     ├ Description     : OpenFGA is an authorization/permission engine built for
 │                       │     │                   developers. Prior to version 1.16.0, when iterator caching is
 │                       │     │                    enabled, two distinct check requests can produce the same
@@ -401,17 +400,25 @@
 │                       │     ├ Severity        : MEDIUM 
 │                       │     ├ CweIDs           ╭ [0]: CWE-345 
 │                       │     │                  ╰ [1]: CWE-668 
-│                       │     ├ VendorSeverity   ╭ ghsa: 2 
-│                       │     │                  ╰ nvd : 2 
-│                       │     ├ CVSS             ╭ ghsa ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L 
-│                       │     │                  │      ╰ V3Score : 5 
-│                       │     │                  ╰ nvd  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N 
-│                       │     │                         ╰ V3Score : 5.3 
-│                       │     ├ References       ╭ [0]: https://github.com/openfga/openfga 
-│                       │     │                  ├ [1]: https://github.com/openfga/openfga/releases/tag/v1.16.0 
-│                       │     │                  ├ [2]: https://github.com/openfga/openfga/security/advisories/
+│                       │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                       │     │                  ├ nvd   : 2 
+│                       │     │                  ╰ redhat: 2 
+│                       │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/
+│                       │     │                  │        │           A:L 
+│                       │     │                  │        ╰ V3Score : 5 
+│                       │     │                  ├ nvd    ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/
+│                       │     │                  │        │           A:N 
+│                       │     │                  │        ╰ V3Score : 5.3 
+│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/
+│                       │     │                           │           A:L 
+│                       │     │                           ╰ V3Score : 5 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-48096 
+│                       │     │                  ├ [1]: https://github.com/openfga/openfga 
+│                       │     │                  ├ [2]: https://github.com/openfga/openfga/releases/tag/v1.16.0 
+│                       │     │                  ├ [3]: https://github.com/openfga/openfga/security/advisories/
 │                       │     │                  │      GHSA-8396-jffm-qx4w 
-│                       │     │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-48096 
+│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-48096 
+│                       │     │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2026-48096 
 │                       │     ├ PublishedDate   : 2026-06-10T16:17:09.397Z 
 │                       │     ╰ LastModifiedDate: 2026-06-12T00:46:45.62Z 
 │                       ├ [3] ╭ VulnerabilityID : CVE-2026-42151 
@@ -842,7 +849,8 @@
                         │      │                  ├ [8] : https://linux.oracle.com/errata/ELSA-2026-22112.html 
                         │      │                  ├ [9] : https://nvd.nist.gov/vuln/detail/CVE-2026-33814 
                         │      │                  ├ [10]: https://pkg.go.dev/vuln/GO-2026-4918 
-                        │      │                  ╰ [11]: https://www.cve.org/CVERecord?id=CVE-2026-33814 
+                        │      │                  ├ [11]: https://ubuntu.com/security/notices/USN-8430-1 
+                        │      │                  ╰ [12]: https://www.cve.org/CVERecord?id=CVE-2026-33814 
                         │      ├ PublishedDate   : 2026-05-07T20:16:42.88Z 
                         │      ╰ LastModifiedDate: 2026-05-13T14:41:59.52Z 
                         ├ [2]  ╭ VulnerabilityID : CVE-2026-39820 
