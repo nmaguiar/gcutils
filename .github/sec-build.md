@@ -115,22 +115,28 @@
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                             ├ Fingerprint     : sha256:eca046a739732c60c5b01c8d53ab9adaa72d62975187effa58713f
 │                             │                   6d4db1619e 
-│                             ├ Title           : When returning errors, functions in the net/textproto package
-│                             │                    would in ... 
+│                             ├ Title           : net/textproto: golang: Golang net/textproto: Misleading error
+│                             │                    messages via input injection 
 │                             ├ Description     : When returning errors, functions in the net/textproto package
 │                             │                    would include its input as part of the error. This might
 │                             │                   allow an attacker to inject misleading content to errors that
 │                             │                    are printed or logged. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ─ bitnami: 2 
-│                             ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
+│                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             │                  ╰ redhat : 2 
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
+│                             │                  │         │           /A:N 
+│                             │                  │         ╰ V3Score : 5.3 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
 │                             │                            │           /A:N 
 │                             │                            ╰ V3Score : 5.3 
-│                             ├ References       ╭ [0]: https://go.dev/cl/777060 
-│                             │                  ├ [1]: https://go.dev/issue/79346 
-│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
-│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42507 
-│                             │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5039 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-42507 
+│                             │                  ├ [1]: https://go.dev/cl/777060 
+│                             │                  ├ [2]: https://go.dev/issue/79346 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-42507 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-5039 
+│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-42507 
 │                             ├ PublishedDate   : 2026-06-02T23:16:38.027Z 
 │                             ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
 ├ [5] ╭ Target         : usr/bin/promtool 
@@ -234,22 +240,28 @@
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                             ├ Fingerprint     : sha256:cb654ee045f8011a252b01ed30559b715a00038d63ba9d5e81bfcd
 │                             │                   b4a303482d 
-│                             ├ Title           : When returning errors, functions in the net/textproto package
-│                             │                    would in ... 
+│                             ├ Title           : net/textproto: golang: Golang net/textproto: Misleading error
+│                             │                    messages via input injection 
 │                             ├ Description     : When returning errors, functions in the net/textproto package
 │                             │                    would include its input as part of the error. This might
 │                             │                   allow an attacker to inject misleading content to errors that
 │                             │                    are printed or logged. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ─ bitnami: 2 
-│                             ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
+│                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             │                  ╰ redhat : 2 
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
+│                             │                  │         │           /A:N 
+│                             │                  │         ╰ V3Score : 5.3 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
 │                             │                            │           /A:N 
 │                             │                            ╰ V3Score : 5.3 
-│                             ├ References       ╭ [0]: https://go.dev/cl/777060 
-│                             │                  ├ [1]: https://go.dev/issue/79346 
-│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
-│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42507 
-│                             │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5039 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-42507 
+│                             │                  ├ [1]: https://go.dev/cl/777060 
+│                             │                  ├ [2]: https://go.dev/issue/79346 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-42507 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-5039 
+│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-42507 
 │                             ├ PublishedDate   : 2026-06-02T23:16:38.027Z 
 │                             ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
 ├ [6] ╭ Target         : usr/share/grafana/bin/grafana 
@@ -421,7 +433,51 @@
 │                       │     │                  ╰ [5]: https://www.cve.org/CVERecord?id=CVE-2026-48096 
 │                       │     ├ PublishedDate   : 2026-06-10T16:17:09.397Z 
 │                       │     ╰ LastModifiedDate: 2026-06-12T00:46:45.62Z 
-│                       ├ [3] ╭ VulnerabilityID : CVE-2026-42151 
+│                       ├ [3] ╭ VulnerabilityID : CVE-2026-55170 
+│                       │     ├ VendorIDs        ─ [0]: GHSA-cf98-j28v-49v6 
+│                       │     ├ PkgID           : github.com/openfga/openfga@v1.14.2 
+│                       │     ├ PkgName         : github.com/openfga/openfga 
+│                       │     ├ PkgIdentifier    ╭ PURL: pkg:golang/github.com/openfga/openfga@v1.14.2 
+│                       │     │                  ╰ UID : d9f7c327b4e77cd7 
+│                       │     ├ InstalledVersion: v1.14.2 
+│                       │     ├ FixedVersion    : 1.18.0 
+│                       │     ├ Status          : fixed 
+│                       │     ├ Layer            ╭ Digest: sha256:a9eac3df86dd7150748db040fea050169cb57d8479140
+│                       │     │                  │         772daf76dbf271fed8b 
+│                       │     │                  ╰ DiffID: sha256:13d3c6b4f0d0f5469e6a3f6f68a98a16ebfccca73f460
+│                       │     │                            a611d45c7563caeaacd 
+│                       │     ├ SeveritySource  : ghsa 
+│                       │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-55170 
+│                       │     ├ DataSource       ╭ ID  : ghsa 
+│                       │     │                  ├ Name: GitHub Security Advisory Go 
+│                       │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+ec
+│                       │     │                          osystem%3Ago 
+│                       │     ├ Fingerprint     : sha256:6d8b335c1334c097909ff25461fea312055870faa9added5fbbbfa
+│                       │     │                   5049c839de 
+│                       │     ├ Title           : OpenFGA Improper Policy Enforcement 
+│                       │     ├ Description     : ## Description
+│                       │     │                   
+│                       │     │                   In OpenFGA, when MySQL is being used as the datastore, two
+│                       │     │                   distinct check requests can return the same response.
+│                       │     │                   ## Preconditions
+│                       │     │                   This applies if the following preconditions are met:
+│                       │     │                   1. You run OpenFGA with MySQL as the datastore
+│                       │     │                   2. Your authorization decisions rely on case-sensitive user
+│                       │     │                   strings.
+│                       │     │                   ## Fix
+│                       │     │                   Upgrade to OpenFGA 1.18.0 or greater.
+│                       │     │                   ## Acknowledgements
+│                       │     │                   OpenFGA would like to thank @sahajamoth for the detailed
+│                       │     │                   report. 
+│                       │     ├ Severity        : LOW 
+│                       │     ├ VendorSeverity   ─ ghsa: 1 
+│                       │     ├ CVSS             ─ ghsa ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:L/VI:
+│                       │     │                         │            L/VA:N/SC:L/SI:L/SA:N 
+│                       │     │                         ╰ V40Score : 2.1 
+│                       │     ╰ References       ╭ [0]: https://github.com/openfga/openfga 
+│                       │                        ╰ [1]: https://github.com/openfga/openfga/security/advisories/
+│                       │                               GHSA-cf98-j28v-49v6 
+│                       ├ [4] ╭ VulnerabilityID : CVE-2026-42151 
 │                       │     ├ VendorIDs        ─ [0]: GHSA-wg65-39gg-5wfj 
 │                       │     ├ PkgID           : github.com/prometheus/prometheus@v0.305.3 
 │                       │     ├ PkgName         : github.com/prometheus/prometheus 
@@ -484,7 +540,7 @@
 │                       │     │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-42151 
 │                       │     ├ PublishedDate   : 2026-05-04T19:16:04.22Z 
 │                       │     ╰ LastModifiedDate: 2026-05-11T17:22:07.227Z 
-│                       ├ [4] ╭ VulnerabilityID : CVE-2026-40179 
+│                       ├ [5] ╭ VulnerabilityID : CVE-2026-40179 
 │                       │     ├ VendorIDs        ─ [0]: GHSA-vffh-x6r8-xx99 
 │                       │     ├ PkgID           : github.com/prometheus/prometheus@v0.305.3 
 │                       │     ├ PkgName         : github.com/prometheus/prometheus 
@@ -565,7 +621,7 @@
 │                       │     │                  ╰ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-40179 
 │                       │     ├ PublishedDate   : 2026-04-15T23:16:09.87Z 
 │                       │     ╰ LastModifiedDate: 2026-04-22T20:04:15.1Z 
-│                       ├ [5] ╭ VulnerabilityID : CVE-2026-44903 
+│                       ├ [6] ╭ VulnerabilityID : CVE-2026-44903 
 │                       │     ├ VendorIDs        ─ [0]: GHSA-fw8g-cg8f-9j28 
 │                       │     ├ PkgID           : github.com/prometheus/prometheus@v0.305.3 
 │                       │     ├ PkgName         : github.com/prometheus/prometheus 
@@ -623,7 +679,7 @@
 │                       │     │                  ╰ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-44903 
 │                       │     ├ PublishedDate   : 2026-05-26T22:16:43.01Z 
 │                       │     ╰ LastModifiedDate: 2026-06-05T17:18:32.477Z 
-│                       ├ [6] ╭ VulnerabilityID : CVE-2026-42504 
+│                       ├ [7] ╭ VulnerabilityID : CVE-2026-42504 
 │                       │     ├ VendorIDs        ─ [0]: GO-2026-5038 
 │                       │     ├ PkgID           : stdlib@v1.26.3 
 │                       │     ├ PkgName         : stdlib 
@@ -659,7 +715,7 @@
 │                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5038 
 │                       │     ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
 │                       │     ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
-│                       ├ [7] ╭ VulnerabilityID : CVE-2026-27145 
+│                       ├ [8] ╭ VulnerabilityID : CVE-2026-27145 
 │                       │     ├ VendorIDs        ─ [0]: GO-2026-5037 
 │                       │     ├ PkgID           : stdlib@v1.26.3 
 │                       │     ├ PkgName         : stdlib 
@@ -701,7 +757,7 @@
 │                       │     │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5037 
 │                       │     ├ PublishedDate   : 2026-06-02T23:16:35.57Z 
 │                       │     ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
-│                       ╰ [8] ╭ VulnerabilityID : CVE-2026-42507 
+│                       ╰ [9] ╭ VulnerabilityID : CVE-2026-42507 
 │                             ├ VendorIDs        ─ [0]: GO-2026-5039 
 │                             ├ PkgID           : stdlib@v1.26.3 
 │                             ├ PkgName         : stdlib 
@@ -720,22 +776,28 @@
 │                             │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                             ├ Fingerprint     : sha256:19bf6ef82a1a0f3ab9f8122b3284ae53bb401234a91ee0276d5f1b
 │                             │                   7693ebd943 
-│                             ├ Title           : When returning errors, functions in the net/textproto package
-│                             │                    would in ... 
+│                             ├ Title           : net/textproto: golang: Golang net/textproto: Misleading error
+│                             │                    messages via input injection 
 │                             ├ Description     : When returning errors, functions in the net/textproto package
 │                             │                    would include its input as part of the error. This might
 │                             │                   allow an attacker to inject misleading content to errors that
 │                             │                    are printed or logged. 
 │                             ├ Severity        : MEDIUM 
-│                             ├ VendorSeverity   ─ bitnami: 2 
-│                             ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
+│                             ├ VendorSeverity   ╭ bitnami: 2 
+│                             │                  ╰ redhat : 2 
+│                             ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
+│                             │                  │         │           /A:N 
+│                             │                  │         ╰ V3Score : 5.3 
+│                             │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L
 │                             │                            │           /A:N 
 │                             │                            ╰ V3Score : 5.3 
-│                             ├ References       ╭ [0]: https://go.dev/cl/777060 
-│                             │                  ├ [1]: https://go.dev/issue/79346 
-│                             │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
-│                             │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42507 
-│                             │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5039 
+│                             ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-42507 
+│                             │                  ├ [1]: https://go.dev/cl/777060 
+│                             │                  ├ [2]: https://go.dev/issue/79346 
+│                             │                  ├ [3]: https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw 
+│                             │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-42507 
+│                             │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-5039 
+│                             │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-42507 
 │                             ├ PublishedDate   : 2026-06-02T23:16:38.027Z 
 │                             ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
 ╰ [7] ╭ Target         : usr/share/grafana/data/plugins-bundled/elasticsearch/gpx_grafana_elasticsearch_datasou
@@ -1235,23 +1297,29 @@
                                │                  ╰ URL : https://pkg.go.dev/vuln/ 
                                ├ Fingerprint     : sha256:9741056cf3c7d0aeefe1ab8777ec107032b6c90d9b5ebfb4ff49f
                                │                   474777a536d 
-                               ├ Title           : When returning errors, functions in the net/textproto
-                               │                   package would in ... 
+                               ├ Title           : net/textproto: golang: Golang net/textproto: Misleading
+                               │                   error messages via input injection 
                                ├ Description     : When returning errors, functions in the net/textproto
                                │                   package would include its input as part of the error. This
                                │                   might allow an attacker to inject misleading content to
                                │                   errors that are printed or logged. 
                                ├ Severity        : MEDIUM 
-                               ├ VendorSeverity   ─ bitnami: 2 
-                               ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                               ├ VendorSeverity   ╭ bitnami: 2 
+                               │                  ╰ redhat : 2 
+                               ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                               │                  │         │           L/A:N 
+                               │                  │         ╰ V3Score : 5.3 
+                               │                  ╰ redhat  ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
                                │                            │           L/A:N 
                                │                            ╰ V3Score : 5.3 
-                               ├ References       ╭ [0]: https://go.dev/cl/777060 
-                               │                  ├ [1]: https://go.dev/issue/79346 
-                               │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcB
+                               ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-42507 
+                               │                  ├ [1]: https://go.dev/cl/777060 
+                               │                  ├ [2]: https://go.dev/issue/79346 
+                               │                  ├ [3]: https://groups.google.com/g/golang-announce/c/tKs3rmcB
                                │                  │      cKw 
-                               │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42507 
-                               │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5039 
+                               │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-42507 
+                               │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-5039 
+                               │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-42507 
                                ├ PublishedDate   : 2026-06-02T23:16:38.027Z 
                                ╰ LastModifiedDate: 2026-06-04T16:15:50.143Z 
 ```
