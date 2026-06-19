@@ -114,21 +114,27 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:eca046a739732c60c5b01c8d53ab9adaa72d62975187effa58713f6d4db1619e
-    Title: When returning errors, functions in the net/textproto package would in ...
+    Title: 'net/textproto: golang: Golang net/textproto: Misleading error messages via input injection'
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
     VendorSeverity:
       bitnami: 2
+      redhat: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-42507
     - https://go.dev/cl/777060
     - https://go.dev/issue/79346
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
     - https://nvd.nist.gov/vuln/detail/CVE-2026-42507
     - https://pkg.go.dev/vuln/GO-2026-5039
+    - https://www.cve.org/CVERecord?id=CVE-2026-42507
     PublishedDate: '2026-06-02T23:16:38.027Z'
     LastModifiedDate: '2026-06-04T16:15:50.143Z'
 - Target: usr/bin/promtool
@@ -232,21 +238,27 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:cb654ee045f8011a252b01ed30559b715a00038d63ba9d5e81bfcdb4a303482d
-    Title: When returning errors, functions in the net/textproto package would in ...
+    Title: 'net/textproto: golang: Golang net/textproto: Misleading error messages via input injection'
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
     VendorSeverity:
       bitnami: 2
+      redhat: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-42507
     - https://go.dev/cl/777060
     - https://go.dev/issue/79346
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
     - https://nvd.nist.gov/vuln/detail/CVE-2026-42507
     - https://pkg.go.dev/vuln/GO-2026-5039
+    - https://www.cve.org/CVERecord?id=CVE-2026-42507
     PublishedDate: '2026-06-02T23:16:38.027Z'
     LastModifiedDate: '2026-06-04T16:15:50.143Z'
 - Target: usr/share/grafana/bin/grafana
@@ -405,6 +417,55 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-48096
     PublishedDate: '2026-06-10T16:17:09.397Z'
     LastModifiedDate: '2026-06-12T00:46:45.62Z'
+  - VulnerabilityID: CVE-2026-55170
+    VendorIDs:
+    - GHSA-cf98-j28v-49v6
+    PkgID: github.com/openfga/openfga@v1.14.2
+    PkgName: github.com/openfga/openfga
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/openfga/openfga@v1.14.2
+      UID: d9f7c327b4e77cd7
+    InstalledVersion: v1.14.2
+    FixedVersion: 1.18.0
+    Status: fixed
+    Layer:
+      Digest: sha256:a9eac3df86dd7150748db040fea050169cb57d8479140772daf76dbf271fed8b
+      DiffID: sha256:13d3c6b4f0d0f5469e6a3f6f68a98a16ebfccca73f460a611d45c7563caeaacd
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-55170
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Fingerprint: sha256:6d8b335c1334c097909ff25461fea312055870faa9added5fbbbfa5049c839de
+    Title: OpenFGA Improper Policy Enforcement
+    Description: |-
+      ## Description
+
+      In OpenFGA, when MySQL is being used as the datastore, two distinct check requests can return the same response.
+
+      ## Preconditions
+
+      This applies if the following preconditions are met:
+
+      1. You run OpenFGA with MySQL as the datastore
+      2. Your authorization decisions rely on case-sensitive user strings.
+
+      ## Fix
+      Upgrade to OpenFGA 1.18.0 or greater.
+
+      ## Acknowledgements
+      OpenFGA would like to thank @sahajamoth for the detailed report.
+    Severity: LOW
+    VendorSeverity:
+      ghsa: 1
+    CVSS:
+      ghsa:
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
+        V40Score: 2.1
+    References:
+    - https://github.com/openfga/openfga
+    - https://github.com/openfga/openfga/security/advisories/GHSA-cf98-j28v-49v6
   - VulnerabilityID: CVE-2026-42151
     VendorIDs:
     - GHSA-wg65-39gg-5wfj
@@ -654,21 +715,27 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:19bf6ef82a1a0f3ab9f8122b3284ae53bb401234a91ee0276d5f1b7693ebd943
-    Title: When returning errors, functions in the net/textproto package would in ...
+    Title: 'net/textproto: golang: Golang net/textproto: Misleading error messages via input injection'
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
     VendorSeverity:
       bitnami: 2
+      redhat: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-42507
     - https://go.dev/cl/777060
     - https://go.dev/issue/79346
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
     - https://nvd.nist.gov/vuln/detail/CVE-2026-42507
     - https://pkg.go.dev/vuln/GO-2026-5039
+    - https://www.cve.org/CVERecord?id=CVE-2026-42507
     PublishedDate: '2026-06-02T23:16:38.027Z'
     LastModifiedDate: '2026-06-04T16:15:50.143Z'
 - Target: usr/share/grafana/data/plugins-bundled/elasticsearch/gpx_grafana_elasticsearch_datasource_linux_amd64
@@ -1159,20 +1226,26 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:9741056cf3c7d0aeefe1ab8777ec107032b6c90d9b5ebfb4ff49f474777a536d
-    Title: When returning errors, functions in the net/textproto package would in ...
+    Title: 'net/textproto: golang: Golang net/textproto: Misleading error messages via input injection'
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
     VendorSeverity:
       bitnami: 2
+      redhat: 2
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-42507
     - https://go.dev/cl/777060
     - https://go.dev/issue/79346
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
     - https://nvd.nist.gov/vuln/detail/CVE-2026-42507
     - https://pkg.go.dev/vuln/GO-2026-5039
+    - https://www.cve.org/CVERecord?id=CVE-2026-42507
     PublishedDate: '2026-06-02T23:16:38.027Z'
     LastModifiedDate: '2026-06-04T16:15:50.143Z'
