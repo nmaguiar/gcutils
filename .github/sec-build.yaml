@@ -45,7 +45,7 @@
     - https://github.com/FasterXML/jackson-databind/issues/5988
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-j3rv-43j4-c7qm
     PublishedDate: '2026-06-23T21:17:02.203Z'
-    LastModifiedDate: '2026-06-25T16:14:14.483Z'
+    LastModifiedDate: '2026-06-27T21:01:36.47Z'
   - VulnerabilityID: CVE-2026-54513
     VendorIDs:
     - GHSA-rmj7-2vxq-3g9f
@@ -94,7 +94,7 @@
     - https://nvd.nist.gov/vuln/detail/CVE-2026-54513
     - https://www.cve.org/CVERecord?id=CVE-2026-54513
     PublishedDate: '2026-06-23T21:17:02.333Z'
-    LastModifiedDate: '2026-06-25T16:14:14.483Z'
+    LastModifiedDate: '2026-06-27T21:00:19.3Z'
   - VulnerabilityID: CVE-2026-54514
     VendorIDs:
     - GHSA-hgj6-7826-r7m5
@@ -133,7 +133,7 @@
     - https://github.com/FasterXML/jackson-databind/pull/5951
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-hgj6-7826-r7m5
     PublishedDate: '2026-06-23T21:17:02.467Z'
-    LastModifiedDate: '2026-06-25T16:14:14.483Z'
+    LastModifiedDate: '2026-06-27T20:55:09.61Z'
   - VulnerabilityID: CVE-2026-54515
     VendorIDs:
     - GHSA-5jmj-h7xm-6q6v
@@ -214,7 +214,7 @@
     - https://github.com/FasterXML/jackson-databind/pull/5968
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-9fxm-vc8v-hj55
     PublishedDate: '2026-06-23T21:17:02.723Z'
-    LastModifiedDate: '2026-06-25T16:14:14.483Z'
+    LastModifiedDate: '2026-06-27T20:52:12.103Z'
   - VulnerabilityID: CVE-2026-54517
     VendorIDs:
     - GHSA-5hh8-q8hv-fr38
@@ -255,7 +255,7 @@
     - https://github.com/FasterXML/jackson-databind/pull/5970
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5hh8-q8hv-fr38
     PublishedDate: '2026-06-23T21:17:02.853Z'
-    LastModifiedDate: '2026-06-25T16:14:14.483Z'
+    LastModifiedDate: '2026-06-27T20:51:09.987Z'
   - VulnerabilityID: CVE-2026-54518
     VendorIDs:
     - GHSA-rcqc-6cw3-h962
@@ -296,7 +296,7 @@
     - https://github.com/FasterXML/jackson-databind/pull/5973
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-rcqc-6cw3-h962
     PublishedDate: '2026-06-23T22:16:32.073Z'
-    LastModifiedDate: '2026-06-25T16:14:14.483Z'
+    LastModifiedDate: '2026-06-27T20:49:30.977Z'
 - Target: Node.js
   Class: lang-pkgs
   Type: node-pkg
@@ -933,9 +933,9 @@
     Fingerprint: sha256:2604244d3398299128cede73680873e6ceb0b6cfa174de6f8de07baaba086ca6
     Title: '*x509.Certificate).VerifyHostname previously called matchHostnames in ...'
     Description: (*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, ".") to execute repeatedly on the same input hostname. With a large DNS SAN list, verification costs scaled quadratically based on the number of SAN entries multiplied by the hostname's label count. Because x509.Verify validates hostnames before building the certificate chain, this overhead occurred even for untrusted certificates.
-    Severity: MEDIUM
+    Severity: HIGH
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 2
     CVSS:
       bitnami:
@@ -971,11 +971,11 @@
     Fingerprint: sha256:dc4218b513c514fd1098d7088274b662ee8d4adb48553512b300f49469cad7c5
     Title: Decoding a maliciously-crafted MIME header containing many invalid enc ...
     Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
-    Severity: MEDIUM
+    Severity: HIGH
     CweIDs:
     - CWE-407
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 3
     CVSS:
       bitnami:
@@ -1013,7 +1013,7 @@
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 2
       oracle-oval: 2
       redhat: 2
@@ -1668,9 +1668,9 @@
     Fingerprint: sha256:ac9c1966f3a20a9d574a402b3a4e4f4fc8b1160bb4cca5ff30e45d938d9e208e
     Title: '*x509.Certificate).VerifyHostname previously called matchHostnames in ...'
     Description: (*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, ".") to execute repeatedly on the same input hostname. With a large DNS SAN list, verification costs scaled quadratically based on the number of SAN entries multiplied by the hostname's label count. Because x509.Verify validates hostnames before building the certificate chain, this overhead occurred even for untrusted certificates.
-    Severity: MEDIUM
+    Severity: HIGH
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 2
     CVSS:
       bitnami:
@@ -1706,11 +1706,11 @@
     Fingerprint: sha256:56d86a47cfe9c0813e0a13548d133de5037ecadaaca85c58b52eed3606db51e5
     Title: Decoding a maliciously-crafted MIME header containing many invalid enc ...
     Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
-    Severity: MEDIUM
+    Severity: HIGH
     CweIDs:
     - CWE-407
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 3
     CVSS:
       bitnami:
@@ -1748,7 +1748,7 @@
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 2
       oracle-oval: 2
       redhat: 2
@@ -2211,9 +2211,9 @@
     Fingerprint: sha256:4e80310869bd9f5408d843b574bddbad5b6e83cca50f48eeb53acee90d49d973
     Title: '*x509.Certificate).VerifyHostname previously called matchHostnames in ...'
     Description: (*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, ".") to execute repeatedly on the same input hostname. With a large DNS SAN list, verification costs scaled quadratically based on the number of SAN entries multiplied by the hostname's label count. Because x509.Verify validates hostnames before building the certificate chain, this overhead occurred even for untrusted certificates.
-    Severity: MEDIUM
+    Severity: HIGH
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 2
     CVSS:
       bitnami:
@@ -2249,11 +2249,11 @@
     Fingerprint: sha256:8a269f900582d796d41902a1e913a7c5af8a15d482d26caa2dbabf5f62d311a0
     Title: Decoding a maliciously-crafted MIME header containing many invalid enc ...
     Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
-    Severity: MEDIUM
+    Severity: HIGH
     CweIDs:
     - CWE-407
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 3
     CVSS:
       bitnami:
@@ -2291,7 +2291,7 @@
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 2
       oracle-oval: 2
       redhat: 2
@@ -3247,6 +3247,44 @@
     - https://pkg.go.dev/vuln/GO-2026-5024
     PublishedDate: '2026-05-22T20:16:33.057Z'
     LastModifiedDate: '2026-06-17T10:42:38.62Z'
+  - VulnerabilityID: CVE-2026-27145
+    VendorIDs:
+    - GO-2026-5037
+    PkgID: stdlib@v1.26.2
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.2
+      UID: 83c42d84cdb2ccfe
+    InstalledVersion: v1.26.2
+    FixedVersion: 1.25.11, 1.26.4
+    Status: fixed
+    Layer:
+      Digest: sha256:c02ebffdd3dff486c0991afedd559426b15ac728dcdd74f5b0d61ceae5db4760
+      DiffID: sha256:dc237a9aa618b60d4a51b91153000f2b93715c12214d3038e3c23fcc218cc811
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-27145
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:157f04eee93ebfe92e999945057b5ce772cf9f62f860d1d5bfb65639bf073b84
+    Title: '*x509.Certificate).VerifyHostname previously called matchHostnames in ...'
+    Description: (*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, ".") to execute repeatedly on the same input hostname. With a large DNS SAN list, verification costs scaled quadratically based on the number of SAN entries multiplied by the hostname's label count. Because x509.Verify validates hostnames before building the certificate chain, this overhead occurred even for untrusted certificates.
+    Severity: HIGH
+    VendorSeverity:
+      amazon: 3
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H
+        V3Score: 6.5
+    References:
+    - https://go.dev/cl/783621
+    - https://go.dev/issue/79694
+    - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-27145
+    - https://pkg.go.dev/vuln/GO-2026-5037
+    PublishedDate: '2026-06-02T23:16:35.57Z'
+    LastModifiedDate: '2026-06-17T10:26:45.23Z'
   - VulnerabilityID: CVE-2026-33811
     VendorIDs:
     - GO-2026-4981
@@ -3506,9 +3544,9 @@
     - https://pkg.go.dev/vuln/GO-2026-4977
     PublishedDate: '2026-05-07T20:16:44.54Z'
     LastModifiedDate: '2026-06-17T10:47:56.183Z'
-  - VulnerabilityID: CVE-2026-27145
+  - VulnerabilityID: CVE-2026-42504
     VendorIDs:
-    - GO-2026-5037
+    - GO-2026-5038
     PkgID: stdlib@v1.26.2
     PkgName: stdlib
     PkgIdentifier:
@@ -3520,30 +3558,32 @@
     Layer:
       Digest: sha256:c02ebffdd3dff486c0991afedd559426b15ac728dcdd74f5b0d61ceae5db4760
       DiffID: sha256:dc237a9aa618b60d4a51b91153000f2b93715c12214d3038e3c23fcc218cc811
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-27145
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42504
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:157f04eee93ebfe92e999945057b5ce772cf9f62f860d1d5bfb65639bf073b84
-    Title: '*x509.Certificate).VerifyHostname previously called matchHostnames in ...'
-    Description: (*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, ".") to execute repeatedly on the same input hostname. With a large DNS SAN list, verification costs scaled quadratically based on the number of SAN entries multiplied by the hostname's label count. Because x509.Verify validates hostnames before building the certificate chain, this overhead occurred even for untrusted certificates.
-    Severity: MEDIUM
+    Fingerprint: sha256:79a5b270b2bfbb2d57aee4e390b683c4963338be9fc9a7acb9e6611974240610
+    Title: Decoding a maliciously-crafted MIME header containing many invalid enc ...
+    Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
+    Severity: HIGH
+    CweIDs:
+    - CWE-407
     VendorSeverity:
-      amazon: 2
-      bitnami: 2
+      amazon: 3
+      bitnami: 3
     CVSS:
       bitnami:
-        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H
-        V3Score: 6.5
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
-    - https://go.dev/cl/783621
-    - https://go.dev/issue/79694
+    - https://go.dev/cl/774481
+    - https://go.dev/issue/79217
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
-    - https://nvd.nist.gov/vuln/detail/CVE-2026-27145
-    - https://pkg.go.dev/vuln/GO-2026-5037
-    PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-06-17T10:26:45.23Z'
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-42504
+    - https://pkg.go.dev/vuln/GO-2026-5038
+    PublishedDate: '2026-06-02T23:16:37.927Z'
+    LastModifiedDate: '2026-06-17T10:47:56.86Z'
   - VulnerabilityID: CVE-2026-39823
     VendorIDs:
     - GO-2026-4982
@@ -3692,46 +3732,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-39826
     PublishedDate: '2026-05-07T20:16:43.49Z'
     LastModifiedDate: '2026-06-17T10:42:38.923Z'
-  - VulnerabilityID: CVE-2026-42504
-    VendorIDs:
-    - GO-2026-5038
-    PkgID: stdlib@v1.26.2
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.2
-      UID: 83c42d84cdb2ccfe
-    InstalledVersion: v1.26.2
-    FixedVersion: 1.25.11, 1.26.4
-    Status: fixed
-    Layer:
-      Digest: sha256:c02ebffdd3dff486c0991afedd559426b15ac728dcdd74f5b0d61ceae5db4760
-      DiffID: sha256:dc237a9aa618b60d4a51b91153000f2b93715c12214d3038e3c23fcc218cc811
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42504
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:79a5b270b2bfbb2d57aee4e390b683c4963338be9fc9a7acb9e6611974240610
-    Title: Decoding a maliciously-crafted MIME header containing many invalid enc ...
-    Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
-    Severity: MEDIUM
-    CweIDs:
-    - CWE-407
-    VendorSeverity:
-      amazon: 2
-      bitnami: 3
-    CVSS:
-      bitnami:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
-        V3Score: 7.5
-    References:
-    - https://go.dev/cl/774481
-    - https://go.dev/issue/79217
-    - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
-    - https://nvd.nist.gov/vuln/detail/CVE-2026-42504
-    - https://pkg.go.dev/vuln/GO-2026-5038
-    PublishedDate: '2026-06-02T23:16:37.927Z'
-    LastModifiedDate: '2026-06-17T10:47:56.86Z'
   - VulnerabilityID: CVE-2026-42507
     VendorIDs:
     - GO-2026-5039
@@ -3756,7 +3756,7 @@
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
     VendorSeverity:
-      amazon: 2
+      amazon: 3
       bitnami: 2
       oracle-oval: 2
       redhat: 2
