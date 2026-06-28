@@ -68,7 +68,7 @@
 │                       │     │                  ╰ [3]: https://github.com/FasterXML/jackson-databind/security/
 │                       │     │                         advisories/GHSA-j3rv-43j4-c7qm 
 │                       │     ├ PublishedDate   : 2026-06-23T21:17:02.203Z 
-│                       │     ╰ LastModifiedDate: 2026-06-25T16:14:14.483Z 
+│                       │     ╰ LastModifiedDate: 2026-06-27T21:01:36.47Z 
 │                       ├ [1] ╭ VulnerabilityID : CVE-2026-54513 
 │                       │     ├ VendorIDs        ─ [0]: GHSA-rmj7-2vxq-3g9f 
 │                       │     ├ PkgName         : com.fasterxml.jackson.core:jackson-databind 
@@ -131,7 +131,7 @@
 │                       │     │                  ├ [8]: https://nvd.nist.gov/vuln/detail/CVE-2026-54513 
 │                       │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2026-54513 
 │                       │     ├ PublishedDate   : 2026-06-23T21:17:02.333Z 
-│                       │     ╰ LastModifiedDate: 2026-06-25T16:14:14.483Z 
+│                       │     ╰ LastModifiedDate: 2026-06-27T21:00:19.3Z 
 │                       ├ [2] ╭ VulnerabilityID : CVE-2026-54514 
 │                       │     ├ VendorIDs        ─ [0]: GHSA-hgj6-7826-r7m5 
 │                       │     ├ PkgName         : com.fasterxml.jackson.core:jackson-databind 
@@ -181,7 +181,7 @@
 │                       │     │                  ╰ [3]: https://github.com/FasterXML/jackson-databind/security/
 │                       │     │                         advisories/GHSA-hgj6-7826-r7m5 
 │                       │     ├ PublishedDate   : 2026-06-23T21:17:02.467Z 
-│                       │     ╰ LastModifiedDate: 2026-06-25T16:14:14.483Z 
+│                       │     ╰ LastModifiedDate: 2026-06-27T20:55:09.61Z 
 │                       ├ [3] ╭ VulnerabilityID : CVE-2026-54515 
 │                       │     ├ VendorIDs        ─ [0]: GHSA-5jmj-h7xm-6q6v 
 │                       │     ├ PkgName         : com.fasterxml.jackson.core:jackson-databind 
@@ -288,7 +288,7 @@
 │                       │     │                  ╰ [5]: https://github.com/FasterXML/jackson-databind/security/
 │                       │     │                         advisories/GHSA-9fxm-vc8v-hj55 
 │                       │     ├ PublishedDate   : 2026-06-23T21:17:02.723Z 
-│                       │     ╰ LastModifiedDate: 2026-06-25T16:14:14.483Z 
+│                       │     ╰ LastModifiedDate: 2026-06-27T20:52:12.103Z 
 │                       ├ [5] ╭ VulnerabilityID : CVE-2026-54517 
 │                       │     ├ VendorIDs        ─ [0]: GHSA-5hh8-q8hv-fr38 
 │                       │     ├ PkgName         : com.fasterxml.jackson.core:jackson-databind 
@@ -341,7 +341,7 @@
 │                       │     │                  ╰ [5]: https://github.com/FasterXML/jackson-databind/security/
 │                       │     │                         advisories/GHSA-5hh8-q8hv-fr38 
 │                       │     ├ PublishedDate   : 2026-06-23T21:17:02.853Z 
-│                       │     ╰ LastModifiedDate: 2026-06-25T16:14:14.483Z 
+│                       │     ╰ LastModifiedDate: 2026-06-27T20:51:09.987Z 
 │                       ╰ [6] ╭ VulnerabilityID : CVE-2026-54518 
 │                             ├ VendorIDs        ─ [0]: GHSA-rcqc-6cw3-h962 
 │                             ├ PkgName         : com.fasterxml.jackson.core:jackson-databind 
@@ -393,7 +393,7 @@
 │                             │                  ╰ [5]: https://github.com/FasterXML/jackson-databind/security/
 │                             │                         advisories/GHSA-rcqc-6cw3-h962 
 │                             ├ PublishedDate   : 2026-06-23T22:16:32.073Z 
-│                             ╰ LastModifiedDate: 2026-06-25T16:14:14.483Z 
+│                             ╰ LastModifiedDate: 2026-06-27T20:49:30.977Z 
 ├ [2] ╭ Target  : Node.js 
 │     ├ Class   : lang-pkgs 
 │     ├ Type    : node-pkg 
@@ -1087,8 +1087,8 @@
 │                       │      │                   label count. Because x509.Verify validates hostnames before
 │                       │      │                   building the certificate chain, this overhead occurred even
 │                       │      │                   for untrusted certificates. 
-│                       │      ├ Severity        : MEDIUM 
-│                       │      ├ VendorSeverity   ╭ amazon : 2 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ╰ bitnami: 2 
 │                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                            │           L/A:H 
@@ -1124,9 +1124,9 @@
 │                       │      │                   invalid enc ... 
 │                       │      ├ Description     : Decoding a maliciously-crafted MIME header containing many
 │                       │      │                   invalid encoded-words can consume excessive CPU. 
-│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-407 
-│                       │      ├ VendorSeverity   ╭ amazon : 2 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ╰ bitnami: 3 
 │                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                            │           N/A:H 
@@ -1165,7 +1165,7 @@
 │                              │                   might allow an attacker to inject misleading content to
 │                              │                   errors that are printed or logged. 
 │                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon     : 2 
+│                              ├ VendorSeverity   ╭ amazon     : 3 
 │                              │                  ├ bitnami    : 2 
 │                              │                  ├ oracle-oval: 2 
 │                              │                  ├ redhat     : 2 
@@ -1877,8 +1877,8 @@
 │                       │      │                   label count. Because x509.Verify validates hostnames before
 │                       │      │                   building the certificate chain, this overhead occurred even
 │                       │      │                   for untrusted certificates. 
-│                       │      ├ Severity        : MEDIUM 
-│                       │      ├ VendorSeverity   ╭ amazon : 2 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ╰ bitnami: 2 
 │                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                            │           L/A:H 
@@ -1914,9 +1914,9 @@
 │                       │      │                   invalid enc ... 
 │                       │      ├ Description     : Decoding a maliciously-crafted MIME header containing many
 │                       │      │                   invalid encoded-words can consume excessive CPU. 
-│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-407 
-│                       │      ├ VendorSeverity   ╭ amazon : 2 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ╰ bitnami: 3 
 │                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                            │           N/A:H 
@@ -1955,7 +1955,7 @@
 │                              │                   might allow an attacker to inject misleading content to
 │                              │                   errors that are printed or logged. 
 │                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon     : 2 
+│                              ├ VendorSeverity   ╭ amazon     : 3 
 │                              │                  ├ bitnami    : 2 
 │                              │                  ├ oracle-oval: 2 
 │                              │                  ├ redhat     : 2 
@@ -2481,8 +2481,8 @@
 │                       │      │                   label count. Because x509.Verify validates hostnames before
 │                       │      │                   building the certificate chain, this overhead occurred even
 │                       │      │                   for untrusted certificates. 
-│                       │      ├ Severity        : MEDIUM 
-│                       │      ├ VendorSeverity   ╭ amazon : 2 
+│                       │      ├ Severity        : HIGH 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ╰ bitnami: 2 
 │                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                            │           L/A:H 
@@ -2518,9 +2518,9 @@
 │                       │      │                   invalid enc ... 
 │                       │      ├ Description     : Decoding a maliciously-crafted MIME header containing many
 │                       │      │                   invalid encoded-words can consume excessive CPU. 
-│                       │      ├ Severity        : MEDIUM 
+│                       │      ├ Severity        : HIGH 
 │                       │      ├ CweIDs           ─ [0]: CWE-407 
-│                       │      ├ VendorSeverity   ╭ amazon : 2 
+│                       │      ├ VendorSeverity   ╭ amazon : 3 
 │                       │      │                  ╰ bitnami: 3 
 │                       │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
 │                       │      │                            │           N/A:H 
@@ -2559,7 +2559,7 @@
 │                              │                   might allow an attacker to inject misleading content to
 │                              │                   errors that are printed or logged. 
 │                              ├ Severity        : MEDIUM 
-│                              ├ VendorSeverity   ╭ amazon     : 2 
+│                              ├ VendorSeverity   ╭ amazon     : 3 
 │                              │                  ├ bitnami    : 2 
 │                              │                  ├ oracle-oval: 2 
 │                              │                  ├ redhat     : 2 
@@ -3579,7 +3579,51 @@
                         │      │                  ╰ [3]: https://pkg.go.dev/vuln/GO-2026-5024 
                         │      ├ PublishedDate   : 2026-05-22T20:16:33.057Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:42:38.62Z 
-                        ├ [21] ╭ VulnerabilityID : CVE-2026-33811 
+                        ├ [21] ╭ VulnerabilityID : CVE-2026-27145 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-5037 
+                        │      ├ PkgID           : stdlib@v1.26.2 
+                        │      ├ PkgName         : stdlib 
+                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
+                        │      │                  ╰ UID : 83c42d84cdb2ccfe 
+                        │      ├ InstalledVersion: v1.26.2 
+                        │      ├ FixedVersion    : 1.25.11, 1.26.4 
+                        │      ├ Status          : fixed 
+                        │      ├ Layer            ╭ Digest: sha256:c02ebffdd3dff486c0991afedd559426b15ac728dcdd
+                        │      │                  │         74f5b0d61ceae5db4760 
+                        │      │                  ╰ DiffID: sha256:dc237a9aa618b60d4a51b91153000f2b93715c12214d
+                        │      │                            3038e3c23fcc218cc811 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-27145 
+                        │      ├ DataSource       ╭ ID  : govulndb 
+                        │      │                  ├ Name: The Go Vulnerability Database 
+                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
+                        │      ├ Fingerprint     : sha256:157f04eee93ebfe92e999945057b5ce772cf9f62f860d1d5bfb65
+                        │      │                   639bf073b84 
+                        │      ├ Title           : *x509.Certificate).VerifyHostname previously called
+                        │      │                   matchHostnames in ... 
+                        │      ├ Description     : (*x509.Certificate).VerifyHostname previously called
+                        │      │                   matchHostnames in a loop over all DNS Subject Alternative
+                        │      │                   Name (SAN) entries. This caused strings.Split(host, ".") to
+                        │      │                   execute repeatedly on the same input hostname. With a large
+                        │      │                   DNS SAN list, verification costs scaled quadratically based
+                        │      │                   on the number of SAN entries multiplied by the hostname's
+                        │      │                   label count. Because x509.Verify validates hostnames before
+                        │      │                   building the certificate chain, this overhead occurred even
+                        │      │                   for untrusted certificates. 
+                        │      ├ Severity        : HIGH 
+                        │      ├ VendorSeverity   ╭ amazon : 3 
+                        │      │                  ╰ bitnami: 2 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           L/A:H 
+                        │      │                            ╰ V3Score : 6.5 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/783621 
+                        │      │                  ├ [1]: https://go.dev/issue/79694 
+                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcB
+                        │      │                  │      cKw 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-27145 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5037 
+                        │      ├ PublishedDate   : 2026-06-02T23:16:35.57Z 
+                        │      ╰ LastModifiedDate: 2026-06-17T10:26:45.23Z 
+                        ├ [22] ╭ VulnerabilityID : CVE-2026-33811 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4981 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -3633,7 +3677,7 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-33811 
                         │      ├ PublishedDate   : 2026-05-07T20:16:42.77Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:38:08.167Z 
-                        ├ [22] ╭ VulnerabilityID : CVE-2026-33814 
+                        ├ [23] ╭ VulnerabilityID : CVE-2026-33814 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4918 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -3698,7 +3742,7 @@
                         │      │                  ╰ [16]: https://www.cve.org/CVERecord?id=CVE-2026-33814 
                         │      ├ PublishedDate   : 2026-05-07T20:16:42.88Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:38:08.657Z 
-                        ├ [23] ╭ VulnerabilityID : CVE-2026-39820 
+                        ├ [24] ╭ VulnerabilityID : CVE-2026-39820 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4986 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -3746,7 +3790,7 @@
                         │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4986 
                         │      ├ PublishedDate   : 2026-05-07T20:16:43.187Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:42:38.193Z 
-                        ├ [24] ╭ VulnerabilityID : CVE-2026-39836 
+                        ├ [25] ╭ VulnerabilityID : CVE-2026-39836 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4971 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -3791,7 +3835,7 @@
                         │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4971 
                         │      ├ PublishedDate   : 2026-05-07T20:16:43.593Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:42:40.34Z 
-                        ├ [25] ╭ VulnerabilityID : CVE-2026-42499 
+                        ├ [26] ╭ VulnerabilityID : CVE-2026-42499 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4977 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -3832,8 +3876,8 @@
                         │      │                  ╰ [6]: https://pkg.go.dev/vuln/GO-2026-4977 
                         │      ├ PublishedDate   : 2026-05-07T20:16:44.54Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:47:56.183Z 
-                        ├ [26] ╭ VulnerabilityID : CVE-2026-27145 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-5037 
+                        ├ [27] ╭ VulnerabilityID : CVE-2026-42504 
+                        │      ├ VendorIDs        ─ [0]: GO-2026-5038 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
                         │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
@@ -3845,38 +3889,32 @@
                         │      │                  │         74f5b0d61ceae5db4760 
                         │      │                  ╰ DiffID: sha256:dc237a9aa618b60d4a51b91153000f2b93715c12214d
                         │      │                            3038e3c23fcc218cc811 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-27145 
+                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42504 
                         │      ├ DataSource       ╭ ID  : govulndb 
                         │      │                  ├ Name: The Go Vulnerability Database 
                         │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:157f04eee93ebfe92e999945057b5ce772cf9f62f860d1d5bfb65
-                        │      │                   639bf073b84 
-                        │      ├ Title           : *x509.Certificate).VerifyHostname previously called
-                        │      │                   matchHostnames in ... 
-                        │      ├ Description     : (*x509.Certificate).VerifyHostname previously called
-                        │      │                   matchHostnames in a loop over all DNS Subject Alternative
-                        │      │                   Name (SAN) entries. This caused strings.Split(host, ".") to
-                        │      │                   execute repeatedly on the same input hostname. With a large
-                        │      │                   DNS SAN list, verification costs scaled quadratically based
-                        │      │                   on the number of SAN entries multiplied by the hostname's
-                        │      │                   label count. Because x509.Verify validates hostnames before
-                        │      │                   building the certificate chain, this overhead occurred even
-                        │      │                   for untrusted certificates. 
-                        │      ├ Severity        : MEDIUM 
-                        │      ├ VendorSeverity   ╭ amazon : 2 
-                        │      │                  ╰ bitnami: 2 
-                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:
-                        │      │                            │           L/A:H 
-                        │      │                            ╰ V3Score : 6.5 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/783621 
-                        │      │                  ├ [1]: https://go.dev/issue/79694 
+                        │      ├ Fingerprint     : sha256:79a5b270b2bfbb2d57aee4e390b683c4963338be9fc9a7acb9e66
+                        │      │                   11974240610 
+                        │      ├ Title           : Decoding a maliciously-crafted MIME header containing many
+                        │      │                   invalid enc ... 
+                        │      ├ Description     : Decoding a maliciously-crafted MIME header containing many
+                        │      │                   invalid encoded-words can consume excessive CPU. 
+                        │      ├ Severity        : HIGH 
+                        │      ├ CweIDs           ─ [0]: CWE-407 
+                        │      ├ VendorSeverity   ╭ amazon : 3 
+                        │      │                  ╰ bitnami: 3 
+                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+                        │      │                            │           N/A:H 
+                        │      │                            ╰ V3Score : 7.5 
+                        │      ├ References       ╭ [0]: https://go.dev/cl/774481 
+                        │      │                  ├ [1]: https://go.dev/issue/79217 
                         │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcB
                         │      │                  │      cKw 
-                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-27145 
-                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5037 
-                        │      ├ PublishedDate   : 2026-06-02T23:16:35.57Z 
-                        │      ╰ LastModifiedDate: 2026-06-17T10:26:45.23Z 
-                        ├ [27] ╭ VulnerabilityID : CVE-2026-39823 
+                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42504 
+                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5038 
+                        │      ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
+                        │      ╰ LastModifiedDate: 2026-06-17T10:47:56.86Z 
+                        ├ [28] ╭ VulnerabilityID : CVE-2026-39823 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4982 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -3928,7 +3966,7 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39823 
                         │      ├ PublishedDate   : 2026-05-07T20:16:43.29Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:42:38.473Z 
-                        ├ [28] ╭ VulnerabilityID : CVE-2026-39825 
+                        ├ [29] ╭ VulnerabilityID : CVE-2026-39825 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4976 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -3987,7 +4025,7 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39825 
                         │      ├ PublishedDate   : 2026-05-07T20:16:43.39Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:42:38.77Z 
-                        ├ [29] ╭ VulnerabilityID : CVE-2026-39826 
+                        ├ [30] ╭ VulnerabilityID : CVE-2026-39826 
                         │      ├ VendorIDs        ─ [0]: GO-2026-4980 
                         │      ├ PkgID           : stdlib@v1.26.2 
                         │      ├ PkgName         : stdlib 
@@ -4038,44 +4076,6 @@
                         │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39826 
                         │      ├ PublishedDate   : 2026-05-07T20:16:43.49Z 
                         │      ╰ LastModifiedDate: 2026-06-17T10:42:38.923Z 
-                        ├ [30] ╭ VulnerabilityID : CVE-2026-42504 
-                        │      ├ VendorIDs        ─ [0]: GO-2026-5038 
-                        │      ├ PkgID           : stdlib@v1.26.2 
-                        │      ├ PkgName         : stdlib 
-                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/stdlib@v1.26.2 
-                        │      │                  ╰ UID : 83c42d84cdb2ccfe 
-                        │      ├ InstalledVersion: v1.26.2 
-                        │      ├ FixedVersion    : 1.25.11, 1.26.4 
-                        │      ├ Status          : fixed 
-                        │      ├ Layer            ╭ Digest: sha256:c02ebffdd3dff486c0991afedd559426b15ac728dcdd
-                        │      │                  │         74f5b0d61ceae5db4760 
-                        │      │                  ╰ DiffID: sha256:dc237a9aa618b60d4a51b91153000f2b93715c12214d
-                        │      │                            3038e3c23fcc218cc811 
-                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-42504 
-                        │      ├ DataSource       ╭ ID  : govulndb 
-                        │      │                  ├ Name: The Go Vulnerability Database 
-                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
-                        │      ├ Fingerprint     : sha256:79a5b270b2bfbb2d57aee4e390b683c4963338be9fc9a7acb9e66
-                        │      │                   11974240610 
-                        │      ├ Title           : Decoding a maliciously-crafted MIME header containing many
-                        │      │                   invalid enc ... 
-                        │      ├ Description     : Decoding a maliciously-crafted MIME header containing many
-                        │      │                   invalid encoded-words can consume excessive CPU. 
-                        │      ├ Severity        : MEDIUM 
-                        │      ├ CweIDs           ─ [0]: CWE-407 
-                        │      ├ VendorSeverity   ╭ amazon : 2 
-                        │      │                  ╰ bitnami: 3 
-                        │      ├ CVSS             ─ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
-                        │      │                            │           N/A:H 
-                        │      │                            ╰ V3Score : 7.5 
-                        │      ├ References       ╭ [0]: https://go.dev/cl/774481 
-                        │      │                  ├ [1]: https://go.dev/issue/79217 
-                        │      │                  ├ [2]: https://groups.google.com/g/golang-announce/c/tKs3rmcB
-                        │      │                  │      cKw 
-                        │      │                  ├ [3]: https://nvd.nist.gov/vuln/detail/CVE-2026-42504 
-                        │      │                  ╰ [4]: https://pkg.go.dev/vuln/GO-2026-5038 
-                        │      ├ PublishedDate   : 2026-06-02T23:16:37.927Z 
-                        │      ╰ LastModifiedDate: 2026-06-17T10:47:56.86Z 
                         ╰ [31] ╭ VulnerabilityID : CVE-2026-42507 
                                ├ VendorIDs        ─ [0]: GO-2026-5039 
                                ├ PkgID           : stdlib@v1.26.2 
@@ -4102,7 +4102,7 @@
                                │                   might allow an attacker to inject misleading content to
                                │                   errors that are printed or logged. 
                                ├ Severity        : MEDIUM 
-                               ├ VendorSeverity   ╭ amazon     : 2 
+                               ├ VendorSeverity   ╭ amazon     : 3 
                                │                  ├ bitnami    : 2 
                                │                  ├ oracle-oval: 2 
                                │                  ├ redhat     : 2 
