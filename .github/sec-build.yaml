@@ -27,7 +27,7 @@
       Name: GitHub Security Advisory Maven
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
     Fingerprint: sha256:bece5510cedd59587d7a58eba9094304dc1ee0b63f42a8d475f3ba9fad821b4f
-    Title: jackson-databind contains the general-purpose data-binding functionali ...
+    Title: 'jackson-databind: jackson-databind: Arbitrary code execution via PolymorphicTypeValidator bypass'
     Description: jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.10.0 until 2.18.8, 2.21.4, and 3.1.4, jackson-databind's PolymorphicTypeValidator (PTV) is the primary safety mechanism guarding polymorphic deserialization. When polymorphic typing is enabled and a type identifier contains generic parameters (i.e. the type ID string contains <), DatabindContext._resolveAndValidateGeneric() validates only the raw container class name (the substring before <) against the configured PTV. If the container type is approved, the method parses the full canonical type string via TypeFactory.constructFromCanonical() and returns the fully parameterized type without ever validating the nested type arguments against the PTV. The nested type arguments are then resolved, instantiated, and populated as beans during deserialization. An attacker who controls the type ID can therefore place a denied class as a generic type parameter of an allowed container — for example java.util.ArrayList<com.evil.Gadget> when only java.util.ArrayList is allow-listed. The container passes the PTV check; com.evil.Gadget is loaded via Class.forName(name, true, loader), instantiated, and its properties are set from attacker-controlled JSON. This completely bypasses an explicitly configured PTV allow-list. This vulnerability is fixed in 2.18.8, 2.21.4, and 3.1.4.
     Severity: HIGH
     CweIDs:
@@ -35,15 +35,22 @@
     - CWE-502
     VendorSeverity:
       ghsa: 3
+      redhat: 3
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
         V3Score: 8.1
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 8.1
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-54512
     - https://github.com/FasterXML/jackson-databind
     - https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5
     - https://github.com/FasterXML/jackson-databind/issues/5988
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-j3rv-43j4-c7qm
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-54512
+    - https://www.cve.org/CVERecord?id=CVE-2026-54512
     PublishedDate: '2026-06-23T21:17:02.203Z'
     LastModifiedDate: '2026-06-27T21:01:36.47Z'
   - VulnerabilityID: CVE-2026-54513
@@ -118,22 +125,29 @@
       Name: GitHub Security Advisory Maven
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
     Fingerprint: sha256:722d6685e0359756f36427f84d380a27d79eb344e55307f4cd18369724efeb7b
-    Title: jackson-databind contains the general-purpose data-binding functionali ...
+    Title: 'jackson-databind: jackson-databind: Information Disclosure via Eager DNS Resolution'
     Description: jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.0.0 until 2.18.8, 2.21.4, and 3.1.4, JDKFromStringDeserializer constructed InetSocketAddress with new InetSocketAddress(host, port), which performs eager DNS name resolution for hostname inputs at deserialization time. An application that binds untrusted JSON into a type containing an InetSocketAddress field issues an attacker-chosen DNS query during readValue, before any application-level validation or connect logic. The fix uses InetSocketAddress.createUnresolved(host, port), deferring DNS to an explicit connect. This vulnerability is fixed in 2.18.8, 2.21.4, and 3.1.4.
     Severity: MEDIUM
     CweIDs:
     - CWE-918
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-54514
     - https://github.com/FasterXML/jackson-databind
     - https://github.com/FasterXML/jackson-databind/commit/1f5a1037b1e9e05920e755cb35f198bcd46667e4
     - https://github.com/FasterXML/jackson-databind/pull/5951
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-hgj6-7826-r7m5
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-54514
+    - https://www.cve.org/CVERecord?id=CVE-2026-54514
     PublishedDate: '2026-06-23T21:17:02.467Z'
     LastModifiedDate: '2026-06-27T20:55:09.61Z'
   - VulnerabilityID: CVE-2026-54515
@@ -157,24 +171,30 @@
       Name: GitHub Security Advisory Maven
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
     Fingerprint: sha256:2e67467ea2557e2ae1897080defba56d61e6c7241231d9dd4ddaa6ee6532c10e
-    Title: jackson-databind contains the general-purpose data-binding functionali ...
+    Title: 'jackson-databind: jackson-databind: Ignored properties can be unexpectedly modified'
     Description: jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.8.0 until 2.18.9, 2.21.5, and 3.1.4, in BeanDeserializerBase.createContextual(), per-property @JsonIgnoreProperties exclusions are applied by _handleByNameInclusion(), producing a contextual deserializer whose BeanPropertyMap has the ignored properties removed. The subsequent per-property case-insensitivity block (triggered by @JsonFormat(ACCEPT_CASE_INSENSITIVE_PROPERTIES)) rebuilds from this._beanProperties (the original, unfiltered map) instead of contextual._beanProperties, then overwrites the filtered map — restoring every property _handleByNameInclusion had just removed. The ignored property becomes writable again. This vulnerability is fixed in 2.18.9, 2.21.5, and 3.1.4.
     Severity: MEDIUM
     CweIDs:
     - CWE-915
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-54515
     - https://github.com/FasterXML/jackson-databind
     - https://github.com/FasterXML/jackson-databind/commit/0e1b0b211f7a53baa62ba2f4c9bd006c7bf4d5fa
     - https://github.com/FasterXML/jackson-databind/issues/5962
     - https://github.com/FasterXML/jackson-databind/issues/5964
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5jmj-h7xm-6q6v
     - https://nvd.nist.gov/vuln/detail/CVE-2026-54515
+    - https://www.cve.org/CVERecord?id=CVE-2026-54515
     PublishedDate: '2026-06-23T21:17:02.597Z'
     LastModifiedDate: '2026-06-29T13:38:59.057Z'
   - VulnerabilityID: CVE-2026-54516
@@ -198,24 +218,31 @@
       Name: GitHub Security Advisory Maven
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
     Fingerprint: sha256:800c75978e0133c7d2d41d02192e760e0c9f9f8d065ece1006aa9c2a2d1a31b1
-    Title: jackson-databind contains the general-purpose data-binding functionali ...
+    Title: 'jackson-databind: jackson-databind: Security bypass due to improper handling of renamed properties'
     Description: jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.21.0 until 2.21.4 and 3.1.4, POJOPropertiesCollector._renameProperties() allows a property with @JsonProperty("renamed") on the getter and @JsonIgnore on the setter to be renamed rather than dropped. With MapperFeature.INFER_PROPERTY_MUTATORS enabled (default), the private backing field is retained; during deserialization BeanDeserializerFactory.addBeanProps() sees hasField()==true, builds a FieldProperty, and makes the backing field writable. An attacker supplying the renamed JSON key writes the backing field directly, bypassing the @JsonIgnore on the setter. This vulnerability is fixed in 3.1.4.
     Severity: MEDIUM
     CweIDs:
     - CWE-915
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-54516
     - https://github.com/FasterXML/jackson-databind
     - https://github.com/FasterXML/jackson-databind/commit/c3d56dd25d52319828147c5b9aeabf2d485c250a
     - https://github.com/FasterXML/jackson-databind/commit/e88cb17006b6af4883b973058f0bb6486e5074af
     - https://github.com/FasterXML/jackson-databind/pull/5967
     - https://github.com/FasterXML/jackson-databind/pull/5968
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-9fxm-vc8v-hj55
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-54516
+    - https://www.cve.org/CVERecord?id=CVE-2026-54516
     PublishedDate: '2026-06-23T21:17:02.723Z'
     LastModifiedDate: '2026-06-27T20:52:12.103Z'
   - VulnerabilityID: CVE-2026-54517
@@ -239,24 +266,31 @@
       Name: GitHub Security Advisory Maven
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
     Fingerprint: sha256:7e157f0c67c578300368ae69aa6b672881d2b76c92737a1763e9155867e7cd58
-    Title: jackson-databind contains the general-purpose data-binding functionali ...
+    Title: 'jackson-databind: jackson-databind: Information disclosure via improper JsonView filter application'
     Description: jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.21.0 until 2.21.4 and 3.1.4, in BeanDeserializer._deserializeUsingPropertyBased, the active-view (@JsonView) filter was applied only to creator properties; the regular property-buffering branch performed no prop.visibleInView(activeView) check. A change making SetterlessProperty.isMerging() return true routed setterless Collection/Map properties through this unguarded path, so a setterless collection annotated with a restricted @JsonView is populated from attacker JSON even when the active view excludes it. This vulnerability is fixed in 2.21.4 and 3.1.4.
     Severity: MEDIUM
     CweIDs:
     - CWE-863
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-54517
     - https://github.com/FasterXML/jackson-databind
     - https://github.com/FasterXML/jackson-databind/commit/5bf23edb4221f7dd2ec8e71ff6d26c61640f261d
     - https://github.com/FasterXML/jackson-databind/commit/94c5d215b3af1505098c686405d9641f041a9962
     - https://github.com/FasterXML/jackson-databind/pull/5969
     - https://github.com/FasterXML/jackson-databind/pull/5970
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5hh8-q8hv-fr38
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-54517
+    - https://www.cve.org/CVERecord?id=CVE-2026-54517
     PublishedDate: '2026-06-23T21:17:02.853Z'
     LastModifiedDate: '2026-06-27T20:51:09.987Z'
   - VulnerabilityID: CVE-2026-54518
@@ -280,24 +314,31 @@
       Name: GitHub Security Advisory Maven
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
     Fingerprint: sha256:d976b2872274fe4ba54da3e8265fcb1651df004f55ca1f0df193b45a93714d27
-    Title: jackson-databind contains the general-purpose data-binding functionali ...
+    Title: 'jackson-databind: jackson-databind: Information disclosure and data manipulation via view-based access control bypass'
     Description: jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.21.0 until 2.21.4 and 3.1.4, UnwrappedPropertyHandler.processUnwrappedCreatorProperties() replays buffered JSON into creator parameters but never consults prop.visibleInView(activeView). The normal property-based creator path gates creator properties on the active view, but this unwrapped-creator replay path bypasses that check, so a constructor parameter annotated with both @JsonView(AdminView.class) and @JsonUnwrapped is populated from attacker JSON even when a more restrictive view is active. This vulnerability is fixed in 2.21.4 and 3.1.4.
     Severity: MEDIUM
     CweIDs:
     - CWE-863
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
+        V3Score: 6.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-54518
     - https://github.com/FasterXML/jackson-databind
     - https://github.com/FasterXML/jackson-databind/commit/721fa07ebbd4aab4a659a1a68940878315c3e341
     - https://github.com/FasterXML/jackson-databind/commit/d633bc038f200c1397c07f1a2b46f58e72c91eea
     - https://github.com/FasterXML/jackson-databind/pull/5971
     - https://github.com/FasterXML/jackson-databind/pull/5973
     - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-rcqc-6cw3-h962
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-54518
+    - https://www.cve.org/CVERecord?id=CVE-2026-54518
     PublishedDate: '2026-06-23T22:16:32.073Z'
     LastModifiedDate: '2026-06-27T20:49:30.977Z'
 - Target: Node.js
@@ -384,6 +425,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
         V3Score: 8.8
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-39828
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480687
     - https://go.dev/cl/781621
@@ -394,7 +437,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39828.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39828
     PublishedDate: '2026-05-22T04:16:22.19Z'
-    LastModifiedDate: '2026-06-30T03:19:06.313Z'
+    LastModifiedDate: '2026-07-01T13:17:10.407Z'
   - VulnerabilityID: CVE-2026-39829
     VendorIDs:
     - GO-2026-5018
@@ -433,6 +476,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/errata/RHSA-2026:29455
     - https://access.redhat.com/security/cve/CVE-2026-39829
     - https://bugzilla.redhat.com/2445356
@@ -466,7 +511,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39829.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39829
     PublishedDate: '2026-05-22T04:16:22.31Z'
-    LastModifiedDate: '2026-06-30T03:19:06.54Z'
+    LastModifiedDate: '2026-07-01T13:17:10.92Z'
   - VulnerabilityID: CVE-2026-39830
     VendorIDs:
     - GO-2026-5017
@@ -628,6 +673,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-39835
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480680
     - https://go.dev/cl/781660
@@ -638,7 +685,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39835.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39835
     PublishedDate: '2026-05-22T04:16:24.53Z'
-    LastModifiedDate: '2026-06-30T03:19:07.203Z'
+    LastModifiedDate: '2026-07-01T13:17:11.747Z'
   - VulnerabilityID: CVE-2026-42508
     VendorIDs:
     - GO-2026-5021
@@ -676,6 +723,8 @@
     References:
     - https://access.redhat.com/errata/RHSA-2026:23262
     - https://access.redhat.com/errata/RHSA-2026:23264
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-42508
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480688
     - https://github.com/golang/crypto/commit/f717e29698a271c548239ed56bf5dd9516d6f7e8
@@ -689,7 +738,7 @@
     - https://ubuntu.com/security/notices/USN-8447-2
     - https://www.cve.org/CVERecord?id=CVE-2026-42508
     PublishedDate: '2026-05-22T04:16:25.44Z'
-    LastModifiedDate: '2026-06-30T03:19:38.133Z'
+    LastModifiedDate: '2026-07-01T13:17:21.657Z'
   - VulnerabilityID: CVE-2026-46595
     VendorIDs:
     - GO-2026-5023
@@ -731,6 +780,8 @@
     - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/errata/RHSA-2026:30650
     - https://access.redhat.com/errata/RHSA-2026:30651
+    - https://access.redhat.com/errata/RHSA-2026:33524
+    - https://access.redhat.com/errata/RHSA-2026:33531
     - https://access.redhat.com/security/cve/CVE-2026-46595
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480689
     - https://github.com/golang/crypto/commit/533fb3f7e4a5ae23f69d1837cd851d35ff5b76ce
@@ -744,7 +795,7 @@
     - https://ubuntu.com/security/notices/USN-8447-3
     - https://www.cve.org/CVERecord?id=CVE-2026-46595
     PublishedDate: '2026-05-22T04:16:25.55Z'
-    LastModifiedDate: '2026-06-30T03:20:22.937Z'
+    LastModifiedDate: '2026-07-01T13:17:37.407Z'
   - VulnerabilityID: CVE-2026-46597
     VendorIDs:
     - GO-2026-5013
@@ -990,6 +1041,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/security/cve/CVE-2026-27145
     - https://bugzilla.redhat.com/show_bug.cgi?id=2484207
     - https://go.dev/cl/783621
@@ -1000,7 +1052,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-27145.json
     - https://www.cve.org/CVERecord?id=CVE-2026-27145
     PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-06-30T03:17:54.533Z'
+    LastModifiedDate: '2026-07-01T13:16:53.713Z'
   - VulnerabilityID: CVE-2026-42504
     VendorIDs:
     - GO-2026-5038
@@ -1172,6 +1224,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
         V3Score: 8.8
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-39828
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480687
     - https://go.dev/cl/781621
@@ -1182,7 +1236,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39828.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39828
     PublishedDate: '2026-05-22T04:16:22.19Z'
-    LastModifiedDate: '2026-06-30T03:19:06.313Z'
+    LastModifiedDate: '2026-07-01T13:17:10.407Z'
   - VulnerabilityID: CVE-2026-39829
     VendorIDs:
     - GO-2026-5018
@@ -1221,6 +1275,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/errata/RHSA-2026:29455
     - https://access.redhat.com/security/cve/CVE-2026-39829
     - https://bugzilla.redhat.com/2445356
@@ -1254,7 +1310,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39829.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39829
     PublishedDate: '2026-05-22T04:16:22.31Z'
-    LastModifiedDate: '2026-06-30T03:19:06.54Z'
+    LastModifiedDate: '2026-07-01T13:17:10.92Z'
   - VulnerabilityID: CVE-2026-39830
     VendorIDs:
     - GO-2026-5017
@@ -1416,6 +1472,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-39835
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480680
     - https://go.dev/cl/781660
@@ -1426,7 +1484,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39835.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39835
     PublishedDate: '2026-05-22T04:16:24.53Z'
-    LastModifiedDate: '2026-06-30T03:19:07.203Z'
+    LastModifiedDate: '2026-07-01T13:17:11.747Z'
   - VulnerabilityID: CVE-2026-42508
     VendorIDs:
     - GO-2026-5021
@@ -1464,6 +1522,8 @@
     References:
     - https://access.redhat.com/errata/RHSA-2026:23262
     - https://access.redhat.com/errata/RHSA-2026:23264
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-42508
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480688
     - https://github.com/golang/crypto/commit/f717e29698a271c548239ed56bf5dd9516d6f7e8
@@ -1477,7 +1537,7 @@
     - https://ubuntu.com/security/notices/USN-8447-2
     - https://www.cve.org/CVERecord?id=CVE-2026-42508
     PublishedDate: '2026-05-22T04:16:25.44Z'
-    LastModifiedDate: '2026-06-30T03:19:38.133Z'
+    LastModifiedDate: '2026-07-01T13:17:21.657Z'
   - VulnerabilityID: CVE-2026-46595
     VendorIDs:
     - GO-2026-5023
@@ -1519,6 +1579,8 @@
     - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/errata/RHSA-2026:30650
     - https://access.redhat.com/errata/RHSA-2026:30651
+    - https://access.redhat.com/errata/RHSA-2026:33524
+    - https://access.redhat.com/errata/RHSA-2026:33531
     - https://access.redhat.com/security/cve/CVE-2026-46595
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480689
     - https://github.com/golang/crypto/commit/533fb3f7e4a5ae23f69d1837cd851d35ff5b76ce
@@ -1532,7 +1594,7 @@
     - https://ubuntu.com/security/notices/USN-8447-3
     - https://www.cve.org/CVERecord?id=CVE-2026-46595
     PublishedDate: '2026-05-22T04:16:25.55Z'
-    LastModifiedDate: '2026-06-30T03:20:22.937Z'
+    LastModifiedDate: '2026-07-01T13:17:37.407Z'
   - VulnerabilityID: CVE-2026-46597
     VendorIDs:
     - GO-2026-5013
@@ -1778,6 +1840,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/security/cve/CVE-2026-27145
     - https://bugzilla.redhat.com/show_bug.cgi?id=2484207
     - https://go.dev/cl/783621
@@ -1788,7 +1851,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-27145.json
     - https://www.cve.org/CVERecord?id=CVE-2026-27145
     PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-06-30T03:17:54.533Z'
+    LastModifiedDate: '2026-07-01T13:16:53.713Z'
   - VulnerabilityID: CVE-2026-42504
     VendorIDs:
     - GO-2026-5038
@@ -2349,6 +2412,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/security/cve/CVE-2026-27145
     - https://bugzilla.redhat.com/show_bug.cgi?id=2484207
     - https://go.dev/cl/783621
@@ -2359,7 +2423,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-27145.json
     - https://www.cve.org/CVERecord?id=CVE-2026-27145
     PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-06-30T03:17:54.533Z'
+    LastModifiedDate: '2026-07-01T13:16:53.713Z'
   - VulnerabilityID: CVE-2026-42504
     VendorIDs:
     - GO-2026-5038
@@ -2531,6 +2595,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
         V3Score: 8.8
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-39828
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480687
     - https://go.dev/cl/781621
@@ -2541,7 +2607,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39828.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39828
     PublishedDate: '2026-05-22T04:16:22.19Z'
-    LastModifiedDate: '2026-06-30T03:19:06.313Z'
+    LastModifiedDate: '2026-07-01T13:17:10.407Z'
   - VulnerabilityID: CVE-2026-39829
     VendorIDs:
     - GO-2026-5018
@@ -2580,6 +2646,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/errata/RHSA-2026:29455
     - https://access.redhat.com/security/cve/CVE-2026-39829
     - https://bugzilla.redhat.com/2445356
@@ -2613,7 +2681,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39829.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39829
     PublishedDate: '2026-05-22T04:16:22.31Z'
-    LastModifiedDate: '2026-06-30T03:19:06.54Z'
+    LastModifiedDate: '2026-07-01T13:17:10.92Z'
   - VulnerabilityID: CVE-2026-39830
     VendorIDs:
     - GO-2026-5017
@@ -2775,6 +2843,8 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-39835
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480680
     - https://go.dev/cl/781660
@@ -2785,7 +2855,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39835.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39835
     PublishedDate: '2026-05-22T04:16:24.53Z'
-    LastModifiedDate: '2026-06-30T03:19:07.203Z'
+    LastModifiedDate: '2026-07-01T13:17:11.747Z'
   - VulnerabilityID: CVE-2026-42508
     VendorIDs:
     - GO-2026-5021
@@ -2823,6 +2893,8 @@
     References:
     - https://access.redhat.com/errata/RHSA-2026:23262
     - https://access.redhat.com/errata/RHSA-2026:23264
+    - https://access.redhat.com/errata/RHSA-2026:26546
+    - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/security/cve/CVE-2026-42508
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480688
     - https://github.com/golang/crypto/commit/f717e29698a271c548239ed56bf5dd9516d6f7e8
@@ -2836,7 +2908,7 @@
     - https://ubuntu.com/security/notices/USN-8447-2
     - https://www.cve.org/CVERecord?id=CVE-2026-42508
     PublishedDate: '2026-05-22T04:16:25.44Z'
-    LastModifiedDate: '2026-06-30T03:19:38.133Z'
+    LastModifiedDate: '2026-07-01T13:17:21.657Z'
   - VulnerabilityID: CVE-2026-46595
     VendorIDs:
     - GO-2026-5023
@@ -2878,6 +2950,8 @@
     - https://access.redhat.com/errata/RHSA-2026:26547
     - https://access.redhat.com/errata/RHSA-2026:30650
     - https://access.redhat.com/errata/RHSA-2026:30651
+    - https://access.redhat.com/errata/RHSA-2026:33524
+    - https://access.redhat.com/errata/RHSA-2026:33531
     - https://access.redhat.com/security/cve/CVE-2026-46595
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480689
     - https://github.com/golang/crypto/commit/533fb3f7e4a5ae23f69d1837cd851d35ff5b76ce
@@ -2891,7 +2965,7 @@
     - https://ubuntu.com/security/notices/USN-8447-3
     - https://www.cve.org/CVERecord?id=CVE-2026-46595
     PublishedDate: '2026-05-22T04:16:25.55Z'
-    LastModifiedDate: '2026-06-30T03:20:22.937Z'
+    LastModifiedDate: '2026-07-01T13:17:37.407Z'
   - VulnerabilityID: CVE-2026-46597
     VendorIDs:
     - GO-2026-5013
@@ -3100,42 +3174,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-46598
     PublishedDate: '2026-05-22T04:16:26.537Z'
     LastModifiedDate: '2026-06-17T10:53:47.52Z'
-  - VulnerabilityID: CVE-2026-25680
-    VendorIDs:
-    - GO-2026-5028
-    PkgID: golang.org/x/net@v0.52.0
-    PkgName: golang.org/x/net
-    PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/net@v0.52.0
-      UID: 1328e6f059faf6ba
-    InstalledVersion: v0.52.0
-    FixedVersion: 0.55.0
-    Status: fixed
-    Layer:
-      Digest: sha256:c02ebffdd3dff486c0991afedd559426b15ac728dcdd74f5b0d61ceae5db4760
-      DiffID: sha256:dc237a9aa618b60d4a51b91153000f2b93715c12214d3038e3c23fcc218cc811
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-25680
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:f753172f76baf50b8c49be0911beef36ace1bf68b5700d59cbb7427554437373
-    Title: Parsing arbitrary HTML can consume excessive CPU time, possibly leadin ...
-    Description: Parsing arbitrary HTML can consume excessive CPU time, possibly leading to denial of service.
-    Severity: HIGH
-    CweIDs:
-    - CWE-400
-    VendorSeverity:
-      amazon: 3
-      azure: 2
-    References:
-    - https://go.dev/cl/781702
-    - https://go.dev/issue/79573
-    - https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8
-    - https://nvd.nist.gov/vuln/detail/CVE-2026-25680
-    - https://pkg.go.dev/vuln/GO-2026-5028
-    PublishedDate: '2026-05-22T16:16:19.753Z'
-    LastModifiedDate: '2026-06-17T10:25:03.14Z'
   - VulnerabilityID: CVE-2026-25681
     VendorIDs:
     - GO-2026-5029
@@ -3156,7 +3194,7 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:4b8edce6f9926affdd0d410c52563fb44c2621efb8ec16037a7a1fbe5f84e1c1
-    Title: Parsing arbitrary HTML which is then rendered using Render can result  ...
+    Title: 'golang.org/x/net/html: golang.org/x/net/html: Arbitrary code execution via Cross-Site Scripting'
     Description: Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.
     Severity: HIGH
     CweIDs:
@@ -3164,12 +3202,19 @@
     VendorSeverity:
       amazon: 3
       azure: 2
+      redhat: 3
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N
+        V3Score: 8.1
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-25681
     - https://go.dev/cl/781703
     - https://go.dev/issue/79574
     - https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8
     - https://nvd.nist.gov/vuln/detail/CVE-2026-25681
     - https://pkg.go.dev/vuln/GO-2026-5029
+    - https://www.cve.org/CVERecord?id=CVE-2026-25681
     PublishedDate: '2026-05-22T16:16:19.863Z'
     LastModifiedDate: '2026-06-17T10:25:03.343Z'
   - VulnerabilityID: CVE-2026-27136
@@ -3333,6 +3378,8 @@
     - https://access.redhat.com/errata/RHSA-2026:33163
     - https://access.redhat.com/errata/RHSA-2026:33173
     - https://access.redhat.com/errata/RHSA-2026:33183
+    - https://access.redhat.com/errata/RHSA-2026:33524
+    - https://access.redhat.com/errata/RHSA-2026:33531
     - https://access.redhat.com/security/cve/CVE-2026-39821
     - https://bugzilla.redhat.com/2480756
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480756
@@ -3349,7 +3396,7 @@
     - https://ubuntu.com/security/notices/USN-8416-1
     - https://www.cve.org/CVERecord?id=CVE-2026-39821
     PublishedDate: '2026-05-22T16:16:20.41Z'
-    LastModifiedDate: '2026-06-30T03:19:05.967Z'
+    LastModifiedDate: '2026-07-01T13:17:09.79Z'
   - VulnerabilityID: CVE-2026-42502
     VendorIDs:
     - GO-2026-5027
@@ -3386,6 +3433,49 @@
     - https://pkg.go.dev/vuln/GO-2026-5027
     PublishedDate: '2026-05-22T16:16:20.587Z'
     LastModifiedDate: '2026-06-17T10:47:56.593Z'
+  - VulnerabilityID: CVE-2026-25680
+    VendorIDs:
+    - GO-2026-5028
+    PkgID: golang.org/x/net@v0.52.0
+    PkgName: golang.org/x/net
+    PkgIdentifier:
+      PURL: pkg:golang/golang.org/x/net@v0.52.0
+      UID: 1328e6f059faf6ba
+    InstalledVersion: v0.52.0
+    FixedVersion: 0.55.0
+    Status: fixed
+    Layer:
+      Digest: sha256:c02ebffdd3dff486c0991afedd559426b15ac728dcdd74f5b0d61ceae5db4760
+      DiffID: sha256:dc237a9aa618b60d4a51b91153000f2b93715c12214d3038e3c23fcc218cc811
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-25680
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:f753172f76baf50b8c49be0911beef36ace1bf68b5700d59cbb7427554437373
+    Title: 'golang.org/x/net/html: golang.org/x/net/html: Denial of Service due to excessive HTML parsing'
+    Description: Parsing arbitrary HTML can consume excessive CPU time, possibly leading to denial of service.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-400
+    VendorSeverity:
+      amazon: 3
+      azure: 2
+      redhat: 2
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+        V3Score: 6.5
+    References:
+    - https://access.redhat.com/security/cve/CVE-2026-25680
+    - https://go.dev/cl/781702
+    - https://go.dev/issue/79573
+    - https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-25680
+    - https://pkg.go.dev/vuln/GO-2026-5028
+    - https://www.cve.org/CVERecord?id=CVE-2026-25680
+    PublishedDate: '2026-05-22T16:16:19.753Z'
+    LastModifiedDate: '2026-06-17T10:25:03.14Z'
   - VulnerabilityID: CVE-2026-42506
     VendorIDs:
     - GO-2026-5025
@@ -3498,6 +3588,7 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/security/cve/CVE-2026-27145
     - https://bugzilla.redhat.com/show_bug.cgi?id=2484207
     - https://go.dev/cl/783621
@@ -3508,7 +3599,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-27145.json
     - https://www.cve.org/CVERecord?id=CVE-2026-27145
     PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-06-30T03:17:54.533Z'
+    LastModifiedDate: '2026-07-01T13:16:53.713Z'
   - VulnerabilityID: CVE-2026-33811
     VendorIDs:
     - GO-2026-4981
@@ -3560,6 +3651,7 @@
     - https://access.redhat.com/errata/RHSA-2026:33123
     - https://access.redhat.com/errata/RHSA-2026:33142
     - https://access.redhat.com/errata/RHSA-2026:33150
+    - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/security/cve/CVE-2026-33811
     - https://bugzilla.redhat.com/show_bug.cgi?id=2467822
     - https://go.dev/cl/767860
@@ -3572,7 +3664,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-33811.json
     - https://www.cve.org/CVERecord?id=CVE-2026-33811
     PublishedDate: '2026-05-07T20:16:42.77Z'
-    LastModifiedDate: '2026-06-30T03:18:43Z'
+    LastModifiedDate: '2026-07-01T13:17:05.867Z'
   - VulnerabilityID: CVE-2026-33814
     VendorIDs:
     - GO-2026-4918
@@ -3696,6 +3788,7 @@
     - https://access.redhat.com/errata/RHSA-2026:33123
     - https://access.redhat.com/errata/RHSA-2026:33142
     - https://access.redhat.com/errata/RHSA-2026:33150
+    - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/security/cve/CVE-2026-39820
     - https://bugzilla.redhat.com/show_bug.cgi?id=2467820
     - https://go.dev/cl/759940
@@ -3708,7 +3801,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39820.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39820
     PublishedDate: '2026-05-07T20:16:43.187Z'
-    LastModifiedDate: '2026-06-30T03:19:05.687Z'
+    LastModifiedDate: '2026-07-01T13:17:09.25Z'
   - VulnerabilityID: CVE-2026-39836
     VendorIDs:
     - GO-2026-4971
@@ -3800,6 +3893,7 @@
     - https://access.redhat.com/errata/RHSA-2026:33123
     - https://access.redhat.com/errata/RHSA-2026:33142
     - https://access.redhat.com/errata/RHSA-2026:33150
+    - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/security/cve/CVE-2026-42499
     - https://bugzilla.redhat.com/show_bug.cgi?id=2467809
     - https://go.dev/cl/771520
@@ -3812,7 +3906,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-42499.json
     - https://www.cve.org/CVERecord?id=CVE-2026-42499
     PublishedDate: '2026-05-07T20:16:44.54Z'
-    LastModifiedDate: '2026-06-30T03:19:37.86Z'
+    LastModifiedDate: '2026-07-01T13:17:21.117Z'
   - VulnerabilityID: CVE-2026-42504
     VendorIDs:
     - GO-2026-5038
