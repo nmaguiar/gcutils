@@ -399,17 +399,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:5898a308e54b3eac876c9339b4546cab774909e315c7c6e71f0c15dfce135380
-    Title: Root escape via symlink plus trailing slash in os
-    Description: |-
-      On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /.
-
-      For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
+    Title: On Unix systems, opening a file in an os.Root improperly follows symli ...
+    Description: On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /. For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-61
     References:
     - https://go.dev/cl/797880
     - https://go.dev/issue/79005
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-4970
+    PublishedDate: '2026-07-08T17:17:21.31Z'
+    LastModifiedDate: '2026-07-08T20:16:49.06Z'
   - VulnerabilityID: CVE-2026-42505
     VendorIDs:
     - GO-2026-5856
@@ -430,14 +431,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:13136c8da3cdbb0580c1ad63dabd7aa67f186cdfc4f6336dc5074bdee5933de5
-    Title: Invoking Encrypted Client Hello privacy leak in crypto/tls
+    Title: Handshakes which used Encrypted Client Hello could be de-anonymized by ...
     Description: Handshakes which used Encrypted Client Hello could be de-anonymized by a passive network observer due to a disclosure of pre-shared key identities in the unencrypted client hello.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-201
     References:
     - https://go.dev/cl/775960
     - https://go.dev/issue/79282
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-5856
+    PublishedDate: '2026-07-08T17:17:21.497Z'
+    LastModifiedDate: '2026-07-08T20:16:49.52Z'
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -488,17 +493,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:bce974cfdc10d67e168ebfd815ffc58b06f080b192b28c7791337729a6482eed
-    Title: Root escape via symlink plus trailing slash in os
-    Description: |-
-      On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /.
-
-      For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
+    Title: On Unix systems, opening a file in an os.Root improperly follows symli ...
+    Description: On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /. For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-61
     References:
     - https://go.dev/cl/797880
     - https://go.dev/issue/79005
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-4970
+    PublishedDate: '2026-07-08T17:17:21.31Z'
+    LastModifiedDate: '2026-07-08T20:16:49.06Z'
   - VulnerabilityID: CVE-2026-42505
     VendorIDs:
     - GO-2026-5856
@@ -519,14 +525,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:c0473ad04437b17ad464477494fc3669661365b370fe085dc5be09fa36ac748f
-    Title: Invoking Encrypted Client Hello privacy leak in crypto/tls
+    Title: Handshakes which used Encrypted Client Hello could be de-anonymized by ...
     Description: Handshakes which used Encrypted Client Hello could be de-anonymized by a passive network observer due to a disclosure of pre-shared key identities in the unencrypted client hello.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-201
     References:
     - https://go.dev/cl/775960
     - https://go.dev/issue/79282
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-5856
+    PublishedDate: '2026-07-08T17:17:21.497Z'
+    LastModifiedDate: '2026-07-08T20:16:49.52Z'
 - Target: usr/share/grafana/bin/grafana
   Class: lang-pkgs
   Type: gobinary
@@ -841,17 +851,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:31c5494db480d0b58a0fe53c1c373e76ae0c4346432cd9c5fe8705ff24d4521b
-    Title: Root escape via symlink plus trailing slash in os
-    Description: |-
-      On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /.
-
-      For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
+    Title: On Unix systems, opening a file in an os.Root improperly follows symli ...
+    Description: On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /. For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-61
     References:
     - https://go.dev/cl/797880
     - https://go.dev/issue/79005
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-4970
+    PublishedDate: '2026-07-08T17:17:21.31Z'
+    LastModifiedDate: '2026-07-08T20:16:49.06Z'
   - VulnerabilityID: CVE-2026-42505
     VendorIDs:
     - GO-2026-5856
@@ -872,14 +883,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:baee5274a14af37ae590d48950e23d636dced54223f1c62c459824216aedbabb
-    Title: Invoking Encrypted Client Hello privacy leak in crypto/tls
+    Title: Handshakes which used Encrypted Client Hello could be de-anonymized by ...
     Description: Handshakes which used Encrypted Client Hello could be de-anonymized by a passive network observer due to a disclosure of pre-shared key identities in the unencrypted client hello.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-201
     References:
     - https://go.dev/cl/775960
     - https://go.dev/issue/79282
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-5856
+    PublishedDate: '2026-07-08T17:17:21.497Z'
+    LastModifiedDate: '2026-07-08T20:16:49.52Z'
 - Target: usr/share/grafana/data/plugins-bundled/elasticsearch/gpx_grafana_elasticsearch_datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -937,8 +952,9 @@
     - CWE-606
     VendorSeverity:
       alma: 3
-      amazon: 3
+      amazon: 2
       bitnami: 2
+      oracle-oval: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -952,24 +968,24 @@
     - https://access.redhat.com/errata/RHSA-2026:34357
     - https://access.redhat.com/errata/RHSA-2026:34359
     - https://access.redhat.com/errata/RHSA-2026:35832
+    - https://access.redhat.com/errata/RHSA-2026:36317
+    - https://access.redhat.com/errata/RHSA-2026:36648
     - https://access.redhat.com/security/cve/CVE-2026-27145
-    - https://bugzilla.redhat.com/2466505
-    - https://bugzilla.redhat.com/2466507
-    - https://bugzilla.redhat.com/2467822
-    - https://bugzilla.redhat.com/2480756
-    - https://bugzilla.redhat.com/2480761
+    - https://bugzilla.redhat.com/2445356
     - https://bugzilla.redhat.com/2484207
     - https://bugzilla.redhat.com/show_bug.cgi?id=2484207
-    - https://errata.almalinux.org/9/ALSA-2026-34359.html
+    - https://errata.almalinux.org/9/ALSA-2026-36317.html
     - https://go.dev/cl/783621
     - https://go.dev/issue/79694
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
+    - https://linux.oracle.com/cve/CVE-2026-27145.html
+    - https://linux.oracle.com/errata/ELSA-2026-36317.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-27145
     - https://pkg.go.dev/vuln/GO-2026-5037
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-27145.json
     - https://www.cve.org/CVERecord?id=CVE-2026-27145
     PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-07-06T13:16:35.233Z'
+    LastModifiedDate: '2026-07-08T13:16:33.35Z'
   - VulnerabilityID: CVE-2026-42504
     VendorIDs:
     - GO-2026-5038
@@ -990,25 +1006,31 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:6761c511be6daf769872c638ba4c254c862601830872056f7e7aa9bc611864fc
-    Title: Decoding a maliciously-crafted MIME header containing many invalid enc ...
+    Title: 'mime: golang: Golang MIME: Denial of Service via maliciously-crafted MIME header'
     Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
     Severity: HIGH
     CweIDs:
     - CWE-407
     VendorSeverity:
-      amazon: 3
+      amazon: 2
       azure: 3
       bitnami: 3
+      redhat: 3
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-42504
     - https://go.dev/cl/774481
     - https://go.dev/issue/79217
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
     - https://nvd.nist.gov/vuln/detail/CVE-2026-42504
     - https://pkg.go.dev/vuln/GO-2026-5038
+    - https://www.cve.org/CVERecord?id=CVE-2026-42504
     PublishedDate: '2026-06-02T23:16:37.927Z'
     LastModifiedDate: '2026-06-17T10:47:56.86Z'
   - VulnerabilityID: CVE-2026-42507
@@ -1036,7 +1058,7 @@
     Severity: MEDIUM
     VendorSeverity:
       alma: 2
-      amazon: 3
+      amazon: 2
       bitnami: 2
       oracle-oval: 2
       redhat: 2
@@ -1086,17 +1108,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:6b8fe538276b95a1ccc3e5491527e8e0ec8f0eaa0d153985abba12169323436b
-    Title: Root escape via symlink plus trailing slash in os
-    Description: |-
-      On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /.
-
-      For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
+    Title: On Unix systems, opening a file in an os.Root improperly follows symli ...
+    Description: On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /. For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-61
     References:
     - https://go.dev/cl/797880
     - https://go.dev/issue/79005
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-4970
+    PublishedDate: '2026-07-08T17:17:21.31Z'
+    LastModifiedDate: '2026-07-08T20:16:49.06Z'
   - VulnerabilityID: CVE-2026-42505
     VendorIDs:
     - GO-2026-5856
@@ -1117,14 +1140,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:5f790603712d337f4f9b887a3a292fed4c97c6b0be9d65b33864868328644d08
-    Title: Invoking Encrypted Client Hello privacy leak in crypto/tls
+    Title: Handshakes which used Encrypted Client Hello could be de-anonymized by ...
     Description: Handshakes which used Encrypted Client Hello could be de-anonymized by a passive network observer due to a disclosure of pre-shared key identities in the unencrypted client hello.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-201
     References:
     - https://go.dev/cl/775960
     - https://go.dev/issue/79282
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-5856
+    PublishedDate: '2026-07-08T17:17:21.497Z'
+    LastModifiedDate: '2026-07-08T20:16:49.52Z'
 - Target: usr/share/grafana/data/plugins-bundled/zipkin/gpx_grafana-zipkin-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -1473,17 +1500,15 @@
     - https://access.redhat.com/errata/RHSA-2026:35831
     - https://access.redhat.com/errata/RHSA-2026:35993
     - https://access.redhat.com/errata/RHSA-2026:35994
+    - https://access.redhat.com/errata/RHSA-2026:36105
     - https://access.redhat.com/errata/RHSA-2026:36167
+    - https://access.redhat.com/errata/RHSA-2026:36207
+    - https://access.redhat.com/errata/RHSA-2026:36648
     - https://access.redhat.com/security/cve/CVE-2026-39821
-    - https://bugzilla.redhat.com/2466505
-    - https://bugzilla.redhat.com/2466507
-    - https://bugzilla.redhat.com/2467822
     - https://bugzilla.redhat.com/2480756
-    - https://bugzilla.redhat.com/2480761
-    - https://bugzilla.redhat.com/2484207
     - https://bugzilla.redhat.com/show_bug.cgi?id=2480756
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-39821
-    - https://errata.almalinux.org/9/ALSA-2026-34359.html
+    - https://errata.almalinux.org/9/ALSA-2026-35829.html
     - https://errata.rockylinux.org/RLSA-2026:30854
     - https://github.com/golang/go/issues/78760
     - https://go.dev/cl/767220
@@ -1497,43 +1522,7 @@
     - https://ubuntu.com/security/notices/USN-8416-1
     - https://www.cve.org/CVERecord?id=CVE-2026-39821
     PublishedDate: '2026-05-22T16:16:20.41Z'
-    LastModifiedDate: '2026-07-07T12:16:41.123Z'
-  - VulnerabilityID: CVE-2026-42502
-    VendorIDs:
-    - GO-2026-5027
-    PkgID: golang.org/x/net@v0.49.0
-    PkgName: golang.org/x/net
-    PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/net@v0.49.0
-      UID: d9a61092434f99e5
-    InstalledVersion: v0.49.0
-    FixedVersion: 0.55.0
-    Status: fixed
-    Layer:
-      Digest: sha256:4a5d63c538bdfc140f8349d90d824203f6dece95064e52a20dd0e2b3b62af5b6
-      DiffID: sha256:879c8470c49170a948b87f1a358b7b7b23770cb32f0cb279df2dec37df06a5a9
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42502
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:b80be72aea6dd5d062f904a9845162abf86ccccf22ff4a314eab3eafe9ca6cdf
-    Title: Parsing arbitrary HTML which is then rendered using Render can result  ...
-    Description: Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.
-    Severity: HIGH
-    CweIDs:
-    - CWE-1021
-    VendorSeverity:
-      amazon: 3
-      azure: 2
-    References:
-    - https://go.dev/cl/781701
-    - https://go.dev/issue/79572
-    - https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8
-    - https://nvd.nist.gov/vuln/detail/CVE-2026-42502
-    - https://pkg.go.dev/vuln/GO-2026-5027
-    PublishedDate: '2026-05-22T16:16:20.587Z'
-    LastModifiedDate: '2026-06-17T10:47:56.593Z'
+    LastModifiedDate: '2026-07-08T13:16:39.7Z'
   - VulnerabilityID: CVE-2026-25680
     VendorIDs:
     - GO-2026-5028
@@ -1577,6 +1566,49 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-25680
     PublishedDate: '2026-05-22T16:16:19.753Z'
     LastModifiedDate: '2026-06-17T10:25:03.14Z'
+  - VulnerabilityID: CVE-2026-42502
+    VendorIDs:
+    - GO-2026-5027
+    PkgID: golang.org/x/net@v0.49.0
+    PkgName: golang.org/x/net
+    PkgIdentifier:
+      PURL: pkg:golang/golang.org/x/net@v0.49.0
+      UID: d9a61092434f99e5
+    InstalledVersion: v0.49.0
+    FixedVersion: 0.55.0
+    Status: fixed
+    Layer:
+      Digest: sha256:4a5d63c538bdfc140f8349d90d824203f6dece95064e52a20dd0e2b3b62af5b6
+      DiffID: sha256:879c8470c49170a948b87f1a358b7b7b23770cb32f0cb279df2dec37df06a5a9
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42502
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:b80be72aea6dd5d062f904a9845162abf86ccccf22ff4a314eab3eafe9ca6cdf
+    Title: 'golang.org/x/net/html: golang: golang.org/x/net/html: Cross-Site Scripting via unexpected HTML tree rendering'
+    Description: Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-1021
+    VendorSeverity:
+      amazon: 3
+      azure: 2
+      redhat: 2
+    CVSS:
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://access.redhat.com/security/cve/CVE-2026-42502
+    - https://go.dev/cl/781701
+    - https://go.dev/issue/79572
+    - https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-42502
+    - https://pkg.go.dev/vuln/GO-2026-5027
+    - https://www.cve.org/CVERecord?id=CVE-2026-42502
+    PublishedDate: '2026-05-22T16:16:20.587Z'
+    LastModifiedDate: '2026-06-17T10:47:56.593Z'
   - VulnerabilityID: CVE-2026-42506
     VendorIDs:
     - GO-2026-5025
@@ -1680,7 +1712,7 @@
     - CWE-1286
     VendorSeverity:
       alma: 3
-      amazon: 2
+      amazon: 3
       azure: 3
       bitnami: 3
       oracle-oval: 3
@@ -1829,6 +1861,8 @@
     - https://access.redhat.com/errata/RHSA-2026:29854
     - https://access.redhat.com/errata/RHSA-2026:33722
     - https://access.redhat.com/errata/RHSA-2026:34365
+    - https://access.redhat.com/errata/RHSA-2026:36317
+    - https://access.redhat.com/errata/RHSA-2026:36319
     - https://access.redhat.com/errata/RHSA-2026:5110
     - https://access.redhat.com/errata/RHSA-2026:5549
     - https://access.redhat.com/errata/RHSA-2026:5941
@@ -1939,7 +1973,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-25679.json
     - https://www.cve.org/CVERecord?id=CVE-2026-25679
     PublishedDate: '2026-03-06T22:16:00.72Z'
-    LastModifiedDate: '2026-07-07T12:16:33.243Z'
+    LastModifiedDate: '2026-07-08T13:16:30.953Z'
   - VulnerabilityID: CVE-2026-27145
     VendorIDs:
     - GO-2026-5037
@@ -1967,8 +2001,9 @@
     - CWE-606
     VendorSeverity:
       alma: 3
-      amazon: 3
+      amazon: 2
       bitnami: 2
+      oracle-oval: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -1982,24 +2017,24 @@
     - https://access.redhat.com/errata/RHSA-2026:34357
     - https://access.redhat.com/errata/RHSA-2026:34359
     - https://access.redhat.com/errata/RHSA-2026:35832
+    - https://access.redhat.com/errata/RHSA-2026:36317
+    - https://access.redhat.com/errata/RHSA-2026:36648
     - https://access.redhat.com/security/cve/CVE-2026-27145
-    - https://bugzilla.redhat.com/2466505
-    - https://bugzilla.redhat.com/2466507
-    - https://bugzilla.redhat.com/2467822
-    - https://bugzilla.redhat.com/2480756
-    - https://bugzilla.redhat.com/2480761
+    - https://bugzilla.redhat.com/2445356
     - https://bugzilla.redhat.com/2484207
     - https://bugzilla.redhat.com/show_bug.cgi?id=2484207
-    - https://errata.almalinux.org/9/ALSA-2026-34359.html
+    - https://errata.almalinux.org/9/ALSA-2026-36317.html
     - https://go.dev/cl/783621
     - https://go.dev/issue/79694
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
+    - https://linux.oracle.com/cve/CVE-2026-27145.html
+    - https://linux.oracle.com/errata/ELSA-2026-36317.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-27145
     - https://pkg.go.dev/vuln/GO-2026-5037
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-27145.json
     - https://www.cve.org/CVERecord?id=CVE-2026-27145
     PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-07-06T13:16:35.233Z'
+    LastModifiedDate: '2026-07-08T13:16:33.35Z'
   - VulnerabilityID: CVE-2026-32280
     VendorIDs:
     - GO-2026-4947
@@ -2167,6 +2202,7 @@
     - https://access.redhat.com/errata/RHSA-2026:34196
     - https://access.redhat.com/errata/RHSA-2026:34197
     - https://access.redhat.com/errata/RHSA-2026:34365
+    - https://access.redhat.com/errata/RHSA-2026:36319
     - https://access.redhat.com/errata/RHSA-2026:9385
     - https://access.redhat.com/security/cve/CVE-2026-32280
     - https://bugzilla.redhat.com/2445356
@@ -2193,7 +2229,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-32280.json
     - https://www.cve.org/CVERecord?id=CVE-2026-32280
     PublishedDate: '2026-04-08T02:16:03.247Z'
-    LastModifiedDate: '2026-07-07T12:16:35.587Z'
+    LastModifiedDate: '2026-07-08T13:16:35.05Z'
   - VulnerabilityID: CVE-2026-32281
     VendorIDs:
     - GO-2026-4946
@@ -2491,6 +2527,11 @@
     - https://access.redhat.com/errata/RHSA-2026:35993
     - https://access.redhat.com/errata/RHSA-2026:35994
     - https://access.redhat.com/errata/RHSA-2026:35995
+    - https://access.redhat.com/errata/RHSA-2026:36207
+    - https://access.redhat.com/errata/RHSA-2026:36319
+    - https://access.redhat.com/errata/RHSA-2026:36617
+    - https://access.redhat.com/errata/RHSA-2026:36625
+    - https://access.redhat.com/errata/RHSA-2026:36648
     - https://access.redhat.com/security/cve/CVE-2026-33811
     - https://bugzilla.redhat.com/2466505
     - https://bugzilla.redhat.com/2466507
@@ -2504,13 +2545,13 @@
     - https://go.dev/issue/78803
     - https://groups.google.com/g/golang-announce/c/qcCIEXso47M
     - https://linux.oracle.com/cve/CVE-2026-33811.html
-    - https://linux.oracle.com/errata/ELSA-2026-22121.html
+    - https://linux.oracle.com/errata/ELSA-2026-36617.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-33811
     - https://pkg.go.dev/vuln/GO-2026-4981
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-33811.json
     - https://www.cve.org/CVERecord?id=CVE-2026-33811
     PublishedDate: '2026-05-07T20:16:42.77Z'
-    LastModifiedDate: '2026-07-07T12:16:37.36Z'
+    LastModifiedDate: '2026-07-08T13:16:37.417Z'
   - VulnerabilityID: CVE-2026-33814
     VendorIDs:
     - GO-2026-4918
@@ -2637,6 +2678,8 @@
     - https://access.redhat.com/errata/RHSA-2026:33150
     - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/errata/RHSA-2026:34364
+    - https://access.redhat.com/errata/RHSA-2026:36319
+    - https://access.redhat.com/errata/RHSA-2026:36625
     - https://access.redhat.com/security/cve/CVE-2026-39820
     - https://bugzilla.redhat.com/show_bug.cgi?id=2467820
     - https://go.dev/cl/759940
@@ -2649,7 +2692,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39820.json
     - https://www.cve.org/CVERecord?id=CVE-2026-39820
     PublishedDate: '2026-05-07T20:16:43.187Z'
-    LastModifiedDate: '2026-07-02T12:17:11.933Z'
+    LastModifiedDate: '2026-07-08T13:16:39.39Z'
   - VulnerabilityID: CVE-2026-39836
     VendorIDs:
     - GO-2026-4971
@@ -2743,6 +2786,8 @@
     - https://access.redhat.com/errata/RHSA-2026:33150
     - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/errata/RHSA-2026:34364
+    - https://access.redhat.com/errata/RHSA-2026:36319
+    - https://access.redhat.com/errata/RHSA-2026:36625
     - https://access.redhat.com/security/cve/CVE-2026-42499
     - https://bugzilla.redhat.com/show_bug.cgi?id=2467809
     - https://go.dev/cl/771520
@@ -2755,7 +2800,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-42499.json
     - https://www.cve.org/CVERecord?id=CVE-2026-42499
     PublishedDate: '2026-05-07T20:16:44.54Z'
-    LastModifiedDate: '2026-07-06T13:16:54.937Z'
+    LastModifiedDate: '2026-07-08T13:16:43.75Z'
   - VulnerabilityID: CVE-2026-42504
     VendorIDs:
     - GO-2026-5038
@@ -2776,25 +2821,31 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:714f37ecff27d64d45d8e819e1da4713bb77d9f17096a0e6a0739cce54c80ef8
-    Title: Decoding a maliciously-crafted MIME header containing many invalid enc ...
+    Title: 'mime: golang: Golang MIME: Denial of Service via maliciously-crafted MIME header'
     Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
     Severity: HIGH
     CweIDs:
     - CWE-407
     VendorSeverity:
-      amazon: 3
+      amazon: 2
       azure: 3
       bitnami: 3
+      redhat: 3
     CVSS:
       bitnami:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-42504
     - https://go.dev/cl/774481
     - https://go.dev/issue/79217
     - https://groups.google.com/g/golang-announce/c/tKs3rmcBcKw
     - https://nvd.nist.gov/vuln/detail/CVE-2026-42504
     - https://pkg.go.dev/vuln/GO-2026-5038
+    - https://www.cve.org/CVERecord?id=CVE-2026-42504
     PublishedDate: '2026-06-02T23:16:37.927Z'
     LastModifiedDate: '2026-06-17T10:47:56.86Z'
   - VulnerabilityID: CVE-2026-27142
@@ -3193,7 +3244,7 @@
     Severity: MEDIUM
     VendorSeverity:
       alma: 2
-      amazon: 3
+      amazon: 2
       bitnami: 2
       oracle-oval: 2
       redhat: 2
@@ -3291,17 +3342,18 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:ba6cca5b8ba19f309397a7b2a4e227923ac612bd89ac53da24de957286026e2f
-    Title: Root escape via symlink plus trailing slash in os
-    Description: |-
-      On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /.
-
-      For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
+    Title: On Unix systems, opening a file in an os.Root improperly follows symli ...
+    Description: On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /. For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-61
     References:
     - https://go.dev/cl/797880
     - https://go.dev/issue/79005
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-4970
+    PublishedDate: '2026-07-08T17:17:21.31Z'
+    LastModifiedDate: '2026-07-08T20:16:49.06Z'
   - VulnerabilityID: CVE-2026-42505
     VendorIDs:
     - GO-2026-5856
@@ -3322,11 +3374,15 @@
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
     Fingerprint: sha256:fb537c3e8f7128a7a3952c6de19aaae26a4525265b200750013615c1981488bb
-    Title: Invoking Encrypted Client Hello privacy leak in crypto/tls
+    Title: Handshakes which used Encrypted Client Hello could be de-anonymized by ...
     Description: Handshakes which used Encrypted Client Hello could be de-anonymized by a passive network observer due to a disclosure of pre-shared key identities in the unencrypted client hello.
     Severity: UNKNOWN
+    CweIDs:
+    - CWE-201
     References:
     - https://go.dev/cl/775960
     - https://go.dev/issue/79282
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
     - https://pkg.go.dev/vuln/GO-2026-5856
+    PublishedDate: '2026-07-08T17:17:21.497Z'
+    LastModifiedDate: '2026-07-08T20:16:49.52Z'
