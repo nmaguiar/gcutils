@@ -354,24 +354,31 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:1df5aae67ab402683526dd8fe9d2f3cdf54480178d1687b44c76c52c38203a7c
-    Title: OpenFGA Improper Policy Enforcement
+    Title: 'github.com/openfga/openfga: OpenFGA: Incorrect authorization decisions due to case-insensitive comparisons in MySQL datastore'
     Description: OpenFGA is an authorization/permission engine built for developers. Prior to 1.18.0, when MySQL is being used as the datastore and authorization decisions rely on case-sensitive user strings, the tuple, changelog, and authorization_model identifier columns can compare case-distinct values such as user:Alice and user:alice as equivalent, causing two distinct check requests to return the same response. This issue is fixed in 1.18.0.
     Severity: LOW
     CweIDs:
     - CWE-178
     VendorSeverity:
       ghsa: 1
+      redhat: 2
     CVSS:
       ghsa:
         V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N
         V40Score: 2.1
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N
+        V3Score: 5.4
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-55170
     - https://github.com/openfga/helm-charts/commit/96d5517a2693ff5def451dee7d6b9d1baeb281f8
     - https://github.com/openfga/helm-charts/releases/tag/openfga-0.3.9
     - https://github.com/openfga/openfga
     - https://github.com/openfga/openfga/commit/a2e0dbefc3e01a95c785f81a3563bc6571b08b11
     - https://github.com/openfga/openfga/releases/tag/v1.18.0
     - https://github.com/openfga/openfga/security/advisories/GHSA-cf98-j28v-49v6
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-55170
+    - https://www.cve.org/CVERecord?id=CVE-2026-55170
     PublishedDate: '2026-07-09T22:17:05.937Z'
     LastModifiedDate: '2026-07-10T17:49:57.737Z'
   - VulnerabilityID: GO-2026-5932
@@ -425,6 +432,7 @@
     CweIDs:
     - CWE-61
     VendorSeverity:
+      oracle-oval: 3
       redhat: 3
     CVSS:
       redhat:
@@ -435,6 +443,8 @@
     - https://go.dev/cl/797880
     - https://go.dev/issue/79005
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
+    - https://linux.oracle.com/cve/CVE-2026-39822.html
+    - https://linux.oracle.com/errata/ELSA-2026-37435.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-39822
     - https://pkg.go.dev/vuln/GO-2026-4970
     - https://www.cve.org/CVERecord?id=CVE-2026-39822
@@ -613,6 +623,7 @@
     CweIDs:
     - CWE-61
     VendorSeverity:
+      oracle-oval: 3
       redhat: 3
     CVSS:
       redhat:
@@ -623,6 +634,8 @@
     - https://go.dev/cl/797880
     - https://go.dev/issue/79005
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
+    - https://linux.oracle.com/cve/CVE-2026-39822.html
+    - https://linux.oracle.com/errata/ELSA-2026-37435.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-39822
     - https://pkg.go.dev/vuln/GO-2026-4970
     - https://www.cve.org/CVERecord?id=CVE-2026-39822
@@ -1163,7 +1176,7 @@
     - https://go.dev/issue/78760
     - https://groups.google.com/g/golang-announce/c/iI-mYSI0lu8
     - https://linux.oracle.com/cve/CVE-2026-39821.html
-    - https://linux.oracle.com/errata/ELSA-2026-35831.html
+    - https://linux.oracle.com/errata/ELSA-2026-37435.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-39821
     - https://pkg.go.dev/vuln/GO-2026-5026
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-39821.json
@@ -1360,7 +1373,7 @@
     - CWE-1286
     VendorSeverity:
       alma: 3
-      amazon: 3
+      amazon: 2
       azure: 3
       bitnami: 3
       oracle-oval: 3
@@ -2402,6 +2415,7 @@
     CweIDs:
     - CWE-61
     VendorSeverity:
+      oracle-oval: 3
       redhat: 3
     CVSS:
       redhat:
@@ -2412,6 +2426,8 @@
     - https://go.dev/cl/797880
     - https://go.dev/issue/79005
     - https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc
+    - https://linux.oracle.com/cve/CVE-2026-39822.html
+    - https://linux.oracle.com/errata/ELSA-2026-37435.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-39822
     - https://pkg.go.dev/vuln/GO-2026-4970
     - https://www.cve.org/CVERecord?id=CVE-2026-39822
