@@ -397,7 +397,9 @@
 │                       │     │                          osystem%3Ago 
 │                       │     ├ Fingerprint     : sha256:1df5aae67ab402683526dd8fe9d2f3cdf54480178d1687b44c76c5
 │                       │     │                   2c38203a7c 
-│                       │     ├ Title           : OpenFGA Improper Policy Enforcement 
+│                       │     ├ Title           : github.com/openfga/openfga: OpenFGA: Incorrect authorization
+│                       │     │                   decisions due to case-insensitive comparisons in MySQL
+│                       │     │                   datastore 
 │                       │     ├ Description     : OpenFGA is an authorization/permission engine built for
 │                       │     │                   developers. Prior to 1.18.0, when MySQL is being used as the
 │                       │     │                   datastore and authorization decisions rely on case-sensitive
@@ -408,20 +410,27 @@
 │                       │     │                   fixed in 1.18.0. 
 │                       │     ├ Severity        : LOW 
 │                       │     ├ CweIDs           ─ [0]: CWE-178 
-│                       │     ├ VendorSeverity   ─ ghsa: 1 
-│                       │     ├ CVSS             ─ ghsa ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:L/VI:
-│                       │     │                         │            L/VA:N/SC:L/SI:L/SA:N 
-│                       │     │                         ╰ V40Score : 2.1 
-│                       │     ├ References       ╭ [0]: https://github.com/openfga/helm-charts/commit/96d5517a2
+│                       │     ├ VendorSeverity   ╭ ghsa  : 1 
+│                       │     │                  ╰ redhat: 2 
+│                       │     ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:P/VC:L/V
+│                       │     │                  │        │            I:L/VA:N/SC:L/SI:L/SA:N 
+│                       │     │                  │        ╰ V40Score : 2.1 
+│                       │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/
+│                       │     │                           │           A:N 
+│                       │     │                           ╰ V3Score : 5.4 
+│                       │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-55170 
+│                       │     │                  ├ [1]: https://github.com/openfga/helm-charts/commit/96d5517a2
 │                       │     │                  │      693ff5def451dee7d6b9d1baeb281f8 
-│                       │     │                  ├ [1]: https://github.com/openfga/helm-charts/releases/tag/ope
+│                       │     │                  ├ [2]: https://github.com/openfga/helm-charts/releases/tag/ope
 │                       │     │                  │      nfga-0.3.9 
-│                       │     │                  ├ [2]: https://github.com/openfga/openfga 
-│                       │     │                  ├ [3]: https://github.com/openfga/openfga/commit/a2e0dbefc3e01
+│                       │     │                  ├ [3]: https://github.com/openfga/openfga 
+│                       │     │                  ├ [4]: https://github.com/openfga/openfga/commit/a2e0dbefc3e01
 │                       │     │                  │      a95c785f81a3563bc6571b08b11 
-│                       │     │                  ├ [4]: https://github.com/openfga/openfga/releases/tag/v1.18.0 
-│                       │     │                  ╰ [5]: https://github.com/openfga/openfga/security/advisories/
-│                       │     │                         GHSA-cf98-j28v-49v6 
+│                       │     │                  ├ [5]: https://github.com/openfga/openfga/releases/tag/v1.18.0 
+│                       │     │                  ├ [6]: https://github.com/openfga/openfga/security/advisories/
+│                       │     │                  │      GHSA-cf98-j28v-49v6 
+│                       │     │                  ├ [7]: https://nvd.nist.gov/vuln/detail/CVE-2026-55170 
+│                       │     │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-55170 
 │                       │     ├ PublishedDate   : 2026-07-09T22:17:05.937Z 
 │                       │     ╰ LastModifiedDate: 2026-07-10T17:49:57.737Z 
 │                       ├ [5] ╭ VulnerabilityID : GO-2026-5932 
@@ -483,7 +492,8 @@
 │                       │     │                   pointing outside of the root. 
 │                       │     ├ Severity        : HIGH 
 │                       │     ├ CweIDs           ─ [0]: CWE-61 
-│                       │     ├ VendorSeverity   ─ redhat: 3 
+│                       │     ├ VendorSeverity   ╭ oracle-oval: 3 
+│                       │     │                  ╰ redhat     : 3 
 │                       │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/
 │                       │     │                           │           A:H 
 │                       │     │                           ╰ V3Score : 7.8 
@@ -491,9 +501,11 @@
 │                       │     │                  ├ [1]: https://go.dev/cl/797880 
 │                       │     │                  ├ [2]: https://go.dev/issue/79005 
 │                       │     │                  ├ [3]: https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc 
-│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-39822 
-│                       │     │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-4970 
-│                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-39822 
+│                       │     │                  ├ [4]: https://linux.oracle.com/cve/CVE-2026-39822.html 
+│                       │     │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-37435.html 
+│                       │     │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-39822 
+│                       │     │                  ├ [7]: https://pkg.go.dev/vuln/GO-2026-4970 
+│                       │     │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39822 
 │                       │     ├ PublishedDate   : 2026-07-08T17:17:21.31Z 
 │                       │     ╰ LastModifiedDate: 2026-07-10T18:57:32.923Z 
 │                       ╰ [7] ╭ VulnerabilityID : CVE-2026-42505 
@@ -688,7 +700,8 @@
 │                       │     │                   pointing outside of the root. 
 │                       │     ├ Severity        : HIGH 
 │                       │     ├ CweIDs           ─ [0]: CWE-61 
-│                       │     ├ VendorSeverity   ─ redhat: 3 
+│                       │     ├ VendorSeverity   ╭ oracle-oval: 3 
+│                       │     │                  ╰ redhat     : 3 
 │                       │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/
 │                       │     │                           │           A:H 
 │                       │     │                           ╰ V3Score : 7.8 
@@ -696,9 +709,11 @@
 │                       │     │                  ├ [1]: https://go.dev/cl/797880 
 │                       │     │                  ├ [2]: https://go.dev/issue/79005 
 │                       │     │                  ├ [3]: https://groups.google.com/g/golang-announce/c/OrmQE_Yp5Sc 
-│                       │     │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-39822 
-│                       │     │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-4970 
-│                       │     │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-39822 
+│                       │     │                  ├ [4]: https://linux.oracle.com/cve/CVE-2026-39822.html 
+│                       │     │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-37435.html 
+│                       │     │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-39822 
+│                       │     │                  ├ [7]: https://pkg.go.dev/vuln/GO-2026-4970 
+│                       │     │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39822 
 │                       │     ├ PublishedDate   : 2026-07-08T17:17:21.31Z 
 │                       │     ╰ LastModifiedDate: 2026-07-10T18:57:32.923Z 
 │                       ├ [3] ╭ VulnerabilityID : CVE-2026-42504 
@@ -1265,7 +1280,7 @@
                         │      │                  ├ [49]: https://groups.google.com/g/golang-announce/c/iI-mYSI
                         │      │                  │       0lu8 
                         │      │                  ├ [50]: https://linux.oracle.com/cve/CVE-2026-39821.html 
-                        │      │                  ├ [51]: https://linux.oracle.com/errata/ELSA-2026-35831.html 
+                        │      │                  ├ [51]: https://linux.oracle.com/errata/ELSA-2026-37435.html 
                         │      │                  ├ [52]: https://nvd.nist.gov/vuln/detail/CVE-2026-39821 
                         │      │                  ├ [53]: https://pkg.go.dev/vuln/GO-2026-5026 
                         │      │                  ├ [54]: https://security.access.redhat.com/data/csaf/v2/vex/2
@@ -1462,7 +1477,7 @@
                         │      ├ CweIDs           ╭ [0]: CWE-425 
                         │      │                  ╰ [1]: CWE-1286 
                         │      ├ VendorSeverity   ╭ alma       : 3 
-                        │      │                  ├ amazon     : 3 
+                        │      │                  ├ amazon     : 2 
                         │      │                  ├ azure      : 3 
                         │      │                  ├ bitnami    : 3 
                         │      │                  ├ oracle-oval: 3 
@@ -2546,7 +2561,8 @@
                         │      │                   pointing outside of the root. 
                         │      ├ Severity        : HIGH 
                         │      ├ CweIDs           ─ [0]: CWE-61 
-                        │      ├ VendorSeverity   ─ redhat: 3 
+                        │      ├ VendorSeverity   ╭ oracle-oval: 3 
+                        │      │                  ╰ redhat     : 3 
                         │      ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H
                         │      │                           │           /A:H 
                         │      │                           ╰ V3Score : 7.8 
@@ -2555,9 +2571,11 @@
                         │      │                  ├ [2]: https://go.dev/issue/79005 
                         │      │                  ├ [3]: https://groups.google.com/g/golang-announce/c/OrmQE_Yp
                         │      │                  │      5Sc 
-                        │      │                  ├ [4]: https://nvd.nist.gov/vuln/detail/CVE-2026-39822 
-                        │      │                  ├ [5]: https://pkg.go.dev/vuln/GO-2026-4970 
-                        │      │                  ╰ [6]: https://www.cve.org/CVERecord?id=CVE-2026-39822 
+                        │      │                  ├ [4]: https://linux.oracle.com/cve/CVE-2026-39822.html 
+                        │      │                  ├ [5]: https://linux.oracle.com/errata/ELSA-2026-37435.html 
+                        │      │                  ├ [6]: https://nvd.nist.gov/vuln/detail/CVE-2026-39822 
+                        │      │                  ├ [7]: https://pkg.go.dev/vuln/GO-2026-4970 
+                        │      │                  ╰ [8]: https://www.cve.org/CVERecord?id=CVE-2026-39822 
                         │      ├ PublishedDate   : 2026-07-08T17:17:21.31Z 
                         │      ╰ LastModifiedDate: 2026-07-10T18:57:32.923Z 
                         ├ [19] ╭ VulnerabilityID : CVE-2026-39836 
