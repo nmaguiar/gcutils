@@ -647,6 +647,7 @@
       amazon: 2
       azure: 3
       bitnami: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -3078,6 +3079,7 @@
       amazon: 2
       azure: 3
       bitnami: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -4106,6 +4108,7 @@
       amazon: 2
       azure: 3
       bitnami: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -5709,6 +5712,7 @@
       amazon: 2
       azure: 3
       bitnami: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -9213,6 +9217,7 @@
       amazon: 2
       azure: 3
       bitnami: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
@@ -11156,6 +11161,7 @@
       amazon: 2
       azure: 3
       bitnami: 3
+      photon: 3
       redhat: 3
     CVSS:
       bitnami:
