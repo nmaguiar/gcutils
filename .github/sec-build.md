@@ -999,8 +999,8 @@
 │                        │     │                          cosystem%3Ago 
 │                        │     ├ Fingerprint     : sha256:a924d7e0e642c9dd5f48dd66a34a113233cab41acbf279789cd60
 │                        │     │                   35f995e2c61 
-│                        │     ├ Title           : gRPC-Go is the Go language implementation of gRPC. Prior to
-│                        │     │                   1.83.1, in ... 
+│                        │     ├ Title           : google.golang.org/grpc: gRPC-Go: Denial of Service via
+│                        │     │                   HTTP/2 DATA Frame Fragmentation 
 │                        │     ├ Description     : gRPC-Go is the Go language implementation of gRPC. Prior to
 │                        │     │                   1.83.1, internal/transport/transport.go stores each
 │                        │     │                   fragmented HTTP/2 DATA frame as a separate recvMsg in
@@ -1016,22 +1016,28 @@
 │                        │     │                   issue is fixed in version 1.83.1. 
 │                        │     ├ Severity        : HIGH 
 │                        │     ├ CweIDs           ─ [0]: CWE-400 
-│                        │     ├ VendorSeverity   ╭ azure: 3 
-│                        │     │                  ╰ ghsa : 3 
-│                        │     ├ CVSS             ─ ghsa ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI
-│                        │     │                         │            :N/VA:H/SC:N/SI:N/SA:N 
-│                        │     │                         ╰ V40Score : 8.7 
-│                        │     ├ References       ╭ [0]: https://github.com/grpc/grpc-go 
-│                        │     │                  ├ [1]: https://github.com/grpc/grpc-go/commit/7354d9c8debb4bc
+│                        │     ├ VendorSeverity   ╭ azure : 3 
+│                        │     │                  ├ ghsa  : 3 
+│                        │     │                  ╰ redhat: 3 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/
+│                        │     │                  │        │            VI:N/VA:H/SC:N/SI:N/SA:N 
+│                        │     │                  │        ╰ V40Score : 8.7 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:H 
+│                        │     │                           ╰ V3Score : 7.5 
+│                        │     ├ References       ╭ [0]: https://access.redhat.com/security/cve/CVE-2026-84304 
+│                        │     │                  ├ [1]: https://github.com/grpc/grpc-go 
+│                        │     │                  ├ [2]: https://github.com/grpc/grpc-go/commit/7354d9c8debb4bc
 │                        │     │                  │      f2225bf429857078de310c176 
-│                        │     │                  ├ [2]: https://github.com/grpc/grpc-go/commit/8cfeca0e1ee5ea0
+│                        │     │                  ├ [3]: https://github.com/grpc/grpc-go/commit/8cfeca0e1ee5ea0
 │                        │     │                  │      980dcc320e20240fa1079ec77 
-│                        │     │                  ├ [3]: https://github.com/grpc/grpc-go/pull/9331 
-│                        │     │                  ├ [4]: https://github.com/grpc/grpc-go/pull/9333 
-│                        │     │                  ├ [5]: https://github.com/grpc/grpc-go/releases/tag/v1.83.1 
-│                        │     │                  ├ [6]: https://github.com/grpc/grpc-go/security/advisories/GH
+│                        │     │                  ├ [4]: https://github.com/grpc/grpc-go/pull/9331 
+│                        │     │                  ├ [5]: https://github.com/grpc/grpc-go/pull/9333 
+│                        │     │                  ├ [6]: https://github.com/grpc/grpc-go/releases/tag/v1.83.1 
+│                        │     │                  ├ [7]: https://github.com/grpc/grpc-go/security/advisories/GH
 │                        │     │                  │      SA-vp52-pcj8-j9qc 
-│                        │     │                  ╰ [7]: https://nvd.nist.gov/vuln/detail/CVE-2026-84304 
+│                        │     │                  ├ [8]: https://nvd.nist.gov/vuln/detail/CVE-2026-84304 
+│                        │     │                  ╰ [9]: https://www.cve.org/CVERecord?id=CVE-2026-84304 
 │                        │     ├ PublishedDate   : 2026-09-01T19:17:30.743Z 
 │                        │     ╰ LastModifiedDate: 2026-09-09T21:09:13.08Z 
 │                        ├ [4] ╭ VulnerabilityID : CVE-2026-84445 
