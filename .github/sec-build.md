@@ -478,31 +478,38 @@
 │                              │                  ╰ [1]: CWE-248 
 │                              ├ VendorSeverity   ╭ azure : 3 
 │                              │                  ├ ghsa  : 3 
-│                              │                  ╰ redhat: 3 
+│                              │                  ├ redhat: 3 
+│                              │                  ╰ rocky : 3 
 │                              ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/
 │                              │                  │        │            VI:N/VA:H/SC:N/SI:N/SA:N 
 │                              │                  │        ╰ V40Score : 8.7 
 │                              │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                              │                           │           /A:H 
 │                              │                           ╰ V3Score : 7.5 
-│                              ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                              │                  ├ [1] : https://github.com/grpc/grpc-go 
-│                              │                  ├ [2] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
+│                              ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
+│                              │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                              │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                              │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
+│                              │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                              │                  │       26-84445 
+│                              │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                              │                  ├ [6] : https://github.com/grpc/grpc-go 
+│                              │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
 │                              │                  │       992c089fd2a195f041762fffb7 
-│                              │                  ├ [3] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
+│                              │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
 │                              │                  │       08b6b3666dcbf40992b9e932a4 
-│                              │                  ├ [4] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
+│                              │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
 │                              │                  │       8aaeb6e06b47fb249f94e6297f 
-│                              │                  ├ [5] : https://github.com/grpc/grpc-go/issues/9354 
-│                              │                  ├ [6] : https://github.com/grpc/grpc-go/pull/9365 
-│                              │                  ├ [7] : https://github.com/grpc/grpc-go/pull/9366 
-│                              │                  ├ [8] : https://github.com/grpc/grpc-go/pull/9367 
-│                              │                  ├ [9] : https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                              │                  ├ [10]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                              │                  ├ [11]: https://github.com/grpc/grpc-go/security/advisories/G
+│                              │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
+│                              │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
+│                              │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
+│                              │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
+│                              │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                              │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                              │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/G
 │                              │                  │       HSA-2v4p-qf9q-27wj 
-│                              │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                              │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                              │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                              │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                              ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                              ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 ├ [9]  ╭ Target  : usr/share/grafana/data/plugins-bundled/grafana-pyroscope-datasource/gpx_grafana-pyroscope-da
@@ -559,31 +566,38 @@
 │                              │                  ╰ [1]: CWE-248 
 │                              ├ VendorSeverity   ╭ azure : 3 
 │                              │                  ├ ghsa  : 3 
-│                              │                  ╰ redhat: 3 
+│                              │                  ├ redhat: 3 
+│                              │                  ╰ rocky : 3 
 │                              ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/
 │                              │                  │        │            VI:N/VA:H/SC:N/SI:N/SA:N 
 │                              │                  │        ╰ V40Score : 8.7 
 │                              │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                              │                           │           /A:H 
 │                              │                           ╰ V3Score : 7.5 
-│                              ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                              │                  ├ [1] : https://github.com/grpc/grpc-go 
-│                              │                  ├ [2] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
+│                              ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
+│                              │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                              │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                              │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
+│                              │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                              │                  │       26-84445 
+│                              │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                              │                  ├ [6] : https://github.com/grpc/grpc-go 
+│                              │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
 │                              │                  │       992c089fd2a195f041762fffb7 
-│                              │                  ├ [3] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
+│                              │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
 │                              │                  │       08b6b3666dcbf40992b9e932a4 
-│                              │                  ├ [4] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
+│                              │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
 │                              │                  │       8aaeb6e06b47fb249f94e6297f 
-│                              │                  ├ [5] : https://github.com/grpc/grpc-go/issues/9354 
-│                              │                  ├ [6] : https://github.com/grpc/grpc-go/pull/9365 
-│                              │                  ├ [7] : https://github.com/grpc/grpc-go/pull/9366 
-│                              │                  ├ [8] : https://github.com/grpc/grpc-go/pull/9367 
-│                              │                  ├ [9] : https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                              │                  ├ [10]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                              │                  ├ [11]: https://github.com/grpc/grpc-go/security/advisories/G
+│                              │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
+│                              │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
+│                              │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
+│                              │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
+│                              │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                              │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                              │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/G
 │                              │                  │       HSA-2v4p-qf9q-27wj 
-│                              │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                              │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                              │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                              │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                              ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                              ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 ├ [11] ╭ Target         : usr/share/grafana/data/plugins-bundled/jaeger/gpx_grafana-jaeger-datasource_linux_amd64 
@@ -634,31 +648,38 @@
 │                              │                  ╰ [1]: CWE-248 
 │                              ├ VendorSeverity   ╭ azure : 3 
 │                              │                  ├ ghsa  : 3 
-│                              │                  ╰ redhat: 3 
+│                              │                  ├ redhat: 3 
+│                              │                  ╰ rocky : 3 
 │                              ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/
 │                              │                  │        │            VI:N/VA:H/SC:N/SI:N/SA:N 
 │                              │                  │        ╰ V40Score : 8.7 
 │                              │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                              │                           │           /A:H 
 │                              │                           ╰ V3Score : 7.5 
-│                              ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                              │                  ├ [1] : https://github.com/grpc/grpc-go 
-│                              │                  ├ [2] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
+│                              ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
+│                              │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                              │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                              │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
+│                              │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                              │                  │       26-84445 
+│                              │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                              │                  ├ [6] : https://github.com/grpc/grpc-go 
+│                              │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
 │                              │                  │       992c089fd2a195f041762fffb7 
-│                              │                  ├ [3] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
+│                              │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
 │                              │                  │       08b6b3666dcbf40992b9e932a4 
-│                              │                  ├ [4] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
+│                              │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
 │                              │                  │       8aaeb6e06b47fb249f94e6297f 
-│                              │                  ├ [5] : https://github.com/grpc/grpc-go/issues/9354 
-│                              │                  ├ [6] : https://github.com/grpc/grpc-go/pull/9365 
-│                              │                  ├ [7] : https://github.com/grpc/grpc-go/pull/9366 
-│                              │                  ├ [8] : https://github.com/grpc/grpc-go/pull/9367 
-│                              │                  ├ [9] : https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                              │                  ├ [10]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                              │                  ├ [11]: https://github.com/grpc/grpc-go/security/advisories/G
+│                              │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
+│                              │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
+│                              │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
+│                              │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
+│                              │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                              │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                              │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/G
 │                              │                  │       HSA-2v4p-qf9q-27wj 
-│                              │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                              │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                              │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                              │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                              ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                              ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 ├ [12] ╭ Target         : usr/share/grafana/data/plugins-bundled/loki/gpx_grafana-loki-datasource_linux_amd64 
@@ -786,31 +807,38 @@
 │                              │                  ╰ [1]: CWE-248 
 │                              ├ VendorSeverity   ╭ azure : 3 
 │                              │                  ├ ghsa  : 3 
-│                              │                  ╰ redhat: 3 
+│                              │                  ├ redhat: 3 
+│                              │                  ╰ rocky : 3 
 │                              ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/
 │                              │                  │        │            VI:N/VA:H/SC:N/SI:N/SA:N 
 │                              │                  │        ╰ V40Score : 8.7 
 │                              │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                              │                           │           /A:H 
 │                              │                           ╰ V3Score : 7.5 
-│                              ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                              │                  ├ [1] : https://github.com/grpc/grpc-go 
-│                              │                  ├ [2] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
+│                              ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
+│                              │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                              │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                              │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
+│                              │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                              │                  │       26-84445 
+│                              │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                              │                  ├ [6] : https://github.com/grpc/grpc-go 
+│                              │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
 │                              │                  │       992c089fd2a195f041762fffb7 
-│                              │                  ├ [3] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
+│                              │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
 │                              │                  │       08b6b3666dcbf40992b9e932a4 
-│                              │                  ├ [4] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
+│                              │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
 │                              │                  │       8aaeb6e06b47fb249f94e6297f 
-│                              │                  ├ [5] : https://github.com/grpc/grpc-go/issues/9354 
-│                              │                  ├ [6] : https://github.com/grpc/grpc-go/pull/9365 
-│                              │                  ├ [7] : https://github.com/grpc/grpc-go/pull/9366 
-│                              │                  ├ [8] : https://github.com/grpc/grpc-go/pull/9367 
-│                              │                  ├ [9] : https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                              │                  ├ [10]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                              │                  ├ [11]: https://github.com/grpc/grpc-go/security/advisories/G
+│                              │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
+│                              │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
+│                              │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
+│                              │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
+│                              │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                              │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                              │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/G
 │                              │                  │       HSA-2v4p-qf9q-27wj 
-│                              │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                              │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                              │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                              │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                              ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                              ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 ├ [17] ╭ Target         : usr/share/grafana/data/plugins-bundled/stackdriver/gpx_grafana_cloudmonitoring_dataso
@@ -1084,31 +1112,38 @@
 │                        │     │                  ╰ [1]: CWE-248 
 │                        │     ├ VendorSeverity   ╭ azure : 3 
 │                        │     │                  ├ ghsa  : 3 
-│                        │     │                  ╰ redhat: 3 
+│                        │     │                  ├ redhat: 3 
+│                        │     │                  ╰ rocky : 3 
 │                        │     ├ CVSS             ╭ ghsa   ╭ V40Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/
 │                        │     │                  │        │            VI:N/VA:H/SC:N/SI:N/SA:N 
 │                        │     │                  │        ╰ V40Score : 8.7 
 │                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
 │                        │     │                           ╰ V3Score : 7.5 
-│                        │     ├ References       ╭ [0] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                        │     │                  ├ [1] : https://github.com/grpc/grpc-go 
-│                        │     │                  ├ [2] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
+│                        │     ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
+│                        │     │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                        │     │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                        │     │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
+│                        │     │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20
+│                        │     │                  │       26-84445 
+│                        │     │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                        │     │                  ├ [6] : https://github.com/grpc/grpc-go 
+│                        │     │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03b
 │                        │     │                  │       992c089fd2a195f041762fffb7 
-│                        │     │                  ├ [3] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
+│                        │     │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df9
 │                        │     │                  │       08b6b3666dcbf40992b9e932a4 
-│                        │     │                  ├ [4] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
+│                        │     │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2a
 │                        │     │                  │       8aaeb6e06b47fb249f94e6297f 
-│                        │     │                  ├ [5] : https://github.com/grpc/grpc-go/issues/9354 
-│                        │     │                  ├ [6] : https://github.com/grpc/grpc-go/pull/9365 
-│                        │     │                  ├ [7] : https://github.com/grpc/grpc-go/pull/9366 
-│                        │     │                  ├ [8] : https://github.com/grpc/grpc-go/pull/9367 
-│                        │     │                  ├ [9] : https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                        │     │                  ├ [10]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                        │     │                  ├ [11]: https://github.com/grpc/grpc-go/security/advisories/G
+│                        │     │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
+│                        │     │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
+│                        │     │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
+│                        │     │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
+│                        │     │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                        │     │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                        │     │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/G
 │                        │     │                  │       HSA-2v4p-qf9q-27wj 
-│                        │     │                  ├ [12]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                        │     │                  ╰ [13]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                        │     │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                        │     │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                        │     ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                        │     ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 │                        ╰ [5] ╭ VulnerabilityID : CVE-2026-84303 
