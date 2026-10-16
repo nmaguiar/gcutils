@@ -137,9 +137,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:d0120b15bc935dfa3be0f921b5586e817424e2264312b87bbac8
 │                        │      │                   d7bf733bb87d 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -407,9 +407,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:c20a5311b89183a1e3a7d851ea8f179daf8ebd640d6efe400e1d
 │                        │      │                   6809e3044d7b 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -963,9 +963,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:9761e7bb40fb64f63145c2828d7f3214809650d66b945ca3f717
 │                        │      │                   d0a421597260 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -1233,9 +1233,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:92e1d6dbcaa0fd3707c6926066d4b49edaf533aa2be9a4429f45
 │                        │      │                   528e5015dad2 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -1997,9 +1997,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:59acb4739b83afb1a184b1d539ba17b105f699a3702c69208c68
 │                        │      │                   5a924c7bec33 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -2267,9 +2267,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:af0a1f88376c9b01f31552a1faf250f201fddbc7c0f657c62126
 │                        │      │                   a4b5740ba54b 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -2824,9 +2824,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:e3e7a383e95e32e3816f240d984db5e4a14d9f5c4d526818ab38
 │                        │      │                   e9a2753b18eb 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -3094,9 +3094,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:ec49a75b41680bcf97f6e477f4e23f8c763f808c6fd237fb6cd1
 │                        │      │                   e7fa84eb748b 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -3621,9 +3621,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:88f68cb10be27365c2473a8ebf72a21f2d74d3f6ca7a218f8d9e
 │                        │      │                   ec96d8eba97d 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -3875,7 +3875,8 @@
 │                        │      ├ Severity        : HIGH 
 │                        │      ├ CweIDs           ╭ [0]: CWE-129 
 │                        │      │                  ╰ [1]: CWE-248 
-│                        │      ├ VendorSeverity   ╭ azure : 3 
+│                        │      ├ VendorSeverity   ╭ alma  : 3 
+│                        │      │                  ├ azure : 3 
 │                        │      │                  ├ ghsa  : 3 
 │                        │      │                  ├ redhat: 3 
 │                        │      │                  ╰ rocky : 3 
@@ -3886,29 +3887,32 @@
 │                        │      │                           │           N/A:H 
 │                        │      │                           ╰ V3Score : 7.5 
 │                        │      ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
-│                        │      │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                        │      │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
-│                        │      │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
-│                        │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
+│                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2026:76744 
+│                        │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                        │      │                  ├ [3] : https://bugzilla.redhat.com/2533175 
+│                        │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                        │      │                  ├ [5] : https://creativecommons.org/licenses/by/4.0/ 
+│                        │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
 │                        │      │                  │       026-84445 
-│                        │      │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
-│                        │      │                  ├ [6] : https://github.com/grpc/grpc-go 
-│                        │      │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03
+│                        │      │                  ├ [7] : https://errata.almalinux.org/9/ALSA-2026-76744.html 
+│                        │      │                  ├ [8] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go 
+│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/commit/3822494d8ea03
 │                        │      │                  │       b992c089fd2a195f041762fffb7 
-│                        │      │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df
+│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/commit/8668b69c167df
 │                        │      │                  │       908b6b3666dcbf40992b9e932a4 
-│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2
+│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/commit/93e31b48545e2
 │                        │      │                  │       a8aaeb6e06b47fb249f94e6297f 
-│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
-│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
-│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
-│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
-│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/
+│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/issues/9354 
+│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/pull/9365 
+│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/pull/9366 
+│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/pull/9367 
+│                        │      │                  ├ [17]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                        │      │                  ├ [18]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                        │      │                  ├ [19]: https://github.com/grpc/grpc-go/security/advisories/
 │                        │      │                  │       GHSA-2v4p-qf9q-27wj 
-│                        │      │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                        │      │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                        │      │                  ├ [20]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                        │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                        │      ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                        │      ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 │                        ├ [6]  ╭ VulnerabilityID : CVE-2026-78667 
@@ -3970,9 +3974,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:c4f34473debb039df47c1aebeccd819aba73c7718c99d02b0272
 │                        │      │                   0e423bf0aeba 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -4497,9 +4501,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:03d4f98de67ff6248c7bb1fe764949f266aaac23881a23da4735
 │                        │      │                   b661f32b75cd 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -4767,9 +4771,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:98a29f53000456eb539de2fe93b05c72e83928a79d8433d6a482
 │                        │      │                   d6977e962558 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -5294,9 +5298,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:16a44beb37c536c91102527f49937f4cd62b69cc734b4cbb20f9
 │                        │      │                   a17a1fe4d5a8 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -5548,7 +5552,8 @@
 │                        │      ├ Severity        : HIGH 
 │                        │      ├ CweIDs           ╭ [0]: CWE-129 
 │                        │      │                  ╰ [1]: CWE-248 
-│                        │      ├ VendorSeverity   ╭ azure : 3 
+│                        │      ├ VendorSeverity   ╭ alma  : 3 
+│                        │      │                  ├ azure : 3 
 │                        │      │                  ├ ghsa  : 3 
 │                        │      │                  ├ redhat: 3 
 │                        │      │                  ╰ rocky : 3 
@@ -5559,29 +5564,32 @@
 │                        │      │                           │           N/A:H 
 │                        │      │                           ╰ V3Score : 7.5 
 │                        │      ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
-│                        │      │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                        │      │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
-│                        │      │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
-│                        │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
+│                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2026:76744 
+│                        │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                        │      │                  ├ [3] : https://bugzilla.redhat.com/2533175 
+│                        │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                        │      │                  ├ [5] : https://creativecommons.org/licenses/by/4.0/ 
+│                        │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
 │                        │      │                  │       026-84445 
-│                        │      │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
-│                        │      │                  ├ [6] : https://github.com/grpc/grpc-go 
-│                        │      │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03
+│                        │      │                  ├ [7] : https://errata.almalinux.org/9/ALSA-2026-76744.html 
+│                        │      │                  ├ [8] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go 
+│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/commit/3822494d8ea03
 │                        │      │                  │       b992c089fd2a195f041762fffb7 
-│                        │      │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df
+│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/commit/8668b69c167df
 │                        │      │                  │       908b6b3666dcbf40992b9e932a4 
-│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2
+│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/commit/93e31b48545e2
 │                        │      │                  │       a8aaeb6e06b47fb249f94e6297f 
-│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
-│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
-│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
-│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
-│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/
+│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/issues/9354 
+│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/pull/9365 
+│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/pull/9366 
+│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/pull/9367 
+│                        │      │                  ├ [17]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                        │      │                  ├ [18]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                        │      │                  ├ [19]: https://github.com/grpc/grpc-go/security/advisories/
 │                        │      │                  │       GHSA-2v4p-qf9q-27wj 
-│                        │      │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                        │      │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                        │      │                  ├ [20]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                        │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                        │      ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                        │      ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 │                        ├ [6]  ╭ VulnerabilityID : CVE-2026-78667 
@@ -5643,9 +5651,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:60e8e874e2867e135bbc72b00bd086114c6b299857d5829c2943
 │                        │      │                   57534602f10f 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -6169,9 +6177,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:ac22a1491915112e1cdf2e2b0392404a3b101b55aa584309eeec
 │                        │      │                   b952c5e599db 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -6423,7 +6431,8 @@
 │                        │      ├ Severity        : HIGH 
 │                        │      ├ CweIDs           ╭ [0]: CWE-129 
 │                        │      │                  ╰ [1]: CWE-248 
-│                        │      ├ VendorSeverity   ╭ azure : 3 
+│                        │      ├ VendorSeverity   ╭ alma  : 3 
+│                        │      │                  ├ azure : 3 
 │                        │      │                  ├ ghsa  : 3 
 │                        │      │                  ├ redhat: 3 
 │                        │      │                  ╰ rocky : 3 
@@ -6434,29 +6443,32 @@
 │                        │      │                           │           N/A:H 
 │                        │      │                           ╰ V3Score : 7.5 
 │                        │      ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
-│                        │      │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                        │      │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
-│                        │      │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
-│                        │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
+│                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2026:76744 
+│                        │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                        │      │                  ├ [3] : https://bugzilla.redhat.com/2533175 
+│                        │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                        │      │                  ├ [5] : https://creativecommons.org/licenses/by/4.0/ 
+│                        │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
 │                        │      │                  │       026-84445 
-│                        │      │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
-│                        │      │                  ├ [6] : https://github.com/grpc/grpc-go 
-│                        │      │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03
+│                        │      │                  ├ [7] : https://errata.almalinux.org/9/ALSA-2026-76744.html 
+│                        │      │                  ├ [8] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go 
+│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/commit/3822494d8ea03
 │                        │      │                  │       b992c089fd2a195f041762fffb7 
-│                        │      │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df
+│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/commit/8668b69c167df
 │                        │      │                  │       908b6b3666dcbf40992b9e932a4 
-│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2
+│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/commit/93e31b48545e2
 │                        │      │                  │       a8aaeb6e06b47fb249f94e6297f 
-│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
-│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
-│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
-│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
-│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/
+│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/issues/9354 
+│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/pull/9365 
+│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/pull/9366 
+│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/pull/9367 
+│                        │      │                  ├ [17]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                        │      │                  ├ [18]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                        │      │                  ├ [19]: https://github.com/grpc/grpc-go/security/advisories/
 │                        │      │                  │       GHSA-2v4p-qf9q-27wj 
-│                        │      │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                        │      │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                        │      │                  ├ [20]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                        │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                        │      ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                        │      ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 │                        ├ [6]  ╭ VulnerabilityID : CVE-2026-78667 
@@ -6518,9 +6530,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:6a4ee18fc77d98291c83c111f28a1595f1f7605ab524ead7a1da
 │                        │      │                   27100aef5d47 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -7074,9 +7086,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:007c9385291f55c5df3f44f81e3796ea2a166ba5c312d7753aab
 │                        │      │                   aa1aeb052daa 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -7344,9 +7356,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:945c3403ee00cfa4219291cd2b99f243c2f0a4a6e86db9e7aa8b
 │                        │      │                   5ae31f2c829c 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -7900,9 +7912,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:ec640583d5db4ef0eacb0f9a3c8b16dbd8ad04a49a065a826f27
 │                        │      │                   9ee19fc4cd26 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -8170,9 +8182,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:b367ee6b4f688d73e216517ef704b50a6d859d4474ed59316ead
 │                        │      │                   9bd58dcfd5ae 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -8696,9 +8708,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:eac95a6b3a05ad71745f820112189294745eb31c59d8d87bfaae
 │                        │      │                   171231d1899e 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -8966,9 +8978,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:2588adb09f584545ae31eff1a6a4fed4bee7a2dbd3d78a307835
 │                        │      │                   e787b4006eb6 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -9493,9 +9505,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:69be71244faf5b65e9087182a1eb31c01ae0a13833e79c340fe8
 │                        │      │                   eb557f069b51 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -9763,9 +9775,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:0bc33db0c52f054130f0e9cb70d01d23476cdf9d8f02d287c5d4
 │                        │      │                   dcfb1a88ffd4 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -10290,9 +10302,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:c92421870be69525c020ac616634464fffaa3bd9c5ab47e7899f
 │                        │      │                   d1d37a033bce 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -10544,7 +10556,8 @@
 │                        │      ├ Severity        : HIGH 
 │                        │      ├ CweIDs           ╭ [0]: CWE-129 
 │                        │      │                  ╰ [1]: CWE-248 
-│                        │      ├ VendorSeverity   ╭ azure : 3 
+│                        │      ├ VendorSeverity   ╭ alma  : 3 
+│                        │      │                  ├ azure : 3 
 │                        │      │                  ├ ghsa  : 3 
 │                        │      │                  ├ redhat: 3 
 │                        │      │                  ╰ rocky : 3 
@@ -10555,29 +10568,32 @@
 │                        │      │                           │           N/A:H 
 │                        │      │                           ╰ V3Score : 7.5 
 │                        │      ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
-│                        │      │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                        │      │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
-│                        │      │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
-│                        │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
+│                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2026:76744 
+│                        │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                        │      │                  ├ [3] : https://bugzilla.redhat.com/2533175 
+│                        │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                        │      │                  ├ [5] : https://creativecommons.org/licenses/by/4.0/ 
+│                        │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
 │                        │      │                  │       026-84445 
-│                        │      │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
-│                        │      │                  ├ [6] : https://github.com/grpc/grpc-go 
-│                        │      │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03
+│                        │      │                  ├ [7] : https://errata.almalinux.org/9/ALSA-2026-76744.html 
+│                        │      │                  ├ [8] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go 
+│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/commit/3822494d8ea03
 │                        │      │                  │       b992c089fd2a195f041762fffb7 
-│                        │      │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df
+│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/commit/8668b69c167df
 │                        │      │                  │       908b6b3666dcbf40992b9e932a4 
-│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2
+│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/commit/93e31b48545e2
 │                        │      │                  │       a8aaeb6e06b47fb249f94e6297f 
-│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
-│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
-│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
-│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
-│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/
+│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/issues/9354 
+│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/pull/9365 
+│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/pull/9366 
+│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/pull/9367 
+│                        │      │                  ├ [17]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                        │      │                  ├ [18]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                        │      │                  ├ [19]: https://github.com/grpc/grpc-go/security/advisories/
 │                        │      │                  │       GHSA-2v4p-qf9q-27wj 
-│                        │      │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                        │      │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                        │      │                  ├ [20]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                        │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                        │      ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                        │      ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 │                        ├ [6]  ╭ VulnerabilityID : CVE-2026-78667 
@@ -10639,9 +10655,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:4a671357b2f8723025470a6127670809dbf9e438da19e58be507
 │                        │      │                   bf04e7a5e60a 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -11177,7 +11193,7 @@
 │                        │      ├ Severity        : MEDIUM 
 │                        │      ├ CweIDs           ─ [0]: CWE-770 
 │                        │      ├ VendorSeverity   ╭ alma       : 3 
-│                        │      │                  ├ amazon     : 3 
+│                        │      │                  ├ amazon     : 2 
 │                        │      │                  ├ azure      : 2 
 │                        │      │                  ├ oracle-oval: 3 
 │                        │      │                  ├ redhat     : 2 
@@ -11261,7 +11277,7 @@
 │                        │      │                   down the connection. 
 │                        │      ├ Severity        : MEDIUM 
 │                        │      ├ CweIDs           ─ [0]: CWE-770 
-│                        │      ├ VendorSeverity   ╭ amazon: 3 
+│                        │      ├ VendorSeverity   ╭ amazon: 2 
 │                        │      │                  ├ azure : 2 
 │                        │      │                  ╰ redhat: 2 
 │                        │      ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
@@ -11326,9 +11342,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:af534fb251baa136bc09139a3266260831733fa46cb86d5db010
 │                        │      │                   fb558863866d 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -11642,7 +11658,8 @@
 │                        │      ├ Severity        : HIGH 
 │                        │      ├ CweIDs           ╭ [0]: CWE-129 
 │                        │      │                  ╰ [1]: CWE-248 
-│                        │      ├ VendorSeverity   ╭ azure : 3 
+│                        │      ├ VendorSeverity   ╭ alma  : 3 
+│                        │      │                  ├ azure : 3 
 │                        │      │                  ├ ghsa  : 3 
 │                        │      │                  ├ redhat: 3 
 │                        │      │                  ╰ rocky : 3 
@@ -11653,29 +11670,32 @@
 │                        │      │                           │           N/A:H 
 │                        │      │                           ╰ V3Score : 7.5 
 │                        │      ├ References       ╭ [0] : https://access.redhat.com/errata/RHSA-2026:76743 
-│                        │      │                  ├ [1] : https://access.redhat.com/security/cve/CVE-2026-84445 
-│                        │      │                  ├ [2] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
-│                        │      │                  ├ [3] : https://creativecommons.org/licenses/by/4.0/ 
-│                        │      │                  ├ [4] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
+│                        │      │                  ├ [1] : https://access.redhat.com/errata/RHSA-2026:76744 
+│                        │      │                  ├ [2] : https://access.redhat.com/security/cve/CVE-2026-84445 
+│                        │      │                  ├ [3] : https://bugzilla.redhat.com/2533175 
+│                        │      │                  ├ [4] : https://bugzilla.redhat.com/show_bug.cgi?id=2533175 
+│                        │      │                  ├ [5] : https://creativecommons.org/licenses/by/4.0/ 
+│                        │      │                  ├ [6] : https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2
 │                        │      │                  │       026-84445 
-│                        │      │                  ├ [5] : https://errata.rockylinux.org/RLSA-2026:76743 
-│                        │      │                  ├ [6] : https://github.com/grpc/grpc-go 
-│                        │      │                  ├ [7] : https://github.com/grpc/grpc-go/commit/3822494d8ea03
+│                        │      │                  ├ [7] : https://errata.almalinux.org/9/ALSA-2026-76744.html 
+│                        │      │                  ├ [8] : https://errata.rockylinux.org/RLSA-2026:76743 
+│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go 
+│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/commit/3822494d8ea03
 │                        │      │                  │       b992c089fd2a195f041762fffb7 
-│                        │      │                  ├ [8] : https://github.com/grpc/grpc-go/commit/8668b69c167df
+│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/commit/8668b69c167df
 │                        │      │                  │       908b6b3666dcbf40992b9e932a4 
-│                        │      │                  ├ [9] : https://github.com/grpc/grpc-go/commit/93e31b48545e2
+│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/commit/93e31b48545e2
 │                        │      │                  │       a8aaeb6e06b47fb249f94e6297f 
-│                        │      │                  ├ [10]: https://github.com/grpc/grpc-go/issues/9354 
-│                        │      │                  ├ [11]: https://github.com/grpc/grpc-go/pull/9365 
-│                        │      │                  ├ [12]: https://github.com/grpc/grpc-go/pull/9366 
-│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/pull/9367 
-│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
-│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
-│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/security/advisories/
+│                        │      │                  ├ [13]: https://github.com/grpc/grpc-go/issues/9354 
+│                        │      │                  ├ [14]: https://github.com/grpc/grpc-go/pull/9365 
+│                        │      │                  ├ [15]: https://github.com/grpc/grpc-go/pull/9366 
+│                        │      │                  ├ [16]: https://github.com/grpc/grpc-go/pull/9367 
+│                        │      │                  ├ [17]: https://github.com/grpc/grpc-go/releases/tag/v1.82.2 
+│                        │      │                  ├ [18]: https://github.com/grpc/grpc-go/releases/tag/v1.83.2 
+│                        │      │                  ├ [19]: https://github.com/grpc/grpc-go/security/advisories/
 │                        │      │                  │       GHSA-2v4p-qf9q-27wj 
-│                        │      │                  ├ [17]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
-│                        │      │                  ╰ [18]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
+│                        │      │                  ├ [20]: https://nvd.nist.gov/vuln/detail/CVE-2026-84445 
+│                        │      │                  ╰ [21]: https://www.cve.org/CVERecord?id=CVE-2026-84445 
 │                        │      ├ PublishedDate   : 2026-09-14T17:17:51.743Z 
 │                        │      ╰ LastModifiedDate: 2026-09-25T14:10:13.927Z 
 │                        ├ [10] ╭ VulnerabilityID : CVE-2026-84303 
@@ -11791,9 +11811,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:fac0046e3ddc7835c21fac13f45e6629b2bb201d3c1259b57bad
 │                        │      │                   dc98ecfffd47 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -12441,9 +12461,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:c64c69123ee6c46a9ae5382dcde9da259970a3852758973f0751
 │                        │      │                   b84108283561 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -12711,9 +12731,9 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:1c06fd424902a85c1c231e7577f43cd519fe1f42200d05587cc6
 │                        │      │                   6d538131b388 
-│                        │      ├ Title           : net/http: net/http/internal/http2: golang:
-│                        │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-│                        │      │                   excessive HTTP/2 SETTINGS frames 
+│                        │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+│                        │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+│                        │      │                   frames 
 │                        │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
 │                        │      │                    in the client or server by opening a large number of
 │                        │      │                   streams and then sending many small SETTINGS frames
@@ -13237,9 +13257,9 @@
                          │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
                          │      ├ Fingerprint     : sha256:0116a9c867d5139483dd2ee8a224754dfeef934c287dba1f37fc
                          │      │                   800f2ea96f6f 
-                         │      ├ Title           : net/http: net/http/internal/http2: golang:
-                         │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-                         │      │                   excessive HTTP/2 SETTINGS frames 
+                         │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+                         │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+                         │      │                   frames 
                          │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
                          │      │                    in the client or server by opening a large number of
                          │      │                   streams and then sending many small SETTINGS frames
@@ -13507,9 +13527,9 @@
                          │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
                          │      ├ Fingerprint     : sha256:33d37567e99077d7b0861cbc4966c345d7962aa324617d39b239
                          │      │                   e9aa64167591 
-                         │      ├ Title           : net/http: net/http/internal/http2: golang:
-                         │      │                   golang.org/x/net/http2: net/http: Denial of Service via
-                         │      │                   excessive HTTP/2 SETTINGS frames 
+                         │      ├ Title           : net/http: net/http/internal/http2: golang.org/x/net/http2:
+                         │      │                   net/http: Denial of Service via excessive HTTP/2 SETTINGS
+                         │      │                   frames 
                          │      ├ Description     : A malicious HTTP/2 peer can cause excessive CPU consumption
                          │      │                    in the client or server by opening a large number of
                          │      │                   streams and then sending many small SETTINGS frames
