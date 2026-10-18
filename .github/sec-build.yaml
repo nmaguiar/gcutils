@@ -425,9 +425,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -471,7 +476,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -479,6 +490,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -510,13 +522,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -548,9 +567,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -594,8 +618,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -637,9 +666,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -681,9 +714,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -727,8 +765,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -768,9 +810,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -812,7 +858,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -820,6 +872,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -851,13 +904,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -889,9 +949,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -935,9 +1000,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -979,12 +1048,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -1016,8 +1091,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -1031,6 +1110,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.27.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.27.1
+      UID: b0c69f37f680b0dc
+    InstalledVersion: v1.27.1
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:637f83644096ff0149f82838cb9421e89efe8cf98f6478e578355ff070c775b4
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -1057,8 +1175,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -1100,8 +1223,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -1115,38 +1242,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.27.1
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.27.1
-      UID: b0c69f37f680b0dc
-    InstalledVersion: v1.27.1
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:637f83644096ff0149f82838cb9421e89efe8cf98f6478e578355ff070c775b4
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/bin/promtool
   Class: lang-pkgs
   Type: gobinary
@@ -1203,9 +1298,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -1249,7 +1349,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -1257,6 +1363,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -1288,13 +1395,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -1326,9 +1440,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -1372,8 +1491,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -1415,9 +1539,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -1459,9 +1587,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -1505,8 +1638,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -1546,9 +1683,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -1590,7 +1731,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -1598,6 +1745,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -1629,13 +1777,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -1667,9 +1822,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -1713,9 +1873,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -1757,12 +1921,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -1794,8 +1964,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -1809,6 +1983,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.27.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.27.1
+      UID: 39e11358af2751b8
+    InstalledVersion: v1.27.1
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:18b0038d6fc9c44f6b0c3800a12d3ccfbb56b8922aa85afe6c2e1b4019529507
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -1835,8 +2048,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -1878,8 +2096,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -1893,43 +2115,57 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.27.1
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.27.1
-      UID: 39e11358af2751b8
-    InstalledVersion: v1.27.1
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:18b0038d6fc9c44f6b0c3800a12d3ccfbb56b8922aa85afe6c2e1b4019529507
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/bin/grafana
   Class: lang-pkgs
   Type: gobinary
   Packages: []
   Vulnerabilities:
+  - VulnerabilityID: CVE-2026-100349
+    VendorIDs:
+    - GHSA-74vm-87hj-r66f
+    PkgID: github.com/getkin/kin-openapi@v0.144.0
+    PkgName: github.com/getkin/kin-openapi
+    PkgIdentifier:
+      PURL: pkg:golang/github.com/getkin/kin-openapi@v0.144.0
+      UID: 395b8e43d9bf5e84
+    InstalledVersion: v0.144.0
+    FixedVersion: 0.146.0
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    SeveritySource: ghsa
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-100349
+    DataSource:
+      ID: ghsa
+      Name: GitHub Security Advisory Go
+      URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
+    Fingerprint: sha256:7c330c84f9eec87b0304c5f3a8cec213343a338212046d81937fc6f26d8cb679
+    Title: 'github.com/getkin/kin-openapi: kin-openapi: Denial of Service via nil pointer dereference in response validation'
+    Description: kin-openapi is a Go project for handling OpenAPI files. Prior to 0.146.0, openapi3filter.ValidateResponse passes a nil response header schema to decodeValue when an OpenAPI document declares the header with content instead of schema. The document passes validation, but every response validation for the affected operation dereferences the nil schema and panics even when the response does not contain the declared header. Applications that ingest an untrusted specification can expose this as remote availability impact, while applications using only trusted local specifications still crash when the affected operation is exercised. This issue is fixed in version 0.146.0.
+    Severity: HIGH
+    CweIDs:
+    - CWE-476
+    VendorSeverity:
+      ghsa: 3
+      redhat: 3
+    CVSS:
+      ghsa:
+        V40Vector: CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N
+        V40Score: 8.2
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
+    References:
+    - https://access.redhat.com/security/cve/CVE-2026-100349
+    - https://github.com/getkin/kin-openapi
+    - https://github.com/getkin/kin-openapi/commit/f5441d67f855ed34d975b3b85665764644ab1459
+    - https://github.com/getkin/kin-openapi/releases/tag/v0.146.0
+    - https://github.com/getkin/kin-openapi/security/advisories/GHSA-74vm-87hj-r66f
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-100349
+    - https://www.cve.org/CVERecord?id=CVE-2026-100349
+    PublishedDate: '2026-10-15T16:17:30.64Z'
+    LastModifiedDate: '2026-10-16T18:17:10.35Z'
   - VulnerabilityID: CVE-2026-100351
     VendorIDs:
     - GHSA-23vg-4cjm-66q5
@@ -1951,7 +2187,7 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:2a0d33c946d28c89f839d132af19b114ad93dc6820ad0f3866a8c658a6909b6b
-    Title: 'kin-openapi: ValidationHandler security-requirement bypass via encoded-path operation confusion'
+    Title: 'github.com/getkin/kin-openapi: kin-openapi: Authentication bypass via URL path decoding discrepancy'
     Description: kin-openapi is a Go project for handling OpenAPI files. From 0.144.0 until 0.147.0, openapi3filter.ValidationHandler validates an operation selected from decoded URL.Path while a downstream gorilla/mux router configured with UseEncodedPath can dispatch a different operation selected from URL.RawPath. When a public exact route and a protected parameterized route use the same method and overlap after decoding, an unauthenticated remote request containing an encoded path separator can be validated as public and then dispatched to the protected handler without invoking the configured AuthenticationFunc. The reachable path parameter is constrained to an encoded representation that decodes to the public literal route, and proxies that canonicalize the URI before forwarding prevent this specific mismatch. This issue is fixed in version 0.147.0.
     Severity: HIGH
     CweIDs:
@@ -1959,16 +2195,22 @@
     - CWE-436
     VendorSeverity:
       ghsa: 3
+      redhat: 3
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 7.4
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+        V3Score: 7.4
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-100351
     - https://github.com/getkin/kin-openapi
     - https://github.com/getkin/kin-openapi/commit/eda80e2676e9f577ceed2dd80e64f16083edb041
     - https://github.com/getkin/kin-openapi/releases/tag/v0.147.0
     - https://github.com/getkin/kin-openapi/security/advisories/GHSA-23vg-4cjm-66q5
     - https://nvd.nist.gov/vuln/detail/CVE-2026-100351
+    - https://www.cve.org/CVERecord?id=CVE-2026-100351
     PublishedDate: '2026-10-15T16:17:31.11Z'
     LastModifiedDate: '2026-10-15T17:17:07.52Z'
   - VulnerabilityID: CVE-2026-100352
@@ -1992,23 +2234,29 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:424749479d0ab66ba6fb8c9de9a1006622329d6653ba223b953826368efc6548
-    Title: 'kin-openapi: YAML NaN/Inf Values Bypass Built-in Guards and Panic via OAS 3.1 Validation Path'
+    Title: 'github.com/getkin/kin-openapi: kin-openapi: Denial of Service via improper handling of non-finite numeric values'
     Description: kin-openapi is a Go project for handling OpenAPI files. Prior to 0.148.0, the OpenAPI 3.1 validation path passes YAML NaN and infinity numeric values to santhosh-tekuri/jsonschema v6.0.2 without applying kin-openapi's existing finite-number guards. A remote unauthenticated client can send an application/yaml or application/x-yaml request body containing .nan, .inf, or -.inf to an operation with a numeric constraint, causing the dependency to create and dereference a nil big.Rat during ValidateRequest. Standard net/http servers recover the panic per connection, while other hosts or application goroutines may terminate the process. This issue is fixed in version 0.148.0.
     Severity: HIGH
     CweIDs:
     - CWE-754
     VendorSeverity:
       ghsa: 3
+      redhat: 3
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-100352
     - https://github.com/getkin/kin-openapi
     - https://github.com/getkin/kin-openapi/commit/4487f198ab8be0c37d6ca72c54f5dca4dc25270e
     - https://github.com/getkin/kin-openapi/releases/tag/v0.148.0
     - https://github.com/getkin/kin-openapi/security/advisories/GHSA-rj39-cv6w-8wv7
     - https://nvd.nist.gov/vuln/detail/CVE-2026-100352
+    - https://www.cve.org/CVERecord?id=CVE-2026-100352
     PublishedDate: '2026-10-15T16:17:31.307Z'
     LastModifiedDate: '2026-10-15T16:17:31.45Z'
   - VulnerabilityID: CVE-2026-100353
@@ -2032,23 +2280,29 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:888a4855c2413e21d276fbbbf61dcc5a038dad4c88f62ae858ddb8ae6dfd21c2
-    Title: 'kin-openapi: Incomplete Fix for GHSA-p6wj-qrr4-pgh5: Three Unpatched nil-Items Panic Paths in openapi3filter'
+    Title: 'github.com/getkin/kin-openapi: kin-openapi: Denial of Service via nil-pointer dereference in request decoding'
     Description: kin-openapi is a Go project for handling OpenAPI files. From 0.136.0 until 0.149.0, three openapi3filter decoder paths that were missed by the fix for GHSA-p6wj-qrr4-pgh5 lack a nil-items guard for legal OpenAPI 3.1 array schemas. An unauthenticated remote client can trigger a deterministic nil-pointer panic through an array query parameter, a deepObject query parameter containing an array property, or an application/x-www-form-urlencoded request body whose array property appears inside an allOf, anyOf, or oneOf subschema. The query and composed-body paths reach urlValuesDecoder.parseArray, while the deepObject path reaches buildResObj, and all pass a nil items schema into code that dereferences it. This issue is fixed in version 0.149.0.
     Severity: HIGH
     CweIDs:
     - CWE-476
     VendorSeverity:
       ghsa: 3
+      redhat: 3
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-100353
     - https://github.com/getkin/kin-openapi
     - https://github.com/getkin/kin-openapi/commit/9814d1f2b212f3508bf52296aa9e248b2122a5a9
     - https://github.com/getkin/kin-openapi/releases/tag/v0.149.0
     - https://github.com/getkin/kin-openapi/security/advisories/GHSA-vrcc-3ch7-hppw
     - https://nvd.nist.gov/vuln/detail/CVE-2026-100353
+    - https://www.cve.org/CVERecord?id=CVE-2026-100353
     PublishedDate: '2026-10-15T17:17:07.627Z'
     LastModifiedDate: '2026-10-15T17:17:07.747Z'
   - VulnerabilityID: CVE-2026-100354
@@ -2072,23 +2326,29 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:32ac583c192003da7530d2d33b9cc01e4d592eea7934e37f8f1cf40d24f1ac84
-    Title: 'kin-openapi: Uncontrolled Recursion on Circular allOf/anyOf/oneOf Schemas Causes Fatal Process Crash'
+    Title: 'github.com/getkin/kin-openapi: kin-openapi: Denial of Service via unbounded recursion during schema validation'
     Description: kin-openapi is a Go project for handling OpenAPI files. Prior to 0.149.0, runtime request, response, and direct schema validation lacks cycle detection when an allOf, anyOf, or oneOf chain refers back to an ancestor schema, even though loading and document validation accept the circular reference. A request or response that reaches the affected schema causes unbounded recursion in Schema.visitJSON or openapi3filter.decodeValue and exhausts the Go goroutine stack. The resulting fatal stack overflow cannot be caught with recover and terminates the entire process, including unrelated requests. This issue is fixed in version 0.149.0.
     Severity: HIGH
     CweIDs:
     - CWE-674
     VendorSeverity:
       ghsa: 3
+      redhat: 3
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-100354
     - https://github.com/getkin/kin-openapi
     - https://github.com/getkin/kin-openapi/commit/9245cef66c840e27a08409a8a5cd0ee930c5bcff
     - https://github.com/getkin/kin-openapi/releases/tag/v0.149.0
     - https://github.com/getkin/kin-openapi/security/advisories/GHSA-g8cf-rcjf-c8cf
     - https://nvd.nist.gov/vuln/detail/CVE-2026-100354
+    - https://www.cve.org/CVERecord?id=CVE-2026-100354
     PublishedDate: '2026-10-15T17:17:07.78Z'
     LastModifiedDate: '2026-10-15T19:17:12.943Z'
   - VulnerabilityID: CVE-2026-100347
@@ -2112,7 +2372,7 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:8e830bff6b701564237e8f9ee554f58ad9f418c534e2644453232e52110332fa
-    Title: 'kin-openapi: Unauthenticated panic (DoS) in openapi3filter legacy router via non-canonical/unsupported HTTP method on a static path'
+    Title: 'github.com/getkin/kin-openapi: kin-openapi: Denial of Service via unsupported HTTP methods on static paths'
     Description: kin-openapi is a Go project for handling OpenAPI files. Prior to 0.145.0, openapi3filter.ValidationHandler uses the routers/legacy router, which passes an unsupported or non-canonical HTTP method for an existing static path to openapi3.PathItem.GetOperation. The default branch of GetOperation panics before authentication runs, so an unauthenticated remote client can repeatedly send methods such as PROPFIND or lowercase get to abort connections and generate stack-trace log growth. The specific panic requires an exact static path; a concrete path matched only by a templated route does not reach the same sink. This issue is fixed in version 0.145.0.
     Severity: MEDIUM
     CweIDs:
@@ -2120,16 +2380,22 @@
     - CWE-248
     VendorSeverity:
       ghsa: 2
+      redhat: 2
     CVSS:
       ghsa:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
+      redhat:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+        V3Score: 5.3
     References:
+    - https://access.redhat.com/security/cve/CVE-2026-100347
     - https://github.com/getkin/kin-openapi
     - https://github.com/getkin/kin-openapi/commit/f1a5b523b82868d2d9be2e116b4e942892be72c3
     - https://github.com/getkin/kin-openapi/releases/tag/v0.145.0
     - https://github.com/getkin/kin-openapi/security/advisories/GHSA-fh4f-47mf-f2gj
     - https://nvd.nist.gov/vuln/detail/CVE-2026-100347
+    - https://www.cve.org/CVERecord?id=CVE-2026-100347
     PublishedDate: '2026-10-15T16:17:30.287Z'
     LastModifiedDate: '2026-10-15T17:17:07.413Z'
   - VulnerabilityID: CVE-2026-100348
@@ -2153,7 +2419,7 @@
       Name: GitHub Security Advisory Go
       URL: https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago
     Fingerprint: sha256:6024496a1cf460b38d1b9327b446d4ad82c8f757f391a70dac6d2dad107ef295
-    Title: kin-openapi spec loader panics on a self-referential additionalProperties $ref (nil-pointer DoS)
+    Title: kin-openapi is a Go project for handling OpenAPI files. Prior to 0.145 ...
     Description: kin-openapi is a Go project for handling OpenAPI files. Prior to 0.145.0, openapi3.Loader can dereference a nil SchemaRef.Value while resolving a self-referential additionalProperties JSON Reference such as a schema that points to its own additionalProperties member. Loading an attacker-controlled OpenAPI document through LoadFromData, LoadFromFile, or LoadFromURI reaches resolveComponent before document validation and can panic the loading process. Resolved additionalProperties schemas and ordinary recursive schemas do not take the vulnerable nil-value path. This issue is fixed in version 0.145.0.
     Severity: MEDIUM
     CweIDs:
@@ -2253,9 +2519,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -2299,7 +2570,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -2307,6 +2584,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -2338,13 +2616,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -2376,9 +2661,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -2422,8 +2712,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -2465,9 +2760,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -2509,9 +2808,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -2555,8 +2859,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -2596,9 +2904,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -2640,7 +2952,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -2648,6 +2966,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -2679,13 +2998,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -2717,9 +3043,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -2763,9 +3094,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -2807,12 +3142,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -2844,8 +3185,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -2859,6 +3204,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: 41a18132e9f9fbcf
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:22e9c631c456a2dd8fd2f5cff704b655b3a9e8c11e31ec72f3079044f5146a92
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -2885,8 +3269,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -2928,8 +3317,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -2943,38 +3336,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: 41a18132e9f9fbcf
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:22e9c631c456a2dd8fd2f5cff704b655b3a9e8c11e31ec72f3079044f5146a92
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/grafana-postgresql-datasource/gpx_grafana_postgresql_datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -3006,9 +3367,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -3052,7 +3418,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -3060,6 +3432,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -3091,13 +3464,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -3129,9 +3509,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -3175,8 +3560,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -3218,9 +3608,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -3262,9 +3656,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -3308,8 +3707,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -3349,9 +3752,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -3393,7 +3800,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -3401,6 +3814,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -3432,13 +3846,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -3470,9 +3891,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -3516,9 +3942,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -3560,12 +3990,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -3597,8 +4033,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -3612,6 +4052,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: c3015006dd257e7
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:4a85107bafd2be7f20ca84f4472197c45af1e2ec47adfe8b56acb817446f98f4
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -3638,8 +4117,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -3681,8 +4165,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -3696,38 +4184,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: c3015006dd257e7
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:4a85107bafd2be7f20ca84f4472197c45af1e2ec47adfe8b56acb817446f98f4
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/grafana-pyroscope-datasource/gpx_grafana-pyroscope-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -3759,9 +4215,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -3805,7 +4266,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -3813,6 +4280,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -3844,13 +4312,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -3882,9 +4357,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -3928,8 +4408,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -3971,9 +4456,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -4015,9 +4504,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -4061,8 +4555,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -4102,9 +4600,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -4146,7 +4648,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -4154,6 +4662,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -4185,13 +4694,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -4223,9 +4739,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -4269,9 +4790,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -4313,12 +4838,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -4350,8 +4881,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -4365,6 +4900,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: b491571ab3cc91ea
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:b4d69e9efd46c770b8b95455842b8debcf21299f6010f7f62ed8dcdc504307cc
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -4391,8 +4965,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -4434,8 +5013,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -4449,38 +5032,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: b491571ab3cc91ea
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:b4d69e9efd46c770b8b95455842b8debcf21299f6010f7f62ed8dcdc504307cc
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/influxdb/gpx_grafana_influxdb_datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -4512,9 +5063,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -4558,7 +5114,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -4566,6 +5128,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -4597,13 +5160,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -4635,9 +5205,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -4681,8 +5256,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -4724,9 +5304,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -4768,9 +5352,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -4814,8 +5403,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -4855,9 +5448,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -4899,7 +5496,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -4907,6 +5510,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -4938,13 +5542,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -4976,9 +5587,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -5022,9 +5638,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -5066,12 +5686,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -5103,8 +5729,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -5118,6 +5748,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: f509f22c1d1d9936
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:31b3007753167588d1ef71a7ca07399a55a10a056c772bab6f70ef2955b61bff
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -5144,8 +5813,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -5187,8 +5861,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -5202,38 +5880,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: f509f22c1d1d9936
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:31b3007753167588d1ef71a7ca07399a55a10a056c772bab6f70ef2955b61bff
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/jaeger/gpx_grafana-jaeger-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -5265,9 +5911,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -5311,7 +5962,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -5319,6 +5976,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -5350,13 +6008,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -5388,9 +6053,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -5434,8 +6104,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -5477,9 +6152,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -5521,9 +6200,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -5567,8 +6251,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -5608,9 +6296,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -5652,7 +6344,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -5660,6 +6358,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -5691,13 +6390,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -5729,9 +6435,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -5775,9 +6486,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -5819,12 +6534,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -5856,8 +6577,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -5871,6 +6596,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: c0bcd687b87ed071
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:3ad3cc343b948db1a20da43c74f475234d80d74b050528090af07968b3f28167
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -5897,8 +6661,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -5940,8 +6709,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -5955,38 +6728,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: c0bcd687b87ed071
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:3ad3cc343b948db1a20da43c74f475234d80d74b050528090af07968b3f28167
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/loki/gpx_grafana-loki-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -6043,9 +6784,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -6089,7 +6835,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -6097,6 +6849,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -6128,13 +6881,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -6166,9 +6926,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -6212,8 +6977,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -6255,9 +7025,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -6299,9 +7073,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -6345,8 +7124,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -6386,9 +7169,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -6430,7 +7217,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -6438,6 +7231,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -6469,13 +7263,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -6507,9 +7308,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -6553,9 +7359,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -6597,12 +7407,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -6634,8 +7450,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -6649,6 +7469,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: 3290f571093244fb
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:1fc438b4e704a56baf8efe0eeeb704bae6ba057d23286355fa522dcbcc7aa6fd
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -6675,8 +7534,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -6718,8 +7582,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -6733,38 +7601,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: 3290f571093244fb
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:1fc438b4e704a56baf8efe0eeeb704bae6ba057d23286355fa522dcbcc7aa6fd
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/mssql/gpx_grafana-mssql-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -6821,9 +7657,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -6867,7 +7708,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -6875,6 +7722,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -6906,13 +7754,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -6944,9 +7799,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -6990,8 +7850,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -7033,9 +7898,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -7077,9 +7946,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -7123,8 +7997,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -7164,9 +8042,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -7208,7 +8090,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -7216,6 +8104,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -7247,13 +8136,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -7285,9 +8181,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -7331,9 +8232,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -7375,12 +8280,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -7412,8 +8323,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -7427,6 +8342,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: 59f3b4e68c42cecf
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:cb64b8e45712f01ad34a3cc82acc8a75836c04a26abdaac741eb3702a8babb14
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -7453,8 +8407,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -7496,8 +8455,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -7511,38 +8474,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: 59f3b4e68c42cecf
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:cb64b8e45712f01ad34a3cc82acc8a75836c04a26abdaac741eb3702a8babb14
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/mysql/gpx_grafana-mysql-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -7574,9 +8505,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -7620,7 +8556,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -7628,6 +8570,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -7659,13 +8602,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -7697,9 +8647,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -7743,8 +8698,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -7786,9 +8746,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -7830,9 +8794,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -7876,8 +8845,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -7917,9 +8890,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -7961,7 +8938,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -7969,6 +8952,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -8000,13 +8984,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -8038,9 +9029,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -8084,9 +9080,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -8128,12 +9128,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -8165,8 +9171,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -8180,6 +9190,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: e8c72f6b323f774f
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:149811d31185510065aa25127545d8c6df5a8fe3be5f7dc2f4b14dc91591bf70
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -8206,8 +9255,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -8249,8 +9303,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -8264,38 +9322,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: e8c72f6b323f774f
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:149811d31185510065aa25127545d8c6df5a8fe3be5f7dc2f4b14dc91591bf70
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/opentsdb/gpx_grafana-opentsdb-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -8327,9 +9353,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -8373,7 +9404,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -8381,6 +9418,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -8412,13 +9450,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -8450,9 +9495,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -8496,8 +9546,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -8539,9 +9594,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -8583,9 +9642,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -8629,8 +9693,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -8670,9 +9738,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -8714,7 +9786,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -8722,6 +9800,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -8753,13 +9832,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -8791,9 +9877,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -8837,9 +9928,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -8881,12 +9976,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -8918,8 +10019,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -8933,6 +10038,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.6
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.6
+      UID: 55a5e9291f6b9d08
+    InstalledVersion: v1.26.6
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:9499024a0c773dba12e614dd9b2b0b7239c31f6a6315668d88bb70ea0664c74c
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -8959,8 +10103,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -9002,8 +10151,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -9017,38 +10170,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.6
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.6
-      UID: 55a5e9291f6b9d08
-    InstalledVersion: v1.26.6
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:9499024a0c773dba12e614dd9b2b0b7239c31f6a6315668d88bb70ea0664c74c
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/prometheus/gpx_grafana-prometheus-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -9080,9 +10201,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -9126,7 +10252,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -9134,6 +10266,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -9165,13 +10298,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -9203,9 +10343,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -9249,8 +10394,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -9292,9 +10442,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -9336,9 +10490,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -9382,8 +10541,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -9423,9 +10586,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -9467,7 +10634,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -9475,6 +10648,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -9506,13 +10680,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -9544,9 +10725,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -9590,9 +10776,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -9634,12 +10824,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -9671,8 +10867,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -9686,6 +10886,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.27.1
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.27.1
+      UID: cfbd86217da80ecf
+    InstalledVersion: v1.27.1
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:1c63d11b95d36581203a250f7a88e553b15e153cdb081b07a072aac8d0ee0512
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -9712,8 +10951,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -9755,8 +10999,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -9770,38 +11018,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.27.1
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.27.1
-      UID: cfbd86217da80ecf
-    InstalledVersion: v1.27.1
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:1c63d11b95d36581203a250f7a88e553b15e153cdb081b07a072aac8d0ee0512
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/stackdriver/gpx_grafana_cloudmonitoring_datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -9974,9 +11190,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -10020,7 +11241,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -10028,6 +11255,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -10059,13 +11287,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -10097,9 +11332,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -10143,8 +11383,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -10344,9 +11589,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -10388,9 +11637,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -10434,8 +11688,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -10475,9 +11733,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -10519,7 +11781,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -10527,6 +11795,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -10558,13 +11827,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -10596,9 +11872,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -10642,9 +11923,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -10686,12 +11971,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -10723,8 +12014,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -10738,6 +12033,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: 8bedee30b20a0de0
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:3b30b4297a7338e101c88b2d66a27d11407e8d8da268186706ba0de247293397
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -10764,8 +12098,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -10807,8 +12146,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -10822,38 +12165,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: 8bedee30b20a0de0
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:3b30b4297a7338e101c88b2d66a27d11407e8d8da268186706ba0de247293397
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/tempo/gpx_grafana-tempo-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -10995,9 +12306,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -11041,7 +12357,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -11049,6 +12371,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -11080,13 +12403,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -11118,9 +12448,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -11164,8 +12499,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -11207,9 +12547,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -11251,9 +12595,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -11297,8 +12646,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -11338,9 +12691,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -11382,7 +12739,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -11390,6 +12753,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -11421,13 +12785,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -11459,9 +12830,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -11505,9 +12881,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -11549,12 +12929,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -11586,8 +12972,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -11601,6 +12991,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: be199e91127cfde5
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:cfca8fc52bac96201dc3bb7951955647ce939eb3570ad1e72de1c9280a0392e8
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -11627,8 +13056,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -11670,8 +13104,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -11685,38 +13123,6 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: be199e91127cfde5
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:cfca8fc52bac96201dc3bb7951955647ce939eb3570ad1e72de1c9280a0392e8
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
 - Target: usr/share/grafana/data/plugins-bundled/zipkin/gpx_grafana-zipkin-datasource_linux_amd64
   Class: lang-pkgs
   Type: gobinary
@@ -11748,9 +13154,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -11794,7 +13205,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -11802,6 +13219,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -11833,13 +13251,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -11871,9 +13296,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -11917,8 +13347,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -11960,9 +13395,13 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -12004,9 +13443,14 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       redhat: 3
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -12050,8 +13494,12 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      bitnami: 3
       redhat: 3
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
@@ -12091,9 +13539,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -12135,7 +13587,13 @@
     CweIDs:
     - CWE-405
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81857
     - https://go.dev/cl/847185
@@ -12143,6 +13601,7 @@
     - https://go.dev/issue/81857
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
     - https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78659
     - https://pkg.go.dev/vuln/GO-2026-6603
     - https://www.cve.org/CVERecord?id=CVE-2026-78659
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -12174,13 +13633,20 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      azure: 3
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81115
     - https://go.dev/cl/835145
     - https://go.dev/cl/836385
     - https://go.dev/issue/81115
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-78660
     - https://pkg.go.dev/vuln/GO-2026-6610
     - https://www.cve.org/CVERecord?id=CVE-2026-78660
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -12212,9 +13678,14 @@
     CweIDs:
     - CWE-675
     VendorSeverity:
+      azure: 3
+      bitnami: 4
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H
+        V3Score: 9.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
         V3Score: 5.3
@@ -12258,9 +13729,13 @@
     CweIDs:
     - CWE-444
     VendorSeverity:
+      bitnami: 3
       redhat: 2
       ubuntu: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
         V3Score: 6.5
@@ -12302,12 +13777,18 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      bitnami: 3
       ubuntu: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
     References:
     - https://github.com/golang/go/issues/81741
     - https://go.dev/cl/847307
     - https://go.dev/issue/81741
     - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-94440
     - https://pkg.go.dev/vuln/GO-2026-6608
     - https://www.cve.org/CVERecord?id=CVE-2026-94440
     - https://www.openwall.com/lists/oss-security/2026/10/08/9
@@ -12339,8 +13820,12 @@
     CweIDs:
     - CWE-79
     VendorSeverity:
+      bitnami: 2
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
         V3Score: 6.1
@@ -12354,6 +13839,45 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-94448
     PublishedDate: '2026-10-08T23:17:05.3Z'
     LastModifiedDate: '2026-10-15T16:18:24.327Z'
+  - VulnerabilityID: CVE-2026-97030
+    VendorIDs:
+    - GO-2026-6600
+    PkgID: stdlib@v1.26.7
+    PkgName: stdlib
+    PkgIdentifier:
+      PURL: pkg:golang/stdlib@v1.26.7
+      UID: f9ea7c11b26fa3d
+    InstalledVersion: v1.26.7
+    FixedVersion: 1.26.9, 1.27.2
+    Status: fixed
+    Layer:
+      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
+      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
+    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
+    DataSource:
+      ID: govulndb
+      Name: The Go Vulnerability Database
+      URL: https://pkg.go.dev/vuln/
+    Fingerprint: sha256:b56207f5bda667239d0cd312b90d42159ad9cb775c98a4a6c6372fa2756a1fd3
+    Title: A trusted template author may have previously written a valid template ...
+    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
+    Severity: MEDIUM
+    CweIDs:
+    - CWE-79
+    VendorSeverity:
+      bitnami: 2
+    CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+        V3Score: 6.1
+    References:
+    - https://go.dev/cl/840925
+    - https://go.dev/issue/81823
+    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-97030
+    - https://pkg.go.dev/vuln/GO-2026-6600
+    PublishedDate: '2026-10-08T23:17:05.91Z'
+    LastModifiedDate: '2026-10-15T16:18:24.817Z'
   - VulnerabilityID: CVE-2026-97032
     VendorIDs:
     - GO-2026-6617
@@ -12380,8 +13904,13 @@
     CweIDs:
     - CWE-362
     VendorSeverity:
+      azure: 2
+      bitnami: 3
       redhat: 2
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+        V3Score: 7.5
       redhat:
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 5.9
@@ -12423,8 +13952,12 @@
     CweIDs:
     - CWE-1386
     VendorSeverity:
+      bitnami: 4
       redhat: 1
     CVSS:
+      bitnami:
+        V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+        V3Score: 9.8
       redhat:
         V3Vector: CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
         V3Score: 3.3
@@ -12438,35 +13971,3 @@
     - https://www.cve.org/CVERecord?id=CVE-2026-56857
     PublishedDate: '2026-10-08T23:17:01.487Z'
     LastModifiedDate: '2026-10-09T16:35:35.9Z'
-  - VulnerabilityID: CVE-2026-97030
-    VendorIDs:
-    - GO-2026-6600
-    PkgID: stdlib@v1.26.7
-    PkgName: stdlib
-    PkgIdentifier:
-      PURL: pkg:golang/stdlib@v1.26.7
-      UID: f9ea7c11b26fa3d
-    InstalledVersion: v1.26.7
-    FixedVersion: 1.26.9, 1.27.2
-    Status: fixed
-    Layer:
-      Digest: sha256:701f5a0b2d31e746b0372060d0b86bd97f70bfec681a2b5471ac7fae824b7851
-      DiffID: sha256:39a007663b5558384754fc107a2811f10d71b8204f15b5896f809b7db68a4e31
-    PrimaryURL: https://avd.aquasec.com/nvd/cve-2026-97030
-    DataSource:
-      ID: govulndb
-      Name: The Go Vulnerability Database
-      URL: https://pkg.go.dev/vuln/
-    Fingerprint: sha256:b56207f5bda667239d0cd312b90d42159ad9cb775c98a4a6c6372fa2756a1fd3
-    Title: A trusted template author may have previously written a valid template ...
-    Description: A trusted template author may have previously written a valid template wherein the use of the 'yield' keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.
-    Severity: UNKNOWN
-    CweIDs:
-    - CWE-79
-    References:
-    - https://go.dev/cl/840925
-    - https://go.dev/issue/81823
-    - https://groups.google.com/g/golang-announce/c/U2fTuyDJznI
-    - https://pkg.go.dev/vuln/GO-2026-6600
-    PublishedDate: '2026-10-08T23:17:05.91Z'
-    LastModifiedDate: '2026-10-15T16:18:24.817Z'
