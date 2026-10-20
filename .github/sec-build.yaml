@@ -123,14 +123,14 @@
         V3Score: 7.1
     References:
     - https://access.redhat.com/errata/RHSA-2025:10407
-    - https://access.redhat.com/errata/RHSA-2025:13578
+    - https://access.redhat.com/errata/RHSA-2025:9940
     - https://access.redhat.com/security/cve/CVE-2025-47273
     - https://advisory.echohq.com/cve/CVE-2025-47273
     - https://bugzilla.redhat.com/2366982
     - https://bugzilla.redhat.com/show_bug.cgi?id=2366982
     - https://creativecommons.org/licenses/by/4.0/
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-47273
-    - https://errata.almalinux.org/9/ALSA-2025-13578.html
+    - https://errata.almalinux.org/10/ALSA-2025-9940.html
     - https://errata.rockylinux.org/RLSA-2025:10407
     - https://github.com/pypa/advisory-database/tree/main/vulns/setuptools/PYSEC-2025-49.yaml
     - https://github.com/pypa/setuptools
@@ -231,8 +231,10 @@
     - CWE-295
     - CWE-440
     VendorSeverity:
+      alma: 3
       ghsa: 3
       nvd: 3
+      oracle-oval: 3
       redhat: 3
       ubuntu: 2
     CVSS:
@@ -246,14 +248,20 @@
         V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
         V3Score: 7.4
     References:
+    - https://access.redhat.com/errata/RHSA-2026:84578
     - https://access.redhat.com/security/cve/CVE-2026-97687
     - https://advisory.echohq.com/cve/CVE-2026-97687
+    - https://bugzilla.redhat.com/2543245
+    - https://bugzilla.redhat.com/2543255
+    - https://errata.almalinux.org/10/ALSA-2026-84578.html
     - https://github.com/urllib3/urllib3
     - https://github.com/urllib3/urllib3/commit/07408cec79d1856d81bb42c74a904a24fdb9e465
     - https://github.com/urllib3/urllib3/commit/b6447295fff7b38fdffc67e0df9712d60cef3cc3
     - https://github.com/urllib3/urllib3/pull/5093
     - https://github.com/urllib3/urllib3/releases/tag/2.8.0
     - https://github.com/urllib3/urllib3/security/advisories/GHSA-8988-9cw3-xx77
+    - https://linux.oracle.com/cve/CVE-2026-97687.html
+    - https://linux.oracle.com/errata/ELSA-2026-84578.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-97687
     - https://ubuntu.com/security/notices/USN-8926-1
     - https://www.cve.org/CVERecord?id=CVE-2026-97687
@@ -287,10 +295,12 @@
     CweIDs:
     - CWE-770
     VendorSeverity:
+      alma: 3
       amazon: 3
       azure: 3
       ghsa: 3
       nvd: 3
+      oracle-oval: 3
       redhat: 3
       ubuntu: 2
     CVSS:
@@ -304,12 +314,18 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:84578
     - https://access.redhat.com/security/cve/CVE-2026-97689
     - https://advisory.echohq.com/cve/CVE-2026-97689
+    - https://bugzilla.redhat.com/2543245
+    - https://bugzilla.redhat.com/2543255
+    - https://errata.almalinux.org/10/ALSA-2026-84578.html
     - https://github.com/urllib3/urllib3
     - https://github.com/urllib3/urllib3/commit/cd770b059b543be29298ea5c52afb0b1b090f5ed
     - https://github.com/urllib3/urllib3/releases/tag/2.8.0
     - https://github.com/urllib3/urllib3/security/advisories/GHSA-vxq7-64xx-v4gw
+    - https://linux.oracle.com/cve/CVE-2026-97689.html
+    - https://linux.oracle.com/errata/ELSA-2026-84578.html
     - https://nvd.nist.gov/vuln/detail/CVE-2026-97689
     - https://ubuntu.com/security/notices/USN-8926-1
     - https://www.cve.org/CVERecord?id=CVE-2026-97689
@@ -11496,13 +11512,14 @@
         V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
         V3Score: 7.5
     References:
+    - https://access.redhat.com/errata/RHSA-2026:76743
     - https://access.redhat.com/errata/RHSA-2026:76744
     - https://access.redhat.com/security/cve/CVE-2026-84445
     - https://bugzilla.redhat.com/2533175
     - https://bugzilla.redhat.com/show_bug.cgi?id=2533175
     - https://creativecommons.org/licenses/by/4.0/
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84445
-    - https://errata.almalinux.org/9/ALSA-2026-76744.html
+    - https://errata.almalinux.org/10/ALSA-2026-76743.html
     - https://errata.rockylinux.org/RLSA-2026:76744
     - https://github.com/grpc/grpc-go
     - https://github.com/grpc/grpc-go/commit/3822494d8ea03b992c089fd2a195f041762fffb7
