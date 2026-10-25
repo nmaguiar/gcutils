@@ -8,11 +8,12 @@ RUN sed -i 's/v[0-9]*\.[0-9]*/edge/g' /etc/apk/repositories\
  && apk update\
  && apk upgrade --available\
  && apk del openjdk21-jre openjdk21-jre-headless\
- && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 py3-pip strace openjdk21 libc6-compat htop htop-doc iotop iotop-doc procps musl-locales\
+ && apk add --no-cache bash bash-completion vim tar gzip mc tmux python3 strace openjdk21 libc6-compat htop htop-doc iotop iotop-doc procps musl-locales\
  && cd /openaf\
  && rm -rf /openaf/jre\
  && java -jar openaf.jar --install\
  && /openaf/openaf --update --force\
+ && /openaf/openaf --repack\
  && /openaf/opack install py-textual plugin-xls oafproc nattrmon\
  && /openaf/ojob ojob.io/get job=ojob.io/oaf/colorFormats.yaml > /openaf/ojobs/colorFormats.yaml\
  && /openaf/ojob ojob.io/get job=ojob.io/java/grafana/gc.yaml > /openaf/ojobs/grafana_gc.yaml\
@@ -117,11 +118,11 @@ RUN gzip /USAGE.md\
  && gzip /EXAMPLES.md\
  && gzip /JFR.md\
  && echo "#!/bin/sh" > /usr/bin/usage-help\
- && echo "zcat /USAGE.md.gz | oafp in=md mdtemplate=true | less -r" >> /usr/bin/usage-help\
+ && echo "oafp /USAGE.md.gz in=md mdtemplate=true color=true -p" >> /usr/bin/usage-help\
  && echo "#!/bin/sh" > /usr/bin/examples-help\
- && echo "zcat /EXAMPLES.md.gz | oafp in=md mdtemplate=true | less -r" > /usr/bin/examples-help\
+ && echo "oafp /EXAMPLES.md.gz in=md mdtemplate=true color=true -p" > /usr/bin/examples-help\
  && echo "#!/bin/sh" > /usr/bin/jfr-help\
- && echo "zcat /JFR.md.gz | oafp in=md mdtemplate=true | less -r" > /usr/bin/jfr-help\
+ && echo "oafp /JFR.md.gz in=md mdtemplate=true color=true -p" > /usr/bin/jfr-help\
  && chmod a+x /usr/bin/usage-help\
  && chmod a+x /usr/bin/examples-help\
  && chmod a+x /usr/bin/jfr-help\
