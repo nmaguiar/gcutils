@@ -88,7 +88,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -143,7 +144,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -272,7 +274,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -327,7 +330,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -335,12 +339,12 @@
 │                        │     ├ References                                                                
 │                        │     │                  ─────────────────────────────────────────────────────────
 │                        │     │                  https://access.redhat.com/security/cve/CVE-2026-97045    
-│                        │     │                  https://go.dev/cl/855121                                 
-│                        │     │                  https://go.dev/issue/82622                               
+│                        │     │                  https://go.dev/cl/849365                                 
+│                        │     │                  https://go.dev/issue/82224                               
 │                        │     │                  https://groups.google.com/g/golang-announce/c/sqrs2vTx_Xs
 │                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97045          
-│                        │     │                  https://pkg.go.dev/vuln/GO-2026-6866                     
-│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-97045          
+│                        │     │                  https://pkg.go.dev/vuln/GO-2026-6860                     
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-78661          
 │                        │     ├ PublishedDate   : 2026-10-27T22:19:22.613Z 
 │                        │     ╰ LastModifiedDate: 2026-11-04T17:17:38.33Z 
 │                        ╰ [3] ╭ VulnerabilityID : CVE-2026-97054 
@@ -386,7 +390,83 @@
 │      ├ Class          : lang-pkgs 
 │      ├ Type           : gobinary 
 │      ├ Packages        
-│      ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : GO-2026-5932 
+│      ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2026-128085 
+│                        │     ├ VendorIDs                           
+│                        │     │                  ───────────────────
+│                        │     │                  GHSA-q7gw-24fr-5p69
+│                        │     ├ PkgID           : go.opentelemetry.io/otel/sdk/log@v0.22.0 
+│                        │     ├ PkgName         : go.opentelemetry.io/otel/sdk/log 
+│                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk/log@v0.22.0 
+│                        │     │                  ╰ UID : 5466be96f2101af0 
+│                        │     ├ InstalledVersion: v0.22.0 
+│                        │     ├ FixedVersion    : 1.47.0 
+│                        │     ├ Status          : fixed 
+│                        │     ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f8
+│                        │     │                  │         06ffee48a3fdb7994c7c 
+│                        │     │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28ea
+│                        │     │                            69d909b7f170a02263eb 
+│                        │     ├ SeveritySource  : ghsa 
+│                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │     ├ DataSource       ╭ ID  : ghsa 
+│                        │     │                  ├ Name: GitHub Security Advisory Go 
+│                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                        │     │                          cosystem%3Ago 
+│                        │     ├ Fingerprint     : sha256:d91ad3fddf06621c0d87d7880b8d2136181b831fb07f657cc30bd
+│                        │     │                   8c486bdbc8b 
+│                        │     ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │     │                   go.opentelemetry.io/otel/sdk/log:
+│                        │     │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │     │                   Service via attribute truncation bypass using Unicode
+│                        │     │                   replacement characters 
+│                        │     ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │     │                   From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │     │                   version 1.35.0 until version 1.47.0, the
+│                        │     │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │     │                   truncation paths in sdk/internal/attrnorm,
+│                        │     │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │     │                   valid U+FFFD replacement characters. This is a distinct
+│                        │     │                   incomplete-fix defect in the replacement truncation code
+│                        │     │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │     │                   composed of or dominated by those characters can therefore
+│                        │     │                   exceed the configured character and memory bound in span,
+│                        │     │                   log-record, and auto-instrumentation trace attributes.
+│                        │     │                   Attacker-controlled telemetry attributes can increase
+│                        │     │                   retained memory and pipeline pressure, while confidentiality
+│                        │     │                    and integrity are not affected. This issue is fixed in
+│                        │     │                   version 1.47.0. 
+│                        │     ├ Severity        : MEDIUM 
+│                        │     ├ CweIDs                  
+│                        │     │                  ───────
+│                        │     │                  CWE-135
+│                        │     │                  CWE-770
+│                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │     │                  ╰ redhat: 2 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                  │        │           /A:L 
+│                        │     │                  │        ╰ V3Score : 5.3 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:L 
+│                        │     │                           ╰ V3Score : 5.3 
+│                        │     ├ References                                                                    
+│                        │     │                  ─────────────────────────────────────────────────────────────
+│                        │     │                  https://access.redhat.com/security/cve/CVE-2026-128085       
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/commit/017
+│                        │     │                  b08c7f1018b619991aaf6b2299d4beb9da1d3                        
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/log/v1.47.0                                           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/v1.47.0                                               
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/trace/v1.47.0                                             
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/security/a
+│                        │     │                  dvisories/GHSA-q7gw-24fr-5p69                                
+│                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085             
+│                        │     │                                                                               
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-128085             
+│                        │     ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │     ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [1] ╭ VulnerabilityID : GO-2026-5932 
 │                        │     ├ PkgID           : golang.org/x/crypto@v0.58.0 
 │                        │     ├ PkgName         : golang.org/x/crypto 
 │                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.58.0 
@@ -420,7 +500,7 @@
 │                        │                        https://go.dev/issue/44226          
 │                        │                        https://go.dev/issue/81227          
 │                        │                        https://pkg.go.dev/vuln/GO-2026-5932
-│                        ╰ [1] ╭ VulnerabilityID : CVE-2026-97054 
+│                        ╰ [2] ╭ VulnerabilityID : CVE-2026-97054 
 │                              ├ VendorIDs                    
 │                              │                  ────────────
 │                              │                  GO-2026-6859
@@ -534,7 +614,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -589,7 +670,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -763,7 +845,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -818,7 +901,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -914,7 +998,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -969,7 +1054,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -1029,7 +1115,159 @@
 │      ├ Class          : lang-pkgs 
 │      ├ Type           : gobinary 
 │      ├ Packages        
-│      ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2026-78661 
+│      ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2026-128085 
+│                        │     ├ VendorIDs                           
+│                        │     │                  ───────────────────
+│                        │     │                  GHSA-q7gw-24fr-5p69
+│                        │     ├ PkgID           : go.opentelemetry.io/otel/sdk@v1.45.0 
+│                        │     ├ PkgName         : go.opentelemetry.io/otel/sdk 
+│                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.45.0 
+│                        │     │                  ╰ UID : 2a08a90bdbbb5529 
+│                        │     ├ InstalledVersion: v1.45.0 
+│                        │     ├ FixedVersion    : 1.47.0 
+│                        │     ├ Status          : fixed 
+│                        │     ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f8
+│                        │     │                  │         06ffee48a3fdb7994c7c 
+│                        │     │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28ea
+│                        │     │                            69d909b7f170a02263eb 
+│                        │     ├ SeveritySource  : ghsa 
+│                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │     ├ DataSource       ╭ ID  : ghsa 
+│                        │     │                  ├ Name: GitHub Security Advisory Go 
+│                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                        │     │                          cosystem%3Ago 
+│                        │     ├ Fingerprint     : sha256:1c55a7d7013fcf87628913194f8c39ae7d032e25620681f40dc15
+│                        │     │                   57cf34c0bb1 
+│                        │     ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │     │                   go.opentelemetry.io/otel/sdk/log:
+│                        │     │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │     │                   Service via attribute truncation bypass using Unicode
+│                        │     │                   replacement characters 
+│                        │     ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │     │                   From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │     │                   version 1.35.0 until version 1.47.0, the
+│                        │     │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │     │                   truncation paths in sdk/internal/attrnorm,
+│                        │     │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │     │                   valid U+FFFD replacement characters. This is a distinct
+│                        │     │                   incomplete-fix defect in the replacement truncation code
+│                        │     │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │     │                   composed of or dominated by those characters can therefore
+│                        │     │                   exceed the configured character and memory bound in span,
+│                        │     │                   log-record, and auto-instrumentation trace attributes.
+│                        │     │                   Attacker-controlled telemetry attributes can increase
+│                        │     │                   retained memory and pipeline pressure, while confidentiality
+│                        │     │                    and integrity are not affected. This issue is fixed in
+│                        │     │                   version 1.47.0. 
+│                        │     ├ Severity        : MEDIUM 
+│                        │     ├ CweIDs                  
+│                        │     │                  ───────
+│                        │     │                  CWE-135
+│                        │     │                  CWE-770
+│                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │     │                  ╰ redhat: 2 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                  │        │           /A:L 
+│                        │     │                  │        ╰ V3Score : 5.3 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:L 
+│                        │     │                           ╰ V3Score : 5.3 
+│                        │     ├ References                                                                    
+│                        │     │                  ─────────────────────────────────────────────────────────────
+│                        │     │                  https://access.redhat.com/security/cve/CVE-2026-128085       
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/commit/017
+│                        │     │                  b08c7f1018b619991aaf6b2299d4beb9da1d3                        
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/log/v1.47.0                                           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/v1.47.0                                               
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/trace/v1.47.0                                             
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/security/a
+│                        │     │                  dvisories/GHSA-q7gw-24fr-5p69                                
+│                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085             
+│                        │     │                                                                               
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-128085             
+│                        │     ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │     ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [1] ╭ VulnerabilityID : CVE-2026-128085 
+│                        │     ├ VendorIDs                           
+│                        │     │                  ───────────────────
+│                        │     │                  GHSA-q7gw-24fr-5p69
+│                        │     ├ PkgID           : go.opentelemetry.io/otel/trace@v1.45.0 
+│                        │     ├ PkgName         : go.opentelemetry.io/otel/trace 
+│                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/trace@v1.45.0 
+│                        │     │                  ╰ UID : 2c7bf2200a42df2f 
+│                        │     ├ InstalledVersion: v1.45.0 
+│                        │     ├ FixedVersion    : 1.47.0 
+│                        │     ├ Status          : fixed 
+│                        │     ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f8
+│                        │     │                  │         06ffee48a3fdb7994c7c 
+│                        │     │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28ea
+│                        │     │                            69d909b7f170a02263eb 
+│                        │     ├ SeveritySource  : ghsa 
+│                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │     ├ DataSource       ╭ ID  : ghsa 
+│                        │     │                  ├ Name: GitHub Security Advisory Go 
+│                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                        │     │                          cosystem%3Ago 
+│                        │     ├ Fingerprint     : sha256:8a6e89c2e5d3c4445e43fadf2877455d8ccef743ef46569ace20d
+│                        │     │                   84b93f2d1f0 
+│                        │     ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │     │                   go.opentelemetry.io/otel/sdk/log:
+│                        │     │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │     │                   Service via attribute truncation bypass using Unicode
+│                        │     │                   replacement characters 
+│                        │     ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │     │                   From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │     │                   version 1.35.0 until version 1.47.0, the
+│                        │     │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │     │                   truncation paths in sdk/internal/attrnorm,
+│                        │     │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │     │                   valid U+FFFD replacement characters. This is a distinct
+│                        │     │                   incomplete-fix defect in the replacement truncation code
+│                        │     │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │     │                   composed of or dominated by those characters can therefore
+│                        │     │                   exceed the configured character and memory bound in span,
+│                        │     │                   log-record, and auto-instrumentation trace attributes.
+│                        │     │                   Attacker-controlled telemetry attributes can increase
+│                        │     │                   retained memory and pipeline pressure, while confidentiality
+│                        │     │                    and integrity are not affected. This issue is fixed in
+│                        │     │                   version 1.47.0. 
+│                        │     ├ Severity        : MEDIUM 
+│                        │     ├ CweIDs                  
+│                        │     │                  ───────
+│                        │     │                  CWE-135
+│                        │     │                  CWE-770
+│                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │     │                  ╰ redhat: 2 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                  │        │           /A:L 
+│                        │     │                  │        ╰ V3Score : 5.3 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:L 
+│                        │     │                           ╰ V3Score : 5.3 
+│                        │     ├ References                                                                    
+│                        │     │                  ─────────────────────────────────────────────────────────────
+│                        │     │                  https://access.redhat.com/security/cve/CVE-2026-128085       
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/commit/017
+│                        │     │                  b08c7f1018b619991aaf6b2299d4beb9da1d3                        
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/log/v1.47.0                                           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/v1.47.0                                               
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/trace/v1.47.0                                             
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/security/a
+│                        │     │                  dvisories/GHSA-q7gw-24fr-5p69                                
+│                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085             
+│                        │     │                                                                               
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-128085             
+│                        │     ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │     ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [2] ╭ VulnerabilityID : CVE-2026-78661 
 │                        │     ├ VendorIDs                    
 │                        │     │                  ────────────
 │                        │     │                  GO-2026-6860
@@ -1065,7 +1303,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -1081,7 +1320,7 @@
 │                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-78661          
 │                        │     ├ PublishedDate   : 2026-10-27T22:18:05.93Z 
 │                        │     ╰ LastModifiedDate: 2026-11-04T17:17:37.673Z 
-│                        ├ [1] ╭ VulnerabilityID : CVE-2026-97045 
+│                        ├ [3] ╭ VulnerabilityID : CVE-2026-97045 
 │                        │     ├ VendorIDs                    
 │                        │     │                  ────────────
 │                        │     │                  GO-2026-6866
@@ -1120,7 +1359,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -1136,7 +1376,7 @@
 │                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-97045          
 │                        │     ├ PublishedDate   : 2026-10-27T22:19:22.613Z 
 │                        │     ╰ LastModifiedDate: 2026-11-04T17:17:38.33Z 
-│                        ╰ [2] ╭ VulnerabilityID : CVE-2026-97054 
+│                        ╰ [4] ╭ VulnerabilityID : CVE-2026-97054 
 │                              ├ VendorIDs                    
 │                              │                  ────────────
 │                              │                  GO-2026-6859
@@ -1215,7 +1455,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -1270,7 +1511,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -1329,7 +1571,235 @@
 │      ├ Class          : lang-pkgs 
 │      ├ Type           : gobinary 
 │      ├ Packages        
-│      ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : GO-2026-5932 
+│      ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2026-128085 
+│                        │     ├ VendorIDs                           
+│                        │     │                  ───────────────────
+│                        │     │                  GHSA-q7gw-24fr-5p69
+│                        │     ├ PkgID           : go.opentelemetry.io/otel/sdk@v1.46.0 
+│                        │     ├ PkgName         : go.opentelemetry.io/otel/sdk 
+│                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.46.0 
+│                        │     │                  ╰ UID : 30fc3f559e3b600a 
+│                        │     ├ InstalledVersion: v1.46.0 
+│                        │     ├ FixedVersion    : 1.47.0 
+│                        │     ├ Status          : fixed 
+│                        │     ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f8
+│                        │     │                  │         06ffee48a3fdb7994c7c 
+│                        │     │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28ea
+│                        │     │                            69d909b7f170a02263eb 
+│                        │     ├ SeveritySource  : ghsa 
+│                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │     ├ DataSource       ╭ ID  : ghsa 
+│                        │     │                  ├ Name: GitHub Security Advisory Go 
+│                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                        │     │                          cosystem%3Ago 
+│                        │     ├ Fingerprint     : sha256:1c681b5e196b32b96a8a3c357d42312949d90de6043f1241fc5fa
+│                        │     │                   2c8c7ef2252 
+│                        │     ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │     │                   go.opentelemetry.io/otel/sdk/log:
+│                        │     │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │     │                   Service via attribute truncation bypass using Unicode
+│                        │     │                   replacement characters 
+│                        │     ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │     │                   From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │     │                   version 1.35.0 until version 1.47.0, the
+│                        │     │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │     │                   truncation paths in sdk/internal/attrnorm,
+│                        │     │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │     │                   valid U+FFFD replacement characters. This is a distinct
+│                        │     │                   incomplete-fix defect in the replacement truncation code
+│                        │     │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │     │                   composed of or dominated by those characters can therefore
+│                        │     │                   exceed the configured character and memory bound in span,
+│                        │     │                   log-record, and auto-instrumentation trace attributes.
+│                        │     │                   Attacker-controlled telemetry attributes can increase
+│                        │     │                   retained memory and pipeline pressure, while confidentiality
+│                        │     │                    and integrity are not affected. This issue is fixed in
+│                        │     │                   version 1.47.0. 
+│                        │     ├ Severity        : MEDIUM 
+│                        │     ├ CweIDs                  
+│                        │     │                  ───────
+│                        │     │                  CWE-135
+│                        │     │                  CWE-770
+│                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │     │                  ╰ redhat: 2 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                  │        │           /A:L 
+│                        │     │                  │        ╰ V3Score : 5.3 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:L 
+│                        │     │                           ╰ V3Score : 5.3 
+│                        │     ├ References                                                                    
+│                        │     │                  ─────────────────────────────────────────────────────────────
+│                        │     │                  https://access.redhat.com/security/cve/CVE-2026-128085       
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/commit/017
+│                        │     │                  b08c7f1018b619991aaf6b2299d4beb9da1d3                        
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/log/v1.47.0                                           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/v1.47.0                                               
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/trace/v1.47.0                                             
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/security/a
+│                        │     │                  dvisories/GHSA-q7gw-24fr-5p69                                
+│                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085             
+│                        │     │                                                                               
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-128085             
+│                        │     ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │     ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [1] ╭ VulnerabilityID : CVE-2026-128085 
+│                        │     ├ VendorIDs                           
+│                        │     │                  ───────────────────
+│                        │     │                  GHSA-q7gw-24fr-5p69
+│                        │     ├ PkgID           : go.opentelemetry.io/otel/sdk/log@v0.22.0 
+│                        │     ├ PkgName         : go.opentelemetry.io/otel/sdk/log 
+│                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk/log@v0.22.0 
+│                        │     │                  ╰ UID : 4fae24f31f0571bd 
+│                        │     ├ InstalledVersion: v0.22.0 
+│                        │     ├ FixedVersion    : 1.47.0 
+│                        │     ├ Status          : fixed 
+│                        │     ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f8
+│                        │     │                  │         06ffee48a3fdb7994c7c 
+│                        │     │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28ea
+│                        │     │                            69d909b7f170a02263eb 
+│                        │     ├ SeveritySource  : ghsa 
+│                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │     ├ DataSource       ╭ ID  : ghsa 
+│                        │     │                  ├ Name: GitHub Security Advisory Go 
+│                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                        │     │                          cosystem%3Ago 
+│                        │     ├ Fingerprint     : sha256:4fc7790d22c6cdf4ae4c471968eb68339116f93cbb7e902ad5bf7
+│                        │     │                   b9d3d8b71c2 
+│                        │     ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │     │                   go.opentelemetry.io/otel/sdk/log:
+│                        │     │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │     │                   Service via attribute truncation bypass using Unicode
+│                        │     │                   replacement characters 
+│                        │     ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │     │                   From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │     │                   version 1.35.0 until version 1.47.0, the
+│                        │     │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │     │                   truncation paths in sdk/internal/attrnorm,
+│                        │     │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │     │                   valid U+FFFD replacement characters. This is a distinct
+│                        │     │                   incomplete-fix defect in the replacement truncation code
+│                        │     │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │     │                   composed of or dominated by those characters can therefore
+│                        │     │                   exceed the configured character and memory bound in span,
+│                        │     │                   log-record, and auto-instrumentation trace attributes.
+│                        │     │                   Attacker-controlled telemetry attributes can increase
+│                        │     │                   retained memory and pipeline pressure, while confidentiality
+│                        │     │                    and integrity are not affected. This issue is fixed in
+│                        │     │                   version 1.47.0. 
+│                        │     ├ Severity        : MEDIUM 
+│                        │     ├ CweIDs                  
+│                        │     │                  ───────
+│                        │     │                  CWE-135
+│                        │     │                  CWE-770
+│                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │     │                  ╰ redhat: 2 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                  │        │           /A:L 
+│                        │     │                  │        ╰ V3Score : 5.3 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:L 
+│                        │     │                           ╰ V3Score : 5.3 
+│                        │     ├ References                                                                    
+│                        │     │                  ─────────────────────────────────────────────────────────────
+│                        │     │                  https://access.redhat.com/security/cve/CVE-2026-128085       
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/commit/017
+│                        │     │                  b08c7f1018b619991aaf6b2299d4beb9da1d3                        
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/log/v1.47.0                                           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/v1.47.0                                               
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/trace/v1.47.0                                             
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/security/a
+│                        │     │                  dvisories/GHSA-q7gw-24fr-5p69                                
+│                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085             
+│                        │     │                                                                               
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-128085             
+│                        │     ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │     ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [2] ╭ VulnerabilityID : CVE-2026-128085 
+│                        │     ├ VendorIDs                           
+│                        │     │                  ───────────────────
+│                        │     │                  GHSA-q7gw-24fr-5p69
+│                        │     ├ PkgID           : go.opentelemetry.io/otel/trace@v1.46.0 
+│                        │     ├ PkgName         : go.opentelemetry.io/otel/trace 
+│                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/trace@v1.46.0 
+│                        │     │                  ╰ UID : aa7f1f2a5258ef71 
+│                        │     ├ InstalledVersion: v1.46.0 
+│                        │     ├ FixedVersion    : 1.47.0 
+│                        │     ├ Status          : fixed 
+│                        │     ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f8
+│                        │     │                  │         06ffee48a3fdb7994c7c 
+│                        │     │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28ea
+│                        │     │                            69d909b7f170a02263eb 
+│                        │     ├ SeveritySource  : ghsa 
+│                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │     ├ DataSource       ╭ ID  : ghsa 
+│                        │     │                  ├ Name: GitHub Security Advisory Go 
+│                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                        │     │                          cosystem%3Ago 
+│                        │     ├ Fingerprint     : sha256:55a73d835b76d293a129670b985a41718d8cafe2a7207c3f0ce2b
+│                        │     │                   19a7055b69b 
+│                        │     ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │     │                   go.opentelemetry.io/otel/sdk/log:
+│                        │     │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │     │                   Service via attribute truncation bypass using Unicode
+│                        │     │                   replacement characters 
+│                        │     ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │     │                   From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │     │                   version 1.35.0 until version 1.47.0, the
+│                        │     │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │     │                   truncation paths in sdk/internal/attrnorm,
+│                        │     │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │     │                   valid U+FFFD replacement characters. This is a distinct
+│                        │     │                   incomplete-fix defect in the replacement truncation code
+│                        │     │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │     │                   composed of or dominated by those characters can therefore
+│                        │     │                   exceed the configured character and memory bound in span,
+│                        │     │                   log-record, and auto-instrumentation trace attributes.
+│                        │     │                   Attacker-controlled telemetry attributes can increase
+│                        │     │                   retained memory and pipeline pressure, while confidentiality
+│                        │     │                    and integrity are not affected. This issue is fixed in
+│                        │     │                   version 1.47.0. 
+│                        │     ├ Severity        : MEDIUM 
+│                        │     ├ CweIDs                  
+│                        │     │                  ───────
+│                        │     │                  CWE-135
+│                        │     │                  CWE-770
+│                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │     │                  ╰ redhat: 2 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                  │        │           /A:L 
+│                        │     │                  │        ╰ V3Score : 5.3 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:L 
+│                        │     │                           ╰ V3Score : 5.3 
+│                        │     ├ References                                                                    
+│                        │     │                  ─────────────────────────────────────────────────────────────
+│                        │     │                  https://access.redhat.com/security/cve/CVE-2026-128085       
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/commit/017
+│                        │     │                  b08c7f1018b619991aaf6b2299d4beb9da1d3                        
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/log/v1.47.0                                           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/v1.47.0                                               
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/trace/v1.47.0                                             
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/security/a
+│                        │     │                  dvisories/GHSA-q7gw-24fr-5p69                                
+│                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085             
+│                        │     │                                                                               
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-128085             
+│                        │     ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │     ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [3] ╭ VulnerabilityID : GO-2026-5932 
 │                        │     ├ PkgID           : golang.org/x/crypto@v0.57.0 
 │                        │     ├ PkgName         : golang.org/x/crypto 
 │                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.57.0 
@@ -1363,7 +1833,7 @@
 │                        │                        https://go.dev/issue/44226          
 │                        │                        https://go.dev/issue/81227          
 │                        │                        https://pkg.go.dev/vuln/GO-2026-5932
-│                        ├ [1] ╭ VulnerabilityID : CVE-2026-78661 
+│                        ├ [4] ╭ VulnerabilityID : CVE-2026-78661 
 │                        │     ├ VendorIDs                    
 │                        │     │                  ────────────
 │                        │     │                  GO-2026-6860
@@ -1399,7 +1869,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -1415,7 +1886,7 @@
 │                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-78661          
 │                        │     ├ PublishedDate   : 2026-10-27T22:18:05.93Z 
 │                        │     ╰ LastModifiedDate: 2026-11-04T17:17:37.673Z 
-│                        ├ [2] ╭ VulnerabilityID : CVE-2026-97045 
+│                        ├ [5] ╭ VulnerabilityID : CVE-2026-97045 
 │                        │     ├ VendorIDs                    
 │                        │     │                  ────────────
 │                        │     │                  GO-2026-6866
@@ -1454,7 +1925,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -1470,7 +1942,7 @@
 │                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-97045          
 │                        │     ├ PublishedDate   : 2026-10-27T22:19:22.613Z 
 │                        │     ╰ LastModifiedDate: 2026-11-04T17:17:38.33Z 
-│                        ╰ [3] ╭ VulnerabilityID : CVE-2026-97054 
+│                        ╰ [6] ╭ VulnerabilityID : CVE-2026-97054 
 │                              ├ VendorIDs                    
 │                              │                  ────────────
 │                              │                  GO-2026-6859
@@ -1583,7 +2055,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -1638,7 +2111,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -1697,7 +2171,159 @@
 │      ├ Class          : lang-pkgs 
 │      ├ Type           : gobinary 
 │      ├ Packages        
-│      ╰ Vulnerabilities ╭ [0]  ╭ VulnerabilityID : CVE-2026-78661 
+│      ╰ Vulnerabilities ╭ [0]  ╭ VulnerabilityID : CVE-2026-128085 
+│                        │      ├ VendorIDs                           
+│                        │      │                  ───────────────────
+│                        │      │                  GHSA-q7gw-24fr-5p69
+│                        │      ├ PkgID           : go.opentelemetry.io/otel/sdk@v1.46.0 
+│                        │      ├ PkgName         : go.opentelemetry.io/otel/sdk 
+│                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.46.0 
+│                        │      │                  ╰ UID : 6159d5f72ef9f2d6 
+│                        │      ├ InstalledVersion: v1.46.0 
+│                        │      ├ FixedVersion    : 1.47.0 
+│                        │      ├ Status          : fixed 
+│                        │      ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f
+│                        │      │                  │         806ffee48a3fdb7994c7c 
+│                        │      │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28e
+│                        │      │                            a69d909b7f170a02263eb 
+│                        │      ├ SeveritySource  : ghsa 
+│                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │      ├ DataSource       ╭ ID  : ghsa 
+│                        │      │                  ├ Name: GitHub Security Advisory Go 
+│                        │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+
+│                        │      │                          ecosystem%3Ago 
+│                        │      ├ Fingerprint     : sha256:1e42195f3bf1b54415d089b2821f558fa5d2a319604c7d2740fa
+│                        │      │                   dd56c142c29f 
+│                        │      ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │      │                   go.opentelemetry.io/otel/sdk/log:
+│                        │      │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │      │                    Service via attribute truncation bypass using Unicode
+│                        │      │                   replacement characters 
+│                        │      ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │      │                    From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │      │                   version 1.35.0 until version 1.47.0, the
+│                        │      │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │      │                    truncation paths in sdk/internal/attrnorm,
+│                        │      │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │      │                   valid U+FFFD replacement characters. This is a distinct
+│                        │      │                   incomplete-fix defect in the replacement truncation code
+│                        │      │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │      │                   composed of or dominated by those characters can therefore
+│                        │      │                   exceed the configured character and memory bound in span,
+│                        │      │                   log-record, and auto-instrumentation trace attributes.
+│                        │      │                   Attacker-controlled telemetry attributes can increase
+│                        │      │                   retained memory and pipeline pressure, while
+│                        │      │                   confidentiality and integrity are not affected. This issue
+│                        │      │                   is fixed in version 1.47.0. 
+│                        │      ├ Severity        : MEDIUM 
+│                        │      ├ CweIDs                  
+│                        │      │                  ───────
+│                        │      │                  CWE-135
+│                        │      │                  CWE-770
+│                        │      ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │      │                  ╰ redhat: 2 
+│                        │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                        │      │                  │        │           N/A:L 
+│                        │      │                  │        ╰ V3Score : 5.3 
+│                        │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                        │      │                           │           N/A:L 
+│                        │      │                           ╰ V3Score : 5.3 
+│                        │      ├ References                                                                   
+│                        │      │                  ────────────────────────────────────────────────────────────
+│                        │      │                  https://access.redhat.com/security/cve/CVE-2026-128085      
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go          
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/commit/01
+│                        │      │                  7b08c7f1018b619991aaf6b2299d4beb9da1d3                      
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/releases/
+│                        │      │                  tag/sdk/log/v1.47.0                                         
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/releases/
+│                        │      │                  tag/sdk/v1.47.0                                             
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/releases/
+│                        │      │                  tag/trace/v1.47.0                                           
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/security/
+│                        │      │                  advisories/GHSA-q7gw-24fr-5p69                              
+│                        │      │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085            
+│                        │      │                                                                              
+│                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-128085            
+│                        │      ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │      ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [1]  ╭ VulnerabilityID : CVE-2026-128085 
+│                        │      ├ VendorIDs                           
+│                        │      │                  ───────────────────
+│                        │      │                  GHSA-q7gw-24fr-5p69
+│                        │      ├ PkgID           : go.opentelemetry.io/otel/trace@v1.46.0 
+│                        │      ├ PkgName         : go.opentelemetry.io/otel/trace 
+│                        │      ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/trace@v1.46.0 
+│                        │      │                  ╰ UID : 14c1bbc524165e75 
+│                        │      ├ InstalledVersion: v1.46.0 
+│                        │      ├ FixedVersion    : 1.47.0 
+│                        │      ├ Status          : fixed 
+│                        │      ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f
+│                        │      │                  │         806ffee48a3fdb7994c7c 
+│                        │      │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28e
+│                        │      │                            a69d909b7f170a02263eb 
+│                        │      ├ SeveritySource  : ghsa 
+│                        │      ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │      ├ DataSource       ╭ ID  : ghsa 
+│                        │      │                  ├ Name: GitHub Security Advisory Go 
+│                        │      │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+
+│                        │      │                          ecosystem%3Ago 
+│                        │      ├ Fingerprint     : sha256:71809be1aaf80f3bfaf4734391175b6d23816536da34c700a5ef
+│                        │      │                   7fc4f152868f 
+│                        │      ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │      │                   go.opentelemetry.io/otel/sdk/log:
+│                        │      │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │      │                    Service via attribute truncation bypass using Unicode
+│                        │      │                   replacement characters 
+│                        │      ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │      │                    From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │      │                   version 1.35.0 until version 1.47.0, the
+│                        │      │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │      │                    truncation paths in sdk/internal/attrnorm,
+│                        │      │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │      │                   valid U+FFFD replacement characters. This is a distinct
+│                        │      │                   incomplete-fix defect in the replacement truncation code
+│                        │      │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │      │                   composed of or dominated by those characters can therefore
+│                        │      │                   exceed the configured character and memory bound in span,
+│                        │      │                   log-record, and auto-instrumentation trace attributes.
+│                        │      │                   Attacker-controlled telemetry attributes can increase
+│                        │      │                   retained memory and pipeline pressure, while
+│                        │      │                   confidentiality and integrity are not affected. This issue
+│                        │      │                   is fixed in version 1.47.0. 
+│                        │      ├ Severity        : MEDIUM 
+│                        │      ├ CweIDs                  
+│                        │      │                  ───────
+│                        │      │                  CWE-135
+│                        │      │                  CWE-770
+│                        │      ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │      │                  ╰ redhat: 2 
+│                        │      ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                        │      │                  │        │           N/A:L 
+│                        │      │                  │        ╰ V3Score : 5.3 
+│                        │      │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
+│                        │      │                           │           N/A:L 
+│                        │      │                           ╰ V3Score : 5.3 
+│                        │      ├ References                                                                   
+│                        │      │                  ────────────────────────────────────────────────────────────
+│                        │      │                  https://access.redhat.com/security/cve/CVE-2026-128085      
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go          
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/commit/01
+│                        │      │                  7b08c7f1018b619991aaf6b2299d4beb9da1d3                      
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/releases/
+│                        │      │                  tag/sdk/log/v1.47.0                                         
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/releases/
+│                        │      │                  tag/sdk/v1.47.0                                             
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/releases/
+│                        │      │                  tag/trace/v1.47.0                                           
+│                        │      │                  https://github.com/open-telemetry/opentelemetry-go/security/
+│                        │      │                  advisories/GHSA-q7gw-24fr-5p69                              
+│                        │      │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085            
+│                        │      │                                                                              
+│                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-128085            
+│                        │      ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │      ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [2]  ╭ VulnerabilityID : CVE-2026-78661 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6860
@@ -1733,7 +2359,8 @@
 │                        │      ├ CweIDs                  
 │                        │      │                  ───────
 │                        │      │                  CWE-407
-│                        │      ├ VendorSeverity   ╭ amazon: 3 
+│                        │      ├ VendorSeverity   ╭ amazon: 2 
+│                        │      │                  ├ azure : 2 
 │                        │      │                  ╰ redhat: 3 
 │                        │      ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:
 │                        │      │                           │           N/A:H 
@@ -1749,7 +2376,7 @@
 │                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-78661          
 │                        │      ├ PublishedDate   : 2026-10-27T22:18:05.93Z 
 │                        │      ╰ LastModifiedDate: 2026-11-04T17:17:37.673Z 
-│                        ├ [1]  ╭ VulnerabilityID : CVE-2026-78669 
+│                        ├ [3]  ╭ VulnerabilityID : CVE-2026-78669 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6611
@@ -1831,7 +2458,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:04.01Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:49.857Z 
-│                        ├ [2]  ╭ VulnerabilityID : CVE-2026-78659 
+│                        ├ [4]  ╭ VulnerabilityID : CVE-2026-78659 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6603
@@ -1939,7 +2566,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:03.27Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T16:35:35.9Z 
-│                        ├ [3]  ╭ VulnerabilityID : CVE-2026-78660 
+│                        ├ [5]  ╭ VulnerabilityID : CVE-2026-78660 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6610
@@ -2041,7 +2668,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:03.51Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:49.243Z 
-│                        ├ [4]  ╭ VulnerabilityID : CVE-2026-78663 
+│                        ├ [6]  ╭ VulnerabilityID : CVE-2026-78663 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6612
@@ -2146,7 +2773,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:03.647Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:49.42Z 
-│                        ├ [5]  ╭ VulnerabilityID : CVE-2026-97032 
+│                        ├ [7]  ╭ VulnerabilityID : CVE-2026-97032 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6617
@@ -2251,7 +2878,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:06.213Z 
 │                        │      ╰ LastModifiedDate: 2026-10-15T16:18:24.967Z 
-│                        ├ [6]  ╭ VulnerabilityID : CVE-2026-97045 
+│                        ├ [8]  ╭ VulnerabilityID : CVE-2026-97045 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6866
@@ -2290,7 +2917,8 @@
 │                        │      ├ CweIDs                 
 │                        │      │                  ──────
 │                        │      │                  CWE-79
-│                        │      ├ VendorSeverity   ╭ amazon: 3 
+│                        │      ├ VendorSeverity   ╭ amazon: 2 
+│                        │      │                  ├ azure : 2 
 │                        │      │                  ╰ redhat: 2 
 │                        │      ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:
 │                        │      │                           │           L/A:N 
@@ -2306,7 +2934,7 @@
 │                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-97045          
 │                        │      ├ PublishedDate   : 2026-10-27T22:19:22.613Z 
 │                        │      ╰ LastModifiedDate: 2026-11-04T17:17:38.33Z 
-│                        ├ [7]  ╭ VulnerabilityID : CVE-2026-111943 
+│                        ├ [9]  ╭ VulnerabilityID : CVE-2026-111943 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6809
@@ -2374,7 +3002,7 @@
 │                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-111943              
 │                        │      ├ PublishedDate   : 2026-10-21T01:17:20.797Z 
 │                        │      ╰ LastModifiedDate: 2026-10-30T13:18:28.74Z 
-│                        ├ [8]  ╭ VulnerabilityID : CVE-2026-78667 
+│                        ├ [10] ╭ VulnerabilityID : CVE-2026-78667 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6609
@@ -2447,7 +3075,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:03.88Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:49.69Z 
-│                        ├ [9]  ╭ VulnerabilityID : CVE-2026-78669 
+│                        ├ [11] ╭ VulnerabilityID : CVE-2026-78669 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6611
@@ -2529,7 +3157,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:04.01Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:49.857Z 
-│                        ├ [10] ╭ VulnerabilityID : CVE-2026-97031 
+│                        ├ [12] ╭ VulnerabilityID : CVE-2026-97031 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6607
@@ -2602,7 +3230,7 @@
 │                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-97031               
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:06.037Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T16:35:35.9Z 
-│                        ├ [11] ╭ VulnerabilityID : CVE-2026-56866 
+│                        ├ [13] ╭ VulnerabilityID : CVE-2026-56866 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6605
@@ -2708,7 +3336,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:01.62Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T16:35:35.9Z 
-│                        ├ [12] ╭ VulnerabilityID : CVE-2026-78659 
+│                        ├ [14] ╭ VulnerabilityID : CVE-2026-78659 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6603
@@ -2816,7 +3444,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:03.27Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T16:35:35.9Z 
-│                        ├ [13] ╭ VulnerabilityID : CVE-2026-78660 
+│                        ├ [15] ╭ VulnerabilityID : CVE-2026-78660 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6610
@@ -2918,7 +3546,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:03.51Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:49.243Z 
-│                        ├ [14] ╭ VulnerabilityID : CVE-2026-78663 
+│                        ├ [16] ╭ VulnerabilityID : CVE-2026-78663 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6612
@@ -3023,7 +3651,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:03.647Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:49.42Z 
-│                        ├ [15] ╭ VulnerabilityID : CVE-2026-94439 
+│                        ├ [17] ╭ VulnerabilityID : CVE-2026-94439 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6613
@@ -3061,7 +3689,7 @@
 │                        │      │                  ───────
 │                        │      │                  CWE-444
 │                        │      ├ VendorSeverity   ╭ alma   : 3 
-│                        │      │                  ├ amazon : 2 
+│                        │      │                  ├ amazon : 3 
 │                        │      │                  ├ bitnami: 3 
 │                        │      │                  ├ redhat : 2 
 │                        │      │                  ├ rocky  : 3 
@@ -3125,7 +3753,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:04.76Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:50.703Z 
-│                        ├ [16] ╭ VulnerabilityID : CVE-2026-94440 
+│                        ├ [18] ╭ VulnerabilityID : CVE-2026-94440 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6608
@@ -3203,7 +3831,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:04.917Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T17:16:50.907Z 
-│                        ├ [17] ╭ VulnerabilityID : CVE-2026-94448 
+│                        ├ [19] ╭ VulnerabilityID : CVE-2026-94448 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6599
@@ -3237,7 +3865,7 @@
 │                        │      │                  ──────
 │                        │      │                  CWE-79
 │                        │      ├ VendorSeverity   ╭ alma   : 3 
-│                        │      │                  ├ amazon : 2 
+│                        │      │                  ├ amazon : 3 
 │                        │      │                  ├ bitnami: 2 
 │                        │      │                  ├ redhat : 2 
 │                        │      │                  ╰ rocky  : 3 
@@ -3297,7 +3925,7 @@
 │                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-94448               
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:05.3Z 
 │                        │      ╰ LastModifiedDate: 2026-10-15T16:18:24.327Z 
-│                        ├ [18] ╭ VulnerabilityID : CVE-2026-97030 
+│                        ├ [20] ╭ VulnerabilityID : CVE-2026-97030 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6600
@@ -3329,7 +3957,7 @@
 │                        │      │                  ──────
 │                        │      │                  CWE-79
 │                        │      ├ VendorSeverity   ╭ alma   : 3 
-│                        │      │                  ├ amazon : 2 
+│                        │      │                  ├ amazon : 3 
 │                        │      │                  ├ bitnami: 2 
 │                        │      │                  ├ redhat : 2 
 │                        │      │                  ╰ rocky  : 3 
@@ -3389,7 +4017,7 @@
 │                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-97030               
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:05.91Z 
 │                        │      ╰ LastModifiedDate: 2026-10-15T16:18:24.817Z 
-│                        ├ [19] ╭ VulnerabilityID : CVE-2026-97032 
+│                        ├ [21] ╭ VulnerabilityID : CVE-2026-97032 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6617
@@ -3494,7 +4122,7 @@
 │                        │      │                  https://www.openwall.com/lists/oss-security/2026/10/08/9      
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:06.213Z 
 │                        │      ╰ LastModifiedDate: 2026-10-15T16:18:24.967Z 
-│                        ├ [20] ╭ VulnerabilityID : CVE-2026-56857 
+│                        ├ [22] ╭ VulnerabilityID : CVE-2026-56857 
 │                        │      ├ VendorIDs                    
 │                        │      │                  ────────────
 │                        │      │                  GO-2026-6604
@@ -3546,7 +4174,7 @@
 │                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-56857          
 │                        │      ├ PublishedDate   : 2026-10-08T23:17:01.487Z 
 │                        │      ╰ LastModifiedDate: 2026-10-09T16:35:35.9Z 
-│                        ╰ [21] ╭ VulnerabilityID : CVE-2026-97054 
+│                        ╰ [23] ╭ VulnerabilityID : CVE-2026-97054 
 │                               ├ VendorIDs                    
 │                               │                  ────────────
 │                               │                  GO-2026-6859
@@ -3627,7 +4255,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -3682,7 +4311,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -3778,7 +4408,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -3833,7 +4464,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -3893,7 +4525,159 @@
 │      ├ Class          : lang-pkgs 
 │      ├ Type           : gobinary 
 │      ├ Packages        
-│      ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : GO-2026-5932 
+│      ╰ Vulnerabilities ╭ [0] ╭ VulnerabilityID : CVE-2026-128085 
+│                        │     ├ VendorIDs                           
+│                        │     │                  ───────────────────
+│                        │     │                  GHSA-q7gw-24fr-5p69
+│                        │     ├ PkgID           : go.opentelemetry.io/otel/sdk@v1.45.0 
+│                        │     ├ PkgName         : go.opentelemetry.io/otel/sdk 
+│                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/sdk@v1.45.0 
+│                        │     │                  ╰ UID : b5e9ce21687e7607 
+│                        │     ├ InstalledVersion: v1.45.0 
+│                        │     ├ FixedVersion    : 1.47.0 
+│                        │     ├ Status          : fixed 
+│                        │     ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f8
+│                        │     │                  │         06ffee48a3fdb7994c7c 
+│                        │     │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28ea
+│                        │     │                            69d909b7f170a02263eb 
+│                        │     ├ SeveritySource  : ghsa 
+│                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │     ├ DataSource       ╭ ID  : ghsa 
+│                        │     │                  ├ Name: GitHub Security Advisory Go 
+│                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                        │     │                          cosystem%3Ago 
+│                        │     ├ Fingerprint     : sha256:b913013222bf61086e2276b03c58a70139fc8446c9d038a83714c
+│                        │     │                   2ef94345664 
+│                        │     ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │     │                   go.opentelemetry.io/otel/sdk/log:
+│                        │     │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │     │                   Service via attribute truncation bypass using Unicode
+│                        │     │                   replacement characters 
+│                        │     ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │     │                   From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │     │                   version 1.35.0 until version 1.47.0, the
+│                        │     │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │     │                   truncation paths in sdk/internal/attrnorm,
+│                        │     │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │     │                   valid U+FFFD replacement characters. This is a distinct
+│                        │     │                   incomplete-fix defect in the replacement truncation code
+│                        │     │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │     │                   composed of or dominated by those characters can therefore
+│                        │     │                   exceed the configured character and memory bound in span,
+│                        │     │                   log-record, and auto-instrumentation trace attributes.
+│                        │     │                   Attacker-controlled telemetry attributes can increase
+│                        │     │                   retained memory and pipeline pressure, while confidentiality
+│                        │     │                    and integrity are not affected. This issue is fixed in
+│                        │     │                   version 1.47.0. 
+│                        │     ├ Severity        : MEDIUM 
+│                        │     ├ CweIDs                  
+│                        │     │                  ───────
+│                        │     │                  CWE-135
+│                        │     │                  CWE-770
+│                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │     │                  ╰ redhat: 2 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                  │        │           /A:L 
+│                        │     │                  │        ╰ V3Score : 5.3 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:L 
+│                        │     │                           ╰ V3Score : 5.3 
+│                        │     ├ References                                                                    
+│                        │     │                  ─────────────────────────────────────────────────────────────
+│                        │     │                  https://access.redhat.com/security/cve/CVE-2026-128085       
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/commit/017
+│                        │     │                  b08c7f1018b619991aaf6b2299d4beb9da1d3                        
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/log/v1.47.0                                           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/v1.47.0                                               
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/trace/v1.47.0                                             
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/security/a
+│                        │     │                  dvisories/GHSA-q7gw-24fr-5p69                                
+│                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085             
+│                        │     │                                                                               
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-128085             
+│                        │     ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │     ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [1] ╭ VulnerabilityID : CVE-2026-128085 
+│                        │     ├ VendorIDs                           
+│                        │     │                  ───────────────────
+│                        │     │                  GHSA-q7gw-24fr-5p69
+│                        │     ├ PkgID           : go.opentelemetry.io/otel/trace@v1.46.0 
+│                        │     ├ PkgName         : go.opentelemetry.io/otel/trace 
+│                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/go.opentelemetry.io/otel/trace@v1.46.0 
+│                        │     │                  ╰ UID : 527ab5acf190d612 
+│                        │     ├ InstalledVersion: v1.46.0 
+│                        │     ├ FixedVersion    : 1.47.0 
+│                        │     ├ Status          : fixed 
+│                        │     ├ Layer            ╭ Digest: sha256:515b7785b1916846fa34e882c041ec1424030d04b4f8
+│                        │     │                  │         06ffee48a3fdb7994c7c 
+│                        │     │                  ╰ DiffID: sha256:a893367185ff96c49da098ee0d2254bb82d0f9be28ea
+│                        │     │                            69d909b7f170a02263eb 
+│                        │     ├ SeveritySource  : ghsa 
+│                        │     ├ PrimaryURL      : https://avd.aquasec.com/nvd/cve-2026-128085 
+│                        │     ├ DataSource       ╭ ID  : ghsa 
+│                        │     │                  ├ Name: GitHub Security Advisory Go 
+│                        │     │                  ╰ URL : https://github.com/advisories?query=type%3Areviewed+e
+│                        │     │                          cosystem%3Ago 
+│                        │     ├ Fingerprint     : sha256:5e17f66b1e1ccaf76bf6e1bdbd03434390b6d6676c73e2fb363c6
+│                        │     │                   6032cc9f0a3 
+│                        │     ├ Title           : go.opentelemetry.io/otel/sdk:
+│                        │     │                   go.opentelemetry.io/otel/sdk/log:
+│                        │     │                   go.opentelemetry.io/otel/trace: OpenTelemetry-Go: Denial of
+│                        │     │                   Service via attribute truncation bypass using Unicode
+│                        │     │                   replacement characters 
+│                        │     ├ Description     : OpenTelemetry-Go is the Go implementation of OpenTelemetry.
+│                        │     │                   From SDK version 1.33.0, SDK log version 0.9.0, and trace
+│                        │     │                   version 1.35.0 until version 1.47.0, the
+│                        │     │                   AttributeValueLengthLimit and WithAttributeValueLengthLimit
+│                        │     │                   truncation paths in sdk/internal/attrnorm,
+│                        │     │                   sdk/log/internal/attrnorm, and trace/auto.go do not count
+│                        │     │                   valid U+FFFD replacement characters. This is a distinct
+│                        │     │                   incomplete-fix defect in the replacement truncation code
+│                        │     │                   introduced by the remediation for CVE-2026-81869. Values
+│                        │     │                   composed of or dominated by those characters can therefore
+│                        │     │                   exceed the configured character and memory bound in span,
+│                        │     │                   log-record, and auto-instrumentation trace attributes.
+│                        │     │                   Attacker-controlled telemetry attributes can increase
+│                        │     │                   retained memory and pipeline pressure, while confidentiality
+│                        │     │                    and integrity are not affected. This issue is fixed in
+│                        │     │                   version 1.47.0. 
+│                        │     ├ Severity        : MEDIUM 
+│                        │     ├ CweIDs                  
+│                        │     │                  ───────
+│                        │     │                  CWE-135
+│                        │     │                  CWE-770
+│                        │     ├ VendorSeverity   ╭ ghsa  : 2 
+│                        │     │                  ╰ redhat: 2 
+│                        │     ├ CVSS             ╭ ghsa   ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                  │        │           /A:L 
+│                        │     │                  │        ╰ V3Score : 5.3 
+│                        │     │                  ╰ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
+│                        │     │                           │           /A:L 
+│                        │     │                           ╰ V3Score : 5.3 
+│                        │     ├ References                                                                    
+│                        │     │                  ─────────────────────────────────────────────────────────────
+│                        │     │                  https://access.redhat.com/security/cve/CVE-2026-128085       
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/commit/017
+│                        │     │                  b08c7f1018b619991aaf6b2299d4beb9da1d3                        
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/log/v1.47.0                                           
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/sdk/v1.47.0                                               
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/releases/t
+│                        │     │                  ag/trace/v1.47.0                                             
+│                        │     │                  https://github.com/open-telemetry/opentelemetry-go/security/a
+│                        │     │                  dvisories/GHSA-q7gw-24fr-5p69                                
+│                        │     │                  https://nvd.nist.gov/vuln/detail/CVE-2026-128085             
+│                        │     │                                                                               
+│                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-128085             
+│                        │     ├ PublishedDate   : 2026-11-13T19:19:31.193Z 
+│                        │     ╰ LastModifiedDate: 2026-11-13T19:19:31.193Z 
+│                        ├ [2] ╭ VulnerabilityID : GO-2026-5932 
 │                        │     ├ PkgID           : golang.org/x/crypto@v0.57.0 
 │                        │     ├ PkgName         : golang.org/x/crypto 
 │                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/crypto@v0.57.0 
@@ -3927,7 +4711,7 @@
 │                        │                        https://go.dev/issue/44226          
 │                        │                        https://go.dev/issue/81227          
 │                        │                        https://pkg.go.dev/vuln/GO-2026-5932
-│                        ├ [1] ╭ VulnerabilityID : CVE-2026-78661 
+│                        ├ [3] ╭ VulnerabilityID : CVE-2026-78661 
 │                        │     ├ VendorIDs                    
 │                        │     │                  ────────────
 │                        │     │                  GO-2026-6860
@@ -3963,7 +4747,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -3979,7 +4764,7 @@
 │                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-78661          
 │                        │     ├ PublishedDate   : 2026-10-27T22:18:05.93Z 
 │                        │     ╰ LastModifiedDate: 2026-11-04T17:17:37.673Z 
-│                        ├ [2] ╭ VulnerabilityID : CVE-2026-97045 
+│                        ├ [4] ╭ VulnerabilityID : CVE-2026-97045 
 │                        │     ├ VendorIDs                    
 │                        │     │                  ────────────
 │                        │     │                  GO-2026-6866
@@ -4018,7 +4803,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -4034,7 +4820,7 @@
 │                        │     │                  https://www.cve.org/CVERecord?id=CVE-2026-97045          
 │                        │     ├ PublishedDate   : 2026-10-27T22:19:22.613Z 
 │                        │     ╰ LastModifiedDate: 2026-11-04T17:17:38.33Z 
-│                        ╰ [3] ╭ VulnerabilityID : CVE-2026-97054 
+│                        ╰ [5] ╭ VulnerabilityID : CVE-2026-97054 
 │                              ├ VendorIDs                    
 │                              │                  ────────────
 │                              │                  GO-2026-6859
@@ -4249,7 +5035,8 @@
 │                        │     ├ CweIDs                  
 │                        │     │                  ───────
 │                        │     │                  CWE-407
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 3 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
 │                        │     │                           │           /A:H 
@@ -4304,7 +5091,8 @@
 │                        │     ├ CweIDs                 
 │                        │     │                  ──────
 │                        │     │                  CWE-79
-│                        │     ├ VendorSeverity   ╭ amazon: 3 
+│                        │     ├ VendorSeverity   ╭ amazon: 2 
+│                        │     │                  ├ azure : 2 
 │                        │     │                  ╰ redhat: 2 
 │                        │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
 │                        │     │                           │           /A:N 
@@ -4399,7 +5187,8 @@
                          │     ├ CweIDs                  
                          │     │                  ───────
                          │     │                  CWE-407
-                         │     ├ VendorSeverity   ╭ amazon: 3 
+                         │     ├ VendorSeverity   ╭ amazon: 2 
+                         │     │                  ├ azure : 2 
                          │     │                  ╰ redhat: 3 
                          │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N
                          │     │                           │           /A:H 
@@ -4454,7 +5243,8 @@
                          │     ├ CweIDs                 
                          │     │                  ──────
                          │     │                  CWE-79
-                         │     ├ VendorSeverity   ╭ amazon: 3 
+                         │     ├ VendorSeverity   ╭ amazon: 2 
+                         │     │                  ├ azure : 2 
                          │     │                  ╰ redhat: 2 
                          │     ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L
                          │     │                           │           /A:N 
