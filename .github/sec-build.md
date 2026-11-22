@@ -184,8 +184,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:0acd2ca770db06e1a64596d8e18962238d9ca71c9f2ee6f606787
 │                              │                   4074917074c 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -198,13 +198,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [5]  ╭ Target         : usr/bin/promtool 
@@ -377,8 +385,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:280bef4b24b88a573dd3e29b4d093d61016f97119b5807b4ab0a4
 │                              │                   4aca573f2f9 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -391,13 +399,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [6]  ╭ Target         : usr/share/grafana/bin/grafana 
@@ -536,8 +552,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:905077d610044d1b5d8bc41590e84477ac894aec0c7f4d9c9b355
 │                              │                   14ec36db759 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -550,13 +566,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [7]  ╭ Target         : usr/share/grafana/data/plugins-bundled/cloudwatch/gpx_grafana_cloudwatch_datasource_l
@@ -730,8 +754,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:1b16bc2dc85b0efa95d6c1f9e2245542f1a0b351a35ac7acc64a6
 │                              │                   1239e718848 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -744,13 +768,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [8]  ╭ Target         : usr/share/grafana/data/plugins-bundled/elasticsearch/gpx_grafana_elasticsearch_dataso
@@ -813,8 +845,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:aa48ac0eb250b7c23c22d9d851b286e8fd25fc6aa2e887b500c6d
 │                              │                   f04068733cf 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -827,13 +859,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [9]  ╭ Target         : usr/share/grafana/data/plugins-bundled/grafana-postgresql-datasource/gpx_grafana_post
@@ -973,8 +1013,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:11aae7dd505658510de916d96b12c985e1e87f3eee0fa6a6cef4f
 │                              │                   4811eed236e 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -987,13 +1027,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [10] ╭ Target         : usr/share/grafana/data/plugins-bundled/grafana-pyroscope-datasource/gpx_grafana-pyros
@@ -1133,8 +1181,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:c8285da9ab28fecded6c987c551e4f13d29c9c711e95efa14f495
 │                              │                   123c61cd962 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -1147,13 +1195,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [11] ╭ Target         : usr/share/grafana/data/plugins-bundled/influxdb/gpx_grafana_influxdb_datasource_linux
@@ -1318,7 +1374,7 @@
 │                        ├ [2] ╭ VulnerabilityID : CVE-2026-78661 
 │                        │     ├ VendorIDs                    
 │                        │     │                  ────────────
-│                        │     │                  GO-2026-6860
+│                        │     │                  CWE-362     
 │                        │     ├ PkgID           : golang.org/x/net@v0.60.0 
 │                        │     ├ PkgName         : golang.org/x/net 
 │                        │     ├ PkgIdentifier    ╭ PURL: pkg:golang/golang.org/x/net@v0.60.0 
@@ -1447,8 +1503,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:f11771f051431367493cde531d011a70a6f53a52c089be82ad865
 │                              │                   712543a9c6b 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -1461,13 +1517,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [12] ╭ Target         : usr/share/grafana/data/plugins-bundled/jaeger/gpx_grafana-jaeger-datasource_linux_amd64 
@@ -1606,8 +1670,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:d7f3aba01d3e3c005f83d2ea3df8101f30d1b8faea6e53029bc1f
 │                              │                   11b0263acd0 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -1620,13 +1684,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [13] ╭ Target         : usr/share/grafana/data/plugins-bundled/loki/gpx_grafana-loki-datasource_linux_amd64 
@@ -2030,8 +2102,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:a5d1c137ace4ffc96275fd127631fc9d63a921182867edc534257
 │                              │                   31265d2dda5 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -2044,13 +2116,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [14] ╭ Target         : usr/share/grafana/data/plugins-bundled/mssql/gpx_grafana-mssql-datasource_linux_amd64 
@@ -2223,8 +2303,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:22d9749a9e88e7f2b12390df74523a62ce456f5e5d5835baee255
 │                              │                   0a2b1075a61 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -2237,13 +2317,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [15] ╭ Target         : usr/share/grafana/data/plugins-bundled/mysql/gpx_grafana-mysql-datasource_linux_amd64 
@@ -2540,7 +2628,7 @@
 │                        │      │                  https://groups.google.com/g/golang-announce/c/U2fTuyDJznI     
 │                        │      │                  https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs     
 │                        │      │                  https://linux.oracle.com/cve/CVE-2026-78669.html              
-│                        │      │                  https://linux.oracle.com/errata/ELSA-2026-95519.html          
+│                        │      │                  https://linux.oracle.com/errata/ELSA-2026-98454.html          
 │                        │      │                  https://nvd.nist.gov/vuln/detail/CVE-2026-78669               
 │                        │      │                  https://pkg.go.dev/vuln/GO-2026-6611                          
 │                        │      │                  https://ubuntu.com/security/notices/USN-8935-1                
@@ -2694,6 +2782,7 @@
 │                        │      │                  ├ amazon : 3 
 │                        │      │                  ├ azure  : 3 
 │                        │      │                  ├ bitnami: 3 
+│                        │      │                  ├ photon : 3 
 │                        │      │                  ├ redhat : 2 
 │                        │      │                  ├ rocky  : 3 
 │                        │      │                  ╰ ubuntu : 2 
@@ -3060,6 +3149,7 @@
 │                        │      │                  ├ amazon     : 3 
 │                        │      │                  ├ bitnami    : 2 
 │                        │      │                  ├ oracle-oval: 3 
+│                        │      │                  ├ photon     : 2 
 │                        │      │                  ├ redhat     : 3 
 │                        │      │                  ╰ rocky      : 3 
 │                        │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I
@@ -3257,7 +3347,7 @@
 │                        │      │                  https://groups.google.com/g/golang-announce/c/U2fTuyDJznI     
 │                        │      │                  https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs     
 │                        │      │                  https://linux.oracle.com/cve/CVE-2026-78669.html              
-│                        │      │                  https://linux.oracle.com/errata/ELSA-2026-95519.html          
+│                        │      │                  https://linux.oracle.com/errata/ELSA-2026-98454.html          
 │                        │      │                  https://nvd.nist.gov/vuln/detail/CVE-2026-78669               
 │                        │      │                  https://pkg.go.dev/vuln/GO-2026-6611                          
 │                        │      │                  https://ubuntu.com/security/notices/USN-8935-1                
@@ -3392,6 +3482,7 @@
 │                        │      ├ VendorSeverity   ╭ alma   : 3 
 │                        │      │                  ├ amazon : 3 
 │                        │      │                  ├ bitnami: 3 
+│                        │      │                  ├ photon : 3 
 │                        │      │                  ├ redhat : 2 
 │                        │      │                  ├ rocky  : 3 
 │                        │      │                  ╰ ubuntu : 2 
@@ -3599,6 +3690,7 @@
 │                        │      │                  ├ amazon : 3 
 │                        │      │                  ├ azure  : 3 
 │                        │      │                  ├ bitnami: 3 
+│                        │      │                  ├ photon : 3 
 │                        │      │                  ├ redhat : 2 
 │                        │      │                  ├ rocky  : 3 
 │                        │      │                  ╰ ubuntu : 2 
@@ -3805,6 +3897,7 @@
 │                        │      ├ VendorSeverity   ╭ alma   : 3 
 │                        │      │                  ├ amazon : 2 
 │                        │      │                  ├ bitnami: 3 
+│                        │      │                  ├ photon : 3 
 │                        │      │                  ├ redhat : 2 
 │                        │      │                  ├ rocky  : 3 
 │                        │      │                  ╰ ubuntu : 2 
@@ -4078,6 +4171,7 @@
 │                        │      ├ VendorSeverity   ╭ alma   : 3 
 │                        │      │                  ├ amazon : 2 
 │                        │      │                  ├ bitnami: 2 
+│                        │      │                  ├ photon : 2 
 │                        │      │                  ├ redhat : 2 
 │                        │      │                  ╰ rocky  : 3 
 │                        │      ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I
@@ -4260,8 +4354,8 @@
 │                        │      │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                        │      ├ Fingerprint     : sha256:a8a410568b3e7c77c6e6fc8f2c24d2e13488592bf33a4be43d6e
 │                        │      │                   458d49f35305 
-│                        │      ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is
-│                        │      │                   exceeded, "Connecti ... 
+│                        │      ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                        │      │                   condition when handling oversized HTTP/1 requests 
 │                        │      ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is
 │                        │      │                   exceeded, "Connection: close" header is automatically set
 │                        │      │                   without synchronization, which might race with another
@@ -4275,13 +4369,21 @@
 │                        │      │                  ───────
 │                        │      │                  CWE-362
 │                        │      │                  CWE-820
-│                        │      ├ VendorSeverity   ─ amazon: 2 
+│                        │      ├ VendorSeverity   ╭ amazon: 2 
+│                        │      │                  ├ photon: 2 
+│                        │      │                  ╰ redhat: 2 
+│                        │      ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:
+│                        │      │                           │           N/A:H 
+│                        │      │                           ╰ V3Score : 5.9 
 │                        │      ├ References                                                                
 │                        │      │                  ─────────────────────────────────────────────────────────
+│                        │      │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                        │      │                  https://go.dev/cl/862185                                 
 │                        │      │                  https://go.dev/issue/82563                               
 │                        │      │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                        │      │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                        │      │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                        │      │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                        │      ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                        │      ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 │                        ╰ [23] ╭ VulnerabilityID : CVE-2026-56857 
@@ -4318,6 +4420,7 @@
 │                               │                  ────────
 │                               │                  CWE-1386
 │                               ├ VendorSeverity   ╭ bitnami: 4 
+│                               │                  ├ photon : 4 
 │                               │                  ├ redhat : 1 
 │                               │                  ╰ ubuntu : 2 
 │                               ├ CVSS             ╭ bitnami ╭ V3Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I
@@ -4476,8 +4579,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:71566b0a7703663663e554f59f157d9fe49cc3bb764cf1f69781d
 │                              │                   6c55d2caeb6 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -4490,13 +4593,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [17] ╭ Target         : usr/share/grafana/data/plugins-bundled/prometheus/gpx_grafana-prometheus-datasource_l
@@ -4636,8 +4747,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:9b56505cbad73666142a86d736b55389ae06cad8c4ed600fcb62e
 │                              │                   3479e4e8fe0 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -4650,13 +4761,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [18] ╭ Target         : usr/share/grafana/data/plugins-bundled/stackdriver/gpx_grafana_cloudmonitoring_dataso
@@ -4984,8 +5103,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:f2f4001034e4b7a96c6853e3abd1e9bfd9b63df3f01781eae9f25
 │                              │                   5a29cbe6358 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -4998,13 +5117,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ├ [19] ╭ Target         : usr/share/grafana/data/plugins-bundled/tempo/gpx_grafana-tempo-datasource_linux_amd64 
@@ -5279,8 +5406,8 @@
 │                              │                  ╰ URL : https://pkg.go.dev/vuln/ 
 │                              ├ Fingerprint     : sha256:61944a11d385da8e9c3d59ddde623a4b9b047682e62b10ec838a5
 │                              │                   9d75e8ddbd1 
-│                              ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-│                              │                    "Connecti ... 
+│                              ├ Title           : net/http: golang: net/http: Denial of Service via race
+│                              │                   condition when handling oversized HTTP/1 requests 
 │                              ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
 │                              │                    "Connection: close" header is automatically set without
 │                              │                   synchronization, which might race with another header being
@@ -5293,13 +5420,21 @@
 │                              │                  ───────
 │                              │                  CWE-362
 │                              │                  CWE-820
-│                              ├ VendorSeverity   ─ amazon: 2 
+│                              ├ VendorSeverity   ╭ amazon: 2 
+│                              │                  ├ photon: 2 
+│                              │                  ╰ redhat: 2 
+│                              ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+│                              │                           │           /A:H 
+│                              │                           ╰ V3Score : 5.9 
 │                              ├ References                                                                
 │                              │                  ─────────────────────────────────────────────────────────
+│                              │                  https://access.redhat.com/security/cve/CVE-2026-97054    
 │                              │                  https://go.dev/cl/862185                                 
 │                              │                  https://go.dev/issue/82563                               
 │                              │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+│                              │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
 │                              │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+│                              │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
 │                              ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
 │                              ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ╰ [20] ╭ Target         : usr/share/grafana/data/plugins-bundled/zipkin/gpx_grafana-zipkin-datasource_linux_amd64 
@@ -5438,8 +5573,8 @@
                                │                  ╰ URL : https://pkg.go.dev/vuln/ 
                                ├ Fingerprint     : sha256:dbe5459b05bcb697d7a21c50edcbf2d4620190a8fea7c1f7651c3
                                │                   cc467fcdd0b 
-                               ├ Title           : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
-                               │                    "Connecti ... 
+                               ├ Title           : net/http: golang: net/http: Denial of Service via race
+                               │                   condition when handling oversized HTTP/1 requests 
                                ├ Description     : For HTTP/1 servers, when MaxBytesReader's limit is exceeded,
                                │                    "Connection: close" header is automatically set without
                                │                   synchronization, which might race with another header being
@@ -5452,13 +5587,21 @@
                                │                  ───────
                                │                  CWE-362
                                │                  CWE-820
-                               ├ VendorSeverity   ─ amazon: 2 
+                               ├ VendorSeverity   ╭ amazon: 2 
+                               │                  ├ photon: 2 
+                               │                  ╰ redhat: 2 
+                               ├ CVSS             ─ redhat ╭ V3Vector: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N
+                               │                           │           /A:H 
+                               │                           ╰ V3Score : 5.9 
                                ├ References                                                                
                                │                  ─────────────────────────────────────────────────────────
+                               │                  https://access.redhat.com/security/cve/CVE-2026-97054    
                                │                  https://go.dev/cl/862185                                 
                                │                  https://go.dev/issue/82563                               
                                │                  https://groups.google.com/g/golang-announce/c/iY8TY0wWgbM
+                               │                  https://nvd.nist.gov/vuln/detail/CVE-2026-97054          
                                │                  https://pkg.go.dev/vuln/GO-2026-6859                     
+                               │                  https://www.cve.org/CVERecord?id=CVE-2026-97054          
                                ├ PublishedDate   : 2026-11-11T05:19:58.943Z 
                                ╰ LastModifiedDate: 2026-11-16T16:17:56.29Z 
 ```
